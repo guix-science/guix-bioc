@@ -1167,13 +1167,13 @@ Concordance at the Top plots (CAT-plots).")
 (define-public r-fenr
   (package
     (name "r-fenr")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fenr" version))
        (sha256
-        (base32 "19vaz5rjqkafrhs7bn9c5iigzm1z75jp0m4jizjziyl6s9d1z9ia"))))
+        (base32 "12mjdnjc6hbvmy8sdjay7k3bbf0al5mqf5fcf770mfwd7g1gy6kc"))))
     (properties `((upstream-name . "fenr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1199,10 +1199,10 @@ Concordance at the Top plots (CAT-plots).")
      "Perform fast functional enrichment on feature lists (like genes or proteins)
 using the hypergeometric distribution.  Tailored for speed, this package is
 ideal for interactive platforms such as Shiny.  It supports the retrieval of
-functional data from sources like GO, KEGG, Reactome, and @code{WikiPathways}.
-By downloading and preparing data first, it allows for rapid successive tests on
-various feature selections without the need for repetitive, time-consuming
-preparatory steps typical of other packages.")
+functional data from sources like GO, KEGG, Reactome, Bioplanet and
+@code{WikiPathways}.  By downloading and preparing data first, it allows for
+rapid successive tests on various feature selections without the need for
+repetitive, time-consuming preparatory steps typical of other packages.")
     (license license:expat)))
 
 (define-public r-fella

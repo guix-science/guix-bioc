@@ -27,8 +27,10 @@
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix scripts)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages graph)
   #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages x)
@@ -1823,16 +1825,17 @@ prior to a co-expression analysis.")
 (define-public r-spotlight
   (package
     (name "r-spotlight")
-    (version "1.6.3")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPOTlight" version))
        (sha256
-        (base32 "1r1bxhri1qdk5pr46gbxwz81g2w678nksabiw7hdwvkck5ba275j"))))
+        (base32 "1xksds1mv5y1jfpl36bjk0mwm1nsp5f6qc234nahj82dz4adrwaq"))))
     (properties `((upstream-name . "SPOTlight")))
     (build-system r-build-system)
-    (propagated-inputs (list r-singlecellexperiment
+    (propagated-inputs (list r-sparsematrixstats
+                             r-singlecellexperiment
                              r-nnls
                              r-nmf
                              r-matrixstats
@@ -5091,7 +5094,7 @@ samples/stages.")
         (base32 "1xnzh4s9zn31i913hqy7aaw1x6q1hmzsr7lil8nfmysmgl1vpahf"))))
     (properties `((upstream-name . "seqArchR")))
     (build-system r-build-system)
-    (inputs (list python packaging))
+    (inputs (list python-scikit-learn python packaging))
     (propagated-inputs (list r-reticulate
                              r-reshape2
                              r-prettyunits
@@ -6841,7 +6844,7 @@ controlled.")
         (base32 "0cwmwwdbafjcrsxvjps5csffj0n1mmagccbawpwqsjqfn5j55v2j"))))
     (properties `((upstream-name . "scBubbletree")))
     (build-system r-build-system)
-    (inputs (list python))
+    (inputs (list python python-leidenalg))
     (propagated-inputs (list r-seurat
                              r-scales
                              r-reshape2

@@ -4466,7 +4466,6 @@ interest.")
         (base32 "16697g01gn79jq5b42fcxmscwkfx2p90zxpzw0akfz7dxx4izp3f"))))
     (properties `((upstream-name . "chromDraw")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rcpp r-genomicranges))
     (home-page "www.plantcytogenomics.org/chromDraw")
     (synopsis

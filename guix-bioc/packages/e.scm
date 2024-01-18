@@ -857,7 +857,6 @@ Visualizations (using d3.js) can be easily added to the web app as well.")
     (properties `((upstream-name . "EpiTxDb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-trnadbimport
                              r-s4vectors
                              r-rsqlite
                              r-modstrings
@@ -1603,13 +1602,13 @@ network in primary tissue.")
 (define-public r-eisar
   (package
     (name "r-eisar")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "eisaR" version))
        (sha256
-        (base32 "0yhjdx4yvn160vf589liks6pj6p9s6yvdisb0rs9vic5mx46jkxb"))))
+        (base32 "0bg28252qvvzhw39vyqc0mv96bc78a995k6g5am6bzfkclgd2nri"))))
     (properties `((upstream-name . "eisaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

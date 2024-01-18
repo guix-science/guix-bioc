@@ -82,7 +82,6 @@ contact Chris Bolen (cbolen1@@gmail.com) or Steven Kleinstein
         (base32 "12iyng6x692a9iqy5rzbm9zgjz4nnw2839z6f8l5cys1rch4xvpv"))))
     (properties `((upstream-name . "QUBIC")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-biclust))
     (native-inputs (list r-knitr))
     (home-page "http://github.com/zy26/QUBIC")

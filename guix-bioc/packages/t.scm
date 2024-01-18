@@ -483,37 +483,6 @@ Cancer Inference (PICNIC).")
      "The package imports the result of @code{tRNAscan-SE} as a GRanges object.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
-(define-public r-trnadbimport
-  (package
-    (name "r-trnadbimport")
-    (version "1.20.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "tRNAdbImport" version))
-       (sha256
-        (base32 "059nmal5h9xknxs79lnfji9d31b2f1vhk0fvf9cnlll12ma4nv2w"))))
-    (properties `((upstream-name . "tRNAdbImport")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-trna
-                             r-structstrings
-                             r-stringr
-                             r-s4vectors
-                             r-modstrings
-                             r-iranges
-                             r-httr
-                             r-genomicranges
-                             r-biostrings
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/tRNAdbImport")
-    (synopsis "Importing from tRNAdb and mitotRNAdb as GRanges objects")
-    (description
-     "@code{tRNAdbImport} imports the entries of the @code{tRNAdb} and @code{mtRNAdb}
-(http://trna.bioinf.uni-leipzig.de) as GRanges object.")
-    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
 (define-public r-trna
   (package
     (name "r-trna")

@@ -22,6 +22,7 @@
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages n)
   #:use-module (gnu packages databases)
+  #:use-module (gnu packages node)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages t)
   #:use-module (guix-bioc packages z)
@@ -3486,7 +3487,7 @@ networks, and the network visualization software Cytocape.")
         (base32 "1fx6fvq15wxgj06wniw34qhx8q5463nhxrfkhv3898y5c7iifcid"))))
     (properties `((upstream-name . "RcwlPipelines")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list node))
     (propagated-inputs (list r-s4vectors
                              r-rcwl
                              r-rappdirs

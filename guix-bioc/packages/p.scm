@@ -330,13 +330,13 @@ and permit to identfy four potentiel biomarquers of the infection.")
 (define-public r-psygenet2r
   (package
     (name "r-psygenet2r")
-    (version "1.34.0")
+    (version "1.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "psygenet2r" version))
        (sha256
-        (base32 "0amjlgnaqlbc72n6sfk85bqim3cifpw01xl99zcg9fnqxk50h9ff"))))
+        (base32 "08qjzj76vf89l0v8lfchrryvqpb049za0qpgldxzr8kxwzqx1bl5"))))
     (properties `((upstream-name . "psygenet2r")))
     (build-system r-build-system)
     (propagated-inputs (list r-topgo

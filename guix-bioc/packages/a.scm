@@ -9,7 +9,9 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages r)
+  #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages j)
   #:use-module (gnu packages compression)
@@ -348,7 +350,7 @@ combined, evaluated and filtered.")
         (base32 "0p9s7513gq6fggrab3yf132z0sbydfcyay13f1ka889lcgw741bh"))))
     (properties `((upstream-name . "APL")))
     (build-system r-build-system)
-    (inputs (list python))
+    (inputs (list python-pytorch python python-numpy))
     (propagated-inputs (list r-viridislite
                              r-topgo
                              r-summarizedexperiment

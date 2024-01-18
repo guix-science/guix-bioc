@@ -22,13 +22,16 @@
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages python-science)
+  #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages q)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages w)
-  #:use-module (guix-cran packages v)
   #:use-module (gnu packages web)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages x)
@@ -2163,7 +2166,12 @@ Genetic Algorithm, version II), which we adapted to work on networks.")
         (base32 "1vryfj2ikc0c3md2pg4jyg0n3jj6lh0rwm9069v42172pbwc0ikp"))))
     (properties `((upstream-name . "MOFA2")))
     (build-system r-build-system)
-    (inputs (list python))
+    (inputs (list python-scikit-learn
+                  python-scipy
+                  python
+                  python-pandas
+                  python-numpy
+                  python-h5py))
     (propagated-inputs (list r-uwot
                              r-tidyr
                              r-stringi
@@ -4085,7 +4093,7 @@ sequencing).")
         (base32 "05s8zpiqpw5qx5k2qf3vkxj69ag67gkl5mb8dxq7jpwzx51kdvwc"))))
     (properties `((upstream-name . "MethTargetedNGS")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list hmmer))
     (propagated-inputs (list r-stringr r-seqinr r-gplots r-biostrings))
     (home-page "https://bioconductor.org/packages/MethTargetedNGS")
     (synopsis
