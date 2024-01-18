@@ -25,7 +25,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages a)
   #:use-module (gnu packages bioinformatics)
-  #:use-module (guix scripts)
+  #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages r)
@@ -5094,7 +5094,7 @@ samples/stages.")
         (base32 "1xnzh4s9zn31i913hqy7aaw1x6q1hmzsr7lil8nfmysmgl1vpahf"))))
     (properties `((upstream-name . "seqArchR")))
     (build-system r-build-system)
-    (inputs (list python-scikit-learn python packaging))
+    (inputs (list python-scikit-learn python python-packaging))
     (propagated-inputs (list r-reticulate
                              r-reshape2
                              r-prettyunits
