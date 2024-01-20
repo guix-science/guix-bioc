@@ -852,13 +852,13 @@ monitoring and quality control tools for proteomic experiments.")
 (define-public r-msstatsptm
   (package
     (name "r-msstatsptm")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsPTM" version))
        (sha256
-        (base32 "1ab2igyg5fgrs15m0i0dwqx0ds1fkqw7h0ls90j78qbzx3igqm5d"))))
+        (base32 "01ym60w1djrqgmldgi4dvl15f2sx86zcz1h5mzky9rs4aj9rkl9w"))))
     (properties `((upstream-name . "MSstatsPTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -2203,43 +2203,6 @@ information on the samples can be incorporated using the MEFISTO framework,
 which is part of MOFA2.  Downstream analysis functions to inspect molecular
 features underlying each factor, vizualisation, imputation etc are available.")
     (license (license:fsdg-compatible "file://LICENSE"))))
-
-(define-public r-modstrings
-  (package
-    (name "r-modstrings")
-    (version "1.18.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "Modstrings" version))
-       (sha256
-        (base32 "1jjawwkvdx02ss2vw4ah2b8psgxr01z6r1rkr2pnkmrp2ma7ygks"))))
-    (properties `((upstream-name . "Modstrings")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xvector
-                             r-stringr
-                             r-stringi
-                             r-s4vectors
-                             r-iranges
-                             r-genomicranges
-                             r-crayon
-                             r-biostrings
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/Modstrings")
-    (synopsis "Working with modified nucleotide sequences")
-    (description
-     "Representing nucleotide modifications in a nucleotide sequence is usually done
-via special characters from a number of sources.  This represents a challenge to
-work with in R and the Biostrings package.  The Modstrings package implements
-this functionallity for RNA and DNA sequences containing modified nucleotides by
-translating the character internally in order to work with the infrastructure of
-the Biostrings package.  For this the @code{ModRNAString} and
-@code{ModDNAString} classes and derivates and functions to construct and modify
-these objects despite the encoding issues are implemenented.  In addition the
-conversion from sequences to list like location information (and the reverse
-operation) is implemented as well.")
-    (license license:artistic2.0)))
 
 (define-public r-modcon
   (package

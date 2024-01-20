@@ -1583,13 +1583,13 @@ tools for analyzing and visualizing the results.")
 (define-public r-podcall
   (package
     (name "r-podcall")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PoDCall" version))
        (sha256
-        (base32 "1c8g3p7fm25b9fvyw6dy3rz0g84by2l3vp289d22pyy08kxxgwrj"))))
+        (base32 "095nb16h3zbh35shv8skkndiav4qsg17fa8381ca4mmhc6jdsqzd"))))
     (properties `((upstream-name . "PoDCall")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs

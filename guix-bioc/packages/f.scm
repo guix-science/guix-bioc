@@ -892,66 +892,6 @@ data.  One of the goals of this package is to automate analysis of bead data for
 the purpose of normalisation.")
     (license license:artistic2.0)))
 
-(define-public r-flames
-  (package
-    (name "r-flames")
-    (version "1.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "FLAMES" version))
-       (sha256
-        (base32 "0937zag0h4bvpapld267s5gz36h8zgjrgvbng9m7czdd8w6064ns"))))
-    (properties `((upstream-name . "FLAMES")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zlibbioc
-                             r-withr
-                             r-tidyr
-                             r-summarizedexperiment
-                             r-stringr
-                             r-singlecellexperiment
-                             r-scuttle
-                             r-scran
-                             r-scater
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rsamtools
-                             r-rhtslib
-                             r-reticulate
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-multiassayexperiment
-                             r-matrix
-                             r-magrittr
-                             r-jsonlite
-                             r-igraph
-                             r-gridextra
-                             r-ggplot2
-                             r-ggbio
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomicalignments
-                             r-genomeinfodb
-                             r-future
-                             r-dropletutils
-                             r-dplyr
-                             r-cowplot
-                             r-complexheatmap
-                             r-circlize
-                             r-biostrings
-                             r-biocgenerics
-                             r-basilisk
-                             r-bambu))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/OliverVoogd/FLAMES")
-    (synopsis
-     "FLAMES: Full Length Analysis of Mutations and Splicing in long read RNA-seq data")
-    (description
-     "Semi-supervised isoform detection and annotation from both bulk and single-cell
-long read RNA-seq data.  Flames provides automated pipelines for analysing
-isoforms, as well as intermediate functions for manual execution.")
-    (license license:gpl2+)))
-
 (define-public r-flagme
   (package
     (name "r-flagme")

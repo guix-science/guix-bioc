@@ -847,16 +847,17 @@ Visualizations (using d3.js) can be easily added to the web app as well.")
 (define-public r-epitxdb
   (package
     (name "r-epitxdb")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiTxDb" version))
        (sha256
-        (base32 "07rymnrhs8gnacylgg6lc506m8p5w7kghzz72i4gysanv1z39g95"))))
+        (base32 "0ql7qwk4hw1gv66n64ygj0yvinab42dhcacczcgb7mrwiwsmyhmd"))))
     (properties `((upstream-name . "EpiTxDb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-trnadbimport
                              r-s4vectors
                              r-rsqlite
                              r-modstrings

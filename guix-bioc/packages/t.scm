@@ -483,40 +483,6 @@ Cancer Inference (PICNIC).")
      "The package imports the result of @code{tRNAscan-SE} as a GRanges object.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
-(define-public r-trna
-  (package
-    (name "r-trna")
-    (version "1.20.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "tRNA" version))
-       (sha256
-        (base32 "1s52g9sh3fv9f1bscipmdh7gqr94acn09q8v4a3drpg1dvfnc109"))))
-    (properties `((upstream-name . "tRNA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xvector
-                             r-structstrings
-                             r-stringr
-                             r-scales
-                             r-s4vectors
-                             r-modstrings
-                             r-iranges
-                             r-ggplot2
-                             r-genomicranges
-                             r-biostrings
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/tRNA")
-    (synopsis "Analyzing tRNA sequences and structures")
-    (description
-     "The @code{tRNA} package allows @code{tRNA} sequences and structures to be
-accessed and used for subsetting.  In addition, it provides visualization tools
-to compare feature parameters of multiple @code{tRNA} sets and correlate them to
-additional data.  The @code{tRNA} package uses GRanges objects as inputs
-requiring only few additional column data sets.")
-    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
 (define-public r-tripr
   (package
     (name "r-tripr")

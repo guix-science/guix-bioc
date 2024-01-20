@@ -976,40 +976,6 @@ integrated and implemented to provide standardised definitions for the different
 methods, inputs and outputs.")
     (license license:gpl3)))
 
-(define-public r-structstrings
-  (package
-    (name "r-structstrings")
-    (version "1.18.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "Structstrings" version))
-       (sha256
-        (base32 "10j1khhjd30wn9yfz4jhgx34z0yyijgwgydr8ric52337vwpx6dl"))))
-    (properties `((upstream-name . "Structstrings")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xvector
-                             r-stringr
-                             r-stringi
-                             r-s4vectors
-                             r-iranges
-                             r-crayon
-                             r-biostrings
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/FelixErnst/Structstrings")
-    (synopsis "Implementation of the dot bracket annotations with Biostrings")
-    (description
-     "The Structstrings package implements the widely used dot bracket annotation for
-storing base pairing information in structured RNA. Structstrings uses the
-infrastructure provided by the Biostrings package and derives the
-@code{DotBracketString} and related classes from the BString class.  From these,
-base pair tables can be produced for in depth analysis.  In addition, the loop
-indices of the base pairs can be retrieved as well.  For better efficiency,
-information conversion is implemented in C, inspired to a large extend by the
-@code{ViennaRNA} package.")
-    (license license:artistic2.0)))
-
 (define-public r-struct
   (package
     (name "r-struct")
@@ -4468,39 +4434,6 @@ signatures of the same length; b) known, related and unrelated gene signatures;
 and c) permuted data and/or metadata.")
     (license license:artistic2.0)))
 
-(define-public r-sictools
-  (package
-    (name "r-sictools")
-    (version "1.32.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "SICtools" version))
-       (sha256
-        (base32 "0bcajjvkaxmr8bdij8xln7a3nmxbm7jkjvg2v6p8kd0xr3q9a70q"))))
-    (properties `((upstream-name . "SICtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rsamtools
-                             r-plyr
-                             r-matrixstats
-                             r-iranges
-                             r-genomicranges
-                             r-doparallel
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/SICtools")
-    (synopsis
-     "Find SNV/Indel differences between two bam files with near relationship")
-    (description
-     "This package is to find SNV/Indel differences between two bam files with near
-relationship in a way of pairwise comparison thourgh each base position across
-the genome region of interest.  The difference is inferred by fisher test and
-euclidean distance, the input of which is the base count (A,T,G,C) in a given
-position and read counts for indels that span no less than 2bp on both sides of
-indel region.")
-    (license (license:fsdg-compatible "GPL (>=2)"))))
-
 (define-public r-siamcat
   (package
     (name "r-siamcat")
@@ -6477,20 +6410,18 @@ Lewin-Koh, Martin Maechler and Thomas Lumley.")
 (define-public r-scfeatures
   (package
     (name "r-scfeatures")
-    (version "1.2.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scFeatures" version))
        (sha256
-        (base32 "095ggysbs1jwzpcx58d1czprrw2rd0zhapsrij2c923mjxixcxwp"))))
+        (base32 "191iff92v8k7s9h6bx0fidn8125x5yqyk7hvmj9mynwn5ssr76rx"))))
     (properties `((upstream-name . "scFeatures")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
                              r-spatstat-geom
                              r-spatstat-explore
-                             r-spatialexperiment
                              r-singlecellsignalr
                              r-seurat
                              r-rmarkdown
@@ -6957,13 +6888,13 @@ such as color blindness.")
 (define-public r-scarray-sat
   (package
     (name "r-scarray-sat")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SCArray.sat" version))
        (sha256
-        (base32 "1hqqq6fsy6rxldmaf006v9xn6nvapxi5jhxdk7n7jppfx948bla4"))))
+        (base32 "0lk887vbvdaydw9nmdsajkhrrn16ab3h0zkymmc46g22p4yqfxbp"))))
     (properties `((upstream-name . "SCArray.sat")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -6971,6 +6902,7 @@ such as color blindness.")
                              r-seurat
                              r-scarray
                              r-s4vectors
+                             r-matrix
                              r-gdsfmt
                              r-delayedarray
                              r-biocsingular

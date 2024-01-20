@@ -2347,13 +2347,13 @@ shell command cat) and accept multiple files as input.")
 (define-public r-rfarm
   (package
     (name "r-rfarm")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rfaRm" version))
        (sha256
-        (base32 "1bsv8ihnis899f89krsz2rfqxn0dgh2rkjzr7wlqh3pgg232lw1k"))))
+        (base32 "0w93wnvaiyalhzjf3jhy02zni0gx6xfwriqw87ps2y22nxl46l4q"))))
     (properties `((upstream-name . "rfaRm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4342,13 +4342,13 @@ a pipeline for the detection of structural variants is provided.")
 (define-public r-r3cpet
   (package
     (name "r-r3cpet")
-    (version "1.34.0")
+    (version "1.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "R3CPET" version))
        (sha256
-        (base32 "1pz7cwmwjmfsjkrl49jaxzy1y3v68b7153lz39gmi2qf2gs4lnk5"))))
+        (base32 "0b0rv6s66ysfwsd7bx6fhq4jb0wp4dsvq5qv1qai54i26via6qa8"))))
     (properties `((upstream-name . "R3CPET")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors
