@@ -34,6 +34,7 @@
   #:use-module (guix-cran packages w)
   #:use-module (gnu packages web)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -47,6 +48,7 @@
   #:use-module (guix-bioc packages n)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -111,6 +113,28 @@ gene annotation data.  It's designed with simplicity and performance emphasized.
 *mygene*, is an easy-to-use R wrapper to access @code{MyGene.Info}_ services.")
     (license license:artistic2.0)))
 
+(define-public r-mwgcod-db
+  (package
+    (name "r-mwgcod-db")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mwgcod.db" version
+                              'annotation))
+       (sha256
+        (base32 "0h3ha3d7fml8754ixbd1pgq33jsxl9zivyfmakxy5971b888qiin"))))
+    (properties `((upstream-name . "mwgcod.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mwgcod.db")
+    (synopsis
+     "Codelink Mouse Whole Genome Bioarray (~36 000 mouse gene targets) annotation data (chip mwgcod)")
+    (description
+     "Codelink Mouse Whole Genome Bioarray (~36 000 mouse gene targets) annotation
+data (chip mwgcod) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
 (define-public r-mwastools
   (package
     (name "r-mwastools")
@@ -148,6 +172,27 @@ correlations; generalized linear models); model validation using non-parametric
 bootstrapping; visualization of MWAS results; NMR metabolite identification
 using STOCSY; and biological interpretation of MWAS results.")
     (license (license:fsdg-compatible "CC BY-NC-ND 4.0"))))
+
+(define-public r-mvoutdata
+  (package
+    (name "r-mvoutdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mvoutData" version
+                              'experiment))
+       (sha256
+        (base32 "17rbb19wv8dzgkrkhgabm3fgr3l2gzvjl34ichlcfalaa17wci3w"))))
+    (properties `((upstream-name . "mvoutData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lumi r-biobase r-affy))
+    (home-page "https://bioconductor.org/packages/mvoutData")
+    (synopsis
+     "affy and illumina raw data for assessing outlier detector performance")
+    (description
+     "affy and illumina raw data for assessing outlier detector performance")
+    (license license:artistic2.0)))
 
 (define-public r-musicatk
   (package
@@ -246,6 +291,29 @@ COSMIC V3.")
      "MUSCLE performs multiple sequence alignments of nucleotide or amino acid
 sequences.")
     (license (license:fsdg-compatible "Unlimited"))))
+
+(define-public r-muscdata
+  (package
+    (name "r-muscdata")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "muscData" version
+                              'experiment))
+       (sha256
+        (base32 "01jmd59zk4fkny984wv9iwd9bq56cq4mnqz1x9wcjkmgk5bnvwxa"))))
+    (properties `((upstream-name . "muscData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-singlecellexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HelenaLC/muscData")
+    (synopsis "Multi-sample multi-group scRNA-seq data")
+    (description
+     "Data package containing a collection of multi-sample multi-group
+@code{scRNA-seq} datasets in @code{SingleCellExperiment} Bioconductor object
+format.")
+    (license license:expat)))
 
 (define-public r-mungesumstats
   (package
@@ -567,6 +635,7 @@ manner.")
     (propagated-inputs (list r-rlang
                              r-rappdirs
                              r-metap
+                             r-metaboliteidmapping
                              r-magrittr
                              r-graphite
                              r-fgsea
@@ -688,6 +757,27 @@ methodology works for all studies.")
 calculation by Multiple Comparison test.")
     (license license:gpl2)))
 
+(define-public r-mugaexampledata
+  (package
+    (name "r-mugaexampledata")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MUGAExampleData" version
+                              'experiment))
+       (sha256
+        (base32 "1q8bqqpc14iymmmmv87yqzkpjlzq4r801hjav8kymsw66zlqi0rq"))))
+    (properties `((upstream-name . "MUGAExampleData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/MUGAExampleData")
+    (synopsis
+     "Example {M}ouse {U}niversal {G}enotyping {A}rray data for genome reconstruction and quantitative trait locus mapping")
+    (description
+     "This package contains example data for the MUGA array that is used by the R
+package DOQTL.")
+    (license license:gpl3)))
+
 (define-public r-mudata
   (package
     (name "r-mudata")
@@ -715,6 +805,462 @@ calculation by Multiple Comparison test.")
 Muon is a Python framework for multimodal omics data analysis.  It uses an
 HDF5-based format for data storage.")
     (license license:gpl3)))
+
+(define-public r-mu6500subdcdf
+  (package
+    (name "r-mu6500subdcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu6500subdcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0xq4bgkv6iaivz696lz9rrz53dh8gd9zjvqdnz9c06pg7scfv6r1"))))
+    (properties `((upstream-name . "mu6500subdcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu6500subdcdf")
+    (synopsis "mu6500subdcdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu6500@code{subD.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu6500subccdf
+  (package
+    (name "r-mu6500subccdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu6500subccdf" version
+                              'annotation))
+       (sha256
+        (base32 "1pflw5cpk7ssrg5kjq81gj9z5jafd2mlm6sv4czxbmjpb6038d01"))))
+    (properties `((upstream-name . "mu6500subccdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu6500subccdf")
+    (synopsis "mu6500subccdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu6500@code{subC.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu6500subbcdf
+  (package
+    (name "r-mu6500subbcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu6500subbcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0a0w5yldgjvj8pyw7ygn685pj95qdfm34c0sqvgqf7w7g5wm4jvk"))))
+    (properties `((upstream-name . "mu6500subbcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu6500subbcdf")
+    (synopsis "mu6500subbcdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu6500@code{subB.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu6500subacdf
+  (package
+    (name "r-mu6500subacdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu6500subacdf" version
+                              'annotation))
+       (sha256
+        (base32 "15y7x1jgzzc366dapa5gy44m98zpn8mfghjxh12k3k9ryd59lxn9"))))
+    (properties `((upstream-name . "mu6500subacdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu6500subacdf")
+    (synopsis "mu6500subacdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu6500@code{subA.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu22v3-db
+  (package
+    (name "r-mu22v3-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Mu22v3.db" version
+                              'annotation))
+       (sha256
+        (base32 "016dfa1pz5valjnqh9z73b931wk184vykv9xmz60xp2kj9ccrjzc"))))
+    (properties `((upstream-name . "Mu22v3.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/Mu22v3.db")
+    (synopsis "FHCRC Genomics Shared Resource Mu22v3 Annotation Data (Mu22v3)")
+    (description
+     "FHCRC Genomics Shared Resource Mu22v3 Annotation Data (Mu22v3) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mu19ksubccdf
+  (package
+    (name "r-mu19ksubccdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu19ksubccdf" version
+                              'annotation))
+       (sha256
+        (base32 "063v3fn06p1znwrdxn26lz7qz9sfzk10hgabimxw3rz5x0580d4l"))))
+    (properties `((upstream-name . "mu19ksubccdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu19ksubccdf")
+    (synopsis "mu19ksubccdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu19@code{KsubC.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu19ksubc-db
+  (package
+    (name "r-mu19ksubc-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu19ksubc.db" version
+                              'annotation))
+       (sha256
+        (base32 "19ixhs75lsrykdqzb2cn1dz2f45nzcmpbp340ipp78maa89z3axr"))))
+    (properties `((upstream-name . "mu19ksubc.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu19ksubc.db")
+    (synopsis
+     "Affymetrix Affymetrix Mu19KsubC Array annotation data (chip mu19ksubc)")
+    (description
+     "Affymetrix Affymetrix Mu19@code{KsubC} Array annotation data (chip mu19ksubc)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mu19ksubbcdf
+  (package
+    (name "r-mu19ksubbcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu19ksubbcdf" version
+                              'annotation))
+       (sha256
+        (base32 "1waizab2dn74y8b1w27l1yg29gi00v16fij1jm2yhik5cnjhhhk4"))))
+    (properties `((upstream-name . "mu19ksubbcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu19ksubbcdf")
+    (synopsis "mu19ksubbcdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu19@code{KsubB.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu19ksubb-db
+  (package
+    (name "r-mu19ksubb-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu19ksubb.db" version
+                              'annotation))
+       (sha256
+        (base32 "1i7xl84mv8s93hqh9baa4sp5jhwmvhsm37379yjps1q5yyydci4i"))))
+    (properties `((upstream-name . "mu19ksubb.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu19ksubb.db")
+    (synopsis
+     "Affymetrix Affymetrix Mu19KsubB Array annotation data (chip mu19ksubb)")
+    (description
+     "Affymetrix Affymetrix Mu19@code{KsubB} Array annotation data (chip mu19ksubb)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mu19ksubacdf
+  (package
+    (name "r-mu19ksubacdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu19ksubacdf" version
+                              'annotation))
+       (sha256
+        (base32 "0c1nhvnnn8v07m6rci2cml6i86rs77b1xnw7jmyndfl458vjlp09"))))
+    (properties `((upstream-name . "mu19ksubacdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu19ksubacdf")
+    (synopsis "mu19ksubacdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu19@code{KsubA.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu19ksuba-db
+  (package
+    (name "r-mu19ksuba-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu19ksuba.db" version
+                              'annotation))
+       (sha256
+        (base32 "1js9zrbbzdrsl73qa1dvfqcrcaxsmlrj7ymyjiadzcg3g014z3lv"))))
+    (properties `((upstream-name . "mu19ksuba.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu19ksuba.db")
+    (synopsis
+     "Affymetrix Affymetrix Mu19KsubA Array annotation data (chip mu19ksuba)")
+    (description
+     "Affymetrix Affymetrix Mu19@code{KsubA} Array annotation data (chip mu19ksuba)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mu15v1-db
+  (package
+    (name "r-mu15v1-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Mu15v1.db" version
+                              'annotation))
+       (sha256
+        (base32 "0qchqkbx6ybijab8qhflxj33kwksfll1d3d3917vydjac9fzw1lz"))))
+    (properties `((upstream-name . "Mu15v1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/Mu15v1.db")
+    (synopsis "FHCRC Genomics Shared Resource Mu15v1 Annotation Data (Mu15v1)")
+    (description
+     "FHCRC Genomics Shared Resource Mu15v1 Annotation Data (Mu15v1) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mu11ksubbprobe
+  (package
+    (name "r-mu11ksubbprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu11ksubbprobe" version
+                              'annotation))
+       (sha256
+        (base32 "139kbrlxlw0r4z2iyy4qqcc70sb6nmsn0h7v33k5j6r52qz4hjxh"))))
+    (properties `((upstream-name . "mu11ksubbprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu11ksubbprobe")
+    (synopsis "Probe sequence data for microarrays of type mu11ksubb")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Mu11@code{KsubB\\_probe\\_tab}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu11ksubbcdf
+  (package
+    (name "r-mu11ksubbcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu11ksubbcdf" version
+                              'annotation))
+       (sha256
+        (base32 "1dajsq041pg3g9c5j3sd0w6gypqpdva91rb4a7ni990nk45mg23k"))))
+    (properties `((upstream-name . "mu11ksubbcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu11ksubbcdf")
+    (synopsis "mu11ksubbcdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu11@code{KsubB.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu11ksubb-db
+  (package
+    (name "r-mu11ksubb-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu11ksubb.db" version
+                              'annotation))
+       (sha256
+        (base32 "0z6lbi437rvamwb6185f1brhayd70fw6dh6ga3ln2sinvbpkdh4w"))))
+    (properties `((upstream-name . "mu11ksubb.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu11ksubb.db")
+    (synopsis
+     "Affymetrix Affymetrix Mu11KsubB Array annotation data (chip mu11ksubb)")
+    (description
+     "Affymetrix Affymetrix Mu11@code{KsubB} Array annotation data (chip mu11ksubb)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mu11ksubaprobe
+  (package
+    (name "r-mu11ksubaprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu11ksubaprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1p3kc06h83ivh06a8qqcbpgbsbdfp9nnwvqfxr6d1gdn15qcp96k"))))
+    (properties `((upstream-name . "mu11ksubaprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu11ksubaprobe")
+    (synopsis "Probe sequence data for microarrays of type mu11ksuba")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Mu11@code{KsubA\\_probe\\_tab}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu11ksubacdf
+  (package
+    (name "r-mu11ksubacdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu11ksubacdf" version
+                              'annotation))
+       (sha256
+        (base32 "09xm3ah3zlssclblx663rlwrnmx3niabd5nf7zf7krhbpgcwhyim"))))
+    (properties `((upstream-name . "mu11ksubacdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu11ksubacdf")
+    (synopsis "mu11ksubacdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mu11@code{KsubA.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mu11ksuba-db
+  (package
+    (name "r-mu11ksuba-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mu11ksuba.db" version
+                              'annotation))
+       (sha256
+        (base32 "06sfscqw82sjf5q2cd60bi2jclf2j3xn37555zwm6l602piqyqs2"))))
+    (properties `((upstream-name . "mu11ksuba.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mu11ksuba.db")
+    (synopsis
+     "Affymetrix Affymetrix Mu11KsubA Array annotation data (chip mu11ksuba)")
+    (description
+     "Affymetrix Affymetrix Mu11@code{KsubA} Array annotation data (chip mu11ksuba)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mtbls2
+  (package
+    (name "r-mtbls2")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mtbls2" version
+                              'experiment))
+       (sha256
+        (base32 "1z4n5bykfk02b6gscwygy4r99fjk9cmiv8fzp2996q4mhzr7dh6c"))))
+    (properties `((upstream-name . "mtbls2")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "http://www.ebi.ac.uk/metabolights/MTBLS2")
+    (synopsis
+     "MetaboLights MTBLS2: Comparative LC/MS-based profiling of silver nitrate-treated Arabidopsis thaliana leaves of wild-type and cyp79B2 cyp79B3 double knockout plants. Böttcher et al. (2004)")
+    (description
+     "Indole-3-acetaldoxime (IAOx) represents an early intermediate of the
+biosynthesis of a variety of indolic secondary metabolites including the
+phytoanticipin indol-3-ylmethyl glucosinolate and the phytoalexin camalexin
+(3-thiazol-2'-yl-indole).  Arabidopsis thaliana cyp79B2 cyp79B3 double knockout
+plants are completely impaired in the conversion of tryptophan to
+indole-3-acetaldoxime and do not accumulate IAOx-derived metabolites any longer.
+ Consequently, comparative analysis of wild-type and cyp79B2 cyp79B3 plant lines
+has the potential to explore the complete range of IAOx-derived indolic
+secondary metabolites.")
+    (license license:cc0)))
+
+(define-public r-mta10transcriptcluster-db
+  (package
+    (name "r-mta10transcriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mta10transcriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "1hk862b1r023l3h04n5qqqd5fmpvz4l4xypb9lvc40nxr8h6sw2a"))))
+    (properties `((upstream-name . "mta10transcriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mta10transcriptcluster.db")
+    (synopsis "Affymetrix mta10 annotation data (chip mta10transcriptcluster)")
+    (description
+     "Affymetrix mta10 annotation data (chip mta10transcriptcluster) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mta10probeset-db
+  (package
+    (name "r-mta10probeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mta10probeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "1kscmw99qsl34dwhl3izvqhyga65lymgv9fx81h9abq9x2dhr7im"))))
+    (properties `((upstream-name . "mta10probeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mta10probeset.db")
+    (synopsis "Affymetrix mta10 annotation data (chip mta10probeset)")
+    (description
+     "Affymetrix mta10 annotation data (chip mta10probeset) assembled using data from
+public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-msstatstmt
   (package
@@ -1131,6 +1677,51 @@ QFeature infrastructure for quantitative mass spectrometry data to store the
 model results together with the raw data and preprocessed data.")
     (license license:artistic2.0)))
 
+(define-public r-msqc1
+  (package
+    (name "r-msqc1")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "msqc1" version
+                              'experiment))
+       (sha256
+        (base32 "1s6wfmrss67qz8lsiqbm3bsvw3zm9pczv0w6712dd2bd2mf2lirg"))))
+    (properties `((upstream-name . "msqc1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lattice))
+    (native-inputs (list r-knitr))
+    (home-page "https://panoramaweb.org/labkey/MSQC1.url")
+    (synopsis "Sigma mix MSQC1 data")
+    (description
+     "contains eight technical replicate data set and a three replicate dilution
+series of the MS Qual/Quant Quality Control Mix standard sample (Sigma-Aldrich,
+Buchs, Switzerland) measured on five different mass spectrometer platforms at
+the Functional Genomics Center Zurich.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mspuritydata
+  (package
+    (name "r-mspuritydata")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "msPurityData" version
+                              'experiment))
+       (sha256
+        (base32 "1gf28bcj65vyvghdd2vqj3zsymw2y4jk8dhhkhh6ps18qh149ca0"))))
+    (properties `((upstream-name . "msPurityData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/msPurityData")
+    (synopsis
+     "Fragmentation spectral libraries and data to test the msPurity package")
+    (description
+     "Fragmentation spectral libraries and data to test the @code{msPurity} package")
+    (license license:gpl2+)))
+
 (define-public r-mspurity
   (package
     (name "r-mspurity")
@@ -1212,6 +1803,28 @@ intensities used for the calculation.")
 different options for imputing missing data, and a variety of options for
 transforming, batch correcting, and normalizing data.")
     (license license:gpl3)))
+
+(define-public r-msmb
+  (package
+    (name "r-msmb")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MSMB" version
+                              'experiment))
+       (sha256
+        (base32 "1nq9y7c3y0q1040fzsg5hiavqq4n1778cry420f03db1yg40lns0"))))
+    (properties `((upstream-name . "MSMB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MSMB")
+    (synopsis "Data sets for the book 'Modern Statistics for Biology'")
+    (description
+     "Data sets for the book Modern Statistics for Modern Biology', S.P. Holmes and W.
+Huber.")
+    (license license:lgpl2.0+)))
 
 (define-public r-mslp
   (package
@@ -1337,6 +1950,29 @@ if missingness is MNAR (\"v2-mnar\"), or by Peptide Identity Propagation (PIP)."
      "The @code{MsDataHub} package uses the @code{ExperimentHub} infrastructure to
 distribute raw mass spectrometry data files, peptide spectrum matches or
 quantitative data from proteomics and metabolomics experiments.")
+    (license license:artistic2.0)))
+
+(define-public r-msd16s
+  (package
+    (name "r-msd16s")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "msd16s" version
+                              'experiment))
+       (sha256
+        (base32 "0s7bbcxgly2xr21dkf88hpby5b4lhwy18jyji88dhqqq4jpbc8dk"))))
+    (properties `((upstream-name . "msd16s")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-metagenomeseq r-biobase))
+    (home-page
+     "http://www.cbcb.umd.edu/research/projects/GEMS-pathogen-discovery")
+    (synopsis "Healthy and moderate to severe diarrhea 16S expression data")
+    (description
+     "Gut 16S sequencing expression data from 992 healthy and moderate-to-severe
+diarrhetic samples used in Diarrhea in young children from low-income countries
+leads to large-scale alterations in intestinal microbiota composition'.")
     (license license:artistic2.0)))
 
 (define-public r-msbackendsql
@@ -1643,6 +2279,54 @@ bisulphite sequencing experiment given a non-conversion rate and read error
 rate.")
     (license license:gpl3+)))
 
+(define-public r-mpedbarray-db
+  (package
+    (name "r-mpedbarray-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mpedbarray.db" version
+                              'annotation))
+       (sha256
+        (base32 "04pwchivzb19awnnqr9an0nl49rgdva58ip1fkgbavp3vlirxv4i"))))
+    (properties `((upstream-name . "mpedbarray.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mpedbarray.db")
+    (synopsis "FHCRC Nelson Lab mpedbarray Annotation Data (mpedbarray)")
+    (description
+     "FHCRC Nelson Lab mpedbarray Annotation Data (mpedbarray) assembled using data
+from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mousethymusageing
+  (package
+    (name "r-mousethymusageing")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MouseThymusAgeing" version
+                              'experiment))
+       (sha256
+        (base32 "19p7a0k565yz5201klib85z2gwqss0ywbv66sh0bvk4g5cmd9k0y"))))
+    (properties `((upstream-name . "MouseThymusAgeing")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-singlecellexperiment
+                             r-s4vectors r-experimenthub r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MouseThymusAgeing")
+    (synopsis "Single-cell Transcriptomics Data of the Ageing Mouse Thymus")
+    (description
+     "This package provides data access to counts matrices and meta-data for
+single-cell RNA sequencing data of thymic epithlial cells across mouse ageing
+using SMARTseq2 and 10X Genommics chemistries.  Access is provided as a data
+package via @code{ExperimentHub}.  It is designed to facilitate the re-use of
+data from Baran-Gale _et al._ in a consistent format that includes relevant and
+informative meta-data.")
+    (license license:gpl3)))
+
 (define-public r-mousefm
   (package
     (name "r-mousefm")
@@ -1677,6 +2361,236 @@ rate.")
      "This package provides methods for genetic finemapping in inbred mice by taking
 advantage of their very high homozygosity rate (>95%).")
     (license license:gpl3)))
+
+(define-public r-mousechrloc
+  (package
+    (name "r-mousechrloc")
+    (version "2.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouseCHRLOC" version
+                              'annotation))
+       (sha256
+        (base32 "0xylgnz43xmjnqdwv7pn034wfs61va21lvcpn9igdik2s42ykpp2"))))
+    (properties `((upstream-name . "mouseCHRLOC")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/mouseCHRLOC")
+    (synopsis "data package containing annotation data for mouseCHRLOC")
+    (description
+     "Annotation data file for @code{mouseCHRLOC} assembled using data from public
+data repositories")
+    (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
+
+(define-public r-mouse430a2probe
+  (package
+    (name "r-mouse430a2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse430a2probe" version
+                              'annotation))
+       (sha256
+        (base32 "1f7a6mvcpv57h7kfj1qzkcwh7mdl2w9z6ysmrgan9037rd0652sz"))))
+    (properties `((upstream-name . "mouse430a2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse430a2probe")
+    (synopsis "Probe sequence data for microarrays of type mouse430a2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Mouse430A\\_2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mouse430a2frmavecs
+  (package
+    (name "r-mouse430a2frmavecs")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse430a2frmavecs" version
+                              'annotation))
+       (sha256
+        (base32 "0bb9fqz4kkw78dw9mbkn1pp6wp7lmyqpcg8gdjg9j9aichbqbnh8"))))
+    (properties `((upstream-name . "mouse430a2frmavecs")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/mouse430a2frmavecs")
+    (synopsis "Vectors used by frma for microarrays of type mouse430a2")
+    (description
+     "This package was created by @code{frmaTools} version 1.19.3 and
+hgu133ahsentrezgcdf version 19.0.0.")
+    (license license:gpl2+)))
+
+(define-public r-mouse430a2cdf
+  (package
+    (name "r-mouse430a2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse430a2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "0530znylp4xqld8kak84d6lnc8r62p413d4kkn4j99kmmvx3l9rn"))))
+    (properties `((upstream-name . "mouse430a2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse430a2cdf")
+    (synopsis "mouse430a2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mouse430A_2.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mouse430a2-db
+  (package
+    (name "r-mouse430a2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse430a2.db" version
+                              'annotation))
+       (sha256
+        (base32 "1wxy9p9xmph3bimrz6fi9qyhf737alpqmb9ayyr5xk1fvj71c511"))))
+    (properties `((upstream-name . "mouse430a2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse430a2.db")
+    (synopsis
+     "Affymetrix Affymetrix Mouse430A_2 Array annotation data (chip mouse430a2)")
+    (description
+     "Affymetrix Affymetrix Mouse430A_2 Array annotation data (chip mouse430a2)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mouse4302probe
+  (package
+    (name "r-mouse4302probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse4302probe" version
+                              'annotation))
+       (sha256
+        (base32 "11mn9j98m3xfk5sn9cb2r92zckm6acplc66c5xn44nazf29pf9n1"))))
+    (properties `((upstream-name . "mouse4302probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse4302probe")
+    (synopsis "Probe sequence data for microarrays of type mouse4302")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Mouse430\\_2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mouse4302frmavecs
+  (package
+    (name "r-mouse4302frmavecs")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse4302frmavecs" version
+                              'annotation))
+       (sha256
+        (base32 "04clwkfz1gqqwrnqbavkka3hv480w6vi6c4q947qqnhw8j5jjp7s"))))
+    (properties `((upstream-name . "mouse4302frmavecs")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/mouse4302frmavecs")
+    (synopsis "Vectors used by frma for microarrays of type mouse4302")
+    (description
+     "This package was created by @code{frmaTools} version 1.19.3 and
+hgu133ahsentrezgcdf version 19.0.0.")
+    (license license:gpl2+)))
+
+(define-public r-mouse4302cdf
+  (package
+    (name "r-mouse4302cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse4302cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1mpyma4x8zfs2fmmx57xw4cfs2cf9lhw71nc3icl72d7vmwidswc"))))
+    (properties `((upstream-name . "mouse4302cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse4302cdf")
+    (synopsis "mouse4302cdf")
+    (description
+     "This package provides a package containing an environment representing the
+Mouse430_2.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mouse4302barcodevecs
+  (package
+    (name "r-mouse4302barcodevecs")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse4302barcodevecs" version
+                              'experiment))
+       (sha256
+        (base32 "1l2blxqsxy27lkrgd08r6a3j8va54hzhl5lx0i9bxpj1i9xiwkr6"))))
+    (properties `((upstream-name . "mouse4302barcodevecs")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/mouse4302barcodevecs")
+    (synopsis "mouse4302 data for barcode")
+    (description
+     "Data used by the barcode package for microarrays of type mouse4302.")
+    (license license:gpl2+)))
+
+(define-public r-mouse4302-db
+  (package
+    (name "r-mouse4302-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse4302.db" version
+                              'annotation))
+       (sha256
+        (base32 "0rf22kfj6y96ap0gcwq3mnpv6fj0yax37gf51sfi0wkmp95k7rcs"))))
+    (properties `((upstream-name . "mouse4302.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse4302.db")
+    (synopsis
+     "Affymetrix Affymetrix Mouse430_2 Array annotation data (chip mouse4302)")
+    (description
+     "Affymetrix Affymetrix Mouse430_2 Array annotation data (chip mouse4302)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mouse-db0
+  (package
+    (name "r-mouse-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mouse.db0" version
+                              'annotation))
+       (sha256
+        (base32 "092rjbkrqbkg1997vb4zpyjldv8c541kkx7q95pdpk5qx5aapwqy"))))
+    (properties `((upstream-name . "mouse.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mouse.db0")
+    (synopsis "Base Level Annotation databases for mouse")
+    (description
+     "Base annotation databases for mouse, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
 
 (define-public r-motifcounter
   (package
@@ -1821,6 +2735,31 @@ give an intuitive and scalable overview of the results. @code{MoSBi} comes with
 several biclustering algorithms, but can be easily extended to new biclustering
 algorithms.")
     (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
+
+(define-public r-mosaicsexample
+  (package
+    (name "r-mosaicsexample")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mosaicsExample" version
+                              'experiment))
+       (sha256
+        (base32 "02x97k7s5l3ca1xws4xplmc3x14wjy0rx1kl5jmy59ncc2lwik4r"))))
+    (properties `((upstream-name . "mosaicsExample")))
+    (build-system r-build-system)
+    (home-page "http://groups.google.com/group/mosaics_user_group")
+    (synopsis
+     "Example data for the mosaics package, which implements MOSAiCS and MOSAiCS-HMM, a statistical framework to analyze one-sample or two-sample ChIP-seq data for transcription factor binding and histone modification")
+    (description
+     "Data for the mosaics package, consisting of (1) chromosome 22 @code{ChIP} and
+control sample data from a @code{ChIP-seq} experiment of STAT1 binding and
+H3K4me3 modification in MCF7 cell line from ENCODE database (HG19) and (2)
+chromosome 21 @code{ChIP} and control sample data from a @code{ChIP-seq}
+experiment of STAT1 binding, with mappability, GC content, and sequence
+ambiguity scores of human genome HG18.")
+    (license license:gpl2+)))
 
 (define-public r-mosaics
   (package
@@ -2130,6 +3069,245 @@ standardised data formats accross vendors.")
 omics data.")
     (license license:gpl2)))
 
+(define-public r-mogene21sttranscriptcluster-db
+  (package
+    (name "r-mogene21sttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene21sttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "02g2n5nkxi9lqw9h7sbkblk99zd57lkrldqb1fmi9zww59qwagrv"))))
+    (properties `((upstream-name . "mogene21sttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/mogene21sttranscriptcluster.db")
+    (synopsis
+     "Affymetrix mogene21 annotation data (chip mogene21sttranscriptcluster)")
+    (description
+     "Affymetrix mogene21 annotation data (chip mogene21sttranscriptcluster) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene21stprobeset-db
+  (package
+    (name "r-mogene21stprobeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene21stprobeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "172bhzqqw5hz76bw8vqwx2qpw4f6rwbcm6savmkxmmhzb2nq60z5"))))
+    (properties `((upstream-name . "mogene21stprobeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mogene21stprobeset.db")
+    (synopsis "Affymetrix mogene21 annotation data (chip mogene21stprobeset)")
+    (description
+     "Affymetrix mogene21 annotation data (chip mogene21stprobeset) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene20sttranscriptcluster-db
+  (package
+    (name "r-mogene20sttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene20sttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "1bpzpba9aifc7w6qbrh6rnc636k6z1r9gz03sxvc3aa3977p9xag"))))
+    (properties `((upstream-name . "mogene20sttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/mogene20sttranscriptcluster.db")
+    (synopsis
+     "Affymetrix mogene20 annotation data (chip mogene20sttranscriptcluster)")
+    (description
+     "Affymetrix mogene20 annotation data (chip mogene20sttranscriptcluster) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene20stprobeset-db
+  (package
+    (name "r-mogene20stprobeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene20stprobeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "0v16la20n39m6gsy51w61df2rhndzivszasswrc1mm465ksmhgng"))))
+    (properties `((upstream-name . "mogene20stprobeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mogene20stprobeset.db")
+    (synopsis "Affymetrix mogene20 annotation data (chip mogene20stprobeset)")
+    (description
+     "Affymetrix mogene20 annotation data (chip mogene20stprobeset) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene11sttranscriptcluster-db
+  (package
+    (name "r-mogene11sttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene11sttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "0yj71cs8qzv8pbricaljwpqz3fi98mianyxk4bd1fi6faiwnj0xv"))))
+    (properties `((upstream-name . "mogene11sttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/mogene11sttranscriptcluster.db")
+    (synopsis
+     "Affymetrix mogene11 annotation data (chip mogene11sttranscriptcluster)")
+    (description
+     "Affymetrix mogene11 annotation data (chip mogene11sttranscriptcluster) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene11stprobeset-db
+  (package
+    (name "r-mogene11stprobeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene11stprobeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "0wxli72widbakvcvhqc0md7ys0c36gmc047p9n9d8z3vs3g1fhvs"))))
+    (properties `((upstream-name . "mogene11stprobeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mogene11stprobeset.db")
+    (synopsis "Affymetrix mogene11 annotation data (chip mogene11stprobeset)")
+    (description
+     "Affymetrix mogene11 annotation data (chip mogene11stprobeset) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene10stv1probe
+  (package
+    (name "r-mogene10stv1probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene10stv1probe" version
+                              'annotation))
+       (sha256
+        (base32 "1qjnsf6cv23gnqdpcy1xqxy807y91fnaiyh95hg99v932pvika6a"))))
+    (properties `((upstream-name . "mogene10stv1probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mogene10stv1probe")
+    (synopsis "Probe sequence data for microarrays of type mogene10stv1")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was @code{MoGene-1\\_0-st-v1\\_probe\\_tab}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mogene10stv1cdf
+  (package
+    (name "r-mogene10stv1cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene10stv1cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1zhq08zsghck39ly7ymcjanzgw3xy1hqw435hwcrrlipv6i4lbmj"))))
+    (properties `((upstream-name . "mogene10stv1cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mogene10stv1cdf")
+    (synopsis "mogene10stv1cdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{MoGene-1_0-st-v1.cdf} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mogene10sttranscriptcluster-db
+  (package
+    (name "r-mogene10sttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene10sttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "1l9k0vj6p9q5rj2hgw9bdcpmbcslvqaks1jm3bxb2m7h4fazsncd"))))
+    (properties `((upstream-name . "mogene10sttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/mogene10sttranscriptcluster.db")
+    (synopsis
+     "Affymetrix mogene10 annotation data (chip mogene10sttranscriptcluster)")
+    (description
+     "Affymetrix mogene10 annotation data (chip mogene10sttranscriptcluster) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene10stprobeset-db
+  (package
+    (name "r-mogene10stprobeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene10stprobeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "0hqgazgiq28y9hn86zdviv1zv9x3mkkgvh05x0d9nxlhhzxyxj9m"))))
+    (properties `((upstream-name . "mogene10stprobeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mogene10stprobeset.db")
+    (synopsis "Affymetrix mogene10 annotation data (chip mogene10stprobeset)")
+    (description
+     "Affymetrix mogene10 annotation data (chip mogene10stprobeset) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mogene-1-0-st-v1frmavecs
+  (package
+    (name "r-mogene-1-0-st-v1frmavecs")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mogene.1.0.st.v1frmavecs" version
+                              'annotation))
+       (sha256
+        (base32 "00lyakg7dhsm3jkh011mfq1vy439mds64zpm6fgyq592x3k9w2ah"))))
+    (properties `((upstream-name . "mogene.1.0.st.v1frmavecs")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/mogene.1.0.st.v1frmavecs")
+    (synopsis
+     "Vectors used by frma for microarrays of type mogene.1.0.st.v1frmavecs")
+    (description
+     "This package was created by @code{frmaTools} version 1.13.0.")
+    (license license:gpl2+)))
+
 (define-public r-mogamun
   (package
     (name "r-mogamun")
@@ -2153,6 +3331,27 @@ a multiplex biological network.  This allows analyzing different biological
 networks at the same time.  MOGAMUN is based on NSGA-II (Non-Dominated Sorting
 Genetic Algorithm, version II), which we adapted to work on networks.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-mofadata
+  (package
+    (name "r-mofadata")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MOFAdata" version
+                              'experiment))
+       (sha256
+        (base32 "1pl593dlf87g88bdabqqn2a9b1vkgg4znp1l9wbyk49a35l2rqy1"))))
+    (properties `((upstream-name . "MOFAdata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MOFAdata")
+    (synopsis "Data package for Multi-Omics Factor Analysis (MOFA)")
+    (description
+     "This package provides a collection of datasets to accompany the R package MOFA
+and illustrate running and analysing MOFA models.")
+    (license license:lgpl3)))
 
 (define-public r-mofa2
   (package
@@ -2203,6 +3402,202 @@ information on the samples can be incorporated using the MEFISTO framework,
 which is part of MOFA2.  Downstream analysis functions to inspect molecular
 features underlying each factor, vizualisation, imputation etc are available.")
     (license (license:fsdg-compatible "file://LICENSE"))))
+
+(define-public r-moexexonprobesetlocation
+  (package
+    (name "r-moexexonprobesetlocation")
+    (version "1.15.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MoExExonProbesetLocation" version
+                              'annotation))
+       (sha256
+        (base32 "0bvj3bji4bwwmxjz4b57n1aqypdibdmry30rfwmlxss1hav96sl7"))))
+    (properties `((upstream-name . "MoExExonProbesetLocation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/MoExExonProbesetLocation")
+    (synopsis "Probe sequence data for microarrays of type MoEx")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.7.17.  The exon-level probeset genome location was retrieved from Netaffx
+using @code{AffyCompatible}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-moex10sttranscriptcluster-db
+  (package
+    (name "r-moex10sttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moex10sttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "05x687d8gv8yh8rwqfz962ij9rk6k4vzf0bn868zn2j7cykh129d"))))
+    (properties `((upstream-name . "moex10sttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/moex10sttranscriptcluster.db")
+    (synopsis
+     "Affymetrix moex10 annotation data (chip moex10sttranscriptcluster)")
+    (description
+     "Affymetrix moex10 annotation data (chip moex10sttranscriptcluster) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-moex10stprobeset-db
+  (package
+    (name "r-moex10stprobeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moex10stprobeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "1a4jparn4l9v89y1g1xq7w4z1qqz7s2y6c4fjr7vbs8kfk43d3rd"))))
+    (properties `((upstream-name . "moex10stprobeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moex10stprobeset.db")
+    (synopsis "Affymetrix moex10 annotation data (chip moex10stprobeset)")
+    (description
+     "Affymetrix moex10 annotation data (chip moex10stprobeset) assembled using data
+from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-moe430bprobe
+  (package
+    (name "r-moe430bprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moe430bprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1nziw3pj4picz0aazblpqkbw82wq3vdajh9i78yfvlz1bwb2vpfi"))))
+    (properties `((upstream-name . "moe430bprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moe430bprobe")
+    (synopsis "Probe sequence data for microarrays of type moe430b")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MOE430B\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-moe430bcdf
+  (package
+    (name "r-moe430bcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moe430bcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0yl5pkqj37188k2yvvsqhnhm2vx523r11sry976bwzcadlicfhvb"))))
+    (properties `((upstream-name . "moe430bcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moe430bcdf")
+    (synopsis "moe430bcdf")
+    (description
+     "This package provides a package containing an environment representing the
+MOE430B.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-moe430b-db
+  (package
+    (name "r-moe430b-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moe430b.db" version
+                              'annotation))
+       (sha256
+        (base32 "06hycpzsavrgy196d5vx1y3xqqr1w4x40byqvfzxnd5cah26yqa2"))))
+    (properties `((upstream-name . "moe430b.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moe430b.db")
+    (synopsis
+     "Affymetrix Affymetrix MOE430B Array annotation data (chip moe430b)")
+    (description
+     "Affymetrix Affymetrix MOE430B Array annotation data (chip moe430b) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-moe430aprobe
+  (package
+    (name "r-moe430aprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moe430aprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1paiwgjzlq4c04wy8fpnnxj7n5asiw6z2mz0rjrifja9lgyilq50"))))
+    (properties `((upstream-name . "moe430aprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moe430aprobe")
+    (synopsis "Probe sequence data for microarrays of type moe430a")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MOE430A\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-moe430acdf
+  (package
+    (name "r-moe430acdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moe430acdf" version
+                              'annotation))
+       (sha256
+        (base32 "0n4dc2racw68nmfz6arl7f0yh9f3mlkvilsl694zrxw2ysbq1d70"))))
+    (properties `((upstream-name . "moe430acdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moe430acdf")
+    (synopsis "moe430acdf")
+    (description
+     "This package provides a package containing an environment representing the
+MOE430A.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-moe430a-db
+  (package
+    (name "r-moe430a-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "moe430a.db" version
+                              'annotation))
+       (sha256
+        (base32 "1qc9gcirhmmwj9c4wfcj4f6j5dldf5s1z3nz3w0c95ywmy60sb43"))))
+    (properties `((upstream-name . "moe430a.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/moe430a.db")
+    (synopsis
+     "Affymetrix Affymetrix MOE430A Array annotation data (chip moe430a)")
+    (description
+     "Affymetrix Affymetrix MOE430A Array annotation data (chip moe430a) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-modcon
   (package
@@ -2363,6 +3758,28 @@ perturbed genes for each cluster.  The mixture components are inferred via an
 expectation maximization algorithm.")
     (license license:gpl3)))
 
+(define-public r-mmdiffbamsubset
+  (package
+    (name "r-mmdiffbamsubset")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MMDiffBamSubset" version
+                              'experiment))
+       (sha256
+        (base32 "1awhcc4zjmzwqc35xv1l2alybbnv1b16bbxn85xywdq0qyj8zgxp"))))
+    (properties `((upstream-name . "MMDiffBamSubset")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/MMDiffBamSubset")
+    (synopsis "Example ChIP-Seq data for the MMDiff package")
+    (description
+     "Subset of BAM files, including WT_2.bam, Null_2.bam, Resc_2.bam, Input.bam from
+the \"Cfp1\" experiment (see Clouaire et al., Genes Dev.  2012).  Data is
+available under @code{ArrayExpress} accession numbers E-ERAD-79.  Additionally,
+corresponding subset of peaks called by MACS")
+    (license license:lgpl2.0+)))
+
 (define-public r-mmdiff2
   (package
     (name "r-mmdiff2")
@@ -2392,6 +3809,74 @@ expectation maximization algorithm.")
      "This package detects statistically significant differences between read
 enrichment profiles in different @code{ChIP-Seq} samples.  To take advantage of
 shape differences it uses Kernel methods (Maximum Mean Discrepancy, MMD).")
+    (license license:artistic2.0)))
+
+(define-public r-mmappr2data
+  (package
+    (name "r-mmappr2data")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MMAPPR2data" version
+                              'experiment))
+       (sha256
+        (base32 "16ang08nc4jw8m4faacd0rhv47h5wlp771nd6d8bn1r6d5b9si3w"))))
+    (properties `((upstream-name . "MMAPPR2data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsamtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3613585/")
+    (synopsis "Sample Data for MMAPPR2")
+    (description
+     "This package contains data for illustration purposes in the MMAPPR2 package,
+namely simulated BAM files containing RNA-Seq data for a mutation in the slc24a5
+gene, taken from the GRCz11 genome.  Also contains reference sequence and
+annotation files for the region.")
+    (license license:gpl3)))
+
+(define-public r-mmagilentdesign026655-db
+  (package
+    (name "r-mmagilentdesign026655-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MmAgilentDesign026655.db" version
+                              'annotation))
+       (sha256
+        (base32 "00d0yjcb5id7zacx4bzdwy4q6f4qvnnx8ph4d4xz1fmcbspz2qiz"))))
+    (properties `((upstream-name . "MmAgilentDesign026655.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/MmAgilentDesign026655.db")
+    (synopsis
+     "Agilent Chips that use Agilent design number 026655 annotation data (chip MmAgilentDesign026655)")
+    (description
+     "Agilent Chips that use Agilent design number 026655 annotation data (chip
+@code{MmAgilentDesign026655}) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mm24kresogen-db
+  (package
+    (name "r-mm24kresogen-db")
+    (version "2.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mm24kresogen.db" version
+                              'annotation))
+       (sha256
+        (base32 "0kf9cilhfpfl9cws1b08ic11fnqscdvbja4m16sm4xjyfd2kskfp"))))
+    (properties `((upstream-name . "mm24kresogen.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mm24kresogen.db")
+    (synopsis
+     "RNG_MRC Mouse Pangenomic 24k Set annotation data (chip mm24kresogen)")
+    (description
+     "RNG_MRC Mouse Pangenomic 24k Set annotation data (chip mm24kresogen) assembled
+using data from public repositories")
     (license license:artistic2.0)))
 
 (define-public r-mlseq
@@ -2645,6 +4130,47 @@ expriments.  These experiments can be time point experiments, and or condition
 expriments.")
     (license license:expat)))
 
+(define-public r-mirnatarget
+  (package
+    (name "r-mirnatarget")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRNATarget" version
+                              'experiment))
+       (sha256
+        (base32 "0qlazpmar9wi0gbh2qpkz8f44vzzg79iia1sgry42xbykx7bzx0y"))))
+    (properties `((upstream-name . "miRNATarget")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/miRNATarget")
+    (synopsis
+     "gene target tabale of miRNA for human/mouse used for MiRaGE package")
+    (description
+     "gene target tabale of @code{miRNA} for human/mouse used for @code{MiRaGE}
+package")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mirnatap-db
+  (package
+    (name "r-mirnatap-db")
+    (version "0.99.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRNAtap.db" version
+                              'annotation))
+       (sha256
+        (base32 "1j4igmyb9f4fa0a72hkmq3f7xgvyv38wai3mds5sd6mfgfc3brs3"))))
+    (properties `((upstream-name . "miRNAtap.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite r-mirnatap r-dbi r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/miRNAtap.db")
+    (synopsis "Data for miRNAtap")
+    (description "This package holds the database for @code{miRNAtap}.")
+    (license license:gpl2)))
+
 (define-public r-mirnatap
   (package
     (name "r-mirnatap")
@@ -2710,7 +4236,8 @@ multiple genes, or many @code{miRNAs} affecting many genes.")
         (base32 "1ndd80xsq7qjgmn738nf5vhz68mxni1waah6iwd57iiyl45fkj29"))))
     (properties `((upstream-name . "miRNAmeConverter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-dbi r-annotationdbi))
+    (propagated-inputs (list r-reshape2 r-mirbaseversions-db r-dbi
+                             r-annotationdbi))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/miRNAmeConverter")
     (synopsis "Convert miRNA Names to Different miRBase Versions")
@@ -2719,6 +4246,91 @@ multiple genes, or many @code{miRNAs} affecting many genes.")
 sequence retrieval, checking names for validity and detecting @code{miRBase}
 version of a given set of names (data from http://www.mirbase.org/).")
     (license license:artistic2.0)))
+
+(define-public r-mirna20cdf
+  (package
+    (name "r-mirna20cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mirna20cdf" version
+                              'annotation))
+       (sha256
+        (base32 "05yvi7jibj8fiak7z03gjv07xagpda3gy19namyy4iiq3w7ya2fj"))))
+    (properties `((upstream-name . "mirna20cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mirna20cdf")
+    (synopsis "mirna20cdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{miRNA-2_0.cdf} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mirna10probe
+  (package
+    (name "r-mirna10probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mirna10probe" version
+                              'annotation))
+       (sha256
+        (base32 "0f6jfzmj9h4g60lnkdi65grl3ncn19qnrwcxsdhqgiw3ll19cbj7"))))
+    (properties `((upstream-name . "mirna10probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mirna10probe")
+    (synopsis "Probe sequence data for microarrays of type mirna10")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was @code{miRNA-1\\_0\\_probe\\_tab}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mirna10cdf
+  (package
+    (name "r-mirna10cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mirna10cdf" version
+                              'annotation))
+       (sha256
+        (base32 "146gc1dx071vawn29k2m31zpi3wdwykss4qh8znpmbp5qcja4hyb"))))
+    (properties `((upstream-name . "mirna10cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mirna10cdf")
+    (synopsis "mirna10cdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{miRNA-1_0.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mirna102xgaincdf
+  (package
+    (name "r-mirna102xgaincdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mirna102xgaincdf" version
+                              'annotation))
+       (sha256
+        (base32 "03q71dq6b0plivj5bgpgx0pnqdwfgplakyk5ggj4w7kqwmr5k17i"))))
+    (properties `((upstream-name . "mirna102xgaincdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mirna102xgaincdf")
+    (synopsis "mirna102xgaincdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{miRNA-1_0_2Xgain.CDF} file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-mirlab
   (package
@@ -2787,6 +4399,28 @@ validate the results, and functions to conduct enrichment analyses.")
 analysis of @code{microRNA} and @code{mRNA} expression levels.")
     (license license:gpl3+)))
 
+(define-public r-mircompdata
+  (package
+    (name "r-mircompdata")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRcompData" version
+                              'experiment))
+       (sha256
+        (base32 "15w8vldxp5wp0vqfy3k7s8imjvmdaibgiw0p2li5sx2j0g6i27g6"))))
+    (properties `((upstream-name . "miRcompData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/miRcompData")
+    (synopsis "Data used in the miRcomp package")
+    (description
+     "Raw amplification data from a large @code{microRNA} mixture / dilution study.
+These data are used by the @code{miRcomp} package to assess the performance of
+methods that estimate expression from the amplification curves.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-mircomp
   (package
     (name "r-mircomp")
@@ -2799,7 +4433,7 @@ analysis of @code{microRNA} and @code{mRNA} expression levels.")
         (base32 "04qpmxj75fh7g67vw5vp79aj5b4n4ppm228ykah5pnpk0swf4kpm"))))
     (properties `((upstream-name . "miRcomp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-kernsmooth r-biobase))
+    (propagated-inputs (list r-mircompdata r-kernsmooth r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/miRcomp")
     (synopsis
@@ -2810,6 +4444,50 @@ read in the raw amplification data and use these data to assess the performance
 of methods that estimate expression from the amplification curves.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-mirbaseversions-db
+  (package
+    (name "r-mirbaseversions-db")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRBaseVersions.db" version
+                              'annotation))
+       (sha256
+        (base32 "09n0309glsj53g6wainl5m0vwnlx71ija5zmlqd0cpbhdis5zihw"))))
+    (properties `((upstream-name . "miRBaseVersions.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite r-gtools r-dbi r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/miRBaseVersions.db")
+    (synopsis
+     "Collection of mature miRNA names of 22 different miRBase release versions")
+    (description
+     "Annotation package containing all available @code{miRNA} names from 22 versions
+(data from http://www.mirbase.org/).")
+    (license license:artistic2.0)))
+
+(define-public r-mirbase-db
+  (package
+    (name "r-mirbase-db")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mirbase.db" version
+                              'annotation))
+       (sha256
+        (base32 "0l7ah1ia7q1h16av2v1qa9nqpr0604z5dlrq37kd0aiz8dcxyddk"))))
+    (properties `((upstream-name . "mirbase.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mirbase.db")
+    (synopsis "miRBase: the microRNA database")
+    (description
+     "@code{miRBase}: the @code{microRNA} database assembled using data from
+@code{miRBase} (http://www.mirbase.org/).")
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-mirage
   (package
@@ -2917,6 +4595,29 @@ probabilistic framework to predict the low-quality cells in a given dataset.")
 classes.")
     (license license:gpl2+)))
 
+(define-public r-minionsummarydata
+  (package
+    (name "r-minionsummarydata")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "minionSummaryData" version
+                              'experiment))
+       (sha256
+        (base32 "1pkg77i5xi96yqn7i3xchwknh5lii35hyms8rjqqzamjr7g16ifs"))))
+    (properties `((upstream-name . "minionSummaryData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/minionSummaryData")
+    (synopsis
+     "Summarised MinION sequencing data published by Ashton et al. 2015")
+    (description
+     "Summarised @code{MinION} sequencing data for Salmonella Typhi published by
+Ashton et al.  in 2015.  Three replicate runs are each provided as Fast5Summary
+objects.")
+    (license license:expat)))
+
 (define-public r-minimumdistance
   (package
     (name "r-minimumdistance")
@@ -2952,6 +4653,28 @@ classes.")
 genotyping platforms.")
     (license license:artistic2.0)))
 
+(define-public r-minfidataepic
+  (package
+    (name "r-minfidataepic")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "minfiDataEPIC" version
+                              'experiment))
+       (sha256
+        (base32 "1m2wl7x48rjjl3sh8r42wmw761r55821jjvbxjs7lycbmgd162ph"))))
+    (properties `((upstream-name . "minfiDataEPIC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi r-illuminahumanmethylationepicmanifest
+                             r-illuminahumanmethylationepicanno-ilm10b2-hg19))
+    (home-page "https://bioconductor.org/packages/minfiDataEPIC")
+    (synopsis "Example data for the Illumina Methylation EPIC array")
+    (description
+     "Data from 3 technical replicates of the cell line GM12878 from the EPIC
+methylation array.")
+    (license license:artistic2.0)))
+
 (define-public r-mineica
   (package
     (name "r-mineica")
@@ -2971,6 +4694,7 @@ genotyping platforms.")
                              r-plyr
                              r-mclust
                              r-marray
+                             r-lumihumanall-db
                              r-lumi
                              r-jade
                              r-igraph
@@ -3193,6 +4917,29 @@ clusters over a whole data set of individuals.  Moreover, the package includes
 multiple functions to subset samples from paired times, validate the results or
 visualize the output.")
     (license license:gpl3)))
+
+(define-public r-micrornaome
+  (package
+    (name "r-micrornaome")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "microRNAome" version
+                              'experiment))
+       (sha256
+        (base32 "09b0260qxdhx7sax1xmg8nz8mf0nv4yh70ibd8cyxj8fpnzifnhh"))))
+    (properties `((upstream-name . "microRNAome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment))
+    (home-page "https://bioconductor.org/packages/microRNAome")
+    (synopsis "SummarizedExperiment for the microRNAome project")
+    (description
+     "This package provides a @code{SummarizedExperiment} object of read counts for
+@code{microRNAs} across tissues, cell-types, and cancer cell-lines.  The read
+count matrix was prepared and provided by the author of the study: Towards the
+human cellular @code{microRNAome}.")
+    (license license:gpl2+)))
 
 (define-public r-microrna
   (package
@@ -3421,6 +5168,37 @@ addition to applying common analytical workflows the application enables
 automated analysis report generation.")
     (license license:expat)))
 
+(define-public r-microbiomedatasets
+  (package
+    (name "r-microbiomedatasets")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "microbiomeDataSets" version
+                              'experiment))
+       (sha256
+        (base32 "1i118r0wfq2y57h3m1l3nzhrixmkq0dsc1dfkbfi83xl29ijhjn9"))))
+    (properties `((upstream-name . "microbiomeDataSets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treesummarizedexperiment
+                             r-summarizedexperiment
+                             r-multiassayexperiment
+                             r-experimenthub
+                             r-biostrings
+                             r-biocgenerics
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/microbiomeDataSets")
+    (synopsis "Experiment Hub based microbiome datasets")
+    (description
+     "@code{microbiomeDataSets} is a collection of microbiome datasets loaded from
+Bioconductor'S @code{ExperimentHub} infrastructure.  The datasets serve as
+reference for workflows and vignettes published adjacent to the microbiome
+analysis tools on Bioconductor.  Additional datasets can be added overtime and
+additions from authors are welcome.")
+    (license license:cc0)))
+
 (define-public r-microbiomedasim
   (package
     (name "r-microbiomedasim")
@@ -3452,6 +5230,33 @@ for the mean trend.  Observations are drawn from a multivariate normal model.
 The objective of this package is to be able to simulate data in order to
 accurately compare different longitudinal methods for differential abundance.")
     (license license:expat)))
+
+(define-public r-microbiomebenchmarkdata
+  (package
+    (name "r-microbiomebenchmarkdata")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MicrobiomeBenchmarkData" version
+                              'experiment))
+       (sha256
+        (base32 "1546ccbnz86scdslf17rzsvyc7h0pb4mw77b17jicfwr8h4qff25"))))
+    (properties `((upstream-name . "MicrobiomeBenchmarkData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treesummarizedexperiment r-summarizedexperiment
+                             r-s4vectors r-biocfilecache r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/waldronlab/MicrobiomeBenchmarkData")
+    (synopsis "Datasets for benchmarking in microbiome research")
+    (description
+     "The @code{MicrobiomeBenchmarkData} package provides functionality to access
+microbiome datasets suitable for benchmarking.  These datasets have some
+biological truth, which allows to have expected results for comparison.  The
+datasets come from various published sources and are provided as
+@code{TreeSummarizedExperiment} objects.  Currently, only datasets suitable for
+benchmarking differential abundance methods are available.")
+    (license license:artistic2.0)))
 
 (define-public r-michip
   (package
@@ -3550,6 +5355,525 @@ used to determine the abundance matrix.  The resulting abundance matrix is
 applied to (Tree)@code{SummarizedExperiment} objects.")
     (license (list license:artistic2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-mi16cod-db
+  (package
+    (name "r-mi16cod-db")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mi16cod.db" version
+                              'annotation))
+       (sha256
+        (base32 "1v64plvn173hdvjyy491qh2wd4mgbpwr27iq7lab9b3w1g3b1a82"))))
+    (properties `((upstream-name . "mi16cod.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mi16cod.db")
+    (synopsis
+     "Codelink Mouse Inflammation 16 Bioarray annotation data (chip mi16cod)")
+    (description
+     "Codelink Mouse Inflammation 16 Bioarray annotation data (chip mi16cod) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgug4122a-db
+  (package
+    (name "r-mgug4122a-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgug4122a.db" version
+                              'annotation))
+       (sha256
+        (base32 "0x4mrjqd9wnppkp757f3azllbjiilxfds3cpbcrfsi07l8lf4mxx"))))
+    (properties `((upstream-name . "mgug4122a.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgug4122a.db")
+    (synopsis
+     "Agilent \"Mouse Genome, Whole\" annotation data (chip mgug4122a)")
+    (description
+     "Agilent \"Mouse Genome, Whole\" annotation data (chip mgug4122a) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgug4121a-db
+  (package
+    (name "r-mgug4121a-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgug4121a.db" version
+                              'annotation))
+       (sha256
+        (base32 "0947crjk8nj4bzgwz7anran7y2qhd1v8bp9f59ja3628rgjx6cz5"))))
+    (properties `((upstream-name . "mgug4121a.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgug4121a.db")
+    (synopsis "Agilent Mouse annotation data (chip mgug4121a)")
+    (description
+     "Agilent Mouse annotation data (chip mgug4121a) assembled using data from public
+repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgug4120a-db
+  (package
+    (name "r-mgug4120a-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgug4120a.db" version
+                              'annotation))
+       (sha256
+        (base32 "1qnzpww4wy926j4i10rfddng8ygav86ig9c301qwvw0ly235f0vx"))))
+    (properties `((upstream-name . "mgug4120a.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgug4120a.db")
+    (synopsis "Agilent annotation data (chip mgug4120a)")
+    (description
+     "Agilent annotation data (chip mgug4120a) assembled using data from public
+repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgug4104a-db
+  (package
+    (name "r-mgug4104a-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgug4104a.db" version
+                              'annotation))
+       (sha256
+        (base32 "1aqs943lff3q1g2dfl9cyxfpm8swkjcb4spi5drgw39g9m8p3dp8"))))
+    (properties `((upstream-name . "mgug4104a.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgug4104a.db")
+    (synopsis "Agilent annotation data (chip mgug4104a)")
+    (description
+     "Agilent annotation data (chip mgug4104a) assembled using data from public
+repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mguatlas5k-db
+  (package
+    (name "r-mguatlas5k-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mguatlas5k.db" version
+                              'annotation))
+       (sha256
+        (base32 "08lw02r9wpc06pq82934dlfsrjjsaqchrsyghc8pgk6iqq1c3f9r"))))
+    (properties `((upstream-name . "mguatlas5k.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mguatlas5k.db")
+    (synopsis
+     "Clontech BD Atlas Long Oligos Mouse 5K annotation data (chip mguatlas5k)")
+    (description
+     "Clontech BD Atlas Long Oligos Mouse 5K annotation data (chip mguatlas5k)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgu74cv2probe
+  (package
+    (name "r-mgu74cv2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74cv2probe" version
+                              'annotation))
+       (sha256
+        (base32 "0rx2cigsi4bnm48vl0bbfh6k3k3cs8nv0x7k7j9vq5z9dniyzqf6"))))
+    (properties `((upstream-name . "mgu74cv2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74cv2probe")
+    (synopsis "Probe sequence data for microarrays of type mgu74cv2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MG-U74Cv2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74cv2cdf
+  (package
+    (name "r-mgu74cv2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74cv2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "18k1kahfwix3cs6kh2aml2mi39l3vjr526ajksljjk46n0bsf1r2"))))
+    (properties `((upstream-name . "mgu74cv2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74cv2cdf")
+    (synopsis "mgu74cv2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+MG_U74Cv2.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74cv2-db
+  (package
+    (name "r-mgu74cv2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74cv2.db" version
+                              'annotation))
+       (sha256
+        (base32 "072brqii2ya2ppqbp71r61j6xh2syfhnfgnh3452dyjf2xc48klr"))))
+    (properties `((upstream-name . "mgu74cv2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74cv2.db")
+    (synopsis
+     "Affymetrix Affymetrix MG_U74Cv2 Array annotation data (chip mgu74cv2)")
+    (description
+     "Affymetrix Affymetrix MG_U74Cv2 Array annotation data (chip mgu74cv2) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgu74cprobe
+  (package
+    (name "r-mgu74cprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74cprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0ib5iyyp6mms5cszarczs82y2779d3cssz7hih1wm0vddbby40km"))))
+    (properties `((upstream-name . "mgu74cprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74cprobe")
+    (synopsis "Probe sequence data for microarrays of type mgu74c")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MG-U74C\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74ccdf
+  (package
+    (name "r-mgu74ccdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74ccdf" version
+                              'annotation))
+       (sha256
+        (base32 "01dbsxmv7r1r2n348gcdpkxqmciqyrf3s0handp3hl33s6pd8xbj"))))
+    (properties `((upstream-name . "mgu74ccdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74ccdf")
+    (synopsis "mgu74ccdf")
+    (description
+     "This package provides a package containing an environment representing the
+MG_U74C.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74c-db
+  (package
+    (name "r-mgu74c-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74c.db" version
+                              'annotation))
+       (sha256
+        (base32 "1s09n64m46qmsl0drlr383rb20gvq62xzqg3l8jk1mja2mpl41ji"))))
+    (properties `((upstream-name . "mgu74c.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74c.db")
+    (synopsis
+     "Affymetrix Affymetrix MG_U74C Array annotation data (chip mgu74c)")
+    (description
+     "Affymetrix Affymetrix MG_U74C Array annotation data (chip mgu74c) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgu74bv2probe
+  (package
+    (name "r-mgu74bv2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74bv2probe" version
+                              'annotation))
+       (sha256
+        (base32 "1kn4549s0kj0jpg7yx4lkc8gvxdfm7p21b6yy52ymhfgbv431sl6"))))
+    (properties `((upstream-name . "mgu74bv2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74bv2probe")
+    (synopsis "Probe sequence data for microarrays of type mgu74bv2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MG-U74Bv2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74bv2cdf
+  (package
+    (name "r-mgu74bv2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74bv2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "05w0dh194lncda9qdkmg52znjrnlnjc15fzplw147nyablq5m109"))))
+    (properties `((upstream-name . "mgu74bv2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74bv2cdf")
+    (synopsis "mgu74bv2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+MG_U74Bv2.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74bv2-db
+  (package
+    (name "r-mgu74bv2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74bv2.db" version
+                              'annotation))
+       (sha256
+        (base32 "1r35rhh11q8s1d9mva4qky8sjh04hpk1ziavx77b5mw6aza1ckh4"))))
+    (properties `((upstream-name . "mgu74bv2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74bv2.db")
+    (synopsis
+     "Affymetrix Affymetrix MG_U74Bv2 Array annotation data (chip mgu74bv2)")
+    (description
+     "Affymetrix Affymetrix MG_U74Bv2 Array annotation data (chip mgu74bv2) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgu74bprobe
+  (package
+    (name "r-mgu74bprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74bprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0igrdbp2hmn550rcfvrscmvykbpm9sbnfa29walv1v57jy6wl7fl"))))
+    (properties `((upstream-name . "mgu74bprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74bprobe")
+    (synopsis "Probe sequence data for microarrays of type mgu74b")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MG-U74B\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74bcdf
+  (package
+    (name "r-mgu74bcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74bcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0sivgn6srmak7k6p8sj382lsanc34xj5b6182ggnp872y8v6zx5b"))))
+    (properties `((upstream-name . "mgu74bcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74bcdf")
+    (synopsis "mgu74bcdf")
+    (description
+     "This package provides a package containing an environment representing the
+MG_U74B.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74b-db
+  (package
+    (name "r-mgu74b-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74b.db" version
+                              'annotation))
+       (sha256
+        (base32 "0h8riyk7816ydqhlah3lnlqqzpv6xca3flyzp889kh7j5r9d4792"))))
+    (properties `((upstream-name . "mgu74b.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74b.db")
+    (synopsis
+     "Affymetrix Affymetrix MG_U74B Array annotation data (chip mgu74b)")
+    (description
+     "Affymetrix Affymetrix MG_U74B Array annotation data (chip mgu74b) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgu74av2probe
+  (package
+    (name "r-mgu74av2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74av2probe" version
+                              'annotation))
+       (sha256
+        (base32 "02wf1xymaxd3hfyrbwxfw12klzf5c28md0h45rf41vzia0mkvr2z"))))
+    (properties `((upstream-name . "mgu74av2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74av2probe")
+    (synopsis "Probe sequence data for microarrays of type mgu74av2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MG-U74Av2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74av2cdf
+  (package
+    (name "r-mgu74av2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74av2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1cw5q8vkmd80g0dxv38qdki39h255bssf27yf0lf0jig9ra5w34n"))))
+    (properties `((upstream-name . "mgu74av2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74av2cdf")
+    (synopsis "mgu74av2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+MG_U74Av2.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74av2-db
+  (package
+    (name "r-mgu74av2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74av2.db" version
+                              'annotation))
+       (sha256
+        (base32 "0mnnzqhqswwbh140mcwsy5bz0l7affzznhkby5jvvmj9mq7pd15d"))))
+    (properties `((upstream-name . "mgu74av2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74av2.db")
+    (synopsis
+     "Affymetrix Affymetrix MG_U74Av2 Array annotation data (chip mgu74av2)")
+    (description
+     "Affymetrix Affymetrix MG_U74Av2 Array annotation data (chip mgu74av2) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-mgu74aprobe
+  (package
+    (name "r-mgu74aprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74aprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0813s2w5s9ahaqn91mkwzfckclv5jdphq17j2qwyzd4xqyxrmsbi"))))
+    (properties `((upstream-name . "mgu74aprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74aprobe")
+    (synopsis "Probe sequence data for microarrays of type mgu74a")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was MG-U74A\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74acdf
+  (package
+    (name "r-mgu74acdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74acdf" version
+                              'annotation))
+       (sha256
+        (base32 "187k8y1dnnyw926h090gmkk1081sa91fn113lysll3460dqn3ylg"))))
+    (properties `((upstream-name . "mgu74acdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74acdf")
+    (synopsis "mgu74acdf")
+    (description
+     "This package provides a package containing an environment representing the
+MG_U74A.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-mgu74a-db
+  (package
+    (name "r-mgu74a-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mgu74a.db" version
+                              'annotation))
+       (sha256
+        (base32 "1xksybvhfyclxfbabm6haxy0z4izb29qlxd36s3llr3x839wa3kv"))))
+    (properties `((upstream-name . "mgu74a.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/mgu74a.db")
+    (synopsis
+     "Affymetrix Affymetrix MG_U74A Array annotation data (chip mgu74a)")
+    (description
+     "Affymetrix Affymetrix MG_U74A Array annotation data (chip mgu74a) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-mgsa
   (package
@@ -3740,6 +6064,36 @@ or reduced representation bisulfite sequencing (RRBS) experiments.
 between groups of samples.  Several options exist for either site-specific or
 sliding window tests, and variance estimation.")
     (license license:gpl3)))
+
+(define-public r-methylseqdata
+  (package
+    (name "r-methylseqdata")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MethylSeqData" version
+                              'experiment))
+       (sha256
+        (base32 "0bw450ada6nnz19d2b9qvx0szyldswrsmy21vsm0dw7idh4xfj6c"))))
+    (properties `((upstream-name . "MethylSeqData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-s4vectors
+                             r-rhdf5
+                             r-iranges
+                             r-hdf5array
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MethylSeqData")
+    (synopsis "Collection of Public DNA Methylation Sequencing Datasets")
+    (description
+     "Base-level (i.e.  cytosine-level) counts for a collection of public
+bisulfite-seq datasets (e.g., WGBS and RRBS), provided as
+@code{SummarizedExperiment} objects with sample- and base-level metadata.")
+    (license license:cc0)))
 
 (define-public r-methylseekr
   (package
@@ -4044,6 +6398,30 @@ Biological DNAm clocks : Levine's clock and Telomere Length's clock.")
 whole blood sample measured on any platform technology (microarray and
 sequencing).")
     (license license:gpl3)))
+
+(define-public r-methylaiddata
+  (package
+    (name "r-methylaiddata")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MethylAidData" version
+                              'experiment))
+       (sha256
+        (base32 "0kn20wsij54c3i2w3yai97qqmnbawsz0326ai5zrlkalkra4w1r9"))))
+    (properties `((upstream-name . "MethylAidData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-methylaid))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MethylAidData")
+    (synopsis
+     "MethylAid-summarized data for 2800 Illumina 450k array samples and 2620 EPIC array samples")
+    (description
+     "This package provides a data package containing summarized Illumina 450k array
+data on 2800 samples and summarized EPIC data for 2620 samples.  The data can be
+use as a background data set in the interactive application.")
+    (license license:gpl2+)))
 
 (define-public r-methtargetedngs
   (package
@@ -4368,6 +6746,48 @@ several statistical tests and reports the results in an interactive way.")
 Stouffer's method")
     (license license:artistic2.0)))
 
+(define-public r-metascope
+  (package
+    (name "r-metascope")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetaScope" version
+                              'experiment))
+       (sha256
+        (base32 "0wpp2h3zldvcw9r8bjbbpcvkd3hgh11dp8qalcbm36kx4djc2d1a"))))
+    (properties `((upstream-name . "MetaScope")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-taxize
+                             r-summarizedexperiment
+                             r-stringr
+                             r-s4vectors
+                             r-rsamtools
+                             r-rlang
+                             r-readr
+                             r-rbowtie2
+                             r-qlcmatrix
+                             r-multiassayexperiment
+                             r-matrix
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-biostrings
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MetaScope")
+    (synopsis
+     "Tools and functions for preprocessing 16S and metagenomic sequencing microbiome data")
+    (description
+     "This package contains tools and methods for preprocessing microbiome data.
+Functionality includes library generation, demultiplexing, alignment, and
+microbe identification.  It is in part an R translation of the @code{PathoScope}
+2.0 pipeline.")
+    (license license:gpl3+)))
+
 (define-public r-metapone
   (package
     (name "r-metapone")
@@ -4435,6 +6855,24 @@ within and between samples through a variety of mechanisms, including: bubble
 plots, heatmaps, and pathway models.")
     (license license:artistic2.0)))
 
+(define-public r-metamsdata
+  (package
+    (name "r-metamsdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "metaMSdata" version
+                              'experiment))
+       (sha256
+        (base32 "18gixjk80zzvjg39av6rhbl9zpvnx09fd6gcbnsjxag7vmk88d1d"))))
+    (properties `((upstream-name . "metaMSdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/metaMSdata")
+    (synopsis "Example CDF data for the metaMS package")
+    (description "Example CDF data for the @code{metaMS} package")
+    (license license:gpl2+)))
+
 (define-public r-metams
   (package
     (name "r-metams")
@@ -4473,6 +6911,88 @@ plots, heatmaps, and pathway models.")
      "This package provides tools for meta-analysis in the presence of hierarchical
 (and/or sampling) dependence, including with gene expression studies")
     (license license:gpl3)))
+
+(define-public r-metagxpancreas
+  (package
+    (name "r-metagxpancreas")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetaGxPancreas" version
+                              'experiment))
+       (sha256
+        (base32 "0a5daghij0c6ykdh2vvd0gmrinqbvnn2hm8apga768ib04ylhb13"))))
+    (properties `((upstream-name . "MetaGxPancreas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-s4vectors r-impute
+                             r-experimenthub r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MetaGxPancreas")
+    (synopsis "Transcriptomic Pancreatic Cancer Datasets")
+    (description
+     "This package provides a collection of pancreatic Cancer transcriptomic datasets
+that are part of the @code{MetaGxData} package compendium.  This package
+contains multiple pancreas cancer datasets that have been downloaded from
+various resources and turned into @code{SummarizedExperiment} objects.  The
+details of how the authors normalized the data can be found in the experiment
+data section of the objects.  Additionally, the location the data was obtained
+from can be found in the url variables of the experiment data portion of each
+SE.")
+    (license license:artistic2.0)))
+
+(define-public r-metagxovarian
+  (package
+    (name "r-metagxovarian")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetaGxOvarian" version
+                              'experiment))
+       (sha256
+        (base32 "0k144fi1i9c1rlsif2pfk4lyzk25lkpfp1c4yanqqzbij8z50y6k"))))
+    (properties `((upstream-name . "MetaGxOvarian")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-lattice
+                             r-impute
+                             r-experimenthub
+                             r-biobase
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MetaGxOvarian")
+    (synopsis "Transcriptomic Ovarian Cancer Datasets")
+    (description
+     "This package provides a collection of Ovarian Cancer Transcriptomic Datasets
+that are part of the @code{MetaGxData} package compendium.")
+    (license license:artistic2.0)))
+
+(define-public r-metagxbreast
+  (package
+    (name "r-metagxbreast")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetaGxBreast" version
+                              'experiment))
+       (sha256
+        (base32 "0b0s7g4ijqlsfbr8wdrs1g54hba9ry6i1af71ly0v6l7ff0j65r1"))))
+    (properties `((upstream-name . "MetaGxBreast")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-lattice
+                             r-impute
+                             r-experimenthub
+                             r-biobase
+                             r-annotationhub))
+    (home-page "https://bioconductor.org/packages/MetaGxBreast")
+    (synopsis "Transcriptomic Breast Cancer Datasets")
+    (description
+     "This package provides a collection of Breast Cancer Transcriptomic Datasets that
+are part of the @code{MetaGxData} package compendium.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-metagene2
   (package
@@ -4657,6 +7177,30 @@ RESTful API. Study, compound, protein and gene information can be searched for
 using the API. Methods to obtain study data in common Bioconductor formats such
 as @code{SummarizedExperiment} and @code{MultiAssayExperiment} are also
 included.")
+    (license license:gpl3)))
+
+(define-public r-metaboliteidmapping
+  (package
+    (name "r-metaboliteidmapping")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "metaboliteIDmapping" version
+                              'annotation))
+       (sha256
+        (base32 "0nflpvla3wn8i2gaja5wwjkxk0jich95f5ws3rnhh2a6rx3xi3ql"))))
+    (properties `((upstream-name . "metaboliteIDmapping")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yigbt/metaboliteIDmapping")
+    (synopsis "Mapping of Metabolite IDs from Different Sources")
+    (description
+     "The package provides a comprehensive mapping table of nine different Metabolite
+ID formats and their common name.  The data has been collected and merged from
+four publicly available source, including HMDB, Comptox Dashboard, @code{ChEBI},
+and the graphite Bioconductor R package.")
     (license license:gpl3)))
 
 (define-public r-metaboannotation
@@ -4931,6 +7475,40 @@ It includes two main parts, 1) Marker set enrichment analysis (MSEA); 2)
 Weighted Key Driver Analysis (@code{wKDA}).")
     (license license:gpl2+)))
 
+(define-public r-merfishdata
+  (package
+    (name "r-merfishdata")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MerfishData" version
+                              'experiment))
+       (sha256
+        (base32 "055wmm0r8wyv8i2kil5f5lh5n2kjw36q4yrpqswf0fvdsvvrpaak"))))
+    (properties `((upstream-name . "MerfishData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-experimenthub
+                             r-ebimage
+                             r-bumpymatrix
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ccb-hms/MerfishData")
+    (synopsis "Collection of public MERFISH datasets")
+    (description
+     "@code{MerfishData} is an @code{ExperimentHub} package that serves publicly
+available datasets obtained with Multiplexed Error-Robust Fluorescence in situ
+Hybridization (MERFISH).  MERFISH is a massively multiplexed single-molecule
+imaging technology capable of simultaneously measuring the copy number and
+spatial distribution of hundreds to tens of thousands of RNA species in
+individual cells.  The scope of the package is to provide MERFISH data for
+benchmarking and analysis.")
+    (license license:artistic2.0)))
+
 (define-public r-memes
   (package
     (name "r-memes")
@@ -5012,6 +7590,24 @@ modelling approach.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-meebodata
+  (package
+    (name "r-meebodata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MEEBOdata" version
+                              'experiment))
+       (sha256
+        (base32 "0ni928njn0hm38njgbnz223pvpq1318si12z5d56h3cczi2f3a37"))))
+    (properties `((upstream-name . "MEEBOdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/MEEBOdata")
+    (synopsis "MEEBO set and MEEBO controls")
+    (description "R objects describing the MEEBO set.")
+    (license license:lgpl2.0+)))
+
 (define-public r-medme
   (package
     (name "r-medme")
@@ -5030,6 +7626,28 @@ modelling approach.")
     (description
      "MEDME allows the prediction of absolute and relative methylation levels based on
 measures obtained by @code{MeDIP-microarray} experiments")
+    (license license:gpl2+)))
+
+(define-public r-medipsdata
+  (package
+    (name "r-medipsdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MEDIPSData" version
+                              'experiment))
+       (sha256
+        (base32 "1lrxg5vrfqxrnnpn8m3ypk3ikc6pa7pszxfi08gaa3a4c2glcc4m"))))
+    (properties `((upstream-name . "MEDIPSData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/MEDIPSData")
+    (synopsis "Example data for MEDIPS and QSEA packages")
+    (description
+     "Example data for MEDIPS and QSEA packages, consisting of chromosome 22
+@code{MeDIP} and control/Input sample data.  Additionally, the package contains
+@code{MeDIP} seq data from 3 NSCLC samples and adjacent normal tissue (chr
+20-22).  All data has been aligned to human genome hg19.")
     (license license:gpl2+)))
 
 (define-public r-medips
@@ -5065,6 +7683,49 @@ of any kind of quantitative sequencing data (e.g. @code{ChIP-seq}, MBD-seq,
 CMS-seq and others) including calculation of differential coverage between
 groups of samples and saturation and correlation analysis.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-medicagoprobe
+  (package
+    (name "r-medicagoprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "medicagoprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0w6j1pfkvb3npc8srpjifq2ywnqxhc9q090jqzmkx22x36cw9cl5"))))
+    (properties `((upstream-name . "medicagoprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/medicagoprobe")
+    (synopsis "Probe sequence data for microarrays of type medicago")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Medicago\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-medicagocdf
+  (package
+    (name "r-medicagocdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "medicagocdf" version
+                              'annotation))
+       (sha256
+        (base32 "1clz679cc887x98c6jk93cphijkbg5r2nd9idrj5901yvh6p9n5q"))))
+    (properties `((upstream-name . "medicagocdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/medicagocdf")
+    (synopsis "medicagocdf")
+    (description
+     "This package provides a package containing an environment representing the
+Medicago.cdf file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-meb
   (package
@@ -5245,6 +7906,53 @@ absolute deviation), change the z-score zeroing threshold, and look at genes
 that are most perturbed in the test versus control classes.")
     (license license:gpl3)))
 
+(define-public r-mcsurvdata
+  (package
+    (name "r-mcsurvdata")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mcsurvdata" version
+                              'experiment))
+       (sha256
+        (base32 "06k500vivc8anxv1x639acjv55w5r6pc2ghmszkh42h1q7a27r68"))))
+    (properties `((upstream-name . "mcsurvdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub r-biobase r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adricaba/mcsurvdata")
+    (synopsis "Meta cohort survival data")
+    (description
+     "This package stores two merged @code{expressionSet} objects that contain the
+gene expression profile and clinical information of -a- six breast cancer
+cohorts and -b- four colorectal cancer cohorts.  Breast cancer data are employed
+in the vignette of the hrunbiased package for survival analysis of gene
+signatures.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-mcseadata
+  (package
+    (name "r-mcseadata")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mCSEAdata" version
+                              'experiment))
+       (sha256
+        (base32 "0la86384k9f0r8mgh6an023bx1sjklglgm9rwzg33hcc58lb02ki"))))
+    (properties `((upstream-name . "mCSEAdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/mCSEAdata")
+    (synopsis "Data package for mCSEA package")
+    (description
+     "Data objects necessary to some @code{mCSEA} package functions.  There are also
+example data objects to illustrate @code{mCSEA} package functionality.")
+    (license license:gpl2)))
+
 (define-public r-mcsea
   (package
     (name "r-mcsea")
@@ -5259,6 +7967,7 @@ that are most perturbed in the test versus control classes.")
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
+                             r-mcseadata
                              r-limma
                              r-iranges
                              r-homo-sapiens
@@ -5820,6 +8529,29 @@ visualization checks (histograms).  This package also provides the subset of
 data filtered by reproducible features and/or sample pairs.")
     (license license:gpl3+)))
 
+(define-public r-marinerdata
+  (package
+    (name "r-marinerdata")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "marinerData" version
+                              'experiment))
+       (sha256
+        (base32 "00m1r6ijhykq96d86h17asngdm8a1ss2213nd6n6lsj4dshr74a0"))))
+    (properties `((upstream-name . "marinerData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/marinerData")
+    (synopsis "ExperimentHub data for the mariner package")
+    (description
+     "Subsampled Hi-C in HEK cells expressing the NHA9 fusion with an F to S mutated
+IDR (\"FS\") or without any mutations to the IDR (\"Wildtype\" or \"WT\").  These
+files are used for testing mariner functions and some examples.")
+    (license license:gpl3)))
+
 (define-public r-mariner
   (package
     (name "r-mariner")
@@ -5869,6 +8601,65 @@ and visualizing the results.  Designed for compatibility with plotgardener for
 visualization.")
     (license license:gpl3)))
 
+(define-public r-maqcsubsetilm
+  (package
+    (name "r-maqcsubsetilm")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MAQCsubsetILM" version
+                              'experiment))
+       (sha256
+        (base32 "1bb158bmy7195wnj0wap08g621xbzflvj30pv4l7mwc54lm1vqfx"))))
+    (properties `((upstream-name . "MAQCsubsetILM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lumi r-biobase))
+    (home-page "https://bioconductor.org/packages/MAQCsubsetILM")
+    (synopsis "MAQC data subset for the Illumina platform")
+    (description "MAQC data subset for the Illumina platform")
+    (license license:artistic2.0)))
+
+(define-public r-maqcsubset
+  (package
+    (name "r-maqcsubset")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MAQCsubset" version
+                              'experiment))
+       (sha256
+        (base32 "1qqn4mf2jrdkn28n1npzag50m24j29nm0adcj276s8fgwdayv434"))))
+    (properties `((upstream-name . "MAQCsubset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lumi r-biobase r-affy))
+    (home-page "https://bioconductor.org/packages/MAQCsubset")
+    (synopsis "Experimental Data Package: MAQCsubset")
+    (description
+     "Data Package automatically created on Sun Nov 19 15:59:29 2006.")
+    (license license:artistic2.0)))
+
+(define-public r-maqcexpression4plex
+  (package
+    (name "r-maqcexpression4plex")
+    (version "1.46.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "maqcExpression4plex" version
+                              'experiment))
+       (sha256
+        (base32 "0ihwmzndj3yxs75x3h9w03ydvy08hmi0pzy561mjsyhdrrb8i4dc"))))
+    (properties `((upstream-name . "maqcExpression4plex")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/maqcExpression4plex")
+    (synopsis "Sample Expression Data - MAQC / HG18 - NimbleGen")
+    (description
+     "Data from human (HG18) 4plex @code{NimbleGen} array.  It has 24k genes with 3
+60mer probes per gene.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-mapscape
   (package
     (name "r-mapscape")
@@ -5916,6 +8707,7 @@ distribution of clones throughout anatomic space.")
     (propagated-inputs (list r-rocr
                              r-roc
                              r-mass
+                             r-lungcanceracvssccgeo
                              r-limma
                              r-hgu133plus2-db
                              r-gcrma
@@ -5933,6 +8725,26 @@ distribution of clones throughout anatomic space.")
 functionality is added to compare 27 combinations of data preprocessing, feature
 selection and classifier types.")
     (license license:gpl2)))
+
+(define-public r-mapkldata
+  (package
+    (name "r-mapkldata")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mAPKLData" version
+                              'experiment))
+       (sha256
+        (base32 "0vhysi7wyw7d3vbq4qcq3i3ic953awppg2bix40ywz1459b5p43g"))))
+    (properties `((upstream-name . "mAPKLData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/mAPKLData")
+    (synopsis "Gene expression data for testing of the package mAPKL")
+    (description
+     "Gene expression data from a breast cancer study published by Turashvili et al.
+in 2007, provided as an @code{eSet}.")
+    (license license:artistic2.0)))
 
 (define-public r-mantelcorr
   (package
@@ -5952,6 +8764,91 @@ selection and classifier types.")
      "Computes Mantel cluster correlations from a (p x n) numeric data matrix (e.g.
 microarray gene-expression data).")
     (license license:gpl2+)))
+
+(define-public r-mammaprintdata
+  (package
+    (name "r-mammaprintdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mammaPrintData" version
+                              'experiment))
+       (sha256
+        (base32 "0bm1lfdjhav34rqvkvygkllmwibjh0f34p58vml3ljjdhgghawrq"))))
+    (properties `((upstream-name . "mammaPrintData")))
+    (build-system r-build-system)
+    (home-page "http://luigimarchionni.org/breastTSP.html")
+    (synopsis "RGLists from the Glas and Buyse breast cancer studies")
+    (description
+     "Gene expression data for the two breast cancer cohorts published by Glas and
+Buyse in 2006.  This cohorts were used to implement and validate the
+@code{mammaPrint} breast cancer test.")
+    (license license:artistic2.0)))
+
+(define-public r-malaria-db0
+  (package
+    (name "r-malaria-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "malaria.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1zp2j7vbws2a56xkngfl248xskpj5r58q7sxx6xjipdjk8n13vf3"))))
+    (properties `((upstream-name . "malaria.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/malaria.db0")
+    (synopsis "Base Level Annotation databases for malaria")
+    (description
+     "Base annotation databases for malaria, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-maizeprobe
+  (package
+    (name "r-maizeprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "maizeprobe" version
+                              'annotation))
+       (sha256
+        (base32 "01h5dv5i0zaqlphkii9ipxy9wswv1srgprrpr5vmi01c9d98qsk0"))))
+    (properties `((upstream-name . "maizeprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/maizeprobe")
+    (synopsis "Probe sequence data for microarrays of type maize")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Maize\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-maizecdf
+  (package
+    (name "r-maizecdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "maizecdf" version
+                              'annotation))
+       (sha256
+        (base32 "0yfz5gjhsq4wz6j63s1b1hxjz03gsmrlfs2cdc8smq6azp3zdid4"))))
+    (properties `((upstream-name . "maizecdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/maizecdf")
+    (synopsis "maizecdf")
+    (description
+     "This package provides a package containing an environment representing the
+Maize.cdf file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-mait
   (package
@@ -6112,6 +9009,7 @@ choice.")
                              r-ggplot2
                              r-enrichplot
                              r-dose
+                             r-depmap
                              r-clusterprofiler
                              r-biobase))
     (native-inputs (list r-knitr))
@@ -6157,6 +9055,7 @@ of the package and demonstrates typical workflows.")
     (build-system r-build-system)
     (propagated-inputs (list r-upsetr
                              r-snpstats
+                             r-rnbeads-hg19
                              r-rnbeads
                              r-rjson
                              r-reshape2
@@ -6181,6 +9080,386 @@ from DNA methylation and genotyping data from matched samples.  MAGAR uses a
 linear modeling stragety to call @code{CpGs/SNPs} that are @code{methQTLs}.
 MAGAR accounts for the local correlation structure of @code{CpGs}.")
     (license license:gpl3)))
+
+(define-public r-mafdb-topmed-freeze5-hg38
+  (package
+    (name "r-mafdb-topmed-freeze5-hg38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.TOPMed.freeze5.hg38" version
+                              'annotation))
+       (sha256
+        (base32 "0yd9r26l2s3ykw5d2lndnx4m1h401g7hsnkk0wywczdc1xa39y4n"))))
+    (properties `((upstream-name . "MafDb.TOPMed.freeze5.hg38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.TOPMed.freeze5.hg38")
+    (synopsis "Minor allele frequency data from TOPMed for hg38")
+    (description
+     "Store minor allele frequency data from NHLBI TOPMed for the human genome version
+hg38.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-topmed-freeze5-hg19
+  (package
+    (name "r-mafdb-topmed-freeze5-hg19")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.TOPMed.freeze5.hg19" version
+                              'annotation))
+       (sha256
+        (base32 "1fxq5jq4g6rys909v0a4lbrcgfdk844wgihn0ary509w8ifdkxdv"))))
+    (properties `((upstream-name . "MafDb.TOPMed.freeze5.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.TOPMed.freeze5.hg19")
+    (synopsis "Minor allele frequency data from TOPMed for hg19")
+    (description
+     "Store minor allele frequency data from NHLBI TOPMed for the human genome version
+hg19.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-gnomadex-r2-1-hs37d5
+  (package
+    (name "r-mafdb-gnomadex-r2-1-hs37d5")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.gnomADex.r2.1.hs37d5" version
+                              'annotation))
+       (sha256
+        (base32 "0y42ncmilijdxsgqsmskz7gff3il3fdf2kpflknmz1z9kybzaday"))))
+    (properties `((upstream-name . "MafDb.gnomADex.r2.1.hs37d5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.gnomADex.r2.1.hs37d5")
+    (synopsis
+     "Minor allele frequency data from gnomAD exomes release 2.1 for hs37d5")
+    (description
+     "Store minor allele frequency data from the Genome Aggregation Database
+(@code{gnomAD} exomes release 2.1) for the human genome version hs37d5.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-gnomadex-r2-1-grch38
+  (package
+    (name "r-mafdb-gnomadex-r2-1-grch38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.gnomADex.r2.1.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "1v0sdjmn9z8gqn4yj4v04zycj3ngr32r04zqmkp6y41hcgdr8lxw"))))
+    (properties `((upstream-name . "MafDb.gnomADex.r2.1.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.gnomADex.r2.1.GRCh38")
+    (synopsis
+     "Minor allele frequency data from gnomAD exomes release 2.1 for GRCh38")
+    (description
+     "Store minor allele frequency data from the Genome Aggregation Database
+(@code{gnomAD} exomes release 2.1) for the human genome version GRCh38.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-gnomad-r2-1-hs37d5
+  (package
+    (name "r-mafdb-gnomad-r2-1-hs37d5")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.gnomAD.r2.1.hs37d5" version
+                              'annotation))
+       (sha256
+        (base32 "153dy3lx0islfdkmyik7lxp1w2yzb0bqmia673hlwi4rmvns112h"))))
+    (properties `((upstream-name . "MafDb.gnomAD.r2.1.hs37d5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.gnomAD.r2.1.hs37d5")
+    (synopsis "Minor allele frequency data from gnomAD release 2.1 for hs37d5")
+    (description
+     "Store minor allele frequency data from the Genome Aggregation Database
+(@code{gnomAD} release 2.1) for the human genome version hs37d5.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-gnomad-r2-1-grch38
+  (package
+    (name "r-mafdb-gnomad-r2-1-grch38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.gnomAD.r2.1.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "1bshq6ncns7xdrpkkc84m4x6a1pnm3ssp02f0d23yhlkhh0h40zd"))))
+    (properties `((upstream-name . "MafDb.gnomAD.r2.1.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.gnomAD.r2.1.GRCh38")
+    (synopsis "Minor allele frequency data from gnomAD release 2.1 for GRCh38")
+    (description
+     "Store minor allele frequency data from the Genome Aggregation Database
+(@code{gnomAD} release 2.1) for the human genome version GRCh38.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-exac-r1-0-nontcga-hs37d5
+  (package
+    (name "r-mafdb-exac-r1-0-nontcga-hs37d5")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.ExAC.r1.0.nonTCGA.hs37d5" version
+                              'annotation))
+       (sha256
+        (base32 "1srwc9n9x0ilipqwvm95khy4w2dnn1fkxyrrlcqfwv96gl7141x5"))))
+    (properties `((upstream-name . "MafDb.ExAC.r1.0.nonTCGA.hs37d5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/MafDb.ExAC.r1.0.nonTCGA.hs37d5")
+    (synopsis
+     "Minor allele frequency data from ExAC release 1.0 subset of nonTCGA exomes for hs37d5")
+    (description
+     "Store minor allele frequency data from the Exome Aggregation Consortium
+(@code{ExAC} release 1.0 subset of @code{nonTCGA} exomes) for the human genome
+version hs37d5.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-exac-r1-0-nontcga-grch38
+  (package
+    (name "r-mafdb-exac-r1-0-nontcga-grch38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.ExAC.r1.0.nonTCGA.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "16rsm24nlz7jdnqk1p0avn9dlxkbbjd50nja5pcg0z18m30srlya"))))
+    (properties `((upstream-name . "MafDb.ExAC.r1.0.nonTCGA.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/MafDb.ExAC.r1.0.nonTCGA.GRCh38")
+    (synopsis
+     "Minor allele frequency data from ExAC release 1.0 subset of nonTCGA exomes for GRCh38")
+    (description
+     "Store minor allele frequency data from the Exome Aggregation Consortium
+(@code{ExAC} release 1.0 subset of @code{nonTCGA} exomes) for the human genome
+version GRCh38.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-exac-r1-0-hs37d5
+  (package
+    (name "r-mafdb-exac-r1-0-hs37d5")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.ExAC.r1.0.hs37d5" version
+                              'annotation))
+       (sha256
+        (base32 "18czbllphsccb2hs02g6jz517ylxsvx12czwh4xz7vym6q4br0cz"))))
+    (properties `((upstream-name . "MafDb.ExAC.r1.0.hs37d5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.ExAC.r1.0.hs37d5")
+    (synopsis "Minor allele frequency data from ExAC release 1.0 for hs37d5")
+    (description
+     "Store minor allele frequency data from the Exome Aggregation Consortium
+(@code{ExAC} release 1.0) for the human genome version hs37d5.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-exac-r1-0-grch38
+  (package
+    (name "r-mafdb-exac-r1-0-grch38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.ExAC.r1.0.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "02mlwkx9kal4h1q1h3c2pdragir9bh63vg1wyagmh8capf19zx5c"))))
+    (properties `((upstream-name . "MafDb.ExAC.r1.0.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/MafDb.ExAC.r1.0.GRCh38")
+    (synopsis "Minor allele frequency data from ExAC release 1.0 for GRCh38")
+    (description
+     "Store minor allele frequency data from the Exome Aggregation Consortium
+(@code{ExAC} release 1.0) for the human genome version GRCh38.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-1kgenomes-phase3-hs37d5
+  (package
+    (name "r-mafdb-1kgenomes-phase3-hs37d5")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.1Kgenomes.phase3.hs37d5" version
+                              'annotation))
+       (sha256
+        (base32 "1c2bxgy3bpbszfsqlk262lv45x1fgqyywk9i9nax7bpahlcpp68d"))))
+    (properties `((upstream-name . "MafDb.1Kgenomes.phase3.hs37d5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/MafDb.1Kgenomes.phase3.hs37d5")
+    (synopsis
+     "Minor allele frequency data from 1000 Genomes Phase 3 for hs37d5")
+    (description
+     "Store minor allele frequency data from the Phase 3 of the 1000 Genomes Project
+for the human genome version hs37d5.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-1kgenomes-phase3-grch38
+  (package
+    (name "r-mafdb-1kgenomes-phase3-grch38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.1Kgenomes.phase3.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "0ibww7ml5cfyx8h198fgrnf13vvsxxb5spf7hcmm6z3hha6j2ij0"))))
+    (properties `((upstream-name . "MafDb.1Kgenomes.phase3.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/MafDb.1Kgenomes.phase3.GRCh38")
+    (synopsis
+     "Minor allele frequency data from 1000 Genomes Phase 3 for GRCh38")
+    (description
+     "Store minor allele frequency data from the Phase 3 of the 1000 Genomes Project
+for the human genome version GRCh38.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-1kgenomes-phase1-hs37d5
+  (package
+    (name "r-mafdb-1kgenomes-phase1-hs37d5")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.1Kgenomes.phase1.hs37d5" version
+                              'annotation))
+       (sha256
+        (base32 "0vsjik59qa36w402bcrd5z27wc9vyp4gl0ffcwskd9iwjqim0phi"))))
+    (properties `((upstream-name . "MafDb.1Kgenomes.phase1.hs37d5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/MafDb.1Kgenomes.phase1.hs37d5")
+    (synopsis
+     "Minor allele frequency data from 1000 Genomes Phase 1 for hs37d5")
+    (description
+     "Store minor allele frequency data from the Phase 1 of the 1000 Genomes Project
+for the human genome version hs37d5.")
+    (license license:artistic2.0)))
+
+(define-public r-mafdb-1kgenomes-phase1-grch38
+  (package
+    (name "r-mafdb-1kgenomes-phase1-grch38")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MafDb.1Kgenomes.phase1.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "057531mvxip32lyqak4hh964ms0cil29p5cch5fpjw5vbbzidrlc"))))
+    (properties `((upstream-name . "MafDb.1Kgenomes.phase1.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/MafDb.1Kgenomes.phase1.GRCh38")
+    (synopsis
+     "Minor allele frequency data from 1000 Genomes Phase 1 for GRCh38")
+    (description
+     "Store minor allele frequency data from the Phase 1 of the 1000 Genomes Project
+for the human genome version GRCh38.")
+    (license license:artistic2.0)))
 
 (define-public r-madseq
   (package
@@ -6277,6 +9556,27 @@ multiple modules: i) imports of raw file and graphical selection of duplicates
 in well plate, ii) computes statistics on data and iii) can compute combination
 index.")
     (license license:artistic2.0)))
+
+(define-public r-macsdata
+  (package
+    (name "r-macsdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MACSdata" version
+                              'experiment))
+       (sha256
+        (base32 "117jy39rn972hzwcckx5wdsrsxfzhwbx4wb6air4l7xcb6qmfrj1"))))
+    (properties `((upstream-name . "MACSdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/MACSdata")
+    (synopsis "Test datasets for the MACSr package")
+    (description
+     "Test datasets from the MACS3 test examples are use in the examples of the
+`MACSr` package.  All 9 datasets are uploaded to the `@code{ExperimentHub`}.
+The original data can be found at: https://github.com/macs3-project/MACS/.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-macorrplot
   (package
@@ -6428,4 +9728,66 @@ single-cell RNASeq data.  This model is used as a null to identify significantly
 variable (i.e.  differentially expressed) genes for use in downstream analysis,
 such as clustering cells.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-m3dexampledata
+  (package
+    (name "r-m3dexampledata")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "M3DExampleData" version
+                              'experiment))
+       (sha256
+        (base32 "0rp1zp14wvfwy67m0ph8amm41frj76gfylacdbdjyblcpdgzzlnq"))))
+    (properties `((upstream-name . "M3DExampleData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/M3DExampleData")
+    (synopsis "M3Drop Example Data")
+    (description "Example data for M3Drop package.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-m20kcod-db
+  (package
+    (name "r-m20kcod-db")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "m20kcod.db" version
+                              'annotation))
+       (sha256
+        (base32 "1p2sm5j4b50iqzwcb984qrh74c3hf6yml7b8mvxlhhhvxz4iy1np"))))
+    (properties `((upstream-name . "m20kcod.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/m20kcod.db")
+    (synopsis
+     "Codelink UniSet Mouse 20k I Bioarray annotation data (chip m20kcod)")
+    (description
+     "Codelink @code{UniSet} Mouse 20k I Bioarray annotation data (chip m20kcod)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-m10kcod-db
+  (package
+    (name "r-m10kcod-db")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "m10kcod.db" version
+                              'annotation))
+       (sha256
+        (base32 "0fqfzjii536xlgpj1z3bgld1269qdh89ynzmrq6l366pj5im0nah"))))
+    (properties `((upstream-name . "m10kcod.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/m10kcod.db")
+    (synopsis
+     "Codelink UniSet Mouse I Bioarray (~10 000 mouse gene targets) annotation data (chip m10kcod)")
+    (description
+     "Codelink @code{UniSet} Mouse I Bioarray (~10 000 mouse gene targets) annotation
+data (chip m10kcod) assembled using data from public repositories")
+    (license license:artistic2.0)))
 

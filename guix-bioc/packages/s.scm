@@ -33,6 +33,7 @@
   #:use-module (gnu packages graph)
   #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -46,6 +47,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -171,6 +173,33 @@ pre-configured visualization examples.  The modular design of SPR makes it easy
 to design custom functions without any knowledge of Shiny, as well as extending
 the environment in the future with contributions from the community.")
     (license license:gpl3+)))
+
+(define-public r-systempiperdata
+  (package
+    (name "r-systempiperdata")
+    (version "2.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "systemPipeRdata" version
+                              'experiment))
+       (sha256
+        (base32 "004sjgvhn9hq14f4mwfakrkkm2mwr2bdcbld25b393in0k26r9hf"))))
+    (properties `((upstream-name . "systemPipeRdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-remotes r-jsonlite r-biostrings r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tgirke/systemPipeRdata")
+    (synopsis "systemPipeRdata: Workflow templates and sample data")
+    (description
+     "@code{systemPipeRdata} is a helper package to generate with a single command NGS
+workflow templates that are intended to be used by its parent package
+@code{systemPipeR}.  The latter is an environment for building end-to-end
+analysis pipelines with automated report generation for next generation sequence
+(NGS) applications such as RNA-Seq, RIBO-Seq, @code{ChIP-Seq}, VAR-Seq and many
+others.  Detailed examples for using @code{systemPipeRdata} are given in
+@code{systemPipeR's} overview vignette.")
+    (license license:artistic2.0)))
 
 (define-public r-syntenet
   (package
@@ -343,6 +372,87 @@ interpretation of the clinical potential of the drug combinations.  Based on
 this package, we also provide a web application (http://www.synergyfinder.org)
 for users who prefer graphical user interface.")
     (license (license:fsdg-compatible "Mozilla Public License 2.0"))))
+
+(define-public r-synaptome-db
+  (package
+    (name "r-synaptome-db")
+    (version "0.99.15")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "synaptome.db" version
+                              'annotation))
+       (sha256
+        (base32 "111rg62l8f0k3m0fq8g63lg15agk9bkfcx5z990157cxs0rq07h3"))))
+    (properties `((upstream-name . "synaptome.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-synaptome-data
+                             r-rsqlite
+                             r-rdpack
+                             r-igraph
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/synaptome.db")
+    (synopsis "Synamptosome Proteome Database")
+    (description
+     "The package contains local copy of the Synaptic proteome database.  On top of
+this it provide a set of utility R functions to query and analyse its content.
+It allows extraction of information for specific genes and building the
+protein-protein interaction graph for gene sets, synaptic compartments, and
+brain regions.")
+    (license license:artistic2.0)))
+
+(define-public r-synaptome-data
+  (package
+    (name "r-synaptome-data")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "synaptome.data" version
+                              'annotation))
+       (sha256
+        (base32 "00cqgx06wysz0qyicwnxlc8hpqkj5rwqlyfzsvy7agvcjjkarwg5"))))
+    (properties `((upstream-name . "synaptome.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/synaptome.data")
+    (synopsis "AnnotationData for Synaptome.DB package")
+    (description
+     "The package provides access to the copy of the Synaptic proteome database.  It
+was designed as an accompaniment for Synaptome.DB package.  Database provides
+information for specific synaptic genes and allows building the protein-protein
+interaction graph for gene sets, synaptic compartments, and brain regions.  In
+the current update we added 6 more synaptic proteome studies, which resulted in
+total of 64 studies.  We introduced Synaptic Vesicle as a separate compartment.
+We also added coding mutations for Autistic Spectral disorder and Epilepsy
+collected from publicly available databases.")
+    (license license:artistic2.0)))
+
+(define-public r-synapterdata
+  (package
+    (name "r-synapterdata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "synapterdata" version
+                              'experiment))
+       (sha256
+        (base32 "1hl3r6smv25vhwxwrxw2c98db4c36392js49zj9kgf7c22qpyaqr"))))
+    (properties `((upstream-name . "synapterdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-synapter))
+    (home-page "https://bioconductor.org/packages/synapterdata")
+    (synopsis "Data accompanying the synapter package")
+    (description
+     "Data independant acquisition of UPS1 protein mix in an E. coli background
+obtained on a Waters Synapt G2 instrument.")
+    (license license:gpl2)))
 
 (define-public r-synapter
   (package
@@ -568,6 +678,24 @@ SVM classification model construction.  Along with gene set extraction, SVMDO
 also provides individual prognostic marker detection.  The algorithm is designed
 for FPKM and RPKM normalized RNA-Seq transcriptome datasets.")
     (license license:gpl3)))
+
+(define-public r-svm2crmdata
+  (package
+    (name "r-svm2crmdata")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SVM2CRMdata" version
+                              'experiment))
+       (sha256
+        (base32 "1k7cjakxcqq86xvx0d0799hb94hi7w05amd9yncd0nf4dcy6zm0f"))))
+    (properties `((upstream-name . "SVM2CRMdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/SVM2CRMdata")
+    (synopsis "An example dataset for use with the SVM2CRM package")
+    (description "An example dataset for use with the SVM2CRM package.")
+    (license license:lgpl2.0+)))
 
 (define-public r-svaretro
   (package
@@ -877,6 +1005,49 @@ and validation data.Signatures are estimated in the training data and then used
 to predict the mutations in the validation data.")
     (license license:gpl2)))
 
+(define-public r-sugarcaneprobe
+  (package
+    (name "r-sugarcaneprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "sugarcaneprobe" version
+                              'annotation))
+       (sha256
+        (base32 "17zrydd8xd7m61bp750xlpcak0m3zgl0mvknz9s7mv2a35kp02ih"))))
+    (properties `((upstream-name . "sugarcaneprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/sugarcaneprobe")
+    (synopsis "Probe sequence data for microarrays of type sugarcane")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Sugar\\_Cane\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-sugarcanecdf
+  (package
+    (name "r-sugarcanecdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "sugarcanecdf" version
+                              'annotation))
+       (sha256
+        (base32 "0wghc6wr7iwkql63m3wibjjdcdpqd53z0g5rxdh553sjb0ca2n7z"))))
+    (properties `((upstream-name . "sugarcanecdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/sugarcanecdf")
+    (synopsis "sugarcanecdf")
+    (description
+     "This package provides a package containing an environment representing the
+Sugar_Cane.cdf file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-subseq
   (package
     (name "r-subseq")
@@ -1068,6 +1239,30 @@ an idea of how much the sample was contaminated and the appropriate threshold to
 be used for filtering.")
     (license license:gpl2+)))
 
+(define-public r-stjudem
+  (package
+    (name "r-stjudem")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "stjudem" version
+                              'experiment))
+       (sha256
+        (base32 "0pcvvvaqalr5jklqy7vzxkp0cd9nj9dk941drgr7ndbqc2navz2c"))))
+    (properties `((upstream-name . "stjudem")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/stjudem")
+    (synopsis "Microarray Data from Yeoh et al. in MACAT format")
+    (description
+     "This is a microarray data set on acute lymphoblastic leukemia, published in 2002
+(Yeoh et al.Cancer Cell 2002).  The experiments were conducted in the St.Jude
+Children's Research Hospital, Memphis, Tenessee, USA. The raw data was
+preprocessed by variance stabilizing normalization (Huber et al.) on probe and
+subsequent summarization of probe expression values into probe set expression
+values using median polish.")
+    (license license:lgpl2.0+)))
+
 (define-public r-stjoincount
   (package
     (name "r-stjoincount")
@@ -1111,6 +1306,32 @@ difference between observed and expected counts, divided by the square root of
 the variance.")
     (license license:expat)))
 
+(define-public r-stexampledata
+  (package
+    (name "r-stexampledata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "STexampleData" version
+                              'experiment))
+       (sha256
+        (base32 "1rhq1743aa9bw54d2c74yclwd56a5vq5jppfzxz7mmv3cf5x3ar9"))))
+    (properties `((upstream-name . "STexampleData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lmweber/STexampleData")
+    (synopsis
+     "Collection of spatially-resolved transcriptomics datasets in SpatialExperiment Bioconductor format")
+    (description
+     "Collection of spatially-resolved transcriptomics (SRT) datasets in
+@code{SpatialExperiment} Bioconductor format, for use in examples,
+demonstrations, and tutorials.  The datasets are from several different SRT
+platforms and have been sourced from various publicly available sources.
+Several datasets include images and/or ground truth annotation labels.")
+    (license license:expat)))
+
 (define-public r-stepnorm
   (package
     (name "r-stepnorm")
@@ -1129,6 +1350,29 @@ the variance.")
     (description
      "Stepwise normalization functions for @code{cDNA} microarray data.")
     (license license:lgpl2.0+)))
+
+(define-public r-stemhypoxia
+  (package
+    (name "r-stemhypoxia")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "stemHypoxia" version
+                              'experiment))
+       (sha256
+        (base32 "1ak78mvgm9dv80ji44b1cb4y8bq0l4k0cpx734m8dy8mr3i8nblw"))))
+    (properties `((upstream-name . "stemHypoxia")))
+    (build-system r-build-system)
+    (home-page "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37761")
+    (synopsis
+     "Differentiation of Human Embryonic Stem Cells under Hypoxia gene expression dataset by Prado-Lopez et al. (2010)")
+    (description
+     "Expression profiling using microarray technology to prove if Hypoxia Promotes
+Efficient Differentiation of Human Embryonic Stem Cells to Functional
+Endothelium by Prado-Lopez et al. (2010) Stem Cells 28:407-418.  Full data
+available at Gene Expression Omnibus series GSE37761.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-stdeconvolve
   (package
@@ -1764,6 +2008,27 @@ retain the dependence between genes.  It allows simulation of multiple groups
 and batches with any required sample size and library size.")
     (license license:gpl2)))
 
+(define-public r-spqndata
+  (package
+    (name "r-spqndata")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "spqnData" version
+                              'experiment))
+       (sha256
+        (base32 "0kvnkz71w1c7yhl4kqdj9j51d1ix2g7q3pqr2678f31hhw7yr1ck"))))
+    (properties `((upstream-name . "spqnData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment))
+    (home-page "https://bioconductor.org/packages/spqnData")
+    (synopsis "Data for the spqn package")
+    (description
+     "Bulk RNA-seq from GTEx on 4,000 randomly selected, expressed genes.  Data has
+been processed for co-expression analysis.")
+    (license license:artistic2.0)))
+
 (define-public r-spqn
   (package
     (name "r-spqn")
@@ -1950,6 +2215,7 @@ experiments.")
                              r-gtools
                              r-gseabase
                              r-genenet
+                             r-fis
                              r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/splineTimeR")
@@ -2056,6 +2322,7 @@ conditions.")
                              r-pheatmap
                              r-patchwork
                              r-ompbam
+                             r-nxtirfdata
                              r-matrixstats
                              r-magrittr
                              r-iranges
@@ -2215,6 +2482,47 @@ Affymetrix web site.  The model used in the @code{spikeLI} package is described
 in details in E. Carlon and T. Heim, Physica A 362, 433 (2006).")
     (license license:gpl2)))
 
+(define-public r-spikeinsubset
+  (package
+    (name "r-spikeinsubset")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SpikeInSubset" version
+                              'experiment))
+       (sha256
+        (base32 "14w4g6n0nn1mg9wifqp2jrxb0hy2sqfcnycwhvir1znfck83fzir"))))
+    (properties `((upstream-name . "SpikeInSubset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase r-affy))
+    (home-page "https://bioconductor.org/packages/SpikeInSubset")
+    (synopsis "Part of Affymetrix's Spike-In Experiment Data")
+    (description
+     "Includes probe-level and expression data for the HGU133 and HGU95 spike-in
+experiments")
+    (license license:lgpl2.0+)))
+
+(define-public r-spikein
+  (package
+    (name "r-spikein")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SpikeIn" version
+                              'experiment))
+       (sha256
+        (base32 "04saqrdzl1irdbvgr9s86sgwsvnlp5l4xbx16wj41476rbzhg2aw"))))
+    (properties `((upstream-name . "SpikeIn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-affy))
+    (home-page "https://bioconductor.org/packages/SpikeIn")
+    (synopsis "Affymetrix Spike-In Experiment Data")
+    (description
+     "This package contains the HGU133 and HGU95 spikein experiment data.")
+    (license license:artistic2.0)))
+
 (define-public r-spidermir
   (package
     (name "r-spidermir")
@@ -2228,6 +2536,7 @@ in details in E. Carlon and T. Heim, Physica A 362, 433 (2006).")
     (properties `((upstream-name . "SpidermiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-org-hs-eg-db
+                             r-mirnatap-db
                              r-mirnatap
                              r-igraph
                              r-httr
@@ -2581,6 +2890,64 @@ Technology.  Package to easily graph on top of an OME-TIFF image.  Plotting
 annotations can range from tissue segment to gene expression.")
     (license license:expat)))
 
+(define-public r-spatiallibd
+  (package
+    (name "r-spatiallibd")
+    (version "1.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "spatialLIBD" version
+                              'experiment))
+       (sha256
+        (base32 "0zqbnj55d06xai9qlg1hcy2kczjn6zxrhqwwsi18a36511qks5qb"))))
+    (properties `((upstream-name . "spatialLIBD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-tibble
+                             r-summarizedexperiment
+                             r-statmod
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-shinywidgets
+                             r-shiny
+                             r-sessioninfo
+                             r-scuttle
+                             r-scater
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rcolorbrewer
+                             r-png
+                             r-plotly
+                             r-paletteer
+                             r-matrix
+                             r-magick
+                             r-limma
+                             r-jsonlite
+                             r-iranges
+                             r-golem
+                             r-ggplot2
+                             r-genomicranges
+                             r-fields
+                             r-experimenthub
+                             r-edger
+                             r-dt
+                             r-cowplot
+                             r-biocgenerics
+                             r-biocfilecache
+                             r-benchmarkme
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LieberInstitute/spatialLIBD")
+    (synopsis
+     "spatialLIBD: an R/Bioconductor package to visualize spatially-resolved transcriptomics data")
+    (description
+     "Inspect interactively the spatially-resolved transcriptomics data from the 10x
+Genomics Visium platform as well as data from the Maynard, Collado-Torres et al,
+Nature Neuroscience, 2021 project analyzed by Lieber Institute for Brain
+Development (LIBD) researchers and collaborators.")
+    (license license:artistic2.0)))
+
 (define-public r-spatialheatmap
   (package
     (name "r-spatialheatmap")
@@ -2664,6 +3031,32 @@ graphs and geometric operations.  This pakage builds upon
 these parent classes can still be used.")
     (license license:artistic2.0)))
 
+(define-public r-spatialdmelxsim
+  (package
+    (name "r-spatialdmelxsim")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "spatialDmelxsim" version
+                              'experiment))
+       (sha256
+        (base32 "110anvdbsq8mh3ibfhps9hyfhlk2np4mjs224377s1sasmpzwbbb"))))
+    (properties `((upstream-name . "spatialDmelxsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mikelove/spatialDmelxsim")
+    (synopsis "Spatial allelic expression counts for fly cross embryo")
+    (description
+     "Spatial allelic expression counts from Combs & Fraser (2018), compiled into a
+@code{SummarizedExperiment} object.  This package contains data of allelic
+expression counts of spatial slices of a fly embryo, a Drosophila melanogaster x
+Drosophila simulans cross.  See the CITATION file for the data source, and the
+associated script for how the object was constructed from publicly available
+data.")
+    (license license:gpl3)))
+
 (define-public r-spatialdecon
   (package
     (name "r-spatialdecon")
@@ -2724,6 +3117,30 @@ applicable to any gene expression data.")
 transcriptomics data.  This package provides wrappers to use the Python
 @code{SpatialDE} library in R, using reticulate and basilisk.")
     (license license:expat)))
+
+(define-public r-spatialdatasets
+  (package
+    (name "r-spatialdatasets")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SpatialDatasets" version
+                              'experiment))
+       (sha256
+        (base32 "1szsggymx05swr4i5mgxcxk7jbz8qh6xxwpnmmzajns03gmszggy"))))
+    (properties `((upstream-name . "SpatialDatasets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SydneyBioX/SpatialDatasets")
+    (synopsis "Collection of spatial omics datasets")
+    (description
+     "This is a collection of publically available spatial omics datasets.  Where
+possible we have curated these datasets as either @code{SpatialExperiments},
+@code{MoleculeExperiments} or @code{CytoImageLists} and included annotations of
+the sample characteristics.")
+    (license license:gpl3)))
 
 (define-public r-spatialcpie
   (package
@@ -2977,6 +3394,49 @@ image of the tissue.")
 while considering the protein's tertiary structure.")
     (license license:gpl2)))
 
+(define-public r-soybeanprobe
+  (package
+    (name "r-soybeanprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "soybeanprobe" version
+                              'annotation))
+       (sha256
+        (base32 "06dpwqad7q3wyq0bsgpwkw8kx1gq5fy1s1lw632xrvgcid2fsmf8"))))
+    (properties `((upstream-name . "soybeanprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/soybeanprobe")
+    (synopsis "Probe sequence data for microarrays of type soybean")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Soybean\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-soybeancdf
+  (package
+    (name "r-soybeancdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "soybeancdf" version
+                              'annotation))
+       (sha256
+        (base32 "1dlwxdslm827661z6f4z2hwr7wpwqfzvizhvv63p86ll7l6gs3s8"))))
+    (properties `((upstream-name . "soybeancdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/soybeancdf")
+    (synopsis "soybeancdf")
+    (description
+     "This package provides a package containing an environment representing the
+Soybean.cdf file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-somnibus
   (package
     (name "r-somnibus")
@@ -3016,6 +3476,72 @@ traits.  The method is built a rich flexible model that allows for the effects,
 on the methylation levels, of multiple covariates to vary smoothly along genomic
 regions.  At the same time, this method also allows for sequencing errors and
 can adjust for variability in cell type mixture.")
+    (license license:expat)))
+
+(define-public r-somaticcanceralterations
+  (package
+    (name "r-somaticcanceralterations")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SomaticCancerAlterations" version
+                              'experiment))
+       (sha256
+        (base32 "140bn20n60dnsb3li0ygnymfb7wwgh523yx8pmc6zvyx6izdg618"))))
+    (properties `((upstream-name . "SomaticCancerAlterations")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-iranges r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SomaticCancerAlterations")
+    (synopsis "Somatic Cancer Alterations")
+    (description "Collection of somatic cancer alteration datasets")
+    (license license:gpl3)))
+
+(define-public r-somaticadata
+  (package
+    (name "r-somaticadata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SomatiCAData" version
+                              'experiment))
+       (sha256
+        (base32 "0m92db12a9h7866l3vbvpqnxnvkbik8znh3l6qyl22l438wvd8b2"))))
+    (properties `((upstream-name . "SomatiCAData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/SomatiCAData")
+    (synopsis
+     "An example cancer whole genome sequencing data for the SomatiCA package")
+    (description
+     "An example cancer whole genome sequencing data for the @code{SomatiCA} package")
+    (license license:artistic2.0)))
+
+(define-public r-somascan-db
+  (package
+    (name "r-somascan-db")
+    (version "0.99.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SomaScan.db" version
+                              'annotation))
+       (sha256
+        (base32 "012v0ph9mkdl13111qamzkdfpdklbq94ry6scjhbhjqm4igmz79r"))))
+    (properties `((upstream-name . "SomaScan.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-dbi r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://somalogic.com")
+    (synopsis "Somalogic SomaScan Annotation Data")
+    (description
+     "An R package providing extended biological annotations for the @code{SomaScan}
+Assay, a proteomics platform developed by @code{SomaLogic} Operating Co., Inc.
+The annotations in this package were assembled using data from public
+repositories.  For more information about the @code{SomaScan} assay and its
+data, please reference the @code{SomaLogic/SomaLogic-Data} @code{GitHub}
+repository.")
     (license license:expat)))
 
 (define-public r-soggi
@@ -3061,6 +3587,218 @@ Coupled together, @code{soGGi} features a broad set of methods to visualise
 genomics data in the context of groups of genomic intervals such as genes,
 superenhancers and transcription factor binding events.")
     (license license:gpl3+)))
+
+(define-public r-snplocs-hsapiens-dbsnp155-grch38
+  (package
+    (name "r-snplocs-hsapiens-dbsnp155-grch38")
+    (version "0.99.24")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPlocs.Hsapiens.dbSNP155.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "1yzywcyk1yngjys9pyykilzw0w4nfxdmwz04w3b17chsbxvckl5s"))))
+    (properties `((upstream-name . "SNPlocs.Hsapiens.dbSNP155.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biocgenerics))
+    (home-page
+     "https://bioconductor.org/packages/SNPlocs.Hsapiens.dbSNP155.GRCh38")
+    (synopsis
+     "Human SNP locations and alleles extracted from dbSNP Build 155 and placed on the GRCh38/hg38 assembly")
+    (description
+     "The 949,021,448 SNPs in this package were extracted from the @code{RefSNP} JSON
+files for chromosomes 1-22, X, Y, and MT, located at
+https://ftp.ncbi.nih.gov/snp/archive/b155/JSON/ (these files were created by
+NCBI in May 2021).  These SNPs can be \"injected\" in
+BSgenome.Hsapiens.NCBI.GRCh38 or BSgenome.Hsapiens.UCSC.hg38.")
+    (license license:artistic2.0)))
+
+(define-public r-snplocs-hsapiens-dbsnp155-grch37
+  (package
+    (name "r-snplocs-hsapiens-dbsnp155-grch37")
+    (version "0.99.24")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPlocs.Hsapiens.dbSNP155.GRCh37" version
+                              'annotation))
+       (sha256
+        (base32 "0am2r8hn5ybxlvlw7c0i91n5xii0km3iy7d9a0wc9v1ykvk6qmgz"))))
+    (properties `((upstream-name . "SNPlocs.Hsapiens.dbSNP155.GRCh37")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biocgenerics))
+    (home-page
+     "https://bioconductor.org/packages/SNPlocs.Hsapiens.dbSNP155.GRCh37")
+    (synopsis
+     "Human SNP locations and alleles extracted from dbSNP Build 155 and placed on the GRCh37/hg19 assembly")
+    (description
+     "The 929,496,192 SNPs in this package were extracted from the @code{RefSNP} JSON
+files for chromosomes 1-22, X, Y, and MT, located at
+https://ftp.ncbi.nih.gov/snp/archive/b155/JSON/ (these files were created by
+NCBI in May 2021).  These SNPs can be \"injected\" in BSgenome.Hsapiens.UCSC.hg19.")
+    (license license:artistic2.0)))
+
+(define-public r-snplocs-hsapiens-dbsnp150-grch38
+  (package
+    (name "r-snplocs-hsapiens-dbsnp150-grch38")
+    (version "0.99.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPlocs.Hsapiens.dbSNP150.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "0jkwwgxxpm9ry8kizq8hs70sky41pks1ag40y5aqq91yjbpqlckj"))))
+    (properties `((upstream-name . "SNPlocs.Hsapiens.dbSNP150.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biocgenerics))
+    (home-page
+     "https://bioconductor.org/packages/SNPlocs.Hsapiens.dbSNP150.GRCh38")
+    (synopsis "SNP locations for Homo sapiens (dbSNP Build 150)")
+    (description
+     "SNP locations and alleles for Homo sapiens extracted from NCBI @code{dbSNP}
+Build 150.  The source data files used for this package were created by NCBI
+between March 12-14, 2017, and contain SNPs mapped to reference genome GRCh38.p7
+(a patched version of GRCh38 that doesn't alter chromosomes 1-22, X, Y, MT).
+Note that these SNPs can be \"injected\" in BSgenome.Hsapiens.NCBI.GRCh38 or in
+BSgenome.Hsapiens.UCSC.hg38.")
+    (license license:artistic2.0)))
+
+(define-public r-snplocs-hsapiens-dbsnp149-grch38
+  (package
+    (name "r-snplocs-hsapiens-dbsnp149-grch38")
+    (version "0.99.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPlocs.Hsapiens.dbSNP149.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "17bv25p1261hn9d7mxfp6pvivj15pxyvr92gms8a8msfqg9y0xkb"))))
+    (properties `((upstream-name . "SNPlocs.Hsapiens.dbSNP149.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biocgenerics))
+    (home-page
+     "https://bioconductor.org/packages/SNPlocs.Hsapiens.dbSNP149.GRCh38")
+    (synopsis "SNP locations for Homo sapiens (dbSNP Build 149)")
+    (description
+     "SNP locations and alleles for Homo sapiens extracted from NCBI @code{dbSNP}
+Build 149.  The source data files used for this package were created by NCBI
+between November 8-12, 2016, and contain SNPs mapped to reference genome
+GRCh38.p7 (a patched version of GRCh38 that doesn't alter chromosomes 1-22, X,
+Y, MT).  Note that these SNPs can be \"injected\" in BSgenome.Hsapiens.NCBI.GRCh38
+or in BSgenome.Hsapiens.UCSC.hg38.")
+    (license license:artistic2.0)))
+
+(define-public r-snplocs-hsapiens-dbsnp144-grch38
+  (package
+    (name "r-snplocs-hsapiens-dbsnp144-grch38")
+    (version "0.99.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPlocs.Hsapiens.dbSNP144.GRCh38" version
+                              'annotation))
+       (sha256
+        (base32 "0yxmsnxncr7w30r0d7bg5i96pclm2vf40p9jdqa02rc67a6sximn"))))
+    (properties `((upstream-name . "SNPlocs.Hsapiens.dbSNP144.GRCh38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biocgenerics))
+    (home-page
+     "https://bioconductor.org/packages/SNPlocs.Hsapiens.dbSNP144.GRCh38")
+    (synopsis "SNP locations for Homo sapiens (dbSNP Build 144)")
+    (description
+     "SNP locations and alleles for Homo sapiens extracted from NCBI @code{dbSNP}
+Build 144.  The source data files used for this package were created by NCBI on
+May 30, 2015, and contain SNPs mapped to reference genome GRCh38.p2 (a patched
+version of GRCh38 that doesn't alter chromosomes 1-22, X, Y, MT).  Note that
+these SNPs can be \"injected\" in BSgenome.Hsapiens.NCBI.GRCh38 or in
+BSgenome.Hsapiens.UCSC.hg38.")
+    (license license:artistic2.0)))
+
+(define-public r-snplocs-hsapiens-dbsnp144-grch37
+  (package
+    (name "r-snplocs-hsapiens-dbsnp144-grch37")
+    (version "0.99.20")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPlocs.Hsapiens.dbSNP144.GRCh37" version
+                              'annotation))
+       (sha256
+        (base32 "1z8kx43ki1jvj7ms7pcybakcdimfwr6zpjvspkjmma97bdz093iz"))))
+    (properties `((upstream-name . "SNPlocs.Hsapiens.dbSNP144.GRCh37")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biocgenerics))
+    (home-page
+     "https://bioconductor.org/packages/SNPlocs.Hsapiens.dbSNP144.GRCh37")
+    (synopsis "SNP locations for Homo sapiens (dbSNP Build 144)")
+    (description
+     "SNP locations and alleles for Homo sapiens extracted from NCBI @code{dbSNP}
+Build 144.  The source data files used for this package were created by NCBI on
+May 29-30, 2015, and contain SNPs mapped to reference genome GRCh37.p13.
+WARNING: Note that the GRCh37.p13 genome is a patched version of GRCh37.
+However the patch doesn't alter chromosomes 1-22, X, Y, MT. GRCh37 itself is the
+same as the hg19 genome from UCSC *except* for the mitochondrion chromosome.
+Therefore, the SNPs in this package can be \"injected\" in
+BSgenome.Hsapiens.UCSC.hg19 and they will land at the correct position but this
+injection will exclude @code{chrM} (i.e.  nothing will be injected in that
+sequence).")
+    (license license:artistic2.0)))
+
+(define-public r-snphooddata
+  (package
+    (name "r-snphooddata")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNPhoodData" version
+                              'experiment))
+       (sha256
+        (base32 "0p8361lmlfz496ivw9qaqkg7b3hr4gb9g9r73fxp6amy2xncb00g"))))
+    (properties `((upstream-name . "SNPhoodData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SNPhoodData")
+    (synopsis
+     "Additional and more complex example data for the SNPhood package")
+    (description
+     "This companion package for SNPhood provides some example datasets of a larger
+size than allowed for the SNPhood package.  They include full and real-world
+examples for performing analyses with the SNPhood package.")
+    (license license:lgpl3+)))
 
 (define-public r-snphood
   (package
@@ -3233,6 +3971,24 @@ expression across one or more regions/genes per-sample (e.g. percent spliced
 in).")
     (license license:expat)))
 
+(define-public r-snageedata
+  (package
+    (name "r-snageedata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNAGEEdata" version
+                              'experiment))
+       (sha256
+        (base32 "17wbf4xsljkryzjpk57kvjbiln0ig8d717j953wy0inz7vzdkpkn"))))
+    (properties `((upstream-name . "SNAGEEdata")))
+    (build-system r-build-system)
+    (home-page "http://fleming.ulb.ac.be/SNAGEE")
+    (synopsis "SNAGEE data")
+    (description "SNAGEE data - gene list and correlation matrix")
+    (license license:artistic2.0)))
+
 (define-public r-snagee
   (package
     (name "r-snagee")
@@ -3245,7 +4001,7 @@ in).")
         (base32 "1mchl07vkdai2w9f65620say9p1gsqxbfcylawncixjir0nj7w8h"))))
     (properties `((upstream-name . "SNAGEE")))
     (build-system r-build-system)
-    (propagated-inputs (list))
+    (propagated-inputs (list r-snageedata))
     (home-page "http://bioconductor.org/")
     (synopsis "Signal-to-Noise applied to Gene Expression Experiments")
     (description
@@ -3254,6 +4010,54 @@ can be used as a proxy for quality of gene expression studies and samples.  The
 SNRs can be calculated on any gene expression data set as long as gene IDs are
 available, no access to the raw data files is necessary.  This allows to flag
 problematic studies and samples in any public data set.")
+    (license license:artistic2.0)))
+
+(define-public r-snadata
+  (package
+    (name "r-snadata")
+    (version "1.48.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SNAData" version
+                              'experiment))
+       (sha256
+        (base32 "0qd48ggg1wjy5h47hzl9iqzy13gsxxn4f7fq4b0ra35vhckmcvyf"))))
+    (properties `((upstream-name . "SNAData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-graph))
+    (home-page "https://bioconductor.org/packages/SNAData")
+    (synopsis "Social Networks Analysis Data Examples")
+    (description
+     "Data from Wasserman & Faust (1999) \"Social Network Analysis\"")
+    (license license:lgpl2.0+)))
+
+(define-public r-smokingmouse
+  (package
+    (name "r-smokingmouse")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "smokingMouse" version
+                              'experiment))
+       (sha256
+        (base32 "0xm4a7yp6802xcmh29hwvlz39gqb5s380mzi5rck89fl6wjl4bf6"))))
+    (properties `((upstream-name . "smokingMouse")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LieberInstitute/smokingMouse")
+    (synopsis "Provides access to smokingMouse project data")
+    (description
+     "This is an @code{ExperimentHub} package that provides access to the data at the
+gene, exon, transcript and junction level used in the analyses of the
+@code{smokingMouse} project.  See
+https://github.com/@code{LieberInstitute/smokingMouse_Indirects}.  This datasets
+contain the expression counts of genes, transcripts, exons and exon-exon
+junctions across 208 mice samples from pup and adult brains and adult blood.
+They also contain relevant information of these samples and features, such as
+conditions, QC metrics and if they were used after filtering steps and also if
+the features were differently expressed in the different experiments.")
     (license license:artistic2.0)))
 
 (define-public r-smite
@@ -3553,6 +4357,33 @@ cells to or removing cells off the data. @code{SiPSiC} stands for Single Pathway
 analysis in Single Cells.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-singlemoleculefootprintingdata
+  (package
+    (name "r-singlemoleculefootprintingdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SingleMoleculeFootprintingData" version
+                              'experiment))
+       (sha256
+        (base32 "1chlik8ycsiw0kvxikiplb5xkj4afi4qniy666csyqlksaflr703"))))
+    (properties `((upstream-name . "SingleMoleculeFootprintingData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://bioconductor.org/packages/SingleMoleculeFootprintingData")
+    (synopsis "Data supporting the SingleMoleculeFootprinting pkg")
+    (description
+     "This Data package contains data objcets relevanat for the
+@code{SingleMoleculeFootprinting} package.  More specifically, it contains one
+example of aligned sequencing data (.bam & .bai) necessary to run the
+@code{SingleMoleculeFootprinting} vignette.  Additionally, we provide data that
+are essential for some functions to work correctly such as @code{BaitCapture}()
+and @code{SampleCorrelation}().")
+    (license license:gpl3)))
+
 (define-public r-singlemoleculefootprinting
   (package
     (name "r-singlemoleculefootprinting")
@@ -3611,6 +4442,7 @@ genomic location")
                              r-tscan
                              r-trajectoryutils
                              r-tibble
+                             r-tenxpbmcdata
                              r-sva
                              r-summarizedexperiment
                              r-soupx
@@ -3648,6 +4480,7 @@ genomic location")
                              r-limma
                              r-kernsmooth
                              r-igraph
+                             r-gsvadata
                              r-gsva
                              r-gseabase
                              r-gridextra
@@ -3736,6 +4569,72 @@ be found at camplab.net/sctk.")
      "Allows single cell RNA seq data analysis, clustering, creates internal network
 and infers cell-cell interactions.")
     (license license:gpl3)))
+
+(define-public r-singlecellmultimodal
+  (package
+    (name "r-singlecellmultimodal")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SingleCellMultiModal" version
+                              'experiment))
+       (sha256
+        (base32 "0kwff2nqv7nf7rqifyzr6klba6k1h29y4332b60k7hv3psjsm015"))))
+    (properties `((upstream-name . "SingleCellMultiModal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-multiassayexperiment
+                             r-matrix
+                             r-hdf5array
+                             r-experimenthub
+                             r-biocfilecache
+                             r-biocbaseutils
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SingleCellMultiModal")
+    (synopsis "Integrating Multi-modal Single Cell Experiment datasets")
+    (description
+     "@code{SingleCellMultiModal} is an @code{ExperimentHub} package that serves
+multiple datasets obtained from GEO and other sources and represents them as
+@code{MultiAssayExperiment} objects.  We provide several multi-modal datasets
+including @code{scNMT}, 10X Multiome, @code{seqFISH}, CITEseq, S@code{CoPE2},
+and others.  The scope of the package is is to provide data for benchmarking and
+analysis.")
+    (license license:artistic2.0)))
+
+(define-public r-single-mtec-transcriptomes
+  (package
+    (name "r-single-mtec-transcriptomes")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Single.mTEC.Transcriptomes" version
+                              'experiment))
+       (sha256
+        (base32 "1w3f71mfq74sjlsasi87gvqs2mhny41zm22zswz9km5msi8r2wva"))))
+    (properties `((upstream-name . "Single.mTEC.Transcriptomes")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/Single.mTEC.Transcriptomes")
+    (synopsis
+     "Single Cell Transcriptome Data and Analysis of Mouse mTEC cells")
+    (description
+     "This data package contains the code used to analyse the single-cell RNA-seq and
+the bulk ATAC-seq data from the manuscript titled: Single-cell transcriptome
+analysis reveals coordinated ectopic-gene expression patterns in medullary
+thymic epithelial cells.  This paper was published in Nature Immunology
+16,933-941(2015).  The data objects provided in this package has been
+pre-processed: the raw data files can be downloaded from @code{ArrayExpress}
+under the accession identifiers E-MTAB-3346 and E-MTAB-3624.  The vignette of
+this data package provides a documented and reproducible workflow that includes
+the code that was used to generate each statistic and figure from the
+manuscript.")
+    (license license:lgpl2.0+)))
 
 (define-public r-single
   (package
@@ -3847,6 +4746,31 @@ based segmentation on multiplexed cellular images in R based on the intensity of
 user specified protein marker channels. @code{simpleSeg} can also be used for
 the normalization of single cell data obtained from multiple images.")
     (license license:gpl3)))
+
+(define-public r-simpintlists
+  (package
+    (name "r-simpintlists")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "simpIntLists" version
+                              'experiment))
+       (sha256
+        (base32 "1683dsi6bm45v5wk9fgvrmvap15w6gvwnfijg5ayj29shiaa2qif"))))
+    (properties `((upstream-name . "simpIntLists")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/simpIntLists")
+    (synopsis
+     "The package contains BioGRID interactions for various organisms in a simple format")
+    (description
+     "The package contains @code{BioGRID} interactions for arabidopsis(thale cress),
+c.elegans, fruit fly, human, mouse, yeast( budding yeast ) and S.pombe (fission
+yeast) .  Entrez ids, official names and unique ids can be used to find
+proteins.  The format of interactions are lists.  For each gene/protein, there
+is an entry in the list with \"name\" containing name of the gene/protein and
+\"interactors\" containing the list of genes/proteins interacting with it.")
+    (license license:gpl2+)))
 
 (define-public r-simona
   (package
@@ -4054,6 +4978,30 @@ compares binding profiles processed on the same array platform.  It implements a
 simple threshold approach, thus allowing retrieval of commonly and
 differentially bound regions between datasets as well as events of compensation
 and increased binding.")
+    (license license:gpl3)))
+
+(define-public r-simbenchdata
+  (package
+    (name "r-simbenchdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SimBenchData" version
+                              'experiment))
+       (sha256
+        (base32 "1g5wff2hx3sra48wcvwh3hs9lpfavq2pqflcm9wfcch9y10m8iqd"))))
+    (properties `((upstream-name . "SimBenchData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SimBenchData")
+    (synopsis
+     "SimBenchData: a collection of 35 single-cell RNA-seq data covering a wide range of data characteristics")
+    (description
+     "The @code{SimBenchData} package contains a total of 35 single-cell RNA-seq
+datasets covering a wide range of data characteristics, including major
+sequencing protocols, multiple tissue types, and both human and mouse sources.")
     (license license:gpl3)))
 
 (define-public r-simat
@@ -4277,6 +5225,35 @@ well.  Functionalities to characterize signatures or genome samples according to
 exposure patterns are also provided.")
     (license license:gpl3)))
 
+(define-public r-signaturesearchdata
+  (package
+    (name "r-signaturesearchdata")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "signatureSearchData" version
+                              'experiment))
+       (sha256
+        (base32 "1xn0y7mcpk4s4x9azzabxfq0hxwlx7dvpb4yjrl3x8zcyk394s3z"))))
+    (properties `((upstream-name . "signatureSearchData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rhdf5
+                             r-r-utils
+                             r-magrittr
+                             r-limma
+                             r-experimenthub
+                             r-dplyr
+                             r-biobase
+                             r-affy))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/signatureSearchData")
+    (synopsis "Datasets for signatureSearch package")
+    (description
+     "CMAP/LINCS hdf5 databases and other annotations used for @code{signatureSearch}
+software package.")
+    (license license:artistic2.0)))
+
 (define-public r-signaturesearch
   (package
     (name "r-signaturesearch")
@@ -4434,6 +5411,46 @@ signatures of the same length; b) known, related and unrelated gene signatures;
 and c) permuted data and/or metadata.")
     (license license:artistic2.0)))
 
+(define-public r-sift-hsapiens-dbsnp137
+  (package
+    (name "r-sift-hsapiens-dbsnp137")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SIFT.Hsapiens.dbSNP137" version
+                              'annotation))
+       (sha256
+        (base32 "1472abqanbwziyynr851xzhg7ck8w1n98ymmggg7s46hzix5mlj8"))))
+    (properties `((upstream-name . "SIFT.Hsapiens.dbSNP137")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation r-rsqlite r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/SIFT.Hsapiens.dbSNP137")
+    (synopsis "PROVEAN/SIFT Predictions for Homo sapiens dbSNP build 137")
+    (description
+     "Database of PROVEAN/SIFT predictions for Homo sapiens @code{dbSNP} build 137")
+    (license license:artistic2.0)))
+
+(define-public r-sift-hsapiens-dbsnp132
+  (package
+    (name "r-sift-hsapiens-dbsnp132")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SIFT.Hsapiens.dbSNP132" version
+                              'annotation))
+       (sha256
+        (base32 "1akqhmv9hp41q2jrvz4xvpdi30c4c6v4xbz6ykn6pdf0217p7xry"))))
+    (properties `((upstream-name . "SIFT.Hsapiens.dbSNP132")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation r-rsqlite r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/SIFT.Hsapiens.dbSNP132")
+    (synopsis "SIFT Predictions for Homo sapiens dbSNP build 132")
+    (description
+     "Database of SIFT predictions for Homo sapiens @code{dbSNP} build 132")
+    (license license:artistic2.0)))
+
 (define-public r-siamcat
   (package
     (name "r-siamcat")
@@ -4485,6 +5502,29 @@ models (such as cross validation, parameter selection, ROC analysis and
 diagnostic model plots).")
     (license license:gpl3)))
 
+(define-public r-shinymethyldata
+  (package
+    (name "r-shinymethyldata")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "shinyMethylData" version
+                              'experiment))
+       (sha256
+        (base32 "1i6ffgi79jgpkg6nhil7v7vi23yv2j7czzibj6dxdc0kpb1n0q1h"))))
+    (properties `((upstream-name . "shinyMethylData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/shinyMethylData")
+    (synopsis "Example dataset of input data for shinyMethyl")
+    (description
+     "Extracted data from 369 TCGA Head and Neck Cancer DNA methylation samples.  The
+extracted data serve as an example dataset for the package @code{shinyMethyl}.
+Original samples are from 450k methylation arrays, and were obtained from The
+Cancer Genome Atlas (TCGA).  310 samples are from tumor, 50 are matched normals
+and 9 are technical replicates of a control cell line.")
+    (license license:artistic2.0)))
+
 (define-public r-shinyepico
   (package
     (name "r-shinyepico")
@@ -4531,6 +5571,27 @@ positions and differentially methylated regions in a user-friendly interface.
 Moreover, it includes several options to export the results and obtain files to
 perform downstream analysis.")
     (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
+
+(define-public r-shdz-db
+  (package
+    (name "r-shdz-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SHDZ.db" version
+                              'annotation))
+       (sha256
+        (base32 "077xy2zx3f4c01di18ki32xmrwgsc1qjci3wj33nmgsy5925zdxs"))))
+    (properties `((upstream-name . "SHDZ.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/SHDZ.db")
+    (synopsis "SHDZ http://genome-www5.stanford.edu/ Annotation Data (SHDZ)")
+    (description
+     "SHDZ http://genome-www5.stanford.edu/ Annotation Data (SHDZ) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-sharedobject
   (package
@@ -4600,6 +5661,54 @@ frameworks, it further incorporates a novel step that leverages Gene Ontology
 information in a semi-supervised clustering method that further improves the
 quality of the computed modules.")
     (license license:gpl3)))
+
+(define-public r-sfedata
+  (package
+    (name "r-sfedata")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SFEData" version
+                              'experiment))
+       (sha256
+        (base32 "0wkb27cs4zvvhclgk2slx8n7jx1mx3q87kn86n4rjdcx2074ndqz"))))
+    (properties `((upstream-name . "SFEData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub r-biocfilecache r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pachterlab/SFEData")
+    (synopsis "Example SpatialFeatureExperiment datasets")
+    (description
+     "Example spatial transcriptomics datasets with Simple Feature annotations as
+@code{SpatialFeatureExperiment} objects.  Technologies include Visium,
+slide-seq, Nanostring @code{CoxMX}, Vizgen MERFISH, and 10X Xenium.  Tissues
+include mouse skeletal muscle, human melanoma metastasis, human lung, breast
+cancer, and mouse liver.")
+    (license license:artistic2.0)))
+
+(define-public r-seventygenedata
+  (package
+    (name "r-seventygenedata")
+    (version "1.38.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seventyGeneData" version
+                              'experiment))
+       (sha256
+        (base32 "1zpks4fpwjb640pggwd1xldri2lf3fl8pcbvi244c6dgkf8nq93i"))))
+    (properties `((upstream-name . "seventyGeneData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://bioconductor.org/packages/release/data/experiment/html/seventyGeneData.html")
+    (synopsis
+     "ExpressionSets from the van't Veer and Van de Vijver breast cancer studies")
+    (description
+     "Gene expression data for the two breast cancer cohorts published by van't Veer
+and Van de Vijver in 2002.")
+    (license license:artistic2.0)))
 
 (define-public r-sevenc
   (package
@@ -4706,6 +5815,27 @@ Cloud to other Seven Bridges supported platforms.")
 @code{SummarizedExperiment} class.  Note that plotting functions historically in
 this package have been moved to the sechm package (see vignette for details).")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-serumstimulation
+  (package
+    (name "r-serumstimulation")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "serumStimulation" version
+                              'experiment))
+       (sha256
+        (base32 "0c6zg119rdmqhgrzi3s10856l9vyrqmd8c858hw20aiagvxn5nik"))))
+    (properties `((upstream-name . "serumStimulation")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/serumStimulation")
+    (synopsis
+     "serumStimulation is a data package which is used by examples in package pcaGoPromoter")
+    (description
+     "This package contains 13 micro array data results from a serum stimulation
+experiment")
+    (license license:gpl2+)))
 
 (define-public r-seqvartools
   (package
@@ -4907,6 +6037,27 @@ which sequenced features can be considered as confidently quantified.")
 events.")
     (license license:artistic2.0)))
 
+(define-public r-seqcna-annot
+  (package
+    (name "r-seqcna-annot")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seqCNA.annot" version
+                              'experiment))
+       (sha256
+        (base32 "0kzmn5hx8ag02pz8b78cq7dbalw2w60y441cjyyvxjgycwcfvmvj"))))
+    (properties `((upstream-name . "seqCNA.annot")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/seqCNA.annot")
+    (synopsis
+     "Annotation for the copy number analysis of deep sequencing cancer data with seqCNA")
+    (description
+     "This package provides annotation on GC content, mappability and genomic features
+for various genomes")
+    (license license:gpl3)))
+
 (define-public r-seqcna
   (package
     (name "r-seqcna")
@@ -4920,7 +6071,7 @@ events.")
     (properties `((upstream-name . "seqCNA")))
     (build-system r-build-system)
     (inputs (list samtools))
-    (propagated-inputs (list r-glad r-dosnow r-adehabitatlt))
+    (propagated-inputs (list r-seqcna-annot r-glad r-dosnow r-adehabitatlt))
     (home-page "https://bioconductor.org/packages/seqCNA")
     (synopsis "Copy number analysis of high-throughput sequencing cancer data")
     (description
@@ -4961,6 +6112,33 @@ from high throughput sequencing technologies to authenticate and validate the
 source, function and characteristics of biological samples used in scientific
 endeavours.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
+(define-public r-seqc
+  (package
+    (name "r-seqc")
+    (version "1.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seqc" version
+                              'experiment))
+       (sha256
+        (base32 "0zxmh69v45ys1hv9kkr7g6v67npcip6s11r3am502zq1dnk7khg1"))))
+    (properties `((upstream-name . "seqc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page
+     "http://bioconductor.org/packages/release/data/experiment/html/seqc.html")
+    (synopsis "RNA-seq data generated from SEQC (MAQC-III) study")
+    (description
+     "The SEQC/MAQC-III Consortium has produced benchmark RNA-seq data for the
+assessment of RNA sequencing technologies and data analysis methods (Nat
+Biotechnol, 2014).  Billions of sequence reads have been generated from ten
+different sequencing sites.  This package contains the summarized read count
+data for ~2000 sequencing libraries.  It also includes all the exon-exon
+junctions discovered from the study. @code{TaqMan} RT-PCR data for ~1000 genes
+and ERCC spike-in sequence data are included in this package as well.")
+    (license license:gpl3)))
 
 (define-public r-seqarchrplus
   (package
@@ -5059,6 +6237,26 @@ architectures as sequence logos.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-seq2pathway-data
+  (package
+    (name "r-seq2pathway-data")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seq2pathway.data" version
+                              'experiment))
+       (sha256
+        (base32 "0iaz4i5garvhai2bpwxm59h4qasbasv66a2b8mql2rqa4s6wnf0a"))))
+    (properties `((upstream-name . "seq2pathway.data")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/seq2pathway.data")
+    (synopsis "data set for R package seq2pathway")
+    (description
+     "Supporting data for the seq2patheway package.  Includes modified gene sets from
+@code{MsigDB} and org.Hs.eg.db; gene locus definitions from GENCODE project.")
+    (license license:gpl2+)))
+
 (define-public r-seq2pathway
   (package
     (name "r-seq2pathway")
@@ -5071,7 +6269,12 @@ architectures as sequence logos.")
         (base32 "1d3sshrxdk0mx2hmkjf1lc3mr9d6drhr6q8pm531rrm0rdckizrx"))))
     (properties `((upstream-name . "seq2pathway")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wgcna r-nnet r-gsa r-genomicranges r-biomart))
+    (propagated-inputs (list r-wgcna
+                             r-seq2pathway-data
+                             r-nnet
+                             r-gsa
+                             r-genomicranges
+                             r-biomart))
     (home-page "https://bioconductor.org/packages/seq2pathway")
     (synopsis
      "a novel tool for functional gene-set (or termed as pathway) analysis of next-generation sequencing data")
@@ -5260,6 +6463,7 @@ the discovery of small RNA loci and novel @code{mRNA} transcriptome discovery.")
                              r-iranges
                              r-genomicranges
                              r-complexheatmap
+                             r-chromhmmdata
                              r-chipseeker
                              r-bamsignals))
     (native-inputs (list r-knitr))
@@ -5410,6 +6614,26 @@ methods to manage hierarchy and split the tree at a given resolution or across
 resolutions.  The `@code{TreeViz`} class extends `@code{SummarizedExperiment`}
 and can performs quick aggregations on the count matrix defined by clusters.")
     (license license:artistic2.0)))
+
+(define-public r-scthi-data
+  (package
+    (name "r-scthi-data")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scTHI.data" version
+                              'experiment))
+       (sha256
+        (base32 "1y28wldw2xln9bp4hgymjdlgz9fjiyhb56kac6z7aiy1pifavw48"))))
+    (properties `((upstream-name . "scTHI.data")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/scTHI.data")
+    (synopsis
+     "The package contains examples of single cell data used in vignettes and examples of the scTHI package; data contain both tumor cells and immune cells from public dataset of glioma")
+    (description
+     "Data for the vignette and tutorial of the package @code{scTHI}.")
+    (license license:gpl2)))
 
 (define-public r-scthi
   (package
@@ -5866,6 +7090,32 @@ associated quality control information.  It can process fastq data generated by
 CEL-seq, MARS-seq, Drop-seq, Chromium 10x and SMART-seq protocols.")
     (license license:gpl2+)))
 
+(define-public r-scpdata
+  (package
+    (name "r-scpdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scpdata" version
+                              'experiment))
+       (sha256
+        (base32 "0zwwbqss2a6vkzhz517j89gf02z4f5b9kx5wbnyi2g15ihwlvaxr"))))
+    (properties `((upstream-name . "scpdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-singlecellexperiment r-s4vectors r-qfeatures
+                             r-experimenthub r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scpdata")
+    (synopsis "Single-Cell Proteomics Data Package")
+    (description
+     "The package disseminates mass spectrometry (MS)-based single-cell proteomics
+(SCP) datasets.  The data were collected from published work and formatted using
+the `scp` data structure.  The data sets contain quantitative information at
+spectrum, peptide and/or protein level for single cells or minute sample
+amounts.")
+    (license license:gpl2)))
+
 (define-public r-scpca
   (package
     (name "r-scpca")
@@ -6086,6 +7336,42 @@ manifold.")
      "This package implements SCnorm — a method to normalize single-cell RNA-seq data.")
     (license license:gpl2+)))
 
+(define-public r-scmultiome
+  (package
+    (name "r-scmultiome")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scMultiome" version
+                              'experiment))
+       (sha256
+        (base32 "0j9cwlnj0078yyzfjiwsadx34g1ddcrfm5xmzjv59dmk55iy59d7"))))
+    (properties `((upstream-name . "scMultiome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-rhdf5
+                             r-multiassayexperiment
+                             r-hdf5array
+                             r-genomicranges
+                             r-experimenthub
+                             r-delayedarray
+                             r-checkmate
+                             r-azurestor
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scMultiome")
+    (synopsis
+     "Collection of Public Single-Cell Multiome (scATAC + scRNAseq) Datasets")
+    (description
+     "Single cell multiome data, containing chromatin accessibility
+(@code{scATAC-seq}) and gene expression (@code{scRNA-seq}) information analyzed
+with the @code{ArchR} package and presented as @code{MultiAssayExperiment}
+objects.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-scmeth
   (package
     (name "r-scmeth")
@@ -6217,6 +7503,26 @@ and merge multiple single-cell data.  This package contains all the necessary
 functions in the @code{scMerge} pipeline, including the identification of SEGs,
 replication-identification methods, and merging of single-cell data.")
     (license license:gpl3)))
+
+(define-public r-sclcbam
+  (package
+    (name "r-sclcbam")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SCLCBam" version
+                              'experiment))
+       (sha256
+        (base32 "0jnpg8qdbd5b6809glzg68n12bavnpqaaarn2vfv5c6055qg6jgy"))))
+    (properties `((upstream-name . "SCLCBam")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/SCLCBam")
+    (synopsis "Sequence data from chromosome 4 of a small-cell lung tumor")
+    (description
+     "Whole-exome sequencing data from a murine small-cell lung tumor; only contains
+data of chromosome 4.")
+    (license license:gpl2)))
 
 (define-public r-scifer
   (package
@@ -6886,6 +8192,34 @@ accessibility of scatterplot visualizations to those with visual impairments
 such as color blindness.")
     (license license:expat)))
 
+(define-public r-scatac-explorer
+  (package
+    (name "r-scatac-explorer")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scATAC.Explorer" version
+                              'experiment))
+       (sha256
+        (base32 "1qjacprh3q0g1fyq70akasfr66hxw2g8n1bwn4yhf798vly5ngf8"))))
+    (properties `((upstream-name . "scATAC.Explorer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-singlecellexperiment r-s4vectors r-matrix
+                             r-data-table r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scATAC.Explorer")
+    (synopsis
+     "Collection of Single-cell ATAC Sequencing Datasets and Corresponding Metadata")
+    (description
+     "This package provides a tool to search and download a collection of publicly
+available single cell ATAC-seq datasets and their metadata.
+@code{scATAC-Explorer} aims to act as a single point of entry for users looking
+to study single cell ATAC-seq data.  Users can quickly search available datasets
+using the metadata table and download datasets of interest for immediate
+analysis within R.")
+    (license license:artistic2.0)))
+
 (define-public r-scarray-sat
   (package
     (name "r-scarray-sat")
@@ -7001,6 +8335,52 @@ samples are merged to generate a single sashimi plot, which is useful when
 contrasting cohorots (eg.  disease vs control).")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-scannotatr-models
+  (package
+    (name "r-scannotatr-models")
+    (version "0.99.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scAnnotatR.models" version
+                              'annotation))
+       (sha256
+        (base32 "1mj23jyakx5bss4v8lb66ri67ajcxk9kzfp8ya8vsbhkx5npqgl4"))))
+    (properties `((upstream-name . "scAnnotatR.models")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scAnnotatR.models")
+    (synopsis "Pretrained models for scAnnotatR package")
+    (description
+     "Pretrained models for @code{scAnnotatR} package.  These models can be used to
+automatically classify several (immune) cell types in human @code{scRNA-seq}
+data.")
+    (license license:expat)))
+
+(define-public r-scanmirdata
+  (package
+    (name "r-scanmirdata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scanMiRData" version
+                              'experiment))
+       (sha256
+        (base32 "116v4l8rqg2lsadjhhhn40fdgfar6hbx5abri5kdq7bc5fagg957"))))
+    (properties `((upstream-name . "scanMiRData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scanmir))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scanMiRData")
+    (synopsis "miRNA Affinity models for the scanMiR package")
+    (description
+     "This package contains companion data to the @code{scanMiR} package.  It contains
+`@code{KdModel`} (@code{miRNA} 12-mer binding affinity models) collections
+corresponding to all human, mouse and rat mirbase @code{miRNAs}.  See the
+@code{scanMiR} package for details.")
+    (license license:gpl3)))
+
 (define-public r-scanmirapp
   (package
     (name "r-scanmirapp")
@@ -7018,6 +8398,7 @@ contrasting cohorots (eg.  disease vs control).")
                              r-shinydashboard
                              r-shinycssloaders
                              r-shiny
+                             r-scanmirdata
                              r-scanmir
                              r-s4vectors
                              r-rtracklayer
@@ -7213,6 +8594,32 @@ cell RNA-Seq data.")
      "This package contains a systems biology markup language (SBML) interface to R.")
     (license license:gpl2)))
 
+(define-public r-sbgnview-data
+  (package
+    (name "r-sbgnview-data")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SBGNview.data" version
+                              'experiment))
+       (sha256
+        (base32 "1nprhg7rkia9jwy8mqx7iqdh1qs81nk9al8fvv1ynq2cc9x77jfr"))))
+    (properties `((upstream-name . "SBGNview.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-knitr r-bookdown))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SBGNview.data")
+    (synopsis "Supporting datasets for SBGNview package")
+    (description
+     "This package contains: 1.  A microarray gene expression dataset from a human
+breast cancer study.  2.  A RNA-Seq gene expression dataset from a mouse study
+on IFNG knockout.  3.  ID mapping tables between gene IDs and SBGN-ML file glyph
+IDs.  4.  Percent of orthologs detected in other species of the genes in a
+pathway.  Cutoffs of this percentage for defining if a pathway exists in another
+species.  5.  XML text of SBGN-ML files for all pre-collected pathways.")
+    (license license:agpl3)))
+
 (define-public r-sbgnview
   (package
     (name "r-sbgnview")
@@ -7227,6 +8634,7 @@ cell RNA-Seq data.")
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-summarizedexperiment
+                             r-sbgnview-data
                              r-rsvg
                              r-rmarkdown
                              r-rdpack
@@ -7252,6 +8660,49 @@ species by default; 4.  Extensive graphics controls, including glyph and edge
 attributes, graph layout and sub-pathway highlight; 5.  SBGN pathway data
 manipulation, processing, extraction and analysis.")
     (license license:agpl3)))
+
+(define-public r-saureusprobe
+  (package
+    (name "r-saureusprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "saureusprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0s5ma3hh7ncsi4dq33r3hwffk85x3gvjbm5cslppbsd0r0bjwkia"))))
+    (properties `((upstream-name . "saureusprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/saureusprobe")
+    (synopsis "Probe sequence data for microarrays of type saureus")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was S\\_aureus\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-saureuscdf
+  (package
+    (name "r-saureuscdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "saureuscdf" version
+                              'annotation))
+       (sha256
+        (base32 "0vmm3fy10dzzmaq22ah4fb0k3fs1gdbhnsi8mxz7xgp27dcan29j"))))
+    (properties `((upstream-name . "saureuscdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/saureuscdf")
+    (synopsis "saureuscdf")
+    (description
+     "This package provides a package containing an environment representing the
+S_aureus.cdf file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-sarks
   (package
@@ -7428,6 +8879,29 @@ is to combine the spectral clusters.  The resulting \"connected components\"
 estimate biological cell populations in the data.  See the vignette for more
 details on how to use this package, some illustrations, and simple examples.")
     (license license:gpl2+)))
+
+(define-public r-sampleclassifierdata
+  (package
+    (name "r-sampleclassifierdata")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "sampleClassifierData" version
+                              'experiment))
+       (sha256
+        (base32 "0ir21cvcqq9xh43pidh4lrm1slzknsjm9lad3qhh7dn2x5dg8p7p"))))
+    (properties `((upstream-name . "sampleClassifierData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment))
+    (home-page "https://bioconductor.org/packages/sampleClassifierData")
+    (synopsis "Pre-processed data for use with the sampleClassifier package")
+    (description
+     "This package contains two microarray and two RNA-seq datasets that have been
+preprocessed for use with the @code{sampleClassifier} package.  The RNA-seq data
+are derived from Fagerberg et al. (2014) and the Illumina Body Map 2.0 data.
+The microarray data are derived from Roth et al. (2006) and Ge et al. (2005).")
+    (license license:artistic2.0)))
 
 (define-public r-sampleclassifier
   (package

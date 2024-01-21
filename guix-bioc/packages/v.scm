@@ -12,6 +12,7 @@
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages c)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages u)
@@ -25,6 +26,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -34,6 +36,26 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-vulcandata
+  (package
+    (name "r-vulcandata")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "vulcandata" version
+                              'experiment))
+       (sha256
+        (base32 "18wbxwwp7bsmdbn4g6d96x45b672fyrhlh38kbcz3j5dysdg1clr"))))
+    (properties `((upstream-name . "vulcandata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/vulcandata")
+    (synopsis "VirtUaL ChIP-Seq data Analysis using Networks, dummy dataset")
+    (description
+     "This package provides a dummy regulatory network and @code{ChIP-Seq} dataset for
+running examples in the vulcan package")
+    (license license:lgpl3)))
 
 (define-public r-vulcan
   (package
@@ -203,6 +225,49 @@ variogram.  Multivariate methods include MULTISPATI PCA and multivariate local
 Geary's C recently developed by Anselin.  The Voyager package also implements
 plotting functions to plot SFE data and ESDA results.")
     (license license:artistic2.0)))
+
+(define-public r-vitisviniferaprobe
+  (package
+    (name "r-vitisviniferaprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "vitisviniferaprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1ggz1s37dwvrkhj4vx2civyhap7bgqsshy33lk14z4fjsayfi39a"))))
+    (properties `((upstream-name . "vitisviniferaprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/vitisviniferaprobe")
+    (synopsis "Probe sequence data for microarrays of type vitisvinifera")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Vitis\\_Vinifera\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-vitisviniferacdf
+  (package
+    (name "r-vitisviniferacdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "vitisviniferacdf" version
+                              'annotation))
+       (sha256
+        (base32 "027nn1fr5zixnlikw4pi704kdfrfm388j5qr30y9bsky445fn7g4"))))
+    (properties `((upstream-name . "vitisviniferacdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/vitisviniferacdf")
+    (synopsis "vitisviniferacdf")
+    (description
+     "This package provides a package containing an environment representing the
+Vitis_Vinifera.cdf file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-visse
   (package
@@ -513,6 +578,31 @@ summarizes the altered genes, the link to the respective Ensembl gene web page
 is reported.")
     (license license:gpl2)))
 
+(define-public r-vectrapolarisdata
+  (package
+    (name "r-vectrapolarisdata")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "VectraPolarisData" version
+                              'experiment))
+       (sha256
+        (base32 "0zr94qgyj365sy7cyzjsm9zbxyv6zbd8lwfr1nqz0p6f6hb9b8qw"))))
+    (properties `((upstream-name . "VectraPolarisData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/julia-wrobel/VectraPolarisData")
+    (synopsis "Vectra Polaris and Vectra 3 multiplex single-cell imaging data")
+    (description
+     "This package provides two multiplex imaging datasets collected on Vectra
+instruments at the University of Colorado Anschutz Medical Campus.  Data are
+provided as a Spatial Experiment objects.  Data is provided in tabular form and
+has been segmented and phenotyped using Inform software.  Raw .tiff files are
+not included.")
+    (license license:artistic2.0)))
+
 (define-public r-vdjdive
   (package
     (name "r-vdjdive")
@@ -634,6 +724,28 @@ visualizing function is removed due to the dependent package Sushi deprecated.
 If you want to use it, please change back to an older version.)")
     (license license:gpl2+)))
 
+(define-public r-varianttoolsdata
+  (package
+    (name "r-varianttoolsdata")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "VariantToolsData" version
+                              'experiment))
+       (sha256
+        (base32 "0jj8wp2mp0xgd4hixyb59bykxbbpklncjj39ra5nyw4h4ziwrbfm"))))
+    (properties `((upstream-name . "VariantToolsData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation r-genomicranges
+                             r-biocgenerics))
+    (home-page "https://bioconductor.org/packages/VariantToolsData")
+    (synopsis "Data for the VariantTools tutorial")
+    (description
+     "Data from the sequencing of a 50/50 mixture of @code{HapMap} trio samples
+NA12878 (CEU) and NA19240 (YRI), subset to the TP53 region.")
+    (license license:artistic2.0)))
+
 (define-public r-variantexperiment
   (package
     (name "r-variantexperiment")
@@ -734,6 +846,7 @@ SNV.")
                              r-foreach
                              r-data-table
                              r-crlmm
+                             r-bsgenome-hsapiens-ucsc-hg18
                              r-biocgenerics
                              r-biobase))
     (home-page "https://bioconductor.org/packages/VanillaICE")

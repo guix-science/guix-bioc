@@ -27,6 +27,7 @@
   #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages j)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -41,6 +42,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages f)
@@ -116,6 +118,53 @@ configuration between conditions.")
     (description
      "gwasurvivr is a package to perform survival analysis using Cox proportional
 hazard models on imputed genetic data.")
+    (license license:artistic2.0)))
+
+(define-public r-gwasdata
+  (package
+    (name "r-gwasdata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GWASdata" version
+                              'experiment))
+       (sha256
+        (base32 "0lprcr2r0qzi7pa9pl6cp21z7vkjpn0d6ynnbbzji9ga82hd2njq"))))
+    (properties `((upstream-name . "GWASdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gwastools))
+    (home-page "https://bioconductor.org/packages/GWASdata")
+    (synopsis
+     "Data used in the examples and vignettes of the GWASTools package")
+    (description
+     "Selected Affymetrix and Illlumina SNP data for @code{HapMap} subjects.  Data
+provided by the Center for Inherited Disease Research at Johns Hopkins
+University and the Broad Institute of MIT and Harvard University.")
+    (license license:artistic2.0)))
+
+(define-public r-gwascatdata
+  (package
+    (name "r-gwascatdata")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gwascatData" version
+                              'annotation))
+       (sha256
+        (base32 "1xhmzl06vivq8x01h60q3c4vql67wjgjfs35j4ifmixp1qhicgga"))))
+    (properties `((upstream-name . "gwascatData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/gwascatData")
+    (synopsis
+     "text file in cloud with March 30 2021 snapshot of EBI/EMBL GWAS catalog")
+    (description
+     "This package manages a text file in cloud with March 30 2021 snapshot of
+EBI/EMBL GWAS catalog.This simplifies access to a snapshot of EBI GWASCAT. More
+current images can be obtained using the gwascat package.")
     (license license:artistic2.0)))
 
 (define-public r-gwas-bayes
@@ -197,6 +246,31 @@ insertion sites, aka, peaks, merging estimated insertion sites from plus and
 minus strand, and performing off target search of the extended regions around
 insertion sites with mismatches and indels.")
     (license license:gpl2+)))
+
+(define-public r-gsvadata
+  (package
+    (name "r-gsvadata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GSVAdata" version
+                              'experiment))
+       (sha256
+        (base32 "1a9kspbmsnsrisy5xp5r3s1l7fz34v7riyiqn22hlc87zmnj7y5q"))))
+    (properties `((upstream-name . "GSVAdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-hgu95a-db r-gseabase r-biobase))
+    (home-page "https://bioconductor.org/packages/GSVAdata")
+    (synopsis "Data employed in the vignette of the GSVA package")
+    (description
+     "This package stores the data employed in the vignette of the GSVA package.
+These data belong to the following publications: Armstrong et al.  Nat Genet
+30:41-47, 2002; Cahoy et al.  J Neurosci 28:264-278, 2008; Carrel and Willard,
+Nature, 434:400-404, 2005; Huang et al.  PNAS, 104:9758-9763, 2007; Pickrell et
+al.  Nature, 464:768-722, 2010; Skaletsky et al.  Nature, 423:825-837; Verhaak
+et al.  Cancer Cell 17:98-110, 2010")
+    (license license:artistic2.0)))
 
 (define-public r-gsri
   (package
@@ -390,6 +464,8 @@ with tools for computing and using various regression diagnostics.")
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
+                             r-keggdzpathwaysgeo
+                             r-keggandmetacoredzpathwaysgeo
                              r-experimenthub
                              r-enrichmentbrowser
                              r-edger
@@ -410,6 +486,114 @@ RNA-seq) using parallel computation on standard workstations and institutional
 computer grids.  Methods can then be assessed with respect to runtime,
 statistical significance, and relevance of the results for the phenotypes
 investigated.")
+    (license license:artistic2.0)))
+
+(define-public r-gse62944
+  (package
+    (name "r-gse62944")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GSE62944" version
+                              'experiment))
+       (sha256
+        (base32 "03wy4jjg6fh1fckmy0fqs776b3mhvrksk7hgkrjg7hr7p9b9dxwp"))))
+    (properties `((upstream-name . "GSE62944")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-geoquery r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page
+     "http://bioconductor.org/packages/release/bioc/html/GSE62944.html")
+    (synopsis "GEO accession data GSE62944 as a SummarizedExperiment")
+    (description
+     "TCGA processed RNA-Seq data for 9264 tumor and 741 normal samples across 24
+cancer types and made them available as GEO accession
+[GSE62944](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62944).
+GSE62944 data have been parsed into a @code{SummarizedExperiment} object
+available in @code{ExperimentHub}.")
+    (license license:artistic2.0)))
+
+(define-public r-gse159526
+  (package
+    (name "r-gse159526")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GSE159526" version
+                              'experiment))
+       (sha256
+        (base32 "0z8aywaihmrzfn0pzm5z7pxkpmkrar4090wavvy4vzkqbzdicv8r"))))
+    (properties `((upstream-name . "GSE159526")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wvictor14/GSE159526")
+    (synopsis
+     "Placental cell DNA methylation data from GEO accession GSE159526")
+    (description
+     "19 term and 9 first trimester placental chorionic villi and matched cell-sorted
+samples ran on Illumina @code{HumanMethylationEPIC} DNA methylation microarrays.
+ This data was made available on GEO accession
+[GSE159526](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE159526).  Both
+the raw and processed data has been made available on
+\\code{@code{ExperimentHub}}.  Raw unprocessed data formatted as an
+RG@code{ChannelSet} object for integration and normalization using minfi and
+other existing Bioconductor packages.  Processed normalized data is also
+available as a DNA methylation \\code{matrix}, with a corresponding phenotype
+information as a \\code{data.frame} object.")
+    (license license:expat)))
+
+(define-public r-gse13015
+  (package
+    (name "r-gse13015")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GSE13015" version
+                              'experiment))
+       (sha256
+        (base32 "1jc40g1gxz7rcxcgx11blx9li3fpa605rzs9k2glaglrp373r7dk"))))
+    (properties `((upstream-name . "GSE13015")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-preprocesscore
+                             r-geoquery r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GSE13015")
+    (synopsis "GEO accession data GSE13015_GPL6106 as a SummarizedExperiment")
+    (description
+     "Microarray expression matrix platform GPL6106 and clinical data for 67
+septicemic patients and made them available as GEO accession
+[GSE13015](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE13015).
+GSE13015 data have been parsed into a @code{SummarizedExperiment} object
+available in @code{ExperimentHub}.  This data data could be used as an example
+supporting @code{BloodGen3Module} R package.")
+    (license (license:fsdg-compatible "MIT License"))))
+
+(define-public r-gse103322
+  (package
+    (name "r-gse103322")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GSE103322" version
+                              'experiment))
+       (sha256
+        (base32 "018k8vkyr0cvycvkihkajf709jsw0y9mhf8yamzc72x5mwazwhym"))))
+    (properties `((upstream-name . "GSE103322")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-geoquery r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GSE103322")
+    (synopsis "GEO accession data GSE103322 as a SingleCellExperiment")
+    (description
+     "Single cell RNA-Seq data for 5902 cells from 18 patients with oral cavity head
+and neck squamous cell carcinoma available as GEO accession [GSE103322]
+(http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322).  GSE103322 data
+have been parsed into a @code{SincleCellExperiment} object available in
+@code{ExperimentHub}.")
     (license license:artistic2.0)))
 
 (define-public r-gsca
@@ -440,6 +624,28 @@ biological contexts that are enriched with a specified pattern of gene
 expression.  GSCA provides both traditional R functions and interactive,
 user-friendly user interface.")
     (license (license:fsdg-compatible "GPL(>=2)"))))
+
+(define-public r-gsbenchmark
+  (package
+    (name "r-gsbenchmark")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GSBenchMark" version
+                              'experiment))
+       (sha256
+        (base32 "03ccpc69k0i0pffw0x0f49h71saz68chyppa8ncpyb5aj4lxp2gb"))))
+    (properties `((upstream-name . "GSBenchMark")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/GSBenchMark")
+    (synopsis "Gene Set Benchmark")
+    (description
+     "Benchmarks for Machine Learning Analysis of the Gene Sets.  The package contains
+a list of pathways and gene expression data sets used in \"Identifying Tightly
+Regulated and Variably Expressed Networks by Differential Rank Conservation
+(DIRAC)\" (2010) by Eddy et al.")
+    (license license:gpl2)))
 
 (define-public r-gsar
   (package
@@ -483,6 +689,28 @@ analysis for two-sample problem.  This package is particularly useful when
 testing simultaneously a large number of gene sets, or when a large number of
 permutations is necessary for more accurate p-values estimation.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-grndata
+  (package
+    (name "r-grndata")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "grndata" version
+                              'experiment))
+       (sha256
+        (base32 "17g2jp99dl6kypzz4v2pf0h29vx16pwfw6apbhgggv1had9593nm"))))
+    (properties `((upstream-name . "grndata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/grndata")
+    (synopsis
+     "Synthetic Expression Data for Gene Regulatory Network Inference")
+    (description
+     "Simulated expression data for five large Gene Regulatory Networks from different
+simulators")
+    (license license:gpl3)))
 
 (define-public r-grmetrics
   (package
@@ -528,6 +756,32 @@ linear interaction models with added experimental noise (Gaussian and Student
 distributed) for the case where replicates are available and a non-linear
 interaction model.")
     (license license:gpl2+)))
+
+(define-public r-grasp2db
+  (package
+    (name "r-grasp2db")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "grasp2db" version
+                              'annotation))
+       (sha256
+        (base32 "1aq19myhcl9kdmzy8f4c3ilf0s0ng99rl58jja2xlmqsm2hik7ya"))))
+    (properties `((upstream-name . "grasp2db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-genomeinfodb
+                             r-dplyr
+                             r-digest
+                             r-dbplyr
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/grasp2db")
+    (synopsis "grasp2db, sqlite wrap of GRASP 2.0")
+    (description
+     "grasp2db, sqlite wrap of NHLBI GRASP 2.0, an extended GWAS catalog.")
+    (license (license:fsdg-compatible "Artistic-2.0 + file LICENSE"))))
 
 (define-public r-graphpac
   (package
@@ -782,6 +1036,29 @@ directly by calling .kernel function.")
 multi-group (more than 2 group) classification.")
     (license license:artistic2.0)))
 
+(define-public r-gpaexample
+  (package
+    (name "r-gpaexample")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gpaExample" version
+                              'experiment))
+       (sha256
+        (base32 "0danfxw9jqlv9862pcf7sdaxnwxrpgs9gy38xpjzx3q25y4y1589"))))
+    (properties `((upstream-name . "gpaExample")))
+    (build-system r-build-system)
+    (home-page "http://dongjunchung.github.io/GPA/")
+    (synopsis
+     "Example data for the GPA package (Genetic analysis incorporating Pleiotropy and Annotation)")
+    (description
+     "Example data for the GPA package, consisting of the p-values of 1,219,805 SNPs
+for five psychiatric disorder GWAS from the psychiatric GWAS consortium (PGC),
+with the annotation data using genes preferentially expressed in the central
+nervous system (CNS).")
+    (license license:gpl2+)))
+
 (define-public r-gpa
   (package
     (name "r-gpa")
@@ -810,6 +1087,27 @@ prioritize GWAS results by integrating pleiotropy information and annotation
 data.  In addition, it also includes @code{ShinyGPA}, an interactive
 visualization toolkit to investigate pleiotropic architecture.")
     (license license:gpl2+)))
+
+(define-public r-gp53cdf
+  (package
+    (name "r-gp53cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gp53cdf" version
+                              'annotation))
+       (sha256
+        (base32 "11p69rxia8bqajix3jg34vnhczyxgpq50k5kdh878h7bn0mpg6bj"))))
+    (properties `((upstream-name . "gp53cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/gp53cdf")
+    (synopsis "gp53cdf")
+    (description
+     "This package provides a package containing an environment representing the
+GP53.CDF file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-gotools
   (package
@@ -1051,6 +1349,27 @@ This package was created as a part of the thesis which was developed under the
 auspices of MI^2 Group (http://mi2.mini.pw.edu.pl/,
 https://github.com/@code{geneticsMiNIng}).")
     (license license:gpl3)))
+
+(define-public r-golubesets
+  (package
+    (name "r-golubesets")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "golubEsets" version
+                              'experiment))
+       (sha256
+        (base32 "1rwhb48wz20i06whxdj1cb6qjda545w4050y87c55h3xqcair3ya"))))
+    (properties `((upstream-name . "golubEsets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/golubEsets")
+    (synopsis "exprSets for golub leukemia data")
+    (description
+     "representation of public golub data with some covariate data of provenance
+unknown to the maintainer at present; now employs @code{ExpressionSet} format")
+    (license license:lgpl2.0+)))
 
 (define-public r-goexpress
   (package
@@ -1515,6 +1834,25 @@ aligned reads.  As such, the package interacts with and provides a link between
 the packages @code{ShortRead}, IRanges and @code{genomeIntervals}.")
     (license license:artistic2.0)))
 
+(define-public r-gigseadata
+  (package
+    (name "r-gigseadata")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GIGSEAdata" version
+                              'experiment))
+       (sha256
+        (base32 "0qisi43rbjg9y2fglkri3bb1wxn4rcylhlidw2ml4bl7d36rfxdz"))))
+    (properties `((upstream-name . "GIGSEAdata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GIGSEAdata")
+    (synopsis "Gene set collections for the GIGSEA package")
+    (description "The gene set collection used for the GIGSEA package.")
+    (license license:lgpl3)))
+
 (define-public r-gigsea
   (package
     (name "r-gigsea")
@@ -1770,6 +2108,29 @@ and ggraph through using the grammar of graphics.  The package enables the
 direct visualization of the results from various omics analysis packages.")
     (license license:expat)))
 
+(define-public r-gghumanmethcancerpanelv1-db
+  (package
+    (name "r-gghumanmethcancerpanelv1-db")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GGHumanMethCancerPanelv1.db" version
+                              'annotation))
+       (sha256
+        (base32 "0ag1pkbh4mx4aplfrrz1q4f4cl05mczq9pcsfkd1071qk51dcwvx"))))
+    (properties `((upstream-name . "GGHumanMethCancerPanelv1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationforge r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/GGHumanMethCancerPanelv1.db")
+    (synopsis
+     "Illumina Golden Gate Human Methylation Cancer Panel Version 1 annotation data (chip GGHumanMethCancerPanelv1)")
+    (description
+     "Illumina Golden Gate Human Methylation Cancer Panel Version 1 annotation data
+(chip GG@code{HumanMethCancerPanelv1}) assembled using data from public
+repositories")
+    (license license:artistic2.0)))
+
 (define-public r-gg4way
   (package
     (name "r-gg4way")
@@ -1854,6 +2215,29 @@ pipeline of statistical methods, including weighted summarization, quantile
 detection, cluster analysis, and ANOVA tests, in order to classify a subset of
 relevant genes whose DE is similar or dependent to certain biological factors.")
     (license license:lgpl3)))
+
+(define-public r-geuvadistranscriptexpr
+  (package
+    (name "r-geuvadistranscriptexpr")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GeuvadisTranscriptExpr" version
+                              'experiment))
+       (sha256
+        (base32 "12253pncfqvq7c1ajkdgfn4f861w2zk3j6p5xyra7c0d0z47a2b6"))))
+    (properties `((upstream-name . "GeuvadisTranscriptExpr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GeuvadisTranscriptExpr")
+    (synopsis
+     "Data package with transcript expression and bi-allelic genotypes from the GEUVADIS project")
+    (description
+     "This package provides transcript expression and bi-allelic genotypes
+corresponding to the chromosome 19 for CEU individuals from the GEUVADIS
+project, Lappalainen et al.")
+    (license license:gpl3+)))
 
 (define-public r-getdee2
   (package
@@ -2471,6 +2855,38 @@ expression profiles and estimates the Genomic Instability Score (GIS) for each
 analyzed cell.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-genomicdistributionsdata
+  (package
+    (name "r-genomicdistributionsdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GenomicDistributionsData" version
+                              'experiment))
+       (sha256
+        (base32 "1c9pqmdnnpm80zzsbl3j66xdwb3kzn7jkisx31sn5jaxzc660jc4"))))
+    (properties `((upstream-name . "GenomicDistributionsData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-experimenthub
+                             r-ensembldb
+                             r-data-table
+                             r-bsgenome
+                             r-annotationhub
+                             r-annotationfilter))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GenomicDistributionsData")
+    (synopsis "Reference data for GenomicDistributions package")
+    (description
+     "This package provides ready to use reference data for
+@code{GenomicDistributions} package.  Raw data was obtained from ensembldb and
+processed with helper functions.  Data files are available for the following
+genome assemblies: hg19, hg38, mm9 and mm10.")
+    (license license:bsd-2)))
+
 (define-public r-genomicdistributions
   (package
     (name "r-genomicdistributions")
@@ -2508,6 +2924,46 @@ Start Sites (TSSs); genomic partition plots, which visualize how your regions
 overlap given genomic features such as promoters, introns, exons, or intergenic
 regions.  It also makes it easy to compare one set of ranges to another.")
     (license license:bsd-2)))
+
+(define-public r-genomewidesnp6crlmm
+  (package
+    (name "r-genomewidesnp6crlmm")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "genomewidesnp6Crlmm" version
+                              'annotation))
+       (sha256
+        (base32 "16qcxa32fmbdcv5dck0grsnqyfcqql7wpxa1l6andv9hrvabv2jx"))))
+    (properties `((upstream-name . "genomewidesnp6Crlmm")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/genomewidesnp6Crlmm")
+    (synopsis "Metadata for fast genotyping with the 'crlmm' package")
+    (description
+     "Package with metadata for fast genotyping Affymetrix @code{GenomeWideSnp_6}
+arrays using the crlmm package.")
+    (license license:artistic2.0)))
+
+(define-public r-genomewidesnp5crlmm
+  (package
+    (name "r-genomewidesnp5crlmm")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "genomewidesnp5Crlmm" version
+                              'annotation))
+       (sha256
+        (base32 "06dmwnjy3gb53y6nr02dmp22qzfl5d63wppazrabcqbzwimhnvp8"))))
+    (properties `((upstream-name . "genomewidesnp5Crlmm")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/genomewidesnp5Crlmm")
+    (synopsis "Metadata for fast genotyping with the 'crlmm' package")
+    (description
+     "Package with metadata for fast genotyping Affymetrix @code{GenomeWideSnp_5}
+arrays using the crlmm package.  Annotation build is hg19.")
+    (license license:artistic2.0)))
 
 (define-public r-genomes
   (package
@@ -2628,6 +3084,7 @@ of either copy number variations or copy number aberrations")
                              r-snowballc
                              r-rtracklayer
                              r-rcolorbrewer
+                             r-org-rn-eg-db
                              r-networkd3
                              r-go-db
                              r-dplyr
@@ -2744,6 +3201,29 @@ and inbreeding coefficients and other utilities.  Note that package is not yet
 stable.  Use it with care!")
     (license (list license:lgpl2.1+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-genesummary
+  (package
+    (name "r-genesummary")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GeneSummary" version
+                              'annotation))
+       (sha256
+        (base32 "0h6afrjb00afrcw6mwslxp7cmwfzp4qfxh0aa4f41kfjd3cymmp5"))))
+    (properties `((upstream-name . "GeneSummary")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jokergoo/GeneSummary")
+    (synopsis "RefSeq Gene Summaries")
+    (description
+     "This package provides long description of genes collected from the @code{RefSeq}
+database.  The text in \"COMMENT\" section started with \"Summary\" is extracted as
+the description of the gene.  The long text descriptions can be used for
+analysis such as text mining.")
+    (license license:expat)))
 
 (define-public r-genestructuretools
   (package
@@ -2925,6 +3405,59 @@ microarray data.  The algorithm can aid in the discovery of new genes with
 similar functions to a given list of genes already known to have closely related
 functions.")
     (license license:gpl2+)))
+
+(define-public r-geneplast-data-string-v91
+  (package
+    (name "r-geneplast-data-string-v91")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "geneplast.data.string.v91" version
+                              'annotation))
+       (sha256
+        (base32 "0mc26d0sgmpmfmqsqinqv5k6vhg0hlc8hsjkcnvf369yav224nq1"))))
+    (properties `((upstream-name . "geneplast.data.string.v91")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/geneplast.data.string.v91")
+    (synopsis "Input data for the geneplast package")
+    (description
+     "The package geneplast.data.string.v91 contains input data used in the analysis
+pipelines available in the geneplast package.")
+    (license license:artistic2.0)))
+
+(define-public r-geneplast-data
+  (package
+    (name "r-geneplast-data")
+    (version "0.99.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "geneplast.data" version
+                              'annotation))
+       (sha256
+        (base32 "1i31kx4kckfg965s9l3pilvmg847av3rpa05aql43259ccyng4hi"))))
+    (properties `((upstream-name . "geneplast.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treeio
+                             r-tidyr
+                             r-tibble
+                             r-readr
+                             r-purrr
+                             r-igraph
+                             r-geneplast
+                             r-dplyr
+                             r-biocfilecache
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/geneplast.data")
+    (synopsis "Input data for the geneplast package via AnnotationHub")
+    (description
+     "The package geneplast.data provides datasets from different sources via
+@code{AnnotationHub} to use in geneplast pipelines.  The datasets have species,
+phylogenetic trees, and orthology relationships among eukaryotes from different
+orthologs databases.")
+    (license license:artistic2.0)))
 
 (define-public r-geneplast
   (package
@@ -3364,6 +3897,29 @@ package also has the necessary default constants for @code{gDR} platform.  Many
 of the functions are utilized by the @code{gDRcore} package.")
     (license license:artistic2.0)))
 
+(define-public r-gdrtestdata
+  (package
+    (name "r-gdrtestdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gDRtestData" version
+                              'experiment))
+       (sha256
+        (base32 "0pwrypvc1hvrcd6dckiid5vjpwpcbw3vg61s88mms3kjs8163c0r"))))
+    (properties `((upstream-name . "gDRtestData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/gDRtestData")
+    (synopsis "gDRtestData - R data package with testing dose reponse data")
+    (description
+     "R package with internal dose-response test data.  Package provides functions to
+generate input testing data that can be used as the input for @code{gDR}
+pipeline.  It also contains RDS files with MAE data processed by @code{gDR}.")
+    (license license:artistic2.0)))
+
 (define-public r-gdrstyle
   (package
     (name "r-gdrstyle")
@@ -3537,6 +4093,32 @@ Furthermore, it provides functionality to filter out reads of potential
 @code{gDNA} origin.")
     (license license:artistic2.0)))
 
+(define-public r-gdnainrnaseqdata
+  (package
+    (name "r-gdnainrnaseqdata")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gDNAinRNAseqData" version
+                              'experiment))
+       (sha256
+        (base32 "13v14dhwb1mkpxc5z08amqajhkncrkl38k4js48bp36s8lzb0zw8"))))
+    (properties `((upstream-name . "gDNAinRNAseqData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-rsamtools r-rcurl r-experimenthub
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/functionalgenomics/gDNAinRNAseqData")
+    (synopsis "RNA-seq data with different levels of gDNA contamination")
+    (description
+     "This package provides access to BAM files generated from RNA-seq data produced
+with different levels of @code{gDNA} contamination.  It currently allows one to
+download a subset of the data published by Li et al., BMC Genomics, 23:554,
+2022.  This subset of data is formed by BAM files with about 100,000 alignments
+with three different levels of @code{gDNA} contamination.")
+    (license license:artistic2.0)))
+
 (define-public r-gdcrnatools
   (package
     (name "r-gdcrnatools")
@@ -3589,6 +4171,24 @@ visualization functions such as volcano plot, bar plot, and KM plot, a few
 simply shiny apps are developed to facilitate visualization of results on a
 local webpage.")
     (license license:artistic2.0)))
+
+(define-public r-gcspikelite
+  (package
+    (name "r-gcspikelite")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gcspikelite" version
+                              'experiment))
+       (sha256
+        (base32 "1yfmp96k1iy6sjyafs2sflflnmnq4czkjba61vzxb4alirra9jf5"))))
+    (properties `((upstream-name . "gcspikelite")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/gcspikelite")
+    (synopsis "Spike-in data for GC/MS data and methods within flagme")
+    (description "Spike-in data for GC/MS data and methods within flagme")
+    (license license:lgpl2.0+)))
 
 (define-public r-gcrisprtools
   (package
@@ -3780,6 +4380,27 @@ visualization.")
      "Given a vector of cluster memberships for a cell population, identifies a
 sequence of gates (polygon filters on 2D scatter plots) for isolation of that
 cell type.")
+    (license license:artistic2.0)))
+
+(define-public r-gaschyhs
+  (package
+    (name "r-gaschyhs")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gaschYHS" version
+                              'experiment))
+       (sha256
+        (base32 "08dgm24ycsldp6pjqhflpxqm91yqp199n2j1fg9m4wrgbyakypkm"))))
+    (properties `((upstream-name . "gaschYHS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page
+     "http://genome-www.stanford.edu/yeast_stress/data/rawdata/complete_dataset.txt")
+    (synopsis
+     "ExpressionSet for response of yeast to heat shock and other environmental stresses")
+    (description "Data from PMID 11102521")
     (license license:artistic2.0)))
 
 (define-public r-gars

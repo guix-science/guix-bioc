@@ -29,6 +29,7 @@
   #:use-module (guix-cran packages v)
   #:use-module (gnu packages java)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -42,6 +43,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -92,6 +94,72 @@ providing static and dynamic analysis tools for data integration.  In addition,
 it provides functions to identify individual signaling axes based on data
 integration.")
     (license license:gpl2+)))
+
+(define-public r-pwmenrich-mmusculus-background
+  (package
+    (name "r-pwmenrich-mmusculus-background")
+    (version "4.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PWMEnrich.Mmusculus.background" version
+                              'experiment))
+       (sha256
+        (base32 "1gwmilyikslgp56xrff2sqqm32lmdq589cya19cm0yi7pa17fqdw"))))
+    (properties `((upstream-name . "PWMEnrich.Mmusculus.background")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pwmenrich))
+    (home-page
+     "https://bioconductor.org/packages/PWMEnrich.Mmusculus.background")
+    (synopsis "M. musculus background for PWMEnrich")
+    (description
+     "PWMEnrich pre-compiled background objects for M.musculus (mouse) and
+@code{MotifDb} M. musculus motifs.")
+    (license license:gpl3)))
+
+(define-public r-pwmenrich-hsapiens-background
+  (package
+    (name "r-pwmenrich-hsapiens-background")
+    (version "4.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PWMEnrich.Hsapiens.background" version
+                              'experiment))
+       (sha256
+        (base32 "0fr775h5k98xspmjpyf363dav38j7cixnmhapfsy8ijijyl4g8jw"))))
+    (properties `((upstream-name . "PWMEnrich.Hsapiens.background")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pwmenrich))
+    (home-page
+     "https://bioconductor.org/packages/PWMEnrich.Hsapiens.background")
+    (synopsis "H. sapiens background for PWMEnrich")
+    (description
+     "PWMEnrich pre-compiled background objects for H. sapiens (human) and
+@code{MotifDb} H. sapiens motifs.")
+    (license license:gpl3)))
+
+(define-public r-pwmenrich-dmelanogaster-background
+  (package
+    (name "r-pwmenrich-dmelanogaster-background")
+    (version "4.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PWMEnrich.Dmelanogaster.background" version
+                              'experiment))
+       (sha256
+        (base32 "02aiy2qb62r8qgi5gaj2scra46qgf4wh3lzpqvsxbi7c2glnp7ig"))))
+    (properties `((upstream-name . "PWMEnrich.Dmelanogaster.background")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pwmenrich))
+    (home-page
+     "https://bioconductor.org/packages/PWMEnrich.Dmelanogaster.background")
+    (synopsis "D. melanogaster background for PWMEnrich")
+    (description
+     "PWMEnrich pre-compiled background objects for Drosophila melanogaster and
+@code{MotifDb} D. melanogaster motifs.")
+    (license license:gpl3)))
 
 (define-public r-pwmenrich
   (package
@@ -238,6 +306,28 @@ integrates well with standard somatic variant detection and copy number
 pipelines, and has support for tumor samples without matching normal samples.")
     (license license:artistic2.0)))
 
+(define-public r-pumadata
+  (package
+    (name "r-pumadata")
+    (version "2.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pumadata" version
+                              'experiment))
+       (sha256
+        (base32 "0rc2qda3s3326g1ymychhxa3c1vb16vj7sllfqymridqwm907k0x"))))
+    (properties `((upstream-name . "pumadata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-puma r-oligo r-biobase))
+    (home-page "http://umber.sbs.man.ac.uk/resources/puma")
+    (synopsis "Various data sets for use with the puma package")
+    (description
+     "This is a simple data package including various data sets derived from the
+estrogen data for use with the puma (Propagating Uncertainty in Microarray
+Analysis) package.")
+    (license license:lgpl2.0+)))
+
 (define-public r-puma
   (package
     (name "r-puma")
@@ -273,6 +363,37 @@ execution over previously available uncertainty propagation methods.  Included
 are summarisation, differential expression detection, clustering and PCA
 methods, together with useful plotting functions.")
     (license license:lgpl2.0+)))
+
+(define-public r-pth2o2lipids
+  (package
+    (name "r-pth2o2lipids")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PtH2O2lipids" version
+                              'experiment))
+       (sha256
+        (base32 "1rx0sg5nz7i20d74y0cq6nybc1q62h0d9rpi3dk02jfngk3zzb5d"))))
+    (properties `((upstream-name . "PtH2O2lipids")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xcms r-lobstahs r-camera))
+    (home-page "http://dx.doi.org/10.1038/ismej.2014.136")
+    (synopsis
+     "P. tricornutum HPLC-ESI-MS Lipid Data from van Creveld et al. (2015)")
+    (description
+     "Annotated HPLC-ESI-MS lipid data in positive ionization mode from an experiment
+in which cultures of the marine diatom Phaeodactylum tricornutum were treated
+with various concentrations of hydrogen peroxide (H2O2) to induce oxidative
+stress.  The experiment is described in Graff van Creveld, et al., 2015, \"Early
+perturbation in mitochondria redox homeostasis in response to environmental
+stress predicts cell fate in diatoms,\" ISME Journal 9:385-395.
+@code{PtH2O2lipids} consists of two objects: A CAMERA @code{xsAnnotate} object
+(@code{ptH2O2lipids$xsAnnotate}) and LOBSTAHS LOBSet object
+(@code{ptH2O2lipids$xsAnnotate$LOBSet}).  The LOBSet includes putative compound
+assignments from the default LOBSTAHS database.  Isomer annotation is recorded
+in three other LOBSet slots.")
+    (license license:expat)))
 
 (define-public r-ptairms
   (package
@@ -325,6 +446,36 @@ examples.  This package was used for data analysis of Gassin Delyle study on
 adults undergoing invasive mechanical ventilation in the intensive care unit due
 to severe COVID-19 or non-COVID-19 acute respiratory distress syndrome (ARDS),
 and permit to identfy four potentiel biomarquers of the infection.")
+    (license license:gpl3)))
+
+(define-public r-ptairdata
+  (package
+    (name "r-ptairdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ptairData" version
+                              'experiment))
+       (sha256
+        (base32 "11fxa0j4jl19ig21v00acbkapwi0y5d9n36q82pb8kz2krdaa9xc"))))
+    (properties `((upstream-name . "ptairData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-signal r-rhdf5))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ptairData")
+    (synopsis
+     "PTR-TOF-MS volatolomics raw datasets from exhaled air and cell culture headspace")
+    (description
+     "The package @code{ptairData} contains two raw datasets from
+Proton-Transfer-Reaction Time-of-Flight mass spectrometer acquisitions
+(PTR-TOF-MS), in the HDF5 format.  One from the exhaled air of two volunteer
+healthy individuals with three replicates, and one from the cell culture
+headspace from two mycobacteria species and one control (culture medium only)
+with two replicates.  Those datasets are used in the examples and in the
+vignette of the @code{ptairMS} package (PTR-TOF-MS data pre-processing).  There
+are also used to gererate the @code{ptrSet} in the @code{ptairMS} data :
+@code{exhaledPtrset} and @code{mycobacteriaSet}")
     (license license:gpl3)))
 
 (define-public r-psygenet2r
@@ -625,6 +776,109 @@ research and experimental settings.")
      "Significance assessment for distance measures of time-course protein profiles")
     (license license:gpl3)))
 
+(define-public r-prostatecancervarambally
+  (package
+    (name "r-prostatecancervarambally")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "prostateCancerVarambally" version
+                              'experiment))
+       (sha256
+        (base32 "10irpxg5gfj10s310irjh1lacg05s6073vfqlv5jmpwgjjz8g84m"))))
+    (properties `((upstream-name . "prostateCancerVarambally")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/prostateCancerVarambally")
+    (synopsis "Prostate Cancer Data")
+    (description
+     "This package provides a Bioconductor data package for the Varambally dataset")
+    (license license:artistic2.0)))
+
+(define-public r-prostatecancertaylor
+  (package
+    (name "r-prostatecancertaylor")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "prostateCancerTaylor" version
+                              'experiment))
+       (sha256
+        (base32 "0mccc3fwrnayjlpjyncizsrnnapgb7mhywvcdwlspp2ma0xzq2kw"))))
+    (properties `((upstream-name . "prostateCancerTaylor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/prostateCancerTaylor")
+    (synopsis "Prostate Cancer Data")
+    (description
+     "This package provides a Bioconductor data package for the Taylor et al (2010)
+dataset.")
+    (license license:artistic2.0)))
+
+(define-public r-prostatecancerstockholm
+  (package
+    (name "r-prostatecancerstockholm")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "prostateCancerStockholm" version
+                              'experiment))
+       (sha256
+        (base32 "19dkx1brrwjcrjyfhajiazfpy853kmqr10npzkarnb1fw3dhn9a9"))))
+    (properties `((upstream-name . "prostateCancerStockholm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/prostateCancerStockholm")
+    (synopsis "Prostate Cancer Data")
+    (description
+     "This package provides a Bioconductor data package for the Stockholm dataset")
+    (license license:artistic2.0)))
+
+(define-public r-prostatecancergrasso
+  (package
+    (name "r-prostatecancergrasso")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "prostateCancerGrasso" version
+                              'experiment))
+       (sha256
+        (base32 "0mvlnfps3xa6039ysbp5hc8cy30masw9p1rhhms9f79m1xh3ldqr"))))
+    (properties `((upstream-name . "prostateCancerGrasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/prostateCancerGrasso")
+    (synopsis "Prostate Cancer Data")
+    (description
+     "This package provides a Bioconductor data package for the Grasso (2012) Prostate
+Cancer dataset.")
+    (license license:artistic2.0)))
+
+(define-public r-prostatecancercamcap
+  (package
+    (name "r-prostatecancercamcap")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "prostateCancerCamcap" version
+                              'experiment))
+       (sha256
+        (base32 "1962yhm8j1mb3yvdkvdn8i35dmwj69larlp201vwqr8a25l67isq"))))
+    (properties `((upstream-name . "prostateCancerCamcap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/prostateCancerCamcap")
+    (synopsis "Prostate Cancer Data")
+    (description
+     "This package provides a Bioconductor data package for the Ross-Adams (2015)
+Prostate Cancer dataset.")
+    (license license:artistic2.0)))
+
 (define-public r-prostar
   (package
     (name "r-prostar")
@@ -667,6 +921,7 @@ research and experimental settings.")
                              r-future
                              r-dt
                              r-data-table
+                             r-dapardata
                              r-dapar
                              r-colourpicker))
     (native-inputs (list r-knitr))
@@ -780,6 +1035,28 @@ variables as described in Pounds et.  al. (2009) Bioinformatics 25: 2013-2019")
      "The package @code{pRolocGUI} comprises functions to interactively visualise
 spatial proteomics data on the basis of @code{pRoloc}, @code{pRolocdata} and
 shiny.")
+    (license license:gpl2)))
+
+(define-public r-prolocdata
+  (package
+    (name "r-prolocdata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pRolocdata" version
+                              'experiment))
+       (sha256
+        (base32 "0zjys778k9xydd6r1nvklz324mq688472b8i8d1nm8ayb880bi7i"))))
+    (properties `((upstream-name . "pRolocdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-msnbase r-biobase))
+    (home-page "https://github.com/lgatto/pRolocdata")
+    (synopsis "Data accompanying the pRoloc package")
+    (description
+     "Mass-spectrometry based spatial proteomics data sets and protein complex
+separation data.  Also contains the time course expression experiment from
+Mulvey et al.  2015.")
     (license license:gpl2)))
 
 (define-public r-proloc
@@ -950,6 +1227,27 @@ signal (e.g. heatmap).  profileplyr leverages many Bioconductor tools to allow
 for both flexibility and additional functionality in workflows that end with
 visualization of the read signal.")
     (license license:gpl3+)))
+
+(define-public r-prodata
+  (package
+    (name "r-prodata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ProData" version
+                              'experiment))
+       (sha256
+        (base32 "099xf8143k2z74nb1hdlswrv1gjmg41255x0njxa4wzdwlpyp5k2"))))
+    (properties `((upstream-name . "ProData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/ProData")
+    (synopsis "SELDI-TOF data of Breast cancer samples")
+    (description
+     "This package provides a data package of SELDI-TOF protein mass spectrometry data
+of 167 breast cancer and normal samples.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-proda
   (package
@@ -1153,6 +1451,8 @@ implementation of @code{PrInCE}.")
                              r-rtracklayer
                              r-r-utils
                              r-purrr
+                             r-phastcons100way-ucsc-hg38
+                             r-jaspar2018
                              r-iranges
                              r-gviz
                              r-genomicscores
@@ -1171,6 +1471,71 @@ the conservation level and sequence feature, provided within both command-line
 and graphical interfaces, which achieves a better performance than the previous
 non-cell-specific methods on @code{miRNA} TSSs.")
     (license license:gpl2)))
+
+(define-public r-primeviewprobe
+  (package
+    (name "r-primeviewprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "primeviewprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0kw04789ihxnw874qcdj5ypwj6npya2v3p893ahjwhys5wrivmqg"))))
+    (properties `((upstream-name . "primeviewprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/primeviewprobe")
+    (synopsis "Probe sequence data for microarrays of type primeview")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was @code{PrimeView\\_probe\\_tab}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-primeviewcdf
+  (package
+    (name "r-primeviewcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "primeviewcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0qj3l2iabpl2d79pr258cbqar4hdpjkbwf829bnwrmabkaq92z48"))))
+    (properties `((upstream-name . "primeviewcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/primeviewcdf")
+    (synopsis "primeviewcdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{PrimeView.cdf} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-predasampledata
+  (package
+    (name "r-predasampledata")
+    (version "0.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PREDAsampledata" version
+                              'experiment))
+       (sha256
+        (base32 "1ps8m8g0s5vsxhhr80ylxcngnn7xipfc70cyxszwmhcwgy1ghwja"))))
+    (properties `((upstream-name . "PREDAsampledata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-preda r-biobase r-annotate r-affy))
+    (home-page "https://bioconductor.org/packages/PREDAsampledata")
+    (synopsis
+     "expression and copy number data on clear cell renal carcinoma samples")
+    (description
+     "Sample data for PREDA package. (annotations objects synchronized with
+@code{GeneAnnot} custom CDFs version 2.2.0)")
+    (license license:artistic2.0)))
 
 (define-public r-preda
   (package
@@ -1191,6 +1556,41 @@ non-cell-specific methods on @code{miRNA} TSSs.")
      "Package for the position related analysis of quantitative functional genomics
 data.")
     (license license:gpl2)))
+
+(define-public r-precisetadhub
+  (package
+    (name "r-precisetadhub")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "preciseTADhub" version
+                              'experiment))
+       (sha256
+        (base32 "006kdb7rv63jyn4xnvrk13s5by1m85jgnfs2594h51af4sgyd2id"))))
+    (properties `((upstream-name . "preciseTADhub")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dozmorovlab/preciseTADhub")
+    (synopsis "Pre-trained random forest models obtained using preciseTAD")
+    (description
+     "An experimentdata package to supplement the @code{preciseTAD} package containing
+pre-trained models and the variable importances of each genomic annotation used
+to build the model parsed into list objects and available in
+@code{ExperimentHub}.  In total, @code{preciseTADhub} provides access to n=84
+random forest classification models optimized to predict TAD/chromatin loop
+boundary regions and stored as .RDS files.  The value, n, comes from the fact
+that we considered l=2 cell lines {GM12878, K562}, g=2 ground truth boundaries
+{Arrowhead, Peakachu}, and c=21 autosomal chromosomes {CHR1, CHR2, ..., CHR22}
+(omitting CHR9).  Furthermore, each object is itself a two-item list containing:
+(1) the model object, and (2) the variable importances for CTCF, RAD21, SMC3,
+and ZNF143 used to predict boundary regions.  Each model is trained via a
+\"holdout\" strategy, in which data from chromosomes {CHR1, CHR2, ..., CHRi-1,
+CHRi+1, ..., CHR22} were used to build the model and the ith chromosome was
+reserved for testing.  See https://doi.org/10.1101/2020.09.03.282186 for more
+detail on the model building strategy.")
+    (license license:expat)))
 
 (define-public r-precisetad
   (package
@@ -1241,6 +1641,30 @@ CTCF, RAD21, SMC3, and ZNF143 signal and more conserved across cell lines.  The
 pre-trained model can accurately predict boundaries in another cell line using
 CTCF, RAD21, SMC3, and ZNF143 annotation data for this cell line.")
     (license license:expat)))
+
+(define-public r-prebsdata
+  (package
+    (name "r-prebsdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "prebsdata" version
+                              'experiment))
+       (sha256
+        (base32 "1jszgh5sq0fls0484zfy41cpxwfg04pky54ma2r8v0x2aksb9fnv"))))
+    (properties `((upstream-name . "prebsdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/prebsdata")
+    (synopsis "Data for 'prebs' package")
+    (description
+     "This package contains data required to run examples in prebs package.  The data
+files include: 1) Small sample bam files for demonstration purposes 2) Probe
+sequence mappings for Custom CDF (taken from
+http://brainarray.mbni.med.umich.edu/brainarray/Database/@code{CustomCDF/genomic_curated_CDF.asp})
+3) Probe sequence mappings for manufacturer's CDF (manually created using
+bowtie)")
+    (license license:artistic2.0)))
 
 (define-public r-prebs
   (package
@@ -1353,7 +1777,8 @@ the folded G4.")
         (base32 "141hc0gl52869labiryr8ar763hqrxqxjxbi6s1nlj96d601s8sm"))))
     (properties `((upstream-name . "PPInfer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringdb
+    (propagated-inputs (list r-yeastexpdata
+                             r-stringdb
                              r-kernlab
                              r-igraph
                              r-httr
@@ -1470,6 +1895,114 @@ that provides a comprehensive evaluation and visualization of the power and
 sample size relationship.")
     (license license:gpl2)))
 
+(define-public r-porcineprobe
+  (package
+    (name "r-porcineprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "porcineprobe" version
+                              'annotation))
+       (sha256
+        (base32 "16q865wjrfcm5ffqwjdk762yq1ixa93jlvfg7xbhsvajvvw5dxdy"))))
+    (properties `((upstream-name . "porcineprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/porcineprobe")
+    (synopsis "Probe sequence data for microarrays of type porcine")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Porcine\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-porcinecdf
+  (package
+    (name "r-porcinecdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "porcinecdf" version
+                              'annotation))
+       (sha256
+        (base32 "1ywbgh5nk3bba0mhmbbmvry0j9m9vk7qmsacl5nx1cjd7kp68csv"))))
+    (properties `((upstream-name . "porcinecdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/porcinecdf")
+    (synopsis "porcinecdf")
+    (description
+     "This package provides a package containing an environment representing the
+Porcine.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-porcine-db
+  (package
+    (name "r-porcine-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "porcine.db" version
+                              'annotation))
+       (sha256
+        (base32 "1yg0nixly4akpx11fzv93jzfbrs05qck2qg9a0a76zwlnp9mmak3"))))
+    (properties `((upstream-name . "porcine.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-ss-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/porcine.db")
+    (synopsis
+     "Affymetrix Affymetrix Porcine Array annotation data (chip porcine)")
+    (description
+     "Affymetrix Affymetrix Porcine Array annotation data (chip porcine) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-poplarprobe
+  (package
+    (name "r-poplarprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "poplarprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1pi6lhkk3lr49qs0yfpxm80nm1zqn4syykydymah2208r6qnkgv2"))))
+    (properties `((upstream-name . "poplarprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/poplarprobe")
+    (synopsis "Probe sequence data for microarrays of type poplar")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Poplar\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-poplarcdf
+  (package
+    (name "r-poplarcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "poplarcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0j28czs936j2wgwp63qbwl1mjcflcrx7ir88jzxkkw7411ch1gl1"))))
+    (properties `((upstream-name . "poplarcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/poplarcdf")
+    (synopsis "poplarcdf")
+    (description
+     "This package provides a package containing an environment representing the
+Poplar.cdf file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-poma
   (package
     (name "r-poma")
@@ -1517,6 +2050,26 @@ https://github.com/pcastellanoescuder/POMAShiny.  See Castellano-Escuder P,
 González-Domínguez R, Carmona-Pontaque F, et al. (2021)
 <doi:10.1371/journal.pcbi.1009148> for more details.")
     (license license:gpl3)))
+
+(define-public r-polyphen-hsapiens-dbsnp131
+  (package
+    (name "r-polyphen-hsapiens-dbsnp131")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PolyPhen.Hsapiens.dbSNP131" version
+                              'annotation))
+       (sha256
+        (base32 "1kikygkli41sn3rqihz0924prmqg2264ifj29vmg1a7qccm0kf7c"))))
+    (properties `((upstream-name . "PolyPhen.Hsapiens.dbSNP131")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation r-rsqlite r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/PolyPhen.Hsapiens.dbSNP131")
+    (synopsis "PolyPhen Predictions for Homo sapiens dbSNP build 131")
+    (description
+     "Database of @code{PolyPhen} predictions for Homo sapiens @code{dbSNP} build 131")
+    (license license:artistic2.0)))
 
 (define-public r-pogos
   (package
@@ -1618,6 +2171,27 @@ per well written to file.  The package includes a shiny application which
 provides an interactive and user-friendly interface to the full functionality of
 @code{PoDCall}.")
     (license license:gpl3)))
+
+(define-public r-pocrcannotation-db
+  (package
+    (name "r-pocrcannotation-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "POCRCannotation.db" version
+                              'annotation))
+       (sha256
+        (base32 "0ybvs4hrxpivdkhm0fxpib11vlxqqdk8prlyj78vj5qzyb3iy89d"))))
+    (properties `((upstream-name . "POCRCannotation.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/POCRCannotation.db")
+    (synopsis "package containing metadata for POCRC arrays")
+    (description
+     "This package provides a package containing metadata for POCRC arrays assembled
+using data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-pmp
   (package
@@ -1785,6 +2359,28 @@ of cells in a sample (this feature requires inclusion of the number of beads per
 sample and information about any dilution performed).")
     (license license:gpl3)))
 
+(define-public r-plotgardenerdata
+  (package
+    (name "r-plotgardenerdata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "plotgardenerData" version
+                              'experiment))
+       (sha256
+        (base32 "1c8004k5kqx1lryc7x57xvlqic7km11r2b723r5ar1x5mghl9lr3"))))
+    (properties `((upstream-name . "plotgardenerData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PhanstielLab/plotgardenerData")
+    (synopsis "Datasets and test data files for the plotgardener package")
+    (description
+     "This is a supplemental data package for the plotgardener package.  Includes
+example datasets used in plotgardener vignettes and example raw data files.  For
+details on how to use these datasets, see the plotgardener package vignettes.")
+    (license license:expat)))
+
 (define-public r-plotgardener
   (package
     (name "r-plotgardener")
@@ -1894,6 +2490,50 @@ the number of distinct and mutant reads in both tissues.  We implement a Monte
 Carlo importance sampling method to assess the likelihood that a mutation arises
 from the tumor relative to non-tumor origin.")
     (license license:artistic2.0)))
+
+(define-public r-plasmodiumanophelesprobe
+  (package
+    (name "r-plasmodiumanophelesprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "plasmodiumanophelesprobe" version
+                              'annotation))
+       (sha256
+        (base32 "03hfq51nrpmx8ihc48jiih6bk99irrgal9x7i7mgcv8xd508gcsy"))))
+    (properties `((upstream-name . "plasmodiumanophelesprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/plasmodiumanophelesprobe")
+    (synopsis
+     "Probe sequence data for microarrays of type plasmodiumanopheles")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Plasmodium\\_Anopheles\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-plasmodiumanophelescdf
+  (package
+    (name "r-plasmodiumanophelescdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "plasmodiumanophelescdf" version
+                              'annotation))
+       (sha256
+        (base32 "1vs36091djinn3g6rjhmy9xfdyi58365zbcjc9mf50adnp2i5fq9"))))
+    (properties `((upstream-name . "plasmodiumanophelescdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/plasmodiumanophelescdf")
+    (synopsis "plasmodiumanophelescdf")
+    (description
+     "This package provides a package containing an environment representing the
+Plasmodium_Anopheles.cdf file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-planttfhunter
   (package
@@ -2114,6 +2754,27 @@ dependencies between modules, and builds a decision tree based on the expression
 of eigengenes.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
+(define-public r-pig-db0
+  (package
+    (name "r-pig-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pig.db0" version
+                              'annotation))
+       (sha256
+        (base32 "05lddwcf205gid4ppq9ch5bp7cjdm36c3hfsdm2jddh4a7nky4vz"))))
+    (properties `((upstream-name . "pig.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/pig.db0")
+    (synopsis "Base Level Annotation databases for pig")
+    (description
+     "Base annotation databases for pig, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
 (define-public r-pics
   (package
     (name "r-pics")
@@ -2205,6 +2866,29 @@ and immune ontologies to prioritise potential drug targets at the gene and
 pathway level.")
     (license license:gpl3)))
 
+(define-public r-phyloprofiledata
+  (package
+    (name "r-phyloprofiledata")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PhyloProfileData" version
+                              'experiment))
+       (sha256
+        (base32 "1r51zrvm8n7w66ii97wz6ncz0d7s473ppdn8b958mh15w81rk5fr"))))
+    (properties `((upstream-name . "PhyloProfileData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub r-biostrings r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BIONF/PhyloProfileData")
+    (synopsis
+     "Data package for phylogenetic profile analysis using PhyloProfile tool")
+    (description
+     "Two experimental datasets to illustrate running and analysing phylogenetic
+profiles with @code{PhyloProfile} package.")
+    (license license:expat)))
+
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
@@ -2256,6 +2940,31 @@ visualisation powered by R-Shiny, the package offers a set of further analysis
 features to gain insights like the gene age estimation or core gene
 identification.")
     (license license:expat)))
+
+(define-public r-phylop35way-ucsc-mm39
+  (package
+    (name "r-phylop35way-ucsc-mm39")
+    (version "3.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "phyloP35way.UCSC.mm39" version
+                              'annotation))
+       (sha256
+        (base32 "1n0iywfs23dhc54mapirvaqcbx38zjf8lknbsz80p5lxp24n2lf9"))))
+    (properties `((upstream-name . "phyloP35way.UCSC.mm39")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicscores r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/phyloP35way.UCSC.mm39")
+    (synopsis
+     "UCSC phyloP mm39 conservation scores AnnotationHub Resource Metadata")
+    (description
+     "Store UCSC @code{phyloP} mm39 conservation scores @code{AnnotationHub} Resource
+Metadata.  Provide provenance and citation information for UCSC @code{phyloP}
+mm39 conservation score @code{AnnotationHub} resources.  Illustrate in a
+vignette how to access those resources.")
+    (license license:artistic2.0)))
 
 (define-public r-phosr
   (package
@@ -2437,6 +3146,7 @@ utilizing a weighted reference measure.")
                              r-limma
                              r-hopach
                              r-hmisc
+                             r-hgu133a-db
                              r-heatplus
                              r-gseabase
                              r-gplots
@@ -2608,6 +3318,104 @@ https://dl.acm.org/doi/10.1145/3307339.3342155.")
      "Package for comparing and generating a low-dimensional embedding of multiple
 single-cell samples.")
     (license license:gpl2)))
+
+(define-public r-phastcons7way-ucsc-hg38
+  (package
+    (name "r-phastcons7way-ucsc-hg38")
+    (version "3.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "phastCons7way.UCSC.hg38" version
+                              'annotation))
+       (sha256
+        (base32 "105isdrb3nsy30wd8yy9vrrv8b7c8izc11xqqixg6rcriacd0rl0"))))
+    (properties `((upstream-name . "phastCons7way.UCSC.hg38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/phastCons7way.UCSC.hg38")
+    (synopsis "UCSC phastCons conservation scores for hg38")
+    (description
+     "Store UCSC @code{phastCons} conservation scores for the human genome (hg38)
+calculated from multiple alignments with other 6 vertebrate species.")
+    (license license:artistic2.0)))
+
+(define-public r-phastcons35way-ucsc-mm39
+  (package
+    (name "r-phastcons35way-ucsc-mm39")
+    (version "3.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "phastCons35way.UCSC.mm39" version
+                              'annotation))
+       (sha256
+        (base32 "0lniqakqxja8inq3gn168w1xja1m2kbmww0cw971smsnddypmig7"))))
+    (properties `((upstream-name . "phastCons35way.UCSC.mm39")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicscores r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/phastCons35way.UCSC.mm39")
+    (synopsis
+     "UCSC phastCons mm39 conservation scores AnnotationHub Resource Metadata")
+    (description
+     "Store UCSC @code{phastCons} mm39 conservation scores @code{AnnotationHub}
+Resource Metadata.  Provide provenance and citation information for UCSC
+@code{phastCons} mm39 conservation score @code{AnnotationHub} resources.
+Illustrate in a vignette how to access those resources.")
+    (license license:artistic2.0)))
+
+(define-public r-phastcons30way-ucsc-hg38
+  (package
+    (name "r-phastcons30way-ucsc-hg38")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "phastCons30way.UCSC.hg38" version
+                              'annotation))
+       (sha256
+        (base32 "0jq5z1af0f5jqazz46gvf3nnkrp91a6qzb96bk7fjdbvk5b3z0dd"))))
+    (properties `((upstream-name . "phastCons30way.UCSC.hg38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicscores r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/phastCons30way.UCSC.hg38")
+    (synopsis "phastCons30way.UCSC.hg38 AnnotationHub Resource Metadata")
+    (description
+     "Store @code{phastCons30way.UCSC.hg38} @code{AnnotationHub} Resource Metadata.")
+    (license license:artistic2.0)))
+
+(define-public r-phastcons100way-ucsc-hg38
+  (package
+    (name "r-phastcons100way-ucsc-hg38")
+    (version "3.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "phastCons100way.UCSC.hg38" version
+                              'annotation))
+       (sha256
+        (base32 "0dka39rvx4d3wbcjypcgvc19s6cnxkkfywa4irv23kpibq1sjyv0"))))
+    (properties `((upstream-name . "phastCons100way.UCSC.hg38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/phastCons100way.UCSC.hg38")
+    (synopsis "UCSC phastCons conservation scores for hg38")
+    (description
+     "Store UCSC @code{phastCons} conservation scores for the human genome (hg38)
+calculated from multiple alignments with other 99 vertebrate species.")
+    (license license:artistic2.0)))
 
 (define-public r-pharmacogx
   (package
@@ -2838,6 +3646,48 @@ filter the PSMs based on FDR.")
     (description "Statistical analysis of peptide microarrays")
     (license license:artistic2.0)))
 
+(define-public r-pepsnmrdata
+  (package
+    (name "r-pepsnmrdata")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PepsNMRData" version
+                              'experiment))
+       (sha256
+        (base32 "1xy05yd2nzrl2s0bjsr9y94rwcm68gglbijxplalyy3ppcwwm55c"))))
+    (properties `((upstream-name . "PepsNMRData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/PepsNMRData")
+    (synopsis "Datasets for the PepsNMR package")
+    (description
+     "This package contains all the datasets used in the @code{PepsNMR} package.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-pepdat
+  (package
+    (name "r-pepdat")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pepDat" version
+                              'experiment))
+       (sha256
+        (base32 "0ks5lxfwwgxfv0ls42fr5hj0iq2m6ylv13ybp8gq5r24p6hyigq3"))))
+    (properties `((upstream-name . "pepDat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/pepDat")
+    (synopsis "Peptide microarray data package")
+    (description
+     "This package provides sample files and data for the vignettes of @code{pepStat}
+and Pviz as well as peptide collections for HIV and SIV.")
+    (license license:artistic2.0)))
+
 (define-public r-pengls
   (package
     (name "r-pengls")
@@ -2862,6 +3712,48 @@ together through an iterative loop.  The resulting method is applicable to high
 dimensional datasets that exhibit autocorrelation, such as spatial or temporal
 data.")
     (license license:gpl2)))
+
+(define-public r-pedbarrayv9-db
+  (package
+    (name "r-pedbarrayv9-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pedbarrayv9.db" version
+                              'annotation))
+       (sha256
+        (base32 "0x9m9m4nmdhc0j5244avmlfwljcpw0sh44l1b00cx05swi3vmjlp"))))
+    (properties `((upstream-name . "pedbarrayv9.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/pedbarrayv9.db")
+    (synopsis "FHCRC Nelson Lab pedbarrayv9 Annotation Data (pedbarrayv9)")
+    (description
+     "FHCRC Nelson Lab pedbarrayv9 Annotation Data (pedbarrayv9) assembled using data
+from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-pedbarrayv10-db
+  (package
+    (name "r-pedbarrayv10-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pedbarrayv10.db" version
+                              'annotation))
+       (sha256
+        (base32 "01sn7qh5r2c2ph7gqirlzlplxscsmczf7ajffd9rsx59932f71kx"))))
+    (properties `((upstream-name . "pedbarrayv10.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/pedbarrayv10.db")
+    (synopsis "FHCRC Nelson Lab pedbarrayv10 Annotation Data (pedbarrayv10)")
+    (description
+     "FHCRC Nelson Lab pedbarrayv10 Annotation Data (pedbarrayv10) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-peco
   (package
@@ -3103,6 +3995,4286 @@ against existing ones, and apply discovered classifiers on novel patient data to
 inform clinical decision making.")
     (license license:expat)))
 
+(define-public r-pd-zebrafish
+  (package
+    (name "r-pd-zebrafish")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.zebrafish" version
+                              'annotation))
+       (sha256
+        (base32 "0gg7y7w51pv0vf39qzyaf09wl3vxy222nr69zgxg7cylwxmaky7v"))))
+    (properties `((upstream-name . "pd.zebrafish")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.zebrafish")
+    (synopsis "Platform Design Info for The Manufacturer's Name Zebrafish")
+    (description "Platform Design Info for The Manufacturer's Name Zebrafish")
+    (license license:artistic2.0)))
+
+(define-public r-pd-zebgene-1-1-st
+  (package
+    (name "r-pd-zebgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.zebgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0xs3kx7l78dfqkasgz8n5s8qjia5qhdcnj1l8al0ivy8mwvlpyxs"))))
+    (properties `((upstream-name . "pd.zebgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.zebgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix ZebGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{ZebGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-zebgene-1-0-st
+  (package
+    (name "r-pd-zebgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.zebgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1vywph8shn23k0s8jmvx34rj34y1zxgwcssjnzbipm71f2sa15hw"))))
+    (properties `((upstream-name . "pd.zebgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.zebgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix ZebGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{ZebGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-yg-s98
+  (package
+    (name "r-pd-yg-s98")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.yg.s98" version
+                              'annotation))
+       (sha256
+        (base32 "1krx7kkjlyc41739c349z0sdbslp19iqfai0xzy6f4jk15524vhj"))))
+    (properties `((upstream-name . "pd.yg.s98")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.yg.s98")
+    (synopsis "Platform Design Info for The Manufacturer's Name YG_S98")
+    (description "Platform Design Info for The Manufacturer's Name YG_S98")
+    (license license:artistic2.0)))
+
+(define-public r-pd-yeast-2
+  (package
+    (name "r-pd-yeast-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.yeast.2" version
+                              'annotation))
+       (sha256
+        (base32 "0l6sxg79xmlb7gdxx4bx24l35jgx5y2qfp3pxzcmdnd7c7qy6z5j"))))
+    (properties `((upstream-name . "pd.yeast.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.yeast.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Yeast_2")
+    (description "Platform Design Info for The Manufacturer's Name Yeast_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-xenopus-laevis
+  (package
+    (name "r-pd-xenopus-laevis")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.xenopus.laevis" version
+                              'annotation))
+       (sha256
+        (base32 "1fxd95ak5s2dw16prxdwk20hisss32nywy9dc7y72bpqrv0v309y"))))
+    (properties `((upstream-name . "pd.xenopus.laevis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.xenopus.laevis")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name Xenopus_laevis")
+    (description
+     "Platform Design Info for The Manufacturer's Name Xenopus_laevis")
+    (license license:artistic2.0)))
+
+(define-public r-pd-x-tropicalis
+  (package
+    (name "r-pd-x-tropicalis")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.x.tropicalis" version
+                              'annotation))
+       (sha256
+        (base32 "1pb6jm14k0g4z9vffi3clyh7rwc11c89hinb2amczg4xfm5lqrdr"))))
+    (properties `((upstream-name . "pd.x.tropicalis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.x.tropicalis")
+    (synopsis "Platform Design Info for The Manufacturer's Name X_tropicalis")
+    (description
+     "Platform Design Info for The Manufacturer's Name X_tropicalis")
+    (license license:artistic2.0)))
+
+(define-public r-pd-x-laevis-2
+  (package
+    (name "r-pd-x-laevis-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.x.laevis.2" version
+                              'annotation))
+       (sha256
+        (base32 "0zf3rc8rz05hzga2g5b8khszz6sr29dlp8z1jyn94ial284d0fn3"))))
+    (properties `((upstream-name . "pd.x.laevis.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.x.laevis.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name X_laevis_2")
+    (description "Platform Design Info for The Manufacturer's Name X_laevis_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-wheat
+  (package
+    (name "r-pd-wheat")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.wheat" version
+                              'annotation))
+       (sha256
+        (base32 "12n8k5ah8fncbrb2hrpi2ah29fj5rxnh5j5zk8lfwhijg2zf52ra"))))
+    (properties `((upstream-name . "pd.wheat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.wheat")
+    (synopsis "Platform Design Info for The Manufacturer's Name wheat")
+    (description "Platform Design Info for The Manufacturer's Name wheat")
+    (license license:artistic2.0)))
+
+(define-public r-pd-vitis-vinifera
+  (package
+    (name "r-pd-vitis-vinifera")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.vitis.vinifera" version
+                              'annotation))
+       (sha256
+        (base32 "19r2k7wx3kygw6syqph24glw0b273gpi0z0y8n4bnd3a184g6hxz"))))
+    (properties `((upstream-name . "pd.vitis.vinifera")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.vitis.vinifera")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name Vitis_Vinifera")
+    (description
+     "Platform Design Info for The Manufacturer's Name Vitis_Vinifera")
+    (license license:artistic2.0)))
+
+(define-public r-pd-u133-x3p
+  (package
+    (name "r-pd-u133-x3p")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.u133.x3p" version
+                              'annotation))
+       (sha256
+        (base32 "171rv9syn90k70ivaj8c48s827c08nycpyyc2b76jy405kaqb1gl"))))
+    (properties `((upstream-name . "pd.u133.x3p")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.u133.x3p")
+    (synopsis "Platform Design Info for The Manufacturer's Name U133_X3P")
+    (description "Platform Design Info for The Manufacturer's Name U133_X3P")
+    (license license:artistic2.0)))
+
+(define-public r-pd-tomato
+  (package
+    (name "r-pd-tomato")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.tomato" version
+                              'annotation))
+       (sha256
+        (base32 "12jn8i691j3kkgwa771f4kffzfcxv19vi0waw13akch7x7cc09q7"))))
+    (properties `((upstream-name . "pd.tomato")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.tomato")
+    (synopsis "Platform Design Info for The Manufacturer's Name Tomato")
+    (description "Platform Design Info for The Manufacturer's Name Tomato")
+    (license license:artistic2.0)))
+
+(define-public r-pd-sugar-cane
+  (package
+    (name "r-pd-sugar-cane")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.sugar.cane" version
+                              'annotation))
+       (sha256
+        (base32 "09m8m99l9mrhs4gr1rb02l54k8i2wgdzz88qlbpl4xmrfnfn99h6"))))
+    (properties `((upstream-name . "pd.sugar.cane")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.sugar.cane")
+    (synopsis "Platform Design Info for The Manufacturer's Name Sugar_Cane")
+    (description "Platform Design Info for The Manufacturer's Name Sugar_Cane")
+    (license license:artistic2.0)))
+
+(define-public r-pd-soygene-1-1-st
+  (package
+    (name "r-pd-soygene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.soygene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0978vbl59afgrzy0cmwq4mhsdz5rn5d929nz90fvczm6q8g24616"))))
+    (properties `((upstream-name . "pd.soygene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.soygene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix SoyGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{SoyGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-soygene-1-0-st
+  (package
+    (name "r-pd-soygene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.soygene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1hg90pma4ikdgxpw1f5mkjcw7na4mmjbhpr06dcssjl3bvmd4yxc"))))
+    (properties `((upstream-name . "pd.soygene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.soygene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix SoyGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{SoyGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-soybean
+  (package
+    (name "r-pd-soybean")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.soybean" version
+                              'annotation))
+       (sha256
+        (base32 "0xg90m7k1x9sgmhcp1qdwhxsyr2y5g28p7a4z6gd6mng2l7cgyh0"))))
+    (properties `((upstream-name . "pd.soybean")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.soybean")
+    (synopsis "Platform Design Info for The Manufacturer's Name Soybean")
+    (description "Platform Design Info for The Manufacturer's Name Soybean")
+    (license license:artistic2.0)))
+
+(define-public r-pd-s-aureus
+  (package
+    (name "r-pd-s-aureus")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.s.aureus" version
+                              'annotation))
+       (sha256
+        (base32 "0kszw94ymxgwd3midzkpl307ch3pyr4g5qjcf4s2jsq6mrvxw666"))))
+    (properties `((upstream-name . "pd.s.aureus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.s.aureus")
+    (synopsis "Platform Design Info for The Manufacturer's Name S_aureus")
+    (description "Platform Design Info for The Manufacturer's Name S_aureus")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rusgene-1-1-st
+  (package
+    (name "r-pd-rusgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rusgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "090lxwxzj39d6qzlr7c3x50zf98g8x987rv1gdn0gcas15imya6n"))))
+    (properties `((upstream-name . "pd.rusgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rusgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix RUSGene-1_1-st")
+    (description "Platform Design Info for Affymetrix RUSGene-1_1-st")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rusgene-1-0-st
+  (package
+    (name "r-pd-rusgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rusgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1ik28yykkpdclr5hrv8lzafzfivakwvzgz49q7bpb1g6ihwylshw"))))
+    (properties `((upstream-name . "pd.rusgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rusgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix RUSGene-1_0-st")
+    (description "Platform Design Info for Affymetrix RUSGene-1_0-st")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rta-1-0
+  (package
+    (name "r-pd-rta-1-0")
+    (version "3.12.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rta.1.0" version
+                              'annotation))
+       (sha256
+        (base32 "0x3j1a47lxhlqnhfvh1cii11rd433x16i6xmydwq2dkvm4xgd63h"))))
+    (properties `((upstream-name . "pd.rta.1.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rta.1.0")
+    (synopsis "Platform Design Info for Affymetrix RTA-1_0")
+    (description "Platform Design Info for Affymetrix RTA-1_0")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rn-u34
+  (package
+    (name "r-pd-rn-u34")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rn.u34" version
+                              'annotation))
+       (sha256
+        (base32 "0ayp6r7z7p61b1lfq9dkq4ips4apgjg6igrcnvsivlfhcfcfs0wf"))))
+    (properties `((upstream-name . "pd.rn.u34")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rn.u34")
+    (synopsis "Platform Design Info for The Manufacturer's Name RN_U34")
+    (description "Platform Design Info for The Manufacturer's Name RN_U34")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rjpgene-1-1-st
+  (package
+    (name "r-pd-rjpgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rjpgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0i99fyf6ya13z4hfjf3f5ssvys8wjhmwk894zy0p59p7nmphigyc"))))
+    (properties `((upstream-name . "pd.rjpgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rjpgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix RJpGene-1_1-st")
+    (description "Platform Design Info for Affymetrix R@code{JpGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rjpgene-1-0-st
+  (package
+    (name "r-pd-rjpgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rjpgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "18qj6sdjw17553lwcb3swdx0aiv54izdzzblgl88g90ijny8rbpa"))))
+    (properties `((upstream-name . "pd.rjpgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rjpgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix RJpGene-1_0-st")
+    (description "Platform Design Info for Affymetrix R@code{JpGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rice
+  (package
+    (name "r-pd-rice")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rice" version
+                              'annotation))
+       (sha256
+        (base32 "0fmd505vianfspb1s5glr6aacnz45dq9skbk1qwm0a9ck6a6paav"))))
+    (properties `((upstream-name . "pd.rice")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rice")
+    (synopsis "Platform Design Info for The Manufacturer's Name Rice")
+    (description "Platform Design Info for The Manufacturer's Name Rice")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rhesus
+  (package
+    (name "r-pd-rhesus")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rhesus" version
+                              'annotation))
+       (sha256
+        (base32 "1zrpq7ppl2gaiprvz4sm0zsxqcw2nvn6qzwi3b0cimqf7r2091dd"))))
+    (properties `((upstream-name . "pd.rhesus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rhesus")
+    (synopsis "Platform Design Info for The Manufacturer's Name Rhesus")
+    (description "Platform Design Info for The Manufacturer's Name Rhesus")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rhegene-1-1-st
+  (package
+    (name "r-pd-rhegene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rhegene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0f400qal4qmkxv705n5bzz07rkrz5zgs7swk8xp4pyp161fgb171"))))
+    (properties `((upstream-name . "pd.rhegene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rhegene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix RheGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{RheGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rhegene-1-0-st
+  (package
+    (name "r-pd-rhegene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rhegene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1mx221xvxr4ng01ibq1pc472bn5rknfv3sjsbvvfmvqgpwk6z079"))))
+    (properties `((upstream-name . "pd.rhegene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rhegene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix RheGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{RheGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rg-u34c
+  (package
+    (name "r-pd-rg-u34c")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rg.u34c" version
+                              'annotation))
+       (sha256
+        (base32 "10j3hcszx637dfd55552b75qni0yryrjk8q6p0wkd5dh6p628qrx"))))
+    (properties `((upstream-name . "pd.rg.u34c")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rg.u34c")
+    (synopsis "Platform Design Info for The Manufacturer's Name RG_U34C")
+    (description "Platform Design Info for The Manufacturer's Name RG_U34C")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rg-u34b
+  (package
+    (name "r-pd-rg-u34b")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rg.u34b" version
+                              'annotation))
+       (sha256
+        (base32 "19v2g9lvadvba2dy0c0qn6j8qnsds2xa4cliiq12byad21833ss0"))))
+    (properties `((upstream-name . "pd.rg.u34b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rg.u34b")
+    (synopsis "Platform Design Info for The Manufacturer's Name RG_U34B")
+    (description "Platform Design Info for The Manufacturer's Name RG_U34B")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rg-u34a
+  (package
+    (name "r-pd-rg-u34a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rg.u34a" version
+                              'annotation))
+       (sha256
+        (base32 "18jl5w1say8zyp50iqmd6jiw8ffa7qsk6sw7h7cw0j1g90ssf4y3"))))
+    (properties `((upstream-name . "pd.rg.u34a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rg.u34a")
+    (synopsis "Platform Design Info for The Manufacturer's Name RG_U34A")
+    (description "Platform Design Info for The Manufacturer's Name RG_U34A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rcngene-1-1-st
+  (package
+    (name "r-pd-rcngene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rcngene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "1lyizr096x5idasvlivl3lb67g7n2xvblrk5zfxglaf2fgpbrgwn"))))
+    (properties `((upstream-name . "pd.rcngene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rcngene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix RCnGene-1_1-st")
+    (description "Platform Design Info for Affymetrix R@code{CnGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rcngene-1-0-st
+  (package
+    (name "r-pd-rcngene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rcngene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0hrhvy6dbw8g1h9qgm9frpmfp45pd5h0fnbvbvz94l98a5gda7xx"))))
+    (properties `((upstream-name . "pd.rcngene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rcngene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix RCnGene-1_0-st")
+    (description "Platform Design Info for Affymetrix R@code{CnGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rat230-2
+  (package
+    (name "r-pd-rat230-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rat230.2" version
+                              'annotation))
+       (sha256
+        (base32 "0ysn0qi26b3llqs312an0mlgyahf4pgmixlcq2x2n925drns34gg"))))
+    (properties `((upstream-name . "pd.rat230.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rat230.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Rat230_2")
+    (description "Platform Design Info for The Manufacturer's Name Rat230_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ragene-2-1-st
+  (package
+    (name "r-pd-ragene-2-1-st")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ragene.2.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "1k9zqhnck7fgp6g0b8vmasqjvdyqshzs567rz8qabw6jk5ifssvz"))))
+    (properties `((upstream-name . "pd.ragene.2.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ragene.2.1.st")
+    (synopsis "Platform Design Info for Affymetrix RaGene-2_1-st")
+    (description "Platform Design Info for Affymetrix @code{RaGene-2_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ragene-2-0-st
+  (package
+    (name "r-pd-ragene-2-0-st")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ragene.2.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1rq4ivv107853pyr4jrnbms4fgfzddndibrasgql9d4msca0sbz9"))))
+    (properties `((upstream-name . "pd.ragene.2.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ragene.2.0.st")
+    (synopsis "Platform Design Info for Affymetrix RaGene-2_0-st")
+    (description "Platform Design Info for Affymetrix @code{RaGene-2_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ragene-1-1-st-v1
+  (package
+    (name "r-pd-ragene-1-1-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ragene.1.1.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "1krygwjhqs97gyh94xfbsfd8gg285fg5bgm7rqk7wlwp8fxx8xnn"))))
+    (properties `((upstream-name . "pd.ragene.1.1.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ragene.1.1.st.v1")
+    (synopsis "Platform Design Info for Affymetrix RaGene-1_1-st-v1")
+    (description "Platform Design Info for Affymetrix @code{RaGene-1_1-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ragene-1-0-st-v1
+  (package
+    (name "r-pd-ragene-1-0-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ragene.1.0.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "0afnv1f5xvdh1vdsdfi5k1zscqzpdbf4b399wib3c8dg9vslccgx"))))
+    (properties `((upstream-name . "pd.ragene.1.0.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ragene.1.0.st.v1")
+    (synopsis "Platform Design Info for Affymetrix RaGene-1_0-st-v1")
+    (description "Platform Design Info for Affymetrix @code{RaGene-1_0-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-raex-1-0-st-v1
+  (package
+    (name "r-pd-raex-1-0-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.raex.1.0.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "11sxhhpb4fy7wh5k7yxwwv141xgn4r1yshx097wicpa6561ffdkc"))))
+    (properties `((upstream-name . "pd.raex.1.0.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.raex.1.0.st.v1")
+    (synopsis "Platform Design Info for Affymetrix RaEx-1_0-st-v1")
+    (description "Platform Design Info for Affymetrix @code{RaEx-1_0-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rae230b
+  (package
+    (name "r-pd-rae230b")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rae230b" version
+                              'annotation))
+       (sha256
+        (base32 "1db6bm6qyrzwwa2scyw6qg7qcdqq97s5vy8kv0fnqc604b1jdzzq"))))
+    (properties `((upstream-name . "pd.rae230b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rae230b")
+    (synopsis "Platform Design Info for The Manufacturer's Name RAE230B")
+    (description "Platform Design Info for The Manufacturer's Name RAE230B")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rae230a
+  (package
+    (name "r-pd-rae230a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rae230a" version
+                              'annotation))
+       (sha256
+        (base32 "14kb35pcgxh2hmpzyqp9c2xirs0p6y5dvc3h2n568jmmdd14s7j5"))))
+    (properties `((upstream-name . "pd.rae230a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rae230a")
+    (synopsis "Platform Design Info for The Manufacturer's Name RAE230A")
+    (description "Platform Design Info for The Manufacturer's Name RAE230A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rabgene-1-1-st
+  (package
+    (name "r-pd-rabgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rabgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0qs3ka3pdlrpqh66zb62jdfm2y6p2wyn6rcp7gb5qw0s8q9h170a"))))
+    (properties `((upstream-name . "pd.rabgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rabgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix RabGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{RabGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-rabgene-1-0-st
+  (package
+    (name "r-pd-rabgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.rabgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0vwxzwgwh1a0fpyqsc3mnagin67wf2jmymm9kwhcnxargpmslm7k"))))
+    (properties `((upstream-name . "pd.rabgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.rabgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix RabGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{RabGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-porgene-1-1-st
+  (package
+    (name "r-pd-porgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.porgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "038zwlckx58bw4x5naspfnvk4jcyc2g9bijrh1wd4m4k5mr1i4dk"))))
+    (properties `((upstream-name . "pd.porgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.porgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix PorGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{PorGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-porgene-1-0-st
+  (package
+    (name "r-pd-porgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.porgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1jiajzn31yjzs942w3i4cjqlpq81rkbryk961fqb9jpwldzg1pmy"))))
+    (properties `((upstream-name . "pd.porgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.porgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix PorGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{PorGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-porcine
+  (package
+    (name "r-pd-porcine")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.porcine" version
+                              'annotation))
+       (sha256
+        (base32 "0zx2gz90hhalaas3sf2rh8wcapjwmnckr0gq1r8p572chwf2rb81"))))
+    (properties `((upstream-name . "pd.porcine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.porcine")
+    (synopsis "Platform Design Info for The Manufacturer's Name Porcine")
+    (description "Platform Design Info for The Manufacturer's Name Porcine")
+    (license license:artistic2.0)))
+
+(define-public r-pd-poplar
+  (package
+    (name "r-pd-poplar")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.poplar" version
+                              'annotation))
+       (sha256
+        (base32 "0j5xmf5hqvbb8ylsrvih92vxn1c1lah3mkffn64fji2lgqy9vjp9"))))
+    (properties `((upstream-name . "pd.poplar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.poplar")
+    (synopsis "Platform Design Info for The Manufacturer's Name Poplar")
+    (description "Platform Design Info for The Manufacturer's Name Poplar")
+    (license license:artistic2.0)))
+
+(define-public r-pd-plasmodium-anopheles
+  (package
+    (name "r-pd-plasmodium-anopheles")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.plasmodium.anopheles" version
+                              'annotation))
+       (sha256
+        (base32 "0njd97jkg4hxd0jyq03227i00gmy0ccxznzqmp0mjqmkkhljn7nm"))))
+    (properties `((upstream-name . "pd.plasmodium.anopheles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.plasmodium.anopheles")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name Plasmodium_Anopheles")
+    (description
+     "Platform Design Info for The Manufacturer's Name Plasmodium_Anopheles")
+    (license license:artistic2.0)))
+
+(define-public r-pd-pae-g1a
+  (package
+    (name "r-pd-pae-g1a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.pae.g1a" version
+                              'annotation))
+       (sha256
+        (base32 "0b0bmzfrh7lm2i5d66z24iz0d5zj3qhw89aw011yssks7sr9lq90"))))
+    (properties `((upstream-name . "pd.pae.g1a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.pae.g1a")
+    (synopsis "Platform Design Info for The Manufacturer's Name Pae_G1a")
+    (description "Platform Design Info for The Manufacturer's Name Pae_G1a")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ovigene-1-1-st
+  (package
+    (name "r-pd-ovigene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ovigene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "1vzrizvk1dbj6ngjxv9wpbm89q5mr8dkfhr0azrczs54c92xy48r"))))
+    (properties `((upstream-name . "pd.ovigene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ovigene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix OviGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{OviGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ovigene-1-0-st
+  (package
+    (name "r-pd-ovigene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ovigene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0vga20rb0v4yzd28szsppbgfhmn6ky85qrjj9llvacnlj1riwxsi"))))
+    (properties `((upstream-name . "pd.ovigene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ovigene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix OviGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{OviGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-nugo-mm1a520177
+  (package
+    (name "r-pd-nugo-mm1a520177")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.nugo.mm1a520177" version
+                              'annotation))
+       (sha256
+        (base32 "0568zvxc11w2i32wimhmi4271jbmpn97kb0vn4ns20hfg4h63m99"))))
+    (properties `((upstream-name . "pd.nugo.mm1a520177")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.nugo.mm1a520177")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name NuGO_Mm1a520177")
+    (description
+     "Platform Design Info for The Manufacturer's Name @code{NuGO_Mm1a520177}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-nugo-hs1a520180
+  (package
+    (name "r-pd-nugo-hs1a520180")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.nugo.hs1a520180" version
+                              'annotation))
+       (sha256
+        (base32 "1qc87zrrccld1hdqmrk1if98c6jq343gzlmib40wvshmrijp3sk3"))))
+    (properties `((upstream-name . "pd.nugo.hs1a520180")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.nugo.hs1a520180")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name NuGO_Hs1a520180")
+    (description
+     "Platform Design Info for The Manufacturer's Name @code{NuGO_Hs1a520180}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mu11ksubb
+  (package
+    (name "r-pd-mu11ksubb")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mu11ksubb" version
+                              'annotation))
+       (sha256
+        (base32 "08734j3asq56v090zi0gzk3ryycjm78dfbb0xqmpr7ggqys96qp9"))))
+    (properties `((upstream-name . "pd.mu11ksubb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mu11ksubb")
+    (synopsis "Platform Design Info for The Manufacturer's Name Mu11KsubB")
+    (description
+     "Platform Design Info for The Manufacturer's Name Mu11@code{KsubB}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mu11ksuba
+  (package
+    (name "r-pd-mu11ksuba")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mu11ksuba" version
+                              'annotation))
+       (sha256
+        (base32 "10fkys7y5b5frdrjqw3x2gqzp51lgg29nw6gxz25yi5fznc3nnv2"))))
+    (properties `((upstream-name . "pd.mu11ksuba")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mu11ksuba")
+    (synopsis "Platform Design Info for The Manufacturer's Name Mu11KsubA")
+    (description
+     "Platform Design Info for The Manufacturer's Name Mu11@code{KsubA}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mta-1-0
+  (package
+    (name "r-pd-mta-1-0")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mta.1.0" version
+                              'annotation))
+       (sha256
+        (base32 "07vznamds5lc1xnpv7kjwcrsd5zq0ap4gk8a85xqb93fmcc9ypqi"))))
+    (properties `((upstream-name . "pd.mta.1.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mta.1.0")
+    (synopsis "Platform Design Info for Affymetrix MTA-1_0")
+    (description "Platform Design Info for Affymetrix MTA-1_0")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mouse430a-2
+  (package
+    (name "r-pd-mouse430a-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mouse430a.2" version
+                              'annotation))
+       (sha256
+        (base32 "11ywfshqxjmwf9q4sj97zv3ylynfkswcfaqglj883p4719lhxmc3"))))
+    (properties `((upstream-name . "pd.mouse430a.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mouse430a.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Mouse430A_2")
+    (description
+     "Platform Design Info for The Manufacturer's Name Mouse430A_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mouse430-2
+  (package
+    (name "r-pd-mouse430-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mouse430.2" version
+                              'annotation))
+       (sha256
+        (base32 "1ix7vkjy175cxbsbs67z38dhszxjik6370j0jkfpcknms6bh1db3"))))
+    (properties `((upstream-name . "pd.mouse430.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mouse430.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Mouse430_2")
+    (description "Platform Design Info for The Manufacturer's Name Mouse430_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mogene-2-1-st
+  (package
+    (name "r-pd-mogene-2-1-st")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mogene.2.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "14qwcq6yyy2ayrqv8kr33chlpgw3vkgq8iwb3yycsh3x3wz40jb8"))))
+    (properties `((upstream-name . "pd.mogene.2.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mogene.2.1.st")
+    (synopsis "Platform Design Info for Affymetrix MoGene-2_1-st")
+    (description "Platform Design Info for Affymetrix @code{MoGene-2_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mogene-2-0-st
+  (package
+    (name "r-pd-mogene-2-0-st")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mogene.2.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0205jk6x8r35bmma771q6km631jlppm4y72zy85bv87dv4adxci8"))))
+    (properties `((upstream-name . "pd.mogene.2.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mogene.2.0.st")
+    (synopsis "Platform Design Info for Affymetrix MoGene-2_0-st")
+    (description "Platform Design Info for Affymetrix @code{MoGene-2_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mogene-1-1-st-v1
+  (package
+    (name "r-pd-mogene-1-1-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mogene.1.1.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "13s7r8g29y56qbj2xm81r5kj65y2qcp5d24bakbhfcvz60wzljqf"))))
+    (properties `((upstream-name . "pd.mogene.1.1.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mogene.1.1.st.v1")
+    (synopsis "Platform Design Info for Affymetrix MoGene-1_1-st-v1")
+    (description "Platform Design Info for Affymetrix @code{MoGene-1_1-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mogene-1-0-st-v1
+  (package
+    (name "r-pd-mogene-1-0-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mogene.1.0.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "1hmb8kf91jd9q6b4pxiwlaj6ajzmkv1c3xsszyps5cwv13pgdjix"))))
+    (properties `((upstream-name . "pd.mogene.1.0.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mogene.1.0.st.v1")
+    (synopsis "Platform Design Info for Affymetrix MoGene-1_0-st-v1")
+    (description "Platform Design Info for Affymetrix @code{MoGene-1_0-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-moex-1-0-st-v1
+  (package
+    (name "r-pd-moex-1-0-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.moex.1.0.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "13bqzbyqngbhj7yji568cc36fq0zw0bjaglfp2n9nnhdddd8b62x"))))
+    (properties `((upstream-name . "pd.moex.1.0.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.moex.1.0.st.v1")
+    (synopsis "Platform Design Info for Affymetrix MoEx-1_0-st-v1")
+    (description "Platform Design Info for Affymetrix @code{MoEx-1_0-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-moe430b
+  (package
+    (name "r-pd-moe430b")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.moe430b" version
+                              'annotation))
+       (sha256
+        (base32 "1xas3ld65xp2g1cfkd1n4v3yvx3g0g221c3ag550k552v0alfbyd"))))
+    (properties `((upstream-name . "pd.moe430b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.moe430b")
+    (synopsis "Platform Design Info for The Manufacturer's Name MOE430B")
+    (description "Platform Design Info for The Manufacturer's Name MOE430B")
+    (license license:artistic2.0)))
+
+(define-public r-pd-moe430a
+  (package
+    (name "r-pd-moe430a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.moe430a" version
+                              'annotation))
+       (sha256
+        (base32 "15qys3pm8nwkr385y8mj976k16as8r65lmzykm8cy0skl071i8wb"))))
+    (properties `((upstream-name . "pd.moe430a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.moe430a")
+    (synopsis "Platform Design Info for The Manufacturer's Name MOE430A")
+    (description "Platform Design Info for The Manufacturer's Name MOE430A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mirna-4-0
+  (package
+    (name "r-pd-mirna-4-0")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mirna.4.0" version
+                              'annotation))
+       (sha256
+        (base32 "000gqhcvlpydrpr61853q22x8gvzmlf1kp7w98lll5g1vvwkw1ad"))))
+    (properties `((upstream-name . "pd.mirna.4.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mirna.4.0")
+    (synopsis "Platform Design Info for Affymetrix miRNA-4_0")
+    (description "Platform Design Info for Affymetrix @code{miRNA-4_0}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mirna-3-1
+  (package
+    (name "r-pd-mirna-3-1")
+    (version "3.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mirna.3.1" version
+                              'annotation))
+       (sha256
+        (base32 "0g8fjwhxmps1w5f7lvnv258qn2ipggs1ar4r810amqqxd0yd5ah2"))))
+    (properties `((upstream-name . "pd.mirna.3.1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mirna.3.1")
+    (synopsis "Platform Design Info for Affymetrix miRNA-3_1")
+    (description "Platform Design Info for Affymetrix @code{miRNA-3_1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mirna-3-0
+  (package
+    (name "r-pd-mirna-3-0")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mirna.3.0" version
+                              'annotation))
+       (sha256
+        (base32 "0awghps8nlisdj2anvs400dn1hwdi8iw6xlrw17qr70fznbihdsy"))))
+    (properties `((upstream-name . "pd.mirna.3.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mirna.3.0")
+    (synopsis "Platform Design Info for Affymetrix miRNA-3_0")
+    (description "Platform Design Info for Affymetrix @code{miRNA-3_0}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mirna-2-0
+  (package
+    (name "r-pd-mirna-2-0")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mirna.2.0" version
+                              'annotation))
+       (sha256
+        (base32 "12ynrrr0jrc0kl6s4pkn9fv3r3bh6wsbrfyywb5bvxf71n75wnqy"))))
+    (properties `((upstream-name . "pd.mirna.2.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mirna.2.0")
+    (synopsis "Platform Design Info for Affymetrix miRNA-2_0")
+    (description "Platform Design Info for Affymetrix @code{miRNA-2_0}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mirna-1-0
+  (package
+    (name "r-pd-mirna-1-0")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mirna.1.0" version
+                              'annotation))
+       (sha256
+        (base32 "0klkmrljgvkqvdlm07c47bl0jppbzz95ikxabfi8b3ajv78k6gn1"))))
+    (properties `((upstream-name . "pd.mirna.1.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mirna.1.0")
+    (synopsis "Platform Design Info for The Manufacturer's Name miRNA-1_0")
+    (description
+     "Platform Design Info for The Manufacturer's Name @code{miRNA-1_0}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mg-u74cv2
+  (package
+    (name "r-pd-mg-u74cv2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mg.u74cv2" version
+                              'annotation))
+       (sha256
+        (base32 "1s59s9ch1ynrmnsn5jl2b19phij4qamgcpfs3f5zhji6ip41lckj"))))
+    (properties `((upstream-name . "pd.mg.u74cv2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mg.u74cv2")
+    (synopsis "Platform Design Info for The Manufacturer's Name MG_U74Cv2")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74Cv2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mg-u74c
+  (package
+    (name "r-pd-mg-u74c")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mg.u74c" version
+                              'annotation))
+       (sha256
+        (base32 "13sq8jmwlqrci87bnl313dyqzy6v141r3fqzh1frl1w66ilw9chm"))))
+    (properties `((upstream-name . "pd.mg.u74c")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mg.u74c")
+    (synopsis "Platform Design Info for The Manufacturer's Name MG_U74C")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74C")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mg-u74bv2
+  (package
+    (name "r-pd-mg-u74bv2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mg.u74bv2" version
+                              'annotation))
+       (sha256
+        (base32 "0hxczlax8qnghp4f7d3ph2y5j3vz3k4iwl6lyw3sig51msl4q6sd"))))
+    (properties `((upstream-name . "pd.mg.u74bv2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mg.u74bv2")
+    (synopsis "Platform Design Info for The Manufacturer's Name MG_U74Bv2")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74Bv2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mg-u74b
+  (package
+    (name "r-pd-mg-u74b")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mg.u74b" version
+                              'annotation))
+       (sha256
+        (base32 "0yav9ghdk8y12bsqam2r0p4q3r1yymfwrz1kdg0l7qfzw3mn141d"))))
+    (properties `((upstream-name . "pd.mg.u74b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mg.u74b")
+    (synopsis "Platform Design Info for The Manufacturer's Name MG_U74B")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74B")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mg-u74av2
+  (package
+    (name "r-pd-mg-u74av2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mg.u74av2" version
+                              'annotation))
+       (sha256
+        (base32 "08ym915fb26qbz2r9kzgf7znai4mc06lr59l1da0x02iaixagg32"))))
+    (properties `((upstream-name . "pd.mg.u74av2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mg.u74av2")
+    (synopsis "Platform Design Info for The Manufacturer's Name MG_U74Av2")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74Av2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mg-u74a
+  (package
+    (name "r-pd-mg-u74a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mg.u74a" version
+                              'annotation))
+       (sha256
+        (base32 "1jji6g49icsxyam9qx3mbaspg24q0hjavi0w75k99m2ckmllc47c"))))
+    (properties `((upstream-name . "pd.mg.u74a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mg.u74a")
+    (synopsis "Platform Design Info for The Manufacturer's Name MG_U74A")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-medicago
+  (package
+    (name "r-pd-medicago")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.medicago" version
+                              'annotation))
+       (sha256
+        (base32 "1wm81jr9d04yiyg0alj197fjigcvjhz2kvh8j6jw9yaawppr0c5p"))))
+    (properties `((upstream-name . "pd.medicago")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.medicago")
+    (synopsis "Platform Design Info for The Manufacturer's Name Medicago")
+    (description "Platform Design Info for The Manufacturer's Name Medicago")
+    (license license:artistic2.0)))
+
+(define-public r-pd-medgene-1-1-st
+  (package
+    (name "r-pd-medgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.medgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "1mlyv6qjcxj9q416pmjq36q0aqp5l47pkd557ayaqd7gm3ygikcq"))))
+    (properties `((upstream-name . "pd.medgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.medgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix MedGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{MedGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-medgene-1-0-st
+  (package
+    (name "r-pd-medgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.medgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0f5blbhlp160av6r37icjdq2lyrvip09r4yzxhfa2vlxpcm7i83m"))))
+    (properties `((upstream-name . "pd.medgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.medgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix MedGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{MedGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-margene-1-1-st
+  (package
+    (name "r-pd-margene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.margene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "067jv9486win2kv563gr4vpc96lpl02zqd09cnma7ycd7l1nvj9s"))))
+    (properties `((upstream-name . "pd.margene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.margene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix MarGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{MarGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-margene-1-0-st
+  (package
+    (name "r-pd-margene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.margene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1s4l57hw511cnzj197jvvzqs8ymfbf14khxcv4llg55prxnvvnfc"))))
+    (properties `((upstream-name . "pd.margene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.margene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix MarGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{MarGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mapping50k-hind240
+  (package
+    (name "r-pd-mapping50k-hind240")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mapping50k.hind240" version
+                              'annotation))
+       (sha256
+        (base32 "1whpjdr4aql846cm8nzgs613pi12qdqfixhqcfv8wrqyks27kq6s"))))
+    (properties `((upstream-name . "pd.mapping50k.hind240")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mapping50k.hind240")
+    (synopsis "Platform Design Info for Affymetrix Mapping50K_Hind240")
+    (description "Platform Design Info for Affymetrix Mapping50K_Hind240")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mapping250k-sty
+  (package
+    (name "r-pd-mapping250k-sty")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mapping250k.sty" version
+                              'annotation))
+       (sha256
+        (base32 "1hpyijrkr6svxxhrdp6s4jjcvr44hhbrdhrzvnw5ywpykmbphryc"))))
+    (properties `((upstream-name . "pd.mapping250k.sty")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mapping250k.sty")
+    (synopsis "Platform Design Info for Affymetrix Mapping250K_Sty")
+    (description "Platform Design Info for Affymetrix Mapping250K_Sty")
+    (license license:artistic2.0)))
+
+(define-public r-pd-mapping250k-nsp
+  (package
+    (name "r-pd-mapping250k-nsp")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.mapping250k.nsp" version
+                              'annotation))
+       (sha256
+        (base32 "10j8c18glhvg07zp6w84hlc6l3a3qkvcvfnq0blpjfdk3a2lndz7"))))
+    (properties `((upstream-name . "pd.mapping250k.nsp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.mapping250k.nsp")
+    (synopsis "Platform Design Info for Affymetrix Mapping250K_Nsp")
+    (description "Platform Design Info for Affymetrix Mapping250K_Nsp")
+    (license license:artistic2.0)))
+
+(define-public r-pd-maize
+  (package
+    (name "r-pd-maize")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.maize" version
+                              'annotation))
+       (sha256
+        (base32 "02viqnqf02d75sbarxh1k76966yay5i6wwdx118s4c9nlr5q6aqg"))))
+    (properties `((upstream-name . "pd.maize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.maize")
+    (synopsis "Platform Design Info for The Manufacturer's Name Maize")
+    (description "Platform Design Info for The Manufacturer's Name Maize")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hugene-2-1-st
+  (package
+    (name "r-pd-hugene-2-1-st")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hugene.2.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "07la78206cvilfm8l2fwrcyy3gpwnhn0p32ilv043ln9drka2r8h"))))
+    (properties `((upstream-name . "pd.hugene.2.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hugene.2.1.st")
+    (synopsis "Platform Design Info for Affymetrix HuGene-2_1-st")
+    (description "Platform Design Info for Affymetrix @code{HuGene-2_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hugene-2-0-st
+  (package
+    (name "r-pd-hugene-2-0-st")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hugene.2.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "02m5x9mrz4ca0w84ljmdpw7rnlzqbqdq0q5k4sg7izx99k5c8r59"))))
+    (properties `((upstream-name . "pd.hugene.2.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hugene.2.0.st")
+    (synopsis "Platform Design Info for Affymetrix HuGene-2_0-st")
+    (description "Platform Design Info for Affymetrix @code{HuGene-2_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hugene-1-1-st-v1
+  (package
+    (name "r-pd-hugene-1-1-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hugene.1.1.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "0bsvwr4h8j4niagnmf7d2jd714dqk4yzdhr664z6vpx6429s0rsw"))))
+    (properties `((upstream-name . "pd.hugene.1.1.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hugene.1.1.st.v1")
+    (synopsis "Platform Design Info for Affymetrix HuGene-1_1-st-v1")
+    (description "Platform Design Info for Affymetrix @code{HuGene-1_1-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hugene-1-0-st-v1
+  (package
+    (name "r-pd-hugene-1-0-st-v1")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hugene.1.0.st.v1" version
+                              'annotation))
+       (sha256
+        (base32 "1ikd6h7wnyxm11j0had2wcsxfbfrwdfw9605bvvdgd63dlvdv5dk"))))
+    (properties `((upstream-name . "pd.hugene.1.0.st.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hugene.1.0.st.v1")
+    (synopsis "Platform Design Info for Affymetrix HuGene-1_0-st-v1")
+    (description "Platform Design Info for Affymetrix @code{HuGene-1_0-st-v1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-huex-1-0-st-v2
+  (package
+    (name "r-pd-huex-1-0-st-v2")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.huex.1.0.st.v2" version
+                              'annotation))
+       (sha256
+        (base32 "1chlvjy1gvw5r8hfmkb34m3h7w2z4s5x9gsc50qbj84988k4gzga"))))
+    (properties `((upstream-name . "pd.huex.1.0.st.v2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.huex.1.0.st.v2")
+    (synopsis "Platform Design Info for Affymetrix HuEx-1_0-st-v2")
+    (description "Platform Design Info for Affymetrix @code{HuEx-1_0-st-v2}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hu6800
+  (package
+    (name "r-pd-hu6800")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hu6800" version
+                              'annotation))
+       (sha256
+        (base32 "07dj0avpx53kwaab9s126pn844nal9kn3h288n1m0kihir2mrjmv"))))
+    (properties `((upstream-name . "pd.hu6800")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hu6800")
+    (synopsis "Platform Design Info for The Manufacturer's Name Hu6800")
+    (description "Platform Design Info for The Manufacturer's Name Hu6800")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hta-2-0
+  (package
+    (name "r-pd-hta-2-0")
+    (version "3.12.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hta.2.0" version
+                              'annotation))
+       (sha256
+        (base32 "004mm93wag59arzirws3cfqjv4whl8sbv558xxg7pj1ar026g4m3"))))
+    (properties `((upstream-name . "pd.hta.2.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hta.2.0")
+    (synopsis "Platform Design Info for Affymetrix HTA-2_0")
+    (description "Platform Design Info for Affymetrix HTA-2_0")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ht-mg-430a
+  (package
+    (name "r-pd-ht-mg-430a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ht.mg.430a" version
+                              'annotation))
+       (sha256
+        (base32 "10shsap47217p6zmb9fn86na7if965h45l2r787cisgyyn9n45mq"))))
+    (properties `((upstream-name . "pd.ht.mg.430a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ht.mg.430a")
+    (synopsis "Platform Design Info for The Manufacturer's Name HT_MG-430A")
+    (description "Platform Design Info for The Manufacturer's Name HT_MG-430A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ht-hg-u133a
+  (package
+    (name "r-pd-ht-hg-u133a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ht.hg.u133a" version
+                              'annotation))
+       (sha256
+        (base32 "14bnnxsn02mpyynn8bvl8c47id9l2wfakngbvpq4h5yjy689jm1c"))))
+    (properties `((upstream-name . "pd.ht.hg.u133a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ht.hg.u133a")
+    (synopsis "Platform Design Info for The Manufacturer's Name HT_HG-U133A")
+    (description
+     "Platform Design Info for The Manufacturer's Name HT_HG-U133A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ht-hg-u133-plus-pm
+  (package
+    (name "r-pd-ht-hg-u133-plus-pm")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ht.hg.u133.plus.pm" version
+                              'annotation))
+       (sha256
+        (base32 "1000f1d28yzc0kcdf380fkx3xlgla3kn4n9f2ddawzjb7igash92"))))
+    (properties `((upstream-name . "pd.ht.hg.u133.plus.pm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ht.hg.u133.plus.pm")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name HT_HG-U133_Plus_PM")
+    (description
+     "Platform Design Info for The Manufacturer's Name HT_HG-U133_Plus_PM")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg18-60mer-expr
+  (package
+    (name "r-pd-hg18-60mer-expr")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg18.60mer.expr" version
+                              'annotation))
+       (sha256
+        (base32 "1lsfsgsj6gyv0q509d0axr6g2yv226zxqh8f2n1hw0kfxwl27bm8"))))
+    (properties `((upstream-name . "pd.hg18.60mer.expr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg18.60mer.expr")
+    (synopsis "Platform Design Info for NimbleGen hg18_60mer_expr")
+    (description "Platform Design Info for @code{NimbleGen} hg18_60mer_expr")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u95e
+  (package
+    (name "r-pd-hg-u95e")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u95e" version
+                              'annotation))
+       (sha256
+        (base32 "0cksi811m9fzjq5linlsarfswp3p7rdgks0js3chv91jr3v2z3a7"))))
+    (properties `((upstream-name . "pd.hg.u95e")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u95e")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG_U95E")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95E")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u95d
+  (package
+    (name "r-pd-hg-u95d")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u95d" version
+                              'annotation))
+       (sha256
+        (base32 "0ygfx73b122b468zvr9lhw2vkr1aijasrazarqjqc8bjbfm4fybw"))))
+    (properties `((upstream-name . "pd.hg.u95d")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u95d")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG_U95D")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95D")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u95c
+  (package
+    (name "r-pd-hg-u95c")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u95c" version
+                              'annotation))
+       (sha256
+        (base32 "0p9yrwjw75r5dg3z0pl4yr04agjpqv9rz3in2faw3pqawdzndihq"))))
+    (properties `((upstream-name . "pd.hg.u95c")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u95c")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG_U95C")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95C")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u95b
+  (package
+    (name "r-pd-hg-u95b")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u95b" version
+                              'annotation))
+       (sha256
+        (base32 "0gyxh7nagya1hgh5vvwalxmhbqm9pii3l6h1mndvx2ib58msh49h"))))
+    (properties `((upstream-name . "pd.hg.u95b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u95b")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG_U95B")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95B")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u95av2
+  (package
+    (name "r-pd-hg-u95av2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u95av2" version
+                              'annotation))
+       (sha256
+        (base32 "1l3y2bhjk67jwxvxwn5rngzn5c2dzk4lk24cm74f6px845qw5sk7"))))
+    (properties `((upstream-name . "pd.hg.u95av2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u95av2")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG_U95Av2")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95Av2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u95a
+  (package
+    (name "r-pd-hg-u95a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u95a" version
+                              'annotation))
+       (sha256
+        (base32 "1c7d16im1xxs8v0ccn19klwv43qr6b4iw0k5hz9cl8m10jmyw49b"))))
+    (properties `((upstream-name . "pd.hg.u95a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u95a")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG_U95A")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u219
+  (package
+    (name "r-pd-hg-u219")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u219" version
+                              'annotation))
+       (sha256
+        (base32 "04kqvh5ilf83z2iwvfw7m8xsgjxy29vqayp1lgh38y48j0nn24dk"))))
+    (properties `((upstream-name . "pd.hg.u219")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u219")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG-U219")
+    (description "Platform Design Info for The Manufacturer's Name HG-U219")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u133b
+  (package
+    (name "r-pd-hg-u133b")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u133b" version
+                              'annotation))
+       (sha256
+        (base32 "1mafh53bj6g30869pdyl59040m2crqqbfcbdpdxfpigxpqr3rb4c"))))
+    (properties `((upstream-name . "pd.hg.u133b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u133b")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG-U133B")
+    (description "Platform Design Info for The Manufacturer's Name HG-U133B")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u133a-tag
+  (package
+    (name "r-pd-hg-u133a-tag")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u133a.tag" version
+                              'annotation))
+       (sha256
+        (base32 "1ndjzcydshh5f3cnrav91hi47bx92z6rqliiwirhx2cqk8bvz5yp"))))
+    (properties `((upstream-name . "pd.hg.u133a.tag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u133a.tag")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG-U133A_tag")
+    (description
+     "Platform Design Info for The Manufacturer's Name HG-U133A_tag")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u133a-2
+  (package
+    (name "r-pd-hg-u133a-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u133a.2" version
+                              'annotation))
+       (sha256
+        (base32 "1rlh62r5zmxllkc9izr6a4yr2n88flfz1rybwvi90yggc788chxy"))))
+    (properties `((upstream-name . "pd.hg.u133a.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u133a.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG-U133A_2")
+    (description "Platform Design Info for The Manufacturer's Name HG-U133A_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u133a
+  (package
+    (name "r-pd-hg-u133a")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u133a" version
+                              'annotation))
+       (sha256
+        (base32 "08bk5im2zkb1vif1i6bgfx068xcl5q5m0ac33zpscfdq4jashm7k"))))
+    (properties `((upstream-name . "pd.hg.u133a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u133a")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG-U133A")
+    (description "Platform Design Info for The Manufacturer's Name HG-U133A")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-u133-plus-2
+  (package
+    (name "r-pd-hg-u133-plus-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.u133.plus.2" version
+                              'annotation))
+       (sha256
+        (base32 "02ip0mf24lw818ij8xgk7cylb5q1059jwvbdd2aynqqwy2mg31h0"))))
+    (properties `((upstream-name . "pd.hg.u133.plus.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.u133.plus.2")
+    (synopsis
+     "Platform Design Info for The Manufacturer's Name HG-U133_Plus_2")
+    (description
+     "Platform Design Info for The Manufacturer's Name HG-U133_Plus_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hg-focus
+  (package
+    (name "r-pd-hg-focus")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hg.focus" version
+                              'annotation))
+       (sha256
+        (base32 "1qlkhxq76nb55c299g7x7x8wn8nx1mg4ra5b0faflsjirkh4b32s"))))
+    (properties `((upstream-name . "pd.hg.focus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hg.focus")
+    (synopsis "Platform Design Info for The Manufacturer's Name HG-Focus")
+    (description "Platform Design Info for The Manufacturer's Name HG-Focus")
+    (license license:artistic2.0)))
+
+(define-public r-pd-hc-g110
+  (package
+    (name "r-pd-hc-g110")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.hc.g110" version
+                              'annotation))
+       (sha256
+        (base32 "014bb45m2pwwbz7aca6l6442188mkp5bsk46z7x18g0aa66p06hv"))))
+    (properties `((upstream-name . "pd.hc.g110")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.hc.g110")
+    (synopsis "Platform Design Info for The Manufacturer's Name HC_G110")
+    (description "Platform Design Info for The Manufacturer's Name HC_G110")
+    (license license:artistic2.0)))
+
+(define-public r-pd-guigene-1-1-st
+  (package
+    (name "r-pd-guigene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.guigene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0p53kkhaa4d6ib32sfnwvs363zir227dmzxp8yqma0z4kz0djdna"))))
+    (properties `((upstream-name . "pd.guigene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.guigene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix GuiGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{GuiGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-guigene-1-0-st
+  (package
+    (name "r-pd-guigene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.guigene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1rq5gbdm6k0shv82zy7vrqxahzffh1xikrd3a6d1ai67n129bv6f"))))
+    (properties `((upstream-name . "pd.guigene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.guigene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix GuiGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{GuiGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-genomewidesnp-6
+  (package
+    (name "r-pd-genomewidesnp-6")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.genomewidesnp.6" version
+                              'annotation))
+       (sha256
+        (base32 "1f35nw987axlc5rsr97i7rwcy1dd8zjjj6jf4cg75y0la6rvhfw4"))))
+    (properties `((upstream-name . "pd.genomewidesnp.6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.genomewidesnp.6")
+    (synopsis "Platform Design Info for Affymetrix GenomeWideSNP_6")
+    (description "Platform Design Info for Affymetrix @code{GenomeWideSNP_6}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-genomewidesnp-5
+  (package
+    (name "r-pd-genomewidesnp-5")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.genomewidesnp.5" version
+                              'annotation))
+       (sha256
+        (base32 "1kiqmcc07q2m7hkgqczqndk7frpwibpsi2c0ihr5av0vjrp118ak"))))
+    (properties `((upstream-name . "pd.genomewidesnp.5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.genomewidesnp.5")
+    (synopsis "Platform Design Info for Affymetrix GenomeWideSNP_5")
+    (description "Platform Design Info for Affymetrix @code{GenomeWideSNP_5}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-fingene-1-1-st
+  (package
+    (name "r-pd-fingene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.fingene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "1habbw9fvygailw73azfrvczgp6ap1az688vz8pklqq77vlqs1qz"))))
+    (properties `((upstream-name . "pd.fingene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.fingene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix FinGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{FinGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-fingene-1-0-st
+  (package
+    (name "r-pd-fingene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.fingene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0l19h920cghw65nqbh79s1rwijqdl7k84km0iv1fgx0kxhh28xa0"))))
+    (properties `((upstream-name . "pd.fingene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.fingene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix FinGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{FinGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-felgene-1-1-st
+  (package
+    (name "r-pd-felgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.felgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "027cgqxfgmlkx64y6nm9h36ji781fkrnnrdxblh8h4jwjd5n36rj"))))
+    (properties `((upstream-name . "pd.felgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.felgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix FelGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{FelGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-felgene-1-0-st
+  (package
+    (name "r-pd-felgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.felgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1lf3lp3zjprfwni2nfdpkvj2j6y7hd7znmxqcgj46vccznc49hh6"))))
+    (properties `((upstream-name . "pd.felgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.felgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix FelGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{FelGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-feinberg-mm8-me-hx1
+  (package
+    (name "r-pd-feinberg-mm8-me-hx1")
+    (version "0.99.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.feinberg.mm8.me.hx1" version
+                              'annotation))
+       (sha256
+        (base32 "1xk4rmpxjh9mwijwglzlycg7bk2zk599fk7xbnk114rj216y2jsm"))))
+    (properties `((upstream-name . "pd.feinberg.mm8.me.hx1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.feinberg.mm8.me.hx1")
+    (synopsis "Platform Design Info for NimbleGen feinberg_mm8_me_hx1")
+    (description
+     "Platform Design Info for @code{NimbleGen} feinberg_mm8_me_hx1")
+    (license license:artistic2.0)))
+
+(define-public r-pd-feinberg-hg18-me-hx1
+  (package
+    (name "r-pd-feinberg-hg18-me-hx1")
+    (version "0.99.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.feinberg.hg18.me.hx1" version
+                              'annotation))
+       (sha256
+        (base32 "1k50khs7mrp1qy9z0whm5drwv59m8zn7v0zxhv26bpvmwbrnlhfg"))))
+    (properties `((upstream-name . "pd.feinberg.hg18.me.hx1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.feinberg.hg18.me.hx1")
+    (synopsis "Platform Design Info for NimbleGen feinberg_hg18_me_hx1")
+    (description
+     "Platform Design Info for @code{NimbleGen} feinberg_hg18_me_hx1")
+    (license license:artistic2.0)))
+
+(define-public r-pd-equgene-1-1-st
+  (package
+    (name "r-pd-equgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.equgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0migyzmrgqvvnkl8w61qv26hj5kjy720q4ipamdn99z9s4r8cxrn"))))
+    (properties `((upstream-name . "pd.equgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.equgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix EquGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{EquGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-equgene-1-0-st
+  (package
+    (name "r-pd-equgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.equgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "01vcj6a6hm9j2fbhrz244sbig63j1jyxyg068q4hizpl9lpzaibd"))))
+    (properties `((upstream-name . "pd.equgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.equgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix EquGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{EquGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-elegene-1-1-st
+  (package
+    (name "r-pd-elegene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.elegene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "18v3n3ss3rl2ksvjg1jk1w0mprhhxra55znixfcd8ikqsrdfj2a2"))))
+    (properties `((upstream-name . "pd.elegene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.elegene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix EleGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{EleGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-elegene-1-0-st
+  (package
+    (name "r-pd-elegene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.elegene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1if8gwvvk9jybsrcwr8sayg1czchpnlmysa9plrm50g7r2ki7m4l"))))
+    (properties `((upstream-name . "pd.elegene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.elegene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix EleGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{EleGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ecoli-asv2
+  (package
+    (name "r-pd-ecoli-asv2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ecoli.asv2" version
+                              'annotation))
+       (sha256
+        (base32 "19pn7691cr0vakxlx0q0x3p1pfc0z8l5f14475bv2fr4djljhhma"))))
+    (properties `((upstream-name . "pd.ecoli.asv2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ecoli.asv2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Ecoli_ASv2")
+    (description "Platform Design Info for The Manufacturer's Name Ecoli_ASv2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ecoli
+  (package
+    (name "r-pd-ecoli")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ecoli" version
+                              'annotation))
+       (sha256
+        (base32 "0mi5i0cp5xz97pb3ic6qmwl3fp4byyddvas2npll4ngarl5wv5ag"))))
+    (properties `((upstream-name . "pd.ecoli")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ecoli")
+    (synopsis "Platform Design Info for The Manufacturer's Name Ecoli")
+    (description "Platform Design Info for The Manufacturer's Name Ecoli")
+    (license license:artistic2.0)))
+
+(define-public r-pd-e-coli-2
+  (package
+    (name "r-pd-e-coli-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.e.coli.2" version
+                              'annotation))
+       (sha256
+        (base32 "1nny0w0adg433n1i20q0jdmi5yy1anpa91dgrklpvxyxbr5902vz"))))
+    (properties `((upstream-name . "pd.e.coli.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.e.coli.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name E_coli_2")
+    (description "Platform Design Info for The Manufacturer's Name E_coli_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-drosophila-2
+  (package
+    (name "r-pd-drosophila-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.drosophila.2" version
+                              'annotation))
+       (sha256
+        (base32 "0rr3l6203nfzhz21wps7dfcifvzmbnixcr2piv5jdfh7birj23aa"))))
+    (properties `((upstream-name . "pd.drosophila.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.drosophila.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Drosophila_2")
+    (description
+     "Platform Design Info for The Manufacturer's Name Drosophila_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-drosgenome1
+  (package
+    (name "r-pd-drosgenome1")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.drosgenome1" version
+                              'annotation))
+       (sha256
+        (base32 "1cp3fs2g88yv50gkd6m769idlj7kci2g82wafn17ci65g64q0g05"))))
+    (properties `((upstream-name . "pd.drosgenome1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.drosgenome1")
+    (synopsis "Platform Design Info for The Manufacturer's Name DrosGenome1")
+    (description
+     "Platform Design Info for The Manufacturer's Name @code{DrosGenome1}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-drogene-1-1-st
+  (package
+    (name "r-pd-drogene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.drogene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0yjxjzmcx2hh6rm15p9d36vfj77fwmd7q2kbjk8h7hbpkm72ssdf"))))
+    (properties `((upstream-name . "pd.drogene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.drogene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix DroGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{DroGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-drogene-1-0-st
+  (package
+    (name "r-pd-drogene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.drogene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1zp85q3a2bayr0q5r0ij62kfypzngcz9v791xsf9n9k7nx6714fi"))))
+    (properties `((upstream-name . "pd.drogene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.drogene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix DroGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{DroGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cytogenetics-array
+  (package
+    (name "r-pd-cytogenetics-array")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cytogenetics.array" version
+                              'annotation))
+       (sha256
+        (base32 "0gd7q64zfxda9irdmmr92iqxlswaj5v4pklsfm96xkn8lxq34dlb"))))
+    (properties `((upstream-name . "pd.cytogenetics.array")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cytogenetics.array")
+    (synopsis "Platform Design Info for Affymetrix Cytogenetics_Array")
+    (description "Platform Design Info for Affymetrix Cytogenetics_Array")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cyrgene-1-1-st
+  (package
+    (name "r-pd-cyrgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cyrgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0p7j8ygyx8f5aqyy847rfcc35hrkcavi1700af971jjrha3gllc0"))))
+    (properties `((upstream-name . "pd.cyrgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cyrgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix CyRGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{CyRGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cyrgene-1-0-st
+  (package
+    (name "r-pd-cyrgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cyrgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1s7rrwcmaar230y90hhvrx3wxlp228j88pwdh2glap2pn3d3rlnd"))))
+    (properties `((upstream-name . "pd.cyrgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cyrgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix CyRGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{CyRGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cyngene-1-1-st
+  (package
+    (name "r-pd-cyngene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cyngene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "1kicrk0n2lik32q9nkpfy8ydh8klsy6i5cy6m2grddv80g5hc6n4"))))
+    (properties `((upstream-name . "pd.cyngene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cyngene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix CynGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{CynGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cyngene-1-0-st
+  (package
+    (name "r-pd-cyngene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cyngene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "1xkv8m346x1zrnp4bhbjk2xwfq5jkbprbh417bya8swqvcyv3zbj"))))
+    (properties `((upstream-name . "pd.cyngene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cyngene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix CynGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{CynGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cotton
+  (package
+    (name "r-pd-cotton")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cotton" version
+                              'annotation))
+       (sha256
+        (base32 "1h71klvndi32j7hb7cy2w6asf7lb1xhs5glxajnd30y7ksigba7l"))))
+    (properties `((upstream-name . "pd.cotton")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cotton")
+    (synopsis "Platform Design Info for The Manufacturer's Name Cotton")
+    (description "Platform Design Info for The Manufacturer's Name Cotton")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-s-rat-ht
+  (package
+    (name "r-pd-clariom-s-rat-ht")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.s.rat.ht" version
+                              'annotation))
+       (sha256
+        (base32 "17fk4qiznh2ks7r4mzbv1gnpjca39n6rzshb5dw5n73rbnd24160"))))
+    (properties `((upstream-name . "pd.clariom.s.rat.ht")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.s.rat.ht")
+    (synopsis "Platform Design Info for Affymetrix Clariom_S_Rat_HT")
+    (description "Platform Design Info for Affymetrix Clariom_S_Rat_HT")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-s-rat
+  (package
+    (name "r-pd-clariom-s-rat")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.s.rat" version
+                              'annotation))
+       (sha256
+        (base32 "1bx0vipcw3vjpz59h5820yanwy7b8mxb8bkgwp3n58vm24x7l304"))))
+    (properties `((upstream-name . "pd.clariom.s.rat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.s.rat")
+    (synopsis "Platform Design Info for Affymetrix Clariom_S_Rat")
+    (description "Platform Design Info for Affymetrix Clariom_S_Rat")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-s-mouse-ht
+  (package
+    (name "r-pd-clariom-s-mouse-ht")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.s.mouse.ht" version
+                              'annotation))
+       (sha256
+        (base32 "1ka9mganvymml306yh196rqan333ykrmqp9dfl4xs9mz57p405kk"))))
+    (properties `((upstream-name . "pd.clariom.s.mouse.ht")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.s.mouse.ht")
+    (synopsis "Platform Design Info for Affymetrix Clariom_S_Mouse_HT")
+    (description "Platform Design Info for Affymetrix Clariom_S_Mouse_HT")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-s-mouse
+  (package
+    (name "r-pd-clariom-s-mouse")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.s.mouse" version
+                              'annotation))
+       (sha256
+        (base32 "15fc25840lnhv0rlxc98akda1gis1s4xn61ycvymjii3lgx8hwpk"))))
+    (properties `((upstream-name . "pd.clariom.s.mouse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.s.mouse")
+    (synopsis "Platform Design Info for Affymetrix Clariom_S_Mouse")
+    (description "Platform Design Info for Affymetrix Clariom_S_Mouse")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-s-human-ht
+  (package
+    (name "r-pd-clariom-s-human-ht")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.s.human.ht" version
+                              'annotation))
+       (sha256
+        (base32 "08fzm8xp6wa4x03vqb28dvlz3hiwv2q5n5h9m2np0g4g40hbhg89"))))
+    (properties `((upstream-name . "pd.clariom.s.human.ht")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.s.human.ht")
+    (synopsis "Platform Design Info for Affymetrix Clariom_S_Human_HT")
+    (description "Platform Design Info for Affymetrix Clariom_S_Human_HT")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-s-human
+  (package
+    (name "r-pd-clariom-s-human")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.s.human" version
+                              'annotation))
+       (sha256
+        (base32 "0a68mnwv735mi9k9qxs2vv4hnh76yg1n7jjyaw34g8m7405yjxxp"))))
+    (properties `((upstream-name . "pd.clariom.s.human")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.s.human")
+    (synopsis "Platform Design Info for Affymetrix Clariom_S_Human")
+    (description "Platform Design Info for Affymetrix Clariom_S_Human")
+    (license license:artistic2.0)))
+
+(define-public r-pd-clariom-d-human
+  (package
+    (name "r-pd-clariom-d-human")
+    (version "3.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.clariom.d.human" version
+                              'annotation))
+       (sha256
+        (base32 "11q4s4q07fpkl5wpmhhjfkrp4l8i8gy1i8wc80aar84lp1261vvx"))))
+    (properties `((upstream-name . "pd.clariom.d.human")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.clariom.d.human")
+    (synopsis "Platform Design Info for Affymetrix Clariom_D_Human")
+    (description "Platform Design Info for Affymetrix Clariom_D_Human")
+    (license license:artistic2.0)))
+
+(define-public r-pd-citrus
+  (package
+    (name "r-pd-citrus")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.citrus" version
+                              'annotation))
+       (sha256
+        (base32 "1792gsxdr24264n121zvspdq39ac3khaghv5j66rn2nzqds75qch"))))
+    (properties `((upstream-name . "pd.citrus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.citrus")
+    (synopsis "Platform Design Info for The Manufacturer's Name Citrus")
+    (description "Platform Design Info for The Manufacturer's Name Citrus")
+    (license license:artistic2.0)))
+
+(define-public r-pd-chogene-2-1-st
+  (package
+    (name "r-pd-chogene-2-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.chogene.2.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0d9pslimh0w37yvvfgqljbr2z5arjn6kx0wnjhp19gcch44jvkr2"))))
+    (properties `((upstream-name . "pd.chogene.2.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.chogene.2.1.st")
+    (synopsis "Platform Design Info for Affymetrix CHOGene-2_1-st")
+    (description "Platform Design Info for Affymetrix CHOGene-2_1-st")
+    (license license:artistic2.0)))
+
+(define-public r-pd-chogene-2-0-st
+  (package
+    (name "r-pd-chogene-2-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.chogene.2.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0pljjz466y2aav9045qgr5hbrv7alyl3gw3br4a8knbijk6fbw15"))))
+    (properties `((upstream-name . "pd.chogene.2.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.chogene.2.0.st")
+    (synopsis "Platform Design Info for Affymetrix CHOGene-2_0-st")
+    (description "Platform Design Info for Affymetrix CHOGene-2_0-st")
+    (license license:artistic2.0)))
+
+(define-public r-pd-chigene-1-1-st
+  (package
+    (name "r-pd-chigene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.chigene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "013baf38h35fsxq0f32v00rizik8iq76jm1s8azkicv90bvw5g8k"))))
+    (properties `((upstream-name . "pd.chigene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.chigene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix ChiGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{ChiGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-chigene-1-0-st
+  (package
+    (name "r-pd-chigene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.chigene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0smfgx1brfla96ijsv3a3ljcn02kpbk6sczgp06dik3g0k54788h"))))
+    (properties `((upstream-name . "pd.chigene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.chigene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix ChiGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{ChiGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-chicken
+  (package
+    (name "r-pd-chicken")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.chicken" version
+                              'annotation))
+       (sha256
+        (base32 "1alkhr297ar6iv7nrjxnlhmq3xvjzpl46mdckkbxw13w73vj6p32"))))
+    (properties `((upstream-name . "pd.chicken")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.chicken")
+    (synopsis "Platform Design Info for The Manufacturer's Name Chicken")
+    (description "Platform Design Info for The Manufacturer's Name Chicken")
+    (license license:artistic2.0)))
+
+(define-public r-pd-charm-hg18-example
+  (package
+    (name "r-pd-charm-hg18-example")
+    (version "0.99.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.charm.hg18.example" version
+                              'annotation))
+       (sha256
+        (base32 "0nqv3h4zp83vp7q49n956920x5hdfcbw4z3hlvmqx8dixbgr1jrg"))))
+    (properties `((upstream-name . "pd.charm.hg18.example")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.charm.hg18.example")
+    (synopsis "Platform Design Info for NimbleGen charm_hg18_example")
+    (description
+     "Platform Design Info for @code{NimbleGen} charm_hg18_example")
+    (license license:artistic2.0)))
+
+(define-public r-pd-celegans
+  (package
+    (name "r-pd-celegans")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.celegans" version
+                              'annotation))
+       (sha256
+        (base32 "08byc5xvnbfdlikv9118k52pk37br4k8hn86xypkrmbz67fzlzpd"))))
+    (properties `((upstream-name . "pd.celegans")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.celegans")
+    (synopsis "Platform Design Info for The Manufacturer's Name Celegans")
+    (description "Platform Design Info for The Manufacturer's Name Celegans")
+    (license license:artistic2.0)))
+
+(define-public r-pd-canine-2
+  (package
+    (name "r-pd-canine-2")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.canine.2" version
+                              'annotation))
+       (sha256
+        (base32 "1dx914yyq6ry88d6fipsxsvp41pgcgllznpwsqqm2xa99y85ka5y"))))
+    (properties `((upstream-name . "pd.canine.2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.canine.2")
+    (synopsis "Platform Design Info for The Manufacturer's Name Canine_2")
+    (description "Platform Design Info for The Manufacturer's Name Canine_2")
+    (license license:artistic2.0)))
+
+(define-public r-pd-canine
+  (package
+    (name "r-pd-canine")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.canine" version
+                              'annotation))
+       (sha256
+        (base32 "0xpisxv7c990w44gd5g2iwfzqi3618xa3mdps69z2j4bfrcm37vq"))))
+    (properties `((upstream-name . "pd.canine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.canine")
+    (synopsis "Platform Design Info for The Manufacturer's Name Canine")
+    (description "Platform Design Info for The Manufacturer's Name Canine")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cangene-1-1-st
+  (package
+    (name "r-pd-cangene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cangene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0pgw1424rvg3k9m3z6ffiyfj91i930dx2slqd15bnvc9hrr75094"))))
+    (properties `((upstream-name . "pd.cangene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cangene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix CanGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{CanGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-cangene-1-0-st
+  (package
+    (name "r-pd-cangene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.cangene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0dcwy6gnlj51hkc2gsv6fdq02vczci4z37f3iy1n8zkvz5b4yw6c"))))
+    (properties `((upstream-name . "pd.cangene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.cangene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix CanGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{CanGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-bsubtilis
+  (package
+    (name "r-pd-bsubtilis")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.bsubtilis" version
+                              'annotation))
+       (sha256
+        (base32 "07x4dss0zp3p315q38bi7xarycav2hr44x7jb1jx4dypr0jh98mh"))))
+    (properties `((upstream-name . "pd.bsubtilis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.bsubtilis")
+    (synopsis "Platform Design Info for The Manufacturer's Name Bsubtilis")
+    (description "Platform Design Info for The Manufacturer's Name Bsubtilis")
+    (license license:artistic2.0)))
+
+(define-public r-pd-bovine
+  (package
+    (name "r-pd-bovine")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.bovine" version
+                              'annotation))
+       (sha256
+        (base32 "1g03za5jc8lz21wpx1h2rcxdwsx7ddmmnyflz46z35ginzy41g7h"))))
+    (properties `((upstream-name . "pd.bovine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.bovine")
+    (synopsis "Platform Design Info for The Manufacturer's Name Bovine")
+    (description "Platform Design Info for The Manufacturer's Name Bovine")
+    (license license:artistic2.0)))
+
+(define-public r-pd-bovgene-1-1-st
+  (package
+    (name "r-pd-bovgene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.bovgene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "0npjm9rpcwj5j8sh1mdr5j1fz7dbwrqvjh2jx69fpslry69i6daq"))))
+    (properties `((upstream-name . "pd.bovgene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.bovgene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix BovGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{BovGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-bovgene-1-0-st
+  (package
+    (name "r-pd-bovgene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.bovgene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "00ys19pdc7zgprfrhmk0pzfb5q96qy0vqxi2a6g28pxwf3367b30"))))
+    (properties `((upstream-name . "pd.bovgene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.bovgene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix BovGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{BovGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-barley1
+  (package
+    (name "r-pd-barley1")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.barley1" version
+                              'annotation))
+       (sha256
+        (base32 "0mha6w2zh7gi4y7ngkh84jaff50h8l9a0q9dwc8a00m5npkpkv4g"))))
+    (properties `((upstream-name . "pd.barley1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.barley1")
+    (synopsis "Platform Design Info for The Manufacturer's Name Barley1")
+    (description "Platform Design Info for The Manufacturer's Name Barley1")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ath1-121501
+  (package
+    (name "r-pd-ath1-121501")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ath1.121501" version
+                              'annotation))
+       (sha256
+        (base32 "0j83s6402xrggnlnqjyphy577by9w1ncvf1az4immzaixdamaaxc"))))
+    (properties `((upstream-name . "pd.ath1.121501")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ath1.121501")
+    (synopsis "Platform Design Info for The Manufacturer's Name ATH1-121501")
+    (description
+     "Platform Design Info for The Manufacturer's Name ATH1-121501")
+    (license license:artistic2.0)))
+
+(define-public r-pd-atdschip-tiling
+  (package
+    (name "r-pd-atdschip-tiling")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.atdschip.tiling" version
+                              'experiment))
+       (sha256
+        (base32 "03yvz9z4dmnm4cvfwkw3b7srmq7hmwk9y21lpsn5yz01wjp9wf6w"))))
+    (properties `((upstream-name . "pd.atdschip.tiling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.atdschip.tiling")
+    (synopsis "Platform Design Info for Affymetrix Atdschip_tiling")
+    (description "Platform Design Info for Affymetrix Atdschip_tiling")
+    (license license:artistic2.0)))
+
+(define-public r-pd-aragene-1-1-st
+  (package
+    (name "r-pd-aragene-1-1-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.aragene.1.1.st" version
+                              'annotation))
+       (sha256
+        (base32 "105qfxg8p9z0bzffm6zg16c5f6nnv5hddlpcxs0kp3daddap8h5s"))))
+    (properties `((upstream-name . "pd.aragene.1.1.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.aragene.1.1.st")
+    (synopsis "Platform Design Info for Affymetrix AraGene-1_1-st")
+    (description "Platform Design Info for Affymetrix @code{AraGene-1_1-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-aragene-1-0-st
+  (package
+    (name "r-pd-aragene-1-0-st")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.aragene.1.0.st" version
+                              'annotation))
+       (sha256
+        (base32 "0255bgsqz8fflnlnxw77wvv6rky46n3pcryk9yhw7nfx0cq19v4r"))))
+    (properties `((upstream-name . "pd.aragene.1.0.st")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.aragene.1.0.st")
+    (synopsis "Platform Design Info for Affymetrix AraGene-1_0-st")
+    (description "Platform Design Info for Affymetrix @code{AraGene-1_0-st}")
+    (license license:artistic2.0)))
+
+(define-public r-pd-ag
+  (package
+    (name "r-pd-ag")
+    (version "3.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.ag" version
+                              'annotation))
+       (sha256
+        (base32 "0kh7ridgihqpibazpxpf9y8qiznxm4nng39701abamadxb5r6qmq"))))
+    (properties `((upstream-name . "pd.ag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page "https://bioconductor.org/packages/pd.ag")
+    (synopsis "Platform Design Info for The Manufacturer's Name AG")
+    (description "Platform Design Info for The Manufacturer's Name AG")
+    (license license:artistic2.0)))
+
+(define-public r-pd-2006-10-31-rn34-refseq-promoter
+  (package
+    (name "r-pd-2006-10-31-rn34-refseq-promoter")
+    (version "0.99.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.2006.10.31.rn34.refseq.promoter" version
+                              'annotation))
+       (sha256
+        (base32 "0v0fa1hn5bwa15vg31dar2x0xfki0xby6qf5p1a0ivrx3pnvbsrl"))))
+    (properties `((upstream-name . "pd.2006.10.31.rn34.refseq.promoter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page
+     "https://bioconductor.org/packages/pd.2006.10.31.rn34.refseq.promoter")
+    (synopsis
+     "Platform Design Info for NimbleGen 2006-10-31_rn34_refseq_promoter")
+    (description
+     "Platform Design Info for @code{NimbleGen} 2006-10-31_rn34_refseq_promoter")
+    (license license:artistic2.0)))
+
+(define-public r-pd-2006-07-18-mm8-refseq-promoter
+  (package
+    (name "r-pd-2006-07-18-mm8-refseq-promoter")
+    (version "0.99.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.2006.07.18.mm8.refseq.promoter" version
+                              'annotation))
+       (sha256
+        (base32 "14cm7z1y7rsk5m2zazg27wvjabckb9ifwa1g091ckwn1jfaf7aqn"))))
+    (properties `((upstream-name . "pd.2006.07.18.mm8.refseq.promoter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page
+     "https://bioconductor.org/packages/pd.2006.07.18.mm8.refseq.promoter")
+    (synopsis
+     "Platform Design Info for NimbleGen 2006-07-18_mm8_refseq_promoter")
+    (description
+     "Platform Design Info for @code{NimbleGen} 2006-07-18_mm8_refseq_promoter")
+    (license license:artistic2.0)))
+
+(define-public r-pd-2006-07-18-hg18-refseq-promoter
+  (package
+    (name "r-pd-2006-07-18-hg18-refseq-promoter")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.2006.07.18.hg18.refseq.promoter" version
+                              'annotation))
+       (sha256
+        (base32 "09593qkh3jqlgxlqrpl3gla3y1kcshnzlq6nf10xhlps0qdlskhx"))))
+    (properties `((upstream-name . "pd.2006.07.18.hg18.refseq.promoter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page
+     "https://bioconductor.org/packages/pd.2006.07.18.hg18.refseq.promoter")
+    (synopsis
+     "Platform Design Info for NimbleGen 2006-07-18_hg18_refseq_promoter")
+    (description
+     "Platform Design Info for @code{NimbleGen} 2006-07-18_hg18_refseq_promoter")
+    (license license:artistic2.0)))
+
+(define-public r-pd-081229-hg18-promoter-medip-hx1
+  (package
+    (name "r-pd-081229-hg18-promoter-medip-hx1")
+    (version "0.99.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pd.081229.hg18.promoter.medip.hx1" version
+                              'annotation))
+       (sha256
+        (base32 "1h4925dmw0vfsnhllg55gswq3sxfmx9rcjzifdvgs9y27399psrr"))))
+    (properties `((upstream-name . "pd.081229.hg18.promoter.medip.hx1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite
+                             r-oligoclasses
+                             r-oligo
+                             r-iranges
+                             r-dbi
+                             r-biostrings))
+    (home-page
+     "https://bioconductor.org/packages/pd.081229.hg18.promoter.medip.hx1")
+    (synopsis
+     "Platform Design Info for NimbleGen 081229_hg18_promoter_medip_hx1")
+    (description
+     "Platform Design Info for @code{NimbleGen} 081229_hg18_promoter_medip_hx1")
+    (license license:artistic2.0)))
+
+(define-public r-pcxndata
+  (package
+    (name "r-pcxndata")
+    (version "2.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pcxnData" version
+                              'experiment))
+       (sha256
+        (base32 "0mhqgii84ncx2na49h3qvciqz7jfbbgil12i2cb4snlmxpa66k0j"))))
+    (properties `((upstream-name . "pcxnData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/pcxnData")
+    (synopsis
+     "Correlation coefficients and p values between pre-defined pathway/gene sets")
+    (description
+     "P@code{CxN} database contains correlation coefficients and p values between
+pre-defined gene sets within M@code{SigDB} H hallmark gene sets, M@code{SigDB}
+C2 CP (Canonical pathways), M@code{SigDB} C5 GO BP gene sets and Pathprint
+respectively, as well as adjusted pathway correlations to account for the shared
+genes between pathway pairs.")
+    (license license:expat)))
+
 (define-public r-pcxn
   (package
     (name "r-pcxn")
@@ -3115,7 +8287,7 @@ inform clinical decision making.")
         (base32 "1m8vs3bk7grc1mj4rh6vr50al0m1a79f6icbycfqfi1cqgz9pmi7"))))
     (properties `((upstream-name . "pcxn")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pheatmap))
+    (propagated-inputs (list r-pheatmap r-pcxndata))
     (home-page "https://bioconductor.org/packages/pcxn")
     (synopsis
      "Exploring, analyzing and visualizing functions utilizing the pcxnData package")
@@ -3126,6 +8298,29 @@ heatmap or create a network of your query and extract members of each
 pathway/gene set found in the available collections (M@code{SigDB} H hallmark,
 M@code{SigDB} C2 Canonical pathways, M@code{SigDB} C5 GO BP and Pathprint).")
     (license license:expat)))
+
+(define-public r-pchicdata
+  (package
+    (name "r-pchicdata")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PCHiCdata" version
+                              'experiment))
+       (sha256
+        (base32 "19xzn1agfn34y16prfcgwzbz40bw654zj28lhamiv2mvljxy60jx"))))
+    (properties `((upstream-name . "PCHiCdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-chicago))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/PCHiCdata")
+    (synopsis "Promoter Capture Hi-C data")
+    (description
+     "Subsets of Promoter Capture Hi-C data conveniently packaged for Chicago users.
+Data includes interactions detected for chromosomes 20 and 21 in GM12878 cells
+and for chromosomes 18 and 19 in @code{mESC}.")
+    (license license:artistic2.0)))
 
 (define-public r-pcan
   (package
@@ -3237,7 +8432,7 @@ subjects.  Citations: Chen et al. (2008)
         (base32 "04ij9f9vnzj4qzk8cgvrkd0jhjx4qh5g3cv25drd230v5x492lhz"))))
     (properties `((upstream-name . "pathRender")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgraphviz r-rcolorbrewer r-graph
+    (propagated-inputs (list r-rgraphviz r-rcolorbrewer r-graph r-cmap
                              r-annotationdbi))
     (home-page "http://www.bioconductor.org")
     (synopsis "Render molecular pathways")
@@ -3297,6 +8492,28 @@ provides various functionalities including Relative Abundance charts, Diversity
 estimates and plots, tests of Differential Abundance, Time Series visualization,
 and Core OTU analysis.")
     (license license:gpl2+)))
+
+(define-public r-pathnetdata
+  (package
+    (name "r-pathnetdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PathNetData" version
+                              'experiment))
+       (sha256
+        (base32 "07wq6526ihrzmyk2rql0zpkr6qkg6rdkk2f03lxkaq7fsbidb03q"))))
+    (properties `((upstream-name . "PathNetData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/PathNetData")
+    (synopsis "Experimental data for the PathNet package")
+    (description
+     "This package contains the data employed in the vignette of the @code{PathNet}
+package.  These data belong to the following publication: @code{PathNet}: A tool
+for pathway analysis using topological information.  Dutta B, Wallqvist A, and
+Reifman J., Source Code for Biology and Medicine 2012 Sep 24;7(1):10.")
+    (license license:gpl3)))
 
 (define-public r-pathnet
   (package
@@ -3406,6 +8623,75 @@ Implements methods for reading GWAS input data, finding genes associated with
 SNPs, calculating enrichment score and significance of pathways, and plotting
 pathways.")
     (license (license:fsdg-compatible "GPL (>=3) + file LICENSE"))))
+
+(define-public r-pasillatranscriptexpr
+  (package
+    (name "r-pasillatranscriptexpr")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PasillaTranscriptExpr" version
+                              'experiment))
+       (sha256
+        (base32 "17482ypqdvgc6p3fvkfdwfcpm3gn4rfd6zjsnlbqc99dpikq13sr"))))
+    (properties `((upstream-name . "PasillaTranscriptExpr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/PasillaTranscriptExpr")
+    (synopsis
+     "Data package with transcript expression obtained with kallisto from pasilla knock-down RNA-Seq data from Brooks et al")
+    (description
+     "This package provides kallisto workflow and transcript expression of RNA-Seq
+data from Brooks et al.")
+    (license license:gpl3+)))
+
+(define-public r-pasillabamsubset
+  (package
+    (name "r-pasillabamsubset")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "pasillaBamSubset" version
+                              'experiment))
+       (sha256
+        (base32 "1lr7dn9s7i287k602xa1zyx5xs6wa3g58kmpamc3hcsi5nn1iv7x"))))
+    (properties `((upstream-name . "pasillaBamSubset")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/pasillaBamSubset")
+    (synopsis "Subset of BAM files from \"Pasilla\" experiment")
+    (description
+     "Subset of BAM files untreated1.bam (single-end reads) and untreated3.bam
+(paired-end reads) from \"Pasilla\" experiment (Pasilla knock-down by Brooks et
+al., Genome Research 2011).  See the vignette in the pasilla data package for
+how BAM files untreated1.bam and untreated3.bam were obtained from the RNA-Seq
+read sequence data that is provided by NCBI Gene Expression Omnibus under
+accession numbers GSM461176 to GSM461181.  Also contains the DNA sequence for
+fly chromosome 4 to which the reads can be mapped.")
+    (license license:lgpl2.0+)))
+
+(define-public r-partheenmetadata-db
+  (package
+    (name "r-partheenmetadata-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PartheenMetaData.db" version
+                              'annotation))
+       (sha256
+        (base32 "0d37c5b7s3fgkkvg7sj7gl9ksrjk5pyyv54vkys8w3qwgsm8yrdz"))))
+    (properties `((upstream-name . "PartheenMetaData.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/PartheenMetaData.db")
+    (synopsis
+     "PartheenMetaData http://swegene.onk.lu.se Annotation Data (PartheenMetaData)")
+    (description
+     "@code{PartheenMetaData} http://swegene.onk.lu.se Annotation Data
+(@code{PartheenMetaData}) assembled using data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-partcnv
   (package
@@ -3551,6 +8837,30 @@ dataset, in order to produce biological networks, termed IMONs (Integrated
 Multi-Omic Networks).  IMONs can be used to analyse trait-specific polymorphic
 data within the context of biochemical and metabolic reaction networks,
 providing greater biological interpretability for GWAS data.")
+    (license license:artistic2.0)))
+
+(define-public r-panther-db
+  (package
+    (name "r-panther-db")
+    (version "1.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PANTHER.db" version
+                              'annotation))
+       (sha256
+        (base32 "05ydg87cix86hp6hkkqmcniy69q5zyb3xyc3q7bykp26bvrgjvqq"))))
+    (properties `((upstream-name . "PANTHER.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite r-biocfilecache r-annotationhub
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/PANTHER.db")
+    (synopsis
+     "set of annotation maps describing the entire PANTHER Gene Ontology")
+    (description
+     "This package provides a set of annotation maps describing the entire Gene
+Ontology assembled using data from PANTHER.")
     (license license:artistic2.0)))
 
 (define-public r-panr
@@ -3836,6 +9146,49 @@ Applied temporal and multiplex @code{PageRank} in gene regulatory network
 analysis.")
     (license license:gpl2)))
 
+(define-public r-paeg1aprobe
+  (package
+    (name "r-paeg1aprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "paeg1aprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0hbyd402wf9nzy2g93nhnf2zsi9jvhgfk0llxlyfk0kqxs0y4byy"))))
+    (properties `((upstream-name . "paeg1aprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/paeg1aprobe")
+    (synopsis "Probe sequence data for microarrays of type paeg1a")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was P\\_aeg1a\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-paeg1acdf
+  (package
+    (name "r-paeg1acdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "paeg1acdf" version
+                              'annotation))
+       (sha256
+        (base32 "127pgxxp5wp3hgmafbzdzsk4gqnllq1m1gcsfyzkvpkvmbn4aa9n"))))
+    (properties `((upstream-name . "paeg1acdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/paeg1acdf")
+    (synopsis "paeg1acdf")
+    (description
+     "This package provides a package containing an environment representing the
+Pae_G1a.CDF file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-padog
   (package
     (name "r-padog")
@@ -3851,7 +9204,9 @@ analysis.")
     (propagated-inputs (list r-nlme
                              r-limma
                              r-keggrest
+                             r-keggdzpathwaysgeo
                              r-hgu133plus2-db
+                             r-hgu133a-db
                              r-gsa
                              r-foreach
                              r-dorng

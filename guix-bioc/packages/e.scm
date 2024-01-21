@@ -17,6 +17,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -31,6 +32,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -328,6 +330,58 @@ target differential splicing events for RT-@code{qPCR} validation in the wet
 lab.")
     (license license:gpl3)))
 
+(define-public r-excluderanges
+  (package
+    (name "r-excluderanges")
+    (version "0.99.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "excluderanges" version
+                              'annotation))
+       (sha256
+        (base32 "1ciilzrq74fc9jxfyp35qq5n975qj7rl94vgp05l80ryraac8qf2"))))
+    (properties `((upstream-name . "excluderanges")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dozmorovlab/excluderanges")
+    (synopsis "Genomic coordinates of problematic genomic regions")
+    (description
+     "Genomic coordinates of problematic genomic regions that should be avoided when
+working with genomic data.  GRanges of exclusion regions (formerly known as
+blacklisted), centromeres, telomeres, known heterochromatin regions, etc. (UCSC
+gap table data).  Primarily for human and mouse genomes, hg19/hg38 and mm9/mm10
+genome assemblies.")
+    (license license:expat)))
+
+(define-public r-ewcedata
+  (package
+    (name "r-ewcedata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ewceData" version
+                              'experiment))
+       (sha256
+        (base32 "1kgh5r0pplvblrrkf1qxg7c92psrwm2bjpbs30dp8mdsnjdahm9v"))))
+    (properties `((upstream-name . "ewceData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurogenomics/ewceData")
+    (synopsis "The ewceData package provides reference data required for ewce")
+    (description
+     "This package provides reference data required for ewce.  Expression Weighted
+Celltype Enrichment (EWCE) is used to determine which cell types are enriched
+within gene lists.  The package provides tools for testing enrichments within
+simple gene lists (such as human disease associated genes) and those resulting
+from differential expression studies.  The package does not depend upon any
+particular Single Cell Transcriptome dataset and user defined datasets can be
+loaded in and used in the analyses.")
+    (license license:artistic2.0)))
+
 (define-public r-ewce
   (package
     (name "r-ewce")
@@ -350,6 +404,7 @@ lab.")
                              r-limma
                              r-hgnchelper
                              r-ggplot2
+                             r-ewcedata
                              r-dplyr
                              r-delayedarray
                              r-data-table
@@ -468,6 +523,36 @@ own datasets by analysing the stability and goodness of the classifications of
 such metrics.")
     (license license:gpl3)))
 
+(define-public r-eupathdb
+  (package
+    (name "r-eupathdb")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EuPathDB" version
+                              'annotation))
+       (sha256
+        (base32 "0k23f34hnvcf2ig9sic7gf7pypc2jmwymg605qym7x32bjhi6rlm"))))
+    (properties `((upstream-name . "EuPathDB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges
+                             r-genomeinfodbdata
+                             r-biostrings
+                             r-biocmanager
+                             r-biobase
+                             r-annotationhubdata
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/khughitt/EuPathDB")
+    (synopsis
+     "Provides access to pathogen annotation resources available on EuPathDB databases")
+    (description
+     "Brings together annotation resources from the various @code{EuPathDB} databases
+(@code{PlasmoDB}, @code{ToxoDB}, @code{TriTrypDB}, etc.) and makes them
+available in R using the @code{AnnotationHub} framework.")
+    (license license:artistic2.0)))
+
 (define-public r-eudysbiome
   (package
     (name "r-eudysbiome")
@@ -493,6 +578,51 @@ genera decrease or harmful genera increase) impact of a given treatment or
 environmental change on the (gut-intestinal, GI) microbiome in comparison to the
 microbiome of the reference condition.")
     (license license:gpl2)))
+
+(define-public r-etec16s
+  (package
+    (name "r-etec16s")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "etec16s" version
+                              'experiment))
+       (sha256
+        (base32 "1amhmhl74fyfvh4w1a0r0g7ahqm5yq16i87s4mzwvc03vslps143"))))
+    (properties `((upstream-name . "etec16s")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-metagenomeseq r-biobase))
+    (home-page "https://bioconductor.org/packages/etec16s")
+    (synopsis
+     "Individual-specific changes in the human gut microbiota after challenge with enterotoxigenic Escherichia coli and subsequent ciprofloxacin treatment")
+    (description
+     "16S @code{rRNA} gene sequencing data to study changes in the faecal microbiota
+of 12 volunteers during a human challenge study with ETEC (H10407) and
+subsequent treatment with ciprofloxacin.")
+    (license license:artistic2.0)))
+
+(define-public r-estrogen
+  (package
+    (name "r-estrogen")
+    (version "1.48.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "estrogen" version
+                              'experiment))
+       (sha256
+        (base32 "0nbyg1pj7vqxaxgznkhz2v14cq42gg8jkn5mbkd3nrz86slzkblm"))))
+    (properties `((upstream-name . "estrogen")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/estrogen")
+    (synopsis
+     "Microarray dataset that can be used as example for 2x2 factorial designs")
+    (description
+     "Data from 8 Affymetrix genechips, looking at a 2x2 factorial design (with 2
+repeats per level).")
+    (license license:lgpl2.0+)))
 
 (define-public r-esetvis
   (package
@@ -581,6 +711,7 @@ integrated into genomics toolboxes and workflows.")
                              r-motifmatchr
                              r-magrittr
                              r-knitr
+                             r-jaspar2018
                              r-iranges
                              r-igraph
                              r-ggplot2
@@ -816,6 +947,73 @@ support other data structures (through package @code{epivizrData}).
 Visualizations (using d3.js) can be easily added to the web app as well.")
     (license license:artistic2.0)))
 
+(define-public r-epitxdb-sc-saccer3
+  (package
+    (name "r-epitxdb-sc-saccer3")
+    (version "0.99.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EpiTxDb.Sc.sacCer3" version
+                              'annotation))
+       (sha256
+        (base32 "0qlifdpppxxn2xmb0f1ghjbx47a7rrkrzr2lvky5p8lb0dnh3zxv"))))
+    (properties `((upstream-name . "EpiTxDb.Sc.sacCer3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-epitxdb r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FelixErnst/EpiTxDb.Sc.sacCer3")
+    (synopsis "Annotation package for EpiTxDb objects")
+    (description
+     "Exposes an annotation databases generated from several sources by exposing these
+as @code{EpiTxDb} object.  Generated for Saccharomyces
+cerevisiae/@code{sacCer3}.")
+    (license license:artistic2.0)))
+
+(define-public r-epitxdb-mm-mm10
+  (package
+    (name "r-epitxdb-mm-mm10")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EpiTxDb.Mm.mm10" version
+                              'annotation))
+       (sha256
+        (base32 "16zsqnrb3ypwv0sqfmhqmkxqhp90k21in7bjhjf0zagywsyyhpww"))))
+    (properties `((upstream-name . "EpiTxDb.Mm.mm10")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-epitxdb r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FelixErnst/EpiTxDb.Mm.mm10")
+    (synopsis "Annotation package for EpiTxDb objects")
+    (description
+     "Exposes an annotation databases generated from several sources by exposing these
+as @code{EpiTxDb} object.  Generated for Mus musculus/mm10.")
+    (license license:artistic2.0)))
+
+(define-public r-epitxdb-hs-hg38
+  (package
+    (name "r-epitxdb-hs-hg38")
+    (version "0.99.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EpiTxDb.Hs.hg38" version
+                              'annotation))
+       (sha256
+        (base32 "1vsi24q902wqlnbxp8hks03x53n4yh5cmpyyxdvmxfbn1rxfvnyf"))))
+    (properties `((upstream-name . "EpiTxDb.Hs.hg38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-epitxdb r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FelixErnst/EpiTxDb.Hs.hg38")
+    (synopsis "Annotation package for EpiTxDb objects")
+    (description
+     "Exposes an annotation databases generated from several sources by exposing these
+as @code{EpiTxDb} object.  Generated for Homo sapiens/hg38.")
+    (license license:artistic2.0)))
+
 (define-public r-epitxdb
   (package
     (name "r-epitxdb")
@@ -957,6 +1155,30 @@ complex network signalling pathways.  It is tailored towards large scale double
 knock-out screens.")
     (license license:gpl3)))
 
+(define-public r-epimutacionsdata
+  (package
+    (name "r-epimutacionsdata")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "epimutacionsData" version
+                              'experiment))
+       (sha256
+        (base32 "1gbh1ad0kqdmyrnmvrw5lbxlafvq12gqmbw9w3bxi7q1ahclh4yh"))))
+    (properties `((upstream-name . "epimutacionsData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LeireAbarrategui/epimutacionsData")
+    (synopsis "Data for epimutacions package")
+    (description
+     "This package includes the data necessary to run functions and examples in
+epimutacions package.  Collection of DNA methylation data.  The package contains
+2 datasets: (1) Control ( GEO: GSE104812), (GEO: GSE97362) case samples; and (2)
+reference panel (GEO: GSE127824).  It also contains candidate regions to be
+epimutations in 450k methylation arrays.")
+    (license license:expat)))
+
 (define-public r-epimutacions
   (package
     (name "r-epimutacions")
@@ -971,6 +1193,7 @@ knock-out screens.")
     (build-system r-build-system)
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
                              r-txdb-hsapiens-ucsc-hg19-knowngene
+                             r-txdb-hsapiens-ucsc-hg18-knowngene
                              r-tibble
                              r-summarizedexperiment
                              r-s4vectors
@@ -983,6 +1206,7 @@ knock-out screens.")
                              r-isotree
                              r-iranges
                              r-illuminahumanmethylationepicmanifest
+                             r-illuminahumanmethylationepicanno-ilm10b2-hg19
                              r-illuminahumanmethylation450kmanifest
                              r-illuminahumanmethylation450kanno-ilmn12-hg19
                              r-homo-sapiens
@@ -994,6 +1218,7 @@ knock-out screens.")
                              r-genomicfeatures
                              r-genomeinfodb
                              r-experimenthub
+                             r-epimutacionsdata
                              r-ensembldb
                              r-bumphunter
                              r-biomart
@@ -1013,6 +1238,35 @@ disease against a reference panel (composed of healthy individuals) to identify
 epimutations in the given case sample.  It also contains functions to annotate
 and visualize the identified epimutations.")
     (license license:expat)))
+
+(define-public r-epimix-data
+  (package
+    (name "r-epimix-data")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EpiMix.data" version
+                              'experiment))
+       (sha256
+        (base32 "15qc8jjbv6b4nxszrj8lkj6cmbvvxlvknksp5pl13s3y176gm4d5"))))
+    (properties `((upstream-name . "EpiMix.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/EpiMix.data")
+    (synopsis "Data for the EpiMix package")
+    (description
+     "Supporting data for the @code{EpiMix} R package.  It include: -
+HM450_@code{lncRNA_probes.rda} - HM450_@code{miRNA_probes.rda} -
+EPIC_@code{lncRNA_probes.rda} - EPIC_@code{miRNA_probes.rda} -
+@code{EpigenomeMap.rda} - LUAD.sample.annotation - TCGA_@code{BatchData} -
+MET.data - @code{mRNA.data} - @code{microRNA.data} - @code{lncRNA.data} -
+Sample_@code{EpiMixResults_lncRNA} - Sample_@code{EpiMixResults_miRNA} -
+Sample_@code{EpiMixResults_Regular} - Sample_@code{EpiMixResults_Enhancer} -
+@code{lncRNA} expression data of tumors from TCGA that are stored in the
+@code{ExperimentHub}.")
+    (license license:gpl3)))
 
 (define-public r-epimix
   (package
@@ -1046,6 +1300,8 @@ and visualize the identified epimutations.")
                              r-genomeinfodb
                              r-foreach
                              r-experimenthub
+                             r-epimix-data
+                             r-elmer-data
                              r-dplyr
                              r-downloader
                              r-dosnow
@@ -1254,6 +1510,63 @@ also extract methylation patterns and assess allele specificity of methylation."
      "Query the Ensembl Variant Effect Predictor via the perl API.")
     (license license:artistic2.0)))
 
+(define-public r-ensdb-rnorvegicus-v79
+  (package
+    (name "r-ensdb-rnorvegicus-v79")
+    (version "2.99.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EnsDb.Rnorvegicus.v79" version
+                              'annotation))
+       (sha256
+        (base32 "1ki2hrn0a55f3ipxny0hpgl5ld9pjkhcwmvvqwwd99f3sqbxf3br"))))
+    (properties `((upstream-name . "EnsDb.Rnorvegicus.v79")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ensembldb))
+    (home-page "https://bioconductor.org/packages/EnsDb.Rnorvegicus.v79")
+    (synopsis "Ensembl based annotation package")
+    (description "Exposes an annotation databases generated from Ensembl.")
+    (license license:artistic2.0)))
+
+(define-public r-ensdb-rnorvegicus-v75
+  (package
+    (name "r-ensdb-rnorvegicus-v75")
+    (version "2.99.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EnsDb.Rnorvegicus.v75" version
+                              'annotation))
+       (sha256
+        (base32 "02sx9l1p67ihkn0dfzbi08cpp8x4k2mjdqn7hvzfiaibsbqp70bb"))))
+    (properties `((upstream-name . "EnsDb.Rnorvegicus.v75")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ensembldb))
+    (home-page "https://bioconductor.org/packages/EnsDb.Rnorvegicus.v75")
+    (synopsis "Ensembl based annotation package")
+    (description "Exposes an annotation databases generated from Ensembl.")
+    (license license:artistic2.0)))
+
+(define-public r-ensdb-mmusculus-v75
+  (package
+    (name "r-ensdb-mmusculus-v75")
+    (version "2.99.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EnsDb.Mmusculus.v75" version
+                              'annotation))
+       (sha256
+        (base32 "00c92l6ii2p3hila8xpblmidx8pmy11x1xh4gnwsq3f3rn1q200g"))))
+    (properties `((upstream-name . "EnsDb.Mmusculus.v75")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ensembldb))
+    (home-page "https://bioconductor.org/packages/EnsDb.Mmusculus.v75")
+    (synopsis "Ensembl based annotation package")
+    (description "Exposes an annotation databases generated from Ensembl.")
+    (license license:artistic2.0)))
+
 (define-public r-enrichviewnet
   (package
     (name "r-enrichviewnet")
@@ -1307,6 +1620,7 @@ into a network with edges connecting overlapping genes.")
                              r-pipeframe
                              r-motifmatchr
                              r-magrittr
+                             r-jaspar2018
                              r-iranges
                              r-heatmap3
                              r-ggpubr
@@ -1447,6 +1761,58 @@ aligned to each other and then exported as multiple alignments with given
 enhancer.")
     (license license:gpl2+)))
 
+(define-public r-encodexplorerdata
+  (package
+    (name "r-encodexplorerdata")
+    (version "0.99.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ENCODExplorerData" version
+                              'annotation))
+       (sha256
+        (base32 "00gfm5l8pxrfs4cw4jlw6n0cz5s31isg69k833n89800v26w3kvh"))))
+    (properties `((upstream-name . "ENCODExplorerData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcurl r-jsonlite r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ENCODExplorerData")
+    (synopsis "compilation of ENCODE metadata")
+    (description
+     "This package allows user to quickly access ENCODE project files metadata and
+give access to helper functions to query the ENCODE rest api, download ENCODE
+datasets and save the database in SQLite format.")
+    (license license:artistic2.0)))
+
+(define-public r-emtdata
+  (package
+    (name "r-emtdata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "emtdata" version
+                              'experiment))
+       (sha256
+        (base32 "0fjqmg9w7c1lv0b0ldr26rxsly78sw2asj3hw8h8yd623g7bkddw"))))
+    (properties `((upstream-name . "emtdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub r-edger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DavisLaboratory/emtdata")
+    (synopsis
+     "An ExperimentHub Package for data sets with an Epithelial to Mesenchymal Transition (EMT)")
+    (description
+     "This package provides pre-processed RNA-seq data where the epithelial to
+mesenchymal transition was induced on cell lines.  These data come from three
+publications Cursons et al. (2015), Cursons etl al. (2018) and Foroutan et al.
+(2017).  In each of these publications, EMT was induces across multiple cell
+lines following treatment by TGFb among other stimulants.  This data will be
+useful in determining the regulatory programs modified in order to achieve an
+EMT. Data were processed by the Davis laboratory in the Bioinformatics division
+at WEHI.")
+    (license license:gpl3)))
+
 (define-public r-empiricalbrownsmethod
   (package
     (name "r-empiricalbrownsmethod")
@@ -1512,6 +1878,34 @@ the Cramer von Mises test (CVM), which are both common distribution comparison
 tests.")
     (license license:expat)))
 
+(define-public r-elmer-data
+  (package
+    (name "r-elmer-data")
+    (version "2.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ELMER.data" version
+                              'experiment))
+       (sha256
+        (base32 "0vwzj98pds0n3wc74y84d8srb1rvvf7kn7mjy4zf4d0qrp92sa94"))))
+    (properties `((upstream-name . "ELMER.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ELMER.data")
+    (synopsis "Data for the ELMER package")
+    (description
+     "Supporting data for the ELMER package.  It includes: -
+elmer.data.example.promoter: mae.promoter - elmer.data.example: data -
+EPIC.hg38.manifest - EPIC.hg19.manifest - hm450.hg38.manifest -
+hm450.hg19.manifest - hocomoco.table - human.TF - LUSC_meth_refined: Meth -
+LUSC_RNA_refined: @code{GeneExp} - Probes.motif.hg19.450K -
+Probes.motif.hg19.EPIC - Probes.motif.hg38.450K - Probes.motif.hg38.EPIC -
+TF.family - TF.subfamily - Human_genes__GRCh37_p13 - Human_genes__GRCh38_p12 -
+Human_genes__GRCh37_p13__tss - Human_genes__GRCh38_p12__tss")
+    (license license:gpl3)))
+
 (define-public r-elmer
   (package
     (name "r-elmer")
@@ -1555,6 +1949,7 @@ tests.")
                              r-genomicranges
                              r-genomicfeatures
                              r-genomeinfodb
+                             r-elmer-data
                              r-dplyr
                              r-downloader
                              r-doparallel
@@ -1632,6 +2027,29 @@ searching of very large small molecule data sets using an embedding and indexing
 approach.")
     (license license:artistic2.0)))
 
+(define-public r-egseadata
+  (package
+    (name "r-egseadata")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EGSEAdata" version
+                              'experiment))
+       (sha256
+        (base32 "0m281qwvz1cdfjf605czammw107x23pjpqh1adx5rvacpzgd8gli"))))
+    (properties `((upstream-name . "EGSEAdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/EGSEAdata")
+    (synopsis "Gene set collections for the EGSEA package")
+    (description
+     "This package includes gene set collections that are used for the Ensemble of
+Gene Set Enrichment Analyses (EGSEA) method for gene set testing.  It includes
+Human and Mouse versions of the M@code{SidDB} (Subramanian, et al. (2005) PNAS,
+102(43):15545-15550) and @code{GeneSetDB} (Araki, et al. (2012) FEBS Open Bio,
+2:76-82) collections.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
 (define-public r-egsea
   (package
     (name "r-egsea")
@@ -1651,6 +2069,7 @@ approach.")
                              r-plotly
                              r-pathview
                              r-padog
+                             r-org-rn-eg-db
                              r-org-mm-eg-db
                              r-org-hs-eg-db
                              r-metap
@@ -1663,6 +2082,7 @@ approach.")
                              r-globaltest
                              r-ggplot2
                              r-gage
+                             r-egseadata
                              r-edger
                              r-dt
                              r-biobase
@@ -1808,6 +2228,221 @@ functions to work with circular genomes.  They can used with other
 genomes/plasmids.")
     (license license:gpl2+)))
 
+(define-public r-ecolisakai-db0
+  (package
+    (name "r-ecolisakai-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoliSakai.db0" version
+                              'annotation))
+       (sha256
+        (base32 "0khajmjawf0gs7bi0m4pnzl1m7p76wdybv9h3fd3p1qjv5dyifwz"))))
+    (properties `((upstream-name . "ecoliSakai.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoliSakai.db0")
+    (synopsis "Base Level Annotation databases for E coli Sakai Strain")
+    (description
+     "Base annotation databases for E coli Sakai Strain, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-ecoliprobe
+  (package
+    (name "r-ecoliprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoliprobe" version
+                              'annotation))
+       (sha256
+        (base32 "17g5zxfzsak7a0w51irc0w1w2i5ngdkx9db6rhv1fyp8mfjgaphd"))))
+    (properties `((upstream-name . "ecoliprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoliprobe")
+    (synopsis "Probe sequence data for microarrays of type ecoli")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was E\\_coli\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-ecolileucine
+  (package
+    (name "r-ecolileucine")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoliLeucine" version
+                              'experiment))
+       (sha256
+        (base32 "02v2hv8qcwdi2z531xqvnfdymzmd5qqp868arg5r0zcrzj5kkiaw"))))
+    (properties `((upstream-name . "ecoliLeucine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ecolicdf r-affy))
+    (home-page "https://bioconductor.org/packages/ecoliLeucine")
+    (synopsis "Experimental data with Affymetrix E. coli chips")
+    (description
+     "Experimental data with Affymetrix E. coli chips, as reported in She-pin Hung,
+Pierre Baldi, and G. Wesley Hatfield, J. Biol.  Chem., Vol.  277, Issue 43,
+40309-40323, October 25, 2002")
+    (license license:gpl2+)))
+
+(define-public r-ecolik12-db0
+  (package
+    (name "r-ecolik12-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoliK12.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1x0jpi1j5nxvzirrjafg9w71glsshdbw98zrw1zzbp7gxrwxilpn"))))
+    (properties `((upstream-name . "ecoliK12.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoliK12.db0")
+    (synopsis "Base Level Annotation databases for E coli K12 Strain")
+    (description
+     "Base annotation databases for E coli K12 Strain, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-ecolicdf
+  (package
+    (name "r-ecolicdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecolicdf" version
+                              'annotation))
+       (sha256
+        (base32 "18g5prjykn356k35m131ifn128k5mhij2x26balqav0azigzjqsn"))))
+    (properties `((upstream-name . "ecolicdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecolicdf")
+    (synopsis "ecolicdf")
+    (description
+     "This package provides a package containing an environment representing the
+Ecoli.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-ecoliasv2probe
+  (package
+    (name "r-ecoliasv2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoliasv2probe" version
+                              'annotation))
+       (sha256
+        (base32 "1hfrnal170cdigc2fmnynb75jjsiq77p4x6ws9gah558hvx87nk3"))))
+    (properties `((upstream-name . "ecoliasv2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoliasv2probe")
+    (synopsis "Probe sequence data for microarrays of type ecoliasv2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was E\\_coli\\_Asv2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-ecoliasv2cdf
+  (package
+    (name "r-ecoliasv2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoliasv2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "16i6has9qgmzakcy24racc1h9j331wndv5c87qp5r1zrai61zyav"))))
+    (properties `((upstream-name . "ecoliasv2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoliasv2cdf")
+    (synopsis "ecoliasv2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+Ecoli_ASv2.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-ecoli2probe
+  (package
+    (name "r-ecoli2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoli2probe" version
+                              'annotation))
+       (sha256
+        (base32 "11q4ka0ncjapahic49xdl9919vm9frrwlqgj101krgkg262lfm8n"))))
+    (properties `((upstream-name . "ecoli2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoli2probe")
+    (synopsis "Probe sequence data for microarrays of type ecoli2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was E\\_coli\\_2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-ecoli2cdf
+  (package
+    (name "r-ecoli2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoli2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1rkxrwadq9kg9685z9pg6rgc4bblkx5p3c6snsl4gv2k188dva9r"))))
+    (properties `((upstream-name . "ecoli2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoli2cdf")
+    (synopsis "ecoli2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+E_coli_2.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-ecoli2-db
+  (package
+    (name "r-ecoli2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ecoli2.db" version
+                              'annotation))
+       (sha256
+        (base32 "1i2arr26hch7lmx2bixzy4l0zaa0gynah4dfwa98cvb24ahqqj9f"))))
+    (properties `((upstream-name . "ecoli2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-eck12-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/ecoli2.db")
+    (synopsis
+     "Affymetrix Affymetrix E_coli_2 Array annotation data (chip ecoli2)")
+    (description
+     "Affymetrix Affymetrix E_coli_2 Array annotation data (chip ecoli2) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
 (define-public r-ebseqhmm
   (package
     (name "r-ebseqhmm")
@@ -1872,6 +2507,28 @@ obtained from RNA-seq sequencing data.")
      "An Empirical Bayesian Approach to Differential Co-Expression Analysis at the
 Gene-Pair Level")
     (license license:gpl2+)))
+
+(define-public r-eatonetalchipseq
+  (package
+    (name "r-eatonetalchipseq")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EatonEtAlChIPseq" version
+                              'experiment))
+       (sha256
+        (base32 "06mzals24cc4fl5j2w8mwa1s7q98qm80g7gnr5rz4hj66kmiak94"))))
+    (properties `((upstream-name . "EatonEtAlChIPseq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shortread r-rtracklayer r-genomicranges))
+    (home-page "https://bioconductor.org/packages/EatonEtAlChIPseq")
+    (synopsis
+     "ChIP-seq data of ORC-binding sites in Yeast excerpted from Eaton et al. 2010")
+    (description
+     "@code{ChIP-seq} analysis subset from \"Conserved nucleosome positioning defines
+replication origins\" (PMID 20351051)")
+    (license (license:fsdg-compatible "Artistic 2.0"))))
 
 (define-public r-easyrnaseq
   (package
@@ -1966,6 +2623,37 @@ chain file paths in their function calls, reducing the complexity of the
 liftover process.")
     (license license:expat)))
 
+(define-public r-easierdata
+  (package
+    (name "r-easierdata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "easierData" version
+                              'experiment))
+       (sha256
+        (base32 "138x8i1zd4cvlawg9pa5ia1kmmdaxm0g9lkivzxl077s9vlpjp8d"))))
+    (properties `((upstream-name . "easierData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/easierData")
+    (synopsis
+     "easier internal data and exemplary dataset from IMvigor210CoreBiologies package")
+    (description
+     "Access to internal data required for the functional performance of easier
+package and exemplary bladder cancer dataset with both processed RNA-seq data
+and information on response to ICB therapy generated by Mariathasan et al.
+\"TGF-B attenuates tumour response to PD-L1 blockade by contributing to exclusion
+of T cells\", published in Nature, 2018
+[doi:10.1038/nature25501](https://doi.org/10.1038/nature25501).  The data is
+made available via
+[`IMvigor210@code{CoreBiologies`](http://research-pub.gene.com/IMvigor210CoreBiologies}/)
+package under the CC-BY license.")
+    (license license:expat)))
+
 (define-public r-easier
   (package
     (name "r-easier")
@@ -1991,7 +2679,9 @@ liftover process.")
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
+                             r-easierdata
                              r-dplyr
+                             r-dorothea
                              r-deseq2
                              r-decoupler
                              r-coin

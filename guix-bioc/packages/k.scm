@@ -13,6 +13,7 @@
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages c)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -26,6 +27,7 @@
   #:use-module (guix-bioc packages n)
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -35,6 +37,27 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-kodata
+  (package
+    (name "r-kodata")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "KOdata" version
+                              'experiment))
+       (sha256
+        (base32 "1dflsvfz7c2ahs60s4wx8mc9ar8qrz9ax8g9m67jchygcmqs4jla"))))
+    (properties `((upstream-name . "KOdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/KOdata")
+    (synopsis "LINCS Knock-Out Data Package")
+    (description
+     "This package contains consensus genomic signatures (CGS) for experimental
+cell-line specific gene knock-outs as well as baseline gene expression data for
+a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
+    (license license:expat)))
 
 (define-public r-knowseq
   (package
@@ -145,6 +168,25 @@ allow the user to build PWM models of kinase-subtrates, statistically infer
 PWM:substrate matches, and integrate these data to infer kinase activity.")
     (license license:gpl3)))
 
+(define-public r-kidpack
+  (package
+    (name "r-kidpack")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "kidpack" version
+                              'experiment))
+       (sha256
+        (base32 "15c7ahrpjapqp90nanpkjb9hbcv42a84xg939fgpzkpgc7ch0m9k"))))
+    (properties `((upstream-name . "kidpack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "http://www.dkfz.de/mga")
+    (synopsis "DKFZ kidney package")
+    (description "kidney microarray data")
+    (license license:gpl2)))
+
 (define-public r-keggorthology
   (package
     (name "r-keggorthology")
@@ -157,7 +199,8 @@ PWM:substrate matches, and integrate these data to infer kinase activity.")
         (base32 "0nb6q4l8hzbfjs2njdqwbn5g2vayfc41bbxf8dsfy1njm3r1km29"))))
     (properties `((upstream-name . "keggorthology")))
     (build-system r-build-system)
-    (propagated-inputs (list r-graph r-graph r-dbi r-annotationdbi))
+    (propagated-inputs (list r-hgu95av2-db r-graph r-graph r-dbi
+                             r-annotationdbi))
     (home-page "https://bioconductor.org/packages/keggorthology")
     (synopsis "graph support for KO, KEGG Orthology")
     (description
@@ -182,10 +225,12 @@ a set of pathway IDs that are not to be confused with the KEGG ortholog IDs.")
                              r-rjsonio
                              r-plyr
                              r-org-hs-eg-db
+                             r-kodata
                              r-keggrest
                              r-kegggraph
                              r-igraph
                              r-httr
+                             r-hgu133a-db
                              r-gtools
                              r-annotationdbi))
     (native-inputs (list r-knitr))
@@ -196,6 +241,51 @@ a set of pathway IDs that are not to be confused with the KEGG ortholog IDs.")
      "See what is going on under the hood of KEGG pathways by explicitly re-creating
 the pathway maps from information obtained from KGML files.")
     (license license:gpl3)))
+
+(define-public r-keggdzpathwaysgeo
+  (package
+    (name "r-keggdzpathwaysgeo")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "KEGGdzPathwaysGEO" version
+                              'experiment))
+       (sha256
+        (base32 "05s6cq27cdw9w9laq5hxjiynjavd873w2idpwa1k4kw0rdsni8cb"))))
+    (properties `((upstream-name . "KEGGdzPathwaysGEO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biocgenerics r-biobase))
+    (home-page "https://bioconductor.org/packages/KEGGdzPathwaysGEO")
+    (synopsis "KEGG Disease Datasets from GEO")
+    (description
+     "This is a collection of 24 data sets for which the phenotype is a disease with a
+corresponding pathway in the KEGG database.This collection of datasets were used
+as gold standard in comparing gene set analysis methods by the PADOG package.")
+    (license license:gpl2)))
+
+(define-public r-keggandmetacoredzpathwaysgeo
+  (package
+    (name "r-keggandmetacoredzpathwaysgeo")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "KEGGandMetacoreDzPathwaysGEO" version
+                              'experiment))
+       (sha256
+        (base32 "1rmn5zx5p4c8is5dd80nppl1r8ciyccwhiir0312bpaaplyc9qks"))))
+    (properties `((upstream-name . "KEGGandMetacoreDzPathwaysGEO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biocgenerics r-biobase))
+    (home-page
+     "https://bioconductor.org/packages/KEGGandMetacoreDzPathwaysGEO")
+    (synopsis "Disease Datasets from GEO")
+    (description
+     "This is a collection of 18 data sets for which the phenotype is a disease with a
+corresponding pathway in either KEGG or metacore database.This collection of
+datasets were used as gold standard in comparing gene set analysis methods.")
+    (license license:gpl2)))
 
 (define-public r-kebabs
   (package

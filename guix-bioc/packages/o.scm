@@ -17,9 +17,11 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (guix-cran packages o)
   #:use-module (guix-cran packages s)
+  #:use-module (gnu packages java)
   #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages g)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -33,6 +35,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -206,6 +209,35 @@ of predefined layout for some of the most commonly used genomics platform.
 Related paper can be find at http://www.biomedcentral.com/1471-2164/13/689 .")
     (license license:artistic2.0)))
 
+(define-public r-orthosdata
+  (package
+    (name "r-orthosdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "orthosData" version
+                              'experiment))
+       (sha256
+        (base32 "0n9vkvfxah29cjfwnxjqw0kf5kdgjvx9394kgilnbskys95fh6v3"))))
+    (properties `((upstream-name . "orthosData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-stringr
+                             r-hdf5array
+                             r-experimenthub
+                             r-biocfilecache
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fmicompbio/orthosData")
+    (synopsis "Data for the orthos package")
+    (description
+     "`@code{orthosData`} is the companion @code{ExperimentData} package to the
+`orthos` R package for mechanistic studies using differential gene expression
+experiments.  It provides functions for retrieval from @code{ExperimentHub} and
+local caching of the models and datasets used internally in orthos.")
+    (license license:expat)))
+
 (define-public r-orthos
   (package
     (name "r-orthos")
@@ -225,6 +257,7 @@ Related paper can be find at http://www.biomedcentral.com/1471-2164/13/689 .")
                              r-rlang
                              r-reticulate
                              r-plyr
+                             r-orthosdata
                              r-keras
                              r-hdf5array
                              r-ggsci
@@ -252,6 +285,27 @@ https://maayanlab.cloud/archs4/) to identify similar experiments. `orthos`
 furthermore provides plotting functions to visualize the results of such a
 search for similar contrasts.")
     (license license:expat)))
+
+(define-public r-orthology-eg-db
+  (package
+    (name "r-orthology-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Orthology.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "11v6fm2403m32q9k70n5p839a4awks7avcfaa8rvrm59v0ab5czj"))))
+    (properties `((upstream-name . "Orthology.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/Orthology.eg.db")
+    (synopsis "Orthology mapping package")
+    (description
+     "Orthology mapping package, based on data from NCBI, using NCBI Gene IDs and
+Taxonomy IDs.")
+    (license license:artistic2.0)))
 
 (define-public r-orthogene
   (package
@@ -290,6 +344,239 @@ common objects (e.g. data.frames, gene expression matrices, lists) using
 **1:1**, **many:1**, **1:many** or **many:many** gene mappings, both within- and
 between-species.")
     (license license:gpl3)))
+
+(define-public r-org-xl-eg-db
+  (package
+    (name "r-org-xl-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Xl.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "01xr4cpjzdd1v0xw8dbmcjhmcwhi8b3vjhmgsx77c969w9sa0igr"))))
+    (properties `((upstream-name . "org.Xl.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Xl.eg.db")
+    (synopsis "Genome wide annotation for Xenopus")
+    (description
+     "Genome wide annotation for Xenopus, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-ss-eg-db
+  (package
+    (name "r-org-ss-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Ss.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "0jqrwh4h7shsni9zyygyggmwg89jsc90r7y0gali29yy8wa38h0q"))))
+    (properties `((upstream-name . "org.Ss.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Ss.eg.db")
+    (synopsis "Genome wide annotation for Pig")
+    (description
+     "Genome wide annotation for Pig, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-rn-eg-db
+  (package
+    (name "r-org-rn-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Rn.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "1z9wsb7f67mggcsv27zrn50j5c9a3hxc4dygaj2nbma23zxbyjc3"))))
+    (properties `((upstream-name . "org.Rn.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Rn.eg.db")
+    (synopsis "Genome wide annotation for Rat")
+    (description
+     "Genome wide annotation for Rat, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-pt-eg-db
+  (package
+    (name "r-org-pt-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Pt.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "0fv0l1fj4d5fza936gx187z3b3yd8cjs0hlb3f9vrsv1zadr3yyf"))))
+    (properties `((upstream-name . "org.Pt.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Pt.eg.db")
+    (synopsis "Genome wide annotation for Chimp")
+    (description
+     "Genome wide annotation for Chimp, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-mxanthus-db
+  (package
+    (name "r-org-mxanthus-db")
+    (version "1.0.27")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Mxanthus.db" version
+                              'annotation))
+       (sha256
+        (base32 "1jqwsdjz1d8fwqhq26lavb2kq739ddlb8khsh4b096vhnwv3dxg5"))))
+    (properties `((upstream-name . "org.Mxanthus.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biocstyle r-biocfilecache r-annotationhub
+                             r-annotationdbi))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://bioconductor.org/packages/org.Mxanthus.db")
+    (synopsis "Genome wide annotation for Myxococcus xanthus DK 1622")
+    (description
+     "Genome wide annotation for Myxococcus xanthus DK 1622, primarily based on
+mapping using Gene identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-mmu-eg-db
+  (package
+    (name "r-org-mmu-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Mmu.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "1qj06dybpqv17vkmd2bk7x3f20a34p4ra054gywbp9klbgmrk60h"))))
+    (properties `((upstream-name . "org.Mmu.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Mmu.eg.db")
+    (synopsis "Genome wide annotation for Rhesus")
+    (description
+     "Genome wide annotation for Rhesus, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-gg-eg-db
+  (package
+    (name "r-org-gg-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Gg.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "035pxjcyyhv1nd177vp3kmjjfakzdyf0xmadqqih69almkrvd9yb"))))
+    (properties `((upstream-name . "org.Gg.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Gg.eg.db")
+    (synopsis "Genome wide annotation for Chicken")
+    (description
+     "Genome wide annotation for Chicken, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-ecsakai-eg-db
+  (package
+    (name "r-org-ecsakai-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.EcSakai.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "03w6566b3gljs2sjz4ywjkvgr3s33n33877vvmgwapmdwvy6kfs6"))))
+    (properties `((upstream-name . "org.EcSakai.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.EcSakai.eg.db")
+    (synopsis "Genome wide annotation for E coli strain Sakai")
+    (description
+     "Genome wide annotation for E coli strain Sakai, primarily based on mapping using
+Entrez Gene identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-cf-eg-db
+  (package
+    (name "r-org-cf-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Cf.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "0cfj8cg85vgdz7skpvqkbp7a371w95jywwsjvb5am2wb5hzsnwnp"))))
+    (properties `((upstream-name . "org.Cf.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Cf.eg.db")
+    (synopsis "Genome wide annotation for Canine")
+    (description
+     "Genome wide annotation for Canine, primarily based on mapping using Entrez Gene
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-at-tair-db
+  (package
+    (name "r-org-at-tair-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.At.tair.db" version
+                              'annotation))
+       (sha256
+        (base32 "13lrhfyppn5f5jbnnzqwvjfrmg96a687whv2ws2a3h73i18sxfl1"))))
+    (properties `((upstream-name . "org.At.tair.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.At.tair.db")
+    (synopsis "Genome wide annotation for Arabidopsis")
+    (description
+     "Genome wide annotation for Arabidopsis, primarily based on mapping using TAIR
+identifiers.")
+    (license license:artistic2.0)))
+
+(define-public r-org-ag-eg-db
+  (package
+    (name "r-org-ag-eg-db")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "org.Ag.eg.db" version
+                              'annotation))
+       (sha256
+        (base32 "1j9bxz8ypv323wdsp0i0jxv70s14rkq40y1b2n665237rxh0zylz"))))
+    (properties `((upstream-name . "org.Ag.eg.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/org.Ag.eg.db")
+    (synopsis "Genome wide annotation for Anopheles")
+    (description
+     "Genome wide annotation for Anopheles, primarily based on mapping using Entrez
+Gene identifiers.")
+    (license license:artistic2.0)))
 
 (define-public r-orfik
   (package
@@ -433,6 +720,27 @@ probabilistic relationship between the test rank and the corresponding test
 effect size.")
     (license license:artistic2.0)))
 
+(define-public r-optimalflowdata
+  (package
+    (name "r-optimalflowdata")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "optimalFlowData" version
+                              'experiment))
+       (sha256
+        (base32 "0agaavlhsv1zk3xdwncn4nkz7q80bjnsg32msnnj8x79925hfgwq"))))
+    (properties `((upstream-name . "optimalFlowData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/optimalFlowData")
+    (synopsis "optimalFlowData")
+    (description
+     "Data files used as examples and for testing of the software provided in the
+@code{optimalFlow} package.")
+    (license license:artistic2.0)))
+
 (define-public r-optimalflow
   (package
     (name "r-optimalflow")
@@ -451,6 +759,7 @@ effect size.")
                              r-rgl
                              r-rfast
                              r-randomforest
+                             r-optimalflowdata
                              r-foreach
                              r-flowmeans
                              r-ellipse
@@ -555,6 +864,27 @@ scaling and dimension reduction, along with strong visualization capabilities.
 It enables extraction and description of functional expression modules inherent
 in the data.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-operonhumanv3-db
+  (package
+    (name "r-operonhumanv3-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "OperonHumanV3.db" version
+                              'annotation))
+       (sha256
+        (base32 "082gff88cwk2p50q8g9bixggacaclgqcvk6w5dc11h9fkgvd160i"))))
+    (properties `((upstream-name . "OperonHumanV3.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/OperonHumanV3.db")
+    (synopsis "FHCRC Nelson Lab OperonHumanV3 Annotation Data (OperonHumanV3)")
+    (description
+     "FHCRC Nelson Lab @code{OperonHumanV3} Annotation Data (@code{OperonHumanV3})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-openstats
   (package
@@ -668,6 +998,29 @@ only primers fulfilling constraints on their physicochemical properties are
 selected.  A Shiny app providing a user interface for the functionalities of
 this package is provided by the @code{openPrimeRui} package.")
     (license license:gpl2)))
+
+(define-public r-ontoprocdata
+  (package
+    (name "r-ontoprocdata")
+    (version "0.99.9901")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ontoProcData" version
+                              'annotation))
+       (sha256
+        (base32 "16wwh539hdm89f1vxqfgjmlbqwadnr4xqap80annsqgfn90mi8rk"))))
+    (properties `((upstream-name . "ontoProcData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ontoProcData")
+    (synopsis "data package for ontoProc")
+    (description
+     "This package manages rda files of multiple ontologies that are used in the
+@code{ontoProc} package.  These ontologies were originally downloaded as owl or
+obo files and converted into Rda files.  The files were downloaded at various
+times but most of them were downloaded on August 08 2022.")
+    (license license:artistic2.0)))
 
 (define-public r-ontoproc
   (package
@@ -855,6 +1208,30 @@ identify oncogene candidates purely based on differences in @code{mRNA}
 expression between previously unknown subtypes.")
     (license license:gpl3)))
 
+(define-public r-onassisjavalibs
+  (package
+    (name "r-onassisjavalibs")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "OnassisJavaLibs" version
+                              'experiment))
+       (sha256
+        (base32 "0ynb0n4d1ic1xhnwvqxvncr3vm5kwl3y0771rivrz6rrynfchy4c"))))
+    (properties `((upstream-name . "OnassisJavaLibs")))
+    (build-system r-build-system)
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rjava))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://bioconductor.org/packages/OnassisJavaLibs")
+    (synopsis
+     "OnassisJavaLibs, java libraries to run conceptmapper and semantic similarity")
+    (description
+     "This package provides a package that contains java libraries to call
+conceptmapper and compute semnatic similarity from R")
+    (license license:gpl2)))
+
 (define-public r-ompbam
   (package
     (name "r-ompbam")
@@ -1015,6 +1392,26 @@ for example, to verify sample relationships between multiple omics data types,
 i.e.  genomic, transcriptomic and epigenetic (DNA methylation).")
     (license license:gpl2+)))
 
+(define-public r-omicspcadata
+  (package
+    (name "r-omicspcadata")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "OMICsPCAdata" version
+                              'experiment))
+       (sha256
+        (base32 "1jbdyxqyjp4yn6ywk80gin29wi5szwnz661l9hb8gcfbmhv5m1sv"))))
+    (properties `((upstream-name . "OMICsPCAdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-multiassayexperiment))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/OMICsPCAdata")
+    (synopsis "Supporting data for package OMICsPCA")
+    (description "Supporting data for package OMI@code{CsPCA}")
+    (license license:gpl3)))
+
 (define-public r-omicspca
   (package
     (name "r-omicspca")
@@ -1034,6 +1431,7 @@ i.e.  genomic, transcriptomic and epigenetic (DNA methylation).")
                              r-reshape2
                              r-performanceanalytics
                              r-pdftools
+                             r-omicspcadata
                              r-nbclust
                              r-multiassayexperiment
                              r-mass
@@ -1275,6 +1673,27 @@ expression profiles and clinical associations were found.")
 optimised local regression and for detection of artefacts in microarray data")
     (license license:gpl2)))
 
+(define-public r-oligodata
+  (package
+    (name "r-oligodata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "oligoData" version
+                              'annotation))
+       (sha256
+        (base32 "1d1yfms3jv2c4s255xnh8yxwijrj35skw3nxds7l46y88lg3qn8y"))))
+    (properties `((upstream-name . "oligoData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-oligo))
+    (home-page "https://bioconductor.org/packages/oligoData")
+    (synopsis "Dataset samples for the oligo package")
+    (description
+     "Dataset samples (Affymetrix: Expression, Gene, Exon, SNP; @code{NimbleGen}:
+Expression, Tiling) to be used with the oligo package.")
+    (license license:lgpl2.0+)))
+
 (define-public r-ogre
   (package
     (name "r-ogre")
@@ -1339,6 +1758,32 @@ proposed by Jehl et al (doi 10.1186/s12859-015-0702-1) for aligned sequences and
 a variant using string kernels for unaligned sequences.")
     (license license:expat)))
 
+(define-public r-octad-db
+  (package
+    (name "r-octad-db")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "octad.db" version
+                              'experiment))
+       (sha256
+        (base32 "03dih6cc71aj31l9s982qpdsyy51q83inykyz4a8pk81x3pld2n9"))))
+    (properties `((upstream-name . "octad.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/octad.db")
+    (synopsis "Open Cancer TherApeutic Discovery (OCTAD) database")
+    (description
+     "Open Cancer @code{TherApeutic} Discovery (OCTAD) package implies @code{sRGES}
+approach for the drug discovery.  The essential idea is to identify drugs that
+reverse the gene expression signature of a disease by tamping down
+over-expressed genes and stimulating weakly expressed ones.  The following
+package contains all required precomputed data for whole OCTAD pipeline
+computation.")
+    (license license:artistic2.0)))
+
 (define-public r-octad
   (package
     (name "r-octad")
@@ -1357,6 +1802,7 @@ a variant using string kernels for unaligned sequences.")
                              r-rfast
                              r-reshape2
                              r-plotly
+                             r-octad-db
                              r-magrittr
                              r-limma
                              r-httr
@@ -1386,6 +1832,30 @@ drug enrichment analysis and in silico hit validation.  It currently covers
 ~20,000 patient tissue samples covering 50 cancer types, and expression profiles
 for ~12,000 distinct compounds.")
     (license license:artistic2.0)))
+
+(define-public r-oct4
+  (package
+    (name "r-oct4")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "oct4" version
+                              'experiment))
+       (sha256
+        (base32 "1kbv532sav3a0s1893hxjw7pf25lhff5kxnraq6h7h7vqqmim93j"))))
+    (properties `((upstream-name . "oct4")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/oct4")
+    (synopsis "Conditional knockdown of OCT4 in mouse ESCs")
+    (description
+     "This package provides the output of running Salmon on a set of 12 RNA-seq
+samples from King & Klose, \"The pioneer factor OCT4 requires the chromatin
+remodeller BRG1 to support gene regulatory element function in mouse embryonic
+stem cells\", published in @code{eLIFE}, March 2017.  For details on version
+numbers and how the samples were processed see the package vignette.")
+    (license license:gpl2+)))
 
 (define-public r-ocplus
   (package
@@ -1431,4 +1901,28 @@ The package has functions for handling the occupancy distribution for a
 multinomial and for estimating the number of essential genes in random
 transposon mutagenesis libraries.")
     (license license:gpl2+)))
+
+(define-public r-obmiti
+  (package
+    (name "r-obmiti")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ObMiTi" version
+                              'experiment))
+       (sha256
+        (base32 "1sgl38mbnv99miy6n2gps9r5dzhadf1gvin95nif379kdq6xl0nz"))))
+    (properties `((upstream-name . "ObMiTi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OmarElAshkar/ObMiTi")
+    (synopsis "Ob/ob Mice Data on Normal and High Fat Diet")
+    (description
+     "The package provide RNA-seq count for 2 strains of mus musclus; Wild type and
+Ob/Ob.  Each strain was divided into two groups, and each group received either
+chow diet or high fat diet.  RNA expression was measured after 20 weeks in 7
+tissues.")
+    (license license:gpl3)))
 

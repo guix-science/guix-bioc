@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages gcc)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages s)
@@ -22,6 +22,7 @@
   #:use-module (guix-cran packages x)
   #:use-module (guix-cran packages g)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -35,6 +36,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -44,6 +46,35 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-nxtirfdata
+  (package
+    (name "r-nxtirfdata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NxtIRFdata" version
+                              'experiment))
+       (sha256
+        (base32 "0gvx81w5krzdzz4v09qlscr0hklzmxq2pz4slwwy1dflq0rjswk5"))))
+    (properties `((upstream-name . "NxtIRFdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtracklayer r-r-utils r-experimenthub
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alexchwong/NxtIRFdata")
+    (synopsis "Data for NxtIRF")
+    (description
+     "@code{NxtIRFdata} is a companion package for @code{SpliceWiz}, an interactive
+analysis and visualization tool for alternative splicing quantitation (including
+intron retention) for RNA-seq BAM files. @code{NxtIRFdata} contains Mappability
+files required for the generation of human and mouse references.
+@code{NxtIRFdata} also contains a synthetic genome reference and example BAM
+files used to demonstrate @code{SpliceWiz's} functionality.  BAM files are based
+on 6 samples from the Leucegene dataset provided by NCBI Gene Expression Omnibus
+under accession number GSE67039.")
+    (license license:expat)))
 
 (define-public r-nupop
   (package
@@ -76,6 +107,32 @@ to compare recent versions of @code{NuPoP} with @code{nuCpos} can be found at
 https://github.com/jiping/@code{NuPoP_doc}.  Some more information can be found
 and will be posted at https://github.com/jipingw/@code{NuPoP}.")
     (license license:gpl2)))
+
+(define-public r-nullrangesdata
+  (package
+    (name "r-nullrangesdata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nullrangesData" version
+                              'experiment))
+       (sha256
+        (base32 "0dd9d07z2k3n34wi5mynyghc0bsmyn5fhl0510ij7zbd58i520xy"))))
+    (properties `((upstream-name . "nullrangesData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-interactionset r-genomicranges r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/nullrangesData")
+    (synopsis "ExperimentHub datasets for the nullranges package")
+    (description
+     "This package provides datasets for the nullranges package vignette, in
+particular example datasets for DNase hypersensitivity sites (DHS), CTCF binding
+sites, and CTCF genomic interactions.  These are used to demonstrate generation
+of null hypothesis feature sets, either through block bootstrapping or matching,
+in the nullranges vignette.  For more details, see the data object man pages,
+and the R scripts for object construction provided within the package.")
+    (license license:gpl3)))
 
 (define-public r-nullranges
   (package
@@ -113,6 +170,134 @@ are matched across one or more covariates.  nullranges is designed to be
 inter-operable with other packages for analysis of genomic overlap enrichment,
 including the plyranges Bioconductor package.")
     (license license:gpl3)))
+
+(define-public r-nugomm1a520177probe
+  (package
+    (name "r-nugomm1a520177probe")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nugomm1a520177probe" version
+                              'annotation))
+       (sha256
+        (base32 "1n70k0mhv146983myjgk1cgkr9rmmcpqdv8wpkcr320qcvgf9bn7"))))
+    (properties `((upstream-name . "nugomm1a520177probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/nugomm1a520177probe")
+    (synopsis "Probe sequence data for microarrays of type nugomm1a520177")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.20.  The probe sequence data was obtained from http://www.affymetrix.com.")
+    (license license:lgpl2.0+)))
+
+(define-public r-nugomm1a520177cdf
+  (package
+    (name "r-nugomm1a520177cdf")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nugomm1a520177cdf" version
+                              'annotation))
+       (sha256
+        (base32 "0skd5b76si0vydzk5qhg4f1a1j655alxflm9sqci8fi8safwj96a"))))
+    (properties `((upstream-name . "nugomm1a520177cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/nugomm1a520177cdf")
+    (synopsis "nugomm1a520177cdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{NuGO_Mm1a520177.cdf} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-nugomm1a520177-db
+  (package
+    (name "r-nugomm1a520177-db")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nugomm1a520177.db" version
+                              'annotation))
+       (sha256
+        (base32 "1s3q5hgyz3ikf8bd8c20s6dsl48nymmjz9fwqpq58xrx91sqb7q5"))))
+    (properties `((upstream-name . "nugomm1a520177.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/nugomm1a520177.db")
+    (synopsis
+     "Affymetrix nugomm1a520177 annotation data (chip nugomm1a520177)")
+    (description
+     "Affymetrix nugomm1a520177 annotation data (chip nugomm1a520177) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-nugohs1a520180probe
+  (package
+    (name "r-nugohs1a520180probe")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nugohs1a520180probe" version
+                              'annotation))
+       (sha256
+        (base32 "1zyy4w7c2hx790kxa5bv94nijhmk5fb22ps19jbwwqf7r0d2ffhn"))))
+    (properties `((upstream-name . "nugohs1a520180probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/nugohs1a520180probe")
+    (synopsis "Probe sequence data for microarrays of type nugohs1a520180")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.20.  The probe sequence data was obtained from http://www.affymetrix.com.")
+    (license license:lgpl2.0+)))
+
+(define-public r-nugohs1a520180cdf
+  (package
+    (name "r-nugohs1a520180cdf")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nugohs1a520180cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1gpa769y27bs4ncicld4994sn6l1h738m1cbv27g58k58r930m1i"))))
+    (properties `((upstream-name . "nugohs1a520180cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/nugohs1a520180cdf")
+    (synopsis "nugohs1a520180cdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{NuGO_Hs1a520180.cdf} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-nugohs1a520180-db
+  (package
+    (name "r-nugohs1a520180-db")
+    (version "3.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nugohs1a520180.db" version
+                              'annotation))
+       (sha256
+        (base32 "0r0x8j3safvdncm4s91qircqdcxzyhmq2ad2sf73dcg74pjv0s2w"))))
+    (properties `((upstream-name . "nugohs1a520180.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/nugohs1a520180.db")
+    (synopsis
+     "Affymetrix nugohs1a520180 annotation data (chip nugohs1a520180)")
+    (description
+     "Affymetrix nugohs1a520180 annotation data (chip nugohs1a520180) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-nucpos
   (package
@@ -275,6 +460,28 @@ results.")
 Franken et al. (2019): Non-parametric analysis of thermal proteome profiles
 reveals novel drug-binding proteins.")
     (license license:gpl3)))
+
+(define-public r-norway981-db
+  (package
+    (name "r-norway981-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Norway981.db" version
+                              'annotation))
+       (sha256
+        (base32 "04ngc2hilqi9m7933mnm7jcvkxlz68vqqh5b628db575vcxql9b9"))))
+    (properties `((upstream-name . "Norway981.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/Norway981.db")
+    (synopsis
+     "Norway981 http://genome-www5.stanford.edu/ Annotation Data (Norway981)")
+    (description
+     "Norway981 http://genome-www5.stanford.edu/ Annotation Data (Norway981) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
 
 (define-public r-normr
   (package
@@ -607,6 +814,34 @@ parsed data.  Plots can be generated as static ggplot objects or interactive
 plotly objects.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-ngscopydata
+  (package
+    (name "r-ngscopydata")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NGScopyData" version
+                              'experiment))
+       (sha256
+        (base32 "0858c5cqkjlk55whiravwmnia26yfkgw4656zfscpdfz2n9xm50m"))))
+    (properties `((upstream-name . "NGScopyData")))
+    (build-system r-build-system)
+    (home-page
+     "http://www.bioconductor.org/packages/release/data/experiment/html/NGScopyData.html")
+    (synopsis
+     "Subset of BAM files of human tumor and pooled normal sequencing data (Zhao et al. 2014) for the NGScopy package")
+    (description
+     "Subset of BAM files of human lung tumor and pooled normal samples by targeted
+panel sequencing. [Zhao et al 2014.  Targeted Sequencing in Non-Small Cell Lung
+Cancer (NSCLC) Using the University of North Carolina (UNC) Sequencing Assay
+Captures Most Previously Described Genetic Aberrations in NSCLC. In
+preparation.] Each sample is a 10 percent random subsample drawn from the
+original sequencing data.  The pooled normal sample has been rescaled accroding
+to the total number of normal samples in the \"pool\".  Here provided is the
+subsampled data on chr6 (hg19).")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-newwave
   (package
     (name "r-newwave")
@@ -637,6 +872,26 @@ be used with different mini-batch approaches in order to reduce time
 consumption.  It assumes a negative binomial distribution for the data with a
 dispersion parameter that can be both commonwise across gene both genewise.")
     (license license:gpl3)))
+
+(define-public r-neve2006
+  (package
+    (name "r-neve2006")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Neve2006" version
+                              'experiment))
+       (sha256
+        (base32 "0an77i7z2pqrgizd0z5n4iihg9zp3xbl8rgnfphsh9q3fbvwp185"))))
+    (properties `((upstream-name . "Neve2006")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-hgu133a-db r-biobase r-annotate))
+    (home-page "https://bioconductor.org/packages/Neve2006")
+    (synopsis "expression and CGH data on breast cancer cell lines")
+    (description
+     "Experimental organization of combined expression and CGH data")
+    (license license:artistic2.0)))
 
 (define-public r-netzoor
   (package
@@ -1017,6 +1272,29 @@ This package comes bundled with the MC-UPGMA clustering package by Yaniv
 Loewenstein.")
     (license license:gpl3)))
 
+(define-public r-netactivitydata
+  (package
+    (name "r-netactivitydata")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NetActivityData" version
+                              'experiment))
+       (sha256
+        (base32 "1h3ih2y9jl5d3xk5fydgs9s9bsny3lksn67jxmrksxxrabr5zknl"))))
+    (properties `((upstream-name . "NetActivityData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/NetActivityData")
+    (synopsis
+     "Data required for getting the gene set scores with NetActivity package")
+    (description
+     "This package contains the weights from pre-trained shallow sparsely-connected
+autoencoders.  This data is required for getting the gene set scores with
+@code{NetActivity} package.")
+    (license license:expat)))
+
 (define-public r-netactivity
   (package
     (name "r-netactivity")
@@ -1029,8 +1307,12 @@ Loewenstein.")
         (base32 "0jij69065vkmr7ba898h44vyacpkmbqc1pr3c6frvwjqwazvdr4k"))))
     (properties `((upstream-name . "NetActivity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment r-deseq2
-                             r-delayedmatrixstats r-delayedarray))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-netactivitydata
+                             r-deseq2
+                             r-delayedmatrixstats
+                             r-delayedarray
+                             r-airway))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/NetActivity")
     (synopsis "Compute gene set scores from a deep learning framework")
@@ -1043,6 +1325,39 @@ set scores (`@code{computeGeneSetScores`}).  The package
 applied to the data.  Alternatively, the users might use the package to compute
 gene set scores using custom models.")
     (license license:expat)))
+
+(define-public r-nestlink
+  (package
+    (name "r-nestlink")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NestLink" version
+                              'experiment))
+       (sha256
+        (base32 "1nr7ddlrbd4q963750x3cdnn7y6mf2y5q3v37ilhfplypnynlgy1"))))
+    (properties `((upstream-name . "NestLink")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shortread
+                             r-protviz
+                             r-gplots
+                             r-experimenthub
+                             r-biostrings
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/NestLink")
+    (synopsis
+     "NestLink an R data package to guide through Engineered Peptide Barcodes for In-Depth Analyzes of Binding Protein Ensembles")
+    (description
+     "This package provides next-generation sequencing (NGS) and mass spectrometry
+(MS) sample data, code snippets and replication material used for developing
+@code{NestLink}.  The @code{NestLink} approach is a protein binder selection and
+identification technology able to biophysically characterize thousands of
+library members at once without handling individual clones at any stage of the
+process.  Data were acquired on NGS and MS platforms at the Functional Genomics
+Center Zurich.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-nempi
   (package
@@ -1168,6 +1483,25 @@ also provides tools to read, write and interconvert the file formats most
 commonly used for representing such secondary structures.")
     (license license:gpl3)))
 
+(define-public r-ncigraphdata
+  (package
+    (name "r-ncigraphdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NCIgraphData" version
+                              'experiment))
+       (sha256
+        (base32 "1haia26flsmh553z0pn4zh4s9w3smkl5q16hmz4vpfwkgc3f9506"))))
+    (properties `((upstream-name . "NCIgraphData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/NCIgraphData")
+    (synopsis "Data for the NCIgraph software package")
+    (description
+     "This package provides pathways from the NCI Pathways Database as R graph objects")
+    (license license:gpl3)))
+
 (define-public r-ncigraph
   (package
     (name "r-ncigraph")
@@ -1240,6 +1574,29 @@ gene counts and covariates of interest.  NBAMSeq a flexible statistical model
 based on the generalized additive model and allows for information sharing
 across genes in variance estimation.")
     (license license:gpl2)))
+
+(define-public r-nanotubes
+  (package
+    (name "r-nanotubes")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nanotubes" version
+                              'experiment))
+       (sha256
+        (base32 "0ah7y051mk6pl96y6h9qlxk4gg2a7al8j9ccwk0fjl7v5fa1daya"))))
+    (properties `((upstream-name . "nanotubes")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MalteThodberg/nanotubes")
+    (synopsis "Mouse nanotube CAGE data")
+    (description
+     "Cap Analysis of Gene Expression (CAGE) data from \"Identification of Gene
+Transcription Start Sites and Enhancers Responding to Pulmonary Carbon Nanotube
+Exposure in Vivo\" by Bornholdt et al.  supplied as CAGE Transcription Start
+Sites (CTSSs).")
+    (license license:gpl3)))
 
 (define-public r-nanotube
   (package
@@ -1378,6 +1735,32 @@ controls and housekeeping controls, and background level, obtained from negative
 controls, in the model framework so that all the normalization information
 provided by @code{NanoString} @code{nCounter} Analyzer is fully utilized.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-nanoporernaseq
+  (package
+    (name "r-nanoporernaseq")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NanoporeRNASeq" version
+                              'experiment))
+       (sha256
+        (base32 "0jvwl6k12acinwsvs62vx7dpnhjbcvhf8sbdw13gwwknrn96hgh4"))))
+    (properties `((upstream-name . "NanoporeRNASeq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GoekeLab/NanoporeRNASeq")
+    (synopsis "Nanopore RNA-Seq Example data")
+    (description
+     "The @code{NanoporeRNASeq} package contains long read RNA-Seq data generated
+using Oxford Nanopore Sequencing.  The data consists of 6 samples from two human
+cell lines (K562 and MCF7) that were generated by the SG-NEx project.  Each of
+these cell lines has three replicates, with 1 direct RNA sequencing data and 2
+@code{cDNA} sequencing data.  Reads are aligned to chromosome 22 (Grch38) and
+stored as bam files.  The original data is from the SG-NEx project.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-nanomethviz
   (package

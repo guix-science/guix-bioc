@@ -32,6 +32,7 @@
   #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages o)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -46,6 +47,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -435,6 +437,27 @@ data (such as flow cytometry data, RNA single cell sequencing data) without the
 requirement of cell gating or clustering.")
     (license license:gpl2)))
 
+(define-public r-cyp450cdf
+  (package
+    (name "r-cyp450cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cyp450cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1mbqn9940sxc0ksvykdk3i4jvnkv9q91igwn1rwmv2z18hz18qf0"))))
+    (properties `((upstream-name . "cyp450cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/cyp450cdf")
+    (synopsis "cyp450cdf")
+    (description
+     "This package provides a package containing an environment representing the
+CYP450.CDF file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-cydar
   (package
     (name "r-cydar")
@@ -597,6 +620,161 @@ small molecules, while also allowing users to include custom compound
 collections.")
     (license license:artistic2.0)))
 
+(define-public r-curatedtbdata
+  (package
+    (name "r-curatedtbdata")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedTBData" version
+                              'experiment))
+       (sha256
+        (base32 "116ck61pw6diili326x0x8p7f8d5w624n4w3pd212vhq8555yrqs"))))
+    (properties `((upstream-name . "curatedTBData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-multiassayexperiment r-experimenthub
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/compbiomed/curatedTBData")
+    (synopsis "Curation of existing 49 tuberculosis transcriptomic studies")
+    (description
+     "The @code{curatedTBData} is an R package that provides standardized, curated
+tuberculosis(TB) transcriptomic studies.  The initial release of the package
+contains 49 studies.  The @code{curatedTBData} package allows users to access
+tuberculosis trancriptomic efficiently and to make efficient comparison for
+different TB gene signatures across multiple datasets.")
+    (license license:expat)))
+
+(define-public r-curatedovariandata
+  (package
+    (name "r-curatedovariandata")
+    (version "1.40.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedOvarianData" version
+                              'experiment))
+       (sha256
+        (base32 "18163l0g3g042m2qgz143smxia3lp8v7rddkqmkg4hzns7baxfaa"))))
+    (properties `((upstream-name . "curatedOvarianData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biocgenerics r-biobase))
+    (home-page "http://bcb.dfci.harvard.edu/ovariancancer")
+    (synopsis "Clinically Annotated Data for the Ovarian Cancer Transcriptome")
+    (description
+     "The @code{curatedOvarianData} package provides data for gene expression analysis
+in patients with ovarian cancer.")
+    (license license:artistic2.0)))
+
+(define-public r-curatedmetagenomicdata
+  (package
+    (name "r-curatedmetagenomicdata")
+    (version "3.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedMetagenomicData" version
+                              'experiment))
+       (sha256
+        (base32 "0fgvpxc1878lm8l0bib12zzwrgsap0vw4zn77qpz1mljnz43shcb"))))
+    (properties `((upstream-name . "curatedMetagenomicData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treesummarizedexperiment
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-stringr
+                             r-s4vectors
+                             r-rlang
+                             r-purrr
+                             r-mia
+                             r-magrittr
+                             r-experimenthub
+                             r-dplyr
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/waldronlab/curatedMetagenomicData")
+    (synopsis "Curated Metagenomic Data of the Human Microbiome")
+    (description
+     "The @code{curatedMetagenomicData} package provides standardized, curated human
+microbiome data for novel analyses.  It includes gene families, marker
+abundance, marker presence, pathway abundance, pathway coverage, and relative
+abundance for samples collected from different body sites.  The bacterial,
+fungal, and archaeal taxonomic abundances for each sample were calculated with
+@code{MetaPhlAn3}, and metabolic functional potential was calculated with
+HUM@code{AnN3}.  The manually curated sample metadata and standardized
+metagenomic data are available as (Tree)@code{SummarizedExperiment} objects.")
+    (license license:artistic2.0)))
+
+(define-public r-curatedcrcdata
+  (package
+    (name "r-curatedcrcdata")
+    (version "2.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedCRCData" version
+                              'experiment))
+       (sha256
+        (base32 "1dqcdpzls41adih54wfpcb36mpysw0za14pz4wsjwisqnjwzpxvn"))))
+    (properties `((upstream-name . "curatedCRCData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nlme r-biocgenerics))
+    (home-page "https://bitbucket.org/biobakery/curatedcrcdata")
+    (synopsis "Colorectal Cancer Gene Expression Analysis")
+    (description
+     "The @code{curatedCRC} package provides relevant functions and data for gene
+expression analysis in patients with colorectal cancer.")
+    (license license:artistic2.0)))
+
+(define-public r-curatedbreastdata
+  (package
+    (name "r-curatedbreastdata")
+    (version "2.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedBreastData" version
+                              'experiment))
+       (sha256
+        (base32 "127kjiqb2laz77cx9lr0rs43kgwxyi52rd7ivhfpcxhivsg4hcsr"))))
+    (properties `((upstream-name . "curatedBreastData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-impute r-ggplot2 r-biocstyle r-biobase))
+    (home-page "https://bioconductor.org/packages/curatedBreastData")
+    (synopsis
+     "Curated breast cancer gene expression data with survival and treatment information")
+    (description
+     "Curated human breast cancer tissue S4 @code{ExpresionSet} datasets from over 16
+clinical trials comprising over 2,000 patients.  All datasets contain at least
+one type of outcomes variable and treatment information (minimum level: whether
+they had chemotherapy and whether they had hormonal therapy).  Includes code to
+post-process these datasets.")
+    (license license:gpl2+)))
+
+(define-public r-curatedbladderdata
+  (package
+    (name "r-curatedbladderdata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedBladderData" version
+                              'experiment))
+       (sha256
+        (base32 "1i9hbm8gh9f09fzyjga7rjps7hlbsivnnbpk8fgb0838msjq5bl2"))))
+    (properties `((upstream-name . "curatedBladderData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-affy))
+    (home-page "https://github.com/lima1/curatedBladderData")
+    (synopsis "Bladder Cancer Gene Expression Analysis")
+    (description
+     "The @code{curatedBladderData} package provides relevant functions and data for
+gene expression analysis in patients with bladder cancer.")
+    (license license:artistic2.0)))
+
 (define-public r-curatedatlasqueryr
   (package
     (name "r-curatedatlasqueryr")
@@ -639,6 +817,85 @@ ethnicity.  Usage involves first querying the metadata table for cells of
 interest, and then downloading the corresponding cells into a
 @code{SingleCellExperiment} object.")
     (license license:gpl3)))
+
+(define-public r-curatedadiporna
+  (package
+    (name "r-curatedadiporna")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedAdipoRNA" version
+                              'experiment))
+       (sha256
+        (base32 "1dy58ppw1ck89p036y6iml9210hv7f4zvsm0wi5m13b4ij7a749p"))))
+    (properties `((upstream-name . "curatedAdipoRNA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MahShaaban/curatedAdipoRNA")
+    (synopsis
+     "Curated RNA-Seq Dataset of MDI-induced Differentiated Adipocytes (3T3-L1)")
+    (description
+     "This package provides a curated dataset of RNA-Seq samples.  The samples are
+MDI-induced pre-phagocytes (3T3-L1) at different time points/stage of
+differentiation.  The package document the data collection, pre-processing and
+processing.  In addition to the documentation, the package contains the scripts
+that was used to generated the data.")
+    (license license:gpl3)))
+
+(define-public r-curatedadipochip
+  (package
+    (name "r-curatedadipochip")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedAdipoChIP" version
+                              'experiment))
+       (sha256
+        (base32 "16g8k2cvi890b9j30yzm7lxnxljl2k4x1yxvd8cg1ba94vzimw6k"))))
+    (properties `((upstream-name . "curatedAdipoChIP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MahShaaban/curatedAdipoChIP")
+    (synopsis
+     "Curated ChIP-Seq Dataset of MDI-induced Differentiated Adipocytes (3T3-L1)")
+    (description
+     "This package provides a curated dataset of publicly available
+@code{ChIP-sequencing} of transcription factors, chromatin remodelers and
+histone modifications in the 3T3-L1 pre-adipocyte cell line.  The package
+document the data collection, pre-processing and processing of the data.  In
+addition to the documentation, the package contains the scripts that was used to
+generated the data.")
+    (license license:gpl3)))
+
+(define-public r-curatedadipoarray
+  (package
+    (name "r-curatedadipoarray")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "curatedAdipoArray" version
+                              'experiment))
+       (sha256
+        (base32 "06dcb58i86gg4ar3hyh5w8kdqd0rf1ps7l021nfwklzm622b4wzc"))))
+    (properties `((upstream-name . "curatedAdipoArray")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MahShaaban/curatedAdipoArray")
+    (synopsis
+     "Curated Microarrays Dataset of MDI-induced Differentiated Adipocytes (3T3-L1) Under Genetic and Pharmacological Perturbations")
+    (description
+     "This package provides a curated dataset of Microarrays samples.  The samples are
+MDI- induced pre-adipocytes (3T3-L1) at different time points/stage of
+differentiation under different types of genetic (knockdown/overexpression) and
+pharmacological (drug treatment) perturbations.  The package documents the data
+collection and processing.  In addition to the documentation, the package
+contains the scripts that was used to generated the data.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ctsv
   (package
@@ -803,6 +1060,39 @@ Database (http://ctdbase.org/).  The downloaded data is formated as
 with C@code{TexploreR} in order to re-define a comprehensive and thoroughly
 curated list of CT genes and their main characteristics.")
     (license license:artistic2.0)))
+
+(define-public r-ctcf
+  (package
+    (name "r-ctcf")
+    (version "0.99.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CTCF" version
+                              'annotation))
+       (sha256
+        (base32 "0vgl0v0rz0xk00w850yj0vv9jishkci9ndxlwvgjbixpas2viqna"))))
+    (properties `((upstream-name . "CTCF")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dozmorovlab/CTCF")
+    (synopsis "Genomic coordinates of CTCF binding sites, with orientation")
+    (description
+     "Genomic coordinates of CTCF binding sites, with strand orientation
+(directionality of binding).  Position weight matrices (PWMs) from JASPAR,
+HOCOMOCO, CIS-BP, CTCFBSDB, @code{SwissRegulon}, Jolma 2013, were used to
+uniformly predict CTCF binding sites using FIMO (default settings) on human
+(hg18, hg19, hg38, T2T) and mouse (mm9, mm10, mm39) genome assemblies.  Extra
+columns include motif/PWM name (e.g., MA0139.1), score, p-value, q-value, and
+the motif sequence.  It is recommended to filter FIMO-predicted sites by 1e-6
+p-value threshold instead of using the default 1e-4 threshold.  Experimentally
+obtained CTCF-bound cis-regulatory elements from ENCODE SCREEN and predicted
+CTCF sites from CTCFBSDB are also included.  Selected data are lifted over from
+a different genome assembly as we demonstrated @code{liftOver} is a viable
+option to obtain CTCF coordinates in different genome assemblies.  CTCF sites
+obtained using JASPAR's MA0139.1 PWM and filtered at 1e-6 p-value threshold are
+recommended.")
+    (license license:expat)))
 
 (define-public r-cssq
   (package
@@ -1058,6 +1348,7 @@ Bioconductor packages.  Plots are produced using the Gviz framework.")
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
                              r-crisprviz
+                             r-crisprscoredata
                              r-crisprscore
                              r-crisprdesign
                              r-crisprbowtie
@@ -1158,6 +1449,31 @@ restriction enzyme cut sites, and paired guide RNAs.  The package also output
 indels and their frequencies for Cas9 targeted sites.")
     (license license:gpl2+)))
 
+(define-public r-crisprscoredata
+  (package
+    (name "r-crisprscoredata")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "crisprScoreData" version
+                              'experiment))
+       (sha256
+        (base32 "0rrwsfp8m8z389yfr8ls6wkz7faa2iz8pnljl2776qa3zgsfmhni"))))
+    (properties `((upstream-name . "crisprScoreData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/crisprVerse/crisprScoreData/issues")
+    (synopsis "Pre-trained models for the crisprScore package")
+    (description
+     "This package provides an interface to access pre-trained models for on-target
+and off-target @code{gRNA} activity prediction algorithms implemented in the
+@code{crisprScore} package.  Pre-trained model data are stored in the
+@code{ExperimentHub} database.  Users should consider using the
+@code{crisprScore} package directly to use and load the pre-trained models.")
+    (license license:expat)))
+
 (define-public r-crisprscore
   (package
     (name "r-crisprscore")
@@ -1175,6 +1491,7 @@ indels and their frequencies for Cas9 targeted sites.")
                              r-reticulate
                              r-randomforest
                              r-iranges
+                             r-crisprscoredata
                              r-biostrings
                              r-biocgenerics
                              r-basilisk-utils
@@ -1362,6 +1679,26 @@ classify cells in biological images.  Furthermore, in the context of tumor
 images, it provides functionality to calculate tumour cellularity.")
     (license license:artistic2.0)))
 
+(define-public r-crcl18
+  (package
+    (name "r-crcl18")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CRCL18" version
+                              'experiment))
+       (sha256
+        (base32 "1wa9988sv5maml0v0n893m5vf773z0z530dpp5cjk02cd40npcrn"))))
+    (properties `((upstream-name . "CRCL18")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/CRCL18")
+    (synopsis "CRC cell line dataset")
+    (description
+     "colorectal cancer @code{mRNA} and @code{miRNA} on 18 cell lines")
+    (license license:gpl2)))
+
 (define-public r-cqn
   (package
     (name "r-cqn")
@@ -1497,6 +1834,49 @@ count matrices to a real count matrix, possibly the one underlying the
 simulations.  However, any collection of count matrices can be compared.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
+(define-public r-cottonprobe
+  (package
+    (name "r-cottonprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cottonprobe" version
+                              'annotation))
+       (sha256
+        (base32 "04mfjd3a7ikif4pv46s6h9dj2s912w8ihg4yyiii7s3jlmvy62ah"))))
+    (properties `((upstream-name . "cottonprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/cottonprobe")
+    (synopsis "Probe sequence data for microarrays of type cotton")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Cotton\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-cottoncdf
+  (package
+    (name "r-cottoncdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cottoncdf" version
+                              'annotation))
+       (sha256
+        (base32 "0xfwwla941fbxddykgizpar8dh8q459src7kc5wyrsd3swp3zyp5"))))
+    (properties `((upstream-name . "cottoncdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/cottoncdf")
+    (synopsis "cottoncdf")
+    (description
+     "This package provides a package containing an environment representing the
+Cotton.cdf file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-cotan
   (package
     (name "r-cotan")
@@ -1594,6 +1974,7 @@ available for the class being predicted.")
                              r-igraph
                              r-gseabase
                              r-dplyr
+                             r-dorothea
                              r-decoupler
                              r-carnival))
     (native-inputs (list r-knitr))
@@ -1620,7 +2001,7 @@ experimental observations across mulit-omics datasets.")
         (base32 "1mrczwiy1nbqv2qcvc7vmh7mfzg3ywdy4cfb7nmblm0rjd9rs7g9"))))
     (properties `((upstream-name . "cosmiq")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xcms r-rcpp r-pracma r-massspecwavelet))
+    (propagated-inputs (list r-xcms r-rcpp r-pracma r-massspecwavelet r-faahko))
     (home-page
      "http://www.bioconductor.org/packages/devel/bioc/html/cosmiq.html")
     (synopsis "cosmiq - COmbining Single Masses Into Quantities")
@@ -1636,6 +2017,54 @@ The cosmiq package builds on the @code{xcmsSet} object structure and can be
 therefore integrated well with the package xcms as an alternative preprocessing
 step.")
     (license license:gpl3)))
+
+(define-public r-cosmic-67
+  (package
+    (name "r-cosmic-67")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "COSMIC.67" version
+                              'experiment))
+       (sha256
+        (base32 "0c4nmzdhg2mam134j5p7g5h4g2f08aqj429b03cz83znqy4k25vl"))))
+    (properties `((upstream-name . "COSMIC.67")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation r-summarizedexperiment
+                             r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/COSMIC.67")
+    (synopsis "COSMIC.67")
+    (description
+     "COSMIC: Catalogue Of Somatic Mutations In Cancer, version 67 (2013-10-24)")
+    (license license:gpl3)))
+
+(define-public r-cosiadata
+  (package
+    (name "r-cosiadata")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CoSIAdata" version
+                              'experiment))
+       (sha256
+        (base32 "07x44vn6r1d0ixfzx9h3rzzn9gjjci59c41xhqn2b3k6f5c7fa9r"))))
+    (properties `((upstream-name . "CoSIAdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CoSIAdata")
+    (synopsis
+     "VST normalized RNA-Sequencing data with annotations for multiple species samples from Bgee")
+    (description
+     "Variance Stabilized Transformation of Read Counts derived from Bgee RNA-Seq
+Expression Data.  Expression Data includes annotations and is across 6 species
+(Homo sapiens, Mus musculus, Rattus norvegicus, Danio rerio, Drosophila
+melanogaster, and Caenorhabditis elegans) and across more than 132 tissues.  The
+data is represented as a RData files and is available in @code{ExperimentHub}.")
+    (license license:expat)))
 
 (define-public r-cosia
   (package
@@ -1656,6 +2085,7 @@ step.")
                              r-readr
                              r-rcolorbrewer
                              r-plotly
+                             r-org-rn-eg-db
                              r-org-mm-eg-db
                              r-org-hs-eg-db
                              r-org-dr-eg-db
@@ -1866,6 +2296,47 @@ functionality to create beautiful, customizable and flexible plots of
 copy-number related data.")
     (license license:artistic2.0)))
 
+(define-public r-copyneutralima
+  (package
+    (name "r-copyneutralima")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CopyNeutralIMA" version
+                              'experiment))
+       (sha256
+        (base32 "11l994nhi813qs1vmrqjgclw11k5hrsmcrlj5x5wqmqmnjjw1dsy"))))
+    (properties `((upstream-name . "CopyNeutralIMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CopyNeutralIMA")
+    (synopsis "Copy Neutral Illumina Methylation Arrays")
+    (description
+     "This package provides a set of genomic copy neutral samples hybridized using
+Illumina Methylation arrays (450k and EPIC).")
+    (license license:artistic2.0)))
+
+(define-public r-copdsexualdimorphism-data
+  (package
+    (name "r-copdsexualdimorphism-data")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "COPDSexualDimorphism.data" version
+                              'experiment))
+       (sha256
+        (base32 "1mkxf577xa7k1cflrwbdngj6kfhdz2a1dg04x849zm6ahmd3x9vf"))))
+    (properties `((upstream-name . "COPDSexualDimorphism.data")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/COPDSexualDimorphism.data")
+    (synopsis
+     "Data to support sexually dimorphic and COPD differential analysis for gene expression and methylation")
+    (description "Datasets to support COPD@code{SexaulDimorphism} Package.")
+    (license license:lgpl2.1)))
+
 (define-public r-copa
   (package
     (name "r-copa")
@@ -1920,6 +2391,7 @@ type by finding pairs of genes that have mutually exclusive outlier profiles.")
                              r-minfi
                              r-iranges
                              r-illuminahumanmethylationepicmanifest
+                             r-illuminahumanmethylationepicanno-ilm10b2-hg19
                              r-illuminahumanmethylation450kmanifest
                              r-illuminahumanmethylation450kanno-ilmn12-hg19
                              r-genomicranges
@@ -2119,7 +2591,8 @@ stratification of patients with HGS ovarian tumors of clearly defined subtype.")
         (base32 "00y5iizshr8j3xjaza6gcnihdhq4174kzc6008zy10cc1swjyrg4"))))
     (properties `((upstream-name . "consensusDE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment
+    (propagated-inputs (list r-txdb-dmelanogaster-ucsc-dm3-ensgene
+                             r-summarizedexperiment
                              r-s4vectors
                              r-ruvseq
                              r-rsamtools
@@ -2140,7 +2613,8 @@ stratification of patients with HGS ovarian tumors of clearly defined subtype.")
                              r-biocparallel
                              r-biocgenerics
                              r-biobase
-                             r-annotationdbi))
+                             r-annotationdbi
+                             r-airway))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/consensusDE")
     (synopsis "RNA-seq analysis using multiple algorithms")
@@ -2176,6 +2650,49 @@ or laboratory protocols, this package provides interlaboratory testing
 procedures giving per-locus comparisons for sensitivity and precision between
 platforms.")
     (license license:bsd-3)))
+
+(define-public r-connectivitymap
+  (package
+    (name "r-connectivitymap")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ConnectivityMap" version
+                              'experiment))
+       (sha256
+        (base32 "0ixvmkyps62f10c0s4z0jas2106hnvijknai6abial6i3plffnsc"))))
+    (properties `((upstream-name . "ConnectivityMap")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/ConnectivityMap")
+    (synopsis
+     "Functional connections between drugs, genes and diseases as revealed by common gene-expression changes")
+    (description
+     "The Broad Institute's Connectivity Map (cmap02) is a \"large reference catalogue
+of gene-expression data from cultured human cells perturbed with many chemicals
+and genetic reagents\", containing more than 7000 gene expression profiles and
+1300 small molecules.")
+    (license license:gpl3)))
+
+(define-public r-confessdata
+  (package
+    (name "r-confessdata")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CONFESSdata" version
+                              'experiment))
+       (sha256
+        (base32 "1gjsbrrz06qsa0lwjiil0qprhiajyy7im5wh6xks0ifs8rl9f9y4"))))
+    (properties `((upstream-name . "CONFESSdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/CONFESSdata")
+    (synopsis "Example dataset for CONFESS package")
+    (description
+     "Example text-converted C01 image files for use in the CONFESS Bioconductor
+package.")
+    (license license:gpl2)))
 
 (define-public r-confess
   (package
@@ -2682,6 +3199,25 @@ which help reveal the variation of crossovers landscapes across the genome and
 across individuals.")
     (license license:expat)))
 
+(define-public r-colonca
+  (package
+    (name "r-colonca")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "colonCA" version
+                              'experiment))
+       (sha256
+        (base32 "0qkjmbyh5hwfjw657qam7xpjnym4qqbv1292fbqzwdyr0019jpfn"))))
+    (properties `((upstream-name . "colonCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/colonCA")
+    (synopsis "exprSet for Alon et al. (1999) colon cancer data")
+    (description "@code{exprSet} for Alon et al. (1999) colon cancer data")
+    (license license:lgpl2.0+)))
+
 (define-public r-cola
   (package
     (name "r-cola")
@@ -2740,6 +3276,26 @@ analysis.  6.  It allows applying consensus partitioning in a hierarchical
 manner.")
     (license license:expat)))
 
+(define-public r-cohcapanno
+  (package
+    (name "r-cohcapanno")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "COHCAPanno" version
+                              'experiment))
+       (sha256
+        (base32 "0f85l5alhzb14p30pmk11lv0wn6n4nsx8l9pc545fkwqdm5bsqh3"))))
+    (properties `((upstream-name . "COHCAPanno")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/COHCAPanno")
+    (synopsis "Annotations for City of Hope CpG Island Analysis Pipeline")
+    (description
+     "This package provides genomic location, nearby @code{CpG} island and nearby gene
+information for common Illumina methylation array platforms")
+    (license license:gpl3)))
+
 (define-public r-cohcap
   (package
     (name "r-cohcap")
@@ -2758,6 +3314,7 @@ manner.")
                              r-rcpp
                              r-rcolorbrewer
                              r-gplots
+                             r-cohcapanno
                              r-bh))
     (home-page "https://bioconductor.org/packages/COHCAP")
     (synopsis
@@ -3247,6 +3804,27 @@ a Shiny app to visualize your sample's copy number profile.  You can also
 integrate loss of heterozygosity (LOH) and single nucleotide variant (SNV) data.")
     (license license:artistic2.0)))
 
+(define-public r-cnvgsadata
+  (package
+    (name "r-cnvgsadata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cnvGSAdata" version
+                              'experiment))
+       (sha256
+        (base32 "1aask6cx972qw62p2p16n1sk0rjmrr9hhqlaaab52rn4lfdiaba2"))))
+    (properties `((upstream-name . "cnvGSAdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cnvgsa))
+    (home-page "https://bioconductor.org/packages/cnvGSAdata")
+    (synopsis "Data used in the vignette of the cnvGSA package")
+    (description
+     "This package contains the data used in the vignette of the @code{cnvGSA}
+package.")
+    (license license:lgpl2.0+)))
+
 (define-public r-cnvgsa
   (package
     (name "r-cnvgsa")
@@ -3530,6 +4108,47 @@ implements methods to parse, manipulate, and write common CMap data objects,
 such as annotated matrices and collections of gene sets.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-cmap2data
+  (package
+    (name "r-cmap2data")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cMap2data" version
+                              'experiment))
+       (sha256
+        (base32 "1d2yv9gq3w1b50f602ajbdqky5vwsh19qqg8a3czlphghrjrlfwd"))))
+    (properties `((upstream-name . "cMap2data")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/cMap2data")
+    (synopsis "Connectivity Map (version 2) Data")
+    (description
+     "Data package which provides default drug profiles for the @code{DrugVsDisease}
+package as well as associated gene lists and data clusters used by the
+@code{DrugVsDisease} package.")
+    (license license:gpl3)))
+
+(define-public r-cmap
+  (package
+    (name "r-cmap")
+    (version "1.15.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cMAP" version
+                              'annotation))
+       (sha256
+        (base32 "0pzizm27rgcaic7wsh52z30v1jwarmz4cwh1mksbygp63k54mwiv"))))
+    (properties `((upstream-name . "cMAP")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/cMAP")
+    (synopsis "data package containing annotation data for cMAP")
+    (description
+     "Annotation data file for @code{cMAP} assembled using data from public data
+repositories")
+    (license license:lgpl2.0+)))
+
 (define-public r-cma
   (package
     (name "r-cma")
@@ -3575,6 +4194,29 @@ repertoires (IRRs).  The algorithm identifies groups of T or B cell receptors
 (TCRs or BCRs) with similar specificity by comparing their sequences.
 @code{ClustIRR} uses graphs to visualize the specificity structures of IRRs.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-clustifyrdatahub
+  (package
+    (name "r-clustifyrdatahub")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clustifyrdatahub" version
+                              'experiment))
+       (sha256
+        (base32 "004g6s917ayxiixlc8zp4h7zai9amcm6bllr9mz5j9sgm8kd8px4"))))
+    (properties `((upstream-name . "clustifyrdatahub")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://rnabioco.github.io/clustifyrdatahub/")
+    (synopsis "External data sets for clustifyr in ExperimentHub")
+    (description
+     "References made from external single-cell @code{mRNA} sequencing data sets,
+stored as average gene expression matrices.  For use with clustifyr
+<https://bioconductor.org/packages/clustifyr> to assign cell type identities.")
+    (license license:expat)))
 
 (define-public r-clustifyr
   (package
@@ -3746,6 +4388,26 @@ between groups of clusters from each side is constructed with a greedy
 algorithm, and can be additionally visualised.")
     (license license:gpl2+)))
 
+(define-public r-clumsiddata
+  (package
+    (name "r-clumsiddata")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CluMSIDdata" version
+                              'experiment))
+       (sha256
+        (base32 "0xahy0l8b8c7xgg6481vhliiis63brh3rszaj5d1f7sjbgzj7ahs"))))
+    (properties `((upstream-name . "CluMSIDdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/CluMSIDdata")
+    (synopsis "Data for the CluMSID package")
+    (description
+     "This package contains various LC-MS/MS and GC-MS data that is used in vignettes
+and examples in the @code{CluMSID} package.")
+    (license license:expat)))
+
 (define-public r-clumsid
   (package
     (name "r-clumsid")
@@ -3842,6 +4504,60 @@ similarity threshold distinguishing within-group from between-group comparisons.
 data of multiple samples of the same tumor.  The trained parameters can be
 interpreted to infer the clonal structure of the tumor.")
     (license license:gpl2+)))
+
+(define-public r-cllmethylation
+  (package
+    (name "r-cllmethylation")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CLLmethylation" version
+                              'experiment))
+       (sha256
+        (base32 "16k05g98j2zs8n827kvgishzcj0zcx12cwzvgznzjrwp56dl72xs"))))
+    (properties `((upstream-name . "CLLmethylation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CLLmethylation")
+    (synopsis "Methylation data of primary CLL samples in PACE project")
+    (description
+     "The package includes DNA methylation data for the primary Chronic Lymphocytic
+Leukemia samples included in the Primary Blood Cancer Encyclopedia (PACE)
+project.  Raw data from the 450k DNA methylation arrays is stored in the
+European Genome-Phenome Archive (EGA) under accession number EGAS0000100174.
+For more information concerning the project please refer to the paper
+\"Drug-perturbation-based stratification of blood cancer\" by Dietrich S, Oles M,
+Lu J et al., J. Clin.  Invest. (2018) and R/Bioconductor package
+@code{BloodCancerMultiOmics2017}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-cll
+  (package
+    (name "r-cll")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CLL" version
+                              'experiment))
+       (sha256
+        (base32 "10l2a562l6hx32sxmvy8z59shq87v770rrh2fhddnj06dpx6n6cf"))))
+    (properties `((upstream-name . "CLL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase r-affy))
+    (home-page "https://bioconductor.org/packages/CLL")
+    (synopsis "Package for CLL Gene Expression Data")
+    (description
+     "The CLL package contains the chronic lymphocytic leukemia (CLL) gene expression
+data.  The CLL data had 24 samples that were either classified as progressive or
+stable in regards to disease progression.  The data came from Dr. Sabina
+Chiaretti at Division of Hematology, Department of Cellular Biotechnologies and
+Hematology, University La Sapienza, Rome, Italy and Dr. Jerome Ritz at
+Department of Medicine, Brigham and Women's Hospital, Harvard Medical School,
+Boston, Massachusetts.")
+    (license license:lgpl2.0+)))
 
 (define-public r-cliquems
   (package
@@ -4056,6 +4772,7 @@ http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html")
                              r-genomicranges
                              r-genomeinfodb
                              r-e1071
+                             r-bsgenome-drerio-ucsc-danrer7
                              r-bsgenome
                              r-biostrings))
     (native-inputs (list r-knitr))
@@ -4111,6 +4828,232 @@ of cross-validation schemes.  Functions for differential mean, differential
 variability, and differential distribution are included.  Additional functions
 may be developed by the user, by creating an interface to the framework.")
     (license license:gpl3)))
+
+(define-public r-clariomsrattranscriptcluster-db
+  (package
+    (name "r-clariomsrattranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomsrattranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "0i3d9m4li08mf4g8ic5zgja80vj0vw1865pfpj1kra6sb6r2irhy"))))
+    (properties `((upstream-name . "clariomsrattranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-rn-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomsrattranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomsrat annotation data (chip clariomsrattranscriptcluster)")
+    (description
+     "Affymetrix clariomsrat annotation data (chip clariomsrattranscriptcluster)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomsrathttranscriptcluster-db
+  (package
+    (name "r-clariomsrathttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomsrathttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "1vc4za4drka441wrn85b4hc2m6dvk9r33w0fd0gf0zi5945samc7"))))
+    (properties `((upstream-name . "clariomsrathttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-rn-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomsrathttranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomsratht annotation data (chip clariomsrathttranscriptcluster)")
+    (description
+     "Affymetrix clariomsratht annotation data (chip clariomsrathttranscriptcluster)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomsmousetranscriptcluster-db
+  (package
+    (name "r-clariomsmousetranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomsmousetranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "116bjs6rmb56vphgs77hhn905yxa83gsydvyji1k9azm1kbz9rbc"))))
+    (properties `((upstream-name . "clariomsmousetranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomsmousetranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomsmouse annotation data (chip clariomsmousetranscriptcluster)")
+    (description
+     "Affymetrix clariomsmouse annotation data (chip clariomsmousetranscriptcluster)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomsmousehttranscriptcluster-db
+  (package
+    (name "r-clariomsmousehttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomsmousehttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "0h4bnixh55rxy7ng0psl4i3szw3drkqvk4rypv2pjb30k8b8x9ad"))))
+    (properties `((upstream-name . "clariomsmousehttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomsmousehttranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomsmouseht annotation data (chip clariomsmousehttranscriptcluster)")
+    (description
+     "Affymetrix clariomsmouseht annotation data (chip
+clariomsmousehttranscriptcluster) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomshumantranscriptcluster-db
+  (package
+    (name "r-clariomshumantranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomshumantranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "0xnb0lw19bvwz75wdznmx0sj9gmjksry9kz7qx25w7msjzw1a56c"))))
+    (properties `((upstream-name . "clariomshumantranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomshumantranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomshuman annotation data (chip clariomshumantranscriptcluster)")
+    (description
+     "Affymetrix clariomshuman annotation data (chip clariomshumantranscriptcluster)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomshumanhttranscriptcluster-db
+  (package
+    (name "r-clariomshumanhttranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomshumanhttranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "0ya6x2pqlzs7ssis2xa78yfrxs8zkyim3s8h8hbbnyhin6d1p4ia"))))
+    (properties `((upstream-name . "clariomshumanhttranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomshumanhttranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomshumanht annotation data (chip clariomshumanhttranscriptcluster)")
+    (description
+     "Affymetrix clariomshumanht annotation data (chip
+clariomshumanhttranscriptcluster) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomdhumantranscriptcluster-db
+  (package
+    (name "r-clariomdhumantranscriptcluster-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomdhumantranscriptcluster.db" version
+                              'annotation))
+       (sha256
+        (base32 "1qybsx6xj892pqlkv16cmc890shmm68hak4vcl1rd68i040pp75p"))))
+    (properties `((upstream-name . "clariomdhumantranscriptcluster.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/clariomdhumantranscriptcluster.db")
+    (synopsis
+     "Affymetrix clariomdhuman annotation data (chip clariomdhumantranscriptcluster)")
+    (description
+     "Affymetrix clariomdhuman annotation data (chip clariomdhumantranscriptcluster)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-clariomdhumanprobeset-db
+  (package
+    (name "r-clariomdhumanprobeset-db")
+    (version "8.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "clariomdhumanprobeset.db" version
+                              'annotation))
+       (sha256
+        (base32 "197s389bdzzqyvfrkrn6zqkm2d5s6rnays9hmsdrilxrm9gw32ag"))))
+    (properties `((upstream-name . "clariomdhumanprobeset.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/clariomdhumanprobeset.db")
+    (synopsis
+     "Affymetrix clariomdhuman annotation data (chip clariomdhumanprobeset)")
+    (description
+     "Affymetrix clariomdhuman annotation data (chip clariomdhumanprobeset) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-citrusprobe
+  (package
+    (name "r-citrusprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "citrusprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0bf1wic136cxwgs4j13wsyqasnyvr0jw1hzg6qizndmy7g8hrb87"))))
+    (properties `((upstream-name . "citrusprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/citrusprobe")
+    (synopsis "Probe sequence data for microarrays of type citrus")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Citrus\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-citruscdf
+  (package
+    (name "r-citruscdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "citruscdf" version
+                              'annotation))
+       (sha256
+        (base32 "1326mj1xf3k4v5iyyn46whx24qfng0x3cv6rvckdr1ycc1v887dn"))))
+    (properties `((upstream-name . "citruscdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/citruscdf")
+    (synopsis "citruscdf")
+    (description
+     "This package provides a package containing an environment representing the
+Citrus.cdf file.")
+    (license license:lgpl2.0+)))
 
 (define-public r-citefuse
   (package
@@ -4426,6 +5369,29 @@ gene set analysis.")
 vertical chromosomes are sorted by number, with sex chromosomes at the end.")
     (license license:gpl2+)))
 
+(define-public r-chromhmmdata
+  (package
+    (name "r-chromhmmdata")
+    (version "0.99.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chromhmmData" version
+                              'annotation))
+       (sha256
+        (base32 "13g6x7lzmkz9qv7yr6ps8gsgilgr048lc7y0y7xsfa9ws3n08fzj"))))
+    (properties `((upstream-name . "chromhmmData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/chromhmmData")
+    (synopsis "Chromosome Size, Coordinates and Anchor Files")
+    (description
+     "Annotation files of the formatted genomic annotation for @code{ChromHMM}.  Three
+types of text files are included the chromosome sizes, region coordinates and
+anchors specifying the transcription start and end sites.  The package includes
+data for two versions of the genome of humans and mice.")
+    (license license:gpl3)))
+
 (define-public r-chromheatmap
   (package
     (name "r-chromheatmap")
@@ -4499,6 +5465,27 @@ nine fields of the BED format.  Output files format are *.eps and *.svg.")
 studies")
     (license license:gpl3)))
 
+(define-public r-chipxpressdata
+  (package
+    (name "r-chipxpressdata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ChIPXpressData" version
+                              'experiment))
+       (sha256
+        (base32 "0i96lkgkzssrsa0gnc5l4f9j4x07cvq4s019v3b2fm5s288lvsnj"))))
+    (properties `((upstream-name . "ChIPXpressData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bigmemory))
+    (home-page "https://bioconductor.org/packages/ChIPXpressData")
+    (synopsis "ChIPXpress Pre-built Databases")
+    (description
+     "This package contains pre-built mouse (GPL1261) and human (GPL570) database of
+gene expression profiles to be used for @code{ChIPXpress} ranking.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-chipxpress
   (package
     (name "r-chipxpress")
@@ -4513,6 +5500,7 @@ studies")
     (build-system r-build-system)
     (propagated-inputs (list r-geoquery
                              r-frma
+                             r-chipxpressdata
                              r-biobase
                              r-bigmemory
                              r-biganalytics
@@ -4579,6 +5567,29 @@ was developed to locate nucleosomes but should flexible enough to handle other
 types of experiments as well.")
     (license license:gpl2+)))
 
+(define-public r-chipseqdbdata
+  (package
+    (name "r-chipseqdbdata")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chipseqDBData" version
+                              'experiment))
+       (sha256
+        (base32 "114645f6db8pp263g6h2gb2cwhdgqh8risssq2vfzzdv16qqw640"))))
+    (properties `((upstream-name . "chipseqDBData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-rsamtools r-experimenthub
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/chipseqDBData")
+    (synopsis "Data for the chipseqDB Workflow")
+    (description
+     "Sorted and indexed BAM files for @code{ChIP-seq} libraries, for use in the
+@code{chipseqDB} workflow.  BAM indices are also included.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-chipqc
   (package
     (name "r-chipqc")
@@ -4591,9 +5602,12 @@ types of experiments as well.")
         (base32 "0a4kx2s2hyqs061550klfafkzk68563wbgyk4xihxaihdh03qghj"))))
     (properties `((upstream-name . "ChIPQC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-txdb-mmusculus-ucsc-mm9-knowngene
+    (propagated-inputs (list r-txdb-rnorvegicus-ucsc-rn4-ensgene
+                             r-txdb-mmusculus-ucsc-mm9-knowngene
                              r-txdb-mmusculus-ucsc-mm10-knowngene
                              r-txdb-hsapiens-ucsc-hg19-knowngene
+                             r-txdb-hsapiens-ucsc-hg18-knowngene
+                             r-txdb-dmelanogaster-ucsc-dm3-ensgene
                              r-txdb-celegans-ucsc-ce6-ensgene
                              r-s4vectors
                              r-rsamtools
@@ -4615,6 +5629,58 @@ types of experiments as well.")
     (description "Quality metrics for @code{ChIPseq} data.")
     (license license:gpl3+)))
 
+(define-public r-chipexoqualexample
+  (package
+    (name "r-chipexoqualexample")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ChIPexoQualExample" version
+                              'experiment))
+       (sha256
+        (base32 "1v35xq0a58kf0nabv3v6aiz9cd3gvwv0asmvq27ha0w1ngwd0dzk"))))
+    (properties `((upstream-name . "ChIPexoQualExample")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "http://www.github.com/keleslab/ChIPexoQualExample")
+    (synopsis
+     "Example data for the ChIPexoQual package, which implements a quality control pipeline for ChIP-exo data")
+    (description
+     "Data for the @code{ChIPexoQual} package, consisting of (3) chromosome 1 aligned
+reads from a @code{ChIP-exo} experiment for @code{FoxA1} in mouse liver cell
+lines aligned to the mm9 genome.")
+    (license license:gpl2+)))
+
+(define-public r-chipenrich-data
+  (package
+    (name "r-chipenrich-data")
+    (version "2.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chipenrich.data" version
+                              'experiment))
+       (sha256
+        (base32 "0hfisbzbhz501dvcwvx3cnag9643ydw6f0q122w7mrnzsag82013"))))
+    (properties `((upstream-name . "chipenrich.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-rtracklayer
+                             r-readr
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-biocgenerics
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/chipenrich.data")
+    (synopsis "Companion package to chipenrich")
+    (description
+     "Supporting data for the chipenrich package.  Includes pre-defined gene sets,
+gene locus definitions, and mappability estimates.")
+    (license license:gpl3)))
+
 (define-public r-chipenrich
   (package
     (name "r-chipenrich")
@@ -4632,6 +5698,7 @@ types of experiments as well.")
                              r-rtracklayer
                              r-rms
                              r-plyr
+                             r-org-rn-eg-db
                              r-org-mm-eg-db
                              r-org-hs-eg-db
                              r-org-dr-eg-db
@@ -4643,6 +5710,7 @@ types of experiments as well.")
                              r-iranges
                              r-genomicranges
                              r-genomeinfodb
+                             r-chipenrich-data
                              r-biocgenerics
                              r-annotationdbi))
     (native-inputs (list r-knitr))
@@ -4689,6 +5757,27 @@ bound molecules and a scaling factor modulating TF binding affinity.  Taken
 together, @code{ChIPanalyser} produces @code{ChIP-like} profiles that closely
 mimic the patterns seens in real @code{ChIP-seq} data.")
     (license license:gpl3)))
+
+(define-public r-chimp-db0
+  (package
+    (name "r-chimp-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chimp.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1y5yi53hld1q3zi3z25zg68mb76nbh09yikn4x14q5rk2imjg9gm"))))
+    (properties `((upstream-name . "chimp.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/chimp.db0")
+    (synopsis "Base Level Annotation databases for chimp")
+    (description
+     "Base annotation databases for chimp, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
 
 (define-public r-chimeraviz
   (package
@@ -4764,6 +5853,113 @@ enables efficient recovery of the @code{DelayedArray's} contents in other
 languages and analysis frameworks.")
     (license license:gpl3)))
 
+(define-public r-chickenprobe
+  (package
+    (name "r-chickenprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chickenprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1fdsiwfyg7fwslrr7xs3gny7sw24bzg5k1fvlyzb1477sgj0pid3"))))
+    (properties `((upstream-name . "chickenprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/chickenprobe")
+    (synopsis "Probe sequence data for microarrays of type chicken")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Chicken\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-chickencdf
+  (package
+    (name "r-chickencdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chickencdf" version
+                              'annotation))
+       (sha256
+        (base32 "09hhim5s9xj7n2b5rhn1svf5qly2mn0rr2v2ls25hfzyrqcbxlz1"))))
+    (properties `((upstream-name . "chickencdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/chickencdf")
+    (synopsis "chickencdf")
+    (description
+     "This package provides a package containing an environment representing the
+Chicken.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-chicken-db0
+  (package
+    (name "r-chicken-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chicken.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1b2ypbjxmm6dg5dagc9cka9p1c9n6b9rjlw1ivcakbnpx7ipwkl2"))))
+    (properties `((upstream-name . "chicken.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/chicken.db0")
+    (synopsis "Base Level Annotation databases for chicken")
+    (description
+     "Base annotation databases for chicken, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-chicken-db
+  (package
+    (name "r-chicken-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chicken.db" version
+                              'annotation))
+       (sha256
+        (base32 "0szb7sgassw10kzm8iz8h3fdbxm6v0kz95yb3a9icj2chi5d1m2i"))))
+    (properties `((upstream-name . "chicken.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-gg-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/chicken.db")
+    (synopsis
+     "Affymetrix Affymetrix Chicken Array annotation data (chip chicken)")
+    (description
+     "Affymetrix Affymetrix Chicken Array annotation data (chip chicken) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-chic-data
+  (package
+    (name "r-chic-data")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ChIC.data" version
+                              'experiment))
+       (sha256
+        (base32 "1akqpqw9ydf23whr346psciyyp9c3r0rsas1rkdkf8g5wrcj9vhk"))))
+    (properties `((upstream-name . "ChIC.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest r-genomeintervals r-caret))
+    (home-page "https://bioconductor.org/packages/ChIC.data")
+    (synopsis "ChIC package data")
+    (description
+     "This package contains annotation and metagene profile data for the @code{ChIC}
+package.")
+    (license license:gpl2)))
+
 (define-public r-chetah
   (package
     (name "r-chetah")
@@ -4801,6 +5997,29 @@ classification.  Using a novel stopping rule, CHETAH classifies the input cells
 to the cell types of the references and to \"intermediate types\": more general
 classifications that ended in an intermediate node of the tree.")
     (license (license:fsdg-compatible "file://LICENSE"))))
+
+(define-public r-chemminedrugs
+  (package
+    (name "r-chemminedrugs")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ChemmineDrugs" version
+                              'annotation))
+       (sha256
+        (base32 "0l47ac6lkycmghra2cbcdcxcv47ari8xg6lxpzilvkf4n6ld6064"))))
+    (properties `((upstream-name . "ChemmineDrugs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsqlite r-chemminer r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ChemmineDrugs")
+    (synopsis "DrugBank data set")
+    (description
+     "An annotation package for use with @code{ChemmineR}.  This package includes data
+from @code{DrugBank}.  DUD data can be downloaded using the \"DUD()\" function in
+@code{ChemmineR}.")
+    (license license:artistic2.0)))
 
 (define-public r-cghregions
   (package
@@ -4890,6 +6109,33 @@ without assuming gene-environment (or gene-gene) independence in the underlying
 population.")
     (license (license:fsdg-compatible "GPL-2 + file LICENSE"))))
 
+(define-public r-cftoolsdata
+  (package
+    (name "r-cftoolsdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cfToolsData" version
+                              'experiment))
+       (sha256
+        (base32 "0icr4llq99ghyvi8nsdfnp5sydh8icr23y8ar7jg0qpwiagdl3l9"))))
+    (properties `((upstream-name . "cfToolsData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jasminezhoulab/cfToolsData")
+    (synopsis "ExperimentHub data for the cfTools package")
+    (description
+     "The @code{cfToolsData} package supplies the data for the @code{cfTools} package.
+ It contains two pre-trained deep neural network (DNN) models for the
+@code{cfSort} function.  Additionally, it includes the shape parameters of beta
+distribution characterizing methylation markers associated with four tumor types
+for the @code{CancerDetector} function, as well as the parameters characterizing
+methylation markers specific to 29 primary human tissue types for the
+@code{cfDeconvolve} function.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
 (define-public r-cftools
   (package
     (name "r-cftools")
@@ -4902,7 +6148,12 @@ population.")
         (base32 "11nj6g2qxxr6s11432wsna3ma2k9dyp7w76iamj0z80wnbvmicfz"))))
     (properties `((upstream-name . "cfTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-r-utils r-genomicranges r-bh r-basilisk))
+    (propagated-inputs (list r-rcpp
+                             r-r-utils
+                             r-genomicranges
+                             r-cftoolsdata
+                             r-bh
+                             r-basilisk))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jasminezhoulab/cfTools")
     (synopsis "Informatics Tools for Cell-Free DNA Study")
@@ -5485,6 +6736,29 @@ computation of cell trajectories.  In-depth analysis of cell trajectories is
 enabled by 15 trajectory analysis functions.")
     (license license:gpl2)))
 
+(define-public r-cellmapperdata
+  (package
+    (name "r-cellmapperdata")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CellMapperData" version
+                              'experiment))
+       (sha256
+        (base32 "12mx1m4lm51y8pazmhrd8ickvvpa2sm9cg2znhs6pzmgc5bj09dx"))))
+    (properties `((upstream-name . "CellMapperData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub r-cellmapper))
+    (home-page "https://bioconductor.org/packages/CellMapperData")
+    (synopsis "Pre-processed data for use with the CellMapper package")
+    (description
+     "Experiment data package.  Contains microarray data from several large expression
+compendia that have been pre-processed for use with the @code{CellMapper}
+package.  This pre-processed data is recommended for routine searches using the
+@code{CellMapper} package.")
+    (license license:artistic2.0)))
+
 (define-public r-cellmapper
   (package
     (name "r-cellmapper")
@@ -5725,6 +6999,71 @@ and analyze paired heavy-light chain data.  Tests for specific expansion, as
 well as omnibus oligoclonality under hypergeometric models.")
     (license license:gpl3)))
 
+(define-public r-celegansprobe
+  (package
+    (name "r-celegansprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "celegansprobe" version
+                              'annotation))
+       (sha256
+        (base32 "05k7si3f8pzkyb8jv0r2vkavbrqxsn4nawl92gcphfsylrwcddqb"))))
+    (properties `((upstream-name . "celegansprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/celegansprobe")
+    (synopsis "Probe sequence data for microarrays of type celegans")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was C\\_elegans\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-celeganscdf
+  (package
+    (name "r-celeganscdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "celeganscdf" version
+                              'annotation))
+       (sha256
+        (base32 "0a6w0a48azg0i21j3aqb7fnxck3ff9w3gsi89bnlfh0zx6pknx7p"))))
+    (properties `((upstream-name . "celeganscdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/celeganscdf")
+    (synopsis "celeganscdf")
+    (description
+     "This package provides a package containing an environment representing the
+Celegans.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-celegans-db
+  (package
+    (name "r-celegans-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "celegans.db" version
+                              'annotation))
+       (sha256
+        (base32 "15gr1l3j9s1rgq0j1mi12d4lk9izv7nck5h53icbph92j02fihng"))))
+    (properties `((upstream-name . "celegans.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-ce-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/celegans.db")
+    (synopsis
+     "Affymetrix Affymetrix Celegans Array annotation data (chip celegans)")
+    (description
+     "Affymetrix Affymetrix Celegans Array annotation data (chip celegans) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
 (define-public r-celda
   (package
     (name "r-celda")
@@ -5780,6 +7119,29 @@ computationally estimate and remove RNA contamination in individual cells
 without empty droplet information.  A variety of @code{scRNA-seq} data
 visualization functions is also included.")
     (license license:expat)))
+
+(define-public r-celarefdata
+  (package
+    (name "r-celarefdata")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "celarefData" version
+                              'experiment))
+       (sha256
+        (base32 "11vx5hmbjsfzyxgb8qzhy3f54krcp33h8ki61irxxl06q2n59928"))))
+    (properties `((upstream-name . "celarefData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/celarefData")
+    (synopsis
+     "Processed scRNA data for celaref Vignette - cell labelling by reference")
+    (description
+     "This experiment data contains some processed data used in the celaref package
+vignette.  These are publically available datasets, that have been processed by
+celaref package, and can be manipulated further with it.")
+    (license license:gpl3)))
 
 (define-public r-celaref
   (package
@@ -5850,6 +7212,29 @@ performance.  Hence, we propose clustering deviation index (CDI), an
 unsupervised metric based on the modeling of @code{scRNA-seq} UMI counts to
 evaluate clustering of cells.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-cctutorial
+  (package
+    (name "r-cctutorial")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ccTutorial" version
+                              'experiment))
+       (sha256
+        (base32 "1rqblyk7389xqwzvib2xjyjrc8l3qd2g8z9vj96mrfyr8dpccjjs"))))
+    (properties `((upstream-name . "ccTutorial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-topgo r-ringo r-biobase r-affy))
+    (home-page "https://bioconductor.org/packages/ccTutorial")
+    (synopsis "Data package for ChIP-chip tutorial")
+    (description
+     "This is a data package that accompanies a @code{ChIP-chip} tutorial, which has
+been published in P@code{LoS} Computational Biology.  The data and source code
+in this package allow the reader to completely reproduce the steps in the
+tutorial.")
+    (license license:artistic2.0)))
 
 (define-public r-ccpromise
   (package
@@ -5932,6 +7317,7 @@ and can be used to visualise results from multiple tools such as Liana,
                              r-foreach
                              r-doparallel
                              r-data-table
+                             r-ccdata
                              r-biocmanager
                              r-annotationdbi))
     (native-inputs (list r-knitr))
@@ -5942,6 +7328,27 @@ and can be used to visualise results from multiple tools such as Liana,
 expression signatures.  These drugs might reverse diseases or mimic healthy
 lifestyles.")
     (license license:expat)))
+
+(define-public r-ccl4
+  (package
+    (name "r-ccl4")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CCl4" version
+                              'experiment))
+       (sha256
+        (base32 "02fw0c7yy6vch31a726fpn163mi5zj13jvrpczqqshb2wz2qs58c"))))
+    (properties `((upstream-name . "CCl4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-limma r-biobase))
+    (home-page "https://bioconductor.org/packages/CCl4")
+    (synopsis "Carbon Tetrachloride (CCl4) treated hepatocytes")
+    (description
+     "N@code{ChannelSet} for rat hepatocytes treated with Carbon Tetrachloride (CCl4)
+data from LGC company.")
+    (license license:artistic2.0)))
 
 (define-public r-ccimpute
   (package
@@ -6012,6 +7419,28 @@ package includes utilities for downstream analyses, including meta-gene
 identification, visualization, and construction of rank-based trees for
 clusters.")
     (license license:gpl2+)))
+
+(define-public r-ccdata
+  (package
+    (name "r-ccdata")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ccdata" version
+                              'experiment))
+       (sha256
+        (base32 "1vskwqb0n3qfgmakc8zlvfkag653gkz3l9j8lqnhxbbnnads738j"))))
+    (properties `((upstream-name . "ccdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/ccdata")
+    (synopsis "Data for Combination Connectivity Mapping (ccmap) Package")
+    (description
+     "This package contains microarray gene expression data generated from the
+Connectivity Map build 02 and LINCS l1000.  The data are used by the ccmap
+package to find drugs and drug combinations to mimic or reverse a gene
+expression signature.")
+    (license license:expat)))
 
 (define-public r-cbpmanager
   (package
@@ -6089,6 +7518,7 @@ patients.")
                              r-experimenthub
                              r-enrichplot
                              r-dplyr
+                             r-depmap
                              r-clusterprofiler
                              r-bnlearn
                              r-biocfilecache))
@@ -6345,6 +7775,29 @@ of TFs weights from PROGENy scores.  Optimization parameters can be freely
 adjusted and multiple solutions can be obtained and aggregated.")
     (license license:gpl3)))
 
+(define-public r-cardinalworkflows
+  (package
+    (name "r-cardinalworkflows")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CardinalWorkflows" version
+                              'experiment))
+       (sha256
+        (base32 "0cyzzyki6y2a7m4w7pk7x532a0i539irmpxbba3zs05cjs3213sb"))))
+    (properties `((upstream-name . "CardinalWorkflows")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cardinal))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CardinalWorkflows")
+    (synopsis
+     "Datasets and workflows for the Cardinal mass spectrometry imaging package")
+    (description
+     "Datasets and workflows for Cardinal: DESI and MALDI examples including pig
+fetus, cardinal painting, and human RCC.")
+    (license license:artistic2.0)))
+
 (define-public r-cardinalio
   (package
     (name "r-cardinalio")
@@ -6402,6 +7855,177 @@ spectrometry imaging.")
 spectrometry imaging datasets, including methods for efficient pre-processing,
 spatial segmentation, and classification.")
     (license license:artistic2.0)))
+
+(define-public r-canineprobe
+  (package
+    (name "r-canineprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "canineprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1y70rbxlbgx58vaxp1ry5jngvzz9prcbgd2ji00074ilx4k2cxn2"))))
+    (properties `((upstream-name . "canineprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/canineprobe")
+    (synopsis "Probe sequence data for microarrays of type canine")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Canine\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-caninecdf
+  (package
+    (name "r-caninecdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "caninecdf" version
+                              'annotation))
+       (sha256
+        (base32 "1f7pf3y4ccmj6681haqk8ds3dlzkv99s22m2r462dnnf38n17l3p"))))
+    (properties `((upstream-name . "caninecdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/caninecdf")
+    (synopsis "caninecdf")
+    (description
+     "This package provides a package containing an environment representing the
+Canine.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-canine2probe
+  (package
+    (name "r-canine2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "canine2probe" version
+                              'annotation))
+       (sha256
+        (base32 "1l849a1dqy4kpcsxs0lvb48ag81i0f0ys0w4757rw4kp8ry59z4b"))))
+    (properties `((upstream-name . "canine2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/canine2probe")
+    (synopsis "Probe sequence data for microarrays of type canine2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Canine\\_2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-canine2cdf
+  (package
+    (name "r-canine2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "canine2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "077cmmnhjdk0vxjzm1kqf3q5kgx6chwkm59dr4s5dy019rqb6sqr"))))
+    (properties `((upstream-name . "canine2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/canine2cdf")
+    (synopsis "canine2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+Canine_2.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-canine2-db
+  (package
+    (name "r-canine2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "canine2.db" version
+                              'annotation))
+       (sha256
+        (base32 "1xzz0vivdypwl6kaq2ba02jkpxw0r9r98297ilksdh8m71f244si"))))
+    (properties `((upstream-name . "canine2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-cf-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/canine2.db")
+    (synopsis
+     "Affymetrix Affymetrix Canine_2 Array annotation data (chip canine2)")
+    (description
+     "Affymetrix Affymetrix Canine_2 Array annotation data (chip canine2) assembled
+using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-canine-db0
+  (package
+    (name "r-canine-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "canine.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1s88nj0ysvb7dwvxwkshy9w1a8qvaq3bkxki974zhhh42ssdxm2q"))))
+    (properties `((upstream-name . "canine.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/canine.db0")
+    (synopsis "Base Level Annotation databases for canine")
+    (description
+     "Base annotation databases for canine, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-canine-db
+  (package
+    (name "r-canine-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "canine.db" version
+                              'annotation))
+       (sha256
+        (base32 "1x1mlh0p6r2l5kclarqwgiw9y64xc8jhp6252hhpl9bpnn638n3s"))))
+    (properties `((upstream-name . "canine.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-cf-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/canine.db")
+    (synopsis
+     "Affymetrix Affymetrix Canine Array annotation data (chip canine)")
+    (description
+     "Affymetrix Affymetrix Canine Array annotation data (chip canine) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-cancerdata
+  (package
+    (name "r-cancerdata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cancerdata" version
+                              'experiment))
+       (sha256
+        (base32 "1670df52ainxq220vzblrv2jml2bql8vid09b51dzhjhikwzxhs4"))))
+    (properties `((upstream-name . "cancerdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/cancerdata")
+    (synopsis
+     "Development and validation of diagnostic tests from high-dimensional molecular data: Datasets")
+    (description "Dataset for the R package cancerclass")
+    (license license:gpl2+)))
 
 (define-public r-cancerclass
   (package
@@ -6736,4 +8360,56 @@ scores representing a phenotypic readout of interest, such as protein
 expression, pathway activity, etc.), based on the union occurence (i.e.  logical
 OR) of the events.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-cadd-v1-6-hg38
+  (package
+    (name "r-cadd-v1-6-hg38")
+    (version "3.18.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cadd.v1.6.hg38" version
+                              'annotation))
+       (sha256
+        (base32 "0088wv3a082ircmgpx23822bvjwqd5jdvilkgvhaypksbnbdkq68"))))
+    (properties `((upstream-name . "cadd.v1.6.hg38")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicscores r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/cadd.v1.6.hg38")
+    (synopsis
+     "CADD v1.6 Pathogenicity Scores AnnotationHub Resource Metadata for hg38")
+    (description
+     "Store University of Washington CADD v1.6 hg38 pathogenicity scores
+@code{AnnotationHub} Resource Metadata.  Provide provenance and citation
+information for University of Washington CADD v1.6 hg38 pathogenicity score
+@code{AnnotationHub} resources.  Illustrate in a vignette how to access those
+resources.")
+    (license license:artistic2.0)))
+
+(define-public r-cadd-v1-6-hg19
+  (package
+    (name "r-cadd-v1-6-hg19")
+    (version "3.18.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cadd.v1.6.hg19" version
+                              'annotation))
+       (sha256
+        (base32 "1g8pk1bmq2p6a7r1skfs54a2b8106znasympyz3dq3vahm5ia0dq"))))
+    (properties `((upstream-name . "cadd.v1.6.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicscores r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/cadd.v1.6.hg19")
+    (synopsis
+     "CADD v1.6 Pathogenicity Scores AnnotationHub Resource Metadata for hg19")
+    (description
+     "Store University of Washington CADD v1.6 hg19 pathogenicity scores
+@code{AnnotationHub} Resource Metadata.  Provide provenance and citation
+information for University of Washington CADD v1.6 hg19 pathogenicity score
+@code{AnnotationHub} resources.  Illustrate in a vignette how to access those
+resources.")
+    (license license:artistic2.0)))
 

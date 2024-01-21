@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages b)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages h)
@@ -21,6 +21,7 @@
   #:use-module (guix-cran packages c)
   #:use-module (gnu packages python)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -35,6 +36,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
   #:use-module (guix-bioc packages f)
@@ -43,6 +45,26 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-iyer517
+  (package
+    (name "r-iyer517")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Iyer517" version
+                              'experiment))
+       (sha256
+        (base32 "1zahcx2kjspm3bvgxklfgd34srlrxcq9xcj37qa20b08892llkk7"))))
+    (properties `((upstream-name . "Iyer517")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/Iyer517")
+    (synopsis "exprSets for Iyer, Eisen et all 1999 Science paper")
+    (description "representation of public Iyer data from
+http://genome-www.stanford.edu/serum/clusters.html")
+    (license license:artistic2.0)))
 
 (define-public r-iwtomics
   (package
@@ -1394,6 +1416,28 @@ detailed description of the methodology has been published in Methods journal
 exploration and selection of candidate biomarkers.")
     (license license:artistic2.0)))
 
+(define-public r-indac-db
+  (package
+    (name "r-indac-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "indac.db" version
+                              'annotation))
+       (sha256
+        (base32 "0jjkiyhjcjgk9888a96g5w80k8a652cww5dhidbdiq5d8gakbnji"))))
+    (properties `((upstream-name . "indac.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-dm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/indac.db")
+    (synopsis
+     "INDAC FlyChip_long_oligonucleotide_002 (FL002) annotation data (chip indac)")
+    (description
+     "INDAC @code{FlyChip_long_oligonucleotide_002} (FL002) annotation data (chip
+indac) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
 (define-public r-impcdata
   (package
     (name "r-impcdata")
@@ -1606,6 +1650,40 @@ random permutations.  In that way, types of cells that interact more
 detected.")
     (license license:gpl3)))
 
+(define-public r-imcdatasets
+  (package
+    (name "r-imcdatasets")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "imcdatasets" version
+                              'experiment))
+       (sha256
+        (base32 "0yvii8qxgxabf9i2z5pz37dn9s6vw3g6z2k6c5k4rjns8wmvixps"))))
+    (properties `((upstream-name . "imcdatasets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-hdf5array
+                             r-experimenthub
+                             r-delayedarray
+                             r-cytomapper))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BodenmillerGroup/imcdatasets")
+    (synopsis
+     "Collection of publicly available imaging mass cytometry (IMC) datasets")
+    (description
+     "The imcdatasets package provides access to publicly available IMC datasets.  IMC
+is a technology that enables measurement of > 40 proteins from tissue sections.
+The generated images can be segmented to extract single cell data.  Datasets
+typically consist of three elements: a @code{SingleCellExperiment} object
+containing single cell data, a @code{CytoImageList} object containing
+multichannel images and a @code{CytoImageList} object containing the cell masks
+that were used to extract the single cell data from the images.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-imas
   (package
     (name "r-imas")
@@ -1644,6 +1722,432 @@ detected.")
     (description
      "Integrative analysis of Multi-omics data for Alternative splicing.")
     (license license:gpl2)))
+
+(define-public r-illuminaratv1-db
+  (package
+    (name "r-illuminaratv1-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaRatv1.db" version
+                              'annotation))
+       (sha256
+        (base32 "1krpp3pb3h2nrk5jrx54a3v6473qsjnz5wksysy8p4zpisvnxyfb"))))
+    (properties `((upstream-name . "illuminaRatv1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-rn-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaRatv1.db")
+    (synopsis "Illumina Ratv1 annotation data (chip illuminaRatv1)")
+    (description
+     "Illumina Ratv1 annotation data (chip @code{illuminaRatv1}) assembled using data
+from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminamousev2-db
+  (package
+    (name "r-illuminamousev2-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaMousev2.db" version
+                              'annotation))
+       (sha256
+        (base32 "0vwi309ymhrbpa9dyk0fwqy7bfwvvp67q39xjav1s9npi3slv1h3"))))
+    (properties `((upstream-name . "illuminaMousev2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaMousev2.db")
+    (synopsis "Illumina MouseWG6v2 annotation data (chip illuminaMousev2)")
+    (description
+     "Illumina @code{MouseWG6v2} annotation data (chip @code{illuminaMousev2})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminamousev1p1-db
+  (package
+    (name "r-illuminamousev1p1-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaMousev1p1.db" version
+                              'annotation))
+       (sha256
+        (base32 "1sxqwrc3697361jp69xy9g8w5a699ifjvldqi9ks538h5yc157z1"))))
+    (properties `((upstream-name . "illuminaMousev1p1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaMousev1p1.db")
+    (synopsis "Illumina MouseWG6v1p1 annotation data (chip illuminaMousev1p1)")
+    (description
+     "Illumina @code{MouseWG6v1p1} annotation data (chip @code{illuminaMousev1p1})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminamousev1-db
+  (package
+    (name "r-illuminamousev1-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaMousev1.db" version
+                              'annotation))
+       (sha256
+        (base32 "0w2iziiw8axd1wll3h3vpwn4zr117y5v7c5ji121dh8yzkn1r2ng"))))
+    (properties `((upstream-name . "illuminaMousev1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaMousev1.db")
+    (synopsis "Illumina MouseWG6v1 annotation data (chip illuminaMousev1)")
+    (description
+     "Illumina @code{MouseWG6v1} annotation data (chip @code{illuminaMousev1})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanwgdaslv4-db
+  (package
+    (name "r-illuminahumanwgdaslv4-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanWGDASLv4.db" version
+                              'annotation))
+       (sha256
+        (base32 "0hirbzmfw08b1p3lga00yvfvpnvhij1fayhikc3l9n2sjxkba2xl"))))
+    (properties `((upstream-name . "illuminaHumanWGDASLv4.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanWGDASLv4.db")
+    (synopsis
+     "Illumina HumanWGDASLv4 annotation data (chip illuminaHumanWGDASLv4)")
+    (description
+     "Illumina @code{HumanWGDASLv4} annotation data (chip
+@code{illuminaHumanWGDASLv4}) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanwgdaslv3-db
+  (package
+    (name "r-illuminahumanwgdaslv3-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanWGDASLv3.db" version
+                              'annotation))
+       (sha256
+        (base32 "0qcr9yx0xxqxmxl0lcl38lnj41nzxd581vp6fyz2y9z8041jar3a"))))
+    (properties `((upstream-name . "illuminaHumanWGDASLv3.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanWGDASLv3.db")
+    (synopsis
+     "Illumina HumanHT12WGDASLv3 annotation data (chip illuminaHumanWGDASLv3)")
+    (description
+     "Illumina @code{HumanHT12WGDASLv3} annotation data (chip
+@code{illuminaHumanWGDASLv3}) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanv4-db
+  (package
+    (name "r-illuminahumanv4-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanv4.db" version
+                              'annotation))
+       (sha256
+        (base32 "11gf6gcbkhvvhca02mbx4rjs07lcnsj6hk0sdqhaczwcwzb4ha1n"))))
+    (properties `((upstream-name . "illuminaHumanv4.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanv4.db")
+    (synopsis "Illumina HumanHT12v4 annotation data (chip illuminaHumanv4)")
+    (description
+     "Illumina @code{HumanHT12v4} annotation data (chip @code{illuminaHumanv4})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanv3-db
+  (package
+    (name "r-illuminahumanv3-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanv3.db" version
+                              'annotation))
+       (sha256
+        (base32 "06rsa36lb3nnk2bc65774v7m3r08h7qv6320ax6ib5si2p6wk86f"))))
+    (properties `((upstream-name . "illuminaHumanv3.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanv3.db")
+    (synopsis "Illumina HumanHT12v3 annotation data (chip illuminaHumanv3)")
+    (description
+     "Illumina @code{HumanHT12v3} annotation data (chip @code{illuminaHumanv3})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanv2beadid-db
+  (package
+    (name "r-illuminahumanv2beadid-db")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanv2BeadID.db" version
+                              'annotation))
+       (sha256
+        (base32 "048znqv200bn5zgikmqzb7dazrys6h5sa1fhybi2x50k203yrslp"))))
+    (properties `((upstream-name . "illuminaHumanv2BeadID.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanv2BeadID.db")
+    (synopsis
+     "Illumina HumanWGv2 annotation data (chip illuminaHumanv2BeadID)")
+    (description
+     "Illumina @code{HumanWGv2} annotation data (chip @code{illuminaHumanv2BeadID})
+assembled using data from public repositories to be used with data summarized
+from bead-level data with numeric @code{ArrayAddressIDs} as keys.  Illumina
+probes with a No match or Bad quality score were removed prior to annotation.
+See http://www.compbio.group.cam.ac.uk/Resources/Annotation/index.html and
+Barbosa-Morais et al (2010) A re-annotation pipeline for Illumina
+@code{BeadArrays}: improving the interpretation of gene expression data.
+Nucleic Acids Research.")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanv2-db
+  (package
+    (name "r-illuminahumanv2-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanv2.db" version
+                              'annotation))
+       (sha256
+        (base32 "12pvq269glvk199996s5rcsyzkxyi2ixqrbpdanlw09x5igvfpk6"))))
+    (properties `((upstream-name . "illuminaHumanv2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanv2.db")
+    (synopsis "Illumina HumanWG6v2 annotation data (chip illuminaHumanv2)")
+    (description
+     "Illumina @code{HumanWG6v2} annotation data (chip @code{illuminaHumanv2})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanv1-db
+  (package
+    (name "r-illuminahumanv1-db")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "illuminaHumanv1.db" version
+                              'annotation))
+       (sha256
+        (base32 "1bd98sskkjqlrshmhkwdhfspyznsjissyk77x373rmq18nb0pjp9"))))
+    (properties `((upstream-name . "illuminaHumanv1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/illuminaHumanv1.db")
+    (synopsis "Illumina HumanWG6v1 annotation data (chip illuminaHumanv1)")
+    (description
+     "Illumina @code{HumanWG6v1} annotation data (chip @code{illuminaHumanv1})
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanmethylationepicanno-ilm10b3-hg19
+  (package
+    (name "r-illuminahumanmethylationepicanno-ilm10b3-hg19")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaHumanMethylationEPICanno.ilm10b3.hg19"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "1rdkvbpbz8a8bd9ipycfmgn8a3x519abhwywka21ii9ziv3s6ah6"))))
+    (properties `((upstream-name . "IlluminaHumanMethylationEPICanno.ilm10b3.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page "https://bitbucket.com/kasperdanielhansen/Illumina_EPIC")
+    (synopsis "Annotation for Illumina's EPIC methylation arrays")
+    (description
+     "An annotation package for Illumina's EPIC methylation arrays.")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanmethylationepicanno-ilm10b2-hg19
+  (package
+    (name "r-illuminahumanmethylationepicanno-ilm10b2-hg19")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaHumanMethylationEPICanno.ilm10b2.hg19"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "0sfdx0lpiw3l4passx93pjfswd0iv3hxdc7ciazh53baib3xpv2d"))))
+    (properties `((upstream-name . "IlluminaHumanMethylationEPICanno.ilm10b2.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page "https://bitbucket.com/kasperdanielhansen/Illumina_EPIC")
+    (synopsis "Annotation for Illumina's EPIC methylation arrays")
+    (description
+     "An annotation package for Illumina's EPIC methylation arrays.")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanmethylation450kprobe
+  (package
+    (name "r-illuminahumanmethylation450kprobe")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaHumanMethylation450kprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1iah0rw7d8qvgwvn6n2l4cln39ky010gqpd9shml45m48m6whiia"))))
+    (properties `((upstream-name . "IlluminaHumanMethylation450kprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/IlluminaHumanMethylation450kprobe")
+    (synopsis
+     "Probe sequence data for microarrays of type IlluminaHumanMethylation450k")
+    (description
+     "Probe sequences from Illumina (ftp.illumina.com) for hm450 probes")
+    (license license:lgpl2.0+)))
+
+(define-public r-illuminahumanmethylation27kmanifest
+  (package
+    (name "r-illuminahumanmethylation27kmanifest")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaHumanMethylation27kmanifest" version
+                              'annotation))
+       (sha256
+        (base32 "1kvz6z7g61zdrc1i93wsk1zv5mwcswfkxkl114644q09djwbz1fx"))))
+    (properties `((upstream-name . "IlluminaHumanMethylation27kmanifest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page
+     "https://bioconductor.org/packages/IlluminaHumanMethylation27kmanifest")
+    (synopsis "Annotation for Illumina's 27k methylation arrays")
+    (description "Manifest for Illumina's 27k array data")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanmethylation27kanno-ilmn12-hg19
+  (package
+    (name "r-illuminahumanmethylation27kanno-ilmn12-hg19")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaHumanMethylation27kanno.ilmn12.hg19"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "0idy6xn3x5c640d47q52na03s29pj4l38dpxy8q9mh6hy8g29vp3"))))
+    (properties `((upstream-name . "IlluminaHumanMethylation27kanno.ilmn12.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page
+     "https://bioconductor.org/packages/IlluminaHumanMethylation27kanno.ilmn12.hg19")
+    (synopsis "Annotation for Illumina's 27k methylation arrays")
+    (description
+     "An annotation package for Illumina's EPIC methylation arrays.")
+    (license license:artistic2.0)))
+
+(define-public r-illuminahumanmethylation27k-db
+  (package
+    (name "r-illuminahumanmethylation27k-db")
+    (version "1.4.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaHumanMethylation27k.db" version
+                              'annotation))
+       (sha256
+        (base32 "0zw0n4a9v42ifmvw2hfzzvl8jz1d7f00ia59ljhcvvw9aj12q4zs"))))
+    (properties `((upstream-name . "IlluminaHumanMethylation27k.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/IlluminaHumanMethylation27k.db")
+    (synopsis
+     "Illumina Illumina Human Methylation 27k annotation data (chip IlluminaHumanMethylation27k)")
+    (description
+     "Illumina Illumina Human Methylation 27k annotation data (chip
+@code{IlluminaHumanMethylation27k}) assembled using data from public
+repositories")
+    (license license:artistic2.0)))
+
+(define-public r-illuminadatatestfiles
+  (package
+    (name "r-illuminadatatestfiles")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IlluminaDataTestFiles" version
+                              'experiment))
+       (sha256
+        (base32 "08fb7aywjjka5lrpb46cd322sfnhcch5ilf5aq0a2sdq12m2psyi"))))
+    (properties `((upstream-name . "IlluminaDataTestFiles")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/IlluminaDataTestFiles")
+    (synopsis "Illumina microarray files (IDAT) for testing")
+    (description
+     "Example data for Illumina microarray output files, for testing purposes")
+    (license license:artistic2.0)))
+
+(define-public r-ihwpaper
+  (package
+    (name "r-ihwpaper")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "IHWpaper" version
+                              'experiment))
+       (sha256
+        (base32 "06qbcnq2i0qjc4xqld3gd8746qpvxy4avqba82vzdk0h95kxirmj"))))
+    (properties `((upstream-name . "IHWpaper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-rcpp
+                             r-qvalue
+                             r-ihw
+                             r-ggplot2
+                             r-genefilter
+                             r-fdrtool
+                             r-dplyr
+                             r-deseq2
+                             r-cowplot
+                             r-biocparallel
+                             r-biocgenerics
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/IHWpaper")
+    (synopsis "Reproduce figures in IHW paper")
+    (description
+     "This package conveniently wraps all functions needed to reproduce the figures in
+the IHW paper (https://www.nature.com/articles/nmeth.3885) and the data analysis
+in https://rss.onlinelibrary.wiley.com/doi/10.1111/rssb.12411, cf.  the
+@code{arXiv} preprint (http://arxiv.org/abs/1701.05179).  Thus it is a companion
+package to the Bioconductor IHW package.")
+    (license license:artistic2.0)))
 
 (define-public r-igvr
   (package
@@ -2094,7 +2598,7 @@ information with transcript expression analysis.")
         (base32 "1jppg7r2xckw6pki3vj0j46v19ryhqsr05rk43vjfz876myprnkd"))))
     (properties `((upstream-name . "ibh")))
     (build-system r-build-system)
-    (propagated-inputs (list))
+    (propagated-inputs (list r-simpintlists))
     (home-page "https://bioconductor.org/packages/ibh")
     (synopsis "Interaction Based Homogeneity for Evaluating Gene Lists")
     (description

@@ -8,6 +8,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages web)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -22,6 +23,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -109,5 +111,112 @@ expression traits.  This package implements the camera method from the limma
 package proposed by Wu and Smyth (2012).  Zenith is a simple extension of camera
 to be compatible with linear mixed models implemented in
 @code{variancePartition::dream}().")
+    (license license:artistic2.0)))
+
+(define-public r-zebrafishrnaseq
+  (package
+    (name "r-zebrafishrnaseq")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "zebrafishRNASeq" version
+                              'experiment))
+       (sha256
+        (base32 "0fhsg1j40rkzxphnq7gl98zyqijacmfrjf4ffmbvr70mxw3zysgz"))))
+    (properties `((upstream-name . "zebrafishRNASeq")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/zebrafishRNASeq")
+    (synopsis
+     "Zebrafish RNA-Seq Experimental Data from Ferreira et al. (2014)")
+    (description
+     "Gene-level read counts from RNA-Seq for gallein-treated and control zebrafish.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-zebrafishprobe
+  (package
+    (name "r-zebrafishprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "zebrafishprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1pb8z2rdhq11hq391xyi236scyafbp56kbhhwsnha36yygz5drw0"))))
+    (properties `((upstream-name . "zebrafishprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/zebrafishprobe")
+    (synopsis "Probe sequence data for microarrays of type zebrafish")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Zebrafish\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-zebrafishcdf
+  (package
+    (name "r-zebrafishcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "zebrafishcdf" version
+                              'annotation))
+       (sha256
+        (base32 "0sq1xqhblbilvaiabhqyl9gxdj3jg576vgq8v0cls1zvvx0isrx0"))))
+    (properties `((upstream-name . "zebrafishcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/zebrafishcdf")
+    (synopsis "zebrafishcdf")
+    (description
+     "This package provides a package containing an environment representing the
+Zebrafish.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-zebrafish-db0
+  (package
+    (name "r-zebrafish-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "zebrafish.db0" version
+                              'annotation))
+       (sha256
+        (base32 "0qrd1b5l936jf30dnnmmi5fighwg4zmhz62acq6qzi4r7668g6sk"))))
+    (properties `((upstream-name . "zebrafish.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/zebrafish.db0")
+    (synopsis "Base Level Annotation databases for zebrafish")
+    (description
+     "Base annotation databases for zebrafish, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-zebrafish-db
+  (package
+    (name "r-zebrafish-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "zebrafish.db" version
+                              'annotation))
+       (sha256
+        (base32 "13a65jxr3r5qjf82h1dr0k9qq20g14canqgqdd11k9gk5h31xhc7"))))
+    (properties `((upstream-name . "zebrafish.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-dr-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/zebrafish.db")
+    (synopsis
+     "Affymetrix Affymetrix Zebrafish Array annotation data (chip zebrafish)")
+    (description
+     "Affymetrix Affymetrix Zebrafish Array annotation data (chip zebrafish) assembled
+using data from public repositories")
     (license license:artistic2.0)))
 

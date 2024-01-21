@@ -10,6 +10,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages compression)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -23,6 +24,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -69,6 +71,28 @@ described in (Meng H, et al.  P@code{LoS} Comput Biol.  2019).  For questions,
 contact Chris Bolen (cbolen1@@gmail.com) or Steven Kleinstein
 (steven.kleinstein@@yale.edu)")
     (license license:gpl2+)))
+
+(define-public r-qubicdata
+  (package
+    (name "r-qubicdata")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "QUBICdata" version
+                              'experiment))
+       (sha256
+        (base32 "0apbndslrdrflmwvz456q31x3mr1p7v7kpbl0fp0hajadjb38aha"))))
+    (properties `((upstream-name . "QUBICdata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "http://github.com/zy26/QUBICdata")
+    (synopsis "Data employed in the vignette of the QUBIC package")
+    (description
+     "The data employed in the vignette of the QUBIC package.  These data belong to
+Many Microbe Microarrays Database and STRING v10.")
+    (license (list (license:fsdg-compatible "Unlimited")
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-qubic
   (package
@@ -362,6 +386,27 @@ MBD-seq, CMS-seq and others) including calculation of differential enrichment
 between groups of samples.")
     (license license:gpl2)))
 
+(define-public r-qplexdata
+  (package
+    (name "r-qplexdata")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "qPLEXdata" version
+                              'experiment))
+       (sha256
+        (base32 "0l6agwhqsm5z98j0hm1h7df6lrq7rgwch99a33532f5zmn6bq7xa"))))
+    (properties `((upstream-name . "qPLEXdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qplexanalyzer r-msnbase r-knitr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/qPLEXdata")
+    (synopsis "Data accompanying qPLEXanalyzer package")
+    (description
+     "@code{qPLEX-RIME} and Full proteome TMT mass spectrometry datasets.")
+    (license license:gpl2)))
+
 (define-public r-qplexanalyzer
   (package
     (name "r-qplexanalyzer")
@@ -493,6 +538,46 @@ also offers a convenient way to compute empirical Bayes statistics for which
 metabolic features are different between two sets of study samples.  Several
 functions in this package could also be used in other types of omics data.")
     (license license:gpl3)))
+
+(define-public r-qdnaseq-mm10
+  (package
+    (name "r-qdnaseq-mm10")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "QDNAseq.mm10" version
+                              'experiment))
+       (sha256
+        (base32 "0x54ncmxqb1qci41qy7q9gskx7zp1rcpad3wvil023h81l1s5pg6"))))
+    (properties `((upstream-name . "QDNAseq.mm10")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qdnaseq))
+    (home-page "https://github.com/tgac-vumc/QDNAseq.mm10")
+    (synopsis "Bin annotation mm10")
+    (description
+     "This package provides QDNAseq bin annotations for the mouse genome build mm10.")
+    (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-qdnaseq-hg19
+  (package
+    (name "r-qdnaseq-hg19")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "QDNAseq.hg19" version
+                              'experiment))
+       (sha256
+        (base32 "01fnbbkyfpim0xh6v0bm553pmrg9n3bnwn4adds0p47lai1n7dr8"))))
+    (properties `((upstream-name . "QDNAseq.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qdnaseq))
+    (home-page "https://github.com/tgac-vumc/QDNAseq.hg19")
+    (synopsis "QDNAseq bin annotation for hg19")
+    (description
+     "This package provides QDNAseq bin annotations for the human genome build hg19.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-qcmetrics
   (package

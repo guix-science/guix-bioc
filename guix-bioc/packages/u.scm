@@ -13,6 +13,7 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages s)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -26,6 +27,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -128,6 +130,29 @@ variations.  The input format is vcf/ vcf.gz and the files have to contain a
 single cancer cell line sample (i.e.  a single member/genotype/gt column in the
 vcf file).")
     (license license:artistic2.0)))
+
+(define-public r-uniprotkeywords
+  (package
+    (name "r-uniprotkeywords")
+    (version "0.99.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "UniProtKeywords" version
+                              'annotation))
+       (sha256
+        (base32 "10id2lk2mbccay7p44pk58zhkiqc58x237qr76plivgpcc8xhjzq"))))
+    (properties `((upstream-name . "UniProtKeywords")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jokergoo/UniProtKeywords")
+    (synopsis "Keywords from UniProt Database")
+    (description
+     "@code{UniProt} database provides a list of controlled vocabulary represented as
+keywords for genes or proteins.  This is useful for summarizing gene functions
+in a compact way.  This package provides data of keywords hierarchy and
+gene-keyword relations.")
+    (license license:expat)))
 
 (define-public r-uniprot-ws
   (package
@@ -314,6 +339,7 @@ integrated information from a UMI-4C assay.")
                              r-plotgardener
                              r-organism-dplyr
                              r-moments
+                             r-mirbase-db
                              r-gsubfn
                              r-ggrepel
                              r-ggplot2
@@ -338,4 +364,113 @@ integrated information from a UMI-4C assay.")
 and analysis tools for splicing analysis.  Users can assess backsplice junctions
 and forward canonical junctions.")
     (license (license:fsdg-compatible "file://LICENSE"))))
+
+(define-public r-ucscrepeatmasker
+  (package
+    (name "r-ucscrepeatmasker")
+    (version "3.15.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "UCSCRepeatMasker" version
+                              'annotation))
+       (sha256
+        (base32 "0hi1h8vvbf27wk13gbfgm0amjqgl7b2qxlgakcbr87qxwbi02zv7"))))
+    (properties `((upstream-name . "UCSCRepeatMasker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-rcurl r-genomeinfodb r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/UCSCRepeatMasker")
+    (synopsis "UCSC RepeatMasker AnnotationHub resource metadata")
+    (description
+     "Store UCSC @code{RepeatMasker} @code{AnnotationHub} resource metadata.  Provide
+provenance and citation information for UCSC @code{RepeatMasker}
+@code{AnnotationHub} resources.  Illustrate in a vignette how to access those
+resources.")
+    (license license:artistic2.0)))
+
+(define-public r-u133x3pprobe
+  (package
+    (name "r-u133x3pprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "u133x3pprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0xzm6dkf78mp1yhdl3w0hg36saxgb4sxnq0dsvzjmfaca74ir2qy"))))
+    (properties `((upstream-name . "u133x3pprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/u133x3pprobe")
+    (synopsis "Probe sequence data for microarrays of type u133x3p")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was U133\\_X3P\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-u133x3pcdf
+  (package
+    (name "r-u133x3pcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "u133x3pcdf" version
+                              'annotation))
+       (sha256
+        (base32 "05bdb5bz1ffv7dhbzn0s5ybygah72zvhz8zcj8bn9dg0k40yqsrb"))))
+    (properties `((upstream-name . "u133x3pcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/u133x3pcdf")
+    (synopsis "u133x3pcdf")
+    (description
+     "This package provides a package containing an environment representing the
+U133_X3P.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-u133x3p-db
+  (package
+    (name "r-u133x3p-db")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "u133x3p.db" version
+                              'annotation))
+       (sha256
+        (base32 "17wq16zhmpjpyxfhwr57kx61b4i87jkzza8qkqmcd6kcrhqkj92y"))))
+    (properties `((upstream-name . "u133x3p.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/u133x3p.db")
+    (synopsis "Affymetrix Human X3P Array annotation data (chip u133x3p)")
+    (description
+     "Affymetrix Human X3P Array annotation data (chip u133x3p) assembled using data
+from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-u133aaofav2cdf
+  (package
+    (name "r-u133aaofav2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "u133aaofav2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "052hs4lwllq0p0fsx5d1ixqhrdl889k14z10kahpsjn60746qarm"))))
+    (properties `((upstream-name . "u133aaofav2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/u133aaofav2cdf")
+    (synopsis "u133aaofav2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+U133A@code{AofAv2.CDF} file.")
+    (license license:lgpl2.0+)))
 

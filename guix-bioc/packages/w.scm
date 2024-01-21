@@ -12,6 +12,7 @@
   #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages e)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages v)
   #:use-module (guix-bioc packages u)
@@ -25,6 +26,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -76,6 +78,120 @@ The algorithm for placing the samples is inspired by the backtracking algorithm:
 the samples are placed at random while respecting specific spatial constraints.")
     (license license:artistic2.0)))
 
+(define-public r-worm-db0
+  (package
+    (name "r-worm-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "worm.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1kiv5a7mxak12m58c7p9m10k4ip6v63ycgj9mfawa8i70cp1dvap"))))
+    (properties `((upstream-name . "worm.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/worm.db0")
+    (synopsis "Base Level Annotation databases for worm")
+    (description
+     "Base annotation databases for worm, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-wheatprobe
+  (package
+    (name "r-wheatprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "wheatprobe" version
+                              'annotation))
+       (sha256
+        (base32 "1fifi3pvzdrg356idwz0kx7qlf5mssdxlyvwpn3cjgw0z7n7cnw8"))))
+    (properties `((upstream-name . "wheatprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/wheatprobe")
+    (synopsis "Probe sequence data for microarrays of type wheat")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was wheat\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-wheatcdf
+  (package
+    (name "r-wheatcdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "wheatcdf" version
+                              'annotation))
+       (sha256
+        (base32 "1gmbrdilqvm54h6nkb1cm01ki8aipiywd4qj8gpwlm2hqrimr8kr"))))
+    (properties `((upstream-name . "wheatcdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/wheatcdf")
+    (synopsis "wheatcdf")
+    (description
+     "This package provides a package containing an environment representing the
+wheat.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-wgsmapp
+  (package
+    (name "r-wgsmapp")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "WGSmapp" version
+                              'experiment))
+       (sha256
+        (base32 "0yv323mkv681f20dzjh1xaz19xbn4j777xxlmq27rvmk3j1vfah9"))))
+    (properties `((upstream-name . "WGSmapp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicranges))
+    (home-page "https://bioconductor.org/packages/WGSmapp")
+    (synopsis
+     "Mappability tracks of Whole-genome Sequencing from the ENCODE Project")
+    (description
+     "This package provides whole-genome mappability tracks on human hg19/hg38
+assembly.  We employed the 100-mers mappability track from the ENCODE Project
+and computed weighted average of the mappability scores if multiple ENCODE
+regions overlap with the same bin. “Blacklist” bins, including segmental
+duplication regions and gaps in reference assembly from telomere, centromere,
+and/or heterochromatin regions are included.  The dataset consists of three
+assembled .bam files of single-cell whole genome sequencing from 10X for
+illustration purposes.")
+    (license license:gpl2)))
+
+(define-public r-wes-1kg-wugsc
+  (package
+    (name "r-wes-1kg-wugsc")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "WES.1KG.WUGSC" version
+                              'experiment))
+       (sha256
+        (base32 "1p8z4p1s5l4hlp78ifiy3gan1n8iljaafbqv88vxwbjh2x9gfnjl"))))
+    (properties `((upstream-name . "WES.1KG.WUGSC")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/WES.1KG.WUGSC")
+    (synopsis
+     "Whole Exome Sequencing (WES) of chromosome 22 401st to 500th exon from the 1000 Genomes (1KG) Project by the Washington University Genome Sequencing Center (WUGSC)")
+    (description
+     "The assembled .bam files of whole exome sequencing data from the 1000 Genomes
+Project.  46 samples sequenced by the Washington University Genome Sequencing
+Center are included.")
+    (license license:gpl2)))
+
 (define-public r-weitrix
   (package
     (name "r-weitrix")
@@ -122,6 +238,33 @@ missing values, rotated so that individual components may be meaningfully
 interpreted. @code{DelayedArray} matrices and @code{BiocParallel} are supported.")
     (license (list license:lgpl2.1
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-weberdivechalcdata
+  (package
+    (name "r-weberdivechalcdata")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "WeberDivechaLCdata" version
+                              'experiment))
+       (sha256
+        (base32 "1r6an1lxjsrdi4y0prfyy9jjjazicy9bwykinf5dvkac2h3zhs81"))))
+    (properties `((upstream-name . "WeberDivechaLCdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatialexperiment r-singlecellexperiment
+                             r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lmweber/WeberDivechaLCdata")
+    (synopsis
+     "Spatially-resolved transcriptomics and single-nucleus RNA-sequencing data from the locus coeruleus (LC) in postmortem human brain samples")
+    (description
+     "Spatially-resolved transcriptomics (SRT) and single-nucleus RNA-sequencing
+(@code{snRNA-seq}) data from the locus coeruleus (LC) in postmortem human brain
+samples.  Data were generated with the 10x Genomics Visium SRT and 10x Genomics
+Chromium @code{snRNA-seq} platforms.  Datasets are stored in
+@code{SpatialExperiment} and @code{SingleCellExperiment} formats.")
+    (license license:expat)))
 
 (define-public r-weaver
   (package

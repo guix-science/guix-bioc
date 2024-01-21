@@ -10,6 +10,7 @@
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages c)
@@ -24,6 +25,7 @@
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages m)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -38,6 +40,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -325,6 +328,68 @@ outside main memory.  A buffer is used to speed up access to data.")
     (description "CNV analysis in groups of tumor samples.")
     (license license:lgpl3+)))
 
+(define-public r-bsubtilisprobe
+  (package
+    (name "r-bsubtilisprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bsubtilisprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0k99hvgaswn96x4yanvr9cy8bdy69sd5q7yp6dj9synxj7s1fcw9"))))
+    (properties `((upstream-name . "bsubtilisprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/bsubtilisprobe")
+    (synopsis "Probe sequence data for microarrays of type bsubtilis")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Bsubtilis\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-bsubtiliscdf
+  (package
+    (name "r-bsubtiliscdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bsubtiliscdf" version
+                              'annotation))
+       (sha256
+        (base32 "1rihrjim37b49rhqr4nxga8sp67qri9xqlqc141mhbngh6cw3iyl"))))
+    (properties `((upstream-name . "bsubtiliscdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/bsubtiliscdf")
+    (synopsis "bsubtiliscdf")
+    (description
+     "This package provides a package containing an environment representing the
+Bsubtilis.CDF file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-bsseqdata
+  (package
+    (name "r-bsseqdata")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bsseqData" version
+                              'experiment))
+       (sha256
+        (base32 "15fyv6l6bsa4fk4qxpfgxgw5aq1dd3pry84zapklijxm24g6yl6j"))))
+    (properties `((upstream-name . "bsseqData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsseq))
+    (home-page "https://bioconductor.org/packages/bsseqData")
+    (synopsis "Example whole genome bisulfite data for the bsseq package")
+    (description "Example whole genome bisulfite data for the bsseq package")
+    (license license:artistic2.0)))
+
 (define-public r-bsgenomeforge
   (package
     (name "r-bsgenomeforge")
@@ -355,6 +420,2346 @@ package allows the user to create a BSgenome data package in one function call,
 simplifying the old seed-based process.")
     (license license:artistic2.0)))
 
+(define-public r-bsgenome-vvinifera-urgi-iggp8x
+  (package
+    (name "r-bsgenome-vvinifera-urgi-iggp8x")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Vvinifera.URGI.IGGP8X" version
+                              'annotation))
+       (sha256
+        (base32 "0v0hi2pbbi5ynd92bvbv4bzr7bgv48kvyz62hdv7k9gh7s5pg0id"))))
+    (properties `((upstream-name . "BSgenome.Vvinifera.URGI.IGGP8X")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Vvinifera.URGI.IGGP8X")
+    (synopsis
+     "Full reference nuclear genome sequences for Vitis vinifera subsp. vinifera PN40024 (IGGP version 8X)")
+    (description
+     "Full reference nuclear genome sequences for Vitis vinifera subsp.  vinifera
+PN40024 (derived from Pinot Noir and close to homozygosity after 6-9 rounds of
+selfing) as assembled by the IGGP (version 8X) and available at the URGI (INRA).
+ More details in Jaillon et al (Nature, 2007).")
+    (license license:cc0)))
+
+(define-public r-bsgenome-vvinifera-urgi-iggp12xv2
+  (package
+    (name "r-bsgenome-vvinifera-urgi-iggp12xv2")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Vvinifera.URGI.IGGP12Xv2" version
+                              'annotation))
+       (sha256
+        (base32 "1saavsi75gw33jphhm3qb5psyfrv850ss4cmqr4i7aw1kc0fvs1j"))))
+    (properties `((upstream-name . "BSgenome.Vvinifera.URGI.IGGP12Xv2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Vvinifera.URGI.IGGP12Xv2")
+    (synopsis
+     "Full reference nuclear genome sequences for Vitis vinifera subsp. vinifera PN40024 (IGGP version 12Xv2)")
+    (description
+     "Full reference nuclear genome sequences for Vitis vinifera subsp.  vinifera
+PN40024 (derived from Pinot Noir and close to homozygosity after 6-9 rounds of
+selfing) as assembled by the IGGP (version 12Xv2) and available at the URGI
+(INRA)")
+    (license license:cc0)))
+
+(define-public r-bsgenome-vvinifera-urgi-iggp12xv0
+  (package
+    (name "r-bsgenome-vvinifera-urgi-iggp12xv0")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Vvinifera.URGI.IGGP12Xv0" version
+                              'annotation))
+       (sha256
+        (base32 "1m8mqkiqs7291hccb8pfyf2yxpky45qr6j3d9wkvp9x3ra3h0yxf"))))
+    (properties `((upstream-name . "BSgenome.Vvinifera.URGI.IGGP12Xv0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Vvinifera.URGI.IGGP12Xv0")
+    (synopsis
+     "Full reference nuclear genome sequences for Vitis vinifera subsp. vinifera PN40024 (IGGP version 12Xv0)")
+    (description
+     "Full reference nuclear genome sequences for Vitis vinifera subsp.  vinifera
+PN40024 (derived from Pinot Noir and close to homozygosity after 6-9 rounds of
+selfing) as assembled by the IGGP (version 12Xv0) and available at the URGI
+(INRA)")
+    (license license:cc0)))
+
+(define-public r-bsgenome-tguttata-ucsc-taegut2
+  (package
+    (name "r-bsgenome-tguttata-ucsc-taegut2")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Tguttata.UCSC.taeGut2" version
+                              'annotation))
+       (sha256
+        (base32 "1ikbd5q77l2zmbmbm511s41h00627zi0gq31cm4qr3k1cvlz8617"))))
+    (properties `((upstream-name . "BSgenome.Tguttata.UCSC.taeGut2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Tguttata.UCSC.taeGut2")
+    (synopsis
+     "Full genome sequences for Taeniopygia guttata (UCSC version taeGut2)")
+    (description
+     "Full genome sequences for Taeniopygia guttata (Zebra finch) as provided by UCSC
+(@code{taeGut2}, Feb.  2013) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-tguttata-ucsc-taegut1-masked
+  (package
+    (name "r-bsgenome-tguttata-ucsc-taegut1-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Tguttata.UCSC.taeGut1.masked" version
+                              'annotation))
+       (sha256
+        (base32 "05g9qp2vkp8ia6kqgy07ihnr1w1ca8c96rg7vfahh2nsr5j6ymba"))))
+    (properties `((upstream-name . "BSgenome.Tguttata.UCSC.taeGut1.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-tguttata-ucsc-taegut1 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Tguttata.UCSC.taeGut1.masked")
+    (synopsis
+     "Full masked genome sequences for Taeniopygia guttata (UCSC version taeGut1)")
+    (description
+     "Full genome sequences for Taeniopygia guttata (Zebra finch) as provided by UCSC
+(@code{taeGut1}, Jul.  2008) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Tguttata.UCSC.@code{taeGut1}, except that each of
+them has the 2 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), and (2) the mask of intra-contig ambiguities (AMB mask).  Both masks are
+\"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-tguttata-ucsc-taegut1
+  (package
+    (name "r-bsgenome-tguttata-ucsc-taegut1")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Tguttata.UCSC.taeGut1" version
+                              'annotation))
+       (sha256
+        (base32 "0v8g4q64pj4mxr8wzyxm9w2d2lyzq1qzl5yvh2dvwpqnghicj10v"))))
+    (properties `((upstream-name . "BSgenome.Tguttata.UCSC.taeGut1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Tguttata.UCSC.taeGut1")
+    (synopsis
+     "Full genome sequences for Taeniopygia guttata (UCSC version taeGut1)")
+    (description
+     "Full genome sequences for Taeniopygia guttata (Zebra finch) as provided by UCSC
+(@code{taeGut1}, Jul.  2008) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-tgondii-toxodb-7-0
+  (package
+    (name "r-bsgenome-tgondii-toxodb-7-0")
+    (version "0.99.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Tgondii.ToxoDB.7.0" version
+                              'annotation))
+       (sha256
+        (base32 "1naxnls0r1r6csfs88mmjnfa7nmsgjx5lngn1ln4llragjrqnngm"))))
+    (properties `((upstream-name . "BSgenome.Tgondii.ToxoDB.7.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Tgondii.ToxoDB.7.0")
+    (synopsis "Toxoplasma gondii ME49 (ToxoDB-7.0)")
+    (description
+     "Toxoplasma gondii ME49 genome Release 7.0 available at http://www.toxodb.org")
+    (license (license:fsdg-compatible "GPL 3"))))
+
+(define-public r-bsgenome-sscrofa-ucsc-susscr3-masked
+  (package
+    (name "r-bsgenome-sscrofa-ucsc-susscr3-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Sscrofa.UCSC.susScr3.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0ym82vysn131anp8zmmkgyx6zmyh44am5i1m3j9kj5lvq874ycha"))))
+    (properties `((upstream-name . "BSgenome.Sscrofa.UCSC.susScr3.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-sscrofa-ucsc-susscr3 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr3.masked")
+    (synopsis
+     "Full masked genome sequences for Sus scrofa (UCSC version susScr3)")
+    (description
+     "Full genome sequences for Sus scrofa (Pig) as provided by UCSC (@code{susScr3},
+Aug.  2011) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Sscrofa.UCSC.@code{susScr3}, except that each of them has the 4
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask
+of intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-sscrofa-ucsc-susscr3
+  (package
+    (name "r-bsgenome-sscrofa-ucsc-susscr3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Sscrofa.UCSC.susScr3" version
+                              'annotation))
+       (sha256
+        (base32 "0l70arnpshiviq3xj61fw87dhf8sggq6k1yryagbhdb40d5cq8lq"))))
+    (properties `((upstream-name . "BSgenome.Sscrofa.UCSC.susScr3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr3")
+    (synopsis "Full genome sequences for Sus scrofa (UCSC version susScr3)")
+    (description
+     "Full genome sequences for Sus scrofa (Pig) as provided by UCSC (@code{susScr3},
+Aug.  2011) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-sscrofa-ucsc-susscr11
+  (package
+    (name "r-bsgenome-sscrofa-ucsc-susscr11")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Sscrofa.UCSC.susScr11" version
+                              'annotation))
+       (sha256
+        (base32 "0m7c2r74qp3rjnkxxyz18gd8xjk2f3cp1cr07bwd8v60mvgdn8cq"))))
+    (properties `((upstream-name . "BSgenome.Sscrofa.UCSC.susScr11")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr11")
+    (synopsis "Full genome sequences for Sus scrofa (UCSC version susScr11)")
+    (description
+     "Full genome sequences for Sus scrofa (Pig) as provided by UCSC (@code{susScr11},
+Feb.  2017) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-scerevisiae-ucsc-saccer3
+  (package
+    (name "r-bsgenome-scerevisiae-ucsc-saccer3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Scerevisiae.UCSC.sacCer3" version
+                              'annotation))
+       (sha256
+        (base32 "1pnd394xfy413nvxq3hrlv33girj8f9kzdzi9gx232lm12av6hxm"))))
+    (properties `((upstream-name . "BSgenome.Scerevisiae.UCSC.sacCer3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Scerevisiae.UCSC.sacCer3")
+    (synopsis
+     "Saccharomyces cerevisiae (Yeast) full genome (UCSC version sacCer3)")
+    (description
+     "Saccharomyces cerevisiae (Yeast) full genome as provided by UCSC
+(@code{sacCer3}, April 2011) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-scerevisiae-ucsc-saccer2
+  (package
+    (name "r-bsgenome-scerevisiae-ucsc-saccer2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Scerevisiae.UCSC.sacCer2" version
+                              'annotation))
+       (sha256
+        (base32 "1ilz326qx1ikapmsz00hg5g6i637qm9kwc21z93q890h7sgaz4k0"))))
+    (properties `((upstream-name . "BSgenome.Scerevisiae.UCSC.sacCer2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Scerevisiae.UCSC.sacCer2")
+    (synopsis
+     "Saccharomyces cerevisiae (Yeast) full genome (UCSC version sacCer2)")
+    (description
+     "Saccharomyces cerevisiae (Yeast) full genome as provided by UCSC
+(@code{sacCer2}, June 2008) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-scerevisiae-ucsc-saccer1
+  (package
+    (name "r-bsgenome-scerevisiae-ucsc-saccer1")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Scerevisiae.UCSC.sacCer1" version
+                              'annotation))
+       (sha256
+        (base32 "1smx3zdmllrx5f1a7hv1w3jc59jwvkd2n37hz6hgb80da7lajn2b"))))
+    (properties `((upstream-name . "BSgenome.Scerevisiae.UCSC.sacCer1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Scerevisiae.UCSC.sacCer1")
+    (synopsis
+     "Saccharomyces cerevisiae (Yeast) full genome (UCSC version sacCer1)")
+    (description
+     "Saccharomyces cerevisiae (Yeast) full genome as provided by UCSC
+(@code{sacCer1}, Oct.  2003) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-rnorvegicus-ucsc-rn7
+  (package
+    (name "r-bsgenome-rnorvegicus-ucsc-rn7")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Rnorvegicus.UCSC.rn7" version
+                              'annotation))
+       (sha256
+        (base32 "0bgmgxk5rq6m42z0mcpvq9i7r8rid3ws80jx5g9kkklv5kglfidy"))))
+    (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn7")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn7")
+    (synopsis "Full genome sequences for Rattus norvegicus (UCSC genome rn7)")
+    (description
+     "Full genome sequences for Rattus norvegicus (Rat) as provided by UCSC (genome
+rn7) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-rnorvegicus-ucsc-rn6
+  (package
+    (name "r-bsgenome-rnorvegicus-ucsc-rn6")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Rnorvegicus.UCSC.rn6" version
+                              'annotation))
+       (sha256
+        (base32 "1lyvf7l5vyrsmjhn5kz0lrj784hd0b0bcrwb4lavd3p5g38b3mmm"))))
+    (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn6")
+    (synopsis "Full genome sequences for Rattus norvegicus (UCSC version rn6)")
+    (description
+     "Full genome sequences for Rattus norvegicus (Rat) as provided by UCSC (rn6, Jul.
+ 2014) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-rnorvegicus-ucsc-rn5-masked
+  (package
+    (name "r-bsgenome-rnorvegicus-ucsc-rn5-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Rnorvegicus.UCSC.rn5.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0ss14nlr6gqs414ckcz4zmyhfrwdp2snw9wh48yk4s8r4ij3z9rj"))))
+    (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn5.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-rnorvegicus-ucsc-rn5 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn5.masked")
+    (synopsis
+     "Full masked genome sequences for Rattus norvegicus (UCSC version rn5)")
+    (description
+     "Full genome sequences for Rattus norvegicus (Rat) as provided by UCSC (rn5, Mar.
+ 2012) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Rnorvegicus.UCSC.rn5, except that each of them has the 4 following
+masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask of
+intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-rnorvegicus-ucsc-rn5
+  (package
+    (name "r-bsgenome-rnorvegicus-ucsc-rn5")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Rnorvegicus.UCSC.rn5" version
+                              'annotation))
+       (sha256
+        (base32 "1s92983m73bi08ihvyd8c17yx29hz5xxrnrs2if8fda4asw1f3f0"))))
+    (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn5")
+    (synopsis "Full genome sequences for Rattus norvegicus (UCSC version rn5)")
+    (description
+     "Full genome sequences for Rattus norvegicus (Rat) as provided by UCSC (rn5, Mar.
+ 2012) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-rnorvegicus-ucsc-rn4-masked
+  (package
+    (name "r-bsgenome-rnorvegicus-ucsc-rn4-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Rnorvegicus.UCSC.rn4.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0jfv1873ab1nwwdr18vrjqcdl4rhv3xgqbf4jfnjk7sjx154pfi6"))))
+    (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn4.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-rnorvegicus-ucsc-rn4 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn4.masked")
+    (synopsis
+     "Full masked genome sequences for Rattus norvegicus (UCSC version rn4)")
+    (description
+     "Full genome sequences for Rattus norvegicus (Rat) as provided by UCSC (rn4, Nov.
+ 2004) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Rnorvegicus.UCSC.rn4, except that each of them has the 4 following
+masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask of
+intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-rnorvegicus-ucsc-rn4
+  (package
+    (name "r-bsgenome-rnorvegicus-ucsc-rn4")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Rnorvegicus.UCSC.rn4" version
+                              'annotation))
+       (sha256
+        (base32 "1aww2bxyqbb81iln3vgrb0659r82v9yv1z41k9r3zws8b7k7df6x"))))
+    (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn4")
+    (synopsis "Full genome sequences for Rattus norvegicus (UCSC version rn4)")
+    (description
+     "Full genome sequences for Rattus norvegicus (Rat) as provided by UCSC (rn4, Nov.
+ 2004) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ptroglodytes-ucsc-pantro6
+  (package
+    (name "r-bsgenome-ptroglodytes-ucsc-pantro6")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ptroglodytes.UCSC.panTro6" version
+                              'annotation))
+       (sha256
+        (base32 "1l1fqnw1iqb2a7kvyvb0m1vdvq6cxs6py92yvbaf4zwklmgmdq0b"))))
+    (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro6")
+    (synopsis
+     "Full genome sequences for Pan troglodytes (UCSC version panTro6)")
+    (description
+     "Full genome sequences for Pan troglodytes (Chimp) as provided by UCSC
+(@code{panTro6}, Jan.  2018) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ptroglodytes-ucsc-pantro5
+  (package
+    (name "r-bsgenome-ptroglodytes-ucsc-pantro5")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ptroglodytes.UCSC.panTro5" version
+                              'annotation))
+       (sha256
+        (base32 "0wxciajcyf0hr6g6zcji125jm18nnspwvnv5x3jibjvxzx55gcds"))))
+    (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro5")
+    (synopsis
+     "Full genome sequences for Pan troglodytes (UCSC version panTro5)")
+    (description
+     "Full genome sequences for Pan troglodytes (Chimp) as provided by UCSC
+(@code{panTro5}, May 2016) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ptroglodytes-ucsc-pantro3-masked
+  (package
+    (name "r-bsgenome-ptroglodytes-ucsc-pantro3-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ptroglodytes.UCSC.panTro3.masked"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "18ga0whdcp5zpigrmh68wjmn99lzvfyvgxjm58y0jx66rmg94mir"))))
+    (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro3.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-ptroglodytes-ucsc-pantro3 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro3.masked")
+    (synopsis
+     "Full masked genome sequences for Pan troglodytes (UCSC version panTro3)")
+    (description
+     "Full genome sequences for Pan troglodytes (Chimp) as provided by UCSC
+(@code{panTro3}, Oct.  2010) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Ptroglodytes.UCSC.@code{panTro3}, except that each
+of them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ptroglodytes-ucsc-pantro3
+  (package
+    (name "r-bsgenome-ptroglodytes-ucsc-pantro3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ptroglodytes.UCSC.panTro3" version
+                              'annotation))
+       (sha256
+        (base32 "1vbfx0zrj4rcwcsm1q09xdiv0mmrycj8223lnxqb8nr5r017f7gm"))))
+    (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro3")
+    (synopsis
+     "Full genome sequences for Pan troglodytes (UCSC version panTro3)")
+    (description
+     "Full genome sequences for Pan troglodytes (Chimp) as provided by UCSC
+(@code{panTro3}, Oct.  2010) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ptroglodytes-ucsc-pantro2-masked
+  (package
+    (name "r-bsgenome-ptroglodytes-ucsc-pantro2-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ptroglodytes.UCSC.panTro2.masked"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "1dy1bf6rsmzv6qj9d2a1sz56w33pk63g3qxm8znfdw11hmdbq9m1"))))
+    (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro2.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-ptroglodytes-ucsc-pantro2 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro2.masked")
+    (synopsis
+     "Full masked genome sequences for Pan troglodytes (UCSC version panTro2)")
+    (description
+     "Full genome sequences for Pan troglodytes (Chimp) as provided by UCSC
+(@code{panTro2}, Mar.  2006) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Ptroglodytes.UCSC.@code{panTro2}, except that each
+of them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ptroglodytes-ucsc-pantro2
+  (package
+    (name "r-bsgenome-ptroglodytes-ucsc-pantro2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ptroglodytes.UCSC.panTro2" version
+                              'annotation))
+       (sha256
+        (base32 "14yvajlldr3qhclg9n2j48q60rgbz6x1ypgzd6dgf4c6jxl90p0q"))))
+    (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro2")
+    (synopsis
+     "Full genome sequences for Pan troglodytes (UCSC version panTro2)")
+    (description
+     "Full genome sequences for Pan troglodytes (Chimp) as provided by UCSC
+(@code{panTro2}, Mar.  2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ppaniscus-ucsc-panpan2
+  (package
+    (name "r-bsgenome-ppaniscus-ucsc-panpan2")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ppaniscus.UCSC.panPan2" version
+                              'annotation))
+       (sha256
+        (base32 "0jbxfix328qzsd94vjh7dlnzpygkdwbglcn4d1pdivm43ggww10a"))))
+    (properties `((upstream-name . "BSgenome.Ppaniscus.UCSC.panPan2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ppaniscus.UCSC.panPan2")
+    (synopsis "Full genome sequences for Pan paniscus (UCSC version panPan2)")
+    (description
+     "Full genome sequences for Pan paniscus (Bonobo) as provided by UCSC
+(@code{panPan2}, Dec.  2015) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ppaniscus-ucsc-panpan1
+  (package
+    (name "r-bsgenome-ppaniscus-ucsc-panpan1")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ppaniscus.UCSC.panPan1" version
+                              'annotation))
+       (sha256
+        (base32 "0schlki35jmv678hgxv7jmrcmbv2wixqhpk18awpr2pwq2j1ahmc"))))
+    (properties `((upstream-name . "BSgenome.Ppaniscus.UCSC.panPan1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ppaniscus.UCSC.panPan1")
+    (synopsis "Full genome sequences for Pan paniscus (UCSC version panPan1)")
+    (description
+     "Full genome sequences for Pan paniscus (Bonobo) as provided by UCSC
+(@code{panPan1}, May 2012) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-osativa-msu-msu7
+  (package
+    (name "r-bsgenome-osativa-msu-msu7")
+    (version "0.99.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Osativa.MSU.MSU7" version
+                              'annotation))
+       (sha256
+        (base32 "1rppki62c916drc24jd2j1cmbhn3x316z16123gc654wj1c5s9vi"))))
+    (properties `((upstream-name . "BSgenome.Osativa.MSU.MSU7")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Osativa.MSU.MSU7")
+    (synopsis "Oryza sativa full genome (MSU7)")
+    (description
+     "Oryza sativa full genome as provided by MSU (MSU7 Genome Release) and stored in
+Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmusculus-ucsc-mm8-masked
+  (package
+    (name "r-bsgenome-mmusculus-ucsc-mm8-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmusculus.UCSC.mm8.masked" version
+                              'annotation))
+       (sha256
+        (base32 "1a2ywmy96cbwmvbdid73c0kln56qrbd7ipfzkzl97f56k3g985j5"))))
+    (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm8.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-mmusculus-ucsc-mm8 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm8.masked")
+    (synopsis
+     "Full masked genome sequences for Mus musculus (UCSC version mm8)")
+    (description
+     "Full genome sequences for Mus musculus (Mouse) as provided by UCSC (mm8, Feb.
+2006) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Mmusculus.UCSC.mm8, except that each of them has the 4 following masks
+on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask of intra-contig
+ambiguities (AMB mask), (3) the mask of repeats from @code{RepeatMasker} (RM
+mask), and (4) the mask of repeats from Tandem Repeats Finder (TRF mask).  Only
+the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmusculus-ucsc-mm8
+  (package
+    (name "r-bsgenome-mmusculus-ucsc-mm8")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmusculus.UCSC.mm8" version
+                              'annotation))
+       (sha256
+        (base32 "1al34aa11d6kr0cr4xrabix1xmqc96zzgik5p4yc8r0rba3n100a"))))
+    (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm8")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm8")
+    (synopsis "Full genome sequences for Mus musculus (UCSC version mm8)")
+    (description
+     "Full genome sequences for Mus musculus (Mouse) as provided by UCSC (mm8, Feb.
+2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmusculus-ucsc-mm39
+  (package
+    (name "r-bsgenome-mmusculus-ucsc-mm39")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmusculus.UCSC.mm39" version
+                              'annotation))
+       (sha256
+        (base32 "0rpxdaa5w0p841kl5h6ngb49zr9q33ad0zgnw9xdpp1vfh0l47xm"))))
+    (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm39")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm39")
+    (synopsis
+     "Full genome sequences for Mus musculus (UCSC genome mm39, based on GRCm39)")
+    (description
+     "Full genome sequences for Mus musculus (Mouse) as provided by UCSC (genome mm39,
+based on assembly GRCm39) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmusculus-ucsc-mm10-masked
+  (package
+    (name "r-bsgenome-mmusculus-ucsc-mm10-masked")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmusculus.UCSC.mm10.masked" version
+                              'annotation))
+       (sha256
+        (base32 "04352r264jmpm5abbcyylz0axw24sm58ki3xvp434kp3cfdx32gc"))))
+    (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm10.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-mmusculus-ucsc-mm10 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm10.masked")
+    (synopsis
+     "Full masked genome sequences for Mus musculus (UCSC genome mm10, based on GRCm38.p6)")
+    (description
+     "Full genome sequences for Mus musculus (Mouse) as provided by UCSC (genome mm10,
+based on GRCm38.p6) and stored in Biostrings objects.  The sequences are the
+same as in BSgenome.Mmusculus.UCSC.mm10, except that each of them has the 2
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), and (2) the
+mask of intra-contig ambiguities (AMB mask).")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmulatta-ucsc-rhemac8
+  (package
+    (name "r-bsgenome-mmulatta-ucsc-rhemac8")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmulatta.UCSC.rheMac8" version
+                              'annotation))
+       (sha256
+        (base32 "18z6vl89jkjzvppz3r93b2s32l17hz6pfp36wv5wvhm0c0rhnhmw"))))
+    (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac8")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac8")
+    (synopsis
+     "Full genome sequences for Macaca mulatta (UCSC version rheMac8)")
+    (description
+     "Full genome sequences for Macaca mulatta (Rhesus) as provided by UCSC
+(@code{rheMac8}, Nov.  2015) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmulatta-ucsc-rhemac3-masked
+  (package
+    (name "r-bsgenome-mmulatta-ucsc-rhemac3-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmulatta.UCSC.rheMac3.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0k3j40hrys60qdij5rsxdzyx9bfmryaki5p7i4d5m0xmldlk9anr"))))
+    (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac3.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-mmulatta-ucsc-rhemac3 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac3.masked")
+    (synopsis
+     "Full masked genome sequences for Macaca mulatta (UCSC version rheMac3)")
+    (description
+     "Full genome sequences for Macaca mulatta (Rhesus) as provided by UCSC
+(@code{rheMac3}, Oct.  2010) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Mmulatta.UCSC.@code{rheMac3}, except that each of
+them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmulatta-ucsc-rhemac3
+  (package
+    (name "r-bsgenome-mmulatta-ucsc-rhemac3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmulatta.UCSC.rheMac3" version
+                              'annotation))
+       (sha256
+        (base32 "0r3v4p567rxcczwqi7zdz7pmdiffgrq83j488libdb4s0hdg5jmi"))))
+    (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac3")
+    (synopsis
+     "Full genome sequences for Macaca mulatta (UCSC version rheMac3)")
+    (description
+     "Full genome sequences for Macaca mulatta (Rhesus) as provided by UCSC
+(@code{rheMac3}, Oct.  2010) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmulatta-ucsc-rhemac2-masked
+  (package
+    (name "r-bsgenome-mmulatta-ucsc-rhemac2-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmulatta.UCSC.rheMac2.masked" version
+                              'annotation))
+       (sha256
+        (base32 "1j4z4iy13n4qbi9a50qw1hn8z14xz0z8hbiwhy2bb9znykkf4chd"))))
+    (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac2.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-mmulatta-ucsc-rhemac2 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac2.masked")
+    (synopsis
+     "Full masked genome sequences for Macaca mulatta (UCSC version rheMac2)")
+    (description
+     "Full genome sequences for Macaca mulatta (Rhesus) as provided by UCSC
+(@code{rheMac2}, Jan.  2006) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Mmulatta.UCSC.@code{rheMac2}, except that each of
+them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.  NOTE: In most assemblies available at UCSC, Tandem Repeats Finder
+repeats were filtered to retain only the repeats with period <= 12.  However,
+the filtering was omitted for this assembly, so the TRF masks contain all Tandem
+Repeats Finder results.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmulatta-ucsc-rhemac2
+  (package
+    (name "r-bsgenome-mmulatta-ucsc-rhemac2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmulatta.UCSC.rheMac2" version
+                              'annotation))
+       (sha256
+        (base32 "15vswd1fq7a7g1dkm0wzkmclih8z373nfzjyc3zrn9l0nawdv9jj"))))
+    (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac2")
+    (synopsis
+     "Full genome sequences for Macaca mulatta (UCSC version rheMac2)")
+    (description
+     "Full genome sequences for Macaca mulatta (Rhesus) as provided by UCSC
+(@code{rheMac2}, Jan.  2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mmulatta-ucsc-rhemac10
+  (package
+    (name "r-bsgenome-mmulatta-ucsc-rhemac10")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mmulatta.UCSC.rheMac10" version
+                              'annotation))
+       (sha256
+        (base32 "06ja5fn3sgk2lmfwf7m5sqcz0dq732v8y4vhc2cnbbvhpyax0mbd"))))
+    (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac10")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac10")
+    (synopsis
+     "Full genome sequences for Macaca mulatta (UCSC version rheMac10)")
+    (description
+     "Full genome sequences for Macaca mulatta (Rhesus) as provided by UCSC
+(@code{rheMac10}, Feb.  2019) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mfuro-ucsc-musfur1
+  (package
+    (name "r-bsgenome-mfuro-ucsc-musfur1")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mfuro.UCSC.musFur1" version
+                              'annotation))
+       (sha256
+        (base32 "0c0569a1k36sk0vzf7afhnfm0n2nwcdp3dc88s1hghpg7lwi9g9j"))))
+    (properties `((upstream-name . "BSgenome.Mfuro.UCSC.musFur1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Mfuro.UCSC.musFur1")
+    (synopsis
+     "Full genome sequences for Mustela putorius furo (UCSC version musFur1)")
+    (description
+     "Full genome sequences for Mustela putorius furo (Ferret) as provided by UCSC
+(@code{musFur1}, Apr.  2011) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mfascicularis-ncbi-6-0
+  (package
+    (name "r-bsgenome-mfascicularis-ncbi-6-0")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mfascicularis.NCBI.6.0" version
+                              'annotation))
+       (sha256
+        (base32 "0zl73jkg56jrvqyqvp67jx63dl8li6pypkgn1dqj959qzdzc57j0"))))
+    (properties `((upstream-name . "BSgenome.Mfascicularis.NCBI.6.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mfascicularis.NCBI.6.0")
+    (synopsis
+     "Full genome sequences for Macaca fascicularis (Macaca_fascicularis_6.0)")
+    (description
+     "Full genome sequences for Macaca fascicularis (Crab-eating macaque) as provided
+by NCBI (assembly Macaca_fascicularis_6.0, assembly accession GCA_011100615.1)
+and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mfascicularis-ncbi-5-0
+  (package
+    (name "r-bsgenome-mfascicularis-ncbi-5-0")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mfascicularis.NCBI.5.0" version
+                              'annotation))
+       (sha256
+        (base32 "1lrdj7aibx4i60hpbaqgk3qir9zjs67mxdgp5jmgmw7gf2nwyn3x"))))
+    (properties `((upstream-name . "BSgenome.Mfascicularis.NCBI.5.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mfascicularis.NCBI.5.0")
+    (synopsis
+     "Full genome sequences for Macaca fascicularis (Macaca_fascicularis_5.0)")
+    (description
+     "Full genome sequences for Macaca fascicularis (long-tailed macaque) as provided
+by NCBI (Macaca_fascicularis_5.0, 2013-06-12) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-mdomestica-ucsc-mondom5
+  (package
+    (name "r-bsgenome-mdomestica-ucsc-mondom5")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Mdomestica.UCSC.monDom5" version
+                              'annotation))
+       (sha256
+        (base32 "16kzb66kjpmf9j92pwh98ah5rhrnfyzdpr0rk659zham6dzga9ck"))))
+    (properties `((upstream-name . "BSgenome.Mdomestica.UCSC.monDom5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Mdomestica.UCSC.monDom5")
+    (synopsis
+     "Full genome sequences for Monodelphis domestica (UCSC version monDom5)")
+    (description
+     "Full genome sequences for Monodelphis domestica (Opossum) as provided by UCSC
+(@code{monDom5}, Oct.  2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-hsapiens-ucsc-hs1
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hs1")
+    (version "1.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hs1" version
+                              'annotation))
+       (sha256
+        (base32 "1y5rxlms9fj20fz32l56i5j1c4fzly5zzvlxz01fs46qimnfb3ms"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hs1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hs1")
+    (synopsis "Full genomic sequences for UCSC genome hs1 (Homo sapiens)")
+    (description
+     "Full genomic sequences for UCSC genome hs1 (the hs1 genome is based on assembly
+T2T-CHM13v2.0, with @code{GenBank} assembly accession GCA_009914755.4).  The
+sequences are stored in DNAString objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-hsapiens-ucsc-hg38-dbsnp151-minor
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hg38-dbsnp151-minor")
+    (version "0.0.9999")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "1xw8vckhsak35r942yyvlrpbhb2w4vzah8wfgmn3vyj1zklk3913"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor")
+    (synopsis
+     "Full genome sequences for Homo sapiens (UCSC version hg38, based on GRCh38.p12) with injected minor alleles (dbSNP151)")
+    (description
+     "Full genome sequences for Homo sapiens (Human) as provided by UCSC (hg38, based
+on GRCh38.p12) with minor alleles injected from @code{dbSNP151}, and stored in
+Biostrings objects.  Full genome sequences for Homo sapiens (Human) as provided
+by UCSC (hg38, based on GRCh38.p12) with minor alleles injected from
+@code{dbSNP151}, and stored in Biostrings objects.  Only common single
+nucleotide variants (SNVs) with at least one alternate allele with frequency
+greater than 0.01 were considered.  For SNVs with more than 1 alternate allele,
+the most frequent allele was chosen as the minor allele to be injected into the
+reference genome.")
+    (license (license:fsdg-compatible "CC BY-NC-ND 4.0"))))
+
+(define-public r-bsgenome-hsapiens-ucsc-hg38-dbsnp151-major
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hg38-dbsnp151-major")
+    (version "0.0.9999")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "0290fk7jvlcb1mh6nlyqagqskfh0dvaysj1d6s15bgygnlm3r726"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major")
+    (synopsis
+     "Full genome sequences for Homo sapiens (UCSC version hg38, based on GRCh38.p12) with injected major alleles (dbSNP151)")
+    (description
+     "Full genome sequences for Homo sapiens (Human) as provided by UCSC (hg38, based
+on GRCh38.p12) with major allele injected from @code{dbSNP151}, and stored in
+Biostrings objects.  Only single nucleotide variants (SNVs) were considered.  At
+each SNV, the most frequent allele was chosen at the major allele to be injected
+into the reference genome.")
+    (license (license:fsdg-compatible "CC BY-NC-ND 4.0"))))
+
+(define-public r-bsgenome-hsapiens-ucsc-hg18-masked
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hg18-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg18.masked" version
+                              'annotation))
+       (sha256
+        (base32 "031sr3y95c32igk3lrrsafdm9i1zprjran8gak06arqc0hvzbfk0"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg18.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-hsapiens-ucsc-hg18 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg18.masked")
+    (synopsis
+     "Full masked genome sequences for Homo sapiens (UCSC version hg18)")
+    (description
+     "Full genome sequences for Homo sapiens (Human) as provided by UCSC (hg18, Mar.
+2006) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Hsapiens.UCSC.hg18, except that each of them has the 4 following masks
+on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask of intra-contig
+ambiguities (AMB mask), (3) the mask of repeats from @code{RepeatMasker} (RM
+mask), and (4) the mask of repeats from Tandem Repeats Finder (TRF mask).  Only
+the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-hsapiens-ucsc-hg18
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hg18")
+    (version "1.3.1000")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg18" version
+                              'annotation))
+       (sha256
+        (base32 "1bd7hn4ksgpyhnbjb9qdqfz5cg6x5lsizbls55v9s9hnvfzq3yi6"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg18")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg18")
+    (synopsis "Full genome sequences for Homo sapiens (UCSC version hg18)")
+    (description
+     "Full genome sequences for Homo sapiens (Human) as provided by UCSC (hg18, Mar.
+2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-hsapiens-ucsc-hg17-masked
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hg17-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg17.masked" version
+                              'annotation))
+       (sha256
+        (base32 "1pg39kmbmnync0xxdbgsn6gpz78hfbzd7iffidpv8mfk734srwzn"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg17.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-hsapiens-ucsc-hg17 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg17.masked")
+    (synopsis
+     "Full masked genome sequences for Homo sapiens (UCSC version hg17)")
+    (description
+     "Full genome sequences for Homo sapiens (Human) as provided by UCSC (hg17, May
+2004) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Hsapiens.UCSC.hg17, except that each of them has the 4 following masks
+on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask of intra-contig
+ambiguities (AMB mask), (3) the mask of repeats from @code{RepeatMasker} (RM
+mask), and (4) the mask of repeats from Tandem Repeats Finder (TRF mask).  Only
+the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-hsapiens-ucsc-hg17
+  (package
+    (name "r-bsgenome-hsapiens-ucsc-hg17")
+    (version "1.3.1000")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg17" version
+                              'annotation))
+       (sha256
+        (base32 "1q8p0zp5xpp22znwnygl3jhc159db4q3kkpj5wfij5a6z19zs1w3"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg17")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg17")
+    (synopsis "Full genome sequences for Homo sapiens (UCSC version hg17)")
+    (description
+     "Full genome sequences for Homo sapiens (Human) as provided by UCSC (hg17, May
+2004) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-hsapiens-ncbi-t2t-chm13v2-0
+  (package
+    (name "r-bsgenome-hsapiens-ncbi-t2t-chm13v2-0")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0" version
+                              'annotation))
+       (sha256
+        (base32 "080zq71fl1cx7sxi2il5v0mfj79hw93qy3fr1514fax8vslh5lfz"))))
+    (properties `((upstream-name . "BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0")
+    (synopsis
+     "T2T-CHM13v2.0 assembly (Homo sapiens) wrapped in a BSgenome object")
+    (description
+     "The T2T-CHM13v2.0 assembly (accession GCA_009914755.4), as submitted to NCBI by
+the T2T Consortium, and wrapped in a BSgenome object.  Companion paper: \"The
+complete sequence of a human genome\" by Nurk S, Koren S, Rhie A, Rautiainen M,
+et al.  Science, 2022.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-gmax-ncbi-gmv40
+  (package
+    (name "r-bsgenome-gmax-ncbi-gmv40")
+    (version "4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Gmax.NCBI.Gmv40" version
+                              'annotation))
+       (sha256
+        (base32 "0w6pa6pcjmxy9zj21m4c585s7fihy3hcg0ysbjkizlsskmlva0dr"))))
+    (properties `((upstream-name . "BSgenome.Gmax.NCBI.Gmv40")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Gmax.NCBI.Gmv40")
+    (synopsis "Full genome sequences for Glycine max (Gmv40)")
+    (description
+     "Full genome sequences for Glycine max as provided by NCBI (assembly
+Glycine_max_v4.0, assembly accession GCF_000004515.5) and stored in Biostrings
+objects.")
+    (license (license:fsdg-compatible
+              "Creative Commons Legal Code + file LICENSE"))))
+
+(define-public r-bsgenome-ggallus-ucsc-galgal6
+  (package
+    (name "r-bsgenome-ggallus-ucsc-galgal6")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ggallus.UCSC.galGal6" version
+                              'annotation))
+       (sha256
+        (base32 "00b0awki35xkfjsvv9x1h0sykg5jbf36a37hj4spw028bkg8k7v2"))))
+    (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal6")
+    (synopsis "Full genome sequences for Gallus gallus (UCSC version galGal6)")
+    (description
+     "Full genome sequences for Gallus gallus (Chicken) as provided by UCSC
+(@code{galGal6}, Mar.  2018) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ggallus-ucsc-galgal5
+  (package
+    (name "r-bsgenome-ggallus-ucsc-galgal5")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ggallus.UCSC.galGal5" version
+                              'annotation))
+       (sha256
+        (base32 "0gi82xr2b3fn3wi608nmqp3cgjx63rm82wy24p9l0s1qqh2z3jdb"))))
+    (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal5")
+    (synopsis "Full genome sequences for Gallus gallus (UCSC version galGal5)")
+    (description
+     "Full genome sequences for Gallus gallus (Chicken) as provided by UCSC
+(@code{galGal5}, Dec.  2015) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ggallus-ucsc-galgal4-masked
+  (package
+    (name "r-bsgenome-ggallus-ucsc-galgal4-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ggallus.UCSC.galGal4.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0fvqimjf1xvgka4nw66nd0rbyb7r93v8cyw33776lhfv68ny058v"))))
+    (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal4.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-ggallus-ucsc-galgal4 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal4.masked")
+    (synopsis
+     "Full masked genome sequences for Gallus gallus (UCSC version galGal4)")
+    (description
+     "Full genome sequences for Gallus gallus (Chicken) as provided by UCSC
+(@code{galGal4}, Nov.  2011) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Ggallus.UCSC.@code{galGal4}, except that each of
+them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ggallus-ucsc-galgal4
+  (package
+    (name "r-bsgenome-ggallus-ucsc-galgal4")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ggallus.UCSC.galGal4" version
+                              'annotation))
+       (sha256
+        (base32 "1qfl046akdf43azigprc13sssgbmxdz9dmlrvy13ag8fgfkjxign"))))
+    (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal4")
+    (synopsis "Full genome sequences for Gallus gallus (UCSC version galGal4)")
+    (description
+     "Full genome sequences for Gallus gallus (Chicken) as provided by UCSC
+(@code{galGal4}, Nov.  2011) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ggallus-ucsc-galgal3-masked
+  (package
+    (name "r-bsgenome-ggallus-ucsc-galgal3-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ggallus.UCSC.galGal3.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0igi02g46h1j87hv9bk45nbqahyjd0k75jkg0s6m9a62jsssg63l"))))
+    (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal3.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-ggallus-ucsc-galgal3 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal3.masked")
+    (synopsis
+     "Full masked genome sequences for Gallus gallus (UCSC version galGal3)")
+    (description
+     "Full genome sequences for Gallus gallus (Chicken) as provided by UCSC
+(@code{galGal3}, May 2006) and stored in Biostrings objects.  The sequences are
+the same as in BSgenome.Ggallus.UCSC.@code{galGal3}, except that each of them
+has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS mask),
+(2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of repeats
+from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem
+Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-ggallus-ucsc-galgal3
+  (package
+    (name "r-bsgenome-ggallus-ucsc-galgal3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Ggallus.UCSC.galGal3" version
+                              'annotation))
+       (sha256
+        (base32 "1bgw45nizdm1kq0624asr4ky61cm8pmrq32574phvvq1jjpg4isp"))))
+    (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal3")
+    (synopsis "Full genome sequences for Gallus gallus (UCSC version galGal3)")
+    (description
+     "Full genome sequences for Gallus gallus (Chicken) as provided by UCSC
+(@code{galGal3}, May 2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-gaculeatus-ucsc-gasacu1-masked
+  (package
+    (name "r-bsgenome-gaculeatus-ucsc-gasacu1-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Gaculeatus.UCSC.gasAcu1.masked"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "13g2xc6v8qlrc0a0zly4ibhzgwg5dsrx1bmw4rrwnkk652alaivx"))))
+    (properties `((upstream-name . "BSgenome.Gaculeatus.UCSC.gasAcu1.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-gaculeatus-ucsc-gasacu1 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Gaculeatus.UCSC.gasAcu1.masked")
+    (synopsis
+     "Full masked genome sequences for Gasterosteus aculeatus (UCSC version gasAcu1)")
+    (description
+     "Full genome sequences for Gasterosteus aculeatus (Stickleback) as provided by
+UCSC (@code{gasAcu1}, Feb.  2006) and stored in Biostrings objects.  The
+sequences are the same as in BSgenome.Gaculeatus.UCSC.@code{gasAcu1}, except
+that each of them has the 4 following masks on top: (1) the mask of assembly
+gaps (AGAPS mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the
+mask of repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats
+from Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are
+\"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-gaculeatus-ucsc-gasacu1
+  (package
+    (name "r-bsgenome-gaculeatus-ucsc-gasacu1")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Gaculeatus.UCSC.gasAcu1" version
+                              'annotation))
+       (sha256
+        (base32 "1w0jpv58kbjvjlsprn5g4nd3g6jhiyw3k6mlfnpnffcbdh27cq0k"))))
+    (properties `((upstream-name . "BSgenome.Gaculeatus.UCSC.gasAcu1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Gaculeatus.UCSC.gasAcu1")
+    (synopsis
+     "Full genome sequences for Gasterosteus aculeatus (UCSC version gasAcu1)")
+    (description
+     "Full genome sequences for Gasterosteus aculeatus (Stickleback) as provided by
+UCSC (@code{gasAcu1}, Feb.  2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-dvirilis-ensembl-dvircaf1
+  (package
+    (name "r-bsgenome-dvirilis-ensembl-dvircaf1")
+    (version "1.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Dvirilis.Ensembl.dvircaf1" version
+                              'annotation))
+       (sha256
+        (base32 "0dwqshpx3mm9k9p3x53hc62czpvqs6v2jw5i977x0y4hfig0zv8m"))))
+    (properties `((upstream-name . "BSgenome.Dvirilis.Ensembl.dvircaf1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Dvirilis.Ensembl.dvircaf1")
+    (synopsis
+     "Full genome sequences for Drosophila virilis (assembly dvir_caf1)")
+    (description
+     "Full genome sequences for Drosophila virilis (assembly dvir_caf1, @code{GenBank}
+assembly accession GCA_000005245.1) as provided by Ensembl and stored in
+Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer7-masked
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer7-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer7.masked" version
+                              'annotation))
+       (sha256
+        (base32 "153cf2ni7xffi7j7dafg04v6i65gh8d21v7l9szm4c18bywvcn5z"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer7.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-drerio-ucsc-danrer7 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer7.masked")
+    (synopsis
+     "Full masked genome sequences for Danio rerio (UCSC version danRer7)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer7}, Jul.  2010) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Drerio.UCSC.@code{danRer7}, except that each of them
+has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS mask),
+(2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of repeats
+from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem
+Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer7
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer7")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer7" version
+                              'annotation))
+       (sha256
+        (base32 "17x3hj08jag05y8q4aziy455jy15dpwkdbh97v3byzcda0kpwbpg"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer7")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer7")
+    (synopsis "Full genome sequences for Danio rerio (UCSC version danRer7)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer7}, Jul.  2010) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer6-masked
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer6-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer6.masked" version
+                              'annotation))
+       (sha256
+        (base32 "175gy5xfp5kzbgmagvls3233i925wppyk9alw75f7jnxfddxvq4k"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer6.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-drerio-ucsc-danrer6 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer6.masked")
+    (synopsis
+     "Full masked genome sequences for Danio rerio (UCSC version danRer6)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer6}, Dec.  2008) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Drerio.UCSC.@code{danRer6}, except that each of them
+has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS mask),
+(2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of repeats
+from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem
+Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer6
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer6")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer6" version
+                              'annotation))
+       (sha256
+        (base32 "0h2chcpdi2vy29fg43r6q37vvb7p4d4cpnszlsmiy7ax358sd5ji"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer6")
+    (synopsis "Full genome sequences for Danio rerio (UCSC version danRer6)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer6}, Dec.  2008) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer5-masked
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer5-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer5.masked" version
+                              'annotation))
+       (sha256
+        (base32 "03y08jlknb52x37wg95xaf62n5fbsfpmx57bjyxz2gj0n8zhcdgv"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer5.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-drerio-ucsc-danrer5 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer5.masked")
+    (synopsis
+     "Full masked genome sequences for Danio rerio (UCSC version danRer5)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer5}, Jul.  2007) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Drerio.UCSC.@code{danRer5}, except that each of them
+has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS mask),
+(2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of repeats
+from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem
+Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer5
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer5")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer5" version
+                              'annotation))
+       (sha256
+        (base32 "1mxmy4ika192xvlrsynyvnb7kvcvbsl89g39q53vrkibhml1q0v5"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer5")
+    (synopsis "Full genome sequences for Danio rerio (UCSC version danRer5)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer5}, Jul.  2007) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-drerio-ucsc-danrer10
+  (package
+    (name "r-bsgenome-drerio-ucsc-danrer10")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer10" version
+                              'annotation))
+       (sha256
+        (base32 "1grlxihdx65fwgb9gbp1jibbqan9a5667w4jgswhg0qsia608lzs"))))
+    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer10")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer10")
+    (synopsis "Full genome sequences for Danio rerio (UCSC version danRer10)")
+    (description
+     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
+(@code{danRer10}, Sep.  2014) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-dmelanogaster-ucsc-dm2-masked
+  (package
+    (name "r-bsgenome-dmelanogaster-ucsc-dm2-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Dmelanogaster.UCSC.dm2.masked" version
+                              'annotation))
+       (sha256
+        (base32 "1qclf62c3qrdhnrb6p4rhj7wrarlsbm716d37k0gbdzkfm2vhyr7"))))
+    (properties `((upstream-name . "BSgenome.Dmelanogaster.UCSC.dm2.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-dmelanogaster-ucsc-dm2 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Dmelanogaster.UCSC.dm2.masked")
+    (synopsis
+     "Full masked genome sequences for Drosophila melanogaster (UCSC version dm2)")
+    (description
+     "Full genome sequences for Drosophila melanogaster (Fly) as provided by UCSC
+(dm2, Apr.  2004) and stored in Biostrings objects.  The sequences are the same
+as in BSgenome.Dmelanogaster.UCSC.dm2, except that each of them has the 4
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask
+of intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-dmelanogaster-ucsc-dm2
+  (package
+    (name "r-bsgenome-dmelanogaster-ucsc-dm2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Dmelanogaster.UCSC.dm2" version
+                              'annotation))
+       (sha256
+        (base32 "1vnqbm1123zmpn1iwyygr1p4js0j6vifyz7iwzgkiw543yb1mwnl"))))
+    (properties `((upstream-name . "BSgenome.Dmelanogaster.UCSC.dm2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Dmelanogaster.UCSC.dm2")
+    (synopsis
+     "Full genome sequences for Drosophila melanogaster (UCSC version dm2)")
+    (description
+     "Full genome sequences for Drosophila melanogaster (Fly) as provided by UCSC
+(dm2, Apr.  2004) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-creinhardtii-jgi-v5-6
+  (package
+    (name "r-bsgenome-creinhardtii-jgi-v5-6")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Creinhardtii.JGI.v5.6" version
+                              'annotation))
+       (sha256
+        (base32 "0px1p3hgbpk3pvmg77knqxwmh1jd8jjf763kzxf0725pnl9dca2v"))))
+    (properties `((upstream-name . "BSgenome.Creinhardtii.JGI.v5.6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Creinhardtii.JGI.v5.6")
+    (synopsis "Full genome sequences for Chlamydomonas reinhardtii (v5.6)")
+    (description
+     "Full genome sequences for Chlamydomonas reinhardtii (v5.6) as provided by JGI
+and stored in Biostrings objects.  The data in this package is public.  See
+citation(\"BSgenome.Creinhardtii.JGI.v5.6\") for how to cite in publications.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cneoformansvargrubiikn99-ncbi-asm221672v1
+  (package
+    (name "r-bsgenome-cneoformansvargrubiikn99-ncbi-asm221672v1")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri
+             "BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1" version
+             'annotation))
+       (sha256
+        (base32 "0hmxpm9mj8ahmpk2xp0qgsblvjz7wjcdmsz41ab5s404ggiylx79"))))
+    (properties `((upstream-name . "BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1")
+    (synopsis
+     "Full Genome Sequence for Cryptococcus neoformans var. grubii KN99 (ASM221672v1)")
+    (description
+     "Full genome sequences for Cryptococcus neoformans var.  grubii KN99 (assembly
+ASM221672v1 assembly accession GCA_002216725.1).")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cjacchus-ucsc-caljac4
+  (package
+    (name "r-bsgenome-cjacchus-ucsc-caljac4")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Cjacchus.UCSC.calJac4" version
+                              'annotation))
+       (sha256
+        (base32 "0hfrcsarcm65hqr6032aar1rz09pvj22wj5dlmy459cqrpgr5prf"))))
+    (properties `((upstream-name . "BSgenome.Cjacchus.UCSC.calJac4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac4")
+    (synopsis
+     "Full genome sequences for Callithrix jacchus (UCSC version calJac4)")
+    (description
+     "Full genome sequences for Callithrix jacchus (Marmoset) as provided by UCSC
+(@code{calJac4}, May 2020) and wrapped in a BSgenome object.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cjacchus-ucsc-caljac3
+  (package
+    (name "r-bsgenome-cjacchus-ucsc-caljac3")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Cjacchus.UCSC.calJac3" version
+                              'annotation))
+       (sha256
+        (base32 "1s1srg6lr3dndbpv83bqlxz5lhyhxh431yrd919yl4fwmr5rvx0z"))))
+    (properties `((upstream-name . "BSgenome.Cjacchus.UCSC.calJac3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac3")
+    (synopsis
+     "Full genome sequences for Callithrix jacchus (UCSC version calJac3)")
+    (description
+     "Full genome sequences for Callithrix jacchus (Marmoset) as provided by UCSC
+(@code{calJac3}, Mar.  2009) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cfamiliaris-ucsc-canfam3-masked
+  (package
+    (name "r-bsgenome-cfamiliaris-ucsc-canfam3-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Cfamiliaris.UCSC.canFam3.masked"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "07y28g6b4sbp38yg5rwldda7s1cwcpil6rzsb4csskvs0xi5286l"))))
+    (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam3.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-cfamiliaris-ucsc-canfam3 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam3.masked")
+    (synopsis
+     "Full masked genome sequences for Canis lupus familiaris (UCSC version canFam3)")
+    (description
+     "Full genome sequences for Canis lupus familiaris (Dog) as provided by UCSC
+(@code{canFam3}, Sep.  2011) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Cfamiliaris.UCSC.@code{canFam3}, except that each of
+them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cfamiliaris-ucsc-canfam3
+  (package
+    (name "r-bsgenome-cfamiliaris-ucsc-canfam3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Cfamiliaris.UCSC.canFam3" version
+                              'annotation))
+       (sha256
+        (base32 "1ir092yh1h03ag1lnj2rh5hjp2mqrw7fcyb6mqyjm0h8g1pmpicr"))))
+    (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam3")
+    (synopsis
+     "Full genome sequences for Canis lupus familiaris (UCSC version canFam3)")
+    (description
+     "Full genome sequences for Canis lupus familiaris (Dog) as provided by UCSC
+(@code{canFam3}, Sep.  2011) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cfamiliaris-ucsc-canfam2-masked
+  (package
+    (name "r-bsgenome-cfamiliaris-ucsc-canfam2-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Cfamiliaris.UCSC.canFam2.masked"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "14108j73z7959d070xiqar5s14pac18cs8a22lcggbmp5x93hmqz"))))
+    (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam2.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-cfamiliaris-ucsc-canfam2 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam2.masked")
+    (synopsis
+     "Full masked genome sequences for Canis lupus familiaris (UCSC version canFam2)")
+    (description
+     "Full genome sequences for Canis lupus familiaris (Dog) as provided by UCSC
+(@code{canFam2}, May 2005) and stored in Biostrings objects.  The sequences are
+the same as in BSgenome.Cfamiliaris.UCSC.@code{canFam2}, except that each of
+them has the 4 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), (3) the mask of
+repeats from @code{RepeatMasker} (RM mask), and (4) the mask of repeats from
+Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
+default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-cfamiliaris-ucsc-canfam2
+  (package
+    (name "r-bsgenome-cfamiliaris-ucsc-canfam2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Cfamiliaris.UCSC.canFam2" version
+                              'annotation))
+       (sha256
+        (base32 "052p2lsm1ny0rjvhgd56w6z4nrqfc74vh0q7cmqz55xkhk01h7hm"))))
+    (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam2")
+    (synopsis
+     "Full genome sequences for Canis lupus familiaris (UCSC version canFam2)")
+    (description
+     "Full genome sequences for Canis lupus familiaris (Dog) as provided by UCSC
+(@code{canFam2}, May 2005) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-celegans-ucsc-ce2
+  (package
+    (name "r-bsgenome-celegans-ucsc-ce2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Celegans.UCSC.ce2" version
+                              'annotation))
+       (sha256
+        (base32 "1x7nvisz7mjrpqlsiw4an04f8hksygzn96p5ld0388hljg78dax8"))))
+    (properties `((upstream-name . "BSgenome.Celegans.UCSC.ce2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Celegans.UCSC.ce2")
+    (synopsis
+     "Full genome sequences for Caenorhabditis elegans (UCSC version ce2)")
+    (description
+     "Full genome sequences for Caenorhabditis elegans (Worm) as provided by UCSC
+(ce2, Mar.  2004) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-celegans-ucsc-ce11
+  (package
+    (name "r-bsgenome-celegans-ucsc-ce11")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Celegans.UCSC.ce11" version
+                              'annotation))
+       (sha256
+        (base32 "0d4bxfglpqiv1f0n6imdgz101g9383hfj3ra91268wryzlm0yk5w"))))
+    (properties `((upstream-name . "BSgenome.Celegans.UCSC.ce11")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Celegans.UCSC.ce11")
+    (synopsis
+     "Full genome sequences for Caenorhabditis elegans (UCSC version ce11)")
+    (description
+     "Full genome sequences for Caenorhabditis elegans (Worm) as provided by UCSC
+(ce11, Feb.  2013) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-carietinum-ncbi-v1
+  (package
+    (name "r-bsgenome-carietinum-ncbi-v1")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Carietinum.NCBI.v1" version
+                              'annotation))
+       (sha256
+        (base32 "1asyyb1p1bzc7dv9s2igjxrf9f144vvz2xbv9qxg15w9qzzx7r33"))))
+    (properties `((upstream-name . "BSgenome.Carietinum.NCBI.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Carietinum.NCBI.v1")
+    (synopsis
+     "Cicer arietinum (Chickpea) full genome (NCBI version ASM33114v1)")
+    (description
+     "Full genome sequences for Cicer arietinum (Chickpea) as provided by NCBI
+(ASM33114v1, Jan.  2013) and stored in Biostrings objects.")
+    (license license:gpl3)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau9-masked
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau9-masked")
+    (version "1.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau9.masked" version
+                              'annotation))
+       (sha256
+        (base32 "04wzhrp0kb8mv7dg732daqr58djs5dwjm54hgmzbaafv1715i74k"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau9.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau9 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau9.masked")
+    (synopsis
+     "Full masked genome sequences for Bos taurus (UCSC version bosTau9)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (genome
+@code{bosTau9}) and stored in Biostrings objects.  The sequences are the same as
+in BSgenome.Btaurus.UCSC.@code{bosTau9}, except that each of them has the 4
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask
+of intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau9
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau9")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau9" version
+                              'annotation))
+       (sha256
+        (base32 "0vx9z101faybqqdqfk306m7m3j490svmx7bn7knh5if66g0mzi7g"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau9")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau9")
+    (synopsis "Full genome sequences for Bos taurus (UCSC version bosTau9)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau9},
+Apr.  2018) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau6-masked
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau6-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau6.masked" version
+                              'annotation))
+       (sha256
+        (base32 "07isv0lcvlsl0aha1p474l0pps0j7bsh455m33vfxwahivqsfy27"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau6.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau6 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau6.masked")
+    (synopsis
+     "Full masked genome sequences for Bos taurus (UCSC version bosTau6)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau6},
+Nov.  2009) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Btaurus.UCSC.@code{bosTau6}, except that each of them has the 4
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask
+of intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau6
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau6")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau6" version
+                              'annotation))
+       (sha256
+        (base32 "0waaf9wfmdl5jbi3la64vsiqb83lyw9fqg3sn90bf1q7k3k617p3"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau6")
+    (synopsis "Full genome sequences for Bos taurus (UCSC version bosTau6)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau6},
+Nov.  2009) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau4-masked
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau4-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau4.masked" version
+                              'annotation))
+       (sha256
+        (base32 "0dkz9ixxa5x9l1v733a3sfrbnjd2kfmd5a2vxskkx9jm3hfbg6gr"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau4.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau4 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau4.masked")
+    (synopsis
+     "Full masked genome sequences for Bos taurus (UCSC version bosTau4)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau4},
+Oct.  2007) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Btaurus.UCSC.@code{bosTau4}, except that each of them has the 4
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask
+of intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau4
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau4")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau4" version
+                              'annotation))
+       (sha256
+        (base32 "1z86qdpmilwrnjysn8qgxj3g7pqp9hwr25cpiabyczd216wy3zy5"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau4")
+    (synopsis "Full genome sequences for Bos taurus (UCSC version bosTau4)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau4},
+Oct.  2007) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau3-masked
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau3-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau3.masked" version
+                              'annotation))
+       (sha256
+        (base32 "03l9xgbsfmrw3yk0hpza5gfhgd3cfflp5pqzi36ifnmpr40ca722"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau3.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau3 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau3.masked")
+    (synopsis
+     "Full masked genome sequences for Bos taurus (UCSC version bosTau3)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau3},
+Aug.  2006) and stored in Biostrings objects.  The sequences are the same as in
+BSgenome.Btaurus.UCSC.@code{bosTau3}, except that each of them has the 4
+following masks on top: (1) the mask of assembly gaps (AGAPS mask), (2) the mask
+of intra-contig ambiguities (AMB mask), (3) the mask of repeats from
+@code{RepeatMasker} (RM mask), and (4) the mask of repeats from Tandem Repeats
+Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-btaurus-ucsc-bostau3
+  (package
+    (name "r-bsgenome-btaurus-ucsc-bostau3")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Btaurus.UCSC.bosTau3" version
+                              'annotation))
+       (sha256
+        (base32 "0vh3664q7pynfw763pwg2h74h0ncmi5nslvj7y5bj1q7pvf03zpc"))))
+    (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau3")
+    (synopsis "Full genome sequences for Bos taurus (UCSC version bosTau3)")
+    (description
+     "Full genome sequences for Bos taurus (Cow) as provided by UCSC (@code{bosTau3},
+Aug.  2006) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-athaliana-tair-tair9
+  (package
+    (name "r-bsgenome-athaliana-tair-tair9")
+    (version "1.3.1000")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Athaliana.TAIR.TAIR9" version
+                              'annotation))
+       (sha256
+        (base32 "0n45sn80c5nchfj1wzbcaicfyg66id2zhr5xm3w238idkbj05l00"))))
+    (properties `((upstream-name . "BSgenome.Athaliana.TAIR.TAIR9")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Athaliana.TAIR.TAIR9")
+    (synopsis "Full genome sequences for Arabidopsis thaliana (TAIR9)")
+    (description
+     "Full genome sequences for Arabidopsis thaliana as provided by TAIR (TAIR9 Genome
+Release) and stored in Biostrings objects.  Note that TAIR10 is an \"annotation
+release\" based on the same genome assembly as TAIR9.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-athaliana-tair-04232008
+  (package
+    (name "r-bsgenome-athaliana-tair-04232008")
+    (version "1.3.1000")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Athaliana.TAIR.04232008" version
+                              'annotation))
+       (sha256
+        (base32 "0dsbjfh2yf0v3zmbypn9p3alvwhfw2qyr5vivyj7x9ablylb6qxc"))))
+    (properties `((upstream-name . "BSgenome.Athaliana.TAIR.04232008")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Athaliana.TAIR.04232008")
+    (synopsis
+     "Full genome sequences for Arabidopsis thaliana (TAIR version from April 23, 2008)")
+    (description
+     "Full genome sequences for Arabidopsis thaliana as provided by TAIR (snapshot
+from April 23, 2008) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-aofficinalis-ncbi-v1
+  (package
+    (name "r-bsgenome-aofficinalis-ncbi-v1")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Aofficinalis.NCBI.V1" version
+                              'annotation))
+       (sha256
+        (base32 "0n6m5jnpiz6bv46b7s396qkxha2d8271j747j50v2zb6a7wd0rjr"))))
+    (properties `((upstream-name . "BSgenome.Aofficinalis.NCBI.V1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Aofficinalis.NCBI.V1")
+    (synopsis
+     "Asparagus officinalis (Garden asparagus) full genome (NCBI version Aspof.V1)")
+    (description
+     "Full genome sequences for Asparagus officinalis (Garden asparagus) as 	provided
+by NCBI (Aspof.V1, Feb.  2017) and stored in Biostrings objects.")
+    (license license:gpl3)))
+
+(define-public r-bsgenome-amellifera-ucsc-apimel2-masked
+  (package
+    (name "r-bsgenome-amellifera-ucsc-apimel2-masked")
+    (version "1.3.99")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Amellifera.UCSC.apiMel2.masked"
+                              version
+                              'annotation))
+       (sha256
+        (base32 "128jmpnpbz1afqvhvdc9vrc8gmlyg26ca7qz362qsx89jrm4khpr"))))
+    (properties `((upstream-name . "BSgenome.Amellifera.UCSC.apiMel2.masked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome-amellifera-ucsc-apimel2 r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Amellifera.UCSC.apiMel2.masked")
+    (synopsis
+     "Full masked genome sequences for Apis mellifera (UCSC version apiMel2)")
+    (description
+     "Full genome sequences for Apis mellifera (Honey Bee) as provided by UCSC
+(@code{apiMel2}, Jan.  2005) and stored in Biostrings objects.  The sequences
+are the same as in BSgenome.Amellifera.UCSC.@code{apiMel2}, except that each of
+them has the 3 following masks on top: (1) the mask of assembly gaps (AGAPS
+mask), (2) the mask of intra-contig ambiguities (AMB mask), and (3) the mask of
+repeats from @code{RepeatMasker} (RM mask).  Only the AGAPS and AMB masks are
+\"active\" by default.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-amellifera-ucsc-apimel2
+  (package
+    (name "r-bsgenome-amellifera-ucsc-apimel2")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Amellifera.UCSC.apiMel2" version
+                              'annotation))
+       (sha256
+        (base32 "1967w7aly7qydykk7rar712kvgsav3zjr4kirybkj17nwiynd74g"))))
+    (properties `((upstream-name . "BSgenome.Amellifera.UCSC.apiMel2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Amellifera.UCSC.apiMel2")
+    (synopsis
+     "Full genome sequences for Apis mellifera (UCSC version apiMel2)")
+    (description
+     "Full genome sequences for Apis mellifera (Honey Bee) as provided by UCSC
+(@code{apiMel2}, Jan.  2005) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-amellifera-ncbi-amelhav3-1
+  (package
+    (name "r-bsgenome-amellifera-ncbi-amelhav3-1")
+    (version "1.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Amellifera.NCBI.AmelHAv3.1" version
+                              'annotation))
+       (sha256
+        (base32 "1cglml4rlqr5hmf4dx51grx6s25h6xc3lqv569nx2sl4gdz28s47"))))
+    (properties `((upstream-name . "BSgenome.Amellifera.NCBI.AmelHAv3.1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Amellifera.NCBI.AmelHAv3.1")
+    (synopsis "Full genome sequences for Apis mellifera (Amel_HAv3.1)")
+    (description
+     "Full genome sequences for Apis mellifera as provided by NCBI (assembly
+Amel_HAv3.1, assembly accession GCF_003254395.2) and stored in Biostrings
+objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-amellifera-beebase-assembly4
+  (package
+    (name "r-bsgenome-amellifera-beebase-assembly4")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Amellifera.BeeBase.assembly4" version
+                              'annotation))
+       (sha256
+        (base32 "02zs16q441zcbfp7xvv1gny5nn02ivfr8md1wh5s5rpnj6sdl6kj"))))
+    (properties `((upstream-name . "BSgenome.Amellifera.BeeBase.assembly4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page
+     "https://bioconductor.org/packages/BSgenome.Amellifera.BeeBase.assembly4")
+    (synopsis "Full genome sequences for Apis mellifera (BeeBase assembly4)")
+    (description
+     "@code{iFull} genome sequences for Apis mellifera (Honey Bee) as provided by
+@code{BeeBase} (assembly4, Feb.  2008) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
+(define-public r-bsgenome-alyrata-jgi-v1
+  (package
+    (name "r-bsgenome-alyrata-jgi-v1")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BSgenome.Alyrata.JGI.v1" version
+                              'annotation))
+       (sha256
+        (base32 "062ap94m6s4w8clg1zlj223wmgbmq19yhksx9fcdcqrxr5kbfv85"))))
+    (properties `((upstream-name . "BSgenome.Alyrata.JGI.v1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bsgenome))
+    (home-page "https://bioconductor.org/packages/BSgenome.Alyrata.JGI.v1")
+    (synopsis "Arabidopsis lyrata full genome (JGI version V1.0)")
+    (description
+     "Arabidopsis lyrata 8x Release [project ID 4002920] as provided by JGI ( snapshot
+from March 24, 2011) and stored in Biostrings objects.")
+    (license license:artistic2.0)))
+
 (define-public r-browserviz
   (package
     (name "r-browserviz")
@@ -374,6 +2779,28 @@ simplifying the old seed-based process.")
      "BrowserViz: interactive R/browser graphics using websockets and JSON")
     (description
      "Interactvive graphics in a web browser from R, using websockets and JSON.")
+    (license license:gpl2)))
+
+(define-public r-bronchialil13
+  (package
+    (name "r-bronchialil13")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bronchialIL13" version
+                              'experiment))
+       (sha256
+        (base32 "110791bhnpzadc2ja8i59bix42ficqxqw3il8hnqb38i7c43w0zw"))))
+    (properties `((upstream-name . "bronchialIL13")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-affy))
+    (home-page "http://www.biostat.harvard.edu/~carey")
+    (synopsis "time course experiment involving il13")
+    (description
+     "derived from CNMC (pepr.cnmcresearch.org)
+http://pepr.cnmcresearch.org/browse.do?action=list_prj_exp&@code{projectId=95}
+Human Bronchial Cell line A549")
     (license license:gpl2)))
 
 (define-public r-bridgedbr
@@ -438,6 +2865,31 @@ conveniently calling DESeq2 without using sample-blind estimates of genewise
 dispersion; among other features.")
     (license license:artistic2.0)))
 
+(define-public r-brgedata
+  (package
+    (name "r-brgedata")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "brgedata" version
+                              'experiment))
+       (sha256
+        (base32 "0nplh5km45hdb001mc86fh9yyj56mfvcr2g0zffq0nbjlpvspz0i"))))
+    (properties `((upstream-name . "brgedata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/brgedata")
+    (synopsis
+     "Exposures, Gene Expression and Methylation data for ilustration purpouses")
+    (description
+     "This package contains several sets of omics data including Gene Expression
+(@code{ExpressionSet}), Methylation (@code{GenomicRatioSet}), Proteome and
+Exposome (@code{ExposomeSet}).  This data is used in vignettes and exaples at
+MEAL, @code{MultiDataSet} and @code{omicRexposome}.")
+    (license license:expat)))
+
 (define-public r-brendadb
   (package
     (name "r-brendadb")
@@ -469,6 +2921,111 @@ dispersion; among other features.")
      "R interface for importing and analyzing enzyme information from the BRENDA
 database.")
     (license license:expat)))
+
+(define-public r-breastcancerupp
+  (package
+    (name "r-breastcancerupp")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "breastCancerUPP" version
+                              'experiment))
+       (sha256
+        (base32 "0mi9dqbx7fyrxmc4l12c0x6i865f5691f94wzw88q2hwzzz80n6p"))))
+    (properties `((upstream-name . "breastCancerUPP")))
+    (build-system r-build-system)
+    (home-page "http://compbio.dfci.harvard.edu/")
+    (synopsis
+     "Gene expression dataset published by Miller et al. [2005] (UPP)")
+    (description
+     "Gene expression data from a breast cancer study published by Miller et al.  in
+2005, provided as an @code{eSet}.")
+    (license license:artistic2.0)))
+
+(define-public r-breastcancerunt
+  (package
+    (name "r-breastcancerunt")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "breastCancerUNT" version
+                              'experiment))
+       (sha256
+        (base32 "0p11hll0pjzycgqbjhcn06vcah7kfvxbzsrqvbwglajs0b5m6dra"))))
+    (properties `((upstream-name . "breastCancerUNT")))
+    (build-system r-build-system)
+    (home-page "http://compbio.dfci.harvard.edu/")
+    (synopsis
+     "Gene expression dataset published by Sotiriou et al. [2007] (UNT)")
+    (description
+     "Gene expression data from a breast cancer study published by Sotiriou et al.  in
+2007, provided as an @code{eSet}.")
+    (license license:artistic2.0)))
+
+(define-public r-breastcancertransbig
+  (package
+    (name "r-breastcancertransbig")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "breastCancerTRANSBIG" version
+                              'experiment))
+       (sha256
+        (base32 "03q9y9cbipp8a275hcw5yzwx7l5qrc6fqzdy8vy7z5ij825ygnad"))))
+    (properties `((upstream-name . "breastCancerTRANSBIG")))
+    (build-system r-build-system)
+    (home-page "http://compbio.dfci.harvard.edu/")
+    (synopsis
+     "Gene expression dataset published by Desmedt et al. [2007] (TRANSBIG)")
+    (description
+     "Gene expression data from a breast cancer study published by Desmedt et al.  in
+2007, provided as an @code{eSet}.")
+    (license license:artistic2.0)))
+
+(define-public r-breastcancernki
+  (package
+    (name "r-breastcancernki")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "breastCancerNKI" version
+                              'experiment))
+       (sha256
+        (base32 "0q3lvq447jw3ny2896mz009x0ijdxgy4xgk4y00sv9nsbwic1ais"))))
+    (properties `((upstream-name . "breastCancerNKI")))
+    (build-system r-build-system)
+    (home-page "http://compbio.dfci.harvard.edu/")
+    (synopsis
+     "Genexpression dataset published by van't Veer et al. [2002] and van de Vijver et al. [2002] (NKI)")
+    (description
+     "Genexpression data from a breast cancer study published by van't Veer et al.  in
+2002 and van de Vijver et al.  in 2002, provided as an @code{eSet}.")
+    (license license:artistic2.0)))
+
+(define-public r-breastcancermainz
+  (package
+    (name "r-breastcancermainz")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "breastCancerMAINZ" version
+                              'experiment))
+       (sha256
+        (base32 "1nbvacb04ka0p88hailawz0i4472gaagxy0yw9qg83f9da1dzm4l"))))
+    (properties `((upstream-name . "breastCancerMAINZ")))
+    (build-system r-build-system)
+    (home-page "http://compbio.dfci.harvard.edu/")
+    (synopsis
+     "Gene expression dataset published by Schmidt et al. [2008] (MAINZ)")
+    (description
+     "Gene expression data from the breast cancer study published by Schmidt et al.
+in 2008, provided as an @code{eSet}.")
+    (license license:artistic2.0)))
 
 (define-public r-branchpointer
   (package
@@ -606,6 +3163,92 @@ profiles.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-bovineprobe
+  (package
+    (name "r-bovineprobe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bovineprobe" version
+                              'annotation))
+       (sha256
+        (base32 "0i4afa5dksnir2nfrfh2cynjm59sm6vfaqa9wyag8cxg7c2nlm1i"))))
+    (properties `((upstream-name . "bovineprobe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/bovineprobe")
+    (synopsis "Probe sequence data for microarrays of type bovine")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Bovine\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-bovinecdf
+  (package
+    (name "r-bovinecdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bovinecdf" version
+                              'annotation))
+       (sha256
+        (base32 "13mf0yy0dypkm5n2ghl04xm6ayb9bn9qijqhgynksghi7s2k34mb"))))
+    (properties `((upstream-name . "bovinecdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/bovinecdf")
+    (synopsis "bovinecdf")
+    (description
+     "This package provides a package containing an environment representing the
+Bovine.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-bovine-db0
+  (package
+    (name "r-bovine-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bovine.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1s95x4hrv6r1mlsls2yfwbw1mn0jpqg7ancfcwc22p9pi962jjf8"))))
+    (properties `((upstream-name . "bovine.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/bovine.db0")
+    (synopsis "Base Level Annotation databases for bovine")
+    (description
+     "Base annotation databases for bovine, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-bovine-db
+  (package
+    (name "r-bovine-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bovine.db" version
+                              'annotation))
+       (sha256
+        (base32 "06692b1n0lzhg0biixipsnwx33w9y8wkc7pc5q1lkjfzbmd2inml"))))
+    (properties `((upstream-name . "bovine.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-bt-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/bovine.db")
+    (synopsis
+     "Affymetrix Affymetrix Bovine Array annotation data (chip bovine)")
+    (description
+     "Affymetrix Affymetrix Bovine Array annotation data (chip bovine) assembled using
+data from public repositories")
+    (license license:artistic2.0)))
+
 (define-public r-borealis
   (package
     (name "r-borealis")
@@ -643,6 +3286,30 @@ sequencing data.  It detectes outlier methylated @code{CpG} sites from bisulfite
 sequencing (BS-seq).  The core of Borealis is modeling Beta-Binomial
 distributions.  This can be useful for rare disease diagnoses.")
     (license license:gpl3)))
+
+(define-public r-bodymaprat
+  (package
+    (name "r-bodymaprat")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bodymapRat" version
+                              'experiment))
+       (sha256
+        (base32 "1sfq6vxkb68l0q5qbnpm3fi53k4q9a890bv2ff9c6clhc42wx3h6"))))
+    (properties `((upstream-name . "bodymapRat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/bodymapRat")
+    (synopsis "Experimental dataset from the rat BodyMap project")
+    (description
+     "This package contains a @code{SummarizedExperiment} from the Yu et al. (2013)
+paper that performed the rat @code{BodyMap} across 11 organs and 4 developmental
+stages.  Raw FASTQ files were downloaded and mapped using STAR. Data is
+available on @code{ExperimentHub} as a data package.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-bobafit
   (package
@@ -797,6 +3464,47 @@ a given module, or in a heatmap where the samples are arranged in columns and
 the modules in rows.")
     (license license:gpl2)))
 
+(define-public r-bloodcancermultiomics2017
+  (package
+    (name "r-bloodcancermultiomics2017")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BloodCancerMultiOmics2017" version
+                              'experiment))
+       (sha256
+        (base32 "1ya62fx76ifnbdbws51nw544n12sk4a35qichfc54v0ffbz0n38c"))))
+    (properties `((upstream-name . "BloodCancerMultiOmics2017")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-survival
+                             r-summarizedexperiment
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-ipflasso
+                             r-gtable
+                             r-glmnet
+                             r-ggplot2
+                             r-ggdendro
+                             r-dplyr
+                             r-devtools
+                             r-deseq2
+                             r-biobase
+                             r-beeswarm))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/BloodCancerMultiOmics2017")
+    (synopsis
+     "\"Drug-perturbation-based stratification of blood cancer\" by Dietrich S, Oles M, Lu J et al. - experimental data and complete analysis")
+    (description
+     "The package contains data of the Primary Blood Cancer Encyclopedia (PACE)
+project together with a complete executable transcript of the statistical
+analysis and reproduces figures presented in the paper \"Drug-perturbation-based
+stratification of blood cancer\" by Dietrich S, Oles M, Lu J et al., J. Clin.
+Invest. (2018) 128(1):427-445.  doi:10.1172/JCI93801.")
+    (license license:lgpl3+)))
+
 (define-public r-blma
   (package
     (name "r-blma")
@@ -823,6 +3531,27 @@ the modules in rows.")
 range of applications, including general hypothesis testings, differential
 expression analysis, functional analysis, and pathway analysis.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-blimatestingdata
+  (package
+    (name "r-blimatestingdata")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "blimaTestingData" version
+                              'experiment))
+       (sha256
+        (base32 "14rlw5xxgbybsrzmzncqwzkc617gfays5z8x6ifigfdlrp5h1rpl"))))
+    (properties `((upstream-name . "blimaTestingData")))
+    (build-system r-build-system)
+    (home-page "https://bitbucket.org/kulvait/blima")
+    (synopsis "Data for testing of the package blima")
+    (description
+     "Experiment data package.  The set were prepared using microarray images of human
+mesenchymal cells treated with various supplements.  This package is intended to
+provide example data to test functionality provided by blima.")
+    (license license:gpl3)))
 
 (define-public r-blima
   (package
@@ -917,6 +3646,61 @@ detect differentially methylated regions (DMRs).  The package takes already
 aligned BS data from one or multiple samples.")
     (license license:lgpl3)))
 
+(define-public r-biotmledata
+  (package
+    (name "r-biotmledata")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "biotmleData" version
+                              'experiment))
+       (sha256
+        (base32 "06lnkwqzsk4v241309w174ia6x8iksh7rvk3z8l0xr6hf31sg5gw"))))
+    (properties `((upstream-name . "biotmleData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/biotmleData")
+    (synopsis
+     "Example experimental microarray data set for the \"biotmle\" R package")
+    (description
+     "Microarray data (from the Illumina Ref-8 @code{BeadChips} platform) and
+phenotype-level data from an epidemiological investigation of benzene exposure,
+packaged using \"@code{SummarizedExperiemnt}\", for use as an example with the
+\"biotmle\" R package.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
+(define-public r-bioplex
+  (package
+    (name "r-bioplex")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BioPlex" version
+                              'experiment))
+       (sha256
+        (base32 "0wwsbv4kyi67favswb5jrcgjv6a02s8gvwc23918y0rlcmkx07m7"))))
+    (properties `((upstream-name . "BioPlex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-graph
+                             r-geoquery
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ccb-hms/BioPlex")
+    (synopsis "R-side access to BioPlex protein-protein interaction data")
+    (description
+     "The @code{BioPlex} package implements access to the @code{BioPlex}
+protein-protein interaction networks and related resources from within R.
+Besides protein-protein interaction networks for HEK293 and HCT116 cells, this
+includes access to CORUM protein complex data, and transcriptome and proteome
+data for the two cell lines.  Functionality focuses on importing the various
+data resources and storing them in dedicated Bioconductor data structures, as a
+foundation for integrative downstream analysis of the data.")
+    (license license:artistic2.0)))
+
 (define-public r-bionar
   (package
     (name "r-bionar")
@@ -960,6 +3744,64 @@ The aim is to quantify and rank each protein’s simultaneous impact into multip
 complexes based on network topology and clustering.  Package also enables
 estimating of co-occurrence of diseases across the network and specific clusters
 pointing towards shared/common mechanisms.")
+    (license license:artistic2.0)))
+
+(define-public r-biomartgogenesets
+  (package
+    (name "r-biomartgogenesets")
+    (version "0.99.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BioMartGOGeneSets" version
+                              'annotation))
+       (sha256
+        (base32 "1ack8v1q0zg15gs816n9f4pwrzrpsv4va6j0r8847pw0pvavwpiq"))))
+    (properties `((upstream-name . "BioMartGOGeneSets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jokergoo/BioMartGOGeneSets")
+    (synopsis "Gene Ontology Gene Sets from BioMart")
+    (description
+     "It contains pre-compiled Gene Ontology gene sets for all organisms available on
+the Ensembl database.  It also includes GO gene sets for organisms on Ensembl
+Plants, Ensembl Metazoa, Ensembl Fungi and Ensembl Protists.  The data was
+collected with the @code{biomaRt} package.")
+    (license license:expat)))
+
+(define-public r-bioimagedbs
+  (package
+    (name "r-bioimagedbs")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BioImageDbs" version
+                              'experiment))
+       (sha256
+        (base32 "1xgm9n01if7rb6lsgj4cg5dbjl8kq6zvkj4324vrwj1c1mdaa9nv"))))
+    (properties `((upstream-name . "BioImageDbs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-markdown
+                             r-magrittr
+                             r-magick
+                             r-filesstrings
+                             r-experimenthub
+                             r-einsum
+                             r-ebimage
+                             r-annotationhub
+                             r-animation))
+    (native-inputs (list r-knitr))
+    (home-page "https://kumes.github.io/BioImageDbs/")
+    (synopsis
+     "Bio- and biomedical imaging dataset for machine learning and deep learning (for ExperimentHub)")
+    (description
+     "The package provides a bioimage dataset for the image analysis using machine
+learning and deep learning.  The dataset includes microscopy imaging data with
+supervised labels.  The data is provided as R list data that can be loaded to
+Keras/tensorflow in R.")
     (license license:artistic2.0)))
 
 (define-public r-biodbuniprot
@@ -1469,6 +4311,52 @@ package was supported in part by National Science Foundation awards DMS 1853549
 and DMS 2054173.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
+(define-public r-beta7
+  (package
+    (name "r-beta7")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "beta7" version
+                              'experiment))
+       (sha256
+        (base32 "1q77pmvjnwyi0hm0dmi45a5fcj1phhz9r2fvz4vnmq5b632zp30v"))))
+    (properties `((upstream-name . "beta7")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-marray))
+    (home-page "https://bioconductor.org/packages/beta7")
+    (synopsis
+     "Rodriguez et al. (2004) Differential Gene Expression by Memory/Effector T Helper Cells Bearing the Gut-Homing Receptor Integrin alpha4 beta7")
+    (description
+     "Data from 6 gpr files aims to identify differential expressed genes between the
+beta 7+ and beta 7- memory T helper cells.")
+    (license license:lgpl2.0+)))
+
+(define-public r-benchmarkfdrdata2019
+  (package
+    (name "r-benchmarkfdrdata2019")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "benchmarkfdrData2019" version
+                              'experiment))
+       (sha256
+        (base32 "1p441c08bxx81z556n5wrzxkbq5g4lrwkp1wk7jh6zk6qs3jqg96"))))
+    (properties `((upstream-name . "benchmarkfdrData2019")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/benchmarkfdrData2019")
+    (synopsis
+     "Data and Benchmarking Results from Korthauer and Kimes et al. (2019)")
+    (description
+     "Benchmarking results for experimental and simulated data sets used in Korthauer
+and Kimes et al. (2019) to compare methods for controlling the false discovery
+rate.")
+    (license license:expat)))
+
 (define-public r-benchdamic
   (package
     (name "r-benchdamic")
@@ -1599,6 +4487,72 @@ to identify enriched antibody responses.")
 putative single-cell RNA-seq clusters in the context of experimental noise
 estimated by ERCC spike-in controls.")
     (license license:gpl3)))
+
+(define-public r-beadsorted-saliva-epic
+  (package
+    (name "r-beadsorted-saliva-epic")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BeadSorted.Saliva.EPIC" version
+                              'experiment))
+       (sha256
+        (base32 "088c6ikr7cslpx8yx89d3y00zigy6c21qa1m3dlrynghh7z8xi8w"))))
+    (properties `((upstream-name . "BeadSorted.Saliva.EPIC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/BeadSorted.Saliva.EPIC")
+    (synopsis "Illumina EPIC data on BeadSorted child saliva cells")
+    (description
+     "Raw data objects used to estimate saliva cell proportion estimates in ewastools.
+ The @code{FlowSorted.Saliva.EPIC} object is constructed from samples assayed by
+Lauren Middleton et.  al. (2021).")
+    (license license:gpl3)))
+
+(define-public r-beadarrayusecases
+  (package
+    (name "r-beadarrayusecases")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BeadArrayUseCases" version
+                              'experiment))
+       (sha256
+        (base32 "052r8snjwqzn49gjwv1fv5vhwl14vcmzwjxb4jgsbnb14wyhiliy"))))
+    (properties `((upstream-name . "BeadArrayUseCases")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-limma r-geoquery r-beadarray))
+    (home-page "https://bioconductor.org/packages/BeadArrayUseCases")
+    (synopsis
+     "Analysing Illumina BeadArray expression data using Bioconductor")
+    (description
+     "Example data files and use cases for processing Illumina @code{BeadArray}
+expression data using Bioconductor")
+    (license license:gpl2)))
+
+(define-public r-beadarrayexampledata
+  (package
+    (name "r-beadarrayexampledata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "beadarrayExampleData" version
+                              'experiment))
+       (sha256
+        (base32 "1mb821p4hf9fmj0f7s0rxwbxv8kb5ln0x2gfnydg4jnyz7k9w5p8"))))
+    (properties `((upstream-name . "beadarrayExampleData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase r-beadarray))
+    (home-page "https://bioconductor.org/packages/beadarrayExampleData")
+    (synopsis "Example data for the beadarray package")
+    (description
+     "An small dataset that can be used to run examples from the beadarray vignette
+and examples")
+    (license license:gpl2)))
 
 (define-public r-beachmat-hdf5
   (package
@@ -1783,6 +4737,49 @@ user to generate HTML tables, plots and a self contained report of summary
 metrics from Illumina XML output files.")
     (license license:gpl3+)))
 
+(define-public r-barley1probe
+  (package
+    (name "r-barley1probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "barley1probe" version
+                              'annotation))
+       (sha256
+        (base32 "1kh5r748b4vkmvlfaclmrh07ypbrzgxn90liqfz1rwkabh6rfk71"))))
+    (properties `((upstream-name . "barley1probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/barley1probe")
+    (synopsis "Probe sequence data for microarrays of type barley1")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Barley1\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-barley1cdf
+  (package
+    (name "r-barley1cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "barley1cdf" version
+                              'annotation))
+       (sha256
+        (base32 "0rbij5cqr2sz33y5waybv85nrcgf70iwj5gk13g0xn9p1l1zxyn2"))))
+    (properties `((upstream-name . "barley1cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/barley1cdf")
+    (synopsis "barley1cdf")
+    (description
+     "This package provides a package containing an environment representing the
+Barley1.CDF file.")
+    (license license:lgpl2.0+)))
+
 (define-public r-bandle
   (package
     (name "r-bandle")
@@ -1801,6 +4798,7 @@ metrics from Illumina XML output files.")
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-prolocdata
                              r-proloc
                              r-plyr
                              r-msnbase

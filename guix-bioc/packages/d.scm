@@ -24,6 +24,7 @@
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages f)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -38,6 +39,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -46,6 +48,29 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-dyebiasexamples
+  (package
+    (name "r-dyebiasexamples")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "dyebiasexamples" version
+                              'experiment))
+       (sha256
+        (base32 "06sp4fxsph3w84g960s65sy1vc032p2xj3sf0v94nh78f6myg0mj"))))
+    (properties `((upstream-name . "dyebiasexamples")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-marray r-geoquery))
+    (home-page "http://www.holstegelab.nl/publications/margaritis_lijnzaad")
+    (synopsis
+     "Example data for the dyebias package, which implements the GASSCO method")
+    (description
+     "Data for the dyebias package, consisting of 4 self-self hybrizations of
+self-spotted yeast slides, as well as data from Array Express accession
+E-MTAB-32")
+    (license license:gpl3)))
 
 (define-public r-dyebias
   (package
@@ -74,6 +99,26 @@ estimated and corrected using the GASSCO method (Margaritis et al., Mol.  Sys.
 Biol.  5:266 (2009), doi:10.1038/msb.2009.21)")
     (license license:gpl3)))
 
+(define-public r-dvddata
+  (package
+    (name "r-dvddata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DvDdata" version
+                              'experiment))
+       (sha256
+        (base32 "16352h34az5sjq0bfgx9qs9njkn3nqws584cm1yydh2v60fclv63"))))
+    (properties `((upstream-name . "DvDdata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/DvDdata")
+    (synopsis "Drug versus Disease Data")
+    (description
+     "Data package which provides default drug and disease expression profiles for the
+@code{DvD} package.")
+    (license license:gpl3)))
+
 (define-public r-dupradar
   (package
     (name "r-dupradar")
@@ -92,6 +137,40 @@ Biol.  5:266 (2009), doi:10.1038/msb.2009.21)")
     (synopsis "Assessment of duplication rates in RNA-Seq datasets")
     (description "Duplication rate quality control for RNA-Seq datasets.")
     (license license:gpl3)))
+
+(define-public r-duoclustering2018
+  (package
+    (name "r-duoclustering2018")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DuoClustering2018" version
+                              'experiment))
+       (sha256
+        (base32 "0248jc4frjwbv5vq0483s2flbrnd70x4bkad7aphfxvrk897sn9v"))))
+    (properties `((upstream-name . "DuoClustering2018")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-reshape2
+                             r-purrr
+                             r-mclust
+                             r-magrittr
+                             r-ggthemes
+                             r-ggplot2
+                             r-experimenthub
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/DuoClustering2018")
+    (synopsis
+     "Data, Clustering Results and Visualization Functions From Duò et al (2018)")
+    (description
+     "Preprocessed experimental and simulated @code{scRNA-seq} data sets used for
+evaluation of clustering methods for @code{scRNA-seq} data in Duò et al (2018).
+Also contains results from applying several clustering methods to each of the
+data sets, and functions for plotting method performance.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-dune
   (package
@@ -178,6 +257,26 @@ Structure-Seq, SHAPE-Seq, etc.  See Choudhary et al., Genome Biology, 2019 for
 the underlying method.")
     (license license:gpl2+)))
 
+(define-public r-drugvsdiseasedata
+  (package
+    (name "r-drugvsdiseasedata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DrugVsDiseasedata" version
+                              'experiment))
+       (sha256
+        (base32 "03g6syilb9v9cr2snh5w02ng6drff5i86drbmhv24yabwfgp3ndi"))))
+    (properties `((upstream-name . "DrugVsDiseasedata")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/DrugVsDiseasedata")
+    (synopsis "Drug versus Disease Data")
+    (description
+     "Data package which provides default disease expression profiles, clusters and
+annotation information for use with the @code{DrugVsDisease} package.")
+    (license license:gpl3)))
+
 (define-public r-drugvsdisease
   (package
     (name "r-drugvsdisease")
@@ -195,7 +294,11 @@ the underlying method.")
                              r-qvalue
                              r-limma
                              r-hgu133plus2-db
+                             r-hgu133a2-db
+                             r-hgu133a-db
                              r-geoquery
+                             r-drugvsdiseasedata
+                             r-cmap2data
                              r-biomart
                              r-biocgenerics
                              r-arrayexpress
@@ -247,6 +350,162 @@ it provides one of the most comprehensive and best annotatated knowledge
 resources for drug-target information available in the public domain.")
     (license license:artistic2.0)))
 
+(define-public r-drosophila2probe
+  (package
+    (name "r-drosophila2probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drosophila2probe" version
+                              'annotation))
+       (sha256
+        (base32 "1b8wnkyg0p7cffs3ka7by295jsys1sx2gpbj2j63239f0dylpl0i"))))
+    (properties `((upstream-name . "drosophila2probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/drosophila2probe")
+    (synopsis "Probe sequence data for microarrays of type drosophila2")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was Drosophila\\_2\\_probe\\_tab.")
+    (license license:lgpl2.0+)))
+
+(define-public r-drosophila2cdf
+  (package
+    (name "r-drosophila2cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drosophila2cdf" version
+                              'annotation))
+       (sha256
+        (base32 "1w8k5br8nl7m5l4r05af8nc2wwnlpxxl8ncvvhqx5annlb2ynrg3"))))
+    (properties `((upstream-name . "drosophila2cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/drosophila2cdf")
+    (synopsis "drosophila2cdf")
+    (description
+     "This package provides a package containing an environment representing the
+Drosophila_2.cdf file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-drosophila2-db
+  (package
+    (name "r-drosophila2-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drosophila2.db" version
+                              'annotation))
+       (sha256
+        (base32 "03lnr2k1dk784mid0ax7v96hnawp5275a3nnzryz8bnl5052fwds"))))
+    (properties `((upstream-name . "drosophila2.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-dm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/drosophila2.db")
+    (synopsis
+     "Affymetrix Affymetrix Drosophila_2 Array annotation data (chip drosophila2)")
+    (description
+     "Affymetrix Affymetrix Drosophila_2 Array annotation data (chip drosophila2)
+assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-drosgenome1probe
+  (package
+    (name "r-drosgenome1probe")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drosgenome1probe" version
+                              'annotation))
+       (sha256
+        (base32 "1vzf8197nkbdqdpafpafxlkcy61d6mwd7wcbakdhq5493dwhdi98"))))
+    (properties `((upstream-name . "drosgenome1probe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/drosgenome1probe")
+    (synopsis "Probe sequence data for microarrays of type drosgenome1")
+    (description
+     "This package was automatically created by package @code{AnnotationForge} version
+1.11.21.  The probe sequence data was obtained from http://www.affymetrix.com.
+The file name was @code{DrosGenome1\\_probe\\_tab}.")
+    (license license:lgpl2.0+)))
+
+(define-public r-drosgenome1cdf
+  (package
+    (name "r-drosgenome1cdf")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drosgenome1cdf" version
+                              'annotation))
+       (sha256
+        (base32 "02x6kcnzayx3adz5kjrmfcly36j6j5xwwknd16nskh9050g8xg1y"))))
+    (properties `((upstream-name . "drosgenome1cdf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/drosgenome1cdf")
+    (synopsis "drosgenome1cdf")
+    (description
+     "This package provides a package containing an environment representing the
+@code{DrosGenome1.CDF} file.")
+    (license license:lgpl2.0+)))
+
+(define-public r-drosgenome1-db
+  (package
+    (name "r-drosgenome1-db")
+    (version "3.13.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drosgenome1.db" version
+                              'annotation))
+       (sha256
+        (base32 "0qhhmgjx5yhbdwid6xjp6vbiql8qrh952rq5gwsrhra6812dzwnr"))))
+    (properties `((upstream-name . "drosgenome1.db")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-org-dm-eg-db r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/drosgenome1.db")
+    (synopsis
+     "Affymetrix Affymetrix DrosGenome1 Array annotation data (chip drosgenome1)")
+    (description
+     "Affymetrix Affymetrix @code{DrosGenome1} Array annotation data (chip
+drosgenome1) assembled using data from public repositories")
+    (license license:artistic2.0)))
+
+(define-public r-droplettestfiles
+  (package
+    (name "r-droplettestfiles")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DropletTestFiles" version
+                              'experiment))
+       (sha256
+        (base32 "0a68xd9ks83a13s1cckmhrc50ijp7dw19yjf37v253q50xjp0z03"))))
+    (properties `((upstream-name . "DropletTestFiles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-experimenthub r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/DropletTestFiles")
+    (synopsis "Test Files for Single-Cell Droplet Utilities")
+    (description
+     "Assorted files generated from droplet-based single-cell protocols, to be used
+for testing functions in @code{DropletUtils}.  Primarily intended for storing
+files that directly come out of processing pipelines like 10X Genomics
+@code{CellRanger} software, prior to the formation of a
+@code{SingleCellExperiment} object.  Unlike other packages, this is not designed
+to provide objects that are immediately ready for analysis.")
+    (license license:gpl3)))
+
 (define-public r-drivernet
   (package
     (name "r-drivernet")
@@ -271,6 +530,25 @@ from pathway data.  A greedy algorithm is used to find the possible driver
 genes, which may mutated in a larger number of patients and these mutations will
 push the gene expression values of the connected genes to some extreme values.")
     (license license:gpl3)))
+
+(define-public r-dresscheck
+  (package
+    (name "r-dresscheck")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "dressCheck" version
+                              'experiment))
+       (sha256
+        (base32 "1mb6cmyf61rb7jdwczhzcvadgqijij53w03d87xq7zqsc7jxi9z3"))))
+    (properties `((upstream-name . "dressCheck")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/dressCheck")
+    (synopsis "data and software for checking Dressman JCO 25(5) 2007")
+    (description "data and software for checking Dressman JCO 25(5) 2007")
+    (license license:artistic2.0)))
 
 (define-public r-dreamlet
   (package
@@ -476,6 +754,32 @@ Mass Spectrometry data.  The package provides a shiny application to run the
 pipeline, several visualisations and a downloadable report of an experiment.")
     (license license:gpl3)))
 
+(define-public r-dorothea
+  (package
+    (name "r-dorothea")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "dorothea" version
+                              'experiment))
+       (sha256
+        (base32 "1vinixcpl4hjjfw48qfngsvw1yr82yscdxrsgagdm8gm7b72qjgh"))))
+    (properties `((upstream-name . "dorothea")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-dplyr r-decoupler r-bcellviper))
+    (native-inputs (list r-knitr))
+    (home-page "https://saezlab.github.io/dorothea/")
+    (synopsis "Collection Of Human And Mouse TF Regulons")
+    (description
+     "@code{DoRothEA} is a gene regulatory network containing signed transcription
+factor (TF) - target gene interactions. @code{DoRothEA} regulons, the collection
+of a TF and its transcriptional targets, were curated and collected from
+different types of evidence for both human and mouse.  A confidence level was
+assigned to each TF-target interaction based on the number of supporting
+evidence.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-doppelgangr
   (package
     (name "r-doppelgangr")
@@ -506,6 +810,30 @@ phenotype/clinical data (@code{pData(eset})), and \"smoking guns\" - supposedly
 unique identifiers found in @code{pData(eset}).")
     (license (license:fsdg-compatible "GPL (>=2.0)"))))
 
+(define-public r-donapllp2013
+  (package
+    (name "r-donapllp2013")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DonaPLLP2013" version
+                              'experiment))
+       (sha256
+        (base32 "0pxxg6rkdgafxj71mvlbm14vzv414hfh2p24rhyby7glrkzh2vq0"))))
+    (properties `((upstream-name . "DonaPLLP2013")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ebimage))
+    (home-page "https://bioconductor.org/packages/DonaPLLP2013")
+    (synopsis
+     "Supplementary data package for Dona et al. (2013) containing example images and tables")
+    (description
+     "An experiment data package associated with the publication Dona et al. (2013).
+Package contains runnable vignettes showing an example image segmentation for
+one posterior lateral line primordium, and also the data table and code used to
+analyze tissue-scale lifetime-ratio statistics.")
+    (license license:artistic2.0)))
+
 (define-public r-dominoeffect
   (package
     (name "r-dominoeffect")
@@ -535,6 +863,32 @@ unique identifiers found in @code{pData(eset}).")
 proteins.  These are individual amino acids that accumulate mutations at a much
 higher rate than their surrounding regions.")
     (license license:gpl3+)))
+
+(define-public r-dnazoodata
+  (package
+    (name "r-dnazoodata")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DNAZooData" version
+                              'experiment))
+       (sha256
+        (base32 "0d5466b830s82laamig1rw0p0n6i4npb11iyziv1sfvs4y8pbhl8"))))
+    (properties `((upstream-name . "DNAZooData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-rjson r-hicexperiment
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/js2264/DNAZooData")
+    (synopsis "DNA Zoo data package")
+    (description
+     "DNA@code{ZooData} is a data package giving programmatic access to genome
+assemblies and Hi-C contact matrices uniformly processed by the [DNA Zoo
+Consortium](https://www.dnazoo.org/).  The matrices are available in the
+multi-resolution `.hic` format.  A URL to corrected genome assemblies in
+`.fastq` format is also provided to the end-user.")
+    (license license:expat)))
 
 (define-public r-dnashaper
   (package
@@ -658,6 +1012,35 @@ data, choosing between a number of different options for modeling the dependency
 between each @code{CpG}.")
     (license license:gpl3)))
 
+(define-public r-dmrcatedata
+  (package
+    (name "r-dmrcatedata")
+    (version "2.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DMRcatedata" version
+                              'experiment))
+       (sha256
+        (base32 "07gkhal6rhj9b4yasmb3dfix38cd99p2bf79agl8vbrmzd0mjvhc"))))
+    (properties `((upstream-name . "DMRcatedata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtracklayer
+                             r-readxl
+                             r-plyr
+                             r-illuminahumanmethylationepicanno-ilm10b4-hg19
+                             r-illuminahumanmethylation450kanno-ilmn12-hg19
+                             r-gviz
+                             r-genomicfeatures
+                             r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/DMRcatedata")
+    (synopsis "Data Package for DMRcate")
+    (description
+     "This package contains 9 data objects supporting functionality and examples of
+the Bioconductor package DMRcate.")
+    (license license:gpl3)))
+
 (define-public r-dmrcaller
   (package
     (name "r-dmrcaller")
@@ -685,6 +1068,37 @@ methylated regions between the conditions in CG and non-CG context.  The input
 is the CX report files produced by Bismark and the output is a list of DMRs
 stored as GRanges objects.")
     (license license:gpl3)))
+
+(define-public r-dmelsgi
+  (package
+    (name "r-dmelsgi")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DmelSGI" version
+                              'experiment))
+       (sha256
+        (base32 "1qsvw7jrn070yfrgrkw9wsdb05g8ai5hmcqmyr78qs5qny0cz919"))))
+    (properties `((upstream-name . "DmelSGI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsp
+                             r-rhdf5
+                             r-limma
+                             r-knitr
+                             r-igraph
+                             r-gplots
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/DmelSGI")
+    (synopsis
+     "Experimental data and documented source code for the paper \"A Map of Directional Genetic Interactions in a Metazoan Cell\"")
+    (description
+     "The package contains the experimental data and documented source code of the
+manuscript \"Fischer et al., A Map of Directional Genetic Interactions in a
+Metazoan Cell, @code{eLife}, 2015, in Press.\".  The vignette code generates all
+figures in the paper.")
+    (license license:artistic2.0)))
 
 (define-public r-dmchmm
   (package
@@ -732,6 +1146,27 @@ DMC identification method based on Hidden Markov Models (HMMs) called “DMCHMM�
 which is a three-step approach (model selection, prediction, testing) aiming to
 address the aforementioned drawbacks.")
     (license license:gpl3)))
+
+(define-public r-dlbcl
+  (package
+    (name "r-dlbcl")
+    (version "1.42.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DLBCL" version
+                              'experiment))
+       (sha256
+        (base32 "0an4g45977knk2qsvwjjm66l7rrb26pbk8sbb1zjvmrqym1qviqj"))))
+    (properties `((upstream-name . "DLBCL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-graph r-biobase))
+    (home-page "http://bionet.bioapps.biozentrum.uni-wuerzburg.de/")
+    (synopsis "Diffuse large B-cell lymphoma expression data")
+    (description
+     "This package provides additional expression data on diffuse large B-cell
+lymphomas for the @code{BioNet} package.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-dks
   (package
@@ -979,6 +1414,28 @@ protocols for which the depth-dependent proportion of zeros in the raw
 expression data can otherwise present a challenge.")
     (license license:gpl3)))
 
+(define-public r-diggitdata
+  (package
+    (name "r-diggitdata")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "diggitdata" version
+                              'experiment))
+       (sha256
+        (base32 "01r356zdy4pi8z90pbww8q7dfmq09zf148d5sq3w22z1ypsy6zm1"))))
+    (properties `((upstream-name . "diggitdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viper r-biobase))
+    (home-page "https://bioconductor.org/packages/diggitdata")
+    (synopsis "Example data for the diggit package")
+    (description
+     "This package provides expression profile and CNV data for glioblastoma from
+TCGA, and transcriptional and post-translational regulatory networks assembled
+with the ARACNe and MINDy algorithms, respectively.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-diggit
   (package
     (name "r-diggit")
@@ -1075,6 +1532,27 @@ and prioritising novel candidates.  The R package @code{diffuStats} contains a
 collection of diffusion kernels and scoring approaches that facilitates their
 computation, characterisation and benchmarking.")
     (license license:gpl3)))
+
+(define-public r-diffloopdata
+  (package
+    (name "r-diffloopdata")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "diffloopdata" version
+                              'experiment))
+       (sha256
+        (base32 "1f0gnwpjxkby7kd2bphnz4lv7gx9k297yqz0b954m7adp1sh6aqa"))))
+    (properties `((upstream-name . "diffloopdata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/diffloopdata")
+    (synopsis "Example ChIA-PET Datasets for the diffloop Package")
+    (description
+     "@code{ChIA-PET} example datasets and additional data for use with the diffloop
+package.")
+    (license license:expat)))
 
 (define-public r-difflogo
   (package
@@ -1292,6 +1770,28 @@ Fuzzy Patterns are built by means of applying 3 Membership Functions to
 discretized gene expression values.")
     (license license:gpl2)))
 
+(define-public r-dexmadata
+  (package
+    (name "r-dexmadata")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DExMAdata" version
+                              'experiment))
+       (sha256
+        (base32 "1a2hrvbkhpwmjha0iwd17xv60d1cdl7iswc942bcac80mn6sw305"))))
+    (properties `((upstream-name . "DExMAdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/DExMAdata")
+    (synopsis "Data package for DExMA package")
+    (description
+     "Data objects needed to @code{allSameID}() function of D@code{ExMA} package.
+There are also some objects that are necessary to be able to apply the examples
+of the D@code{ExMA} package, which illustrate package functionality.")
+    (license license:gpl2)))
+
 (define-public r-dexma
   (package
     (name "r-dexma")
@@ -1314,6 +1814,7 @@ discretized gene expression values.")
                              r-limma
                              r-impute
                              r-geoquery
+                             r-dexmadata
                              r-bnstruct
                              r-biobase))
     (home-page "https://bioconductor.org/packages/DExMA")
@@ -1446,6 +1947,43 @@ spatial variability; - jointly fitting multiple samples, targeting genes with
 consistent spatial patterns across replicates.")
     (license license:gpl3)))
 
+(define-public r-desousa2013
+  (package
+    (name "r-desousa2013")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DeSousa2013" version
+                              'experiment))
+       (sha256
+        (base32 "1xjygkr8rc1m9sv5bwph3wdf9hhcfdw8zji547nw0ayrg5d49689"))))
+    (properties `((upstream-name . "DeSousa2013")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sva
+                             r-survival
+                             r-siggenes
+                             r-rocr
+                             r-rgl
+                             r-pamr
+                             r-hgu133plus2frmavecs
+                             r-hgu133plus2-db
+                             r-gplots
+                             r-frmatools
+                             r-frma
+                             r-consensusclusterplus
+                             r-cluster
+                             r-biobase
+                             r-annotationdbi
+                             r-affy))
+    (home-page "https://bioconductor.org/packages/DeSousa2013")
+    (synopsis
+     "Poor prognosis colon cancer is defined by a molecularly distinct subtype and precursor lesion")
+    (description
+     "This package reproduces the main pipeline to analyze the AMC-AJCCII-90
+microarray data set in De Sousa et al.  accepted by Nature Medicine in 2013.")
+    (license license:artistic2.0)))
+
 (define-public r-desingle
   (package
     (name "r-desingle")
@@ -1552,6 +2090,28 @@ epigenomic signals.")
 from the core functionality of derfinder.")
     (license license:artistic2.0)))
 
+(define-public r-derfinderdata
+  (package
+    (name "r-derfinderdata")
+    (version "2.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "derfinderData" version
+                              'experiment))
+       (sha256
+        (base32 "1h8rl8mnxk2lsl8xa8mihvbd77yw32fpxdbhhn4rv1v8i5j35r7l"))))
+    (properties `((upstream-name . "derfinderData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/leekgroup/derfinderData")
+    (synopsis "Processed BigWigs from BrainSpan for examples")
+    (description
+     "Processed 22 samples from @code{BrainSpan} keeping only the information for
+chromosome 21.  Data is stored in the @code{BigWig} format and is used for
+examples in other packages.")
+    (license license:artistic2.0)))
+
 (define-public r-deqms
   (package
     (name "r-deqms")
@@ -1579,6 +2139,44 @@ variances for proteins quantified by different number of PSMs/peptides,
 therefore acchieving better accuracy.  The package can be applied to analyze
 both label-free and labelled proteomics data.")
     (license license:lgpl2.0+)))
+
+(define-public r-depmap
+  (package
+    (name "r-depmap")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "depmap" version
+                              'experiment))
+       (sha256
+        (base32 "1vb3f5ar2jlkjyhp7rv4imlylinm6fi94ki277jgdaxn12v78qxj"))))
+    (properties `((upstream-name . "depmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-experimenthub r-dplyr r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/depmap")
+    (synopsis "Cancer Dependency Map Data Package")
+    (description
+     "The depmap package is a data package that accesses datsets from the Broad
+Institute @code{DepMap} cancer dependency study using @code{ExperimentHub}.
+Datasets from the most current release are available, including RNAI and
+CRISPR-Cas9 gene knockout screens quantifying the genetic dependency for select
+cancer cell lines.  Additional datasets are also available pertaining to the log
+copy number of genes for select cell lines, protein expression of cell lines as
+measured by reverse phase protein lysate microarray (RPPA), Transcript Per
+Million (TPM) data, as well as supplementary datasets which contain metadata and
+mutation calls for the other datasets found in the current release.  The 19Q3
+release adds the drug_dependency dataset, that contains cancer cell line
+dependency data with respect to drug and drug-candidate compounds.  The 20Q2
+release adds the proteomic dataset that contains quantitative profiling of
+proteins via mass spectrometry.  This package will be updated on a quarterly
+basis to incorporate the latest Broad Institute @code{DepMap} Public cancer
+dependency datasets.  All data made available in this package was generated by
+the Broad Institute @code{DepMap} for research purposes and not intended for
+clinical use.  This data is distributed under the Creative Commons license
+(Attribution 4.0 International (CC BY 4.0)).")
+    (license license:artistic2.0)))
 
 (define-public r-depinfer
   (package
@@ -2447,6 +3045,32 @@ differential co-expression networks can allow identification of networks that
 are altered between two conditions (e.g., health and disease).")
     (license license:gpl3)))
 
+(define-public r-davidtiling
+  (package
+    (name "r-davidtiling")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "davidTiling" version
+                              'experiment))
+       (sha256
+        (base32 "1xfkyncwi9zrynk6dqsmacmkxx2qvj1axda3wn55b1vbw2wimpyf"))))
+    (properties `((upstream-name . "davidTiling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tilingarray r-go-db r-biobase))
+    (home-page "http://www.ebi.ac.uk/huber")
+    (synopsis
+     "Data and analysis scripts for David, Huber et al. yeast tiling array paper")
+    (description
+     "This package contains the data for the paper by L. David et al.  in PNAS 2006
+(PMID 16569694): 8 CEL files of Affymetrix genechips, an @code{ExpressionSet}
+object with the raw feature data, a probe annotation data structure for the chip
+and the yeast genome annotation (GFF file) that was used.  In addition, some
+custom-written analysis functions are provided, as well as R scripts in the
+scripts directory.")
+    (license license:lgpl2.0+)))
+
 (define-public r-dart
   (package
     (name "r-dart")
@@ -2469,6 +3093,35 @@ designed to evaluate the consistency of prior information molecular signatures
 (e.g gene expression data sets).  If consistent, a pruning network strategy is
 then used to infer the activation status of the molecular signature in
 individual samples.")
+    (license license:gpl2)))
+
+(define-public r-dapardata
+  (package
+    (name "r-dapardata")
+    (version "1.32.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DAPARdata" version
+                              'experiment))
+       (sha256
+        (base32 "1iwiq5z1jnsrdp3pnhxlb2rvcfg91xp7xp2k0ry7r0gr9hjnnhr7"))))
+    (properties `((upstream-name . "DAPARdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-msnbase))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.prostar-proteomics.org/")
+    (synopsis "Data accompanying the DAPAR and Prostar packages")
+    (description
+     "Mass-spectrometry based UPS proteomics data sets from Ramus C, Hovasse A,
+Marcellin M, Hesse AM, Mouton-Barbosa E, Bouyssie D, Vaca S, Carapito C, Chaoui
+K, Bruley C, Garin J, Cianferani S, Ferro M, Dorssaeler AV, Burlet-Schiltz O,
+Schaeffer C, Coute Y, Gonzalez de Peredo A. Spiked proteomic standard dataset
+for testing label-free quantitative software and statistical methods.  Data
+Brief.  2015 Dec 17;6:286-94 and Giai Gianetto, Q., Combes, F., Ramus, C.,
+Bruley, C., Coute, Y., Burger, T. (2016).  Calibration plot for proteomics: A
+graphical tool to visually check the assumptions underlying FDR control in
+quantitative experiments.  Proteomics, 16(1), 29-32.")
     (license license:gpl2)))
 
 (define-public r-dapar
@@ -2521,6 +3174,7 @@ individual samples.")
                              r-doparallel
                              r-diptest
                              r-dendextend
+                             r-dapardata
                              r-cp4p
                              r-clusterprofiler
                              r-cluster

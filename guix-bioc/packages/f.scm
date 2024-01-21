@@ -21,6 +21,7 @@
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages k)
   #:use-module (guix-bioc packages z)
+  #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
   #:use-module (guix-bioc packages v)
@@ -35,6 +36,7 @@
   #:use-module (guix-bioc packages m)
   #:use-module (guix-bioc packages l)
   #:use-module (guix-bioc packages k)
+  #:use-module (guix-bioc packages j)
   #:use-module (guix-bioc packages i)
   #:use-module (guix-bioc packages h)
   #:use-module (guix-bioc packages g)
@@ -86,6 +88,29 @@ Organizing Map` architecture and a `Multiview` integration of correlation based
 metrics.  This allows @code{FuseSOM} to cluster highly multiplexed in situ
 imaging cytometry assays.")
     (license license:gpl2)))
+
+(define-public r-furrowseg
+  (package
+    (name "r-furrowseg")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "furrowSeg" version
+                              'experiment))
+       (sha256
+        (base32 "0vvr9x50yw7h5qcgcva2505cgqk276ci7yfbzvizn3mq4n2r3n3j"))))
+    (properties `((upstream-name . "furrowSeg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tiff r-locfit r-ebimage r-dplyr r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/furrowSeg")
+    (synopsis "Furrow Segmentation")
+    (description
+     "Image feature data and analysis codes for the Guglielmi, Barry et al.  paper
+describing the application of an optogenetics tools to disrupt Drosophila embryo
+furrowing.")
+    (license license:artistic2.0)))
 
 (define-public r-funtoonorm
   (package
@@ -162,6 +187,25 @@ implementation of the k-mean alignment algorithm to classify them.")
     (synopsis "Frozen RMA Tools")
     (description
      "This package provides tools for advanced use of the frma package.")
+    (license license:gpl2+)))
+
+(define-public r-frmaexampledata
+  (package
+    (name "r-frmaexampledata")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "frmaExampleData" version
+                              'experiment))
+       (sha256
+        (base32 "0sdh0ijkpni4xk07dyvkckr6k0dha6zbciggxaki61j99fs5nwsv"))))
+    (properties `((upstream-name . "frmaExampleData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/frmaExampleData")
+    (synopsis "Frma Example Data")
+    (description
+     "Data files used by the examples in frma and @code{frmaTools} packages")
     (license license:gpl2+)))
 
 (define-public r-frma
@@ -300,6 +344,31 @@ diagnostics in the field of rare diseases where RNA-seq is performed to identify
 aberrant splicing defects.")
     (license license:expat)))
 
+(define-public r-fourdndata
+  (package
+    (name "r-fourdndata")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fourDNData" version
+                              'experiment))
+       (sha256
+        (base32 "06dzm57f56y396py2mmfzls9yypkxzj032hpba8srq263zqpi9z0"))))
+    (properties `((upstream-name . "fourDNData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors r-iranges r-hicexperiment
+                             r-genomicranges r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/js2264/fourDNData")
+    (synopsis "4DN data package")
+    (description
+     "@code{fourDNData} is a data package giving programmatic access to Hi-C contact
+matrices uniformly processed by the [4DN
+consortium](https://www.4dnucleome.org/).  The matrices are available in the
+multi-resolution `.mcool` format.")
+    (license license:expat)))
+
 (define-public r-fobitools
   (package
     (name "r-fobitools")
@@ -367,6 +436,48 @@ called FMRs).  A component-wise tuning parameter selection based on a
 component-wise BIC is implemented in the package.  Furthermore, this package
 provides Ridge Regression and Elastic Net.")
     (license license:gpl3)))
+
+(define-public r-fly-db0
+  (package
+    (name "r-fly-db0")
+    (version "3.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fly.db0" version
+                              'annotation))
+       (sha256
+        (base32 "1pksr9jwdd5izf2yc7fb935pic84nvlxa458h0da9lryglc0w5rg"))))
+    (properties `((upstream-name . "fly.db0")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/fly.db0")
+    (synopsis "Base Level Annotation databases for fly")
+    (description
+     "Base annotation databases for fly, intended ONLY to be used by
+@code{AnnotationDbi} to produce regular annotation packages.")
+    (license license:artistic2.0)))
+
+(define-public r-flowworkspacedata
+  (package
+    (name "r-flowworkspacedata")
+    (version "3.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "flowWorkspaceData" version
+                              'experiment))
+       (sha256
+        (base32 "0wm0s1839c14b2y05b8nini2aqp39vl7ycsp1nz1y2amxirdfpyq"))))
+    (properties `((upstream-name . "flowWorkspaceData")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/flowWorkspaceData")
+    (synopsis
+     "data package containing two flowJo, one diva xml workspace and the associated fcs files as well as three GatingSets for testing the flowWorkspace, openCyto and CytoML packages.")
+    (description
+     "The necessary external data to run the @code{flowWorkspace} and @code{openCyto}
+vignette is found in this package.")
+    (license license:gpl2)))
 
 (define-public r-flowvs
   (package
@@ -485,6 +596,99 @@ chosen both as it will deal with spectral cytometry and as it will hopefully
 give the user a nice pair of spectacles through which to view their data.")
     (license license:expat)))
 
+(define-public r-flowsorted-dlpfc-450k
+  (package
+    (name "r-flowsorted-dlpfc-450k")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FlowSorted.DLPFC.450k" version
+                              'experiment))
+       (sha256
+        (base32 "0dj0gcz8mfd0ilihhysrbrzbkvfpwy1dx56g4dsizkg0k6aa8nha"))))
+    (properties `((upstream-name . "FlowSorted.DLPFC.450k")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page "https://bioconductor.org/packages/FlowSorted.DLPFC.450k")
+    (synopsis
+     "Illumina HumanMethylation data on sorted frontal cortex cell populations")
+    (description
+     "Raw data objects for the Illumina 450k DNA methylation microarrays.")
+    (license license:artistic2.0)))
+
+(define-public r-flowsorted-cordbloodnorway-450k
+  (package
+    (name "r-flowsorted-cordbloodnorway-450k")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FlowSorted.CordBloodNorway.450k" version
+                              'experiment))
+       (sha256
+        (base32 "16hrhakaxhhilfy5gb0yrwijww8ph20i3qnfkrhhz6gjqh0iyri2"))))
+    (properties `((upstream-name . "FlowSorted.CordBloodNorway.450k")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page "https://bitbucket.com/kasperdanielhansen/Illumina_CordBlood")
+    (synopsis
+     "Illumina HumanMethylation data on sorted cord blood cell populations")
+    (description
+     "Raw data objects for the Illumina 450k DNA methylation microarrays, for cell
+type composition estimation.")
+    (license license:artistic2.0)))
+
+(define-public r-flowsorted-cordbloodcombined-450k
+  (package
+    (name "r-flowsorted-cordbloodcombined-450k")
+    (version "1.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FlowSorted.CordBloodCombined.450k" version
+                              'experiment))
+       (sha256
+        (base32 "0gl0dwhabdik17al1f1zq2vhg3bgbirxmsa1lxfv97vq08nqfshl"))))
+    (properties `((upstream-name . "FlowSorted.CordBloodCombined.450k")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-minfi
+                             r-illuminahumanmethylationepicanno-ilm10b4-hg19
+                             r-illuminahumanmethylation450kanno-ilmn12-hg19
+                             r-experimenthub
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/immunomethylomics/FlowSorted.CordBloodCombined.450k")
+    (synopsis "Illumina 450k/EPIC data on FACS and MACS umbilical blood cells")
+    (description
+     "Raw data objects to be used for umbilical cord blood cell proportion estimation
+in minfi and similar packages.  The @code{FlowSorted.CordBloodCombined.450k}
+object is based in samples assayed by Bakulski et al, Gervin et al., de Goede et
+al., and Lin et al.")
+    (license license:gpl3)))
+
+(define-public r-flowsorted-cordblood-450k
+  (package
+    (name "r-flowsorted-cordblood-450k")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FlowSorted.CordBlood.450k" version
+                              'experiment))
+       (sha256
+        (base32 "04fx8mc21lflbxdz7fgz0jl30jk4gd09qqn5a654jlqhllnkg9rj"))))
+    (properties `((upstream-name . "FlowSorted.CordBlood.450k")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minfi))
+    (home-page "https://bioconductor.org/packages/FlowSorted.CordBlood.450k")
+    (synopsis "Illumina 450k data on sorted cord blood cells")
+    (description
+     "Raw data objects to be used for cord blood cell proportion estimation in minfi.")
+    (license license:artistic2.0)))
+
 (define-public r-flowplots
   (package
     (name "r-flowplots")
@@ -506,6 +710,27 @@ data, and a data class which stores \"stacked\" data and has methods for computi
 summary measures on stacked data, such as marginal and polyfunctional degree
 data.")
     (license license:artistic2.0)))
+
+(define-public r-flowploidydata
+  (package
+    (name "r-flowploidydata")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "flowPloidyData" version
+                              'experiment))
+       (sha256
+        (base32 "1r3w88d20jipmj7gchv0mmw9rbziq0s7vyvi5isc4lp59hc6m9h1"))))
+    (properties `((upstream-name . "flowPloidyData")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/flowPloidyData")
+    (synopsis "Example Flow Cytometry Data")
+    (description
+     "This package provides a collection of raw flow cytometry data for use in
+vignettes for the @code{flowPloidy} package.")
+    (license license:gpl3)))
 
 (define-public r-flowploidy
   (package
@@ -892,6 +1117,53 @@ data.  One of the goals of this package is to automate analysis of bead data for
 the purpose of normalisation.")
     (license license:artistic2.0)))
 
+(define-public r-fletcher2013b
+  (package
+    (name "r-fletcher2013b")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Fletcher2013b" version
+                              'experiment))
+       (sha256
+        (base32 "1zp7wafibklwc7gr827yk1m6630c4r11nvy1i8jjhriqrjd4hnpn"))))
+    (properties `((upstream-name . "Fletcher2013b")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtn r-reder r-rcolorbrewer r-igraph
+                             r-fletcher2013a))
+    (home-page "http://dx.doi.org/10.1038/ncomms3464")
+    (synopsis "Master regulators of FGFR2 signalling and breast cancer risk")
+    (description
+     "This package reproduces the systems biology analysis for the data in package
+Fletcher2013a using RTN.")
+    (license license:gpl2+)))
+
+(define-public r-fletcher2013a
+  (package
+    (name "r-fletcher2013a")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Fletcher2013a" version
+                              'experiment))
+       (sha256
+        (base32 "04rvri7hcc5qd29c0xbkvjylh2x9flk7hf8rngd01fbhk9myxsaj"))))
+    (properties `((upstream-name . "Fletcher2013a")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-venndiagram r-limma r-gplots r-biobase))
+    (home-page "http://dx.doi.org/10.1038/ncomms3464")
+    (synopsis
+     "Gene expression data from breast cancer cells under FGFR2 signalling perturbation")
+    (description
+     "The package Fletcher2013a contains time-course gene expression data from MCF-7
+cells treated under different experimental systems in order to perturb FGFR2
+signalling.  The data comes from Fletcher et al. (Nature Comms 4:2464, 2013)
+where further details about the background and the experimental design of the
+study can be found.")
+    (license license:gpl2+)))
+
 (define-public r-flagme
   (package
     (name "r-flagme")
@@ -904,12 +1176,73 @@ the purpose of normalisation.")
         (base32 "1giqdl9prv04jp655a736gvc7xygld5v7k7vrz5c3vdrw4sgw628"))))
     (properties `((upstream-name . "flagme")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xcms r-sparsem r-mass r-gplots r-camera))
+    (propagated-inputs (list r-xcms
+                             r-sparsem
+                             r-mass
+                             r-gplots
+                             r-gcspikelite
+                             r-camera))
     (home-page "https://bioconductor.org/packages/flagme")
     (synopsis "Analysis of Metabolomics GC/MS Data")
     (description
      "Fragment-level analysis of gas chromatography-massspectrometry metabolomics
 data.")
+    (license license:lgpl2.0+)))
+
+(define-public r-fitcons-ucsc-hg19
+  (package
+    (name "r-fitcons-ucsc-hg19")
+    (version "3.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fitCons.UCSC.hg19" version
+                              'annotation))
+       (sha256
+        (base32 "19isa4x8js0pdb4k8a11bw3bzmzv6jc4jphzrvav7piqkvrgykzx"))))
+    (properties `((upstream-name . "fitCons.UCSC.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-s4vectors
+                             r-iranges
+                             r-genomicscores
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-bsgenome))
+    (home-page "https://bioconductor.org/packages/fitCons.UCSC.hg19")
+    (synopsis "UCSC fitCons fitness consequences scores for hg19")
+    (description
+     "Store UCSC @code{fitCons} fitness consequences scores version 1.01 for the human
+genome (hg19).")
+    (license license:artistic2.0)))
+
+(define-public r-fission
+  (package
+    (name "r-fission")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fission" version
+                              'experiment))
+       (sha256
+        (base32 "0y07zj5iw6fmr397xkxijgfy8mmv1k42mqjfpmv01kb0hzayjj8n"))))
+    (properties `((upstream-name . "fission")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/fission")
+    (synopsis
+     "RangedSummarizedExperiment for time course RNA-Seq of fission yeast in response to stress, by Leong et al., Nat Commun 2014")
+    (description
+     "This package provides a @code{RangedSummarizedExperiment} object of read counts
+in genes for a time course RNA-Seq experiment of fission yeast
+(Schizosaccharomyces pombe) in response to oxidative stress (1M sorbitol
+treatment) at 0, 15, 30, 60, 120 and 180 mins.  The samples are further divided
+between a wild-type group and a group with deletion of atf21.  The read count
+matrix was prepared and provided by the author of the study: Leong HS, Dawson K,
+Wirth C, Li Y, Connolly Y, Smith DL, Wilkinson CR, Miller CJ. \"A global
+non-coding RNA system modulates fission yeast protein levels in response to
+stress\".  Nat Commun 2014 May 23;5:3947.  PMID: 24853205.  GEO: GSE56761.")
     (license license:lgpl2.0+)))
 
 (define-public r-fishalyser
@@ -934,6 +1267,26 @@ culture images, in particular to quantify FISH probes within nuclei.
 Furthermore, it extract the spatial location of each nucleus as well as each
 probe enabling spatial co-localisation analysis.")
     (license license:artistic2.0)))
+
+(define-public r-fis
+  (package
+    (name "r-fis")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FIs" version
+                              'experiment))
+       (sha256
+        (base32 "0pnw0p2n9r1r0a7b1g32s7s2abbvdc976igdf48agkmilkhzpbb4"))))
+    (properties `((upstream-name . "FIs")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/FIs")
+    (synopsis "Human Functional Interactions (FIs) for splineTimeR package")
+    (description
+     "Data set containing two complete lists of identified functional interaction
+partners in Human.  Data are derived from Reactome and @code{BioGRID} databases.")
+    (license license:gpl3)))
 
 (define-public r-findit2
   (package
@@ -1013,6 +1366,60 @@ false positive structural variation (SV) calls.  The required input is an
 indexed BAM file of a FFPE sample.")
     (license license:lgpl3)))
 
+(define-public r-fieldeffectcrc
+  (package
+    (name "r-fieldeffectcrc")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FieldEffectCrc" version
+                              'experiment))
+       (sha256
+        (base32 "13xzypr95v5b3kynfn45b7rpg7kd0gcqmx3ap377plqs42nc7pa6"))))
+    (properties `((upstream-name . "FieldEffectCrc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-runit
+                             r-experimenthub
+                             r-deseq2
+                             r-biocstyle
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page
+     "http://bioconductor.org/packages/release/bioc/html/FieldEffectCrc.html")
+    (synopsis
+     "Tumor, tumor-adjacent normal, and healthy colorectal transcriptomes as SummarizedExperiment objects")
+    (description
+     "Processed RNA-seq data for 1,139 human primary colorectal tissue samples across
+three phenotypes, including tumor, normal adjacent-to-tumor, and healthy,
+available as Synapse ID syn22237139 on synapse.org.  Data have been parsed into
+@code{SummarizedExperiment} objects available via @code{ExperimentHub} to
+facilitate reproducibility and extension of results from Dampier et al. (PMCID:
+PMC7386360, PMID: 32764205).")
+    (license license:artistic2.0)))
+
+(define-public r-fibroeset
+  (package
+    (name "r-fibroeset")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fibroEset" version
+                              'experiment))
+       (sha256
+        (base32 "17dzp6gjfgsnvwplk3inf7s491brf1pnn1bq1a195s8m0r5kd946"))))
+    (properties `((upstream-name . "fibroEset")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "https://bioconductor.org/packages/fibroEset")
+    (synopsis "exprSet for Karaman et al. (2003) fibroblasts data")
+    (description
+     "@code{exprSet} for Karaman et al. (2003) human, bonobo and gorilla fibroblasts
+data")
+    (license license:lgpl2.0+)))
+
 (define-public r-fgnet
   (package
     (name "r-fgnet")
@@ -1075,6 +1482,28 @@ cross-ontology annotation of protein coding genes.  FGGA embodies elements of
 predicate logic, communication theory, supervised learning and inference in
 graphical models.")
     (license license:gpl3)))
+
+(define-public r-ffpeexampledata
+  (package
+    (name "r-ffpeexampledata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ffpeExampleData" version
+                              'experiment))
+       (sha256
+        (base32 "16bxp2x0n77hzlf6m871wgprrhkydcbbnw88jp8nb7d0fl1vhxyr"))))
+    (properties `((upstream-name . "ffpeExampleData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lumi))
+    (home-page "https://bioconductor.org/packages/ffpeExampleData")
+    (synopsis "Illumina DASL example microarray data")
+    (description
+     "This package provides a subset of GSE17565 (April et al.  2009) containing 32
+FFPE samples of Burkitts Lymphoma and Breast Adenocarcinoma, with a dilution
+series in technical duplicate.")
+    (license (license:fsdg-compatible "GPL (>2)"))))
 
 (define-public r-ffpe
   (package
@@ -1286,6 +1715,112 @@ methods described in (Reiner, Yekutieli and Benjamini 2002).  The second, is
 fdr.gui() which creates a simple graphic user interface to access fdr.ma")
     (license license:gpl2+)))
 
+(define-public r-fdb-ucsc-trnas
+  (package
+    (name "r-fdb-ucsc-trnas")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FDb.UCSC.tRNAs" version
+                              'annotation))
+       (sha256
+        (base32 "1dymdalx9fzrplxyc0fd9faa4r5jimi7zyry9k65lyz1pabpkwqz"))))
+    (properties `((upstream-name . "FDb.UCSC.tRNAs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicfeatures r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/FDb.UCSC.tRNAs")
+    (synopsis "Annotation package for FeatureDb object(s)")
+    (description
+     "Exposes an annotation databases generated from UCSC by exposing these as
+@code{FeatureDb} objects")
+    (license license:artistic2.0)))
+
+(define-public r-fdb-ucsc-snp137common-hg19
+  (package
+    (name "r-fdb-ucsc-snp137common-hg19")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FDb.UCSC.snp137common.hg19" version
+                              'annotation))
+       (sha256
+        (base32 "1q1r7rk29q0zlzxz6fvfy1kjfli6wxzvhvhhfnf3z4ksy5332q63"))))
+    (properties `((upstream-name . "FDb.UCSC.snp137common.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicfeatures r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/FDb.UCSC.snp137common.hg19")
+    (synopsis "UCSC common SNPs track for dbSNP build 137")
+    (description
+     "@code{makeFeatureDbFromUCSC} cannot cope with this track, hence a package")
+    (license license:artistic2.0)))
+
+(define-public r-fdb-ucsc-snp135common-hg19
+  (package
+    (name "r-fdb-ucsc-snp135common-hg19")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FDb.UCSC.snp135common.hg19" version
+                              'annotation))
+       (sha256
+        (base32 "1ykyixrbw86ajx65w1jwr068ma5cvzl4kypaw77kpggmf1qqgkxp"))))
+    (properties `((upstream-name . "FDb.UCSC.snp135common.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicfeatures r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/FDb.UCSC.snp135common.hg19")
+    (synopsis "UCSC common SNPs track for dbSNP build 135")
+    (description
+     "@code{makeFeatureDbFromUCSC} cannot cope with this track, hence a package")
+    (license license:artistic2.0)))
+
+(define-public r-fdb-infiniummethylation-hg18
+  (package
+    (name "r-fdb-infiniummethylation-hg18")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FDb.InfiniumMethylation.hg18" version
+                              'annotation))
+       (sha256
+        (base32 "0vwzqzj49imjdsn8ssiwqi7qic7rqw5pbsiinyxgy7y10fn2i42a"))))
+    (properties `((upstream-name . "FDb.InfiniumMethylation.hg18")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-txdb-hsapiens-ucsc-hg18-knowngene
+                             r-org-hs-eg-db r-genomicfeatures r-biostrings
+                             r-annotationdbi))
+    (home-page
+     "https://bioconductor.org/packages/FDb.InfiniumMethylation.hg18")
+    (synopsis
+     "Annotation package for Illumina Infinium DNA methylation probes")
+    (description
+     "Compiled @code{HumanMethylation27} and @code{HumanMethylation450} annotations")
+    (license license:artistic2.0)))
+
+(define-public r-fdb-fantom4-promoters-hg19
+  (package
+    (name "r-fdb-fantom4-promoters-hg19")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FDb.FANTOM4.promoters.hg19" version
+                              'annotation))
+       (sha256
+        (base32 "04sn5x1r5fcbghzw6n1bvy0z8zyhrbk86wsqz1p5gk665vicz8rw"))))
+    (properties `((upstream-name . "FDb.FANTOM4.promoters.hg19")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-genomicfeatures r-biostrings r-annotationdbi))
+    (home-page "https://bioconductor.org/packages/FDb.FANTOM4.promoters.hg19")
+    (synopsis
+     "Annotation package for FANTOM4 promoters identified from THP-1 cells")
+    (description
+     "FANTOM4 promoters, @code{liftOver'ed} from hg18 to hg19, @code{CpGs} quantified")
+    (license license:artistic2.0)))
+
 (define-public r-fci
   (package
     (name "r-fci")
@@ -1441,6 +1976,26 @@ to reduce the number of triplets to be examined for a high LA value and provides
 code for use in subsequent significance analyses.")
     (license license:gpl2)))
 
+(define-public r-fantom3and4cage
+  (package
+    (name "r-fantom3and4cage")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FANTOM3and4CAGE" version
+                              'experiment))
+       (sha256
+        (base32 "01qz41q2cw4g7yg4nj7dlqsw6p8bh7dvm22a0vgp5dpm2pjagh15"))))
+    (properties `((upstream-name . "FANTOM3and4CAGE")))
+    (build-system r-build-system)
+    (home-page "https://bioconductor.org/packages/FANTOM3and4CAGE")
+    (synopsis "CAGE data from FANTOM3 and FANTOM4 projects")
+    (description
+     "CAGE (Cap Analysis Gene Expression) data from FANTOM3 and FANTOM4 projects
+produced by RIKEN Omics Science Center.")
+    (license license:gpl3)))
+
 (define-public r-famat
   (package
     (name "r-famat")
@@ -1584,6 +2139,31 @@ model is appropriate.  The functions can be used to evaluate tests of contrast
 of biological interest and perform single outlier detection.")
     (license license:lgpl2.0+)))
 
+(define-public r-fabiadata
+  (package
+    (name "r-fabiadata")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fabiaData" version
+                              'experiment))
+       (sha256
+        (base32 "0alh11k7vj6ripj2017j6afa8wjb4xb03zfvrh10svsrr0a7qldv"))))
+    (properties `((upstream-name . "fabiaData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biobase))
+    (home-page "http://www.bioinf.jku.at/software/fabia/fabia.html")
+    (synopsis
+     "Data sets for FABIA (Factor Analysis for Bicluster Acquisition)")
+    (description
+     "Supplying gene expression data sets for the demos of the biclustering method
+\"Factor Analysis for Bicluster Acquisition\" (FABIA).  The following three data
+sets are provided: A) breast cancer (van't Veer, Nature, 2002), B) multiple
+tissues (Su, PNAS, 2002), and C) diffuse large-B-cell lymphoma (Rosenwald, N
+Engl J Med, 2002).")
+    (license license:lgpl2.1+)))
+
 (define-public r-fabia
   (package
     (name "r-fabia")
@@ -1612,4 +2192,27 @@ a Bayesian framework.  FABIA ranks biclusters according to their information
 content and separates spurious biclusters from true biclusters.  The code is
 written in C.")
     (license license:lgpl2.1+)))
+
+(define-public r-faahko
+  (package
+    (name "r-faahko")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "faahKO" version
+                              'experiment))
+       (sha256
+        (base32 "0m3m9382b463wbl5hrzh04lp8h052gka8b7q69s740hlb91npjx7"))))
+    (properties `((upstream-name . "faahKO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xcms))
+    (home-page "http://dx.doi.org/10.1021/bi0480335")
+    (synopsis "Saghatelian et al. (2004) FAAH knockout LC/MS data")
+    (description
+     "Positive ionization mode data in @code{NetCDF} file format.  Centroided subset
+from 200-600 m/z and 2500-4500 seconds.  Data originally reported in \"Assignment
+of Endogenous Substrates to Enzymes by Global Metabolite Profiling\"
+Biochemistry; 2004; 43(45).  Also includes detected peaks in an @code{xcmsSet}.")
+    (license license:lgpl2.0+)))
 
