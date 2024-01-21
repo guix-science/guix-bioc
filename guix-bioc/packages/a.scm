@@ -153,6 +153,7 @@ easy, rigorous way to broadly assess TF activity changes between two conditions.
                              r-mus-musculus
                              r-msigdbr
                              r-motifmatchr
+                             r-jaspar2016
                              r-iranges
                              r-homo-sapiens
                              r-gtools

@@ -6434,6 +6434,7 @@ Lewin-Koh, Martin Maechler and Thomas Lumley.")
                              r-glue
                              r-ensembldb
                              r-ensdb-mmusculus-v79
+                             r-ensdb-hsapiens-v79
                              r-dt
                              r-dplyr
                              r-delayedmatrixstats

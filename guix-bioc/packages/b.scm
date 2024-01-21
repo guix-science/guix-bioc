@@ -521,6 +521,7 @@ mutations, SNPs.")
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
                              r-ggplot2
+                             r-genomicstate
                              r-genomicranges
                              r-derfinderplot
                              r-derfinder

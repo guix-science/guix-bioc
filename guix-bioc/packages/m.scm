@@ -3985,6 +3985,7 @@ Rank Aggregation.  For more detailed help information, please see the vignette."
                              r-planet
                              r-performanceanalytics
                              r-minfi
+                             r-methylclockdata
                              r-impute
                              r-gridextra
                              r-ggpubr
