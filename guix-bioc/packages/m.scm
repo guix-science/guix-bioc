@@ -305,6 +305,12 @@ sequences.")
         (base32 "01jmd59zk4fkny984wv9iwd9bq56cq4mnqz1x9wcjkmgk5bnvwxa"))))
     (properties `((upstream-name . "muscData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-singlecellexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HelenaLC/muscData")
@@ -1942,6 +1948,12 @@ if missingness is MNAR (\"v2-mnar\"), or by Peptide Identity Propagation (PIP)."
         (base32 "03fkikbz13vfcdlca7kassprjjf2gb8jmism3kinpf0x291fc7cr"))))
     (properties `((upstream-name . "MsDataHub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://rformassspectrometry.github.io/MsDataHub")
@@ -2313,6 +2325,12 @@ from public repositories")
         (base32 "19p7a0k565yz5201klib85z2gwqss0ywbv66sh0bvk4g5cmd9k0y"))))
     (properties `((upstream-name . "MouseThymusAgeing")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-singlecellexperiment
                              r-s4vectors r-experimenthub r-biocgenerics))
     (native-inputs (list r-knitr))
@@ -5181,6 +5199,12 @@ automated analysis report generation.")
         (base32 "1i118r0wfq2y57h3m1l3nzhrixmkq0dsc1dfkbfi83xl29ijhjn9"))))
     (properties `((upstream-name . "microbiomeDataSets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-treesummarizedexperiment
                              r-summarizedexperiment
                              r-multiassayexperiment
@@ -6078,6 +6102,12 @@ sliding window tests, and variance estimation.")
         (base32 "0bw450ada6nnz19d2b9qvx0szyldswrsmy21vsm0dw7idh4xfj6c"))))
     (properties `((upstream-name . "MethylSeqData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
                              r-rhdf5
@@ -6329,6 +6359,12 @@ Rank Aggregation.  For more detailed help information, please see the vignette."
         (base32 "1njym21ndva58kg7gqfw1d7ri4421rilflg1kn8hbgyayjrlhcl1"))))
     (properties `((upstream-name . "methylclock")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-tibble
@@ -6491,6 +6527,12 @@ Methrix, including many other useful downstream functions.")
         (base32 "1hql25dlvr7f923zngyymacdpz3zvsrzzvmc4rdc5a7w4y7ibl2n"))))
     (properties `((upstream-name . "MethReg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-summarizedexperiment
@@ -6925,6 +6967,12 @@ plots, heatmaps, and pathway models.")
         (base32 "0a5daghij0c6ykdh2vvd0gmrinqbvnn2hm8apga768ib04ylhb13"))))
     (properties `((upstream-name . "MetaGxPancreas")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-s4vectors r-impute
                              r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
@@ -6954,6 +7002,12 @@ SE.")
         (base32 "0k144fi1i9c1rlsif2pfk4lyzk25lkpfp1c4yanqqzbij8z50y6k"))))
     (properties `((upstream-name . "MetaGxOvarian")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-lattice
                              r-impute
@@ -6981,6 +7035,12 @@ that are part of the @code{MetaGxData} package compendium.")
         (base32 "0b0s7g4ijqlsfbr8wdrs1g54hba9ry6i1af71ly0v6l7ff0j65r1"))))
     (properties `((upstream-name . "MetaGxBreast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-lattice
                              r-impute
@@ -7488,6 +7548,12 @@ Weighted Key Driver Analysis (@code{wKDA}).")
         (base32 "055wmm0r8wyv8i2kil5f5lh5n2kjw36q4yrpqswf0fvdsvvrpaak"))))
     (properties `((upstream-name . "MerfishData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-spatialexperiment
                              r-singlecellexperiment
@@ -7919,6 +7985,12 @@ that are most perturbed in the test versus control classes.")
         (base32 "06k500vivc8anxv1x639acjv55w5r6pc2ghmszkh42h1q7a27r68"))))
     (properties `((upstream-name . "mcsurvdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-biobase r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/adricaba/mcsurvdata")
@@ -8261,6 +8333,12 @@ described with a PFM matrix, for example gotten from Jaspar.")
         (base32 "0drpj0n1rvm77ls1rjkp17hi5x4rhwvjs6mywscsphn57xkjwjv9"))))
     (properties `((upstream-name . "MatrixQCvis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-vsn
                              r-upsetr
                              r-umap
@@ -8542,6 +8620,12 @@ data filtered by reproducible features and/or sample pairs.")
         (base32 "00m1r6ijhykq96d86h17asngdm8a1ss2213nd6n6lsj4dshr74a0"))))
     (properties `((upstream-name . "marinerData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/marinerData")
@@ -9529,6 +9613,12 @@ for the quantification of the fraction of aneuploid cells in the sample.")
         (base32 "1mnbxhmgh8ca5drspvsskf554kp31a2s35f9f05j49zzjrzma74p"))))
     (properties `((upstream-name . "MACSr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors r-reticulate r-experimenthub
                              r-basilisk r-annotationhub))
     (native-inputs (list r-knitr))
@@ -9694,6 +9784,12 @@ features and phenotype/condition.")
         (base32 "0sssf37pjnn4iafhf6jkcms00lzwmxb8qbzn76spm135fkyljm7k"))))
     (properties `((upstream-name . "m6Aboost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors
                              r-rtracklayer
                              r-iranges

@@ -1206,6 +1206,12 @@ marray @code{MarrayRaw-objects} or limma RGList-objects are available.")
         (base32 "100kw4552rc48sqpw9makyf9nwgrs049hkvbrd8zjmrf542cj9md"))))
     (properties `((upstream-name . "TumourMethData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-rhdf5
                              r-r-utils
@@ -1238,6 +1244,12 @@ types and studies.")
         (base32 "15jmhn7lrdwz19hv076yf0g2wqw7c32vp4pjzj2151f4xzxrl1iz"))))
     (properties `((upstream-name . "tuberculosis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-summarizedexperiment
@@ -3509,6 +3521,12 @@ per-target read coverage and so on.")
         (base32 "0yi7axdam9b0ps0818cgygbmjcdknn032bm2snb6xf3g4i8n45f4"))))
     (properties `((upstream-name . "TENxVisiumData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatialexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/helenalc/TENxVisiumData")
@@ -3563,6 +3581,12 @@ from 10x genomics.")
         (base32 "09pgf31x1zqcrnvf2fwdbx4qn7pgsaby8damxcfq5xr3iksqhdwb"))))
     (properties `((upstream-name . "TENxPBMCData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-singlecellexperiment r-hdf5array
                              r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
@@ -3620,6 +3644,12 @@ are @code{SingleCellExperiment} and @code{RaggedExperiment}.")
         (base32 "071qbq0avzbs6c64l6lrmrs1hmbrg98bnf91vpz4x7s0p5axx87n"))))
     (properties `((upstream-name . "TENxBUSData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-biocgenerics r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BUStools/TENxBUSData")
@@ -3644,6 +3674,12 @@ command line package bustools.")
         (base32 "1ia7a6jq7giy130avgv5brffxk5r2yql7rjppxs9nab3a6y472yy"))))
     (properties `((upstream-name . "TENxBrainData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-singlecellexperiment r-hdf5array
                              r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
@@ -3975,6 +4011,12 @@ command line accessibility.")
         (base32 "1w8z756s2c4vcxan8lid5mflyn8n718vhqn72x3mspg1pbb6k0l6"))))
     (properties `((upstream-name . "tartare")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cpanse/tartare")
@@ -4366,6 +4408,12 @@ RNA-seq data.")
         (base32 "0f6gj56rgcv378ry4h1sgm3zhv083yh23qf1pj9rvabwhdfgk8p1"))))
     (properties `((upstream-name . "TabulaMurisSenisData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-hdf5array
@@ -4396,6 +4444,12 @@ processing, collected in the form of @code{SingleCellExperiment} objects.")
         (base32 "1p0pyvgwzbnkx1687n2j7gxjzb5s49r1njklsff0di66m8nlis7k"))))
     (properties `((upstream-name . "TabulaMurisData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/TabulaMurisData")

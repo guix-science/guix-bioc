@@ -3406,6 +3406,12 @@ independently (OR-gate) or jointly (AND-gate).")
         (base32 "0nzgqpgdjz0vqrijnwgpr4z41jwrf7bkrzfb1y6a04d3lrm6xmbc"))))
     (properties `((upstream-name . "BloodGen3Module")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-v8
                              r-testthat
                              r-summarizedexperiment
@@ -3759,6 +3765,12 @@ collected with the @code{biomaRt} package.")
         (base32 "1xgm9n01if7rb6lsgj4cg5dbjl8kq6zvkj4324vrwj1c1mdaa9nv"))))
     (properties `((upstream-name . "BioImageDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rmarkdown
                              r-markdown
                              r-magrittr
@@ -4029,6 +4041,12 @@ fault tolerant use of python modules requiring extensive iteration.")
         (base32 "1sz27svvpvcys4b9p53da1javkh5k9235pzsjvn2wx76gi6b1jkj"))))
     (properties `((upstream-name . "BiocHubsShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-shinytoastr
                              r-shinythemes
                              r-shinyjs
@@ -4338,6 +4356,12 @@ beta 7+ and beta 7- memory T helper cells.")
         (base32 "1p441c08bxx81z556n5wrzxkbq5g4lrwkp1wk7jh6zk6qs3jqg96"))))
     (properties `((upstream-name . "benchmarkfdrData2019")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/benchmarkfdrData2019")
@@ -4493,6 +4517,12 @@ estimated by ERCC spike-in controls.")
         (base32 "088c6ikr7cslpx8yx89d3y00zigy6c21qa1m3dlrynghh7z8xi8w"))))
     (properties `((upstream-name . "BeadSorted.Saliva.EPIC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-minfi r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/BeadSorted.Saliva.EPIC")

@@ -1843,6 +1843,12 @@ to establish a detection stratedy, which can be packaged.")
         (base32 "0p9x1j4ra11banvifh5z07i26b2s59b2knbgj44yx4qi0d3cnn81"))))
     (properties `((upstream-name . "RNAmodR.Data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthubdata r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/FelixErnst/RNAmodR.Data")
@@ -3858,6 +3864,12 @@ without using any single-cell data.")
         (base32 "1ydi54mbvvsn73j955qjiqgpc2qvgdxfa9gsflx5cc14c0aqyb9h"))))
     (properties `((upstream-name . "restfulSEData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-hdf5array
                              r-experimenthub r-delayedarray))
     (native-inputs (list r-knitr))
@@ -3879,6 +3891,12 @@ without using any single-cell data.")
         (base32 "0i40yfvynxy34jfkvzyvjwvxf89zi4pvy9m9i0bk93l17gyhnjyl"))))
     (properties `((upstream-name . "restfulSE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
                              r-rlang
@@ -6223,6 +6241,12 @@ from public repositories")
         (base32 "0f8k9a714fc0wkrg2ja1193302q712aw6q4nv79qnvavqx12p0hi"))))
     (properties `((upstream-name . "raerdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-singlecellexperiment r-rtracklayer r-rsamtools
                              r-experimenthub r-biocgenerics))
     (native-inputs (list r-knitr))

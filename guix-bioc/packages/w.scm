@@ -252,6 +252,12 @@ interpreted. @code{DelayedArray} matrices and @code{BiocParallel} are supported.
         (base32 "1r6an1lxjsrdi4y0prfyy9jjjazicy9bwykinf5dvkac2h3zhs81"))))
     (properties `((upstream-name . "WeberDivechaLCdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatialexperiment r-singlecellexperiment
                              r-experimenthub))
     (native-inputs (list r-knitr))

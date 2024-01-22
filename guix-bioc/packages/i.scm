@@ -607,6 +607,12 @@ into an @code{iSEE} web-application.")
         (base32 "16889vcdjbd2sxshqxzkdnza1x269dm2h12985qrbkk1ja3bdpzw"))))
     (properties `((upstream-name . "iSEEhub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-shinyjs
@@ -1727,6 +1733,12 @@ detected.")
         (base32 "0yvii8qxgxabf9i2z5pz37dn9s6vw3g6z2k6c5k4rjns8wmvixps"))))
     (properties `((upstream-name . "imcdatasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatialexperiment
                              r-singlecellexperiment
                              r-s4vectors

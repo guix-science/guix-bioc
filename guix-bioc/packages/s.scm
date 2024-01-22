@@ -1338,6 +1338,12 @@ the variance.")
         (base32 "1rhq1743aa9bw54d2c74yclwd56a5vq5jppfzxz7mmv3cf5x3ar9"))))
     (properties `((upstream-name . "STexampleData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatialexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lmweber/STexampleData")
@@ -2922,6 +2928,12 @@ annotations can range from tissue segment to gene expression.")
         (base32 "0zqbnj55d06xai9qlg1hcy2kczjn6zxrhqwwsi18a36511qks5qb"))))
     (properties `((upstream-name . "spatialLIBD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-viridislite
                              r-tibble
                              r-summarizedexperiment
@@ -3063,6 +3075,12 @@ these parent classes can still be used.")
         (base32 "110anvdbsq8mh3ibfhps9hyfhlk2np4mjs224377s1sasmpzwbbb"))))
     (properties `((upstream-name . "spatialDmelxsim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mikelove/spatialDmelxsim")
@@ -3150,6 +3168,12 @@ transcriptomics data.  This package provides wrappers to use the Python
         (base32 "1szsggymx05swr4i5mgxcxk7jbz8qh6xxwpnmmzajns03gmszggy"))))
     (properties `((upstream-name . "SpatialDatasets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatialexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/SydneyBioX/SpatialDatasets")
@@ -4389,6 +4413,12 @@ analysis in Single Cells.")
         (base32 "1chlik8ycsiw0kvxikiplb5xkj4afi4qniy666csyqlksaflr703"))))
     (properties `((upstream-name . "SingleMoleculeFootprintingData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page
@@ -4452,6 +4482,12 @@ genomic location")
         (base32 "0c7xl2abj9x1ircgbrk8m3xfbmglv4r6y6v8pxvdka0p2nngs950"))))
     (properties `((upstream-name . "singleCellTK")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-zinbwave
                              r-zellkonverter
                              r-yaml
@@ -4602,6 +4638,12 @@ and infers cell-cell interactions.")
         (base32 "0kwff2nqv7nf7rqifyzr6klba6k1h29y4332b60k7hv3psjsm015"))))
     (properties `((upstream-name . "SingleCellMultiModal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-spatialexperiment
                              r-singlecellexperiment
@@ -5028,6 +5070,12 @@ and increased binding.")
         (base32 "1g5wff2hx3sra48wcvwh3hs9lpfavq2pqflcm9wfcch9y10m8iqd"))))
     (properties `((upstream-name . "SimBenchData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/SimBenchData")
@@ -5273,6 +5321,12 @@ exposure patterns are also provided.")
         (base32 "1xn0y7mcpk4s4x9azzabxfq0hxwlx7dvpb4yjrl3x8zcyk394s3z"))))
     (properties `((upstream-name . "signatureSearchData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rhdf5
                              r-r-utils
                              r-magrittr
@@ -5301,6 +5355,12 @@ software package.")
         (base32 "19hgqq49y6kg9zjjmx6apjqr3mj6f8cbf7xd78gaigyd62w060rj"))))
     (properties `((upstream-name . "signatureSearch")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-visnetwork
                              r-tibble
                              r-summarizedexperiment
@@ -5710,6 +5770,12 @@ quality of the computed modules.")
         (base32 "0wkb27cs4zvvhclgk2slx8n7jx1mx3q87kn86n4rjdcx2074ndqz"))))
     (properties `((upstream-name . "SFEData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-biocfilecache r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pachterlab/SFEData")
@@ -5936,6 +6002,12 @@ uncompressed and compressed fastq files.")
         (base32 "0vjah085hr50pvkgm2sscpa97fvhsglcwvj5jb08v2liz1vzm3zb"))))
     (properties `((upstream-name . "SeqSQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-snprelate
                              r-s4vectors
                              r-rmarkdown
@@ -7138,6 +7210,12 @@ CEL-seq, MARS-seq, Drop-seq, Chromium 10x and SMART-seq protocols.")
         (base32 "0zwwbqss2a6vkzhz517j89gf02z4f5b9kx5wbnyi2g15ihwlvaxr"))))
     (properties `((upstream-name . "scpdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-singlecellexperiment r-s4vectors r-qfeatures
                              r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
@@ -7384,6 +7462,12 @@ manifold.")
         (base32 "0j9cwlnj0078yyzfjiwsadx34g1ddcrfm5xmzjv59dmk55iy59d7"))))
     (properties `((upstream-name . "scMultiome")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-s4vectors

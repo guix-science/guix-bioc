@@ -222,6 +222,12 @@ Related paper can be find at http://www.biomedcentral.com/1471-2164/13/689 .")
         (base32 "0n9vkvfxah29cjfwnxjqw0kf5kdgjvx9394kgilnbskys95fh6v3"))))
     (properties `((upstream-name . "orthosData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-stringr
                              r-hdf5array
@@ -250,6 +256,12 @@ local caching of the models and datasets used internally in orthos.")
         (base32 "0siblsmbswcbbzgd03hh50bcq0qhn2a7ia2mbkaps3z7dx4k0ywb"))))
     (properties `((upstream-name . "orthos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-tensorflow
                              r-summarizedexperiment
@@ -1771,6 +1783,12 @@ a variant using string kernels for unaligned sequences.")
         (base32 "03dih6cc71aj31l9s982qpdsyy51q83inykyz4a8pk81x3pld2n9"))))
     (properties `((upstream-name . "octad.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/octad.db")
@@ -1796,6 +1814,12 @@ computation.")
         (base32 "01fm8zz50phrnj1x69992zynv82xhh2zn1m7d0zax13mscsdyfbp"))))
     (properties `((upstream-name . "octad")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors
                              r-ruvseq
                              r-rhdf5
@@ -1915,6 +1939,12 @@ transposon mutagenesis libraries.")
         (base32 "1sgl38mbnv99miy6n2gps9r5dzhadf1gvin95nif379kdq6xl0nz"))))
     (properties `((upstream-name . "ObMiTi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/OmarElAshkar/ObMiTi")

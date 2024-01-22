@@ -369,6 +369,12 @@ genome assemblies.")
         (base32 "1kgh5r0pplvblrrkf1qxg7c92psrwm2bjpbs30dp8mdsnjdahm9v"))))
     (properties `((upstream-name . "ewceData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/neurogenomics/ewceData")
@@ -1192,6 +1198,12 @@ epimutations in 450k methylation arrays.")
         (base32 "1gkq4fhk406cdkmydbvpgp22v4q9wb1ahddblwdvnha1vnraypga"))))
     (properties `((upstream-name . "epimutacions")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
                              r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-txdb-hsapiens-ucsc-hg18-knowngene
@@ -1253,6 +1265,12 @@ and visualize the identified epimutations.")
         (base32 "15qc8jjbv6b4nxszrj8lkj6cmbvvxlvknksp5pl13s3y176gm4d5"))))
     (properties `((upstream-name . "EpiMix.data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/EpiMix.data")
@@ -1281,6 +1299,12 @@ Sample_@code{EpiMixResults_Regular} - Sample_@code{EpiMixResults_Enhancer} -
         (base32 "1yrhc4nk95racnddxfyp98v543hdakqmiy9z9a83hfdr8bln8hq1"))))
     (properties `((upstream-name . "EpiMix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-summarizedexperiment
@@ -1842,6 +1866,12 @@ datasets and save the database in SQLite format.")
         (base32 "0fjqmg9w7c1lv0b0ldr26rxsly78sw2asj3hw8h8yd623g7bkddw"))))
     (properties `((upstream-name . "emtdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub r-edger))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/DavisLaboratory/emtdata")
@@ -2681,6 +2711,12 @@ liftover process.")
         (base32 "138x8i1zd4cvlawg9pa5ia1kmmdaxm0g9lkivzxl077s9vlpjp8d"))))
     (properties `((upstream-name . "easierData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub
                              r-annotationhub))
     (native-inputs (list r-knitr))

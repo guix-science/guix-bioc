@@ -652,6 +652,12 @@ type composition estimation.")
         (base32 "0gl0dwhabdik17al1f1zq2vhg3bgbirxmsa1lxfv97vq08nqfshl"))))
     (properties `((upstream-name . "FlowSorted.CordBloodCombined.450k")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-minfi
                              r-illuminahumanmethylationepicanno-ilm10b4-hg19
@@ -1379,6 +1385,12 @@ indexed BAM file of a FFPE sample.")
         (base32 "13xzypr95v5b3kynfn45b7rpg7kd0gcqmx3ap377plqs42nc7pa6"))))
     (properties `((upstream-name . "FieldEffectCrc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-runit
                              r-experimenthub

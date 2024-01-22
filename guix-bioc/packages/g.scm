@@ -462,6 +462,12 @@ with tools for computing and using various regression diagnostics.")
         (base32 "14g147qamfcg91fmg4dsmzbcw7j0a826i40k57za3zkr0qxjpf0g"))))
     (properties `((upstream-name . "GSEABenchmarkeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
                              r-keggdzpathwaysgeo
@@ -2868,6 +2874,12 @@ analyzed cell.")
         (base32 "1c9pqmdnnpm80zzsbl3j66xdwb3kzn7jkisx31sn5jaxzc660jc4"))))
     (properties `((upstream-name . "GenomicDistributionsData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-genomicranges
                              r-genomicfeatures
                              r-genomeinfodb
@@ -4122,6 +4134,12 @@ Furthermore, it provides functionality to filter out reads of potential
         (base32 "13v14dhwb1mkpxc5z08amqajhkncrkl38k4js48bp36s8lzb0zw8"))))
     (properties `((upstream-name . "gDNAinRNAseqData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-xml r-rsamtools r-rcurl r-experimenthub
                              r-biocgenerics))
     (native-inputs (list r-knitr))

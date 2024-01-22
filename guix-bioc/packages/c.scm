@@ -633,6 +633,12 @@ collections.")
         (base32 "116ck61pw6diili326x0x8p7f8d5w624n4w3pd212vhq8555yrqs"))))
     (properties `((upstream-name . "curatedTBData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rlang r-multiassayexperiment r-experimenthub
                              r-annotationhub))
     (native-inputs (list r-knitr))
@@ -680,6 +686,12 @@ in patients with ovarian cancer.")
         (base32 "0fgvpxc1878lm8l0bib12zzwrgsap0vw4zn77qpz1mljnz43shcb"))))
     (properties `((upstream-name . "curatedMetagenomicData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-treesummarizedexperiment
                              r-tidyselect
                              r-tidyr
@@ -857,6 +869,12 @@ that was used to generated the data.")
         (base32 "16g8k2cvi890b9j30yzm7lxnxljl2k4x1yxvd8cg1ba94vzimw6k"))))
     (properties `((upstream-name . "curatedAdipoChIP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MahShaaban/curatedAdipoChIP")
@@ -1051,6 +1069,12 @@ Database (http://ctdbase.org/).  The downloaded data is formated as
         (base32 "1gf5n85b9srdnj2nc0aqn8j6zjhhbvdn2k11im23f19vz6msvzw6"))))
     (properties `((upstream-name . "CTdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/CTdata")
@@ -1462,6 +1486,12 @@ indels and their frequencies for Cas9 targeted sites.")
         (base32 "0rrwsfp8m8z389yfr8ls6wkz7faa2iz8pnljl2776qa3zgsfmhni"))))
     (properties `((upstream-name . "crisprScoreData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/crisprVerse/crisprScoreData/issues")
@@ -2053,6 +2083,12 @@ step.")
         (base32 "07x44vn6r1d0ixfzx9h3rzzn9gjjci59c41xhqn2b3k6f5c7fa9r"))))
     (properties `((upstream-name . "CoSIAdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/CoSIAdata")
@@ -2078,6 +2114,12 @@ data is represented as a RData files and is available in @code{ExperimentHub}.")
         (base32 "14d7l88346wkh4fj9y4f2lywfqbawz60z86f6wm2r2vh8zhcbk8i"))))
     (properties `((upstream-name . "CoSIA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
@@ -2309,6 +2351,12 @@ copy-number related data.")
         (base32 "11l994nhi813qs1vmrqjgclw11k5hrsmcrlj5x5wqmqmnjjw1dsy"))))
     (properties `((upstream-name . "CopyNeutralIMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rdpack r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/CopyNeutralIMA")
@@ -3076,6 +3124,12 @@ subject's immune response to external stimuli such as infection or vaccination."
         (base32 "1pmshw18iyvgxmzhhid6276adhjw5hwfhladcd207qg927rnvlm5"))))
     (properties `((upstream-name . "coMethDMR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-lmertest
                              r-iranges
                              r-genomicranges
@@ -4240,6 +4294,12 @@ repertoires (IRRs).  The algorithm identifies groups of T or B cell receptors
         (base32 "004g6s917ayxiixlc8zp4h7zai9amcm6bllr9mz5j9sgm8kd8px4"))))
     (properties `((upstream-name . "clustifyrdatahub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://rnabioco.github.io/clustifyrdatahub/")
@@ -4550,6 +4610,12 @@ interpreted to infer the clonal structure of the tumor.")
         (base32 "16k05g98j2zs8n827kvgishzcj0zcx12cwzvgznzjrwp56dl72xs"))))
     (properties `((upstream-name . "CLLmethylation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/CLLmethylation")
@@ -5644,6 +5710,12 @@ types of experiments as well.")
         (base32 "114645f6db8pp263g6h2gb2cwhdgqh8risssq2vfzzdv16qqw640"))))
     (properties `((upstream-name . "chipseqDBData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors r-rsamtools r-experimenthub
                              r-annotationhub))
     (native-inputs (list r-knitr))
@@ -6186,6 +6258,12 @@ population.")
         (base32 "0icr4llq99ghyvi8nsdfnp5sydh8icr23y8ar7jg0qpwiagdl3l9"))))
     (properties `((upstream-name . "cfToolsData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jasminezhoulab/cfToolsData")
@@ -6813,6 +6891,12 @@ enabled by 15 trajectory analysis functions.")
         (base32 "12mx1m4lm51y8pazmhrd8ickvvpa2sm9cg2znhs6pzmgc5bj09dx"))))
     (properties `((upstream-name . "CellMapperData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-cellmapper))
     (home-page "https://bioconductor.org/packages/CellMapperData")
     (synopsis "Pre-processed data for use with the CellMapper package")
@@ -7561,6 +7645,12 @@ patients.")
         (base32 "0f5wklg8ipfj7lb2sag0cg9yghl6m4jxyn834zwa52gk546fdcgd"))))
     (properties `((upstream-name . "CBNplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rmpfr

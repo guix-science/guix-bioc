@@ -60,6 +60,12 @@
         (base32 "0gvx81w5krzdzz4v09qlscr0hklzmxq2pz4slwwy1dflq0rjswk5"))))
     (properties `((upstream-name . "NxtIRFdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rtracklayer r-r-utils r-experimenthub
                              r-biocfilecache))
     (native-inputs (list r-knitr))
@@ -121,6 +127,12 @@ and will be posted at https://github.com/jipingw/@code{NuPoP}.")
         (base32 "0dd9d07z2k3n34wi5mynyghc0bsmyn5fhl0510ij7zbd58i520xy"))))
     (properties `((upstream-name . "nullrangesData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-interactionset r-genomicranges r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/nullrangesData")
@@ -1339,6 +1351,12 @@ gene set scores using custom models.")
         (base32 "1nr7ddlrbd4q963750x3cdnn7y6mf2y5q3v37ilhfplypnynlgy1"))))
     (properties `((upstream-name . "NestLink")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-shortread
                              r-protviz
                              r-gplots
@@ -1749,6 +1767,12 @@ provided by @code{NanoString} @code{nCounter} Analyzer is fully utilized.")
         (base32 "0jvwl6k12acinwsvs62vx7dpnhjbcvhf8sbdw13gwwknrn96hgh4"))))
     (properties `((upstream-name . "NanoporeRNASeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GoekeLab/NanoporeRNASeq")

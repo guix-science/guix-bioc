@@ -591,6 +591,12 @@ is reported.")
         (base32 "0zr94qgyj365sy7cyzjsm9zbxyv6zbd8lwfr1nqz0p6f6hb9b8qw"))))
     (properties `((upstream-name . "VectraPolarisData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-spatialexperiment r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/julia-wrobel/VectraPolarisData")

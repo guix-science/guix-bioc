@@ -1531,6 +1531,12 @@ data.")
         (base32 "006kdb7rv63jyn4xnvrk13s5by1m85jgnfs2594h51af4sgyd2id"))))
     (properties `((upstream-name . "preciseTADhub")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dozmorovlab/preciseTADhub")
@@ -2856,6 +2862,12 @@ pathway level.")
         (base32 "1r51zrvm8n7w66ii97wz6ncz0d7s473ppdn8b958mh15w81rk5fr"))))
     (properties `((upstream-name . "PhyloProfileData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-biostrings r-biocstyle))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BIONF/PhyloProfileData")
@@ -2878,6 +2890,12 @@ profiles with @code{PhyloProfile} package.")
         (base32 "19qiz589sp30qrqlf5s5a1j70npqhkxp0i9bd3143w7pa9rqmpfj"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-xml2

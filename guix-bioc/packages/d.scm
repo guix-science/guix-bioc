@@ -151,6 +151,12 @@ Biol.  5:266 (2009), doi:10.1038/msb.2009.21)")
         (base32 "0248jc4frjwbv5vq0483s2flbrnd70x4bkad7aphfxvrk897sn9v"))))
     (properties `((upstream-name . "DuoClustering2018")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-viridis
                              r-tidyr
                              r-reshape2
@@ -493,6 +499,12 @@ drosgenome1) assembled using data from public repositories")
         (base32 "0a68xd9ks83a13s1cckmhrc50ijp7dw19yjf37v253q50xjp0z03"))))
     (properties `((upstream-name . "DropletTestFiles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/DropletTestFiles")
@@ -1025,6 +1037,12 @@ between each @code{CpG}.")
         (base32 "07gkhal6rhj9b4yasmb3dfix38cd99p2bf79agl8vbrmzd0mjvhc"))))
     (properties `((upstream-name . "DMRcatedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-rtracklayer
                              r-readxl
                              r-plyr
@@ -2169,6 +2187,12 @@ both label-free and labelled proteomics data.")
         (base32 "1vb3f5ar2jlkjyhp7rv4imlylinm6fi94ki277jgdaxn12v78qxj"))))
     (properties `((upstream-name . "depmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-dplyr r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/depmap")

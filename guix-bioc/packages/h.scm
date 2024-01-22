@@ -334,6 +334,12 @@ data repositories")
         (base32 "0g24nr0jdw6509xjski83jf2r35iklmnhqikmfr90ki4rn0fqar0"))))
     (properties `((upstream-name . "HumanAffyData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-biobase))
     (home-page "https://bioconductor.org/packages/HumanAffyData")
     (synopsis
@@ -2304,6 +2310,12 @@ neighborhood colocalization analysis and neighborhood-based cell clustering.")
         (base32 "1xrvslsybzy1zjvck6imrjxzd0hsiyx4ly71ndirxs7yhh13d1qk"))))
     (properties `((upstream-name . "HMP2Data")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
                              r-readr
@@ -2341,6 +2353,12 @@ also provided in the package.")
         (base32 "1ns7yyw0w8rrkw87awrrzxmb44gkkb1cn6j3cbzj8fbrd9whl30d"))))
     (properties `((upstream-name . "HMP16SData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-tibble
                              r-summarizedexperiment
                              r-stringr
@@ -2779,6 +2797,12 @@ Hadjantonakis and T. Hiiragi; Nature Cell Biology (2014) 16(1): 27-37.  doi:
         (base32 "1zz6xqn9amlh7v7v8c67i4n94lxc8w46g3gqnhbrlcpi6zid36a9"))))
     (properties `((upstream-name . "HighlyReplicatedRNASeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment r-s4vectors
                              r-experimenthub))
     (native-inputs (list r-knitr))
@@ -2940,6 +2964,12 @@ controls.")
         (base32 "07i91rz7bn6g27wbjrwgck3mdmj8lrsdda6pza9k1ghh5zssrx7i"))))
     (properties `((upstream-name . "HiContactsData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub r-biocfilecache r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/js2264/HiContactsData")
@@ -5064,6 +5094,12 @@ using data from public repositories")
         (base32 "1h5hrfslhyiqc855bb23rz9hahnpcy47h2lz1k0dj8glrjldq0jp"))))
     (properties `((upstream-name . "HCATonsilData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-summarizedexperiment
                              r-spatialexperiment
                              r-singlecellexperiment
@@ -5098,6 +5134,12 @@ of identified cell types is provided in form of a glossary.")
         (base32 "1rd1qra8g7dn9pg2mhh2j40p7p6ny838n4w6mx5ryw4xky95lf41"))))
     (properties `((upstream-name . "HCAData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-singlecellexperiment r-hdf5array
                              r-experimenthub r-annotationhub))
     (native-inputs (list r-knitr))
@@ -5192,6 +5234,12 @@ is meant to make as much data available as possible with minimal data loss.")
         (base32 "1sfb7kzmwdvv71bf56z6sd81dfrs4v53igmnxphrvjiymdjxrb3b"))))
     (properties `((upstream-name . "HarmonizedTCGAData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/HarmonizedTCGAData")

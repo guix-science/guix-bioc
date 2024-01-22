@@ -363,6 +363,12 @@ package).")
         (base32 "1wad78cpgf9pl8hl4issb0k1m0dlrk0bradkdz5b5a5pamlwh82c"))))
     (properties `((upstream-name . "LRcellTypeMarkers")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/LRcellTypeMarkers")
@@ -388,6 +394,12 @@ more details, please visit: https://github.com/marvinquiet/LRcell.")
         (base32 "19p5vwsr1hq6p02g6alysm7maalrlpg8lg8r76ffsbh1wqj776fp"))))
     (properties `((upstream-name . "LRcell")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-magrittr
                              r-ggrepel
                              r-ggplot2

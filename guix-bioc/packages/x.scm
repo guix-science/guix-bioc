@@ -403,6 +403,12 @@ Xenopus_laevis.cdf file.")
         (base32 "1chcjylfdl07q19f924hsml22lbfcjrzndp1appi3q80hzbc3pz6"))))
     (properties `((upstream-name . "xcoredata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/xcoredata")
