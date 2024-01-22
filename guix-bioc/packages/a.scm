@@ -290,6 +290,22 @@ tables into original multivariate tables, termed sign-by-sample matrices (SSMs).
         (base32 "15brzfi9ain84171c72w3hzpmjz93g57zz228cbxm3k2s9kn8h7w"))))
     (properties `((upstream-name . "ASSIGN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-yaml
                              r-sva
                              r-rlab

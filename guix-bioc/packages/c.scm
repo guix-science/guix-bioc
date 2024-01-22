@@ -3017,6 +3017,22 @@ user-defined differential analysis workflow within the framework of the package.
         (base32 "1a7f6jsp4r7z49mskbfdshngqwmjqs0bp3skbnbkzfqfb8mh7gl1"))))
     (properties `((upstream-name . "COMPASS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rmarkdown
@@ -4094,6 +4110,22 @@ array types, supports high-performance computing using snow and ff.")
         (base32 "02nwmgzb1765z79mnp0fp6gdfl42iglhw5xd145incvn7zhf9a4m"))))
     (properties `((upstream-name . "cmapR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-summarizedexperiment r-rhdf5 r-matrixstats
                              r-flowcore r-data-table))
     (native-inputs (list r-knitr esbuild))
@@ -5113,6 +5145,22 @@ analysis, and interactive web-based visualisation of the analyses.")
         (base32 "00xnaravzyc8lh94iapyy9g5fc5w9yzf8bgz8cjxcy0js9996h8n"))))
     (properties `((upstream-name . "cisPath")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (native-inputs (list esbuild))
     (home-page "https://bioconductor.org/packages/cisPath")
     (synopsis
@@ -5284,6 +5332,22 @@ change activity of the linked genes/@code{microRNAs}.")
         (base32 "1cgq33shlx105h8xcjif6vz4qw91r1c82fw26nnrpbl5z070vq3l"))))
     (properties `((upstream-name . "ChromSCape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-viridis
                              r-umap
                              r-tidyr

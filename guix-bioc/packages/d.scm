@@ -1361,6 +1361,22 @@ their type of coexpression or coabbundance.  Algorithm is explained further in
         (base32 "0q32s05xjksjbawd5kdh8hdhm0wdr9pg7crk0ip56f549rm7wqir"))))
     (properties `((upstream-name . "Director")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/kzouchka/Director")

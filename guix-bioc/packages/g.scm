@@ -3495,6 +3495,22 @@ the evolutionary root of a given gene based on its orthologs distribution.")
         (base32 "0gz7lmn5qspnak3mcbjpbvy5436d8p15pq46877xykv9anry6z0v"))))
     (properties `((upstream-name . "GeneNetworkBuilder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml
                              r-rjson
                              r-rgraphviz

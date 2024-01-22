@@ -3287,30 +3287,6 @@ sequencing (BS-seq).  The core of Borealis is modeling Beta-Binomial
 distributions.  This can be useful for rare disease diagnoses.")
     (license license:gpl3)))
 
-(define-public r-bodymaprat
-  (package
-    (name "r-bodymaprat")
-    (version "1.18.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "bodymapRat" version
-                              'experiment))
-       (sha256
-        (base32 "1sfq6vxkb68l0q5qbnpm3fi53k4q9a890bv2ff9c6clhc42wx3h6"))))
-    (properties `((upstream-name . "bodymapRat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment r-experimenthub))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/bodymapRat")
-    (synopsis "Experimental dataset from the rat BodyMap project")
-    (description
-     "This package contains a @code{SummarizedExperiment} from the Yu et al. (2013)
-paper that performed the rat @code{BodyMap} across 11 organs and 4 developmental
-stages.  Raw FASTQ files were downloaded and mapped using STAR. Data is
-available on @code{ExperimentHub} as a data package.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
-
 (define-public r-bobafit
   (package
     (name "r-bobafit")
@@ -4207,6 +4183,22 @@ graphics to the genes of interest.")
         (base32 "0rhv3k3m8nn6dx91895nwmwg0x7igyrh3iz71ds6i3zi0crlq9zm"))))
     (properties `((upstream-name . "bioCancer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml
                              r-visnetwork
                              r-tibble
@@ -4618,6 +4610,22 @@ The package also supports multi-threading.")
         (base32 "1xfa4g32b7vzj2l8bv0fa1xb15vlk7x933g2wxx4qz78a2wkd6yq"))))
     (properties `((upstream-name . "BatchQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-sva
                              r-shiny
                              r-rmarkdown

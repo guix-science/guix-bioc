@@ -2056,6 +2056,22 @@ be detected as the clustering of points on the (n-1)-dimensional sphere.")
         (base32 "0ia4jqdapllgf51i4gjyjkmk6i6yrqx8np28hj1k0lr07j3k1hq4"))))
     (properties `((upstream-name . "tracktables")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xvector
                              r-xml
                              r-tractor-base
@@ -2469,6 +2485,22 @@ Tomato.cdf file.")
         (base32 "1y4v2rphdils0rvkjsyfynncvmn1js1n5d5qhqmc2v8rhh1wjyv5"))))
     (properties `((upstream-name . "TnT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-s4vectors
                              r-knitr
                              r-jsonlite
@@ -2845,6 +2877,22 @@ course.")
         (base32 "1yb3nbx0d206gwkrifqhxdnij6qxlgj5dmk1f2zgqlqkp2fhw45y"))))
     (properties `((upstream-name . "timescape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr r-jsonlite r-htmlwidgets r-gtools
                              r-dplyr))
     (native-inputs (list r-knitr esbuild))

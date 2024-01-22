@@ -11,6 +11,7 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages i)
+  #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages h)
@@ -1449,6 +1450,50 @@ distribution function (CDF) plots showing shifts in trend of overall log2FC
 between genes divided into groups based on the degree of modification associated
 with the genes.  The tool also tests for significance of difference in log2FC
 between groups of genes.")
+    (license license:gpl3)))
+
+(define-public r-epicompare
+  (package
+    (name "r-epicompare")
+    (version "1.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EpiCompare" version))
+       (sha256
+        (base32 "11cj198f8w065d315b03w70qp9azvmc6h30g11zbaj2rpmxz5lya"))))
+    (properties `((upstream-name . "EpiCompare")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rtracklayer
+                             r-rmarkdown
+                             r-reshape2
+                             r-plotly
+                             r-iranges
+                             r-htmltools
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-genomation
+                             r-downloadthis
+                             r-data-table
+                             r-chipseeker
+                             r-brgenomics
+                             r-biocgenerics
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurogenomics/EpiCompare")
+    (synopsis "Comparison, Benchmarking & QC of Epigenomic Datasets")
+    (description
+     "@code{EpiCompare} is used to compare and analyse epigenetic datasets for quality
+control and benchmarking purposes.  The package outputs an HTML report
+consisting of three sections: (1.  General metrics) Metrics on peaks (percentage
+of blacklisted and non-standard peaks, and peak widths) and fragments
+(duplication rate) of samples, (2.  Peak overlap) Percentage and statistical
+significance of overlapping and non-overlapping peaks.  Also includes upset plot
+and (3.  Functional annotation) functional annotation (@code{ChromHMM},
+@code{ChIPseeker} and enrichment analysis) of peaks.  Also includes peak
+enrichment around TSS.")
     (license license:gpl3)))
 
 (define-public r-epialleler

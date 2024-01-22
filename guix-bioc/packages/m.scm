@@ -8672,6 +8672,22 @@ visualization.")
         (base32 "157xi3r5fjsby2affd5yq112i6w80g8q3xiv4s7xg6zy57309f4k"))))
     (properties `((upstream-name . "mapscape")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr r-jsonlite r-htmlwidgets r-base64enc))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://bioconductor.org/packages/mapscape")

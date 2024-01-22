@@ -144,6 +144,22 @@ variants or multiple variants in a region (e.g. gene-based test).")
         (base32 "1si4znpjqj2690fibhmdzwy3ln90xbx6ykvnq3xwn6v0mgnaz8kn"))))
     (properties `((upstream-name . "Rvisdiff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-edger))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/BioinfoUSAL/Rvisdiff/")
@@ -2876,6 +2892,22 @@ and footprint visualization.")
         (base32 "198jsia292c5zxq22nc0favc3awvk9dp2ar6mcc7rvkvxny14cvg"))))
     (properties `((upstream-name . "RiboCrypt")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr
                              r-shinyjqui
                              r-shinyhelper
@@ -3387,6 +3419,22 @@ It performs well especially for the data generated from different exprements.")
         (base32 "0c0dfrfphsbx3pqa7knm35m9v4sqm12bgh8608p7y1fmhrfiz3cc"))))
     (properties `((upstream-name . "RGraph2js")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list))
     (propagated-inputs (list r-whisker r-rjson r-graph r-digest))
     (native-inputs (list esbuild))
@@ -6410,6 +6458,22 @@ a pipeline for the detection of structural variants is provided.")
         (base32 "0b0rv6s66ysfwsd7bx6fhq4jb0wp4dsvq5qv1qai54i26via6qa8"))))
     (properties `((upstream-name . "R3CPET")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-s4vectors
                              r-reshape2
                              r-rcurl

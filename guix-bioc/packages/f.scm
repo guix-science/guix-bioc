@@ -1927,6 +1927,22 @@ the VCF or FASTA file for fast execution.")
         (base32 "0v672v07591zwd48x1qbnrjg62xs0kldhi88vyi8f1ladcnk7zl4"))))
     (properties `((upstream-name . "FastqCleaner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shortread
                              r-shinybs
                              r-shiny

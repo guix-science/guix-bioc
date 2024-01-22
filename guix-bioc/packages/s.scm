@@ -113,6 +113,25 @@ easily substitute any of these features and/or custom with alternatives.")
         (base32 "0r5fk657q3zgmjx8kdblypfwqmsdbgbn919zi74dkkgma9ls2c7c"))))
     (properties `((upstream-name . "systemPipeShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '()))))
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-yaml
                              r-vroom
                              r-tibble
@@ -4784,6 +4803,22 @@ is an entry in the list with \"name\" containing name of the gene/protein and
         (base32 "17062syjnq92shijga2j5hbsnr4k9xpr5b7hjhfgw0knigi8r0bw"))))
     (properties `((upstream-name . "simona")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list perl openjdk))
     (propagated-inputs (list r-xml2
                              r-shiny
@@ -8815,6 +8850,22 @@ by their strength of association with high-weight vertices (Knode).")
         (base32 "0db96nfyw0fiwgwhflwhnr1sha56n3jhld05333xq9fkj89fzf15"))))
     (properties `((upstream-name . "sangeranalyseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zeallot
                              r-stringr
                              r-shinywidgets

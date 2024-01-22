@@ -232,6 +232,22 @@ microarray samples, as described in Yeung, Bumgarner and Raftery (Bioinformatics
         (base32 "1m72a7m0rn0q33nv9gb193gv8f4wrhxrjr837b4am7shv6lklj48"))))
     (properties `((upstream-name . "isomiRs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-summarizedexperiment
@@ -680,6 +696,22 @@ object, in a manner that is compatible with interactive visualisation in
         (base32 "0khysw2nj83sn2vgzjn76qrqfkiqwn5yc11c6x5l2zpllvzfrcj4"))))
     (properties `((upstream-name . "iSEE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-viridislite
                              r-vipor
                              r-summarizedexperiment
@@ -1110,6 +1142,22 @@ communication in one or multiple conditions.")
         (base32 "14hyq6szlj4xpd8yxwfli61g1mrc5s5r4m9l9c788z42jzq5jkkp"))))
     (properties `((upstream-name . "InteractiveComplexHeatmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-svglite
                              r-shiny
                              r-s4vectors
@@ -1146,6 +1194,22 @@ widgets for more complex Shiny app development.")
         (base32 "08szyplv7b4xl6jq71ghaknc8fyr2h16lzllc4w8svkhainkvsbw"))))
     (properties `((upstream-name . "interacCircos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rcolorbrewer r-plyr r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://bioconductor.org/packages/interacCircos")

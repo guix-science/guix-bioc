@@ -574,6 +574,22 @@ Bioconductor \"Experiment\" classes to loom files and vice versa.")
         (base32 "0w3c1bywch6629h8dbjvi24mrpxkwbaj5vaxrvyvx7a31k04zjqc"))))
     (properties `((upstream-name . "LOLA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-s4vectors
                              r-reshape2
                              r-iranges
@@ -1308,6 +1324,22 @@ The main purpose is to identify differentially expressed genes.")
         (base32 "0q563ysm6rs6708gnc1qpdz9m9265wamf068pgp162mvjbg7jxs9"))))
     (properties `((upstream-name . "LACE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-svglite
                              r-summarizedexperiment

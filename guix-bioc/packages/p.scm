@@ -553,6 +553,22 @@ also provides functions to calculate and visualise MS2 fragment ions.")
         (base32 "0g70wn1r0lpn3xm9b8f2797aww4ch533n12wm3q076i4357da06j"))))
     (properties `((upstream-name . "psichomics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xtable
                              r-xml
                              r-survival
@@ -624,61 +640,6 @@ selected alternative splicing events is also included.")
      "Deconvolution of gene expression data by Population-Specific Expression Analysis
 (PSEA).")
     (license license:artistic2.0)))
-
-(define-public r-protgear
-  (package
-    (name "r-protgear")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "protGear" version))
-       (sha256
-        (base32 "0r8md32vxjzarjldr9vsh3k0ms4zgqm9c7pp2flanbyinnqlfnxv"))))
-    (properties `((upstream-name . "protGear")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vsn
-                             r-tidyr
-                             r-tibble
-                             r-styler
-                             r-shinydashboard
-                             r-shiny
-                             r-rmarkdown
-                             r-rlang
-                             r-remotes
-                             r-readr
-                             r-purrr
-                             r-plyr
-                             r-plotly
-                             r-pheatmap
-                             r-mass
-                             r-magrittr
-                             r-limma
-                             r-knitr
-                             r-kendall
-                             r-htmltools
-                             r-gtools
-                             r-ggpubr
-                             r-ggplot2
-                             r-ggally
-                             r-genefilter
-                             r-flexdashboard
-                             r-factominer
-                             r-factoextra
-                             r-dplyr
-                             r-data-table
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Keniajin/protGear")
-    (synopsis
-     "Protein Micro Array Data Management and Interactive Visualization")
-    (description
-     "This package provides a generic three-step pre-processing package for protein
-microarray data.  This package contains different data pre-processing procedures
-to allow comparison of their performance.These steps are background correction,
-the coefficient of variation (CV) based filtering, batch correction and
-normalization.")
-    (license license:gpl3)))
 
 (define-public r-proteomm
   (package
@@ -2083,6 +2044,22 @@ González-Domínguez R, Carmona-Pontaque F, et al. (2021)
         (base32 "0rx60m4jmw8a7ha6nkszachk4dl0bjv0n4mvgvi2kiy7a3s3p6zp"))))
     (properties `((upstream-name . "pogos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny
                              r-s4vectors
                              r-rjson
@@ -3495,6 +3472,22 @@ repository with the precomputed gene counts from ARCHS4 and DEE2 projects.")
         (base32 "1ynwx1bbzj1xm6hci4kxqgmzargarg85saqz1219axj1gsyhljfn"))))
     (properties `((upstream-name . "phantasus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-svglite
                              r-stringr
                              r-scales
@@ -3632,6 +3625,22 @@ filter the PSMs based on FDR.")
         (base32 "0rd1zwjnp0zmigscx38xzys29jqpkkg9fp24asvqikm1v3gpli3l"))))
     (properties `((upstream-name . "pepStat")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-plyr
                              r-limma
                              r-iranges

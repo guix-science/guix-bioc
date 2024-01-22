@@ -89,6 +89,22 @@ scale deletions, which cause losses of whole genes or parts of them.")
         (base32 "0wy3v69pp8jhij1svncq86x35xxr2d0gl5mrk7h8w4341sbms4p4"))))
     (properties `((upstream-name . "zenith")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-variancepartition
                              r-tidyr
                              r-rfast

@@ -2567,6 +2567,22 @@ than graph-clustering or consensus clustering.")
         (base32 "1lq0xcwjvgcm8l2kzaxf44ng1h57i63xylyv813pq9szma3zl8bx"))))
     (properties `((upstream-name . "hipathia")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-visnetwork
                              r-tibble
                              r-summarizedexperiment
@@ -2836,6 +2852,22 @@ groups or single markers.")
         (base32 "0xfw0sszpwmh0g6vpb8f1y84p5bg9mwnfypb9n4vwqhxnb12w5qb"))))
     (properties `((upstream-name . "hicVennDiagram")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-svglite
                              r-s4vectors
                              r-rtracklayer
