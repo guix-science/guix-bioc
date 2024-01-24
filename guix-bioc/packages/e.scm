@@ -1479,13 +1479,13 @@ between groups of genes.")
 (define-public r-epicompare
   (package
     (name "r-epicompare")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiCompare" version))
        (sha256
-        (base32 "11cj198f8w065d315b03w70qp9azvmc6h30g11zbaj2rpmxz5lya"))))
+        (base32 "09a71gw8qwh6fzbap6f8qzs9s6ib32cn7zpdqvg5jniryvnwsz71"))))
     (properties `((upstream-name . "EpiCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

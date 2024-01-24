@@ -1168,14 +1168,14 @@ address the aforementioned drawbacks.")
 (define-public r-dlbcl
   (package
     (name "r-dlbcl")
-    (version "1.42.1")
+    (version "1.42.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DLBCL" version
                               'experiment))
        (sha256
-        (base32 "0an4g45977knk2qsvwjjm66l7rrb26pbk8sbb1zjvmrqym1qviqj"))))
+        (base32 "06x4jbyz0m9pzwxjl326rl5zahq5km5rryncbq99cz6mml2asn21"))))
     (properties `((upstream-name . "DLBCL")))
     (build-system r-build-system)
     (propagated-inputs (list r-graph r-biobase))
@@ -1669,13 +1669,13 @@ available.")
 (define-public r-differentialregulation
   (package
     (name "r-differentialregulation")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DifferentialRegulation" version))
        (sha256
-        (base32 "0jf867alv1mn4gwpd4ypw96pkw627vzg74qsk6151m0q6hn24yq8"))))
+        (base32 "04dg67z5s37618sip5wfawvhp3lavnnids69c0ff5l2bh7v5gm43"))))
     (properties `((upstream-name . "DifferentialRegulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tximport
@@ -1937,13 +1937,13 @@ for complex diseases.")
 (define-public r-despace
   (package
     (name "r-despace")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DESpace" version))
        (sha256
-        (base32 "1619hg7fygk5562sz3xy54qr14rbqblyyb5rm26i1hxwh6dcwl0a"))))
+        (base32 "1397wn7wsbmyiz73q2vjwhjz3q8sxba4psd656dvk22095k3grbz"))))
     (properties `((upstream-name . "DESpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

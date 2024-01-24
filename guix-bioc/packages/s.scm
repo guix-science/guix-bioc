@@ -341,13 +341,13 @@ extracting information from Synteny objects.")
 (define-public r-synergyfinder
   (package
     (name "r-synergyfinder")
-    (version "3.10.0")
+    (version "3.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "synergyfinder" version))
        (sha256
-        (base32 "0v8xpgq6caqf9im87am6nrifzgr4x6amjlpz29lsczk79084lifc"))))
+        (base32 "1svpwyr0mh1g9mllhfqsyhpyyzymmpsz4ylv50vasxs78lhd14zx"))))
     (properties `((upstream-name . "synergyfinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -3097,13 +3097,13 @@ data.")
 (define-public r-spatialdecon
   (package
     (name "r-spatialdecon")
-    (version "1.12.0")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpatialDecon" version))
        (sha256
-        (base32 "1lwhx6yqs5alc0ppf3rq51jfgwx5rm4dljmvlpr3nrjzy5h1gbvv"))))
+        (base32 "0myaf95pq12x9kjzn695k122v921znslp65hpcxw8yjxvjjd02vn"))))
     (properties `((upstream-name . "SpatialDecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-seuratobject
