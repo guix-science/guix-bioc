@@ -3323,13 +3323,13 @@ bulk brain tissues.")
 (define-public r-hibag
   (package
     (name "r-hibag")
-    (version "1.38.1")
+    (version "1.38.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HIBAG" version))
        (sha256
-        (base32 "1spbnj6kfgrg4a2wzpj33d9spvjqs2nn2zmq7448j10dyk3vp0is"))))
+        (base32 "095x8qli3l33w88dhhpx1hjfk64y2hqr6dpdq7ig39lv9nnxbvxc"))))
     (properties `((upstream-name . "HIBAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel))

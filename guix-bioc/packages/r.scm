@@ -935,13 +935,13 @@ paths.")
 (define-public r-rscudo
   (package
     (name "r-rscudo")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rScudo" version))
        (sha256
-        (base32 "0wc0a7d3fwawbv0p9sja7d9v31vz2xwn96rzgc9ijfxzxfpk56z4"))))
+        (base32 "167khkv93xlx7vdqg4k5b0gyk9v8vl4w30dfbfbrrrzcdzb8h444"))))
     (properties `((upstream-name . "rScudo")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -2055,6 +2055,43 @@ regions.  The editing frequencies can be tested against binary, continuous or
 survival outcomes.  Multiple covariate variables as well as interaction effects
 can also be incorporated in the statistical models.")
     (license license:gpl3)))
+
+(define-public r-rnadecay
+  (package
+    (name "r-rnadecay")
+    (version "1.22.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "RNAdecay" version))
+       (sha256
+        (base32 "1nzbq211mj0v66ddw16gh4vcbxar4bh094gf2hl8rqkyn1ck1vn7"))))
+    (properties `((upstream-name . "RNAdecay")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb r-scales r-nloptr r-gplots r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/RNAdecay")
+    (synopsis "Maximum Likelihood Decay Modeling of RNA Degradation Data")
+    (description
+     "RNA degradation is monitored through measurement of RNA abundance after
+inhibiting RNA synthesis.  This package has functions and example scripts to
+facilitate (1) data normalization, (2) data modeling using constant decay rate
+or time-dependent decay rate models, (3) the evaluation of treatment or genotype
+effects, and (4) plotting of the data and models.  Data Normalization: functions
+and scripts make easy the normalization to the initial (T0) RNA abundance, as
+well as a method to correct for artificial inflation of Reads per Million (RPM)
+abundance in global assessments as the total size of the RNA pool decreases.
+Modeling: Normalized data is then modeled using maximum likelihood to fit
+parameters.  For making treatment or genotype comparisons (up to four), the
+modeling step models all possible treatment effects on each gene by repeating
+the modeling with constraints on the model parameters (i.e., the decay rate of
+treatments A and B are modeled once with them being equal and again allowing
+them to both vary independently).  Model Selection: The AICc value is calculated
+for each model, and the model with the lowest AICc is chosen.  Modeling results
+of selected models are then compiled into a single data frame.  Graphical
+Plotting: functions are provided to easily visualize decay data model, or
+half-life distributions using ggplot2 package functions.")
+    (license license:gpl2)))
 
 (define-public r-rnaagecalc
   (package
@@ -3715,13 +3752,13 @@ shell command cat) and accept multiple files as input.")
 (define-public r-rfarm
   (package
     (name "r-rfarm")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rfaRm" version))
        (sha256
-        (base32 "0w93wnvaiyalhzjf3jhy02zni0gx6xfwriqw87ps2y22nxl46l4q"))))
+        (base32 "0piry7i6m1sikckpq9v5a83bx5j0hi5k52ycs2sf9s23i19kv5bb"))))
     (properties `((upstream-name . "rfaRm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

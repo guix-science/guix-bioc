@@ -1454,14 +1454,14 @@ the details, see the README.md of lrbase-workflow.")
 (define-public r-ahensdbs
   (package
     (name "r-ahensdbs")
-    (version "1.1.10")
+    (version "1.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AHEnsDbs" version
                               'annotation))
        (sha256
-        (base32 "0nsgp6yv0vfvq4csbxz5wgrc6cyvfdbyhsc822j46yz11kcl0dk9"))))
+        (base32 "1mh8aji48a6fad6bd1333qmc3dw7b5hf4v7xw0zhmfbnld64gz0s"))))
     (properties `((upstream-name . "AHEnsDbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-ensembldb r-annotationhubdata))

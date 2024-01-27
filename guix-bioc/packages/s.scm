@@ -4286,13 +4286,13 @@ in precision medicine applications where the latter must be reported.")
 (define-public r-sipsic
   (package
     (name "r-sipsic")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SiPSiC" version))
        (sha256
-        (base32 "0px5xsbp9rm8bp5y2y2qhj10vfrd6mrm9l8457h4acdadjsga72x"))))
+        (base32 "0mdpspmnhp7rnm7k0zmgdfbdkqh3cnrsianxv1s0r1jlnqfhbhm7"))))
     (properties `((upstream-name . "SiPSiC")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-matrix))
