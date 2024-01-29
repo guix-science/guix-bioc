@@ -3365,13 +3365,13 @@ independently (OR-gate) or jointly (AND-gate).")
 (define-public r-bnbc
   (package
     (name "r-bnbc")
-    (version "1.23.0")
+    (version "1.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bnbc" version))
        (sha256
-        (base32 "1fgls5a2727c7ssj9f6r56s21j171s6ipf7k300b2780whagsdb7"))))
+        (base32 "0fv8a3v37y5bs9gvk95d2k1yp989sc99r57pbdysadnb463ss6gv"))))
     (properties `((upstream-name . "bnbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva
@@ -3382,6 +3382,7 @@ independently (OR-gate) or jointly (AND-gate).")
                              r-preprocesscore
                              r-matrixstats
                              r-iranges
+                             r-hicbricks
                              r-genomicranges
                              r-genomeinfodb
                              r-ebimage
