@@ -1284,6 +1284,26 @@ This package comes bundled with the MC-UPGMA clustering package by Yaniv
 Loewenstein.")
     (license license:gpl3)))
 
+(define-public r-netbiov
+  (package
+    (name "r-netbiov")
+    (version "1.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "netbiov" version))
+       (sha256
+        (base32 "0igqb3wdxvjrbh4w664934yycac3qwcyfhmsz4cf2h5rif23xagf"))))
+    (properties `((upstream-name . "netbiov")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (home-page "http://www.bio-complexity.com")
+    (synopsis "package for visualizing complex biological network")
+    (description
+     "This package provides a package that provides an effective visualization of
+large biological networks")
+    (license license:gpl2+)))
+
 (define-public r-netactivitydata
   (package
     (name "r-netactivitydata")

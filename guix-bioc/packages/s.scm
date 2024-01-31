@@ -8968,13 +8968,13 @@ The microarray data are derived from Roth et al. (2006) and Ge et al. (2005).")
 (define-public r-saigegds
   (package
     (name "r-saigegds")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SAIGEgds" version))
        (sha256
-        (base32 "0wfhlw37dizd9kp204h2rsays52zgrapczghsidnxyclyrjl7r9z"))))
+        (base32 "0068rjyphkhna734m68lriqjcwafgzvpvw7mgv48j9aghjiycfxr"))))
     (properties `((upstream-name . "SAIGEgds")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqarray
