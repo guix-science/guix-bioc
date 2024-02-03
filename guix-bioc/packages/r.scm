@@ -5826,7 +5826,7 @@ in clinical trials.")
         (base32 "0mvh22p0dliwapdgbl5r93dpjdfnvnxdv5ig3y9gd2ndn32h1cyc"))))
     (properties `((upstream-name . "RandomWalkRestartMH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-igraph r-dnet))
+    (propagated-inputs (list r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alberto-valdeolivas/RandomWalkRestartMH")
     (synopsis

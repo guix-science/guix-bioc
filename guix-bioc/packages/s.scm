@@ -7675,19 +7675,17 @@ interactions from single cell data.")
 (define-public r-schex
   (package
     (name "r-schex")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "schex" version))
        (sha256
-        (base32 "0mg6kkzdqqnbdqvzl8iv3b2900ablkhgq75grwqxrrzv9a8lh2m4"))))
+        (base32 "1bfa0s0d68y0kidknd9finf7snp7gfmmrxac2f1sx1i1fggm2nb3"))))
     (properties `((upstream-name . "schex")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment
-                             r-shiny
-                             r-seurat
-                             r-scales
+                             r-rlang
                              r-hexbin
                              r-ggplot2
                              r-ggforce

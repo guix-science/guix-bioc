@@ -21,7 +21,6 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (guix-cran packages c)
-  #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages o)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages g)
@@ -2835,7 +2834,6 @@ model approach.")
                              r-genomicranges
                              r-genomeinfodb
                              r-dplyr
-                             r-dnet
                              r-caret
                              r-biocgenerics))
     (native-inputs (list r-knitr))
