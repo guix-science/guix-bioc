@@ -4193,13 +4193,13 @@ graphics to the genes of interest.")
 (define-public r-biocancer
   (package
     (name "r-biocancer")
-    (version "1.30.0")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bioCancer" version))
        (sha256
-        (base32 "0rhv3k3m8nn6dx91895nwmwg0x7igyrh3iz71ds6i3zi0crlq9zm"))))
+        (base32 "1p17hv9g8am6zkmlamnr5bd1z0n35awpwqa998x6ixswpxa75zzg"))))
     (properties `((upstream-name . "bioCancer")))
     (build-system r-build-system)
     (arguments
@@ -4232,7 +4232,6 @@ graphics to the genes of interest.")
                              r-org-hs-eg-db
                              r-org-bt-eg-db
                              r-import
-                             r-httr
                              r-htmlwidgets
                              r-go-db
                              r-genetclassifier
@@ -4241,6 +4240,7 @@ graphics to the genes of interest.")
                              r-dose
                              r-diagrammer
                              r-clusterprofiler
+                             r-cbioportaldata
                              r-biobase
                              r-annotationdbi
                              r-algdesign))

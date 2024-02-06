@@ -1933,20 +1933,19 @@ plots and barplots.")
 (define-public r-transite
   (package
     (name "r-transite")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "transite" version))
        (sha256
-        (base32 "0mkrk73ll276rx6ffdd3d4zq9z8n912cm2yk0csb8m9lbzfigpqi"))))
+        (base32 "089n19vwwi8cvsqcxd5dl5lqjs2sgnglg36a5wd87qbgmvk540sm"))))
     (properties `((upstream-name . "transite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tfmpvalue
                              r-scales
                              r-rcpp
                              r-gridextra
-                             r-ggseqlogo
                              r-ggplot2
                              r-genomicranges
                              r-dplyr

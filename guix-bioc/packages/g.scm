@@ -2077,13 +2077,13 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
 (define-public r-ggkegg
   (package
     (name "r-ggkegg")
-    (version "1.0.7")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggkegg" version))
        (sha256
-        (base32 "1dwvzp0inhgxinw2yl1xv5gimwy942nm1l37l08mv7hs86plxwwm"))))
+        (base32 "1wsr85pik15kglj5sk93l49jfy9z77x4hr24wqhv0p9vs9zl51jr"))))
     (properties `((upstream-name . "ggkegg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2095,6 +2095,7 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
                              r-org-hs-eg-db
                              r-magick
                              r-igraph
+                             r-gtable
                              r-ggraph
                              r-ggplot2
                              r-getoptlong
@@ -2139,13 +2140,13 @@ repositories")
 (define-public r-gg4way
   (package
     (name "r-gg4way")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gg4way" version))
        (sha256
-        (base32 "14008fhcx4cn5a4ajy32xvsambkmr3xgyaipqskagkblykz87lxw"))))
+        (base32 "1dy0kb2lvgsjx1pb7xys468cyppn13cm7c96z795gzy9w1nippig"))))
     (properties `((upstream-name . "gg4way")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -582,13 +582,13 @@ functions in this package could also be used in other types of omics data.")
 (define-public r-qcmetrics
   (package
     (name "r-qcmetrics")
-    (version "1.40.0")
+    (version "1.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qcmetrics" version))
        (sha256
-        (base32 "03s0jx6mmmv1634awfw6gvllzp36fx8xmqf6k39j2fnc93nd6bag"))))
+        (base32 "09z3j1xml3yn7lwmd4rfxiz6yws3qkzdxhfvd68hw6k0xjlziglk"))))
     (properties `((upstream-name . "qcmetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-s4vectors r-pander r-knitr r-biobase))

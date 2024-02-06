@@ -651,13 +651,13 @@ draw protein schematics.")
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doubletrouble" version))
        (sha256
-        (base32 "097kn5k99rj41cna1622dz9wgj6vsjb2bvdq60dw3jdxf4nlb672"))))
+        (base32 "140wr41xcn9qriig2ibc6gpplf9csdldcvkbwdd99pl07ffly42y"))))
     (properties `((upstream-name . "doubletrouble")))
     (build-system r-build-system)
     (propagated-inputs (list r-syntenet
@@ -1164,6 +1164,48 @@ exposures and traits.  To tackle these issues, we have developed an efficient
 DMC identification method based on Hidden Markov Models (HMMs) called “DMCHMM”
 which is a three-step approach (model selection, prediction, testing) aiming to
 address the aforementioned drawbacks.")
+    (license license:gpl3)))
+
+(define-public r-dmcfb
+  (package
+    (name "r-dmcfb")
+    (version "1.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DMCFB" version))
+       (sha256
+        (base32 "0j00hnb30anbf7lh3qiv9d7ffxs4ipjdg3w1g0pmqigp1n5ig9vw"))))
+    (properties `((upstream-name . "DMCFB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-summarizedexperiment
+                             r-speedglm
+                             r-s4vectors
+                             r-rtracklayer
+                             r-matrixstats
+                             r-mass
+                             r-iranges
+                             r-genomicranges
+                             r-fastdummies
+                             r-data-table
+                             r-biocparallel
+                             r-benchmarkme
+                             r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/DMCFB")
+    (synopsis
+     "Differentially Methylated Cytosines via a Bayesian Functional Approach")
+    (description
+     "DMCFB is a pipeline for identifying differentially methylated cytosines using a
+Bayesian functional regression model in bisulfite sequencing data.  By using a
+functional regression data model, it tries to capture position-specific,
+group-specific and other covariates-specific methylation patterns as well as
+spatial correlation patterns and unknown underlying models of methylation data.
+It is robust and flexible with respect to the true underlying models and
+inclusion of any covariates, and the missing values are imputed using spatial
+correlation between positions and samples.  A Bayesian approach is adopted for
+estimation and inference in the proposed method.")
     (license license:gpl3)))
 
 (define-public r-dlbcl
@@ -2825,13 +2867,13 @@ the dataset.")
 (define-public r-debrowser
   (package
     (name "r-debrowser")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "debrowser" version))
        (sha256
-        (base32 "07alsmkinqffxd7bdb3n6pbsabvair7z8mx3ab6yax4mbc0b2fxd"))))
+        (base32 "0qqf09yp6ls2nfmyswd91ahfmz8xf7hyfxaappy38hzhh0m4cmsc"))))
     (properties `((upstream-name . "debrowser")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva

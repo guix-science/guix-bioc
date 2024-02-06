@@ -7669,13 +7669,13 @@ visualized.")
 (define-public r-cbioportaldata
   (package
     (name "r-cbioportaldata")
-    (version "2.14.1")
+    (version "2.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cBioPortalData" version))
        (sha256
-        (base32 "008203s5pc8hyqlkzqwy7hamy791y1bxvx4inrxafhw27v48l5l2"))))
+        (base32 "1bb7p6bbizyq0ap39fc11vfqpgfrcj7xr6avjm09vydmafi8s0q6"))))
     (properties `((upstream-name . "cBioPortalData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
