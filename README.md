@@ -17,8 +17,8 @@ You can use this channel by adding the following snippet to your
   %default-channels)
 ```
 
-Binary substitutes for `x86_64-linux` are soon available
+Binary substitutes for `x86_64-linux` are available
 from https://guix.bordeaux.inria.fr, see [Getting Substitutes from Other
 Servers](https://guix.gnu.org/manual/en/guix.html#Getting-Substitutes-from-Other-Servers)
-in the official manual.
+in the official manual for a general overview, or [here](https://hpc.guix.info/channel/guix-bioc) for instructions specific to this channel.
 
