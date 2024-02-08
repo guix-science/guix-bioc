@@ -1693,13 +1693,13 @@ association between RNA-Seq and high-dimensional data.")
 (define-public r-glmsparsenet
   (package
     (name "r-glmsparsenet")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "glmSparseNet" version))
        (sha256
-        (base32 "0akcp07bngsrwfl1siv2bgxlz1gxqpcmdxg9nka508884v7rxs3r"))))
+        (base32 "09cma62cj9wpgd3pm2j9azj7wvwfnk13715qnlzrk1ika4qkzl9l"))))
     (properties `((upstream-name . "glmSparseNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -2077,13 +2077,13 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
 (define-public r-ggkegg
   (package
     (name "r-ggkegg")
-    (version "1.0.11")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggkegg" version))
        (sha256
-        (base32 "1wsr85pik15kglj5sk93l49jfy9z77x4hr24wqhv0p9vs9zl51jr"))))
+        (base32 "0bm437braigzraaxd4im7qnvhylc5b09qvs1yqnjmfr5jycihjfd"))))
     (properties `((upstream-name . "ggkegg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2101,7 +2101,6 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
                              r-getoptlong
                              r-dplyr
                              r-data-table
-                             r-cairo
                              r-biocfilecache
                              r-annotationdbi))
     (native-inputs (list r-knitr))

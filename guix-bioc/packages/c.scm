@@ -8187,13 +8187,13 @@ specificity and define a cutoff value according to clinical requirements.")
 (define-public r-cancer
   (package
     (name "r-cancer")
-    (version "1.36.0")
+    (version "1.36.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "canceR" version))
        (sha256
-        (base32 "0lswys440vyzm3dkim5d88979fjyq0cxg9rr2z1xwl4nvrnz1lwb"))))
+        (base32 "18xdkfhgfsxhjcqwlag4znkvsc2ldn9qhmm22dgsgnyql841mysh"))))
     (properties `((upstream-name . "canceR")))
     (build-system r-build-system)
     (inputs (list))
@@ -8205,11 +8205,11 @@ specificity and define a cutoff value according to clinical requirements.")
                              r-r-methodss3
                              r-plyr
                              r-phenotest
-                             r-httr
                              r-gseabase
                              r-genetclassifier
                              r-formula
                              r-circlize
+                             r-cbioportaldata
                              r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/canceR")

@@ -651,13 +651,13 @@ draw protein schematics.")
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doubletrouble" version))
        (sha256
-        (base32 "140wr41xcn9qriig2ibc6gpplf9csdldcvkbwdd99pl07ffly42y"))))
+        (base32 "1zdajr92fz1k0w5crc0vcvdvxvrx6rx9cvrlsivjbsk53hjcxjn3"))))
     (properties `((upstream-name . "doubletrouble")))
     (build-system r-build-system)
     (propagated-inputs (list r-syntenet
@@ -1028,14 +1028,14 @@ between each @code{CpG}.")
 (define-public r-dmrcatedata
   (package
     (name "r-dmrcatedata")
-    (version "2.20.0")
+    (version "2.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMRcatedata" version
                               'experiment))
        (sha256
-        (base32 "07gkhal6rhj9b4yasmb3dfix38cd99p2bf79agl8vbrmzd0mjvhc"))))
+        (base32 "0saa664336fqz7xzg6bd5b1z3gxrcwi9qdy3x54jcjrrqk446k7s"))))
     (properties `((upstream-name . "DMRcatedata")))
     (build-system r-build-system)
     (arguments
@@ -2867,13 +2867,13 @@ the dataset.")
 (define-public r-debrowser
   (package
     (name "r-debrowser")
-    (version "1.30.1")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "debrowser" version))
        (sha256
-        (base32 "0qqf09yp6ls2nfmyswd91ahfmz8xf7hyfxaappy38hzhh0m4cmsc"))))
+        (base32 "0fm5xjsxxc1yqzpxxxwdvi21gjq6qdgp6pqv6a5x2410y2dyghjx"))))
     (properties `((upstream-name . "debrowser")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva

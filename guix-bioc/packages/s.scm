@@ -4744,13 +4744,13 @@ is an entry in the list with \"name\" containing name of the gene/protein and
 (define-public r-simona
   (package
     (name "r-simona")
-    (version "1.0.6")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "simona" version))
        (sha256
-        (base32 "17062syjnq92shijga2j5hbsnr4k9xpr5b7hjhfgw0knigi8r0bw"))))
+        (base32 "1avyyj9r0slpnyalsd570mv4h19wmriz7wa2jkbh6yw714crq55x"))))
     (properties `((upstream-name . "simona")))
     (build-system r-build-system)
     (arguments

@@ -543,13 +543,13 @@ also provides functions to calculate and visualise MS2 fragment ions.")
 (define-public r-psichomics
   (package
     (name "r-psichomics")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "psichomics" version))
        (sha256
-        (base32 "0g70wn1r0lpn3xm9b8f2797aww4ch533n12wm3q076i4357da06j"))))
+        (base32 "1kajq0xx3k4zwfk1kzh96av1a8zjs58iphvf034xnpdqkjxgj07c"))))
     (properties `((upstream-name . "psichomics")))
     (build-system r-build-system)
     (arguments
@@ -2879,13 +2879,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "19qiz589sp30qrqlf5s5a1j70npqhkxp0i9bd3143w7pa9rqmpfj"))))
+        (base32 "0q43gm3r142idmfcbg622m6v77g2n9ysxfmpb1wzig9indynfyh8"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments

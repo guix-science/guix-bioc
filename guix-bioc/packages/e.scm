@@ -1794,13 +1794,13 @@ and disease progression.")
 (define-public r-enhancerhomologsearch
   (package
     (name "r-enhancerhomologsearch")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "enhancerHomologSearch" version))
        (sha256
-        (base32 "1j5gbqin6qscz83sy1gk90afzyzp4njp8y9ajzfxsbhapcpx729h"))))
+        (base32 "1lw8ql80rvdavavm2hmkxpbamxsab6njwcr35qmi185rddd58z42"))))
     (properties `((upstream-name . "enhancerHomologSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors

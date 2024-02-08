@@ -1338,13 +1338,13 @@ predicting such a combined tokens.")
 (define-public r-tscan
   (package
     (name "r-tscan")
-    (version "1.40.0")
+    (version "1.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TSCAN" version))
        (sha256
-        (base32 "0lm3byz9j9ja9106c7jfrdjnyywvb9n0j630fsgma4w78flk5pli"))))
+        (base32 "0dgfqhq5ynjj11hscccab1ijhly2j1dmj9yhhpib83ivpj7l3cws"))))
     (properties `((upstream-name . "TSCAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-trajectoryutils

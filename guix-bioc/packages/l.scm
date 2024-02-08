@@ -454,13 +454,13 @@ Thalamus).")
 (define-public r-lpnet
   (package
     (name "r-lpnet")
-    (version "2.34.0")
+    (version "2.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lpNet" version))
        (sha256
-        (base32 "1wf2n7k4rdj17dinq8kcm0add9n5xbd6zyvngfwgfr25x5mqg1dn"))))
+        (base32 "1zgf86pcvhfilw9kd1fv8jlg7yjyavfajqc96d1ypln1sg5rvf4g"))))
     (properties `((upstream-name . "lpNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
