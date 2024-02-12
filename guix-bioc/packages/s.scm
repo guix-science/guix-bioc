@@ -4381,13 +4381,13 @@ genomic location")
 (define-public r-singlecelltk
   (package
     (name "r-singlecelltk")
-    (version "2.12.0")
+    (version "2.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "singleCellTK" version))
        (sha256
-        (base32 "0c7xl2abj9x1ircgbrk8m3xfbmglv4r6y6v8pxvdka0p2nngs950"))))
+        (base32 "1yw727m67i3mrrhq9yzww0c2ssacvqm1jcrxn5vagn0f5z1kml8f"))))
     (properties `((upstream-name . "singleCellTK")))
     (build-system r-build-system)
     (arguments

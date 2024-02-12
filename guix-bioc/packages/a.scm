@@ -542,13 +542,13 @@ combined, evaluated and filtered.")
 (define-public r-apl
   (package
     (name "r-apl")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "APL" version))
        (sha256
-        (base32 "0p9s7513gq6fggrab3yf132z0sbydfcyay13f1ka889lcgw741bh"))))
+        (base32 "0g5h2mcqvsgiy8l8vlbwm6cqnywyhyc2j2id6pw7xvzd1xm5gb8i"))))
     (properties `((upstream-name . "APL")))
     (build-system r-build-system)
     (inputs (list python-pytorch python python-numpy))
@@ -566,7 +566,7 @@ combined, evaluated and filtered.")
                              r-ggrepel
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/APL")
+    (home-page "https://vingronlab.github.io/APL/")
     (synopsis "Association Plots")
     (description
      "APL is a package developed for computation of Association Plots (AP), a method

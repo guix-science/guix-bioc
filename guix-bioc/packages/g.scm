@@ -2382,13 +2382,13 @@ information to GEO by preparing a single file for upload (direct deposit).")
 (define-public r-geomxtools
   (package
     (name "r-geomxtools")
-    (version "3.5.0")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GeomxTools" version))
        (sha256
-        (base32 "040gm10fbq1hal2jsvbry556mwn3g0i6vz2bh9x1nvk4rp1yjs6w"))))
+        (base32 "01lixadi4w7wsv39k51mimm88bc8hqfmcnbl16x28nzw91qfnmnj"))))
     (properties `((upstream-name . "GeomxTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4082,13 +4082,13 @@ response analyses that the @code{gDR} suite offers.")
 (define-public r-gdnax
   (package
     (name "r-gdnax")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDNAx" version))
        (sha256
-        (base32 "0pgzd92d5izy92kp2y0wngm68vbg1sh5qqplwzgvszx530nm332b"))))
+        (base32 "1kphihn4y3pyq6js2jv5xr92zawmip1nas9jl3rmmhrqrcy1ymba"))))
     (properties `((upstream-name . "gDNAx")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
