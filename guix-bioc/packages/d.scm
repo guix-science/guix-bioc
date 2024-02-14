@@ -1028,14 +1028,14 @@ between each @code{CpG}.")
 (define-public r-dmrcatedata
   (package
     (name "r-dmrcatedata")
-    (version "2.20.1")
+    (version "2.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMRcatedata" version
                               'experiment))
        (sha256
-        (base32 "0saa664336fqz7xzg6bd5b1z3gxrcwi9qdy3x54jcjrrqk446k7s"))))
+        (base32 "1yq0z4q0sca3d8zvlgn828nnlymx6cjdcp886w7p76wjws7c69k1"))))
     (properties `((upstream-name . "DMRcatedata")))
     (build-system r-build-system)
     (arguments

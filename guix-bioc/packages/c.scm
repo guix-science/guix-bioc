@@ -7362,6 +7362,35 @@ in this package allow the reader to completely reproduce the steps in the
 tutorial.")
     (license license:artistic2.0)))
 
+(define-public r-ccrepe
+  (package
+    (name "r-ccrepe")
+    (version "1.38.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ccrepe" version))
+       (sha256
+        (base32 "1hkhxhzbry612p0lc3blmxnx3cb70x8473x6ghwgi7v71f01agbq"))))
+    (properties `((upstream-name . "ccrepe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-infotheo))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ccrepe")
+    (synopsis "ccrepe_and_nc.score")
+    (description
+     "The CCREPE (Compositionality Corrected by REnormalizaion and PErmutation)
+package is designed to assess the significance of general similarity measures in
+compositional datasets.  In microbial abundance data, for example, the total
+abundances of all microbes sum to one; CCREPE is designed to take this
+constraint into account when assigning p-values to similarity measures between
+the microbes.  The package has two functions: ccrepe: Calculates similarity
+measures, p-values and q-values for relative abundances of bugs in one or two
+body sites using bootstrap and permutation matrices of the data.  nc.score:
+Calculates species-level co-variation and co-exclusion patterns based on an
+extension of the checkerboard score to ordinal data.")
+    (license license:expat)))
+
 (define-public r-ccpromise
   (package
     (name "r-ccpromise")

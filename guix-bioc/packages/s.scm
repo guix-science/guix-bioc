@@ -1970,13 +1970,13 @@ matrix, prediction Heat-Map and Correlation Circle from PCA analysis.")
 (define-public r-sqldataframe
   (package
     (name "r-sqldataframe")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SQLDataFrame" version))
        (sha256
-        (base32 "057bw12x0anr0rmjwyrvssdln65ffqgn678bpsfrii5n3fi19jk4"))))
+        (base32 "0k9m440dnsbbzz2mxqhy54syimy8ryzx528nsbm65ppslk52p36l"))))
     (properties `((upstream-name . "SQLDataFrame")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2982,13 +2982,13 @@ Development (LIBD) researchers and collaborators.")
 (define-public r-spatialheatmap
   (package
     (name "r-spatialheatmap")
-    (version "2.8.3")
+    (version "2.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialHeatmap" version))
        (sha256
-        (base32 "01g7irac1knmvkg1kwf84cq8br785mxlvdy7s9rb8055knhl9vdq"))))
+        (base32 "0ggvc34mr538qqnjb3d1842jb2f7ykw3wm4qcp59zwx30jb3i7nm"))))
     (properties `((upstream-name . "spatialHeatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3127,13 +3127,13 @@ applicable to any gene expression data.")
 (define-public r-spatialde
   (package
     (name "r-spatialde")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialDE" version))
        (sha256
-        (base32 "0n42zvmn254523gn5138hrvv6wmjkpzz3m7x62jci1hpbhqvb914"))))
+        (base32 "1b7jv0p8wba0jw94jwjiph7ipr9bk018ib60mlkymsisjm6gn104"))))
     (properties `((upstream-name . "spatialDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -8462,19 +8462,19 @@ and identifying enriched @code{miRNA-target} pairs.")
 (define-public r-scanmir
   (package
     (name "r-scanmir")
-    (version "1.8.0")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scanMiR" version))
        (sha256
-        (base32 "1774gbxx9l992f8v6q223kk9n6s86c48hvnymy8v0axkd7jl4k9b"))))
+        (base32 "10czwd1b631g6xbcykvih94vgij29kkl6xbc0y9lv9023gzxmplb"))))
     (properties `((upstream-name . "scanMiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
+                             r-seqlogo
                              r-s4vectors
                              r-iranges
-                             r-ggseqlogo
                              r-ggplot2
                              r-genomicranges
                              r-genomeinfodb
