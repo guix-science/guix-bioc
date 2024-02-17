@@ -1482,13 +1482,13 @@ between assays, variables or individuals.")
 (define-public r-omicrexposome
   (package
     (name "r-omicrexposome")
-    (version "1.24.2")
+    (version "1.24.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omicRexposome" version))
        (sha256
-        (base32 "06hmpnh5xbw3d3i92spz8312vg4m0lay0pkayhkd2yd8bvdhddnx"))))
+        (base32 "0nzpqdcpcvf2qjzrzbj27n7b2hkz668829sj2jir9dc86mv8daya"))))
     (properties `((upstream-name . "omicRexposome")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva

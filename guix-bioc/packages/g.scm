@@ -20,7 +20,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
@@ -4025,13 +4024,13 @@ formats.")
 (define-public r-gdrcore
   (package
     (name "r-gdrcore")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRcore" version))
        (sha256
-        (base32 "1885pyvahzxy99kj8hjwa1lizh936rq2jbnh67nnn196miz55d4f"))))
+        (base32 "09gs01hbmb7jpv1s40h8xinfzk2i6x7aw2kgy60cwllcb7z60ilc"))))
     (properties `((upstream-name . "gDRcore")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

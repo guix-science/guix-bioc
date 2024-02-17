@@ -4193,13 +4193,13 @@ graphics to the genes of interest.")
 (define-public r-biocancer
   (package
     (name "r-biocancer")
-    (version "1.30.6")
+    (version "1.30.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bioCancer" version))
        (sha256
-        (base32 "08a1qh66chlz65i228v93m12fkq6n5xpx6gjk4xx5rjm3mlnlsym"))))
+        (base32 "19630ybvly13qw2dhcnh3wicw7hnjyvw37v4hz640pkp4nsdparn"))))
     (properties `((upstream-name . "bioCancer")))
     (build-system r-build-system)
     (arguments

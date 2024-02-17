@@ -492,13 +492,13 @@ also contains a function to export them into plain-text format.")
 (define-public r-appreci8r
   (package
     (name "r-appreci8r")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "appreci8R" version))
        (sha256
-        (base32 "0m0gr4v4bwbafdmi5v1x0x2v0ax5cp60jy2cj586ws5z82d0dgl4"))))
+        (base32 "0qra6g6s4j8by9ils0i8j56q7922ilsjivh97f6ng01ikyg3s02j"))))
     (properties `((upstream-name . "appreci8R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtrasnplocs-hsapiens-dbsnp144-grch37

@@ -1169,13 +1169,13 @@ methods, inputs and outputs.")
 (define-public r-struct
   (package
     (name "r-struct")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "struct" version))
        (sha256
-        (base32 "1jkfif4zbdmxy78f8w87g9yf5n6ijgsrpwvriby3a6kif53r6z29"))))
+        (base32 "0zppf1dnnd4wa4g37xm2l8yr7rnm4hnakba4qf7ra1y5n71bab30"))))
     (properties `((upstream-name . "struct")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment r-s4vectors r-rols

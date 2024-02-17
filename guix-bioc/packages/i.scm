@@ -1384,6 +1384,28 @@ RNA-Seq data.  It leverages @code{cleanUpdTSeq} to fine tune identified APA
 sites by removing false sites.")
     (license license:gpl2+)))
 
+(define-public r-informeasure
+  (package
+    (name "r-informeasure")
+    (version "1.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Informeasure" version))
+       (sha256
+        (base32 "0yzi6llgv2sz0yigrcdhann0h4mfvz2x5khpgfr3ncypz92kd0f8"))))
+    (properties `((upstream-name . "Informeasure")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-entropy))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chupan1218/Informeasure")
+    (synopsis "R implementation of information measurements")
+    (description
+     "This package consolidates a comprehensive set of information measurements,
+encompassing mutual information, conditional mutual information, interaction
+information, partial information decomposition, and part mutual information.")
+    (license license:artistic2.0)))
+
 (define-public r-infinityflow
   (package
     (name "r-infinityflow")

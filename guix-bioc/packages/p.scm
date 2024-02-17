@@ -842,13 +842,13 @@ Prostate Cancer dataset.")
 (define-public r-prostar
   (package
     (name "r-prostar")
-    (version "1.34.5")
+    (version "1.34.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Prostar" version))
        (sha256
-        (base32 "1797pm7fdi0rxz4x5n30xndcppidz0lldvvjifw90bk7f82pvcld"))))
+        (base32 "12k5mgm052r6447w5jgz9ml4fd7x85q7r6jpzi2cj5msnv7nl7i4"))))
     (properties `((upstream-name . "Prostar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2879,13 +2879,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "1.16.1")
+    (version "1.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "0q43gm3r142idmfcbg622m6v77g2n9ysxfmpb1wzig9indynfyh8"))))
+        (base32 "07wyacs8gyf7pdj41cwx3nvifmmxhlq1vsps2qw0f2xa8zi0iwnr"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments
