@@ -19,6 +19,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (guix-cran packages c)
+  #:use-module (guix-cran packages l)
   #:use-module (gnu packages python)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -1820,6 +1821,58 @@ that were used to extract the single cell data from the images.")
     (description
      "Integrative analysis of Multi-omics data for Alternative splicing.")
     (license license:gpl2)))
+
+(define-public r-iloreg
+  (package
+    (name "r-iloreg")
+    (version "1.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ILoReg" version))
+       (sha256
+        (base32 "0y6qyrwkfihgx0lakv36h9kh8y2i1xxjanvrjwysmj9r266wfnpd"))))
+    (properties `((upstream-name . "ILoReg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-umap
+                             r-summarizedexperiment
+                             r-sparsem
+                             r-singlecellexperiment
+                             r-scales
+                             r-s4vectors
+                             r-rtsne
+                             r-rspectra
+                             r-reshape2
+                             r-plyr
+                             r-pheatmap
+                             r-paralleldist
+                             r-matrix
+                             r-liblinear
+                             r-ggplot2
+                             r-foreach
+                             r-fastcluster
+                             r-dplyr
+                             r-dosnow
+                             r-dorng
+                             r-desctools
+                             r-dendextend
+                             r-cowplot
+                             r-cluster
+                             r-aricode))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/elolab/ILoReg")
+    (synopsis
+     "ILoReg: a tool for high-resolution cell population identification from scRNA-Seq data")
+    (description
+     "I@code{LoReg} is a tool for identification of cell populations from
+@code{scRNA-seq} data.  In particular, I@code{LoReg} is useful for finding cell
+populations with subtle transcriptomic differences.  The method utilizes a
+self-supervised learning method, called Iteratitive Clustering Projection (ICP),
+to find cluster probabilities, which are used in noise reduction prior to PCA
+and the subsequent hierarchical clustering and t-SNE steps.  Additionally,
+functions for differential expression analysis to find gene markers for the
+populations and gene expression visualization are provided.")
+    (license license:gpl3)))
 
 (define-public r-illuminaratv1-db
   (package

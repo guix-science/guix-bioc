@@ -2982,13 +2982,13 @@ Development (LIBD) researchers and collaborators.")
 (define-public r-spatialheatmap
   (package
     (name "r-spatialheatmap")
-    (version "2.8.4")
+    (version "2.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialHeatmap" version))
        (sha256
-        (base32 "0ggvc34mr538qqnjb3d1842jb2f7ykw3wm4qcp59zwx30jb3i7nm"))))
+        (base32 "1k1f3j5hibnagssn4nvbfrb45qi9rnf6ksrrm20l99vhnl2m8pip"))))
     (properties `((upstream-name . "spatialHeatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

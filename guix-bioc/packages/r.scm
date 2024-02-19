@@ -1257,13 +1257,13 @@ input parameters is the number of cores to be used.")
 (define-public r-rols
   (package
     (name "r-rols")
-    (version "2.30.1")
+    (version "2.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rols" version))
        (sha256
-        (base32 "19fsmcz4qiwzlya181l2hixyyv3hbragvaafs44ypm9jshmipwdw"))))
+        (base32 "1fhrjp1sqp28gb2fp93risjrjqhs9h7w7vid1h1h7w7s34al802b"))))
     (properties `((upstream-name . "rols")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr2 r-biocgenerics r-biobase))
