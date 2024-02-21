@@ -454,16 +454,16 @@ Thalamus).")
 (define-public r-lpnet
   (package
     (name "r-lpnet")
-    (version "2.34.1")
+    (version "2.34.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lpNet" version))
        (sha256
-        (base32 "1zgf86pcvhfilw9kd1fv8jlg7yjyavfajqc96d1ypln1sg5rvf4g"))))
+        (base32 "0l48xd3jfn9hw9s8bm3r9vqj2icsc7jk9q58g19ic533w0nk70pc"))))
     (properties `((upstream-name . "lpNet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lpsolve))
+    (propagated-inputs (list r-lpsolve r-kegggraph))
     (home-page "https://bioconductor.org/packages/lpNet")
     (synopsis "Linear Programming Model for Network Inference")
     (description

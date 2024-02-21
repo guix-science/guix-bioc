@@ -3062,13 +3062,13 @@ class stores the Hi-C contacts parsed from local contact matrix files.
 (define-public r-hicdoc
   (package
     (name "r-hicdoc")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCDOC" version))
        (sha256
-        (base32 "1y7dad3aljhi02p2nmcbc7ljkfw35g2sv54kqsdx76d97c0j8xr3"))))
+        (base32 "1pq6rlf0nm39dq8k1n0024qqp21ka4cn4a072dr1aa370s9lcin4"))))
     (properties `((upstream-name . "HiCDOC")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -3099,7 +3099,7 @@ collection of functions assembled into a pipeline to filter and normalize the
 data, predict the compartments and visualize the results.  It accepts several
 type of data: tabular `.tsv` files, Cooler `.cool` or `.mcool` files, Juicer
 `.hic` files or @code{HiC-Pro} `.matrix` and `.bed` files.")
-    (license (license:fsdg-compatible "file://LICENSE"))))
+    (license license:lgpl3)))
 
 (define-public r-hicdcplus
   (package

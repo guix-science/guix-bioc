@@ -8216,13 +8216,13 @@ specificity and define a cutoff value according to clinical requirements.")
 (define-public r-cancer
   (package
     (name "r-cancer")
-    (version "1.36.2")
+    (version "1.36.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "canceR" version))
        (sha256
-        (base32 "18xdkfhgfsxhjcqwlag4znkvsc2ldn9qhmm22dgsgnyql841mysh"))))
+        (base32 "18vdxbj0pxsg6730j98m3kiyjqzg256hgmdhzn3kmjhxlsc5f5sr"))))
     (properties `((upstream-name . "canceR")))
     (build-system r-build-system)
     (inputs (list))
