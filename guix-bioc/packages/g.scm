@@ -2712,13 +2712,13 @@ annotations and intuitive visualization options are implemented in this package.
 (define-public r-genomicplot
   (package
     (name "r-genomicplot")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GenomicPlot" version))
        (sha256
-        (base32 "1j2k1iyir969z5fcks5rxxslk62dv0v34s1h6nc7sh2s1by0immg"))))
+        (base32 "1662y1sk3sayw0717byrd7z40y2kr8xl0aifadsx90f0zb802a2m"))))
     (properties `((upstream-name . "GenomicPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

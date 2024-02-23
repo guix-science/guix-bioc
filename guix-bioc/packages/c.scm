@@ -6753,6 +6753,58 @@ could be applied to any expression dataset, provided that there are a sufficient
 number of standard samples and that the data are normalized.")
     (license license:gpl3)))
 
+(define-public r-cellscape
+  (package
+    (name "r-cellscape")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cellscape" version))
+       (sha256
+        (base32 "1556acixb5bpcba8shhfkyk2074sm1gdzw24v93nmqns8zkx00jw"))))
+    (properties `((upstream-name . "cellscape")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-stringr
+                             r-reshape2
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-gtools
+                             r-dplyr))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://bioconductor.org/packages/cellscape")
+    (synopsis
+     "Explores single cell copy number profiles in the context of a single cell tree")
+    (description
+     "@code{CellScape} facilitates interactive browsing of single cell clonal
+evolution datasets.  The tool requires two main inputs: (i) the genomic content
+of each single cell in the form of either copy number segments or targeted
+mutation values, and (ii) a single cell phylogeny.  Phylogenetic formats can
+vary from dendrogram-like phylogenies with leaf nodes to evolutionary
+model-derived phylogenies with observed or latent internal nodes.  The
+@code{CellScape} phylogeny is flexibly input as a table of source-target edges
+to support arbitrary representations, where each node may or may not have
+associated genomic data.  The output of @code{CellScape} is an interactive
+interface displaying a single cell phylogeny and a cell-by-locus genomic heatmap
+representing the mutation status in each cell for each locus.")
+    (license license:gpl3)))
+
 (define-public r-cellnoptr
   (package
     (name "r-cellnoptr")
@@ -7049,13 +7101,13 @@ information is integrated.")
 (define-public r-cellbarcode
   (package
     (name "r-cellbarcode")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CellBarcode" version))
        (sha256
-        (base32 "1dcsavfvaljjnzqva5d5hhbp9q5dcx76zjfliksif783ia5srdwp"))))
+        (base32 "0h4mhzzrdcing9dxknhcrq2556ij68dq9hbx1sd226nrxmdw984v"))))
     (properties `((upstream-name . "CellBarcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-zlibbioc
@@ -7063,6 +7115,7 @@ information is integrated.")
                              r-shortread
                              r-seqinr
                              r-s4vectors
+                             r-rsamtools
                              r-rcpp
                              r-plyr
                              r-magrittr
@@ -7073,7 +7126,7 @@ information is integrated.")
                              r-biostrings
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/CellBarcode")
+    (home-page "https://wenjie1991.github.io/CellBarcode/")
     (synopsis "Cellular DNA Barcode Analysis toolkit")
     (description
      "The package @code{CellBarcode} performs Cellular DNA Barcode analysis.  It can
