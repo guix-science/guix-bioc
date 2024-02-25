@@ -1327,13 +1327,13 @@ The main purpose is to identify differentially expressed genes.")
 (define-public r-lace
   (package
     (name "r-lace")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LACE" version))
        (sha256
-        (base32 "0q563ysm6rs6708gnc1qpdz9m9265wamf068pgp162mvjbg7jxs9"))))
+        (base32 "02xxf0l8z6zgdmxf6nfw9vizah38i2midqgdl11iwn72ybbgcamq"))))
     (properties `((upstream-name . "LACE")))
     (build-system r-build-system)
     (arguments
