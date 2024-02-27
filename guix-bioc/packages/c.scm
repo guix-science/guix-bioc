@@ -3726,13 +3726,13 @@ copy number polymorphic genomic regions.")
 (define-public r-cnvranger
   (package
     (name "r-cnvranger")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CNVRanger" version))
        (sha256
-        (base32 "0nhd7aylygy0j7zzv4r8rx0sp5q4ihsx29cs53jhj3wqg6q3g9mz"))))
+        (base32 "1wrq316nacvmd2hjqvx6iw3223x8hif17ka96raavpr43ss5slk2"))))
     (properties `((upstream-name . "CNVRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
