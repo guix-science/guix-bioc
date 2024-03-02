@@ -4321,13 +4321,13 @@ already available in ape Paradis and Schliep (2019)
 (define-public r-tadcompare
   (package
     (name "r-tadcompare")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TADCompare" version))
        (sha256
-        (base32 "103kkfrpbbzv96qkmc2imi4mzzf6y6fvgpi1pzr6h92j2ahz9mk5"))))
+        (base32 "0n590a6mal49w6yjxbp7ldb4f78b0bkmzk080a5frfcm6mlmkyba"))))
     (properties `((upstream-name . "TADCompare")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

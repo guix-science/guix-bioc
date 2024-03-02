@@ -2178,13 +2178,13 @@ using data from public repositories")
 (define-public r-pmp
   (package
     (name "r-pmp")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pmp" version))
        (sha256
-        (base32 "0771h3g4b7k37l8azcc35g4hk06f3wi6ff9s6z5myn4igfc4nmhn"))))
+        (base32 "03zk1p952p938vhiw5s71kqh7bi88xb2rh6gp104fcb8z4lj2sqb"))))
     (properties `((upstream-name . "pmp")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -3818,13 +3818,13 @@ proteomic studies using peptide-level mesurements respectively.")
 (define-public r-peakpanther
   (package
     (name "r-peakpanther")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "peakPantheR" version))
        (sha256
-        (base32 "01x6701ji451yj52yiqx8fpz23zd96ci8p07j2kdi4nz6cl7k2d3"))))
+        (base32 "087i47mzv7cs403injzryf6vxil4p2all4vvznfd10z879zkl7gr"))))
     (properties `((upstream-name . "peakPantheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

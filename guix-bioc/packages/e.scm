@@ -46,13 +46,13 @@
 (define-public r-extrachips
   (package
     (name "r-extrachips")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "extraChIPs" version))
        (sha256
-        (base32 "0zn4w2hph9w0y4s0fg72lw0ir6c0qm70hips3iy0w3l8jvziq0wj"))))
+        (base32 "16bfm0qa83p1ph9vl113i6xalprmww1b2hgksckil8rgqbbgqrls"))))
     (properties `((upstream-name . "extraChIPs")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram

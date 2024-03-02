@@ -85,13 +85,13 @@ design fulfills the conditions listed in our manuscript.")
 (define-public r-busparse
   (package
     (name "r-busparse")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BUSpaRse" version))
        (sha256
-        (base32 "0fw90bg5c7a5ms08zinbf2l4c4cpnz1s5ql5vhhmhx2k2434khp8"))))
+        (base32 "1wqc20vc3dk6a83p7i23w7vbjxr982f0gdk39vq9kyj57k7ya9sb"))))
     (properties `((upstream-name . "BUSpaRse")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot

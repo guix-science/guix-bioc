@@ -565,13 +565,13 @@ push the gene expression values of the connected genes to some extreme values.")
 (define-public r-dreamlet
   (package
     (name "r-dreamlet")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dreamlet" version))
        (sha256
-        (base32 "035b0wq8gkgp3vmnz8pad3br3lvd5alyrfd5yn0grk8md7wzryzf"))))
+        (base32 "01qfcbk7gpz7pgi4dkpgvpf4pvh8sh5ys3nzrp0cvq12nmzcm89m"))))
     (properties `((upstream-name . "dreamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-zenith
@@ -582,26 +582,32 @@ push the gene expression values of the connected genes to some extreme values.")
                              r-singlecellexperiment
                              r-scattermore
                              r-s4vectors
+                             r-rlang
                              r-reshape2
+                             r-remacor
                              r-rdpack
                              r-rcpp
                              r-purrr
+                             r-metafor
                              r-matrixgenerics
                              r-matrix
                              r-mass
                              r-mashr
                              r-lme4
                              r-limma
+                             r-irlba
                              r-iranges
                              r-gtools
                              r-gseabase
                              r-ggrepel
                              r-ggplot2
+                             r-ggbeeswarm
                              r-edger
                              r-dplyr
                              r-delayedmatrixstats
                              r-delayedarray
                              r-data-table
+                             r-broom
                              r-biocparallel
                              r-biocgenerics
                              r-beachmat
@@ -609,7 +615,7 @@ push the gene expression values of the connected genes to some extreme values.")
     (native-inputs (list r-knitr))
     (home-page "https://DiseaseNeurogenomics.github.io/dreamlet")
     (synopsis
-     "Cohort-scale differential expression analysis of single cell data using linear (mixed) models")
+     "Scalable differential expression analysis of single cell transcriptomics datasets with complex study designs")
     (description
      "Recent advances in single cell/nucleus transcriptomic technology has enabled
 collection of cohort-scale datasets to study cell type specific gene expression
@@ -770,14 +776,14 @@ pipeline, several visualisations and a downloadable report of an experiment.")
 (define-public r-dorothea
   (package
     (name "r-dorothea")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dorothea" version
                               'experiment))
        (sha256
-        (base32 "1vinixcpl4hjjfw48qfngsvw1yr82yscdxrsgagdm8gm7b72qjgh"))))
+        (base32 "0bjmnqly57y69axnz5q2rqz7j7dnz1xzbhbzcalv99kybjiyqyb5"))))
     (properties `((upstream-name . "dorothea")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-dplyr r-decoupler r-bcellviper))

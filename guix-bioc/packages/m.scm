@@ -1513,13 +1513,13 @@ functionality across the MSstats family of packages.")
 (define-public r-msstatsconvert
   (package
     (name "r-msstatsconvert")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsConvert" version))
        (sha256
-        (base32 "1xp57pf0j4ndy33lyr7i08qrsfqnsnywb5as0fjfpx1ncw44na4c"))))
+        (base32 "0psb7qm79nc6z8cp5fs8imnjxj2s5m2yvj7xr7kg8i2618jz83wa"))))
     (properties `((upstream-name . "MSstatsConvert")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-log4r r-data-table r-checkmate))
@@ -1567,13 +1567,13 @@ than memory data sets.")
 (define-public r-msstats
   (package
     (name "r-msstats")
-    (version "4.10.0")
+    (version "4.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstats" version))
        (sha256
-        (base32 "153vg9kzi54lk9fmycw7rfmj9rixyvq6lsn76dp90m353hba476d"))))
+        (base32 "1y6063n1f00qn7hwsj87phdhi2bgp4frbmzkas2c1ps0ck83az17"))))
     (properties `((upstream-name . "MSstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1581,11 +1581,13 @@ than memory data sets.")
                              r-rcpparmadillo
                              r-rcpp
                              r-preprocesscore
+                             r-plotly
                              r-msstatsconvert
                              r-mass
                              r-marray
                              r-lme4
                              r-limma
+                             r-htmltools
                              r-gplots
                              r-ggrepel
                              r-ggplot2
