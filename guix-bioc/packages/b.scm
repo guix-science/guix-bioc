@@ -2829,13 +2829,13 @@ identifier mappings files.")
 (define-public r-brgenomics
   (package
     (name "r-brgenomics")
-    (version "1.13.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BRGenomics" version))
        (sha256
-        (base32 "1y90pfrn7c6v3n0rlymxlljjcmblq1lfprnzy3xmjh9y7n4lnr2g"))))
+        (base32 "09kpb9jn84np1z8k72ngsbd0xx6v0x3kcl738wizr64w0j9zhlla"))))
     (properties `((upstream-name . "BRGenomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

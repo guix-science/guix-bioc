@@ -4889,13 +4889,13 @@ outperforms other heuristic methods.")
 (define-public r-classifyr
   (package
     (name "r-classifyr")
-    (version "3.6.4")
+    (version "3.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ClassifyR" version))
        (sha256
-        (base32 "0plpf58lnwbzxlw40znakxly2m33mbavn35qvyr9m8sfwbih92hv"))))
+        (base32 "1a5isn0hhmjp1a7jskwb1qg0lgaf17zlzc9rc60mzw0mixwmhqfi"))))
     (properties `((upstream-name . "ClassifyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8269,13 +8269,13 @@ specificity and define a cutoff value according to clinical requirements.")
 (define-public r-cancer
   (package
     (name "r-cancer")
-    (version "1.36.6")
+    (version "1.36.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "canceR" version))
        (sha256
-        (base32 "1ib8jh4gmmzqy7ms4qnmhj4gcwni6jb6vf86h44d0nxdk6a6xd6q"))))
+        (base32 "04vifanjabys6cqm7ln4n4szmqzs36kga75frwazbkc2a51g1lnm"))))
     (properties `((upstream-name . "canceR")))
     (build-system r-build-system)
     (inputs (list))

@@ -2867,13 +2867,13 @@ groups or single markers.")
 (define-public r-hicvenndiagram
   (package
     (name "r-hicvenndiagram")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hicVennDiagram" version))
        (sha256
-        (base32 "0xfw0sszpwmh0g6vpb8f1y84p5bg9mwnfypb9n4vwqhxnb12w5qb"))))
+        (base32 "0yxpyvi2fyr5vkb990vvwdizrnq64dwwjpdndlnrswlsgm35d3gc"))))
     (properties `((upstream-name . "hicVennDiagram")))
     (build-system r-build-system)
     (arguments
