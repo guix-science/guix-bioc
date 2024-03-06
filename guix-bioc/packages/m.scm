@@ -1305,13 +1305,13 @@ and @code{SpectroMine}.")
 (define-public r-msstatsshiny
   (package
     (name "r-msstatsshiny")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsShiny" version))
        (sha256
-        (base32 "0nk9hmzw3zsi2kjal505js5xj50xfxxcailhwfjig1jrpgqb4cq1"))))
+        (base32 "0wga58icd7n75n6bdsk29sw1sq9dsydq29z0qvnvq623zwxq7yg3"))))
     (properties `((upstream-name . "MSstatsShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -1321,10 +1321,12 @@ and @code{SpectroMine}.")
                              r-shinybs
                              r-shiny
                              r-readxl
+                             r-plotly
                              r-msstatstmt
                              r-msstatsptm
                              r-msstatsconvert
                              r-msstats
+                             r-mockery
                              r-marray
                              r-htmltools
                              r-hmisc

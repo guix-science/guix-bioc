@@ -1834,13 +1834,13 @@ op_highly function.")
 (define-public r-srnadiff
   (package
     (name "r-srnadiff")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "srnadiff" version))
        (sha256
-        (base32 "0i7i8v31cpp6jbx62afabn08qg0n2n928812s5hbi3fsg5p9c7q1"))))
+        (base32 "1aq7xlwk8rbmsvkmg8x7p4qx0bsy70wb2d40hbvwya3znzw0xln1"))))
     (properties `((upstream-name . "srnadiff")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
