@@ -550,13 +550,13 @@ community.")
 (define-public r-customprodb
   (package
     (name "r-customprodb")
-    (version "1.41.0")
+    (version "1.42.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "customProDB" version))
        (sha256
-        (base32 "1g6ldfb3i8r3bmc13mgs73gq9my62k9dbj7f2nqm1gsa6fcaqamb"))))
+        (base32 "1z2i7cxh88hsz54ijng4il0yc8rwbhf083sni4n3xg5238s9rgi8"))))
     (properties `((upstream-name . "customProDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-variantannotation

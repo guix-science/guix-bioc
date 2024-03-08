@@ -435,13 +435,13 @@ Thalamus).")
 (define-public r-lrbasedbi
   (package
     (name "r-lrbasedbi")
-    (version "2.12.0")
+    (version "2.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRBaseDbi" version))
        (sha256
-        (base32 "144661h85i69nvn6iv9gp8ck0grir431g0alakmr7p957xiplnd3"))))
+        (base32 "11kwqpnymck0qkb5g6k6r4yiz6w0zvy08y2hgh2xxz0cms1vpkq5"))))
     (properties `((upstream-name . "LRBaseDbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite r-dbi r-biobase r-annotationdbi))
