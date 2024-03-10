@@ -634,13 +634,13 @@ biosample.")
 (define-public r-drawproteins
   (package
     (name "r-drawproteins")
-    (version "1.22.0")
+    (version "1.22.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "drawProteins" version))
        (sha256
-        (base32 "09wm0dkz5flxkhk9x6rd93qi1p4ik6q50qbzfrm0mpghzpb6hchj"))))
+        (base32 "1mc8j149szhmyd9kakbq8h6b75xvvxk7bq5c4yxs1na39a9a84ki"))))
     (properties `((upstream-name . "drawProteins")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-readr r-httr r-ggplot2 r-dplyr))
