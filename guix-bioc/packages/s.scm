@@ -1834,13 +1834,13 @@ op_highly function.")
 (define-public r-srnadiff
   (package
     (name "r-srnadiff")
-    (version "1.22.1")
+    (version "1.22.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "srnadiff" version))
        (sha256
-        (base32 "1aq7xlwk8rbmsvkmg8x7p4qx0bsy70wb2d40hbvwya3znzw0xln1"))))
+        (base32 "06hdjrjqca3933k6knbznjhnljh11rsm4cgqg4ccwi1hhlnh7z8m"))))
     (properties `((upstream-name . "srnadiff")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -5942,13 +5942,13 @@ population outlier.")
 (define-public r-seqsetvis
   (package
     (name "r-seqsetvis")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "seqsetvis" version))
        (sha256
-        (base32 "1v0xlk4fx4y28r2lc81k2362algbgy519nd5rg1y1isf197klfx3"))))
+        (base32 "0lbk8pvzmsz1qw04b2sgqjf0pnf7qjsvxvlnm381jr0fi4n6k8ml"))))
     (properties `((upstream-name . "seqsetvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-upsetr

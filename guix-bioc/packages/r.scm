@@ -6298,13 +6298,13 @@ data.  Additionally databases of human and mouse RNA editing sites are provided.
 (define-public r-raer
   (package
     (name "r-raer")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "raer" version))
        (sha256
-        (base32 "1sccgmz9xgbbia9gz7ih65l69xxn6s94dbpyswj1gy03mphyw1s6"))))
+        (base32 "0jh2hpv0mrhxnpks00b8ap3ad784sjlc75lnybqgifvpkvbnyl13"))))
     (properties `((upstream-name . "raer")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

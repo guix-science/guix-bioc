@@ -905,6 +905,32 @@ dispersion parameter that can be both commonwise across gene both genewise.")
      "Experimental organization of combined expression and CGH data")
     (license license:artistic2.0)))
 
+(define-public r-neuca
+  (package
+    (name "r-neuca")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "NeuCA" version))
+       (sha256
+        (base32 "0763s4lii2wjd42b0gi4s0h7n4as0b3dbyz5v1n5ax22dpn2snj8"))))
+    (properties `((upstream-name . "NeuCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-singlecellexperiment r-limma r-keras
+                             r-kableextra r-e1071))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/NeuCA")
+    (synopsis "NEUral network-based single-Cell Annotation tool")
+    (description
+     "@code{NeuCA} is is a neural-network based method for @code{scRNA-seq} data
+annotation.  It can automatically adjust its classification strategy depending
+on cell type correlations, to accurately annotate cell. @code{NeuCA} can
+automatically utilize the structure information of the cell types through a
+hierarchical tree to improve the annotation accuracy.  It is especially helpful
+when the data contain closely correlated cell types.")
+    (license license:gpl2)))
+
 (define-public r-netzoor
   (package
     (name "r-netzoor")
