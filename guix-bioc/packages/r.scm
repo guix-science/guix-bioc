@@ -970,13 +970,13 @@ to perform supervised classification of samples in a testing set.")
 (define-public r-rrvgo
   (package
     (name "r-rrvgo")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rrvgo" version))
        (sha256
-        (base32 "1z1l7l4iac6idzigv7y58i03gmv929mgjywhac5ppnzhxlyh2n3a"))))
+        (base32 "0m7zpn9c0nzsrswz5nzwsrjzmddqd109973z0crcza5zhgq5j0qh"))))
     (properties `((upstream-name . "rrvgo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -4429,13 +4429,13 @@ distributions.")
 (define-public r-reder
   (package
     (name "r-reder")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RedeR" version))
        (sha256
-        (base32 "0s7masx9hbgirdm71v7b8hyvxwwy2jj3yzg0qqbpvp8xv38z42c0"))))
+        (base32 "1px84wgs1li7cafgbr33b1hj7w31ijjcq1jaklcdvgp8cw45hvz7"))))
     (properties `((upstream-name . "RedeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
