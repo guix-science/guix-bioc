@@ -10,17 +10,16 @@
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages g)
+  #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages c)
-  #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
@@ -601,6 +600,31 @@ and neck squamous cell carcinoma available as GEO accession [GSE103322]
 have been parsed into a @code{SincleCellExperiment} object available in
 @code{ExperimentHub}.")
     (license license:artistic2.0)))
+
+(define-public r-gscreend
+  (package
+    (name "r-gscreend")
+    (version "1.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "gscreend" version))
+       (sha256
+        (base32 "1ghdv2a3arpx075866zizinynhi2037qsdz6j5b0qyhr4gv9l65h"))))
+    (properties `((upstream-name . "gscreend")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment r-nloptr r-fgarch
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/imkeller/gscreend")
+    (synopsis "Analysis of pooled genetic screens")
+    (description
+     "Package for the analysis of pooled genetic screens (e.g. CRISPR-KO).  The
+analysis of such screens is based on the comparison of @code{gRNA} abundances
+before and after a cell proliferation phase.  The gscreend packages takes
+@code{gRNA} counts as input and allows detection of genes whose knockout
+decreases or increases cell proliferation.")
+    (license license:gpl3)))
 
 (define-public r-gsca
   (package

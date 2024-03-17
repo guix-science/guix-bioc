@@ -7660,6 +7660,31 @@ modelling approach.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-meigor
+  (package
+    (name "r-meigor")
+    (version "1.36.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MEIGOR" version))
+       (sha256
+        (base32 "1hhipjxwzalda4qcvh1wfnlwf7gw4lh0zz0rd0s7lczmpskbarg5"))))
+    (properties `((upstream-name . "MEIGOR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snowfall r-rsolnp r-desolve r-cnorode))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MEIGOR")
+    (synopsis "MEIGOR - MEtaheuristics for bIoinformatics Global Optimization")
+    (description
+     "MEIGOR provides a comprehensive environment for performing global optimization
+tasks in bioinformatics and systems biology.  It leverages advanced
+metaheuristic algorithms to efficiently search the solution space and is
+specifically tailored to handle the complexity and high-dimensionality of
+biological datasets.  This package supports various optimization routines and is
+integrated with Bioconductor's infrastructure for a seamless analysis workflow.")
+    (license license:gpl3)))
+
 (define-public r-meebodata
   (package
     (name "r-meebodata")
@@ -8277,13 +8302,13 @@ remove probe affinity effect across multiple sequences.")
 (define-public r-matter
   (package
     (name "r-matter")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "matter" version))
        (sha256
-        (base32 "0a6fs90vakkc6zqz6i99cs7al9vabv2wzmlp5ywsnn9b8z56j886"))))
+        (base32 "08sgag1x5krwbknd45q4s9pj1dlsq1w50i8iw6imgrid2484q14c"))))
     (properties `((upstream-name . "matter")))
     (build-system r-build-system)
     (propagated-inputs (list r-protgenerics
