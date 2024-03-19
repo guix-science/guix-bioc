@@ -4698,13 +4698,13 @@ on the sample level and calculates fractions of hits for different conditions.")
 (define-public r-hermes
   (package
     (name "r-hermes")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hermes" version))
        (sha256
-        (base32 "1l68gz8kwsc61zji4ack4ayca0m0ls4ky2lyiab6zs01ywibfj3r"))))
+        (base32 "1a7pn5cg773v2m0mk5611ilfyr1mbnl9ami2j5wpfliq44iv16ny"))))
     (properties `((upstream-name . "hermes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

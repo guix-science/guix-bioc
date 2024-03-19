@@ -8544,13 +8544,13 @@ feature genes which are most effective to classify the samples.")
 (define-public r-cadra
   (package
     (name "r-cadra")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CaDrA" version))
        (sha256
-        (base32 "1c6hbl9if0davkf42cpbg3wzx69xvgx3rkwyj2w2da9kgi2m6jml"))))
+        (base32 "0y00xjnb8ljzm3mfyba3bpv0cq904d1n6z2avs1rfzpclrdns440"))))
     (properties `((upstream-name . "CaDrA")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

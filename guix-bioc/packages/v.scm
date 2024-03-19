@@ -831,13 +831,13 @@ SNV.")
 (define-public r-vanillaice
   (package
     (name "r-vanillaice")
-    (version "1.64.0")
+    (version "1.64.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VanillaICE" version))
        (sha256
-        (base32 "1kwmld6qwmy0ad1561w12lwhnh2cjlcqyb1mjz87ibznqvmpw95y"))))
+        (base32 "112dkp3j13vy41cgvxlm09v2ns7vcsf7qqdkvrp1qfqv143212si"))))
     (properties `((upstream-name . "VanillaICE")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

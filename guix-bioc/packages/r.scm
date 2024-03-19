@@ -2810,13 +2810,13 @@ Rice.cdf file.")
 (define-public r-ribosomeprofilingqc
   (package
     (name "r-ribosomeprofilingqc")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ribosomeProfilingQC" version))
        (sha256
-        (base32 "1r3clyd33djnkaqmj653nn4jsx2zbwbrvfyps9j61rl7csg4cdd5"))))
+        (base32 "0k910g7z767d9b3hnph707sfx7b50mm9z98bcwqag8n43k50qin7"))))
     (properties `((upstream-name . "ribosomeProfilingQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-xvector
@@ -4940,13 +4940,13 @@ networks, and the network visualization software Cytocape.")
 (define-public r-rcwlpipelines
   (package
     (name "r-rcwlpipelines")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RcwlPipelines" version))
        (sha256
-        (base32 "1fx6fvq15wxgj06wniw34qhx8q5463nhxrfkhv3898y5c7iifcid"))))
+        (base32 "1nf985hmyr9a6k7p1k3qjl736v9md5p45w9cfikpln128flk7c35"))))
     (properties `((upstream-name . "RcwlPipelines")))
     (build-system r-build-system)
     (inputs (list node))
