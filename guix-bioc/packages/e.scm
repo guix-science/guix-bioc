@@ -16,7 +16,6 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages h)
   #:use-module (gnu packages compression)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)

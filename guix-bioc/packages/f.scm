@@ -12,7 +12,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages r)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (guix-cran packages g)
   #:use-module (gnu packages xml)
