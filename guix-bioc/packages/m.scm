@@ -7663,13 +7663,13 @@ modelling approach.")
 (define-public r-meigor
   (package
     (name "r-meigor")
-    (version "1.36.1")
+    (version "1.36.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEIGOR" version))
        (sha256
-        (base32 "1hhipjxwzalda4qcvh1wfnlwf7gw4lh0zz0rd0s7lczmpskbarg5"))))
+        (base32 "09jxgppgshslj7fq6znh8qg81ys5mr0irqhbsaq9bpsbkq2d181b"))))
     (properties `((upstream-name . "MEIGOR")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-rsolnp r-desolve r-cnorode))

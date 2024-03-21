@@ -20,7 +20,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
@@ -1943,13 +1942,13 @@ external data to the tree.")
 (define-public r-ggspavis
   (package
     (name "r-ggspavis")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggspavis" version))
        (sha256
-        (base32 "0zfxd3gw15dd0l3l49g4f275vl0bfllfn27y48ldv7yy608bzk26"))))
+        (base32 "060x7r74d23fpf782xs8306pfbyfywghbds5mw5i8i1wcc7ifxrx"))))
     (properties `((upstream-name . "ggspavis")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment r-spatialexperiment
@@ -4107,13 +4106,13 @@ response analyses that the @code{gDR} suite offers.")
 (define-public r-gdnax
   (package
     (name "r-gdnax")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDNAx" version))
        (sha256
-        (base32 "1kphihn4y3pyq6js2jv5xr92zawmip1nas9jl3rmmhrqrcy1ymba"))))
+        (base32 "1c4s02pqzx5ny6q2fq6zda44vgl63asiaka7k3w9c63frdrl58zz"))))
     (properties `((upstream-name . "gDNAx")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

@@ -3572,13 +3572,13 @@ in Scala programming language.")
 (define-public r-rgmql
   (package
     (name "r-rgmql")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RGMQL" version))
        (sha256
-        (base32 "1l1wy36d73jknpg3cz2arxa77by3cgasl7b47sz9b4ya8rpm43kg"))))
+        (base32 "1ynk4wg91w8278bzwap65qv3f1myn0wzgirk8kay5f389wma8127"))))
     (properties `((upstream-name . "RGMQL")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4168,13 +4168,13 @@ our understanding of gene regulatory networks.")
 (define-public r-regsplice
   (package
     (name "r-regsplice")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "regsplice" version))
        (sha256
-        (base32 "01ii3aijf57j77d7y9qn6bx6s8v5zs034hhyq0r41lxpz2sn48vb"))))
+        (base32 "0rljzhpwyl36rqbzfb2cwmq97p2qwrh5wxis276n1ssgzd0lpwcm"))))
     (properties `((upstream-name . "regsplice")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

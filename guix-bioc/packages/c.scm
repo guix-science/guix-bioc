@@ -6598,13 +6598,13 @@ models.")
 (define-public r-cemitool
   (package
     (name "r-cemitool")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CEMiTool" version))
        (sha256
-        (base32 "1sjvpk3nz495vdpj8h3a571g3l6aabj4zg7pgd69grzw67r6v858"))))
+        (base32 "1ca5wlw5n0h9py82d9v60r8y985gg7jk9vvk6zdnbrrip5q0pdin"))))
     (properties `((upstream-name . "CEMiTool")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgcna
