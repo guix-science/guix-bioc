@@ -9100,28 +9100,6 @@ group is significantly greater than which others, especially if comparing a
 large number of groups.")
     (license (license:fsdg-compatible "GPL (>=3.0)"))))
 
-(define-public r-pairadise
-  (package
-    (name "r-pairadise")
-    (version "1.18.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "PAIRADISE" version))
-       (sha256
-        (base32 "1z17cxvsvi7lapbrqglsl126djlsqp4bwfagvhpi8hrpg85fqppr"))))
-    (properties `((upstream-name . "PAIRADISE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment r-s4vectors r-nloptr
-                             r-biocparallel r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/PAIRADISE")
-    (synopsis "PAIRADISE: Paired analysis of differential isoform expression")
-    (description
-     "This package implements the PAIRADISE procedure for detecting differential
-isoform expression between matched replicates in paired RNA-Seq data.")
-    (license license:expat)))
-
 (define-public r-pagerank
   (package
     (name "r-pagerank")
