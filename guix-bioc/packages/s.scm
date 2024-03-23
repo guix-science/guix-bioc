@@ -2634,13 +2634,13 @@ associated with a response variable.")
 (define-public r-spiat
   (package
     (name "r-spiat")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPIAT" version))
        (sha256
-        (base32 "144x5vzlwikn1wnplca15gw9sz0pnwzb4hqwd1f2rfx5hn7ksn1g"))))
+        (base32 "1frzvyxyf2nvbzqwf73b9lq4jcfcl6ld2k471c13wj1vng476d7j"))))
     (properties `((upstream-name . "SPIAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
