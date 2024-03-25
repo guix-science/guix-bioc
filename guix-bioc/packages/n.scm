@@ -18,8 +18,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages t)
-  #:use-module (guix-cran packages v)
-  #:use-module (guix-cran packages x)
   #:use-module (guix-cran packages g)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -1699,9 +1697,7 @@ are included to enable interoperability with other Bioconductor
         (base32 "1nnh4g4b7k6mp922pr52sxlrh6wvfyx7jhckmwrd12l1yjq010pb"))))
     (properties `((upstream-name . "nanotatoR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2r
-                             r-xml
-                             r-varfrompdb
+    (propagated-inputs (list r-xml
                              r-tidyverse
                              r-testthat
                              r-stringr
