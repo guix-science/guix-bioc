@@ -2478,13 +2478,13 @@ network is dysregulated by the compound.")
 (define-public r-deltacapturec
   (package
     (name "r-deltacapturec")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "deltaCaptureC" version))
        (sha256
-        (base32 "1mapr2c1q444f2jq2mhr4bwx629qzwlbhsvisv7gcmmplsxn3f3b"))))
+        (base32 "0lxw8nkg9yc83kjsfjmqlc26cwni2zcmm6kv0zzjyynwvlczsh1f"))))
     (properties `((upstream-name . "deltaCaptureC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc

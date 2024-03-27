@@ -3450,14 +3450,14 @@ the modules in rows.")
 (define-public r-bloodcancermultiomics2017
   (package
     (name "r-bloodcancermultiomics2017")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BloodCancerMultiOmics2017" version
                               'experiment))
        (sha256
-        (base32 "1ya62fx76ifnbdbws51nw544n12sk4a35qichfc54v0ffbz0n38c"))))
+        (base32 "1qnya2wivrhgxmcyvgklbrxj45303byvbqkbqz58my25a1rjmk89"))))
     (properties `((upstream-name . "BloodCancerMultiOmics2017")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
