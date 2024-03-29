@@ -393,13 +393,13 @@ Bsubtilis.CDF file.")
 (define-public r-bsgenomeforge
   (package
     (name "r-bsgenomeforge")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BSgenomeForge" version))
        (sha256
-        (base32 "0wgs8j7kr6cma3h7gw9sjdm9k8jmfa9yjkzp6hmrv1p7nm3cbian"))))
+        (base32 "0wxpw4xm9fg2d5c8nszmzhri6mkk6nzqk3kdmllpnkf6bf75czbv"))))
     (properties `((upstream-name . "BSgenomeForge")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors
