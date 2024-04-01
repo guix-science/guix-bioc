@@ -660,13 +660,13 @@ metabolomic level to calculate a combined GSEA-based enrichment score.")
 (define-public r-multicrispr
   (package
     (name "r-multicrispr")
-    (version "1.12.3")
+    (version "1.12.9")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multicrispr" version))
        (sha256
-        (base32 "13ahvfxp5jkjrhdp3bz480h2k3m055brni22dbl3144f9lnyrw5b"))))
+        (base32 "1rqd4l7gh48kviy9r5g5v6iq36p1h3gid9f250ps3zygc809garm"))))
     (properties `((upstream-name . "multicrispr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -686,12 +686,7 @@ metabolomic level to calculate a combined GSEA-based enrichment score.")
                              r-crisprseek
                              r-bsgenome
                              r-biostrings
-                             r-biocgenerics
-                             r-assertive-sets
-                             r-assertive-reflection
-                             r-assertive-numbers
-                             r-assertive-files
-                             r-assertive-base))
+                             r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/loosolab/multicrispr")
     (synopsis "Multi-locus multi-purpose Crispr/Cas design")
@@ -4986,13 +4981,13 @@ manipulating them.")
 (define-public r-microbiotaprocess
   (package
     (name "r-microbiotaprocess")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiotaProcess" version))
        (sha256
-        (base32 "0gkjg3pqdwfxf203wwxags1xh91rb2rry5f6j1y8ah2bsky15z0l"))))
+        (base32 "17iim4l73k6kpqrv25b3c0zmjln9gv7nbn90g2ap95m5j7k3fdcf"))))
     (properties `((upstream-name . "MicrobiotaProcess")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

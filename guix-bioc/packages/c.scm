@@ -978,13 +978,13 @@ user assigning genes to predefined set of model profiles.")
 (define-public r-ctrap
   (package
     (name "r-ctrap")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cTRAP" version))
        (sha256
-        (base32 "0f0qdm1kih9vpz911ms23056vsg6ss9f6hkrvmw0sr1idcpzq92a"))))
+        (base32 "0cs4x3q0nzlpn8s01yrkfsy4x2ch0svrr915g7dxgqfvgpwv46ss"))))
     (properties `((upstream-name . "cTRAP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

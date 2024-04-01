@@ -2509,13 +2509,13 @@ types or two treatments.")
 (define-public r-delocal
   (package
     (name "r-delocal")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DELocal" version))
        (sha256
-        (base32 "1hghgqb3ipbb7kd21k2xinbwmzcgdj0ys8s5qn98lkm4cqjszvq7"))))
+        (base32 "1gyhhg1xwm2i3j0h7kz3sg7drflsd9mbp8k6gzhiwapq8vn7lli0"))))
     (properties `((upstream-name . "DELocal")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
