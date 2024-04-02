@@ -2366,13 +2366,13 @@ details on how to use these datasets, see the plotgardener package vignettes.")
 (define-public r-plotgardener
   (package
     (name "r-plotgardener")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plotgardener" version))
        (sha256
-        (base32 "0mh025ki2i35pm5a51sy5nak1h2ygzakphjj74n0d0732a00xykj"))))
+        (base32 "18q5pal96x333v958m1mngx1g8yl35flcpxywx57fvg0g0kkf7qz"))))
     (properties `((upstream-name . "plotgardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -2879,13 +2879,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "1.16.3")
+    (version "1.16.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "07wyacs8gyf7pdj41cwx3nvifmmxhlq1vsps2qw0f2xa8zi0iwnr"))))
+        (base32 "1i3jryzfyyc9b09bfwmk20pldwhy10krksdimp20c3vwmaipm3j8"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments

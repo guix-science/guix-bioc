@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
@@ -2737,13 +2738,13 @@ annotations and intuitive visualization options are implemented in this package.
 (define-public r-genomicplot
   (package
     (name "r-genomicplot")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GenomicPlot" version))
        (sha256
-        (base32 "1662y1sk3sayw0717byrd7z40y2kr8xl0aifadsx90f0zb802a2m"))))
+        (base32 "0x2g5d333rha8pavr5xlc9wjfiyhk6vw3vlmbssh5xjjzsz7q3av"))))
     (properties `((upstream-name . "GenomicPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
