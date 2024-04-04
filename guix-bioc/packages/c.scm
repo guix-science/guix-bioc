@@ -6648,18 +6648,17 @@ potential hubs on each network.")
 (define-public r-cellxgenedp
   (package
     (name "r-cellxgenedp")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cellxgenedp" version))
        (sha256
-        (base32 "0f9dzlw0mgv6chmxq348n91ylbscfqv4hx4q49bgpinsc3yp1vdj"))))
+        (base32 "0xd3q1v27anzl3796vwysxhzybj9l2hs68qsp4g9lwkwcada2g4x"))))
     (properties `((upstream-name . "cellxgenedp")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
                              r-rjsoncons
-                             r-jsonlite
                              r-httr
                              r-dt
                              r-dplyr

@@ -4368,6 +4368,45 @@ components is chosen using either the Marcenko-Pasteur or Gavish-Donoho method
 to identify relevant signal in the data.")
     (license license:expat)))
 
+(define-public r-regenrich
+  (package
+    (name "r-regenrich")
+    (version "1.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "RegEnrich" version))
+       (sha256
+        (base32 "0ki6gjq2618r4kxpd9h2gsl65532vl580q2383yi5nh7ban55k1l"))))
+    (properties `((upstream-name . "RegEnrich")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wgcna
+                             r-tibble
+                             r-summarizedexperiment
+                             r-s4vectors
+                             r-reshape2
+                             r-randomforest
+                             r-magrittr
+                             r-limma
+                             r-ggplot2
+                             r-fgsea
+                             r-dplyr
+                             r-dose
+                             r-deseq2
+                             r-biocstyle
+                             r-biocset
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/RegEnrich")
+    (synopsis "Gene regulator enrichment analysis")
+    (description
+     "This package is a pipeline to identify the key gene regulators in a biological
+process, for example in cell differentiation and in cell development after
+stimulation.  There are four major steps in this pipeline: (1) differential
+expression analysis; (2) regulator-target network inference; (3) enrichment
+analysis; and (4) regulators scoring and ranking.")
+    (license license:gpl2+)))
+
 (define-public r-redseq
   (package
     (name "r-redseq")
