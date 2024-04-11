@@ -401,6 +401,39 @@ MNN-based batch correction across multiple modalities, and to compute
 correlations between assay values for different modalities.")
     (license license:gpl3)))
 
+(define-public r-multiwgcnadata
+  (package
+    (name "r-multiwgcnadata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "multiWGCNAdata" version
+                              'experiment))
+       (sha256
+        (base32 "0ix39156llxiwiaj4sddwmj07wvy6nbrcnwp8bynsd8wmybsyv8b"))))
+    (properties `((upstream-name . "multiWGCNAdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/multiWGCNAdata")
+    (synopsis "Data Package for multiWGCNA")
+    (description
+     "Stores expression profiling data from experiments compatible with the
+@code{multiWGCNA} R package.  This includes human postmortem microarray data
+from patients and controls (GSE28521), astrocyte Ribotag RNA-seq data from EAE
+and wildtype mice (GSE100329), and mouse RNA-seq data from tau pathology
+(@code{rTg4510}) and wildtype control mice (GSE125957).  These data can be
+accessed using the @code{ExperimentHub} workflow (see @code{multiWGCNA}
+vignettes).")
+    (license license:artistic2.0)))
+
 (define-public r-multiwgcna
   (package
     (name "r-multiwgcna")
@@ -1469,13 +1502,13 @@ package.  The methodology is described in Galitzine (2018)
 (define-public r-msstatslip
   (package
     (name "r-msstatslip")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsLiP" version))
        (sha256
-        (base32 "1n9z1xirkkglvivc19zqqvk5jwgzsm9424phldfj080p0aibjkmn"))))
+        (base32 "0x12nqkbp2mz9baywj84d4rvfj25il128swyq6yq1vkc3lgfsm22"))))
     (properties `((upstream-name . "MSstatsLiP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -1533,13 +1566,13 @@ MSstats and M@code{SstatsTMT} packages.")
 (define-public r-msstatsbig
   (package
     (name "r-msstatsbig")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsBig" version))
        (sha256
-        (base32 "0gaf22l8ccqff4vfy72s6swfp0p6675a83n1himpmh0nyb1mkwal"))))
+        (base32 "1r30yz9hd3lva7q1dpi9j7dclzal6lmggi6dahj1hq4kmgwyf8m1"))))
     (properties `((upstream-name . "MSstatsBig")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr
@@ -2943,13 +2976,13 @@ chemotherapeutic treatments.")
 (define-public r-monalisa
   (package
     (name "r-monalisa")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "monaLisa" version))
        (sha256
-        (base32 "1gk1h6z84ybmxl856mmyvxm7434aq1sh8bbl35if7awzkj436hkr"))))
+        (base32 "1b8j5h0x214ka7j908q42rlr3fwpf7xxm1nz79gzlnzi1f9w4di9"))))
     (properties `((upstream-name . "monaLisa")))
     (build-system r-build-system)
     (propagated-inputs (list r-xvector
@@ -2958,6 +2991,7 @@ chemotherapeutic treatments.")
                              r-summarizedexperiment
                              r-stabs
                              r-s4vectors
+                             r-rsqlite
                              r-iranges
                              r-glmnet
                              r-genomicranges
@@ -9728,16 +9762,17 @@ a GRanges object.  More details can be found in the vignette.")
 (define-public r-m3drop
   (package
     (name "r-m3drop")
-    (version "1.28.0")
+    (version "1.28.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "M3Drop" version))
        (sha256
-        (base32 "0xn458kc7hwhlf1jfzz6x5wlzb5pps2fa2n52jsp9zifsrk2zpkz"))))
+        (base32 "0fnkyzmn64jr1g114hj1b7gfcsn8yzcb2p1frh9frnh1wjdq078q"))))
     (properties `((upstream-name . "M3Drop")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod
+                             r-scater
                              r-reldist
                              r-rcolorbrewer
                              r-numderiv
@@ -9751,10 +9786,11 @@ a GRanges object.  More details can be found in the vignette.")
     (home-page "https://github.com/tallulandrews/M3Drop")
     (synopsis "Michaelis-Menten Modelling of Dropouts in single-cell RNASeq")
     (description
-     "This package fits a Michaelis-Menten model to the pattern of dropouts in
-single-cell RNASeq data.  This model is used as a null to identify significantly
-variable (i.e.  differentially expressed) genes for use in downstream analysis,
-such as clustering cells.")
+     "This package fits a model to the pattern of dropouts in single-cell RNASeq data.
+ This model is used as a null to identify significantly variable (i.e.
+differentially expressed) genes for use in downstream analysis, such as
+clustering cells.  Also includes an method for calculating exact Pearson
+residuals in UMI-tagged data using a library-size aware negative binomial model.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-m3dexampledata

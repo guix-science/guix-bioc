@@ -1706,13 +1706,13 @@ augmented and not.  The separating hyperplane is then used to score new samples.
 (define-public r-ssnappy
   (package
     (name "r-ssnappy")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "sSNAPPY" version))
        (sha256
-        (base32 "0wials3phh0w3c5bb3zg5lr52gwmx65q2s7ar1g935ghrsr3r523"))))
+        (base32 "0qv2h4lp40y590g3d2fvg1fs09gl637wgp7vzg6gzfrjcnk306jj"))))
     (properties `((upstream-name . "sSNAPPY")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8215,6 +8215,37 @@ biology tend to have many groups making it difficult to distinguish between
 groups solely on color.  Thus, this package is useful for increasing the
 accessibility of scatterplot visualizations to those with visual impairments
 such as color blindness.")
+    (license license:expat)))
+
+(define-public r-scatedata
+  (package
+    (name "r-scatedata")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SCATEData" version
+                              'experiment))
+       (sha256
+        (base32 "1anvi595r0y6k9qlq1jzg57p5rw29p04m2na4mgvh9yz9yc7acll"))))
+    (properties `((upstream-name . "SCATEData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-genomicranges r-genomicalignments
+                             r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SCATEData")
+    (synopsis
+     "Data for SCATE (Single-cell ATAC-seq Signal Extraction and Enhancement)")
+    (description
+     "SCATEData is an @code{ExperimentHub} package for SCATE which is a software tool
+for extracting and enhancing the sparse and discrete Single-cell ATAC-seq
+Signal.")
     (license license:expat)))
 
 (define-public r-scatac-explorer

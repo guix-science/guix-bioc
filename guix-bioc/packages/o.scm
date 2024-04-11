@@ -1014,14 +1014,14 @@ this package is provided by the @code{openPrimeRui} package.")
 (define-public r-ontoprocdata
   (package
     (name "r-ontoprocdata")
-    (version "0.99.9901")
+    (version "0.99.9904")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ontoProcData" version
                               'annotation))
        (sha256
-        (base32 "16wwh539hdm89f1vxqfgjmlbqwadnr4xqap80annsqgfn90mi8rk"))))
+        (base32 "00y14ps18n89dpkyym029aqwrikma752jq8xwaznz35rjvrbl073"))))
     (properties `((upstream-name . "ontoProcData")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

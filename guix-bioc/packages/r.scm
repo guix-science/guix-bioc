@@ -5036,6 +5036,45 @@ ease of usage, development, and maintenance of CWL pipelines.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-rcsl
+  (package
+    (name "r-rcsl")
+    (version "1.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "RCSL" version))
+       (sha256
+        (base32 "18ws0mbmr2jgn6sisjmxxkcpg478r7abivzzxwd83y4kildnaabh"))))
+    (properties `((upstream-name . "RCSL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-umap
+                             r-singlecellexperiment
+                             r-rtsne
+                             r-rcppannoy
+                             r-rcpp
+                             r-pracma
+                             r-nbclust
+                             r-matrixgenerics
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/QinglinMei/RCSL")
+    (synopsis
+     "Rank Constrained Similarity Learning for single cell RNA sequencing data")
+    (description
+     "This package provides a novel clustering algorithm and toolkit RCSL (Rank
+Constrained Similarity Learning) to accurately identify various cell types using
+@code{scRNA-seq} data from a complex tissue.  RCSL considers both lo-cal
+similarity and global similarity among the cells to discern the subtle
+differences among cells of the same type as well as larger differences among
+cells of different types.  RCSL uses Spearman’s rank correlations of a cell’s
+expression vector with those of other cells to measure its global similar-ity,
+and adaptively learns neighbour representation of a cell as its local
+similarity.  The overall similar-ity of a cell to other cells is a linear
+combination of its global similarity and local similarity.")
+    (license license:artistic2.0)))
+
 (define-public r-rcpi
   (package
     (name "r-rcpi")

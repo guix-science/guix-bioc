@@ -1910,13 +1910,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "12q5qcxa9qrykwqdl83c2bkg2y732qaw1fxb55fdh62l53xr2352"))))
+        (base32 "0zcrpza4617307g15iwfqm0mi2fwcpi8lwi3zkp8lwyf61rhwswr"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -6340,13 +6340,13 @@ characterization and visualization.")
 (define-public r-cfdnakit
   (package
     (name "r-cfdnakit")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cfdnakit" version))
        (sha256
-        (base32 "0p74f274hk3w1y5rx06sdq36wddzd6wmhyla4l29fb87wmpfhidk"))))
+        (base32 "1lllrlxnrvvi3qs41mbp8wymml1yrlwgnw0ylpjvl31kzjbgib0p"))))
     (properties `((upstream-name . "cfdnakit")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors
@@ -7245,13 +7245,13 @@ using data from public repositories")
 (define-public r-celda
   (package
     (name "r-celda")
-    (version "1.18.1")
+    (version "1.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "celda" version))
        (sha256
-        (base32 "1wvqxp9fwd0jfjwnhjzmmw2yzgz2gzlm2hnij6xylz41s7al6gdp"))))
+        (base32 "1xgygf5jsfk19wd2icb0k9mwqfapa57033faq5j9c0j5rpb9iaaj"))))
     (properties `((upstream-name . "celda")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
