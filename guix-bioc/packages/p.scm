@@ -3581,6 +3581,35 @@ It is not aimed at identifying motifs separated by a conserved distance; for
 this type of analysis, please visit MEME website.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
+(define-public r-perfect
+  (package
+    (name "r-perfect")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PERFect" version))
+       (sha256
+        (base32 "0k3rzpaflkyjgyvmlsqhk94y75sbd9dxcwhnigjcfzfyhjmh1pf4"))))
+    (properties `((upstream-name . "PERFect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-sn
+                             r-psych
+                             r-phyloseq
+                             r-matrix
+                             r-ggplot2
+                             r-fitdistrplus))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cxquy91/PERFect")
+    (synopsis "Permutation filtration for microbiome data")
+    (description
+     "PERFect is a novel permutation filtering approach designed to address two
+unsolved problems in microbiome data processing: (i) define and quantify loss
+due to filtering by implementing thresholds, and (ii) introduce and evaluate a
+permutation test for filtering loss to provide a measure of excessive filtering.")
+    (license license:artistic2.0)))
+
 (define-public r-pepxmltab
   (package
     (name "r-pepxmltab")

@@ -15,8 +15,9 @@
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages p)
-  #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages g)
+  #:use-module (guix-cran packages t)
+  #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages v)
   #:use-module (gnu packages java)
@@ -29,7 +30,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages r)
-  #:use-module (guix-cran packages t)
   #:use-module (gnu packages graph)
   #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
@@ -2157,6 +2157,58 @@ to estimate the contamination rate in observed data and decontaminate the spot
 swapping effect, thus increase the sensitivity and precision of downstream
 analyses.")
     (license license:gpl3)))
+
+(define-public r-sponge
+  (package
+    (name "r-sponge")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SPONGE" version))
+       (sha256
+        (base32 "0ldh9y6g8jpqyj46q4b6ah4g55hyl1k79am87rp9za1z8fy96jq6"))))
+    (properties `((upstream-name . "SPONGE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tnet
+                             r-tidyverse
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-randomforest
+                             r-ppcor
+                             r-mirbaseconverter
+                             r-metbrewer
+                             r-mass
+                             r-logging
+                             r-iterators
+                             r-igraph
+                             r-grbase
+                             r-glmnet
+                             r-ggridges
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-expm
+                             r-dplyr
+                             r-dorng
+                             r-data-table
+                             r-cvms
+                             r-complexheatmap
+                             r-caret
+                             r-biomart
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SPONGE")
+    (synopsis "Sparse Partial Correlations On Gene Expression")
+    (description
+     "This package provides methods to efficiently detect competitive endogeneous RNA
+interactions between two genes.  Such interactions are mediated by one or
+several @code{miRNAs} such that both gene and @code{miRNA} expression data for a
+larger number of samples is needed as input.  The SPONGE package now also
+includes @code{spongEffects}: @code{ceRNA} modules offer patient-specific
+insights into the @code{miRNA} regulatory landscape.")
+    (license license:gpl3+)))
 
 (define-public r-splots
   (package
@@ -6337,6 +6389,28 @@ high-depth sequencing panels to study low-frequency clonal mutations in
 clinically normal and cancerous tissues.")
     (license license:artistic2.0)))
 
+(define-public r-sepira
+  (package
+    (name "r-sepira")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SEPIRA" version))
+       (sha256
+        (base32 "0yv71l6sabm3yxzv4vawd6djw5d0k3gbidni4swq8b5n66flc1js"))))
+    (properties `((upstream-name . "SEPIRA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-limma r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SEPIRA")
+    (synopsis "Systems EPigenomics Inference of Regulatory Activity")
+    (description
+     "SEPIRA (Systems EPigenomics Inference of Regulatory Activity) is an algorithm
+that infers sample-specific transcription factor activity from the genome-wide
+expression or DNA methylation profile of the sample.")
+    (license license:gpl3)))
+
 (define-public r-semisup
   (package
     (name "r-semisup")
@@ -8246,6 +8320,44 @@ such as color blindness.")
      "SCATEData is an @code{ExperimentHub} package for SCATE which is a software tool
 for extracting and enhancing the sparse and discrete Single-cell ATAC-seq
 Signal.")
+    (license license:expat)))
+
+(define-public r-scate
+  (package
+    (name "r-scate")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SCATE" version))
+       (sha256
+        (base32 "05wg6c5k758a2lqb2mh6gf9vh41ml9818s8008g3nfvb7g2wi3m6"))))
+    (properties `((upstream-name . "SCATE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-splines2
+                             r-scatedata
+                             r-rtsne
+                             r-preprocesscore
+                             r-mclust
+                             r-genomicranges
+                             r-genomicalignments))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SCATE")
+    (synopsis "SCATE: Single-cell ATAC-seq Signal Extraction and Enhancement")
+    (description
+     "SCATE is a software tool for extracting and enhancing the sparse and discrete
+Single-cell ATAC-seq Signal.  Single-cell sequencing assay for
+transposase-accessible chromatin (@code{scATAC-seq}) is the state-of-the-art
+technology for analyzing genome-wide regulatory landscapes in single cells.
+Single-cell ATAC-seq data are sparse and noisy, and analyzing such data is
+challenging.  Existing computational methods cannot accurately reconstruct
+activities of individual cis-regulatory elements (CREs) in individual cells or
+rare cell subpopulations.  SCATE was developed to adaptively integrate
+information from co-activated CREs, similar cells, and publicly available
+regulome data and substantially increase the accuracy for estimating activities
+of individual CREs.  We demonstrate that SCATE can be used to better reconstruct
+the regulatory landscape of a heterogeneous sample.")
     (license license:expat)))
 
 (define-public r-scatac-explorer

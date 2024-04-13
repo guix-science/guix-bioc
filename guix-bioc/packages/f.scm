@@ -169,6 +169,34 @@ cell type.")
 implementation of the k-mean alignment algorithm to classify them.")
     (license license:artistic2.0)))
 
+(define-public r-fscanr
+  (package
+    (name "r-fscanr")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "FScanR" version))
+       (sha256
+        (base32 "0xi64by2jadx7msnk6x5vcslmgik2cc75zdwz6nqs72zl88yr50y"))))
+    (properties `((upstream-name . "FScanR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/FScanR")
+    (synopsis
+     "Detect Programmed Ribosomal Frameshifting Events from mRNA/cDNA BLASTX Output")
+    (description
+     "F@code{ScanR} identifies Programmed Ribosomal Frameshifting (PRF) events from
+BLASTX homolog sequence alignment between targeted genomic/@code{cDNA/mRNA}
+sequences against the peptide library of the same species or a close relative.
+The output by BLASTX or diamond BLASTX will be used as input of F@code{ScanR}
+and should be in a tabular format with 14 columns.  For BLASTX, the output
+parameter should be: -outfmt 6 qseqid sseqid pident length mismatch gapopen
+qstart qend sstart send evalue bitscore qframe sframe'.  For diamond BLASTX, the
+output parameter should be: -outfmt 6 qseqid sseqid pident length mismatch
+gapopen qstart qend sstart send evalue bitscore qframe qframe.")
+    (license license:artistic2.0)))
+
 (define-public r-frmatools
   (package
     (name "r-frmatools")
@@ -835,6 +863,37 @@ copy of @code{flowClust} 2.0 installed.")
      "Matching cell populations and building meta-clusters and templates from a
 collection of FC samples.")
     (license license:artistic2.0)))
+
+(define-public r-flowmap
+  (package
+    (name "r-flowmap")
+    (version "1.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "flowMap" version))
+       (sha256
+        (base32 "0zc6fbwf94njh83gbjmsmk7prj62ilshfgs2xbbya5g1p1pl994m"))))
+    (properties `((upstream-name . "flowMap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-matrix
+                             r-doparallel
+                             r-ade4
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/flowMap")
+    (synopsis
+     "Mapping cell populations in flow cytometry data for cross-sample comparisons using the Friedman-Rafsky Test")
+    (description
+     "@code{flowMap} quantifies the similarity of cell populations across multiple
+flow cytometry samples using a nonparametric multivariate statistical test.  The
+method is able to map cell populations of different size, shape, and proportion
+across multiple flow cytometry samples.  The algorithm can be incorporate in any
+flow cytometry work flow that requires accurat quantification of similarity
+between cell populations.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-flowgraph
   (package

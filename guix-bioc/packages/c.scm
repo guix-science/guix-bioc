@@ -3112,6 +3112,44 @@ specificity for each cell subset and each sample, which can be used to profile a
 subject's immune response to external stimuli such as infection or vaccination.")
     (license license:artistic2.0)))
 
+(define-public r-compartmap
+  (package
+    (name "r-compartmap")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "compartmap" version))
+       (sha256
+        (base32 "18qmyr698s3gs32k49fh764p6ymr6a8h95alpvv2abgdyr32xh0a"))))
+    (properties `((upstream-name . "compartmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-scales
+                             r-rtracklayer
+                             r-rmtstat
+                             r-reshape2
+                             r-raggedexperiment
+                             r-matrix
+                             r-hdf5array
+                             r-ggplot2
+                             r-genomicranges
+                             r-delayedmatrixstats
+                             r-delayedarray
+                             r-biocsingular))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/biobenkj/compartmap")
+    (synopsis
+     "Higher-order chromatin domain inference in single cells from scRNA-seq and scATAC-seq")
+    (description
+     "Compartmap performs direct inference of higher-order chromatin from
+@code{scRNA-seq} and @code{scATAC-seq}.  This package implements a James-Stein
+estimator for computing single-cell level higher-order chromatin domains.
+Further, we utilize random matrix theory as a method to de-noise correlation
+matrices to achieve a similar \"plaid-like\" patterning as observed in Hi-C and
+@code{scHi-C} data.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-comethdmr
   (package
     (name "r-comethdmr")
@@ -3915,6 +3953,32 @@ package.")
      "This package is intended to facilitate gene-set association with rare CNVs in
 case-control studies.")
     (license license:lgpl2.0+)))
+
+(define-public r-cnvgears
+  (package
+    (name "r-cnvgears")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CNVgears" version))
+       (sha256
+        (base32 "1hgg8k4sa7s7jmnnw9z8nl5aidfmjk8pbgqpjl532agjj514mlsb"))))
+    (properties `((upstream-name . "CNVgears")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CNVgears")
+    (synopsis
+     "Framework of Functions to Combine, Analize and Interpret CNVs Calling Results")
+    (description
+     "This package contains a set of functions to perform several type of processing
+and analysis on CNVs calling pipelines/algorithms results in an integrated
+manner and regardless of the raw data type (SNPs array or NGS).  It provides
+functions to combine multiple CNV calling results into a single object, filter
+them, compute CNVRs (CNV Regions) and inheritance patterns, detect genic load,
+and more.  The package is best suited for studies in human family-based cohorts.")
+    (license license:gpl3)))
 
 (define-public r-cnvfilter
   (package

@@ -4181,6 +4181,103 @@ expriments.  These experiments can be time point experiments, and or condition
 expriments.")
     (license license:expat)))
 
+(define-public r-mirsponger
+  (package
+    (name "r-mirsponger")
+    (version "2.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRspongeR" version))
+       (sha256
+        (base32 "1771ab9vp6kydfxhwww1w41r8scv5hi8p573l5j8y2f50mka74sx"))))
+    (properties `((upstream-name . "miRspongeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-sponge
+                             r-reactomepa
+                             r-rcpp
+                             r-org-hs-eg-db
+                             r-mcl
+                             r-linkcomm
+                             r-igraph
+                             r-foreach
+                             r-dose
+                             r-doparallel
+                             r-corpcor
+                             r-clusterprofiler))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/zhangjunpeng411/miRspongeR>")
+    (synopsis "Identification and analysis of miRNA sponge regulation")
+    (description
+     "This package provides several functions to explore @code{miRNA} sponge (also
+called @code{ceRNA} or @code{miRNA} decoy) regulation from putative
+@code{miRNA-target} interactions or/and transcriptomics data (including bulk,
+single-cell and spatial gene expression data).  It provides eight popular
+methods for identifying @code{miRNA} sponge interactions, and an integrative
+method to integrate @code{miRNA} sponge interactions from different methods, as
+well as the functions to validate @code{miRNA} sponge interactions, and infer
+@code{miRNA} sponge modules, conduct enrichment analysis of @code{miRNA} sponge
+modules, and conduct survival analysis of @code{miRNA} sponge modules.  By using
+a sample control variable strategy, it provides a function to infer
+sample-specific @code{miRNA} sponge interactions.  In terms of sample-specific
+@code{miRNA} sponge interactions, it implements three similarity methods to
+construct sample-sample correlation network.")
+    (license license:gpl3)))
+
+(define-public r-mirsm
+  (package
+    (name "r-mirsm")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRSM" version))
+       (sha256
+        (base32 "1vlm0wkc8q7z1fwg67nmw7x8mzp06irx55h0ag2k50i1m87wfb45"))))
+    (properties `((upstream-name . "miRSM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wgcna
+                             r-summarizedexperiment
+                             r-subspace
+                             r-sombrero
+                             r-s4vd
+                             r-rqubic
+                             r-rcpp
+                             r-ppclust
+                             r-pma
+                             r-org-hs-eg-db
+                             r-nmf
+                             r-mirsponger
+                             r-mclust
+                             r-mcl
+                             r-matrixcorrelation
+                             r-linkcomm
+                             r-isa2
+                             r-igraph
+                             r-ibbig
+                             r-gseabase
+                             r-gfa
+                             r-flashclust
+                             r-fabia
+                             r-energy
+                             r-dynamictreecut
+                             r-dbscan
+                             r-biobase
+                             r-biclust
+                             r-bicare
+                             r-bibitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhangjunpeng411/miRSM")
+    (synopsis "Inferring miRNA sponge modules in heterogeneous data")
+    (description
+     "The package aims to identify @code{miRNA} sponge modules in heterogeneous data.
+It provides several functions to study @code{miRNA} sponge modules, including
+popular methods for inferring gene modules (candidate @code{miRNA} sponge
+modules), and a function to identify @code{miRNA} sponge modules, as well as
+several functions to conduct modular analysis of @code{miRNA} sponge modules.")
+    (license license:gpl3)))
+
 (define-public r-mirnatarget
   (package
     (name "r-mirnatarget")
@@ -4383,6 +4480,30 @@ The file name was @code{miRNA-1\\_0\\_probe\\_tab}.")
 @code{miRNA-1_0_2Xgain.CDF} file.")
     (license license:lgpl2.0+)))
 
+(define-public r-mirmine
+  (package
+    (name "r-mirmine")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRmine" version))
+       (sha256
+        (base32 "0lx5nrnnikmn6vdkxgilp1dnl6a87qqwml0wwnncxmwyirqx1z3b"))))
+    (properties `((upstream-name . "miRmine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/miRmine")
+    (synopsis
+     "Data package with miRNA-seq datasets from miRmine database as RangedSummarizedExperiment")
+    (description
+     "@code{miRmine} database is a collection of expression profiles from different
+publicly available @code{miRNA-seq} datasets, Panwar et al (2017)
+@code{miRmine}: A Database of Human @code{miRNA} Expression, prepared with this
+data package as @code{RangedSummarizedExperiment}.")
+    (license license:gpl3+)))
+
 (define-public r-mirlab
   (package
     (name "r-mirlab")
@@ -4518,6 +4639,29 @@ of methods that estimate expression from the amplification curves.")
      "Annotation package containing all available @code{miRNA} names from 22 versions
 (data from http://www.mirbase.org/).")
     (license license:artistic2.0)))
+
+(define-public r-mirbaseconverter
+  (package
+    (name "r-mirbaseconverter")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRBaseConverter" version))
+       (sha256
+        (base32 "1avfa28gwdhyfik0rfaj1gllplp1dzc1i78nf2v07fyrgbss0vpp"))))
+    (properties `((upstream-name . "miRBaseConverter")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/taoshengxu/miRBaseConverter")
+    (synopsis
+     "comprehensive and high-efficiency tool for converting and retrieving the information of miRNAs in different miRBase versions")
+    (description
+     "This package provides a comprehensive tool for converting and retrieving the
+@code{miRNA} Name, Accession, Sequence, Version, History and Family information
+in different @code{miRBase} versions.  It can process a huge number of
+@code{miRNAs} in a short time without other depends.")
+    (license license:gpl2+)))
 
 (define-public r-mirbase-db
   (package
@@ -6730,6 +6874,41 @@ dot product, neutral losses or user-defined functions and visualise similarities
 in a circular layout.  Within the interactive framework the user can annotate
 MS/MS features based on their similarity to (known) related MS/MS features.")
     (license license:gpl3+)))
+
+(define-public r-metavolcanor
+  (package
+    (name "r-metavolcanor")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetaVolcanoR" version))
+       (sha256
+        (base32 "0gj4nn07l20i3d4ik46iwd4y3mlnms15nmvqsfjprsbxy8v7nqq6"))))
+    (properties `((upstream-name . "MetaVolcanoR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-topconfects
+                             r-tidyr
+                             r-rlang
+                             r-plotly
+                             r-metap
+                             r-metafor
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MetaVolcanoR")
+    (synopsis "Gene Expression Meta-analysis Visualization Tool")
+    (description
+     "@code{MetaVolcanoR} combines differential gene expression results.  It
+implements three strategies to summarize differential gene expression from
+different studies.  i) Random Effects Model (REM) approach, ii) a p-value
+combining-approach, and iii) a vote-counting approach.  In all cases,
+@code{MetaVolcano} exploits the Volcano plot reasoning to visualize the gene
+expression meta-analysis results.")
+    (license license:gpl3)))
 
 (define-public r-metaseqr2
   (package

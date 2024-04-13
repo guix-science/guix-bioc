@@ -2202,6 +2202,53 @@ significance scores for each gene set.")
 functional properties of networks based on guilt by association methods.")
     (license license:gpl2)))
 
+(define-public r-eegc
+  (package
+    (name "r-eegc")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "eegc" version))
+       (sha256
+        (base32 "0n09x9bm0qqhfga0isqj082mkychqakb6x3sxv9ylgm4p8sqjfz7"))))
+    (properties `((upstream-name . "eegc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wordcloud
+                             r-sna
+                             r-s4vectors
+                             r-r-utils
+                             r-pheatmap
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-limma
+                             r-igraph
+                             r-gplots
+                             r-ggplot2
+                             r-edger
+                             r-dose
+                             r-deseq2
+                             r-clusterprofiler
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/eegc")
+    (synopsis "Engineering Evaluation by Gene Categorization (eegc)")
+    (description
+     "This package has been developed to evaluate cellular engineering processes for
+direct differentiation of stem cells or conversion (transdifferentiation) of
+somatic cells to primary cells based on high throughput gene expression data
+screened either by DNA microarray or RNA sequencing.  The package takes gene
+expression profiles as inputs from three types of samples: (i) somatic or stem
+cells to be (trans)differentiated (input of the engineering process), (ii)
+induced cells to be evaluated (output of the engineering process) and (iii)
+target primary cells (reference for the output).  The package performs
+differential gene expression analysis for each pair-wise sample comparison to
+identify and evaluate the transcriptional differences among the 3 types of
+samples (input, output, reference).  The ideal goal is to have induced and
+primary reference cell showing overlapping profiles, both very different from
+the original cells.")
+    (license license:gpl2)))
+
 (define-public r-eds
   (package
     (name "r-eds")
@@ -2696,6 +2743,40 @@ necessary for liftover operations.  Users no longer need to manually specify
 chain file paths in their function calls, reducing the complexity of the
 liftover process.")
     (license license:expat)))
+
+(define-public r-easycelltype
+  (package
+    (name "r-easycelltype")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EasyCellType" version))
+       (sha256
+        (base32 "0amj0g3vbpclzhgmhc62r8f8ilcqjmvrms3bgjybf4ik7hjqn22x"))))
+    (properties `((upstream-name . "EasyCellType")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-clusterprofiler
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/EasyCellType")
+    (synopsis "Annotate cell types for scRNA-seq data")
+    (description
+     "We developed @code{EasyCellType} which can automatically examine the input
+marker lists obtained from existing software such as Seurat over the cell
+markerdatabases.  Two quantification approaches to annotate cell types are
+provided: Gene set enrichment analysis (GSEA) and a modified versio of Fisher's
+exact test.  The function presents annotation recommendations in graphical
+outcomes: bar plots for each cluster showing candidate cell types, as well as a
+dot plot summarizing the top 5 significant annotations for each cluster.")
+    (license license:artistic2.0)))
 
 (define-public r-easierdata
   (package

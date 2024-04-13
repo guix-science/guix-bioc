@@ -2735,6 +2735,61 @@ can identify public resources associated with their dataset such as gene sets,
 annotations and intuitive visualization options are implemented in this package.")
     (license license:artistic2.0)))
 
+(define-public r-genomicplot
+  (package
+    (name "r-genomicplot")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GenomicPlot" version))
+       (sha256
+        (base32 "17xprafdbkm289flnywg30x7a8zyspirwl7424m1ir84xxs21zcb"))))
+    (properties `((upstream-name . "GenomicPlot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-venndiagram
+                             r-tidyr
+                             r-scales
+                             r-rtracklayer
+                             r-rsamtools
+                             r-rcas
+                             r-plyranges
+                             r-iranges
+                             r-ggsignif
+                             r-ggsci
+                             r-ggpubr
+                             r-ggplotify
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomicalignments
+                             r-genomeinfodb
+                             r-genomation
+                             r-edger
+                             r-dplyr
+                             r-cowplot
+                             r-complexheatmap
+                             r-circlize
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shuye2009/GenomicPlot")
+    (synopsis
+     "Plot profiles of next generation sequencing data in genomic features")
+    (description
+     "Visualization of next generation sequencing (NGS) data is essential for
+interpreting high-throughput genomics experiment results. @code{GenomicPlot}
+facilitates plotting of NGS data in various formats (bam, bed, wig and bigwig);
+both coverage and enrichment over input can be computed and displayed with
+respect to genomic features (such as UTR, CDS, enhancer), and user defined
+genomic loci or regions.  Statistical tests on signal intensity within user
+defined regions of interest can be performed and represented as boxplots or bar
+graphs.  Parallel processing is used to speed up computation on multicore
+platforms.  In addition to genomic plots which is suitable for displaying of
+coverage of genomic DNA (such as @code{ChIPseq} data), metagenomic (without
+introns) plots can also be made for RNAseq or CLIPseq data as well.")
+    (license license:gpl2)))
+
 (define-public r-genomicozone
   (package
     (name "r-genomicozone")

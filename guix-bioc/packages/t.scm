@@ -17,7 +17,6 @@
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages n)
-  #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages f)
   #:use-module (gnu packages bioinformatics)
@@ -1673,6 +1672,47 @@ breakpoints which represent changes in expression for each feature/gene in high
 throughput data with ordered conditions.")
     (license license:gpl3)))
 
+(define-public r-trena
+  (package
+    (name "r-trena")
+    (version "1.24.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "trena" version))
+       (sha256
+        (base32 "10bfpli443yrv4qm774xayyxdxz0p264pk5dcnwi3fzx22sq8jsm"))))
+    (properties `((upstream-name . "trena")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-wgcna
+                             r-rsqlite
+                             r-rpostgresql
+                             r-rmysql
+                             r-randomforest
+                             r-org-hs-eg-db
+                             r-motifdb
+                             r-lassopv
+                             r-glmnet
+                             r-genomicranges
+                             r-dbi
+                             r-bsgenome-mmusculus-ucsc-mm10
+                             r-bsgenome-hsapiens-ucsc-hg38
+                             r-bsgenome-hsapiens-ucsc-hg19
+                             r-bsgenome
+                             r-biostrings
+                             r-biomart
+                             r-annotationdbi))
+    (native-inputs (list r-rmarkdown r-markdown r-knitr r-formatr))
+    (home-page "https://pricelab.github.io/trena/")
+    (synopsis
+     "Fit transcriptional regulatory networks using gene expression, priors, machine learning")
+    (description
+     "This package provides methods for reconstructing transcriptional regulatory
+networks, especially in species for which genome-wide TF binding site
+information is available.")
+    (license license:gpl3)))
+
 (define-public r-treg
   (package
     (name "r-treg")
@@ -2732,12 +2772,8 @@ for specialized tissue Treg cells.")
         (base32 "13wcph6vy17y9xh16zrwn6dvqsm7lzgi9lkmz05bhqvlrmqxhn6j"))))
     (properties `((upstream-name . "TissueEnrich")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
-                             r-gseabase
-                             r-ggplot2
-                             r-ensurer
-                             r-dplyr))
+    (propagated-inputs (list r-tidyr r-summarizedexperiment r-gseabase
+                             r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/TissueEnrich")
     (synopsis "Tissue-specific gene enrichment analysis")

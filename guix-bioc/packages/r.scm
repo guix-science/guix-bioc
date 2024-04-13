@@ -2605,6 +2605,39 @@ spectrometry) assays are supported.  The package is extendable and efforts are
 undergoing to support metadata associated to proteomics assays.")
     (license license:lgpl2.0+)))
 
+(define-public r-ripat
+  (package
+    (name "r-ripat")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "RIPAT" version))
+       (sha256
+        (base32 "1rnqsxl00v7lcg2w91356aj8aaxlcjb7q5885x5ywfqibyikszz9"))))
+    (properties `((upstream-name . "RIPAT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rtracklayer
+                             r-regioner
+                             r-plyr
+                             r-openxlsx
+                             r-karyoploter
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bioinfo16/RIPAT/")
+    (synopsis "Retroviral Integration Pattern Analysis Tool (RIPAT)")
+    (description
+     "RIPAT is developed as an R package for retroviral integration sites annotation
+and distribution analysis.  RIPAT needs local alignment results from BLAST and
+BLAT. Specific input format is depicted in RIPAT manual.  RIPAT provides RV
+integration pattern analysis result as forms of R objects, excel file with
+multiple sheets and plots.")
+    (license license:artistic2.0)))
+
 (define-public r-ringo
   (package
     (name "r-ringo")
