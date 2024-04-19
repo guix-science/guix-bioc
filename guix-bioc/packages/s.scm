@@ -5953,13 +5953,13 @@ uncompressed and compressed fastq files.")
 (define-public r-seqsqc
   (package
     (name "r-seqsqc")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SeqSQC" version))
        (sha256
-        (base32 "0vjah085hr50pvkgm2sscpa97fvhsglcwvj5jb08v2liz1vzm3zb"))))
+        (base32 "0igqk6942bmr6m6phcmis30m5b9bnxizplnbghc5i13z3c2nm1il"))))
     (properties `((upstream-name . "SeqSQC")))
     (build-system r-build-system)
     (arguments
@@ -5973,7 +5973,7 @@ uncompressed and compressed fastq files.")
                              r-rmarkdown
                              r-reshape2
                              r-rcolorbrewer
-                             r-rbokeh
+                             r-plotly
                              r-iranges
                              r-ggplot2
                              r-ggally

@@ -1742,13 +1742,13 @@ available) or inherited rare variants.")
 (define-public r-nanostringnctools
   (package
     (name "r-nanostringnctools")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoStringNCTools" version))
        (sha256
-        (base32 "0zrv51vbsdf2m74bd0syd0qka9f4fm0i3479z2w4p1k5ima7az5j"))))
+        (base32 "0x90hsvb16yg70sqbngk6cbih2j4c5g4575a7xgcxbsymv60zam1"))))
     (properties `((upstream-name . "NanoStringNCTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors
