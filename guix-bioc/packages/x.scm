@@ -145,19 +145,20 @@ no-variation, mixed, and multinucleotide-polymorphism).")
 (define-public r-xnastring
   (package
     (name "r-xnastring")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XNAString" version))
        (sha256
-        (base32 "0g47fdbgpvprx71qng0kdqicv2p0gk5pyx0c0zpa6ffv5mbhjhy4"))))
+        (base32 "0dgdaq8w7q32scdxragi40x7mkgpvvyzs2bwfb6c2yb4n2j40imi"))))
     (properties `((upstream-name . "XNAString")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-s4vectors
                              r-rcpp
+                             r-pwalign
                              r-iranges
                              r-genomicranges
                              r-future-apply
@@ -178,7 +179,7 @@ can be read or written to a HELM notation.  It also enables secondary structure
 prediction using RNAfold from @code{ViennaRNA}.  XNAString is designed to be
 efficient representation of nucleic-acid based therapeutics, therefore it stores
 information about target sequences and provides interface for matching and
-alignment functions from Biostrings package.")
+alignment functions from Biostrings and pwalign packages.")
     (license license:gpl2)))
 
 (define-public r-xlaevis2probe
@@ -248,14 +249,14 @@ from public repositories")
 (define-public r-xhybcasneuf
   (package
     (name "r-xhybcasneuf")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XhybCasneuf" version
                               'experiment))
        (sha256
-        (base32 "1qzbsmqn9y1483108pzh8zkiw1q1xzghincrcmz8cl2a4q10hyxf"))))
+        (base32 "0n0k6h9b9gkywy6cmlx15g09287aqzvc228j3jgjkv0ljbwsq756"))))
     (properties `((upstream-name . "XhybCasneuf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinesath1cdf r-rcolorbrewer r-ath1121501cdf
@@ -269,13 +270,13 @@ from public repositories")
 (define-public r-xeva
   (package
     (name "r-xeva")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Xeva" version))
        (sha256
-        (base32 "1qyr1caf63f0sc6mrww6sdn7hh44r90rz6xdslm26b1827gz9zfn"))))
+        (base32 "1n6bxj5gshr2rzcxw6dc5wcmj1ajssrqzp7a7b6rlnszk2h4vgys"))))
     (properties `((upstream-name . "Xeva")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -345,14 +346,14 @@ Xenopus_laevis.cdf file.")
 (define-public r-xenopus-db0
   (package
     (name "r-xenopus-db0")
-    (version "3.18.0")
+    (version "3.19.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xenopus.db0" version
                               'annotation))
        (sha256
-        (base32 "1dacnx0bknhgdlaljm9r54dxxbw7vi6pgxhl2dmprkl9k02cc2q6"))))
+        (base32 "1d6bhq0ppgm087zkh4nmm3qx6f2mp0lblhzvayc6fqyzrzanvjiy"))))
     (properties `((upstream-name . "xenopus.db0")))
     (build-system r-build-system)
     (propagated-inputs (list r-annotationdbi))
@@ -366,13 +367,13 @@ Xenopus_laevis.cdf file.")
 (define-public r-xde
   (package
     (name "r-xde")
-    (version "2.48.0")
+    (version "2.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XDE" version))
        (sha256
-        (base32 "0xnxbyrdafcx5dqms0sqp70bm62w1g92mjidmj99jm50ymjxpfl9"))))
+        (base32 "1f0aahpyrmkg5h3v6v5qw35gsjskh6dh16bgygkssa1qcafmqfv1"))))
     (properties `((upstream-name . "XDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-siggenes
@@ -393,14 +394,14 @@ Xenopus_laevis.cdf file.")
 (define-public r-xcoredata
   (package
     (name "r-xcoredata")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcoredata" version
                               'experiment))
        (sha256
-        (base32 "1chcjylfdl07q19f924hsml22lbfcjrzndp1appi3q80hzbc3pz6"))))
+        (base32 "0sn3h2c0h9jpdp17jcxskcqjy31vx6wz2d5xb98ag19cfbimv3nl"))))
     (properties `((upstream-name . "xcoredata")))
     (build-system r-build-system)
     (arguments
@@ -419,13 +420,13 @@ Xenopus_laevis.cdf file.")
 (define-public r-xcore
   (package
     (name "r-xcore")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcore" version))
        (sha256
-        (base32 "0m176rbszbpi2900cf1p574hvi5qmvw9faf08g15wijk9r896qx7"))))
+        (base32 "04156svl1cjbhy51d7fbgdilp832wfifg37yr9civ829iyi79fha"))))
     (properties `((upstream-name . "xcore")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors

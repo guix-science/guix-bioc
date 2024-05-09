@@ -41,13 +41,13 @@
 (define-public r-usort
   (package
     (name "r-usort")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "uSORT" version))
        (sha256
-        (base32 "09dk90lhxyfpv1jz589q5zi84jldpvnibsi0ijnmv3l0998jmfxa"))))
+        (base32 "04k0763dykakv03gxvlwsp6qlg6lpzd5512p5rdq2v5dk19scvm1"))))
     (properties `((upstream-name . "uSORT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -72,16 +72,42 @@ gene selection, preliminary cell ordering, feature selection, refined cell
 ordering, and post-analysis interpretation and visualization.")
     (license license:artistic2.0)))
 
+(define-public r-updhmm
+  (package
+    (name "r-updhmm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "UPDhmm" version))
+       (sha256
+        (base32 "0qa6d3c2gvhfq5shgdpsgzrghx8jwpvx6an8rvidl5p7nzhhdjgi"))))
+    (properties `((upstream-name . "UPDhmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variantannotation r-s4vectors r-iranges r-hmm
+                             r-genomicranges))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/martasevilla/UPDhmm")
+    (synopsis "Detecting Uniparental Disomy through NGS trio data")
+    (description
+     "Uniparental disomy (UPD) is a genetic condition where an individual inherits
+both copies of a chromosome or part of it from one parent, rather than one copy
+from each parent.  This package contains a HMM for detecting UPDs through HTS
+(High Throughput Sequencing) data from trio assays.  By analyzing the genotypes
+in the trio, the model infers a hidden state (normal, father isodisomy, mother
+isodisomy, father heterodisomy and mother heterodisomy).")
+    (license license:expat)))
+
 (define-public r-updateobject
   (package
     (name "r-updateobject")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "updateObject" version))
        (sha256
-        (base32 "0a1br8ifjkp3qxirs9skih194q9ghh1g3kifm4imah7nh138dwxa"))))
+        (base32 "151nma7yyhk8s67bqim6jn86p85zdq7hj0xvvpnsl78bacncca8c"))))
     (properties `((upstream-name . "updateObject")))
     (build-system r-build-system)
     (inputs (list git))
@@ -99,13 +125,13 @@ package.  This is still work-in-progress.")
 (define-public r-uniquorn
   (package
     (name "r-uniquorn")
-    (version "2.22.0")
+    (version "2.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Uniquorn" version))
        (sha256
-        (base32 "1rd0jk7ifc2mhsslgf7nc9mz3nbqbm6svv86lv8y2j3y4iyivgwp"))))
+        (base32 "1f2hp395gfxnrf9mg8kqd6cjr9b651gzrj2bcfv5hx2qh0mh1z75"))))
     (properties `((upstream-name . "Uniquorn")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -157,13 +183,13 @@ gene-keyword relations.")
 (define-public r-uniprot-ws
   (package
     (name "r-uniprot-ws")
-    (version "2.42.0")
+    (version "2.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UniProt.ws" version))
        (sha256
-        (base32 "0qpp6r705llmlf38a8nvgr1q198lj7bwrlvnph4mcyb9sz82ra3d"))))
+        (base32 "1vcbphksaanggig1yfmrihhw1a4fmy1cl7yq5w3z3lb6zik5rgx8"))))
     (properties `((upstream-name . "UniProt.ws")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite
@@ -190,13 +216,13 @@ allows mapping of identifiers accross different databases.")
 (define-public r-undo
   (package
     (name "r-undo")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UNDO" version))
        (sha256
-        (base32 "0lj8y4fcfl91g3mf4mnixg509m7viwx5fcwmsbzw3a71anmgcifi"))))
+        (base32 "1h7bri3hkl99gll5vpamgp7x60afdmq8h1mqw4plr9ypxv2kljpj"))))
     (properties `((upstream-name . "UNDO")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnls r-mass r-boot r-biocgenerics r-biobase))
@@ -211,13 +237,13 @@ data without any prior knowledge.")
 (define-public r-uncoverapplib
   (package
     (name "r-uncoverapplib")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "uncoverappLib" version))
        (sha256
-        (base32 "02c2fc89l8shbs8b9lqnzn9k413rbcff8lp7in2770ayw8lsnwaf"))))
+        (base32 "17p2aqpg3q6yqplw2haazm1hhr6s0nwhghcvn3j9128n5pg2j58x"))))
     (properties `((upstream-name . "uncoverappLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
@@ -260,13 +286,13 @@ statisticl summary of coverage given target file or genes name.")
 (define-public r-umi4cats
   (package
     (name "r-umi4cats")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UMI4Cats" version))
        (sha256
-        (base32 "1imsndzvgz2ibhnb9y0cilr1kdkqnww9ncy1clviqjcb37iqy6w1"))))
+        (base32 "1cf2jsmhsmw6i381wxnb0zsyhkr2mjlxlzpjnlfxyf4kr6n8k797"))))
     (properties `((upstream-name . "UMI4Cats")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -320,13 +346,13 @@ integrated information from a UMI-4C assay.")
 (define-public r-ularcirc
   (package
     (name "r-ularcirc")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Ularcirc" version))
        (sha256
-        (base32 "1f4vcrmxsv1daqdrdw4kzqjawi03m9n6s1dvrhn4v3dq3y7sc9hi"))))
+        (base32 "0qzkvwg3gd9v9cqf3hmmyh4gzdqs5m6nxjjbnhqsdp6wshccdv4p"))))
     (properties `((upstream-name . "Ularcirc")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

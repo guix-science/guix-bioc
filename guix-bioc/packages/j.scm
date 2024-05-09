@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages bioconductor)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -31,6 +31,45 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-johnsonkinasedata
+  (package
+    (name "r-johnsonkinasedata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "JohnsonKinaseData" version
+                              'experiment))
+       (sha256
+        (base32 "1ry5p2zll8hazxil4sa57v50b7xr9bk4p5a509i4mvasb089al3l"))))
+    (properties `((upstream-name . "JohnsonKinaseData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-experimenthub
+                             r-dplyr
+                             r-checkmate
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fgeier/JohnsonKinaseData/")
+    (synopsis
+     "Kinase PWMs based on data published by Johnson et al. 2023 (doi:10.1038/s41586-022-05575-3)")
+    (description
+     "The packages provides position specific weight matrices (PWMs) for 303 human
+serine/threonine kinases originally published in Johnson et al.  2023.  It
+includes gene annotation for each kinase PWM and PWM matching scores for a set
+of 85603 curated human phosphosites which can be used to map a PWM score to its
+percentile rank.  The package also includes basic functionality to score user
+provided phosphosites.")
+    (license license:expat)))
 
 (define-public r-jazaerimetadata-db
   (package
@@ -94,14 +133,14 @@ retrieve predicted JASPAR TFBSs intersecting their genomic regions of interest."
 (define-public r-jaspar2022
   (package
     (name "r-jaspar2022")
-    (version "0.99.7")
+    (version "0.99.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2022" version
                               'annotation))
        (sha256
-        (base32 "0sayaxsazcsbwdkisjfmkc01piahkqi9xks3rfj60cf56wrjlbpa"))))
+        (base32 "0di84aydk5brgdz1qh30fh1jizwd8w1rsz74mw4apv5s8ayryl48"))))
     (properties `((upstream-name . "JASPAR2022")))
     (build-system r-build-system)
     (propagated-inputs (list r-biocfilecache))
@@ -140,14 +179,14 @@ TFBSTools (>= 1.15.6).")
 (define-public r-jaspar2014
   (package
     (name "r-jaspar2014")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2014" version
                               'experiment))
        (sha256
-        (base32 "1ha5nm4v28bfxxa6jqkag7hy0b7bph15v1qs8xwd9w2wam2znazx"))))
+        (base32 "0m4g6vp78zsnzkfjmjfjwvd04505lz55njm7ml7dycwv6lmaxivk"))))
     (properties `((upstream-name . "JASPAR2014")))
     (build-system r-build-system)
     (propagated-inputs (list r-biostrings))

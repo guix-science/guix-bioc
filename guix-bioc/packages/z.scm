@@ -37,20 +37,24 @@
 (define-public r-zygositypredictor
   (package
     (name "r-zygositypredictor")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ZygosityPredictor" version))
        (sha256
-        (base32 "00vwrz9f8bcrksb41vklx1w8wp44vvbp5jac5bw5c405arman9nc"))))
+        (base32 "03yxnrbkfzc1dqa8zin8gwi9iryw3ir2k5s80dzxclr1651zh5xd"))))
     (properties `((upstream-name . "ZygosityPredictor")))
     (build-system r-build-system)
     (propagated-inputs (list r-variantannotation
                              r-tibble
                              r-stringr
                              r-rsamtools
+                             r-rlang
+                             r-readr
                              r-purrr
+                             r-magrittr
+                             r-knitr
                              r-iranges
                              r-igraph
                              r-genomicranges
@@ -80,13 +84,13 @@ scale deletions, which cause losses of whole genes or parts of them.")
 (define-public r-zenith
   (package
     (name "r-zenith")
-    (version "1.4.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zenith" version))
        (sha256
-        (base32 "0wy3v69pp8jhij1svncq86x35xxr2d0gl5mrk7h8w4341sbms4p4"))))
+        (base32 "14mj5flig4f0s3qgny26wj8l50d5f8bdp66gnh83wsqnln784x8m"))))
     (properties `((upstream-name . "zenith")))
     (build-system r-build-system)
     (arguments
@@ -132,14 +136,14 @@ to be compatible with linear mixed models implemented in
 (define-public r-zebrafishrnaseq
   (package
     (name "r-zebrafishrnaseq")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zebrafishRNASeq" version
                               'experiment))
        (sha256
-        (base32 "0fhsg1j40rkzxphnq7gl98zyqijacmfrjf4ffmbvr70mxw3zysgz"))))
+        (base32 "1d1ix8cmjhimrl2zmykndzhp4dpyr4nashckzs3kf53cflq8bcip"))))
     (properties `((upstream-name . "zebrafishRNASeq")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -196,14 +200,14 @@ Zebrafish.cdf file.")
 (define-public r-zebrafish-db0
   (package
     (name "r-zebrafish-db0")
-    (version "3.18.0")
+    (version "3.19.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zebrafish.db0" version
                               'annotation))
        (sha256
-        (base32 "0qrd1b5l936jf30dnnmmi5fighwg4zmhz62acq6qzi4r7668g6sk"))))
+        (base32 "1bg35zyxdvdhv0a1l5v61z6g0vz2h2ikad4lyv4akrmwndcrxijy"))))
     (properties `((upstream-name . "zebrafish.db0")))
     (build-system r-build-system)
     (propagated-inputs (list r-annotationdbi))
