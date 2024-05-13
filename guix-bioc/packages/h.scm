@@ -3370,13 +3370,13 @@ visualization.")
 (define-public r-hicaggr
   (package
     (name "r-hicaggr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HicAggR" version))
        (sha256
-        (base32 "1j4j6j6wk45xvgyy06s09j39bfrw8qysl941c59pylyb0bh6zhan"))))
+        (base32 "1w6xq5k087v6bfkz4iwm831pvja8bxsdzb5jn1bg4qnrnaxd6k95"))))
     (properties `((upstream-name . "HicAggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

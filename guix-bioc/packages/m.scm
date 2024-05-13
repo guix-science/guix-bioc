@@ -1825,6 +1825,52 @@ the Functional Genomics Center Zurich.")
      "Fragmentation spectral libraries and data to test the @code{msPurity} package")
     (license license:gpl2+)))
 
+(define-public r-mspurity
+  (package
+    (name "r-mspurity")
+    (version "1.30.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "msPurity" version))
+       (sha256
+        (base32 "03h492l2x8isd1h4zmr5k6xykswimqfcxfgd67xpjjr0anrc8yl0"))))
+    (properties `((upstream-name . "msPurity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rsqlite
+                             r-reshape2
+                             r-rcpp
+                             r-plyr
+                             r-mzr
+                             r-magrittr
+                             r-ggplot2
+                             r-foreach
+                             r-fastcluster
+                             r-dplyr
+                             r-dosnow
+                             r-dbplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/computational-metabolomics/msPurity/")
+    (synopsis
+     "Automated Evaluation of Precursor Ion Purity for Mass Spectrometry Based Fragmentation in Metabolomics")
+    (description
+     "@code{msPurity} R package was developed to: 1) Assess the spectral quality of
+fragmentation spectra by evaluating the \"precursor ion purity\".  2) Process
+fragmentation spectra.  3) Perform spectral matching.  What is precursor ion
+purity? -What we call \"Precursor ion purity\" is a measure of the contribution of
+a selected precursor peak in an isolation window used for fragmentation.  The
+simple calculation involves dividing the intensity of the selected precursor
+peak by the total intensity of the isolation window.  When assessing MS/MS
+spectra this calculation is done before and after the MS/MS scan of interest and
+the purity is interpolated at the recorded time of the MS/MS acquisition.
+Additionally, isotopic peaks can be removed, low abundance peaks are removed
+that are thought to have limited contribution to the resulting MS/MS spectra and
+the isolation efficiency of the mass spectrometer can be used to normalise the
+intensities used for the calculation.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-msprep
   (package
     (name "r-msprep")
@@ -7150,17 +7196,18 @@ Stouffer's method")
 (define-public r-metascope
   (package
     (name "r-metascope")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaScope" version
                               'experiment))
        (sha256
-        (base32 "04lrmx2lssyl4dx803mdsvhd2jcyh6v2jrwdbi7m62lbv700rhr7"))))
+        (base32 "1kaisvhp66g95w4dycw8jzsxh00f2c193rjcla6l5k2dn5rnsyr9"))))
     (properties `((upstream-name . "MetaScope")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-taxize
                              r-summarizedexperiment
                              r-stringr
@@ -7169,7 +7216,6 @@ Stouffer's method")
                              r-rlang
                              r-readr
                              r-rbowtie2
-                             r-qlcmatrix
                              r-multiassayexperiment
                              r-matrix
                              r-magrittr

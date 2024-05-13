@@ -845,13 +845,13 @@ quantification tools MISO, VAST-TOOLS, SUPPA and @code{rMATS}.")
 (define-public r-alphamissenser
   (package
     (name "r-alphamissenser")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AlphaMissenseR" version))
        (sha256
-        (base32 "1izvjj9jl59rlb9pnd12xygkl43kbmwzd78lhc6x8dgybydsmp6w"))))
+        (base32 "0krm45wbcag7h8gwnmkk9kjqzhqpzc5ah514i1ia7wxdz7mi8afc"))))
     (properties `((upstream-name . "AlphaMissenseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -874,7 +874,7 @@ quantification tools MISO, VAST-TOOLS, SUPPA and @code{rMATS}.")
 variant of @code{AlphaFold} / @code{DeepMind} was used to predict missense
 variant pathogenicity.  Supporting data on Zenodo
 <https://zenodo.org/record/10813168> include, for instance, 71M variants across
-hg19 and hg38 genome builds.  The @code{AlphaMissense} package allows ready
+hg19 and hg38 genome builds.  The @code{AlphaMissenseR} package allows ready
 access to the data, downloading individual files to @code{DuckDB} databases for
 exploration and integration into *R* and *Bioconductor* workflows.")
     (license license:artistic2.0)))

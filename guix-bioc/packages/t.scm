@@ -2774,6 +2774,38 @@ underlying dataset characterises the epigenetic and transcriptomic modifications
 for specialized tissue Treg cells.")
     (license license:gpl2+)))
 
+(define-public r-tissueenrich
+  (package
+    (name "r-tissueenrich")
+    (version "1.24.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "TissueEnrich" version))
+       (sha256
+        (base32 "02amlvaf5v30x2swxhi4na4c623v00gb3q1bvlcqias9gaaizzim"))))
+    (properties `((upstream-name . "TissueEnrich")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-summarizedexperiment r-gseabase
+                             r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/TissueEnrich")
+    (synopsis "Tissue-specific gene enrichment analysis")
+    (description
+     "The @code{TissueEnrich} package is used to calculate enrichment of
+tissue-specific genes in a set of input genes.  For example, the user can input
+the most highly expressed genes from RNA-Seq data, or gene co-expression modules
+to determine which tissue-specific genes are enriched in those datasets.
+Tissue-specific genes were defined by processing RNA-Seq data from the Human
+Protein Atlas (HPA) (Uhlén et al.  2015), GTEx (Ardlie et al.  2015), and mouse
+ENCODE (Shen et al.  2012) using the algorithm from the HPA (Uhlén et al.
+2015).The hypergeometric test is being used to determine if the tissue-specific
+genes are enriched among the input genes.  Along with tissue-specific gene
+enrichment, the @code{TissueEnrich} package can also be used to define
+tissue-specific genes from expression datasets provided by the user, which can
+then be used to calculate tissue-specific gene enrichments.")
+    (license license:expat)))
+
 (define-public r-tinesath1probe
   (package
     (name "r-tinesath1probe")

@@ -8065,13 +8065,13 @@ fetus, cardinal painting, and human RCC.")
 (define-public r-cardinalio
   (package
     (name "r-cardinalio")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CardinalIO" version))
        (sha256
-        (base32 "0kzjbglmkqm5n3xbqli3rymbwszq6mpry7sydsx3lpp1fmpxby1m"))))
+        (base32 "1kzqz2zba8i5z1pkwwi0hzb6fm7xh22bymkk1jwicyrk94fzfw1l"))))
     (properties `((upstream-name . "CardinalIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors r-ontologyindex r-matter))
