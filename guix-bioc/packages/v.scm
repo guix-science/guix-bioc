@@ -740,13 +740,13 @@ NA12878 (CEU) and NA19240 (YRI), subset to the TP53 region.")
 (define-public r-variantexperiment
   (package
     (name "r-variantexperiment")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VariantExperiment" version))
        (sha256
-        (base32 "0931j4k5dr1qq7dligqbiab012qbd6n1xjm9x7898c5nwrvdx95a"))))
+        (base32 "0wxhfd92cfh9rg99jrw9rg7vfqk8lf2ylkpki2jf59hlx8zzs2z9"))))
     (properties `((upstream-name . "VariantExperiment")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

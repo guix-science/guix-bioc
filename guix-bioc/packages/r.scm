@@ -5297,6 +5297,41 @@ required third-party libraries.  The package is developed, tested, and used at
 the Functional Genomics Center Zurich, Switzerland.")
     (license license:gpl3)))
 
+(define-public r-rawdiag
+  (package
+    (name "r-rawdiag")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "rawDiag" version))
+       (sha256
+        (base32 "1rdccg67gkcxj7jgg0by1244x3794kz4s60l5ps54j41iy3zs0v2"))))
+    (properties `((upstream-name . "rawDiag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-scales
+                             r-rlang
+                             r-reshape2
+                             r-rawrr
+                             r-htmltools
+                             r-hexbin
+                             r-ggplot2
+                             r-dplyr
+                             r-biocparallel
+                             r-biocmanager))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fgcz/rawDiag/")
+    (synopsis
+     "Brings Orbitrap Mass Spectrometry Data to Life; Fast and Colorful")
+    (description
+     "Optimizing methods for liquid chromatography coupled to mass spectrometry
+(LC-MS) poses a nontrivial challenge.  The @code{rawDiag} package facilitates
+rational method optimization by generating MS operator-tailored diagnostic plots
+of scan-level metadata.  The package is designed for use on the R shell or as a
+Shiny application on the Orbitrap instrument PC.")
+    (license license:gpl3)))
+
 (define-public r-rattus-norvegicus
   (package
     (name "r-rattus-norvegicus")

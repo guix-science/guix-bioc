@@ -1705,13 +1705,13 @@ package.")
 (define-public r-diffhic
   (package
     (name "r-diffhic")
-    (version "1.36.0")
+    (version "1.36.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffHic" version))
        (sha256
-        (base32 "02gxqbsrwza475d8f9hvv0iz0dgm0kllxlnfdw52dh35r83jidvf"))))
+        (base32 "1wzlzmmrxmnwgqkxqwga73x0kpj7d968c7jgrln9xfilhhn4fkyy"))))
     (properties `((upstream-name . "diffHic")))
     (build-system r-build-system)
     (propagated-inputs (list r-zlibbioc
@@ -1734,7 +1734,7 @@ package.")
                              r-biostrings
                              r-biocgenerics))
     (home-page "https://bioconductor.org/packages/diffHic")
-    (synopsis "Differential Analyis of Hi-C Data")
+    (synopsis "Differential Analysis of Hi-C Data")
     (description
      "Detects differential interactions across biological conditions in a Hi-C
 experiment.  Methods are provided for read alignment and data pre-processing

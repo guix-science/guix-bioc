@@ -1897,14 +1897,14 @@ densities of sequencing based data sets such as from RNA-Seq and
 (define-public r-transomicsdata
   (package
     (name "r-transomicsdata")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TransOmicsData" version
                               'experiment))
        (sha256
-        (base32 "12brqbspwvfq2hl4xpmdp4vamw1qfkyky89yxza0vwvxq95nxgvz"))))
+        (base32 "0sfpks0wfzlrh5qqg0id5c99l1dzj2l1nd5h3shjhp0lm4f5v8w0"))))
     (properties `((upstream-name . "TransOmicsData")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors))
