@@ -3816,13 +3816,13 @@ biological processes.")
 (define-public r-mobilerna
   (package
     (name "r-mobilerna")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mobileRNA" version))
        (sha256
-        (base32 "0kn5zpha0rn0cabyf57z1fb7ymsgx37rpwk5w5baac536lbw18j1"))))
+        (base32 "1rp6y71rnqxpjmjfa4mx1l7ndb94l7443xvjzkvkh8axizwlml6y"))))
     (properties `((upstream-name . "mobileRNA")))
     (build-system r-build-system)
     (inputs (list samtools htseq hisat2 conda))
@@ -7671,13 +7671,13 @@ and the graphite Bioconductor R package.")
 (define-public r-metaboannotation
   (package
     (name "r-metaboannotation")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboAnnotation" version))
        (sha256
-        (base32 "1h6qry50c770cylv3dxpqfkhqm1sl6k8xbvq250gx5ckbzdf479b"))))
+        (base32 "0lsrhyyqsdz27mc6vl0aj78bdj3xh5i3h3dsg9smkhg2m22h3sdf"))))
     (properties `((upstream-name . "MetaboAnnotation")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

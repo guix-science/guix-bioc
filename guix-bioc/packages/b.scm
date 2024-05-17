@@ -2856,13 +2856,13 @@ MEAL, @code{MultiDataSet} and @code{omicRexposome}.")
 (define-public r-brew3r-r
   (package
     (name "r-brew3r-r")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BREW3R.r" version))
        (sha256
-        (base32 "14z6v7rz6w9n6siz5xchzk1xhq63rsfsknd2qyqycic4frmwk57q"))))
+        (base32 "0i0r5sryvq721dlffs9d092776jx0j7r9mfiyi24glgqalmrslag"))))
     (properties `((upstream-name . "BREW3R.r")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors r-rlang r-genomicranges))

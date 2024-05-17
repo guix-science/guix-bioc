@@ -1694,13 +1694,13 @@ stored as bam files.  The original data is from the SG-NEx project.")
 (define-public r-nanomethviz
   (package
     (name "r-nanomethviz")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoMethViz" version))
        (sha256
-        (base32 "03kqqn2py1jv3smyhy6z4cdnbazbjrrxhv7xa7fq0lqkm39r7s2q"))))
+        (base32 "0nlbkikmxdq08m24sch8cy10m63v33536p5rx1zy5c4f4pa86yrw"))))
     (properties `((upstream-name . "NanoMethViz")))
     (build-system r-build-system)
     (inputs (list zlib))

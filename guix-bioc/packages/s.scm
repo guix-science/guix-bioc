@@ -3054,6 +3054,50 @@ images.  Additionally, it provides extended functionalities for large-scale data
 mining routines and co-visualizing bulk and single-cell data.")
     (license license:artistic2.0)))
 
+(define-public r-spatialfeatureexperiment
+  (package
+    (name "r-spatialfeatureexperiment")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SpatialFeatureExperiment" version))
+       (sha256
+        (base32 "0p7wqhn72p538wrlkd51mac87sjd5bh2k0k9vkvvvpfls02vfx01"))))
+    (properties `((upstream-name . "SpatialFeatureExperiment")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zeallot
+                             r-terra
+                             r-summarizedexperiment
+                             r-spdep
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-sfheaders
+                             r-sf
+                             r-s4vectors
+                             r-rlang
+                             r-rjson
+                             r-matrix
+                             r-lifecycle
+                             r-ebimage
+                             r-dropletutils
+                             r-data-table
+                             r-biocparallel
+                             r-biocneighbors
+                             r-biocgenerics
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pachterlab/SpatialFeatureExperiment")
+    (synopsis "Integrating SpatialExperiment with Simple Features in sf")
+    (description
+     "This package provides a new S4 class integrating Simple Features with the R
+package sf to bring geospatial data analysis methods based on vector data to
+spatial transcriptomics.  Also implements management of spatial neighborhood
+graphs and geometric operations.  This pakage builds upon
+@code{SpatialExperiment} and @code{SingleCellExperiment}, hence methods for
+these parent classes can still be used.")
+    (license license:artistic2.0)))
+
 (define-public r-spatialdmelxsim
   (package
     (name "r-spatialdmelxsim")

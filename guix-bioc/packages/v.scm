@@ -180,6 +180,53 @@ generation of V-plots and footprint profiles over single or aggregated genomic
 loci of interest.")
     (license license:gpl3+)))
 
+(define-public r-voyager
+  (package
+    (name "r-voyager")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Voyager" version))
+       (sha256
+        (base32 "0nvcp1wcrisiljj4w61ykz82a2l8c9vx8ixh209v2ih004wyy1y1"))))
+    (properties `((upstream-name . "Voyager")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-summarizedexperiment
+                             r-spdep
+                             r-spatialfeatureexperiment
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-sf
+                             r-scico
+                             r-scales
+                             r-s4vectors
+                             r-rspectra
+                             r-rlang
+                             r-patchwork
+                             r-memuse
+                             r-matrixstats
+                             r-matrix
+                             r-lifecycle
+                             r-ggplot2
+                             r-ggnewscale
+                             r-bluster
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pachterlab/voyager")
+    (synopsis "From geospatial to spatial omics")
+    (description
+     "@code{SpatialFeatureExperiment} (SFE) is a new S4 class for working with spatial
+single-cell genomics data.  The voyager package implements basic exploratory
+spatial data analysis (ESDA) methods for SFE. Univariate methods include
+univariate global spatial ESDA methods such as Moran's I, permutation testing
+for Moran's I, and correlograms.  Bivariate methods include Lee's L and cross
+variogram.  Multivariate methods include MULTISPATI PCA and multivariate local
+Geary's C recently developed by Anselin.  The Voyager package also implements
+plotting functions to plot SFE data and ESDA results.")
+    (license license:artistic2.0)))
+
 (define-public r-vitisviniferaprobe
   (package
     (name "r-vitisviniferaprobe")

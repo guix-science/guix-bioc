@@ -3631,14 +3631,14 @@ per-target read coverage and so on.")
 (define-public r-tenxxeniumdata
   (package
     (name "r-tenxxeniumdata")
-    (version "0.99.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TENxXeniumData" version
                               'experiment))
        (sha256
-        (base32 "16w2yzcwsm7hw57vd63i2a7bj1pyvcr16y7lnd6nhixngfc0sbfx"))))
+        (base32 "1zjyry8m4f8xw6apib90rv8lyxhpdy3nqgawshhslv8w8qwk3xs9"))))
     (properties `((upstream-name . "TENxXeniumData")))
     (build-system r-build-system)
     (arguments
@@ -3647,8 +3647,8 @@ per-target read coverage and so on.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-summarizedexperiment r-spatialexperiment
-                             r-experimenthub r-bumpymatrix))
+    (propagated-inputs (list r-summarizedexperiment r-spatialfeatureexperiment
+                             r-spatialexperiment r-experimenthub r-bumpymatrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mrbakhsh/TENxXeniumData")
     (synopsis "Collection of Xenium spatial data by 10X genomics")
