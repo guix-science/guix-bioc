@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -2022,13 +2023,13 @@ external data to the tree.")
 (define-public r-ggspavis
   (package
     (name "r-ggspavis")
-    (version "1.9.10")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggspavis" version))
        (sha256
-        (base32 "1ajab91ha8i26kay198n3zapxj4vil1bhky20z9rb6fr7imn8r07"))))
+        (base32 "0acbsbqnkl1xw9i3pgz1bibgzyvv52jzmyvnmggn5ag92ldd459c"))))
     (properties `((upstream-name . "ggspavis")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -3888,13 +3889,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "1r2rhnyf3ayq16a2nsmh880fhpriibziy1afrrx6wj3kbjj3zbg4"))))
+        (base32 "1q5nks601k3i7whcv1mq7djcw1fq7s1jp8fh9sgyfc0xfj2q6va4"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

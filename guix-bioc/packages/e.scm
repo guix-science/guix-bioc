@@ -588,13 +588,13 @@ interactive via the ggvis or rbokeh packages are available.")
 (define-public r-escher
   (package
     (name "r-escher")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "escheR" version))
        (sha256
-        (base32 "1c2aw69yf55cg8i3n09y1mssy5amky4lkchbx82z2d2z9i5pv96j"))))
+        (base32 "16sqxsvpvb9idb7crbr3kq5xcifpzdw29lcxvrn2kxq003n7hbqw"))))
     (properties `((upstream-name . "escheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment r-spatialexperiment

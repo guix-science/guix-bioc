@@ -2048,13 +2048,13 @@ prior to a co-expression analysis.")
 (define-public r-spotsweeper
   (package
     (name "r-spotsweeper")
-    (version "0.99.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpotSweeper" version))
        (sha256
-        (base32 "1bxipnnl566h6cwkjfhd1npkb6w4a0cs5dd8my428xkp07480ziw"))))
+        (base32 "1jkc37ymip3r29fh041mfa2bq17qhxq7mp0i35zrjh2lzm83qxas"))))
     (properties `((upstream-name . "SpotSweeper")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -2161,13 +2161,13 @@ analyses.")
 (define-public r-spoon
   (package
     (name "r-spoon")
-    (version "0.99.10")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spoon" version))
        (sha256
-        (base32 "0j0j5jnyab1fwr6ihlgg4gr1q41mva63yfmaq1a7373fvcgdmvnb"))))
+        (base32 "1ygrb534nlsxckbc61y5s3rjc4cpmf265y5a48charjv9y3ahw19"))))
     (properties `((upstream-name . "spoon")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -4057,13 +4057,13 @@ problematic studies and samples in any public data set.")
 (define-public r-smoothclust
   (package
     (name "r-smoothclust")
-    (version "0.99.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smoothclust" version))
        (sha256
-        (base32 "0b2r7q63a6zzwdwp363m1iac6hfdb2g9pjb41vagbq5zqyyz47d9"))))
+        (base32 "17mcfjxsgdvignrx576v97iwapmkfc4my8pvm6b2y1w7pibilx65"))))
     (properties `((upstream-name . "smoothclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment r-spdep
@@ -5674,13 +5674,13 @@ perform downstream analysis.")
 (define-public r-shiny-gosling
   (package
     (name "r-shiny-gosling")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "shiny.gosling" version))
        (sha256
-        (base32 "06z0xxqfqwsmsabsgj4gw93cva7g0nqipxsa4xgj4pfjy8c0jx44"))))
+        (base32 "1dig8hv7pw3p6ra1z76mg7sfbvdrdaprsix9i60503sriqs3arv2"))))
     (properties `((upstream-name . "shiny.gosling")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny-react

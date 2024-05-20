@@ -2203,13 +2203,13 @@ dynamic IGV reports in HTML pages.")
 (define-public r-tpsvg
   (package
     (name "r-tpsvg")
-    (version "0.99.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "tpSVG" version))
        (sha256
-        (base32 "12gmw9qyps1h7265c3dy00dypw621jvaqjph3gdp0b03xqpmcppa"))))
+        (base32 "135w2w6j3cgfrkfkzmmy40ii10zp32r7xjc0pg07h2gm0hdz5yj0"))))
     (properties `((upstream-name . "tpSVG")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
