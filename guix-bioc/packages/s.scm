@@ -1350,14 +1350,14 @@ the variance.")
 (define-public r-stexampledata
   (package
     (name "r-stexampledata")
-    (version "1.11.1")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "STexampleData" version
                               'experiment))
        (sha256
-        (base32 "0s0gb8ij7xi1dfs3brl8f7avjxwjd2ngqqj0razwc04n2mg87syb"))))
+        (base32 "1c9lbghi1ybilrc7yiff12sjyaqpr8095wdvz941lnf3cmgci79q"))))
     (properties `((upstream-name . "STexampleData")))
     (build-system r-build-system)
     (arguments
@@ -1366,17 +1366,18 @@ the variance.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-spatialexperiment r-experimenthub))
+    (propagated-inputs (list r-spatialexperiment r-singlecellexperiment
+                             r-experimenthub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lmweber/STexampleData")
     (synopsis
-     "Collection of spatially-resolved transcriptomics datasets in SpatialExperiment Bioconductor format")
+     "Collection of spatial transcriptomics datasets in SpatialExperiment Bioconductor format")
     (description
-     "Collection of spatially-resolved transcriptomics (SRT) datasets in
+     "Collection of spatial transcriptomics datasets stored in
 @code{SpatialExperiment} Bioconductor format, for use in examples,
-demonstrations, and tutorials.  The datasets are from several different SRT
+demonstrations, and tutorials.  The datasets are from several different
 platforms and have been sourced from various publicly available sources.
-Several datasets include images and/or ground truth annotation labels.")
+Several datasets include images and/or reference annotation labels.")
     (license license:expat)))
 
 (define-public r-stepnorm
@@ -2614,13 +2615,13 @@ experiments")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "1cscfcdkn6kbp2sd5q3yzbc0h6kvwbnl6y1qhzz070spiazgqxkr"))))
+        (base32 "03bmjr4vbma5ynj773b364vb05vf06fyzvbq75qi7mczjyh4kckw"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2634,17 +2635,16 @@ experiments")
                              r-s4vectors
                              r-rlang
                              r-pheatmap
-                             r-mgcv
+                             r-magrittr
                              r-lmertest
-                             r-iranges
                              r-ggplot2
                              r-ggforce
                              r-dplyr
                              r-data-table
                              r-concaveman
+                             r-cli
                              r-classifyr
-                             r-biocparallel
-                             r-biocgenerics))
+                             r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/spicyR")
     (synopsis "Spatial analysis of in situ cytometry data")
@@ -4111,13 +4111,13 @@ the features were differently expressed in the different experiments.")
 (define-public r-smartid
   (package
     (name "r-smartid")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smartid" version))
        (sha256
-        (base32 "0219s78prr5dffxhvpm10yd4mqkkk5s1b909cq6nigysfzvzrgd6"))))
+        (base32 "15q4x3smvz6kn12960vk1bqbap288kbww141glh77lfdzwvlmpd9"))))
     (properties `((upstream-name . "smartid")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

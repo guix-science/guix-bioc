@@ -7884,13 +7884,13 @@ curated knowledge driven taxa sets.")
 (define-public r-cbaf
   (package
     (name "r-cbaf")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cbaf" version))
        (sha256
-        (base32 "17h5nipg7271kdffb7isp79h9928a34f3bn3fzmfhliw2bwam4a3"))))
+        (base32 "0mw6pwsasvq5x8g4kqkm3qrwfz2iymsfbbj0m0jsrqgplqmb714l"))))
     (properties `((upstream-name . "cbaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -8087,13 +8087,13 @@ spectrometry imaging.")
 (define-public r-cardinal
   (package
     (name "r-cardinal")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Cardinal" version))
        (sha256
-        (base32 "1fbwgdlj8bfszz1zrbld413iw6jx0fk1d0rsnr6gfpm1ng61qif5"))))
+        (base32 "1g38x8acpv5nlqzfn5g0h77pmn3426i6y0n8sa14hbkj16xjkagc"))))
     (properties `((upstream-name . "Cardinal")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors

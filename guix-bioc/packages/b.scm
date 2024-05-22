@@ -3818,6 +3818,30 @@ retrieve entries by their accession number.  Web services can be accessed for
 searching the database by name or mass.")
     (license license:agpl3)))
 
+(define-public r-biodblipidmaps
+  (package
+    (name "r-biodblipidmaps")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "biodbLipidmaps" version))
+       (sha256
+        (base32 "1p181kwy9q8jj4m7flg71pqn7h6865hbwha4n6j2qki830vym6rv"))))
+    (properties `((upstream-name . "biodbLipidmaps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-lifecycle r-biodb))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pkrog/biodbLipidmaps")
+    (synopsis
+     "biodbLipidmaps, a library for connecting to the Lipidmaps Structure database")
+    (description
+     "The @code{biodbLipidmaps} library provides access to the Lipidmaps Structure
+Database, using biodb package framework.  It allows to retrieve entries by their
+accession number, and run web the services @code{lmsdSearch} and
+@code{lmsdRecord}.")
+    (license license:agpl3)))
+
 (define-public r-biodbkegg
   (package
     (name "r-biodbkegg")
