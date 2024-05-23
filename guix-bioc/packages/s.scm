@@ -30,7 +30,6 @@
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages a)
   #:use-module (gnu packages graph)
-  #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
