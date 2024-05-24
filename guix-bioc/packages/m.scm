@@ -1363,20 +1363,22 @@ public repositories")
 (define-public r-msstatstmt
   (package
     (name "r-msstatstmt")
-    (version "2.12.0")
+    (version "2.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsTMT" version))
        (sha256
-        (base32 "1j5l81jxc01piq31w6wzhyg6iwg1g2mff8wcvh8aldl591bb6l4l"))))
+        (base32 "03nnwh5qbr3wd942yj5xa2gd2bk28ncxq2dri3my5gwsrlfxfxpn"))))
     (properties `((upstream-name . "MSstatsTMT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-msstatsconvert
+    (propagated-inputs (list r-plotly
+                             r-msstatsconvert
                              r-msstats
                              r-lmertest
                              r-lme4
                              r-limma
+                             r-htmltools
                              r-ggplot2
                              r-data-table
                              r-checkmate))

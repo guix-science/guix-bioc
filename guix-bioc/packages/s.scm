@@ -4814,6 +4814,38 @@ single-cell RNA seq.  Graphical representations and functional association tests
 are provided to interpret hierarchies.")
     (license license:gpl2+)))
 
+(define-public r-simpleseg
+  (package
+    (name "r-simpleseg")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "simpleSeg" version))
+       (sha256
+        (base32 "0rmd9kclh6x9gxqncw25563c4vh2xk206iia0qc058w9lbzqyp5f"))))
+    (properties `((upstream-name . "simpleSeg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-summarizedexperiment
+                             r-spatstat-geom
+                             r-s4vectors
+                             r-ebimage
+                             r-cytomapper
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/simpleSeg")
+    (synopsis "package to perform simple cell segmentation")
+    (description
+     "Image segmentation is the process of identifying the borders of individual
+objects (in this case cells) within an image.  This allows for the features of
+cells such as marker expression and morphology to be extracted, stored and
+analysed. @code{simpleSeg} provides functionality for user friendly, watershed
+based segmentation on multiplexed cellular images in R based on the intensity of
+user specified protein marker channels. @code{simpleSeg} can also be used for
+the normalization of single cell data obtained from multiple images.")
+    (license license:gpl3)))
+
 (define-public r-simpintlists
   (package
     (name "r-simpintlists")

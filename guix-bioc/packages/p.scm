@@ -9,14 +9,14 @@
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages s)
-  #:use-module (guix-cran packages p)
+  #:use-module (gnu packages web)
   #:use-module (guix-cran packages h)
+  #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages web)
   #:use-module (guix-cran packages i)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
@@ -505,6 +505,86 @@ are also used to gererate the @code{ptrSet} in the @code{ptairMS} data :
     (description
      "Package to retrieve data from @code{PsyGeNET} database (www.psygenet.org) and to
 perform comorbidity studies with @code{PsyGeNET's} and user's data.")
+    (license license:expat)))
+
+(define-public r-psichomics
+  (package
+    (name "r-psichomics")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "psichomics" version))
+       (sha256
+        (base32 "0nwfaw1a4mxdzqk0zqadxispdasx75nlb19zla753nmydxlpavj0"))))
+    (properties `((upstream-name . "psichomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-xtable
+                             r-xml
+                             r-survival
+                             r-summarizedexperiment
+                             r-stringr
+                             r-shinyjs
+                             r-shinybs
+                             r-shiny
+                             r-rfast
+                             r-reshape2
+                             r-recount
+                             r-rcpp
+                             r-r-utils
+                             r-purrr
+                             r-plyr
+                             r-pairsd3
+                             r-limma
+                             r-jsonlite
+                             r-httr
+                             r-htmltools
+                             r-highcharter
+                             r-ggrepel
+                             r-ggplot2
+                             r-fastmatch
+                             r-fastica
+                             r-edger
+                             r-dt
+                             r-dplyr
+                             r-digest
+                             r-data-table
+                             r-colourpicker
+                             r-cluster
+                             r-biocfilecache
+                             r-annotationhub
+                             r-annotationdbi))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://nuno-agostinho.github.io/psichomics/")
+    (synopsis
+     "Graphical Interface for Alternative Splicing Quantification, Analysis and Visualisation")
+    (description
+     "Interactive R package with an intuitive Shiny-based graphical interface for
+alternative splicing quantification and integrative analyses of alternative
+splicing and gene expression based on The Cancer Genome Atlas (TCGA), the
+Genotype-Tissue Expression project (GTEx), Sequence Read Archive (SRA) and
+user-provided data.  The tool interactively performs survival, dimensionality
+reduction and median- and variance-based differential splicing and gene
+expression analyses that benefit from the incorporation of clinical and
+molecular sample-associated features (such as tumour stage or survival).
+Interactive visual access to genomic mapping and functional annotation of
+selected alternative splicing events is also included.")
     (license license:expat)))
 
 (define-public r-proteomm
