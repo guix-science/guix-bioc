@@ -789,13 +789,13 @@ Prostate Cancer dataset.")
 (define-public r-prostar
   (package
     (name "r-prostar")
-    (version "1.36.0")
+    (version "1.36.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Prostar" version))
        (sha256
-        (base32 "05g9n6mglll6f4p4ykhrrf7xx4cml921mqk1vz6fnxz1zs2cfmyl"))))
+        (base32 "08pgvgl7781x9rvl3cg7pm4155y5yrk3j35667z9i3p0na8wmxvw"))))
     (properties `((upstream-name . "Prostar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
