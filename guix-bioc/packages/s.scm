@@ -4110,13 +4110,13 @@ the features were differently expressed in the different experiments.")
 (define-public r-smartid
   (package
     (name "r-smartid")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smartid" version))
        (sha256
-        (base32 "15q4x3smvz6kn12960vk1bqbap288kbww141glh77lfdzwvlmpd9"))))
+        (base32 "1bm8g8n3xifc2dg1d9vpw79vpwssa9q6ssvzyf77gp24zp2r734i"))))
     (properties `((upstream-name . "smartid")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
