@@ -2712,13 +2712,13 @@ assembled using data from public repositories")
 (define-public r-motiftestr
   (package
     (name "r-motiftestr")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifTestR" version))
        (sha256
-        (base32 "18syzq8abxbfa6wc1fm221rkflhlh7h8v1r8q44y2x7zlm8ijlkc"))))
+        (base32 "1qaq4mylc52b6adgp8qvyx5z26gzmp20pghrs9ixr2rj209q0wn0"))))
     (properties `((upstream-name . "motifTestR")))
     (build-system r-build-system)
     (propagated-inputs (list r-universalmotif

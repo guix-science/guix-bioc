@@ -2944,14 +2944,14 @@ annotations can range from tissue segment to gene expression.")
 (define-public r-spatiallibd
   (package
     (name "r-spatiallibd")
-    (version "1.16.0")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialLIBD" version
                               'experiment))
        (sha256
-        (base32 "0c2r922iw206z952wfq10gj00gjksar22ncsafjhr2x0dmrqvlww"))))
+        (base32 "0bbwh9mfz7iscv8a1jlc7g1c452hv4qr95hwv3z6h2mqf8pcr5g8"))))
     (properties `((upstream-name . "spatialLIBD")))
     (build-system r-build-system)
     (arguments
