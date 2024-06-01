@@ -1399,13 +1399,13 @@ and @code{SpectroMine}.")
 (define-public r-msstatsshiny
   (package
     (name "r-msstatsshiny")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsShiny" version))
        (sha256
-        (base32 "0a1x5b97rvbk7j80y8lranh3fkhrlcbsk884fj3w49wh6cjs8pph"))))
+        (base32 "1jxibwgnlqn5yrjacsv2z674kbiwkphwq4l7qbp93bn2qn3brqk3"))))
     (properties `((upstream-name . "MSstatsShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -3165,13 +3165,13 @@ visualization functions.")
 (define-public r-moleculeexperiment
   (package
     (name "r-moleculeexperiment")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MoleculeExperiment" version))
        (sha256
-        (base32 "0p3hbp375d53pbgbv87nzy0jaiml1ywl8sf4l0m38ksz4yg36vir"))))
+        (base32 "0w539058lm99z53lkjf9ljk1dr4fp150a9cwa9s9xrax90wpmy6j"))))
     (properties `((upstream-name . "MoleculeExperiment")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

@@ -7884,13 +7884,13 @@ curated knowledge driven taxa sets.")
 (define-public r-cbaf
   (package
     (name "r-cbaf")
-    (version "1.26.1")
+    (version "1.26.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cbaf" version))
        (sha256
-        (base32 "0mw6pwsasvq5x8g4kqkm3qrwfz2iymsfbbj0m0jsrqgplqmb714l"))))
+        (base32 "1dsni3va144hlyqlxasd0q6grmh3h3n8y3kbc1psji3cn2kcq65r"))))
     (properties `((upstream-name . "cbaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
