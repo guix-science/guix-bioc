@@ -270,7 +270,7 @@ files in standard file formats such as GMT.")
     (synopsis
      "Microarray Data related methods that utlize BufferedMatrix objects")
     (description
-     "Microarray analysis methods that use @code{BufferedMatrix} objects")
+     "Microarray analysis methods that use @code{BufferedMatrix} objects.")
     (license license:gpl2+)))
 
 (define-public r-bufferedmatrix
@@ -387,7 +387,7 @@ Bsubtilis.CDF file.")
     (propagated-inputs (list r-bsseq))
     (home-page "https://bioconductor.org/packages/bsseqData")
     (synopsis "Example whole genome bisulfite data for the bsseq package")
-    (description "Example whole genome bisulfite data for the bsseq package")
+    (description "Example whole genome bisulfite data for the bsseq package.")
     (license license:artistic2.0)))
 
 (define-public r-bsgenomeforge
@@ -469,7 +469,7 @@ selfing) as assembled by the IGGP (version 8X) and available at the URGI (INRA).
      "Full reference nuclear genome sequences for Vitis vinifera subsp.  vinifera
 PN40024 (derived from Pinot Noir and close to homozygosity after 6-9 rounds of
 selfing) as assembled by the IGGP (version 12Xv2) and available at the URGI
-(INRA)")
+(INRA).")
     (license license:cc0)))
 
 (define-public r-bsgenome-vvinifera-urgi-iggp12xv0
@@ -494,7 +494,7 @@ selfing) as assembled by the IGGP (version 12Xv2) and available at the URGI
      "Full reference nuclear genome sequences for Vitis vinifera subsp.  vinifera
 PN40024 (derived from Pinot Noir and close to homozygosity after 6-9 rounds of
 selfing) as assembled by the IGGP (version 12Xv0) and available at the URGI
-(INRA)")
+(INRA).")
     (license license:cc0)))
 
 (define-public r-bsgenome-tguttata-ucsc-taegut2
@@ -587,7 +587,7 @@ mask), and (2) the mask of intra-contig ambiguities (AMB mask).  Both masks are
     (home-page "https://bioconductor.org/packages/BSgenome.Tgondii.ToxoDB.7.0")
     (synopsis "Toxoplasma gondii ME49 (ToxoDB-7.0)")
     (description
-     "Toxoplasma gondii ME49 genome Release 7.0 available at http://www.toxodb.org")
+     "Toxoplasma gondii ME49 genome Release 7.0 available at http://www.toxodb.org.")
     (license (license:fsdg-compatible "GPL 3"))))
 
 (define-public r-bsgenome-sscrofa-ucsc-susscr3-masked
@@ -2802,7 +2802,7 @@ from March 24, 2011) and stored in Biostrings objects.")
     (description
      "derived from CNMC (pepr.cnmcresearch.org)
 http://pepr.cnmcresearch.org/browse.do?action=list_prj_exp&@code{projectId=95}
-Human Bronchial Cell line A549")
+Human Bronchial Cell line A549.")
     (license license:gpl2)))
 
 (define-public r-bridgedbr
@@ -3201,7 +3201,7 @@ Bovine.cdf file.")
      "Affymetrix Affymetrix Bovine Array annotation data (chip bovine)")
     (description
      "Affymetrix Affymetrix Bovine Array annotation data (chip bovine) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-borealis
@@ -4545,7 +4545,7 @@ to identify enriched antibody responses.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/BEAT")
     (synopsis "BEAT - BS-Seq Epimutation Analysis Toolkit")
-    (description "Model-based analysis of single-cell methylation data")
+    (description "Model-based analysis of single-cell methylation data.")
     (license (license:fsdg-compatible "LGPL (>= 3.0)"))))
 
 (define-public r-bearscc
@@ -4619,7 +4619,7 @@ Lauren Middleton et.  al. (2021).")
      "Analysing Illumina BeadArray expression data using Bioconductor")
     (description
      "Example data files and use cases for processing Illumina @code{BeadArray}
-expression data using Bioconductor")
+expression data using Bioconductor.")
     (license license:gpl2)))
 
 (define-public r-beadarrayexampledata
@@ -4640,7 +4640,7 @@ expression data using Bioconductor")
     (synopsis "Example data for the beadarray package")
     (description
      "An small dataset that can be used to run examples from the beadarray vignette
-and examples")
+and examples.")
     (license license:gpl2)))
 
 (define-public r-beachmat-hdf5

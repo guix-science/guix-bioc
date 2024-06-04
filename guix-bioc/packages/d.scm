@@ -70,7 +70,7 @@
     (description
      "Data for the dyebias package, consisting of 4 self-self hybrizations of
 self-spotted yeast slides, as well as data from Array Express accession
-E-MTAB-32")
+E-MTAB-32.")
     (license license:gpl3)))
 
 (define-public r-dyebias
@@ -97,7 +97,7 @@ slide-dependency was hitherto not recognized, and made addressing the artefact
 impossible.  Given a reasonable number of dye-swapped pairs of hybridizations,
 or of same vs. same hybridizations, both the gene- and slide-biases can be
 estimated and corrected using the GASSCO method (Margaritis et al., Mol.  Sys.
-Biol.  5:266 (2009), doi:10.1038/msb.2009.21)")
+Biol.  5:266 (2009), doi:10.1038/msb.2009.21).")
     (license license:gpl3)))
 
 (define-public r-dvddata
@@ -419,7 +419,7 @@ Drosophila_2.cdf file.")
      "Affymetrix Affymetrix Drosophila_2 Array annotation data (chip drosophila2)")
     (description
      "Affymetrix Affymetrix Drosophila_2 Array annotation data (chip drosophila2)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-drosgenome1probe
@@ -484,7 +484,7 @@ The file name was @code{DrosGenome1\\_probe\\_tab}.")
      "Affymetrix Affymetrix DrosGenome1 Array annotation data (chip drosgenome1)")
     (description
      "Affymetrix Affymetrix @code{DrosGenome1} Array annotation data (chip
-drosgenome1) assembled using data from public repositories")
+drosgenome1) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-droplettestfiles
@@ -560,7 +560,7 @@ push the gene expression values of the connected genes to some extreme values.")
     (propagated-inputs (list r-biobase))
     (home-page "https://bioconductor.org/packages/dressCheck")
     (synopsis "data and software for checking Dressman JCO 25(5) 2007")
-    (description "data and software for checking Dressman JCO 25(5) 2007")
+    (description "data and software for checking Dressman JCO 25(5) 2007.")
     (license license:artistic2.0)))
 
 (define-public r-dreamlet
@@ -1582,7 +1582,7 @@ with the ARACNe and MINDy algorithms, respectively.")
     (synopsis "Inference of Genetic Variants Driving Cellular Phenotypes")
     (description
      "Inference of Genetic Variants Driving Cellullar Phenotypes by the DIGGIT
-algorithm")
+algorithm.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-diffutr
@@ -1758,7 +1758,7 @@ available.")
     (propagated-inputs (list r-minpack-lm))
     (home-page "https://bioconductor.org/packages/diffGeneAnalysis")
     (synopsis "Performs differential gene expression Analysis")
-    (description "Analyze microarray data")
+    (description "Analyze microarray data.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-differentialregulation
@@ -2567,7 +2567,7 @@ network is dysregulated by the compound.")
     (home-page "https://bioconductor.org/packages/deltaGseg")
     (synopsis "deltaGseg")
     (description
-     "Identifying distinct subpopulations through multiscale time series analysis")
+     "Identifying distinct subpopulations through multiscale time series analysis.")
     (license license:gpl2)))
 
 (define-public r-deltacapturec

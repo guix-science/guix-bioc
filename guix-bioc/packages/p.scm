@@ -472,7 +472,7 @@ headspace from two mycobacteria species and one control (culture medium only)
 with two replicates.  Those datasets are used in the examples and in the
 vignette of the @code{ptairMS} package (PTR-TOF-MS data pre-processing).  There
 are also used to gererate the @code{ptrSet} in the @code{ptairMS} data :
-@code{exhaledPtrset} and @code{mycobacteriaSet}")
+@code{exhaledPtrset} and @code{mycobacteriaSet}.")
     (license license:gpl3)))
 
 (define-public r-psygenet2r
@@ -680,7 +680,7 @@ research and experimental settings.")
     (home-page "https://bioconductor.org/packages/proteinProfiles")
     (synopsis "Protein Profiling")
     (description
-     "Significance assessment for distance measures of time-course protein profiles")
+     "Significance assessment for distance measures of time-course protein profiles.")
     (license license:gpl3)))
 
 (define-public r-prostatecancervarambally
@@ -700,7 +700,7 @@ research and experimental settings.")
     (home-page "https://bioconductor.org/packages/prostateCancerVarambally")
     (synopsis "Prostate Cancer Data")
     (description
-     "This package provides a Bioconductor data package for the Varambally dataset")
+     "This package provides a Bioconductor data package for the Varambally dataset.")
     (license license:artistic2.0)))
 
 (define-public r-prostatecancertaylor
@@ -741,7 +741,7 @@ dataset.")
     (home-page "https://bioconductor.org/packages/prostateCancerStockholm")
     (synopsis "Prostate Cancer Data")
     (description
-     "This package provides a Bioconductor data package for the Stockholm dataset")
+     "This package provides a Bioconductor data package for the Stockholm dataset.")
     (license license:artistic2.0)))
 
 (define-public r-prostatecancergrasso
@@ -904,7 +904,7 @@ power in differential expression analysis from RNA-seq data.")
     (description
      "This package provides a general tool to identify genomic features with a
 specific biologically interesting pattern of associations with multiple endpoint
-variables as described in Pounds et.  al. (2009) Bioinformatics 25: 2013-2019")
+variables as described in Pounds et.  al. (2009) Bioinformatics 25: 2013-2019.")
     (license license:gpl2+)))
 
 (define-public r-prolocgui
@@ -1445,7 +1445,7 @@ The file name was @code{PrimeView\\_probe\\_tab}.")
      "expression and copy number data on clear cell renal carcinoma samples")
     (description
      "Sample data for PREDA package. (annotations objects synchronized with
-@code{GeneAnnot} custom CDFs version 2.2.0)")
+@code{GeneAnnot} custom CDFs version 2.2.0).")
     (license license:artistic2.0)))
 
 (define-public r-preda
@@ -1580,7 +1580,7 @@ files include: 1) Small sample bam files for demonstration purposes 2) Probe
 sequence mappings for Custom CDF (taken from
 http://brainarray.mbni.med.umich.edu/brainarray/Database/@code{CustomCDF/genomic_curated_CDF.asp})
 3) Probe sequence mappings for manufacturer's CDF (manually created using
-bowtie)")
+bowtie).")
     (license license:artistic2.0)))
 
 (define-public r-prebs
@@ -1874,7 +1874,7 @@ Porcine.cdf file.")
      "Affymetrix Affymetrix Porcine Array annotation data (chip porcine)")
     (description
      "Affymetrix Affymetrix Porcine Array annotation data (chip porcine) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-poplarprobe
@@ -1993,7 +1993,7 @@ al. (2021) <doi:10.1371/journal.pcbi.1009148> for more details.")
     (home-page "https://bioconductor.org/packages/PolyPhen.Hsapiens.dbSNP131")
     (synopsis "PolyPhen Predictions for Homo sapiens dbSNP build 131")
     (description
-     "Database of @code{PolyPhen} predictions for Homo sapiens @code{dbSNP} build 131")
+     "Database of @code{PolyPhen} predictions for Homo sapiens @code{dbSNP} build 131.")
     (license license:artistic2.0)))
 
 (define-public r-pogos
@@ -2131,7 +2131,7 @@ provides an interactive and user-friendly interface to the full functionality of
     (synopsis "package containing metadata for POCRC arrays")
     (description
      "This package provides a package containing metadata for POCRC arrays assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-pmp
@@ -3583,7 +3583,7 @@ filter the PSMs based on FDR.")
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RGLab/pepStat")
     (synopsis "Statistical analysis of peptide microarrays")
-    (description "Statistical analysis of peptide microarrays")
+    (description "Statistical analysis of peptide microarrays.")
     (license license:artistic2.0)))
 
 (define-public r-pepsnmrdata
@@ -3705,7 +3705,7 @@ with various criteria, and kinship for the X chromosome.")
     (synopsis "FHCRC Nelson Lab pedbarrayv9 Annotation Data (pedbarrayv9)")
     (description
      "FHCRC Nelson Lab pedbarrayv9 Annotation Data (pedbarrayv9) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-pedbarrayv10-db
@@ -3726,7 +3726,7 @@ from public repositories")
     (synopsis "FHCRC Nelson Lab pedbarrayv10 Annotation Data (pedbarrayv10)")
     (description
      "FHCRC Nelson Lab pedbarrayv10 Annotation Data (pedbarrayv10) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-peco
@@ -3992,7 +3992,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.zebrafish")
     (synopsis "Platform Design Info for The Manufacturer's Name Zebrafish")
-    (description "Platform Design Info for The Manufacturer's Name Zebrafish")
+    (description "Platform Design Info for The Manufacturer's Name Zebrafish.")
     (license license:artistic2.0)))
 
 (define-public r-pd-zebgene-1-1-st
@@ -4017,7 +4017,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.zebgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix ZebGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{ZebGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{ZebGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-zebgene-1-0-st
@@ -4042,7 +4042,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.zebgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix ZebGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{ZebGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{ZebGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-yg-s98
@@ -4067,7 +4067,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.yg.s98")
     (synopsis "Platform Design Info for The Manufacturer's Name YG_S98")
-    (description "Platform Design Info for The Manufacturer's Name YG_S98")
+    (description "Platform Design Info for The Manufacturer's Name YG_S98.")
     (license license:artistic2.0)))
 
 (define-public r-pd-yeast-2
@@ -4092,7 +4092,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.yeast.2")
     (synopsis "Platform Design Info for The Manufacturer's Name Yeast_2")
-    (description "Platform Design Info for The Manufacturer's Name Yeast_2")
+    (description "Platform Design Info for The Manufacturer's Name Yeast_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-xenopus-laevis
@@ -4119,7 +4119,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name Xenopus_laevis")
     (description
-     "Platform Design Info for The Manufacturer's Name Xenopus_laevis")
+     "Platform Design Info for The Manufacturer's Name Xenopus_laevis.")
     (license license:artistic2.0)))
 
 (define-public r-pd-x-tropicalis
@@ -4145,7 +4145,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.x.tropicalis")
     (synopsis "Platform Design Info for The Manufacturer's Name X_tropicalis")
     (description
-     "Platform Design Info for The Manufacturer's Name X_tropicalis")
+     "Platform Design Info for The Manufacturer's Name X_tropicalis.")
     (license license:artistic2.0)))
 
 (define-public r-pd-x-laevis-2
@@ -4170,7 +4170,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.x.laevis.2")
     (synopsis "Platform Design Info for The Manufacturer's Name X_laevis_2")
-    (description "Platform Design Info for The Manufacturer's Name X_laevis_2")
+    (description
+     "Platform Design Info for The Manufacturer's Name X_laevis_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-wheat
@@ -4195,7 +4196,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.wheat")
     (synopsis "Platform Design Info for The Manufacturer's Name wheat")
-    (description "Platform Design Info for The Manufacturer's Name wheat")
+    (description "Platform Design Info for The Manufacturer's Name wheat.")
     (license license:artistic2.0)))
 
 (define-public r-pd-vitis-vinifera
@@ -4222,7 +4223,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name Vitis_Vinifera")
     (description
-     "Platform Design Info for The Manufacturer's Name Vitis_Vinifera")
+     "Platform Design Info for The Manufacturer's Name Vitis_Vinifera.")
     (license license:artistic2.0)))
 
 (define-public r-pd-u133-x3p
@@ -4247,7 +4248,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.u133.x3p")
     (synopsis "Platform Design Info for The Manufacturer's Name U133_X3P")
-    (description "Platform Design Info for The Manufacturer's Name U133_X3P")
+    (description "Platform Design Info for The Manufacturer's Name U133_X3P.")
     (license license:artistic2.0)))
 
 (define-public r-pd-tomato
@@ -4272,7 +4273,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.tomato")
     (synopsis "Platform Design Info for The Manufacturer's Name Tomato")
-    (description "Platform Design Info for The Manufacturer's Name Tomato")
+    (description "Platform Design Info for The Manufacturer's Name Tomato.")
     (license license:artistic2.0)))
 
 (define-public r-pd-sugar-cane
@@ -4297,7 +4298,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.sugar.cane")
     (synopsis "Platform Design Info for The Manufacturer's Name Sugar_Cane")
-    (description "Platform Design Info for The Manufacturer's Name Sugar_Cane")
+    (description
+     "Platform Design Info for The Manufacturer's Name Sugar_Cane.")
     (license license:artistic2.0)))
 
 (define-public r-pd-soygene-1-1-st
@@ -4322,7 +4324,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.soygene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix SoyGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{SoyGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{SoyGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-soygene-1-0-st
@@ -4347,7 +4349,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.soygene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix SoyGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{SoyGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{SoyGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-soybean
@@ -4372,7 +4374,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.soybean")
     (synopsis "Platform Design Info for The Manufacturer's Name Soybean")
-    (description "Platform Design Info for The Manufacturer's Name Soybean")
+    (description "Platform Design Info for The Manufacturer's Name Soybean.")
     (license license:artistic2.0)))
 
 (define-public r-pd-s-aureus
@@ -4397,7 +4399,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.s.aureus")
     (synopsis "Platform Design Info for The Manufacturer's Name S_aureus")
-    (description "Platform Design Info for The Manufacturer's Name S_aureus")
+    (description "Platform Design Info for The Manufacturer's Name S_aureus.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rusgene-1-1-st
@@ -4422,7 +4424,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rusgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix RUSGene-1_1-st")
-    (description "Platform Design Info for Affymetrix RUSGene-1_1-st")
+    (description "Platform Design Info for Affymetrix RUSGene-1_1-st.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rusgene-1-0-st
@@ -4447,7 +4449,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rusgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix RUSGene-1_0-st")
-    (description "Platform Design Info for Affymetrix RUSGene-1_0-st")
+    (description "Platform Design Info for Affymetrix RUSGene-1_0-st.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rta-1-0
@@ -4472,7 +4474,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rta.1.0")
     (synopsis "Platform Design Info for Affymetrix RTA-1_0")
-    (description "Platform Design Info for Affymetrix RTA-1_0")
+    (description "Platform Design Info for Affymetrix RTA-1_0.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rn-u34
@@ -4497,7 +4499,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rn.u34")
     (synopsis "Platform Design Info for The Manufacturer's Name RN_U34")
-    (description "Platform Design Info for The Manufacturer's Name RN_U34")
+    (description "Platform Design Info for The Manufacturer's Name RN_U34.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rjpgene-1-1-st
@@ -4522,7 +4524,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rjpgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix RJpGene-1_1-st")
-    (description "Platform Design Info for Affymetrix R@code{JpGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix R@code{JpGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rjpgene-1-0-st
@@ -4547,7 +4549,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rjpgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix RJpGene-1_0-st")
-    (description "Platform Design Info for Affymetrix R@code{JpGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix R@code{JpGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rice
@@ -4572,7 +4574,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rice")
     (synopsis "Platform Design Info for The Manufacturer's Name Rice")
-    (description "Platform Design Info for The Manufacturer's Name Rice")
+    (description "Platform Design Info for The Manufacturer's Name Rice.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rhesus
@@ -4597,7 +4599,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rhesus")
     (synopsis "Platform Design Info for The Manufacturer's Name Rhesus")
-    (description "Platform Design Info for The Manufacturer's Name Rhesus")
+    (description "Platform Design Info for The Manufacturer's Name Rhesus.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rhegene-1-1-st
@@ -4622,7 +4624,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rhegene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix RheGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{RheGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{RheGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rhegene-1-0-st
@@ -4647,7 +4649,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rhegene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix RheGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{RheGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{RheGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rg-u34c
@@ -4672,7 +4674,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rg.u34c")
     (synopsis "Platform Design Info for The Manufacturer's Name RG_U34C")
-    (description "Platform Design Info for The Manufacturer's Name RG_U34C")
+    (description "Platform Design Info for The Manufacturer's Name RG_U34C.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rg-u34b
@@ -4697,7 +4699,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rg.u34b")
     (synopsis "Platform Design Info for The Manufacturer's Name RG_U34B")
-    (description "Platform Design Info for The Manufacturer's Name RG_U34B")
+    (description "Platform Design Info for The Manufacturer's Name RG_U34B.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rg-u34a
@@ -4722,7 +4724,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rg.u34a")
     (synopsis "Platform Design Info for The Manufacturer's Name RG_U34A")
-    (description "Platform Design Info for The Manufacturer's Name RG_U34A")
+    (description "Platform Design Info for The Manufacturer's Name RG_U34A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rcngene-1-1-st
@@ -4747,7 +4749,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rcngene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix RCnGene-1_1-st")
-    (description "Platform Design Info for Affymetrix R@code{CnGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix R@code{CnGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rcngene-1-0-st
@@ -4772,7 +4774,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rcngene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix RCnGene-1_0-st")
-    (description "Platform Design Info for Affymetrix R@code{CnGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix R@code{CnGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rat230-2
@@ -4797,7 +4799,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rat230.2")
     (synopsis "Platform Design Info for The Manufacturer's Name Rat230_2")
-    (description "Platform Design Info for The Manufacturer's Name Rat230_2")
+    (description "Platform Design Info for The Manufacturer's Name Rat230_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ragene-2-1-st
@@ -4822,7 +4824,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ragene.2.1.st")
     (synopsis "Platform Design Info for Affymetrix RaGene-2_1-st")
-    (description "Platform Design Info for Affymetrix @code{RaGene-2_1-st}")
+    (description "Platform Design Info for Affymetrix @code{RaGene-2_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ragene-2-0-st
@@ -4847,7 +4849,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ragene.2.0.st")
     (synopsis "Platform Design Info for Affymetrix RaGene-2_0-st")
-    (description "Platform Design Info for Affymetrix @code{RaGene-2_0-st}")
+    (description "Platform Design Info for Affymetrix @code{RaGene-2_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ragene-1-1-st-v1
@@ -4872,7 +4874,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ragene.1.1.st.v1")
     (synopsis "Platform Design Info for Affymetrix RaGene-1_1-st-v1")
-    (description "Platform Design Info for Affymetrix @code{RaGene-1_1-st-v1}")
+    (description
+     "Platform Design Info for Affymetrix @code{RaGene-1_1-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ragene-1-0-st-v1
@@ -4897,7 +4900,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ragene.1.0.st.v1")
     (synopsis "Platform Design Info for Affymetrix RaGene-1_0-st-v1")
-    (description "Platform Design Info for Affymetrix @code{RaGene-1_0-st-v1}")
+    (description
+     "Platform Design Info for Affymetrix @code{RaGene-1_0-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-raex-1-0-st-v1
@@ -4922,7 +4926,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.raex.1.0.st.v1")
     (synopsis "Platform Design Info for Affymetrix RaEx-1_0-st-v1")
-    (description "Platform Design Info for Affymetrix @code{RaEx-1_0-st-v1}")
+    (description "Platform Design Info for Affymetrix @code{RaEx-1_0-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rae230b
@@ -4947,7 +4951,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rae230b")
     (synopsis "Platform Design Info for The Manufacturer's Name RAE230B")
-    (description "Platform Design Info for The Manufacturer's Name RAE230B")
+    (description "Platform Design Info for The Manufacturer's Name RAE230B.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rae230a
@@ -4972,7 +4976,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rae230a")
     (synopsis "Platform Design Info for The Manufacturer's Name RAE230A")
-    (description "Platform Design Info for The Manufacturer's Name RAE230A")
+    (description "Platform Design Info for The Manufacturer's Name RAE230A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rabgene-1-1-st
@@ -4997,7 +5001,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rabgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix RabGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{RabGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{RabGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-rabgene-1-0-st
@@ -5022,7 +5026,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.rabgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix RabGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{RabGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{RabGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-porgene-1-1-st
@@ -5047,7 +5051,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.porgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix PorGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{PorGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{PorGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-porgene-1-0-st
@@ -5072,7 +5076,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.porgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix PorGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{PorGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{PorGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-porcine
@@ -5097,7 +5101,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.porcine")
     (synopsis "Platform Design Info for The Manufacturer's Name Porcine")
-    (description "Platform Design Info for The Manufacturer's Name Porcine")
+    (description "Platform Design Info for The Manufacturer's Name Porcine.")
     (license license:artistic2.0)))
 
 (define-public r-pd-poplar
@@ -5122,7 +5126,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.poplar")
     (synopsis "Platform Design Info for The Manufacturer's Name Poplar")
-    (description "Platform Design Info for The Manufacturer's Name Poplar")
+    (description "Platform Design Info for The Manufacturer's Name Poplar.")
     (license license:artistic2.0)))
 
 (define-public r-pd-plasmodium-anopheles
@@ -5149,7 +5153,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name Plasmodium_Anopheles")
     (description
-     "Platform Design Info for The Manufacturer's Name Plasmodium_Anopheles")
+     "Platform Design Info for The Manufacturer's Name Plasmodium_Anopheles.")
     (license license:artistic2.0)))
 
 (define-public r-pd-pae-g1a
@@ -5174,7 +5178,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.pae.g1a")
     (synopsis "Platform Design Info for The Manufacturer's Name Pae_G1a")
-    (description "Platform Design Info for The Manufacturer's Name Pae_G1a")
+    (description "Platform Design Info for The Manufacturer's Name Pae_G1a.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ovigene-1-1-st
@@ -5199,7 +5203,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ovigene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix OviGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{OviGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{OviGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ovigene-1-0-st
@@ -5224,7 +5228,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ovigene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix OviGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{OviGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{OviGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-nugo-mm1a520177
@@ -5251,7 +5255,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name NuGO_Mm1a520177")
     (description
-     "Platform Design Info for The Manufacturer's Name @code{NuGO_Mm1a520177}")
+     "Platform Design Info for The Manufacturer's Name @code{NuGO_Mm1a520177}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-nugo-hs1a520180
@@ -5278,7 +5282,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name NuGO_Hs1a520180")
     (description
-     "Platform Design Info for The Manufacturer's Name @code{NuGO_Hs1a520180}")
+     "Platform Design Info for The Manufacturer's Name @code{NuGO_Hs1a520180}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mu11ksubb
@@ -5304,7 +5308,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.mu11ksubb")
     (synopsis "Platform Design Info for The Manufacturer's Name Mu11KsubB")
     (description
-     "Platform Design Info for The Manufacturer's Name Mu11@code{KsubB}")
+     "Platform Design Info for The Manufacturer's Name Mu11@code{KsubB}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mu11ksuba
@@ -5330,7 +5334,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.mu11ksuba")
     (synopsis "Platform Design Info for The Manufacturer's Name Mu11KsubA")
     (description
-     "Platform Design Info for The Manufacturer's Name Mu11@code{KsubA}")
+     "Platform Design Info for The Manufacturer's Name Mu11@code{KsubA}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mta-1-0
@@ -5355,7 +5359,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mta.1.0")
     (synopsis "Platform Design Info for Affymetrix MTA-1_0")
-    (description "Platform Design Info for Affymetrix MTA-1_0")
+    (description "Platform Design Info for Affymetrix MTA-1_0.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mouse430a-2
@@ -5381,7 +5385,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.mouse430a.2")
     (synopsis "Platform Design Info for The Manufacturer's Name Mouse430A_2")
     (description
-     "Platform Design Info for The Manufacturer's Name Mouse430A_2")
+     "Platform Design Info for The Manufacturer's Name Mouse430A_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mouse430-2
@@ -5406,7 +5410,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mouse430.2")
     (synopsis "Platform Design Info for The Manufacturer's Name Mouse430_2")
-    (description "Platform Design Info for The Manufacturer's Name Mouse430_2")
+    (description
+     "Platform Design Info for The Manufacturer's Name Mouse430_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mogene-2-1-st
@@ -5431,7 +5436,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mogene.2.1.st")
     (synopsis "Platform Design Info for Affymetrix MoGene-2_1-st")
-    (description "Platform Design Info for Affymetrix @code{MoGene-2_1-st}")
+    (description "Platform Design Info for Affymetrix @code{MoGene-2_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mogene-2-0-st
@@ -5456,7 +5461,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mogene.2.0.st")
     (synopsis "Platform Design Info for Affymetrix MoGene-2_0-st")
-    (description "Platform Design Info for Affymetrix @code{MoGene-2_0-st}")
+    (description "Platform Design Info for Affymetrix @code{MoGene-2_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mogene-1-1-st-v1
@@ -5481,7 +5486,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mogene.1.1.st.v1")
     (synopsis "Platform Design Info for Affymetrix MoGene-1_1-st-v1")
-    (description "Platform Design Info for Affymetrix @code{MoGene-1_1-st-v1}")
+    (description
+     "Platform Design Info for Affymetrix @code{MoGene-1_1-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mogene-1-0-st-v1
@@ -5506,7 +5512,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mogene.1.0.st.v1")
     (synopsis "Platform Design Info for Affymetrix MoGene-1_0-st-v1")
-    (description "Platform Design Info for Affymetrix @code{MoGene-1_0-st-v1}")
+    (description
+     "Platform Design Info for Affymetrix @code{MoGene-1_0-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-moex-1-0-st-v1
@@ -5531,7 +5538,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.moex.1.0.st.v1")
     (synopsis "Platform Design Info for Affymetrix MoEx-1_0-st-v1")
-    (description "Platform Design Info for Affymetrix @code{MoEx-1_0-st-v1}")
+    (description "Platform Design Info for Affymetrix @code{MoEx-1_0-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-moe430b
@@ -5556,7 +5563,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.moe430b")
     (synopsis "Platform Design Info for The Manufacturer's Name MOE430B")
-    (description "Platform Design Info for The Manufacturer's Name MOE430B")
+    (description "Platform Design Info for The Manufacturer's Name MOE430B.")
     (license license:artistic2.0)))
 
 (define-public r-pd-moe430a
@@ -5581,7 +5588,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.moe430a")
     (synopsis "Platform Design Info for The Manufacturer's Name MOE430A")
-    (description "Platform Design Info for The Manufacturer's Name MOE430A")
+    (description "Platform Design Info for The Manufacturer's Name MOE430A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mirna-4-0
@@ -5606,7 +5613,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mirna.4.0")
     (synopsis "Platform Design Info for Affymetrix miRNA-4_0")
-    (description "Platform Design Info for Affymetrix @code{miRNA-4_0}")
+    (description "Platform Design Info for Affymetrix @code{miRNA-4_0}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mirna-3-1
@@ -5630,7 +5637,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mirna.3.1")
     (synopsis "Platform Design Info for Affymetrix miRNA-3_1")
-    (description "Platform Design Info for Affymetrix @code{miRNA-3_1}")
+    (description "Platform Design Info for Affymetrix @code{miRNA-3_1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mirna-3-0
@@ -5655,7 +5662,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mirna.3.0")
     (synopsis "Platform Design Info for Affymetrix miRNA-3_0")
-    (description "Platform Design Info for Affymetrix @code{miRNA-3_0}")
+    (description "Platform Design Info for Affymetrix @code{miRNA-3_0}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mirna-2-0
@@ -5680,7 +5687,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mirna.2.0")
     (synopsis "Platform Design Info for Affymetrix miRNA-2_0")
-    (description "Platform Design Info for Affymetrix @code{miRNA-2_0}")
+    (description "Platform Design Info for Affymetrix @code{miRNA-2_0}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mirna-1-0
@@ -5706,7 +5713,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.mirna.1.0")
     (synopsis "Platform Design Info for The Manufacturer's Name miRNA-1_0")
     (description
-     "Platform Design Info for The Manufacturer's Name @code{miRNA-1_0}")
+     "Platform Design Info for The Manufacturer's Name @code{miRNA-1_0}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mg-u74cv2
@@ -5731,7 +5738,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mg.u74cv2")
     (synopsis "Platform Design Info for The Manufacturer's Name MG_U74Cv2")
-    (description "Platform Design Info for The Manufacturer's Name MG_U74Cv2")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74Cv2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mg-u74c
@@ -5756,7 +5763,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mg.u74c")
     (synopsis "Platform Design Info for The Manufacturer's Name MG_U74C")
-    (description "Platform Design Info for The Manufacturer's Name MG_U74C")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74C.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mg-u74bv2
@@ -5781,7 +5788,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mg.u74bv2")
     (synopsis "Platform Design Info for The Manufacturer's Name MG_U74Bv2")
-    (description "Platform Design Info for The Manufacturer's Name MG_U74Bv2")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74Bv2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mg-u74b
@@ -5806,7 +5813,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mg.u74b")
     (synopsis "Platform Design Info for The Manufacturer's Name MG_U74B")
-    (description "Platform Design Info for The Manufacturer's Name MG_U74B")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74B.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mg-u74av2
@@ -5831,7 +5838,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mg.u74av2")
     (synopsis "Platform Design Info for The Manufacturer's Name MG_U74Av2")
-    (description "Platform Design Info for The Manufacturer's Name MG_U74Av2")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74Av2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mg-u74a
@@ -5856,7 +5863,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mg.u74a")
     (synopsis "Platform Design Info for The Manufacturer's Name MG_U74A")
-    (description "Platform Design Info for The Manufacturer's Name MG_U74A")
+    (description "Platform Design Info for The Manufacturer's Name MG_U74A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-medicago
@@ -5881,7 +5888,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.medicago")
     (synopsis "Platform Design Info for The Manufacturer's Name Medicago")
-    (description "Platform Design Info for The Manufacturer's Name Medicago")
+    (description "Platform Design Info for The Manufacturer's Name Medicago.")
     (license license:artistic2.0)))
 
 (define-public r-pd-medgene-1-1-st
@@ -5906,7 +5913,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.medgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix MedGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{MedGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{MedGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-medgene-1-0-st
@@ -5931,7 +5938,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.medgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix MedGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{MedGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{MedGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-margene-1-1-st
@@ -5956,7 +5963,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.margene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix MarGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{MarGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{MarGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-margene-1-0-st
@@ -5981,7 +5988,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.margene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix MarGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{MarGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{MarGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mapping50k-hind240
@@ -6006,7 +6013,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mapping50k.hind240")
     (synopsis "Platform Design Info for Affymetrix Mapping50K_Hind240")
-    (description "Platform Design Info for Affymetrix Mapping50K_Hind240")
+    (description "Platform Design Info for Affymetrix Mapping50K_Hind240.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mapping250k-sty
@@ -6031,7 +6038,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mapping250k.sty")
     (synopsis "Platform Design Info for Affymetrix Mapping250K_Sty")
-    (description "Platform Design Info for Affymetrix Mapping250K_Sty")
+    (description "Platform Design Info for Affymetrix Mapping250K_Sty.")
     (license license:artistic2.0)))
 
 (define-public r-pd-mapping250k-nsp
@@ -6056,7 +6063,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.mapping250k.nsp")
     (synopsis "Platform Design Info for Affymetrix Mapping250K_Nsp")
-    (description "Platform Design Info for Affymetrix Mapping250K_Nsp")
+    (description "Platform Design Info for Affymetrix Mapping250K_Nsp.")
     (license license:artistic2.0)))
 
 (define-public r-pd-maize
@@ -6081,7 +6088,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.maize")
     (synopsis "Platform Design Info for The Manufacturer's Name Maize")
-    (description "Platform Design Info for The Manufacturer's Name Maize")
+    (description "Platform Design Info for The Manufacturer's Name Maize.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hugene-2-1-st
@@ -6106,7 +6113,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hugene.2.1.st")
     (synopsis "Platform Design Info for Affymetrix HuGene-2_1-st")
-    (description "Platform Design Info for Affymetrix @code{HuGene-2_1-st}")
+    (description "Platform Design Info for Affymetrix @code{HuGene-2_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hugene-2-0-st
@@ -6131,7 +6138,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hugene.2.0.st")
     (synopsis "Platform Design Info for Affymetrix HuGene-2_0-st")
-    (description "Platform Design Info for Affymetrix @code{HuGene-2_0-st}")
+    (description "Platform Design Info for Affymetrix @code{HuGene-2_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hugene-1-1-st-v1
@@ -6156,7 +6163,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hugene.1.1.st.v1")
     (synopsis "Platform Design Info for Affymetrix HuGene-1_1-st-v1")
-    (description "Platform Design Info for Affymetrix @code{HuGene-1_1-st-v1}")
+    (description
+     "Platform Design Info for Affymetrix @code{HuGene-1_1-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hugene-1-0-st-v1
@@ -6181,7 +6189,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hugene.1.0.st.v1")
     (synopsis "Platform Design Info for Affymetrix HuGene-1_0-st-v1")
-    (description "Platform Design Info for Affymetrix @code{HuGene-1_0-st-v1}")
+    (description
+     "Platform Design Info for Affymetrix @code{HuGene-1_0-st-v1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-huex-1-0-st-v2
@@ -6206,7 +6215,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.huex.1.0.st.v2")
     (synopsis "Platform Design Info for Affymetrix HuEx-1_0-st-v2")
-    (description "Platform Design Info for Affymetrix @code{HuEx-1_0-st-v2}")
+    (description "Platform Design Info for Affymetrix @code{HuEx-1_0-st-v2}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hu6800
@@ -6231,7 +6240,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hu6800")
     (synopsis "Platform Design Info for The Manufacturer's Name Hu6800")
-    (description "Platform Design Info for The Manufacturer's Name Hu6800")
+    (description "Platform Design Info for The Manufacturer's Name Hu6800.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hta-2-0
@@ -6256,7 +6265,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hta.2.0")
     (synopsis "Platform Design Info for Affymetrix HTA-2_0")
-    (description "Platform Design Info for Affymetrix HTA-2_0")
+    (description "Platform Design Info for Affymetrix HTA-2_0.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ht-mg-430a
@@ -6281,7 +6290,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ht.mg.430a")
     (synopsis "Platform Design Info for The Manufacturer's Name HT_MG-430A")
-    (description "Platform Design Info for The Manufacturer's Name HT_MG-430A")
+    (description
+     "Platform Design Info for The Manufacturer's Name HT_MG-430A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ht-hg-u133a
@@ -6307,7 +6317,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.ht.hg.u133a")
     (synopsis "Platform Design Info for The Manufacturer's Name HT_HG-U133A")
     (description
-     "Platform Design Info for The Manufacturer's Name HT_HG-U133A")
+     "Platform Design Info for The Manufacturer's Name HT_HG-U133A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ht-hg-u133-plus-pm
@@ -6334,7 +6344,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name HT_HG-U133_Plus_PM")
     (description
-     "Platform Design Info for The Manufacturer's Name HT_HG-U133_Plus_PM")
+     "Platform Design Info for The Manufacturer's Name HT_HG-U133_Plus_PM.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg18-60mer-expr
@@ -6359,7 +6369,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg18.60mer.expr")
     (synopsis "Platform Design Info for NimbleGen hg18_60mer_expr")
-    (description "Platform Design Info for @code{NimbleGen} hg18_60mer_expr")
+    (description "Platform Design Info for @code{NimbleGen} hg18_60mer_expr.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u95e
@@ -6384,7 +6394,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u95e")
     (synopsis "Platform Design Info for The Manufacturer's Name HG_U95E")
-    (description "Platform Design Info for The Manufacturer's Name HG_U95E")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95E.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u95d
@@ -6409,7 +6419,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u95d")
     (synopsis "Platform Design Info for The Manufacturer's Name HG_U95D")
-    (description "Platform Design Info for The Manufacturer's Name HG_U95D")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95D.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u95c
@@ -6434,7 +6444,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u95c")
     (synopsis "Platform Design Info for The Manufacturer's Name HG_U95C")
-    (description "Platform Design Info for The Manufacturer's Name HG_U95C")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95C.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u95b
@@ -6459,7 +6469,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u95b")
     (synopsis "Platform Design Info for The Manufacturer's Name HG_U95B")
-    (description "Platform Design Info for The Manufacturer's Name HG_U95B")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95B.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u95av2
@@ -6484,7 +6494,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u95av2")
     (synopsis "Platform Design Info for The Manufacturer's Name HG_U95Av2")
-    (description "Platform Design Info for The Manufacturer's Name HG_U95Av2")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95Av2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u95a
@@ -6509,7 +6519,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u95a")
     (synopsis "Platform Design Info for The Manufacturer's Name HG_U95A")
-    (description "Platform Design Info for The Manufacturer's Name HG_U95A")
+    (description "Platform Design Info for The Manufacturer's Name HG_U95A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u219
@@ -6534,7 +6544,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u219")
     (synopsis "Platform Design Info for The Manufacturer's Name HG-U219")
-    (description "Platform Design Info for The Manufacturer's Name HG-U219")
+    (description "Platform Design Info for The Manufacturer's Name HG-U219.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u133b
@@ -6559,7 +6569,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u133b")
     (synopsis "Platform Design Info for The Manufacturer's Name HG-U133B")
-    (description "Platform Design Info for The Manufacturer's Name HG-U133B")
+    (description "Platform Design Info for The Manufacturer's Name HG-U133B.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u133a-tag
@@ -6585,7 +6595,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.hg.u133a.tag")
     (synopsis "Platform Design Info for The Manufacturer's Name HG-U133A_tag")
     (description
-     "Platform Design Info for The Manufacturer's Name HG-U133A_tag")
+     "Platform Design Info for The Manufacturer's Name HG-U133A_tag.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u133a-2
@@ -6610,7 +6620,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u133a.2")
     (synopsis "Platform Design Info for The Manufacturer's Name HG-U133A_2")
-    (description "Platform Design Info for The Manufacturer's Name HG-U133A_2")
+    (description
+     "Platform Design Info for The Manufacturer's Name HG-U133A_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u133a
@@ -6635,7 +6646,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.u133a")
     (synopsis "Platform Design Info for The Manufacturer's Name HG-U133A")
-    (description "Platform Design Info for The Manufacturer's Name HG-U133A")
+    (description "Platform Design Info for The Manufacturer's Name HG-U133A.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-u133-plus-2
@@ -6662,7 +6673,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for The Manufacturer's Name HG-U133_Plus_2")
     (description
-     "Platform Design Info for The Manufacturer's Name HG-U133_Plus_2")
+     "Platform Design Info for The Manufacturer's Name HG-U133_Plus_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hg-focus
@@ -6687,7 +6698,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hg.focus")
     (synopsis "Platform Design Info for The Manufacturer's Name HG-Focus")
-    (description "Platform Design Info for The Manufacturer's Name HG-Focus")
+    (description "Platform Design Info for The Manufacturer's Name HG-Focus.")
     (license license:artistic2.0)))
 
 (define-public r-pd-hc-g110
@@ -6712,7 +6723,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.hc.g110")
     (synopsis "Platform Design Info for The Manufacturer's Name HC_G110")
-    (description "Platform Design Info for The Manufacturer's Name HC_G110")
+    (description "Platform Design Info for The Manufacturer's Name HC_G110.")
     (license license:artistic2.0)))
 
 (define-public r-pd-guigene-1-1-st
@@ -6737,7 +6748,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.guigene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix GuiGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{GuiGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{GuiGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-guigene-1-0-st
@@ -6762,7 +6773,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.guigene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix GuiGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{GuiGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{GuiGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-genomewidesnp-6
@@ -6787,7 +6798,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.genomewidesnp.6")
     (synopsis "Platform Design Info for Affymetrix GenomeWideSNP_6")
-    (description "Platform Design Info for Affymetrix @code{GenomeWideSNP_6}")
+    (description "Platform Design Info for Affymetrix @code{GenomeWideSNP_6}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-genomewidesnp-5
@@ -6812,7 +6823,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.genomewidesnp.5")
     (synopsis "Platform Design Info for Affymetrix GenomeWideSNP_5")
-    (description "Platform Design Info for Affymetrix @code{GenomeWideSNP_5}")
+    (description "Platform Design Info for Affymetrix @code{GenomeWideSNP_5}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-fingene-1-1-st
@@ -6837,7 +6848,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.fingene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix FinGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{FinGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{FinGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-fingene-1-0-st
@@ -6862,7 +6873,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.fingene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix FinGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{FinGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{FinGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-felgene-1-1-st
@@ -6887,7 +6898,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.felgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix FelGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{FelGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{FelGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-felgene-1-0-st
@@ -6912,7 +6923,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.felgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix FelGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{FelGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{FelGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-feinberg-mm8-me-hx1
@@ -6937,7 +6948,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.feinberg.mm8.me.hx1")
     (synopsis "Platform Design Info for NimbleGen feinberg_mm8_me_hx1")
     (description
-     "Platform Design Info for @code{NimbleGen} feinberg_mm8_me_hx1")
+     "Platform Design Info for @code{NimbleGen} feinberg_mm8_me_hx1.")
     (license license:artistic2.0)))
 
 (define-public r-pd-feinberg-hg18-me-hx1
@@ -6962,7 +6973,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.feinberg.hg18.me.hx1")
     (synopsis "Platform Design Info for NimbleGen feinberg_hg18_me_hx1")
     (description
-     "Platform Design Info for @code{NimbleGen} feinberg_hg18_me_hx1")
+     "Platform Design Info for @code{NimbleGen} feinberg_hg18_me_hx1.")
     (license license:artistic2.0)))
 
 (define-public r-pd-equgene-1-1-st
@@ -6987,7 +6998,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.equgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix EquGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{EquGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{EquGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-equgene-1-0-st
@@ -7012,7 +7023,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.equgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix EquGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{EquGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{EquGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-elegene-1-1-st
@@ -7037,7 +7048,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.elegene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix EleGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{EleGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{EleGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-elegene-1-0-st
@@ -7062,7 +7073,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.elegene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix EleGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{EleGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{EleGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ecoli-asv2
@@ -7087,7 +7098,8 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ecoli.asv2")
     (synopsis "Platform Design Info for The Manufacturer's Name Ecoli_ASv2")
-    (description "Platform Design Info for The Manufacturer's Name Ecoli_ASv2")
+    (description
+     "Platform Design Info for The Manufacturer's Name Ecoli_ASv2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ecoli
@@ -7112,7 +7124,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ecoli")
     (synopsis "Platform Design Info for The Manufacturer's Name Ecoli")
-    (description "Platform Design Info for The Manufacturer's Name Ecoli")
+    (description "Platform Design Info for The Manufacturer's Name Ecoli.")
     (license license:artistic2.0)))
 
 (define-public r-pd-e-coli-2
@@ -7137,7 +7149,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.e.coli.2")
     (synopsis "Platform Design Info for The Manufacturer's Name E_coli_2")
-    (description "Platform Design Info for The Manufacturer's Name E_coli_2")
+    (description "Platform Design Info for The Manufacturer's Name E_coli_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-drosophila-2
@@ -7163,7 +7175,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.drosophila.2")
     (synopsis "Platform Design Info for The Manufacturer's Name Drosophila_2")
     (description
-     "Platform Design Info for The Manufacturer's Name Drosophila_2")
+     "Platform Design Info for The Manufacturer's Name Drosophila_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-drosgenome1
@@ -7189,7 +7201,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.drosgenome1")
     (synopsis "Platform Design Info for The Manufacturer's Name DrosGenome1")
     (description
-     "Platform Design Info for The Manufacturer's Name @code{DrosGenome1}")
+     "Platform Design Info for The Manufacturer's Name @code{DrosGenome1}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-drogene-1-1-st
@@ -7214,7 +7226,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.drogene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix DroGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{DroGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{DroGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-drogene-1-0-st
@@ -7239,7 +7251,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.drogene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix DroGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{DroGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{DroGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cytogenetics-array
@@ -7264,7 +7276,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cytogenetics.array")
     (synopsis "Platform Design Info for Affymetrix Cytogenetics_Array")
-    (description "Platform Design Info for Affymetrix Cytogenetics_Array")
+    (description "Platform Design Info for Affymetrix Cytogenetics_Array.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cyrgene-1-1-st
@@ -7289,7 +7301,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cyrgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix CyRGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{CyRGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{CyRGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cyrgene-1-0-st
@@ -7314,7 +7326,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cyrgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix CyRGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{CyRGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{CyRGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cyngene-1-1-st
@@ -7339,7 +7351,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cyngene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix CynGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{CynGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{CynGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cyngene-1-0-st
@@ -7364,7 +7376,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cyngene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix CynGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{CynGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{CynGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cotton
@@ -7389,7 +7401,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cotton")
     (synopsis "Platform Design Info for The Manufacturer's Name Cotton")
-    (description "Platform Design Info for The Manufacturer's Name Cotton")
+    (description "Platform Design Info for The Manufacturer's Name Cotton.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-s-rat-ht
@@ -7414,7 +7426,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.s.rat.ht")
     (synopsis "Platform Design Info for Affymetrix Clariom_S_Rat_HT")
-    (description "Platform Design Info for Affymetrix Clariom_S_Rat_HT")
+    (description "Platform Design Info for Affymetrix Clariom_S_Rat_HT.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-s-rat
@@ -7439,7 +7451,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.s.rat")
     (synopsis "Platform Design Info for Affymetrix Clariom_S_Rat")
-    (description "Platform Design Info for Affymetrix Clariom_S_Rat")
+    (description "Platform Design Info for Affymetrix Clariom_S_Rat.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-s-mouse-ht
@@ -7464,7 +7476,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.s.mouse.ht")
     (synopsis "Platform Design Info for Affymetrix Clariom_S_Mouse_HT")
-    (description "Platform Design Info for Affymetrix Clariom_S_Mouse_HT")
+    (description "Platform Design Info for Affymetrix Clariom_S_Mouse_HT.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-s-mouse
@@ -7489,7 +7501,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.s.mouse")
     (synopsis "Platform Design Info for Affymetrix Clariom_S_Mouse")
-    (description "Platform Design Info for Affymetrix Clariom_S_Mouse")
+    (description "Platform Design Info for Affymetrix Clariom_S_Mouse.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-s-human-ht
@@ -7514,7 +7526,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.s.human.ht")
     (synopsis "Platform Design Info for Affymetrix Clariom_S_Human_HT")
-    (description "Platform Design Info for Affymetrix Clariom_S_Human_HT")
+    (description "Platform Design Info for Affymetrix Clariom_S_Human_HT.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-s-human
@@ -7539,7 +7551,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.s.human")
     (synopsis "Platform Design Info for Affymetrix Clariom_S_Human")
-    (description "Platform Design Info for Affymetrix Clariom_S_Human")
+    (description "Platform Design Info for Affymetrix Clariom_S_Human.")
     (license license:artistic2.0)))
 
 (define-public r-pd-clariom-d-human
@@ -7564,7 +7576,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.clariom.d.human")
     (synopsis "Platform Design Info for Affymetrix Clariom_D_Human")
-    (description "Platform Design Info for Affymetrix Clariom_D_Human")
+    (description "Platform Design Info for Affymetrix Clariom_D_Human.")
     (license license:artistic2.0)))
 
 (define-public r-pd-citrus
@@ -7589,7 +7601,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.citrus")
     (synopsis "Platform Design Info for The Manufacturer's Name Citrus")
-    (description "Platform Design Info for The Manufacturer's Name Citrus")
+    (description "Platform Design Info for The Manufacturer's Name Citrus.")
     (license license:artistic2.0)))
 
 (define-public r-pd-chogene-2-1-st
@@ -7614,7 +7626,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.chogene.2.1.st")
     (synopsis "Platform Design Info for Affymetrix CHOGene-2_1-st")
-    (description "Platform Design Info for Affymetrix CHOGene-2_1-st")
+    (description "Platform Design Info for Affymetrix CHOGene-2_1-st.")
     (license license:artistic2.0)))
 
 (define-public r-pd-chogene-2-0-st
@@ -7639,7 +7651,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.chogene.2.0.st")
     (synopsis "Platform Design Info for Affymetrix CHOGene-2_0-st")
-    (description "Platform Design Info for Affymetrix CHOGene-2_0-st")
+    (description "Platform Design Info for Affymetrix CHOGene-2_0-st.")
     (license license:artistic2.0)))
 
 (define-public r-pd-chigene-1-1-st
@@ -7664,7 +7676,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.chigene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix ChiGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{ChiGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{ChiGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-chigene-1-0-st
@@ -7689,7 +7701,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.chigene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix ChiGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{ChiGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{ChiGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-chicken
@@ -7714,7 +7726,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.chicken")
     (synopsis "Platform Design Info for The Manufacturer's Name Chicken")
-    (description "Platform Design Info for The Manufacturer's Name Chicken")
+    (description "Platform Design Info for The Manufacturer's Name Chicken.")
     (license license:artistic2.0)))
 
 (define-public r-pd-charm-hg18-example
@@ -7739,7 +7751,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.charm.hg18.example")
     (synopsis "Platform Design Info for NimbleGen charm_hg18_example")
     (description
-     "Platform Design Info for @code{NimbleGen} charm_hg18_example")
+     "Platform Design Info for @code{NimbleGen} charm_hg18_example.")
     (license license:artistic2.0)))
 
 (define-public r-pd-celegans
@@ -7764,7 +7776,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.celegans")
     (synopsis "Platform Design Info for The Manufacturer's Name Celegans")
-    (description "Platform Design Info for The Manufacturer's Name Celegans")
+    (description "Platform Design Info for The Manufacturer's Name Celegans.")
     (license license:artistic2.0)))
 
 (define-public r-pd-canine-2
@@ -7789,7 +7801,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.canine.2")
     (synopsis "Platform Design Info for The Manufacturer's Name Canine_2")
-    (description "Platform Design Info for The Manufacturer's Name Canine_2")
+    (description "Platform Design Info for The Manufacturer's Name Canine_2.")
     (license license:artistic2.0)))
 
 (define-public r-pd-canine
@@ -7814,7 +7826,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.canine")
     (synopsis "Platform Design Info for The Manufacturer's Name Canine")
-    (description "Platform Design Info for The Manufacturer's Name Canine")
+    (description "Platform Design Info for The Manufacturer's Name Canine.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cangene-1-1-st
@@ -7839,7 +7851,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cangene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix CanGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{CanGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{CanGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-cangene-1-0-st
@@ -7864,7 +7876,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.cangene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix CanGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{CanGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{CanGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-bsubtilis
@@ -7889,7 +7901,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.bsubtilis")
     (synopsis "Platform Design Info for The Manufacturer's Name Bsubtilis")
-    (description "Platform Design Info for The Manufacturer's Name Bsubtilis")
+    (description "Platform Design Info for The Manufacturer's Name Bsubtilis.")
     (license license:artistic2.0)))
 
 (define-public r-pd-bovine
@@ -7914,7 +7926,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.bovine")
     (synopsis "Platform Design Info for The Manufacturer's Name Bovine")
-    (description "Platform Design Info for The Manufacturer's Name Bovine")
+    (description "Platform Design Info for The Manufacturer's Name Bovine.")
     (license license:artistic2.0)))
 
 (define-public r-pd-bovgene-1-1-st
@@ -7939,7 +7951,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.bovgene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix BovGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{BovGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{BovGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-bovgene-1-0-st
@@ -7964,7 +7976,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.bovgene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix BovGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{BovGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{BovGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-barley1
@@ -7989,7 +8001,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.barley1")
     (synopsis "Platform Design Info for The Manufacturer's Name Barley1")
-    (description "Platform Design Info for The Manufacturer's Name Barley1")
+    (description "Platform Design Info for The Manufacturer's Name Barley1.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ath1-121501
@@ -8015,7 +8027,7 @@ inform clinical decision making.")
     (home-page "https://bioconductor.org/packages/pd.ath1.121501")
     (synopsis "Platform Design Info for The Manufacturer's Name ATH1-121501")
     (description
-     "Platform Design Info for The Manufacturer's Name ATH1-121501")
+     "Platform Design Info for The Manufacturer's Name ATH1-121501.")
     (license license:artistic2.0)))
 
 (define-public r-pd-atdschip-tiling
@@ -8040,7 +8052,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.atdschip.tiling")
     (synopsis "Platform Design Info for Affymetrix Atdschip_tiling")
-    (description "Platform Design Info for Affymetrix Atdschip_tiling")
+    (description "Platform Design Info for Affymetrix Atdschip_tiling.")
     (license license:artistic2.0)))
 
 (define-public r-pd-aragene-1-1-st
@@ -8065,7 +8077,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.aragene.1.1.st")
     (synopsis "Platform Design Info for Affymetrix AraGene-1_1-st")
-    (description "Platform Design Info for Affymetrix @code{AraGene-1_1-st}")
+    (description "Platform Design Info for Affymetrix @code{AraGene-1_1-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-aragene-1-0-st
@@ -8090,7 +8102,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.aragene.1.0.st")
     (synopsis "Platform Design Info for Affymetrix AraGene-1_0-st")
-    (description "Platform Design Info for Affymetrix @code{AraGene-1_0-st}")
+    (description "Platform Design Info for Affymetrix @code{AraGene-1_0-st}.")
     (license license:artistic2.0)))
 
 (define-public r-pd-ag
@@ -8115,7 +8127,7 @@ inform clinical decision making.")
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/pd.ag")
     (synopsis "Platform Design Info for The Manufacturer's Name AG")
-    (description "Platform Design Info for The Manufacturer's Name AG")
+    (description "Platform Design Info for The Manufacturer's Name AG.")
     (license license:artistic2.0)))
 
 (define-public r-pd-2006-10-31-rn34-refseq-promoter
@@ -8142,7 +8154,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for NimbleGen 2006-10-31_rn34_refseq_promoter")
     (description
-     "Platform Design Info for @code{NimbleGen} 2006-10-31_rn34_refseq_promoter")
+     "Platform Design Info for @code{NimbleGen} 2006-10-31_rn34_refseq_promoter.")
     (license license:artistic2.0)))
 
 (define-public r-pd-2006-07-18-mm8-refseq-promoter
@@ -8169,7 +8181,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for NimbleGen 2006-07-18_mm8_refseq_promoter")
     (description
-     "Platform Design Info for @code{NimbleGen} 2006-07-18_mm8_refseq_promoter")
+     "Platform Design Info for @code{NimbleGen} 2006-07-18_mm8_refseq_promoter.")
     (license license:artistic2.0)))
 
 (define-public r-pd-2006-07-18-hg18-refseq-promoter
@@ -8196,7 +8208,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for NimbleGen 2006-07-18_hg18_refseq_promoter")
     (description
-     "Platform Design Info for @code{NimbleGen} 2006-07-18_hg18_refseq_promoter")
+     "Platform Design Info for @code{NimbleGen} 2006-07-18_hg18_refseq_promoter.")
     (license license:artistic2.0)))
 
 (define-public r-pd-081229-hg18-promoter-medip-hx1
@@ -8223,7 +8235,7 @@ inform clinical decision making.")
     (synopsis
      "Platform Design Info for NimbleGen 081229_hg18_promoter_medip_hx1")
     (description
-     "Platform Design Info for @code{NimbleGen} 081229_hg18_promoter_medip_hx1")
+     "Platform Design Info for @code{NimbleGen} 081229_hg18_promoter_medip_hx1.")
     (license license:artistic2.0)))
 
 (define-public r-pcxndata
@@ -8671,7 +8683,7 @@ fly chromosome 4 to which the reads can be mapped.")
      "PartheenMetaData http://swegene.onk.lu.se Annotation Data (PartheenMetaData)")
     (description
      "@code{PartheenMetaData} http://swegene.onk.lu.se Annotation Data
-(@code{PartheenMetaData}) assembled using data from public repositories")
+(@code{PartheenMetaData}) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-partcnv

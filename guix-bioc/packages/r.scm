@@ -103,7 +103,7 @@ functions.")
      "Codelink Rat Whole Genome Bioarray (~34 000 rat gene targets) annotation data (chip rwgcod)")
     (description
      "Codelink Rat Whole Genome Bioarray (~34 000 rat gene targets) annotation data
-(chip rwgcod) assembled using data from public repositories")
+(chip rwgcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rvs
@@ -331,7 +331,7 @@ RT_U34.cdf file.")
      "Affymetrix Affymetrix RT_U34 Array annotation data (chip rtu34)")
     (description
      "Affymetrix Affymetrix RT_U34 Array annotation data (chip rtu34) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rtrmui
@@ -571,7 +571,7 @@ regulons.")
      "Package provides RPPA datasets from The Cancer Genome Atlas Project for all
 available cohorts types from http://gdac.broadinstitute.org/.  Data format is
 explained here https://wiki.nci.nih.gov/display/TCGA/Protein+Array
-+Data+Format+Specification?src=search")
++Data+Format+Specification?src=search.")
     (license license:gpl2)))
 
 (define-public r-rtcga-rnaseq
@@ -812,7 +812,7 @@ strategies and various visualization tools.")
     (synopsis "Affymetrix rta10 annotation data (chip rta10transcriptcluster)")
     (description
      "Affymetrix rta10 annotation data (chip rta10transcriptcluster) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rta10probeset-db
@@ -833,7 +833,7 @@ data from public repositories")
     (synopsis "Affymetrix rta10 annotation data (chip rta10probeset)")
     (description
      "Affymetrix rta10 annotation data (chip rta10probeset) assembled using data from
-public repositories")
+public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rsweep
@@ -1039,7 +1039,7 @@ using the Rank-Rank Hypergeometric Overlap test.")
 2023.  It contains the latest bacterial and archaeal taxonomy training set No.
 19 as described in Wang Q, Cole JR. 2024.  Updated RDP taxonomy and RDP
 Classifier for more accurate taxonomic classification.  Microbiol Resour Announc
-0:e01063-23. <doi.org/10.1128/mra.01063-23>")
+0:e01063-23. <doi.org/10.1128/mra.01063-23>.")
     (license license:gpl2)))
 
 (define-public r-rrdp
@@ -1325,7 +1325,7 @@ accuracy.  This package is able to standarizate proper and improper @code{pAUC}.
     (synopsis "Roberts2005Annotation Annotation Data (Roberts2005Annotation)")
     (description
      "Roberts2005Annotation Annotation Data (Roberts2005Annotation) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-roastgsa
@@ -1415,7 +1415,7 @@ RN_U34.CDF file.")
      "Affymetrix Affymetrix RN_U34 Array annotation data (chip rnu34)")
     (description
      "Affymetrix Affymetrix RN_U34 Array annotation data (chip rnu34) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rnits
@@ -1622,7 +1622,7 @@ visualization, and parameter optimization.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/RNASeqPower")
     (synopsis "Sample size for RNAseq studies")
-    (description "RNA-seq, sample size")
+    (description "RNA-seq, sample size.")
     (license (license:fsdg-compatible "LGPL (>=2)"))))
 
 (define-public r-rnaseqdata-hnrnpc-bam-chr14
@@ -2016,7 +2016,7 @@ for quality control and analysis.")
      "Agilent Chips that use Agilent design number 028282 annotation data (chip RnAgilentDesign028282)")
     (description
      "Agilent Chips that use Agilent design number 028282 annotation data (chip
-@code{RnAgilentDesign028282}) assembled using data from public repositories")
+@code{RnAgilentDesign028282}) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rnaeditr
@@ -2206,7 +2206,7 @@ multi-mapping reads in an unabiased way.")
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/RmiR.hsa")
     (synopsis "Various databases of microRNA Targets")
-    (description "Various databases of @code{microRNA} Targets")
+    (description "Various databases of @code{microRNA} Targets.")
     (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
 
 (define-public r-rmir-hs-mirna
@@ -2225,7 +2225,7 @@ multi-mapping reads in an unabiased way.")
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/RmiR.Hs.miRNA")
     (synopsis "Various databases of microRNA Targets")
-    (description "Various databases of @code{microRNA} Targets")
+    (description "Various databases of @code{microRNA} Targets.")
     (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
 
 (define-public r-rmelting
@@ -2934,7 +2934,7 @@ gene expression plots.  The package is still under development.")
      "Codelink Rat Inflammation 16 Bioarray annotation data (chip ri16cod)")
     (description
      "Codelink Rat Inflammation 16 Bioarray annotation data (chip ri16cod) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rheumaticconditionwollbold
@@ -3063,7 +3063,7 @@ graciously provided by John Readey of the HDF Group.")
     (synopsis "Agilent \"Rat Genome, Whole\" annotation data (chip rgug4131a)")
     (description
      "Agilent \"Rat Genome, Whole\" annotation data (chip rgug4131a) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rgug4130a-db
@@ -3084,7 +3084,7 @@ data from public repositories")
     (synopsis "Agilent Rat annotation data (chip rgug4130a)")
     (description
      "Agilent Rat annotation data (chip rgug4130a) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rgug4105a-db
@@ -3105,7 +3105,7 @@ repositories")
     (synopsis "Agilent annotation data (chip rgug4105a)")
     (description
      "Agilent annotation data (chip rgug4105a) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rguatlas4k-db
@@ -3127,7 +3127,7 @@ repositories")
      "Clontech BD Atlas Long Oligos Rat 4K annotation data (chip rguatlas4k)")
     (description
      "Clontech BD Atlas Long Oligos Rat 4K annotation data (chip rguatlas4k) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rgu34cprobe
@@ -3192,7 +3192,7 @@ RG_U34C.cdf file.")
      "Affymetrix Affymetrix RG_U34C Array annotation data (chip rgu34c)")
     (description
      "Affymetrix Affymetrix RG_U34C Array annotation data (chip rgu34c) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rgu34bprobe
@@ -3257,7 +3257,7 @@ RG_U34B.cdf file.")
      "Affymetrix Affymetrix RG_U34B Array annotation data (chip rgu34b)")
     (description
      "Affymetrix Affymetrix RG_U34B Array annotation data (chip rgu34b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rgu34aprobe
@@ -3322,7 +3322,7 @@ RG_U34A.cdf file.")
      "Affymetrix Affymetrix RG_U34A Array annotation data (chip rgu34a)")
     (description
      "Affymetrix Affymetrix RG_U34A Array annotation data (chip rgu34a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rgsea
@@ -5383,7 +5383,7 @@ in @code{SynComs}, but also predict the contaminants in @code{SynCom} samples.")
     (propagated-inputs (list r-rpart r-graph r-biobase))
     (home-page "http://www.biostat.harvard.edu/~carey")
     (synopsis "Support for Springer monograph on Bioconductor")
-    (description "tools for building book")
+    (description "tools for building book.")
     (license license:artistic2.0)))
 
 (define-public r-rawrr
@@ -5530,7 +5530,7 @@ The file name was @code{RatToxFX\\_probe\\_tab}.")
     (synopsis "data package containing annotation data for ratCHRLOC")
     (description
      "Annotation data file for @code{ratCHRLOC} assembled using data from public data
-repositories")
+repositories.")
     (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
 
 (define-public r-rat2302probe
@@ -5616,7 +5616,7 @@ Rat230_2.cdf file.")
      "Affymetrix Affymetrix Rat230_2 Array annotation data (chip rat2302)")
     (description
      "Affymetrix Affymetrix Rat230_2 Array annotation data (chip rat2302) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rat-db0
@@ -5971,7 +5971,7 @@ Platforms.  Cancer Res 1 January 2023; 83 (1): 49–58.")
      "Affymetrix ragene21 annotation data (chip ragene21sttranscriptcluster)")
     (description
      "Affymetrix ragene21 annotation data (chip ragene21sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene21stprobeset-db
@@ -5992,7 +5992,7 @@ using data from public repositories")
     (synopsis "Affymetrix ragene21 annotation data (chip ragene21stprobeset)")
     (description
      "Affymetrix ragene21 annotation data (chip ragene21stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene20sttranscriptcluster-db
@@ -6015,7 +6015,7 @@ data from public repositories")
      "Affymetrix ragene20 annotation data (chip ragene20sttranscriptcluster)")
     (description
      "Affymetrix ragene20 annotation data (chip ragene20sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene20stprobeset-db
@@ -6036,7 +6036,7 @@ using data from public repositories")
     (synopsis "Affymetrix ragene20 annotation data (chip ragene20stprobeset)")
     (description
      "Affymetrix ragene20 annotation data (chip ragene20stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene11sttranscriptcluster-db
@@ -6059,7 +6059,7 @@ data from public repositories")
      "Affymetrix ragene11 annotation data (chip ragene11sttranscriptcluster)")
     (description
      "Affymetrix ragene11 annotation data (chip ragene11sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene11stprobeset-db
@@ -6080,7 +6080,7 @@ using data from public repositories")
     (synopsis "Affymetrix ragene11 annotation data (chip ragene11stprobeset)")
     (description
      "Affymetrix ragene11 annotation data (chip ragene11stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene10stv1probe
@@ -6146,7 +6146,7 @@ The file name was @code{RaGene-1\\_0-st-v1\\_probe\\_tab}.")
      "Affymetrix ragene10 annotation data (chip ragene10sttranscriptcluster)")
     (description
      "Affymetrix ragene10 annotation data (chip ragene10sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ragene10stprobeset-db
@@ -6167,7 +6167,7 @@ using data from public repositories")
     (synopsis "Affymetrix ragene10 annotation data (chip ragene10stprobeset)")
     (description
      "Affymetrix ragene10 annotation data (chip ragene10stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-raexexonprobesetlocation
@@ -6212,7 +6212,7 @@ using @code{AffyCompatible}.")
      "Affymetrix raex10 annotation data (chip raex10sttranscriptcluster)")
     (description
      "Affymetrix raex10 annotation data (chip raex10sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-raex10stprobeset-db
@@ -6233,7 +6233,7 @@ using data from public repositories")
     (synopsis "Affymetrix raex10 annotation data (chip raex10stprobeset)")
     (description
      "Affymetrix raex10 annotation data (chip raex10stprobeset) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-raerdata
@@ -6369,7 +6369,7 @@ RAE230B.CDF file.")
      "Affymetrix Affymetrix RAE230B Array annotation data (chip rae230b)")
     (description
      "Affymetrix Affymetrix RAE230B Array annotation data (chip rae230b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-rae230aprobe
@@ -6434,7 +6434,7 @@ RAE230A.CDF file.")
      "Affymetrix Affymetrix RAE230A Array annotation data (chip rae230a)")
     (description
      "Affymetrix Affymetrix RAE230A Array annotation data (chip rae230a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-r453plus1toolbox
@@ -6549,6 +6549,6 @@ probably to work together to maintain chormatin interaction given a
      "Codelink UniSet Rat I Bioarray (~10 000 rat gene targets) annotation data (chip r10kcod)")
     (description
      "Codelink @code{UniSet} Rat I Bioarray (~10 000 rat gene targets) annotation data
-(chip r10kcod) assembled using data from public repositories")
+(chip r10kcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 

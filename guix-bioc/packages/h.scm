@@ -137,7 +137,7 @@ commonly used in the literature.")
      "Codelink Human Whole Genome Bioarray (~55 000 human genes) annotation data (chip hwgcod)")
     (description
      "Codelink Human Whole Genome Bioarray (~55 000 human genes) annotation data (chip
-hwgcod) assembled using data from public repositories")
+hwgcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-huo22-db
@@ -158,7 +158,7 @@ hwgcod) assembled using data from public repositories")
     (synopsis "FHCRC Genomics Shared Resource HuO22 Annotation Data (HuO22)")
     (description
      "FHCRC Genomics Shared Resource @code{HuO22} Annotation Data (@code{HuO22})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hummingbird
@@ -353,7 +353,7 @@ crlmm package.")
     (synopsis "data package containing annotation data for humanCHRLOC")
     (description
      "Annotation data file for @code{humanCHRLOC} assembled using data from public
-data repositories")
+data repositories.")
     (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
 
 (define-public r-humanaffydata
@@ -589,7 +589,7 @@ package.")
      "Affymetrix hugene21 annotation data (chip hugene21sttranscriptcluster)")
     (description
      "Affymetrix hugene21 annotation data (chip hugene21sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene21stprobeset-db
@@ -610,7 +610,7 @@ using data from public repositories")
     (synopsis "Affymetrix hugene21 annotation data (chip hugene21stprobeset)")
     (description
      "Affymetrix hugene21 annotation data (chip hugene21stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene20sttranscriptcluster-db
@@ -633,7 +633,7 @@ data from public repositories")
      "Affymetrix hugene20 annotation data (chip hugene20sttranscriptcluster)")
     (description
      "Affymetrix hugene20 annotation data (chip hugene20sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene20stprobeset-db
@@ -654,7 +654,7 @@ using data from public repositories")
     (synopsis "Affymetrix hugene20 annotation data (chip hugene20stprobeset)")
     (description
      "Affymetrix hugene20 annotation data (chip hugene20stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene11sttranscriptcluster-db
@@ -677,7 +677,7 @@ data from public repositories")
      "Affymetrix hugene11 annotation data (chip hugene11sttranscriptcluster)")
     (description
      "Affymetrix hugene11 annotation data (chip hugene11sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene11stprobeset-db
@@ -698,7 +698,7 @@ using data from public repositories")
     (synopsis "Affymetrix hugene11 annotation data (chip hugene11stprobeset)")
     (description
      "Affymetrix hugene11 annotation data (chip hugene11stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene10stv1probe
@@ -764,7 +764,7 @@ The file name was @code{HuGene-1\\_0-st-v1\\_probe\\_tab}.")
      "Affymetrix hugene10 annotation data (chip hugene10sttranscriptcluster)")
     (description
      "Affymetrix hugene10 annotation data (chip hugene10sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene10stprobeset-db
@@ -785,7 +785,7 @@ using data from public repositories")
     (synopsis "Affymetrix hugene10 annotation data (chip hugene10stprobeset)")
     (description
      "Affymetrix hugene10 annotation data (chip hugene10stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hugene-1-0-st-v1frmavecs
@@ -900,7 +900,7 @@ using @code{AffyCompatible}.")
      "Affymetrix huex10 annotation data (chip huex10sttranscriptcluster)")
     (description
      "Affymetrix huex10 annotation data (chip huex10sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-huex10stprobeset-db
@@ -921,7 +921,7 @@ using data from public repositories")
     (synopsis "Affymetrix huex10 annotation data (chip huex10stprobeset)")
     (description
      "Affymetrix huex10 annotation data (chip huex10stprobeset) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-huex-1-0-st-v2frmavecs
@@ -1118,7 +1118,7 @@ Hu6800.CDF file.")
      "Affymetrix Affymetrix Hu6800 Array annotation data (chip hu6800)")
     (description
      "Affymetrix Affymetrix Hu6800 Array annotation data (chip hu6800) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hu35ksubdprobe
@@ -1183,7 +1183,7 @@ Hu35@code{KsubD.CDF} file.")
      "Affymetrix Affymetrix Hu35KsubD Array annotation data (chip hu35ksubd)")
     (description
      "Affymetrix Affymetrix Hu35@code{KsubD} Array annotation data (chip hu35ksubd)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hu35ksubcprobe
@@ -1248,7 +1248,7 @@ Hu35@code{KsubC.CDF} file.")
      "Affymetrix Affymetrix Hu35KsubC Array annotation data (chip hu35ksubc)")
     (description
      "Affymetrix Affymetrix Hu35@code{KsubC} Array annotation data (chip hu35ksubc)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hu35ksubbprobe
@@ -1313,7 +1313,7 @@ Hu35@code{KsubB.CDF} file.")
      "Affymetrix Affymetrix Hu35KsubB Array annotation data (chip hu35ksubb)")
     (description
      "Affymetrix Affymetrix Hu35@code{KsubB} Array annotation data (chip hu35ksubb)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hu35ksubaprobe
@@ -1378,7 +1378,7 @@ Hu35@code{KsubA.CDF} file.")
      "Affymetrix Affymetrix Hu35KsubA Array annotation data (chip hu35ksuba)")
     (description
      "Affymetrix Affymetrix Hu35@code{KsubA} Array annotation data (chip hu35ksuba)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-htsfilter
@@ -1504,7 +1504,7 @@ HT_Rat-Focus.cdf file.")
      "Affymetrix Affymetrix HT_Rat-Focus Array annotation data (chip htratfocus)")
     (description
      "Affymetrix Affymetrix HT_Rat-Focus Array annotation data (chip htratfocus)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-htrat230pmprobe
@@ -1569,7 +1569,7 @@ HT_Rat230_PM.cdf file.")
      "Affymetrix Affymetrix HT_Rat230_PM Array annotation data (chip htrat230pm)")
     (description
      "Affymetrix Affymetrix HT_Rat230_PM Array annotation data (chip htrat230pm)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-htmg430pmprobe
@@ -1634,7 +1634,7 @@ HT_MG-430_PM.cdf file.")
      "Affymetrix Affymetrix HT_MG-430_PM Array annotation data (chip htmg430pm)")
     (description
      "Affymetrix Affymetrix HT_MG-430_PM Array annotation data (chip htmg430pm)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-htmg430bprobe
@@ -1699,7 +1699,7 @@ HT_MG-430B.cdf file.")
      "Affymetrix Affymetrix HT_MG-430B Array annotation data (chip htmg430b)")
     (description
      "Affymetrix Affymetrix HT_MG-430B Array annotation data (chip htmg430b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-htmg430aprobe
@@ -1764,7 +1764,7 @@ HT_MG-430A.cdf file.")
      "Affymetrix Affymetrix HT_MG-430A Array annotation data (chip htmg430a)")
     (description
      "Affymetrix Affymetrix HT_MG-430A Array annotation data (chip htmg430a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hthgu133pluspmprobe
@@ -1829,7 +1829,7 @@ HT_HG-U133_Plus_PM.CDF file.")
      "Affymetrix Affymetrix HT_HG-U133_Plus_PM Array annotation data (chip hthgu133pluspm)")
     (description
      "Affymetrix Affymetrix HT_HG-U133_Plus_PM Array annotation data (chip
-hthgu133pluspm) assembled using data from public repositories")
+hthgu133pluspm) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hthgu133plusb-db
@@ -1851,7 +1851,7 @@ hthgu133pluspm) assembled using data from public repositories")
      "Affymetrix Affymetrix HT_HG-U133_Plus_B Array annotation data (chip hthgu133plusb)")
     (description
      "Affymetrix Affymetrix HT_HG-U133_Plus_B Array annotation data (chip
-hthgu133plusb) assembled using data from public repositories")
+hthgu133plusb) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hthgu133plusa-db
@@ -1873,7 +1873,7 @@ hthgu133plusb) assembled using data from public repositories")
      "Affymetrix Affymetrix HT_HG-U133_Plus_A Array annotation data (chip hthgu133plusa)")
     (description
      "Affymetrix Affymetrix HT_HG-U133_Plus_A Array annotation data (chip
-hthgu133plusa) assembled using data from public repositories")
+hthgu133plusa) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hthgu133bprobe
@@ -1938,7 +1938,7 @@ HT_HG-U133B.cdf file.")
      "Affymetrix Affymetrix HT_HG-U133B Array annotation data (chip hthgu133b)")
     (description
      "Affymetrix Affymetrix HT_HG-U133B Array annotation data (chip hthgu133b)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hthgu133aprobe
@@ -2023,7 +2023,7 @@ HT_HG-U133A.cdf file.")
      "Affymetrix Affymetrix HT_HG-U133A Array annotation data (chip hthgu133a)")
     (description
      "Affymetrix Affymetrix HT_HG-U133A Array annotation data (chip hthgu133a)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hta20transcriptcluster-db
@@ -2044,7 +2044,7 @@ assembled using data from public repositories")
     (synopsis "Affymetrix hta20 annotation data (chip hta20transcriptcluster)")
     (description
      "Affymetrix hta20 annotation data (chip hta20transcriptcluster) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hta20probeset-db
@@ -2065,7 +2065,7 @@ data from public repositories")
     (synopsis "Affymetrix hta20 annotation data (chip hta20probeset)")
     (description
      "Affymetrix hta20 annotation data (chip hta20probeset) assembled using data from
-public repositories")
+public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hspeccdf
@@ -2129,7 +2129,7 @@ HGU133Plus2_Hs_Hspec.cdf file.")
      "Agilent Chips that use Agilent design number 026652 annotation data (chip HsAgilentDesign026652)")
     (description
      "Agilent Chips that use Agilent design number 026652 annotation data (chip
-@code{HsAgilentDesign026652}) assembled using data from public repositories")
+@code{HsAgilentDesign026652}) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hs6ug171-db
@@ -2150,7 +2150,7 @@ HGU133Plus2_Hs_Hspec.cdf file.")
     (synopsis "package containing metadata for Hs6UG171 arrays")
     (description
      "This package provides a package containing metadata for Hs6UG171 arrays
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hs25kresogen-db
@@ -2172,7 +2172,7 @@ assembled using data from public repositories")
      "RNG_MRC Human Pangenomic 25k Set annotation data (chip hs25kresogen)")
     (description
      "RNG_MRC Human Pangenomic 25k Set annotation data (chip hs25kresogen) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hpip
@@ -2766,7 +2766,7 @@ visualization.")
     (synopsis "HilbertVisGUI")
     (description
      "An interactive tool to visualize long vectors of integer data by means of
-Hilbert curves")
+Hilbert curves.")
     (license license:gpl3+)))
 
 (define-public r-hilbertvis
@@ -2786,7 +2786,7 @@ Hilbert curves")
     (synopsis "Hilbert curve visualization")
     (description
      "This package provides functions to visualize long vectors of integer data by
-means of Hilbert curves")
+means of Hilbert curves.")
     (license license:gpl3+)))
 
 (define-public r-hilbertcurve
@@ -2856,7 +2856,7 @@ expression variability followed by signal reinforcement progressively segregates
 early mouse lineages\" by Y. Ohnishi, W. Huber, A. Tsumura, M. Kang, P.
 Xenopoulos, K. Kurimoto, A. K. Oles, M. J. Arauzo-Bravo, M. Saitou, A.-K.
 Hadjantonakis and T. Hiiragi; Nature Cell Biology (2014) 16(1): 27-37.  doi:
-10.1038/ncb2881.\"")
+10.1038/ncb2881.\".")
     (license license:artistic2.0)))
 
 (define-public r-highlyreplicatedrnaseq
@@ -3533,7 +3533,7 @@ make a GRanges object from a common data frame.")
      "Codelink Human Inflammation 16 Bioarray annotation data (chip hi16cod)")
     (description
      "Codelink Human Inflammation 16 Bioarray annotation data (chip hi16cod) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hguqiagenv3-db
@@ -3555,7 +3555,7 @@ using data from public repositories")
      "Qiagen Qiagen V3.0 oligo set annotation data (chip hguqiagenv3)")
     (description
      "Qiagen Qiagen V3.0 oligo set annotation data (chip hguqiagenv3) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgug4845a-db
@@ -3576,7 +3576,7 @@ data from public repositories")
     (synopsis "agilent AMADID 026652 annotation data (chip hgug4845a)")
     (description
      "agilent AMADID 026652 annotation data (chip hgug4845a) assembled using data from
-public repositories")
+public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgug4112a-db
@@ -3598,7 +3598,7 @@ public repositories")
      "Agilent \"Human Genome, Whole\" annotation data (chip hgug4112a)")
     (description
      "Agilent \"Human Genome, Whole\" annotation data (chip hgug4112a) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgug4111a-db
@@ -3619,7 +3619,7 @@ data from public repositories")
     (synopsis "Agilent Human 1B annotation data (chip hgug4111a)")
     (description
      "Agilent Human 1B annotation data (chip hgug4111a) assembled using data from
-public repositories")
+public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgug4110b-db
@@ -3640,7 +3640,7 @@ public repositories")
     (synopsis "Agilent Human 1A (V2) annotation data (chip hgug4110b)")
     (description
      "Agilent Human 1A (V2) annotation data (chip hgug4110b) assembled using data from
-public repositories")
+public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgug4101a-db
@@ -3662,7 +3662,7 @@ public repositories")
      "Agilent Human 2 cDNA Microarry Kit annotation data (chip hgug4101a)")
     (description
      "Agilent Human 2 @code{cDNA} Microarry Kit annotation data (chip hgug4101a)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgug4100a-db
@@ -3684,7 +3684,7 @@ assembled using data from public repositories")
      "Agilent Human 1 cDNA Microarray Kit annotation data (chip hgug4100a)")
     (description
      "Agilent Human 1 @code{cDNA} Microarray Kit annotation data (chip hgug4100a)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgudkfz31-db
@@ -3705,7 +3705,7 @@ assembled using data from public repositories")
     (synopsis "Unknown annotation data (chip hguDKFZ31)")
     (description
      "Unknown annotation data (chip @code{hguDKFZ31}) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgubeta7-db
@@ -3726,7 +3726,7 @@ repositories")
     (synopsis "Unknown annotation data (chip hgubeta7)")
     (description
      "Unknown annotation data (chip hgubeta7) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hguatlas13k-db
@@ -3748,7 +3748,7 @@ repositories")
      "Clontech BD Atlas Long Oligos Human 13K annotation data (chip hguatlas13k)")
     (description
      "Clontech BD Atlas Long Oligos Human 13K annotation data (chip hguatlas13k)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu95eprobe
@@ -3813,7 +3813,7 @@ HG_U95E.CDF file.")
      "Affymetrix Affymetrix HG_U95E Array annotation data (chip hgu95e)")
     (description
      "Affymetrix Affymetrix HG_U95E Array annotation data (chip hgu95e) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu95dprobe
@@ -3878,7 +3878,7 @@ HG_U95D.CDF file.")
      "Affymetrix Affymetrix HG_U95D Array annotation data (chip hgu95d)")
     (description
      "Affymetrix Affymetrix HG_U95D Array annotation data (chip hgu95d) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu95cprobe
@@ -3943,7 +3943,7 @@ HG_U95C.CDF file.")
      "Affymetrix Affymetrix HG_U95C Array annotation data (chip hgu95c)")
     (description
      "Affymetrix Affymetrix HG_U95C Array annotation data (chip hgu95c) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu95bprobe
@@ -4008,7 +4008,7 @@ HG_U95B.CDF file.")
      "Affymetrix Affymetrix HG_U95B Array annotation data (chip hgu95b)")
     (description
      "Affymetrix Affymetrix HG_U95B Array annotation data (chip hgu95b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu95av2probe
@@ -4073,7 +4073,7 @@ HG_U95Av2.CDF file.")
      "Affymetrix Affymetrix HG_U95Av2 Array annotation data (chip hgu95av2)")
     (description
      "Affymetrix Affymetrix HG_U95Av2 Array annotation data (chip hgu95av2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu95av2
@@ -4093,7 +4093,7 @@ using data from public repositories")
     (synopsis "Affymetrix Human Genome U95 Set Annotation Data (hgu95av2)")
     (description
      "Affymetrix Human Genome U95 Set annotation data (hgu95av2) assembled using data
-from public data repositories")
+from public data repositories.")
     (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
 
 (define-public r-hgu95aprobe
@@ -4158,7 +4158,7 @@ HG_U95A.CDF file.")
      "Affymetrix Affymetrix HG_U95A Array annotation data (chip hgu95a)")
     (description
      "Affymetrix Affymetrix HG_U95A Array annotation data (chip hgu95a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu2beta7
@@ -4178,7 +4178,7 @@ using data from public repositories")
     (synopsis "data package containing annotation data for hgu2beta7")
     (description
      "Annotation data file for hgu2beta7 assembled using data from public data
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu219probe
@@ -4243,7 +4243,7 @@ HG-U219.cdf file.")
      "Affymetrix Human Genome 219 Plate annotation data (chip hgu219)")
     (description
      "Affymetrix Human Genome 219 Plate annotation data (chip hgu219) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu133plus2probe
@@ -4425,7 +4425,7 @@ HG-U133B.cdf file.")
      "Affymetrix Affymetrix HG-U133B Array annotation data (chip hgu133b)")
     (description
      "Affymetrix Affymetrix HG-U133B Array annotation data (chip hgu133b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu133atagprobe
@@ -4635,7 +4635,7 @@ HG-U133A_2.cdf file.")
      "Affymetrix Affymetrix HG-U133A_2 Array annotation data (chip hgu133a2)")
     (description
      "Affymetrix Affymetrix HG-U133A_2 Array annotation data (chip hgu133a2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgu133a-db
@@ -4657,7 +4657,7 @@ using data from public repositories")
      "Affymetrix Affymetrix HG-U133A Array annotation data (chip hgu133a)")
     (description
      "Affymetrix Affymetrix HG-U133A Array annotation data (chip hgu133a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgfocusprobe
@@ -4722,7 +4722,7 @@ HG-Focus.CDF file.")
      "Affymetrix Affymetrix HG-Focus Array annotation data (chip hgfocus)")
     (description
      "Affymetrix Affymetrix HG-Focus Array annotation data (chip hgfocus) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hgc
@@ -4900,7 +4900,7 @@ analyses are available.")
     (synopsis
      "Heterogeneous error model for identification of differentially expressed genes under multiple conditions")
     (description
-     "This package fits heterogeneous error models for analysis of microarray data")
+     "This package fits heterogeneous error models for analysis of microarray data.")
     (license license:gpl2+)))
 
 (define-public r-help
@@ -5208,7 +5208,7 @@ HC_G110.cdf file.")
      "Affymetrix Affymetrix HC_G110 Array annotation data (chip hcg110)")
     (description
      "Affymetrix Affymetrix HC_G110 Array annotation data (chip hcg110) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-hcatonsildata
@@ -5450,7 +5450,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (propagated-inputs (list r-iranges r-biostrings r-biobase))
     (home-page "https://bioconductor.org/packages/harbChIP")
     (synopsis "Experimental Data Package: harbChIP")
-    (description "data from a yeast @code{ChIP-chip} experiment")
+    (description "data from a yeast @code{ChIP-chip} experiment.")
     (license license:artistic2.0)))
 
 (define-public r-hapmapsnp6
@@ -5468,7 +5468,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/hapmapsnp6")
     (synopsis "Sample data - Hapmap SNP 6.0 Affymetrix")
-    (description "Sample dataset obtained from http://www.hapmap.org")
+    (description "Sample dataset obtained from http://www.hapmap.org.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapmapsnp5
@@ -5486,7 +5486,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/hapmapsnp5")
     (synopsis "Sample data - Hapmap SNP 5.0 Affymetrix")
-    (description "Sample dataset obtained from http://www.hapmap.org")
+    (description "Sample dataset obtained from http://www.hapmap.org.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapmap500ksty
@@ -5504,7 +5504,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/hapmap500ksty")
     (synopsis "Sample data - Hapmap 500K STY Affymetrix")
-    (description "Sample dataset obtained from http://www.hapmap.org")
+    (description "Sample dataset obtained from http://www.hapmap.org.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapmap500knsp
@@ -5522,7 +5522,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/hapmap500knsp")
     (synopsis "Sample data - Hapmap 500K NSP Affymetrix")
-    (description "Sample dataset obtained from http://www.hapmap.org")
+    (description "Sample dataset obtained from http://www.hapmap.org.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapmap370k
@@ -5541,7 +5541,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (home-page "https://bioconductor.org/packages/hapmap370k")
     (synopsis "Example Illumina 370k HapMap Data")
     (description
-     "Example @code{HapMap} data from Illumina 370k @code{BeadChips}")
+     "Example @code{HapMap} data from Illumina 370k @code{BeadChips}.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapmap100kxba
@@ -5559,7 +5559,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/hapmap100kxba")
     (synopsis "Sample data - Hapmap 100K XBA Affymetrix")
-    (description "Sample dataset obtained from http://www.hapmap.org")
+    (description "Sample dataset obtained from http://www.hapmap.org.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapmap100khind
@@ -5577,7 +5577,7 @@ noise) is kept to a fraction which is set by the end-user.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/hapmap100khind")
     (synopsis "Sample data - Hapmap 100K HIND Affymetrix")
-    (description "Sample dataset obtained from http://www.hapmap.org")
+    (description "Sample dataset obtained from http://www.hapmap.org.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hapfabia
@@ -5628,7 +5628,7 @@ different formats.")
     (synopsis "Example data for the h5vc package")
     (description
      "This package contains the data used in the vignettes and examples of the h5vc
-package")
+package.")
     (license license:gpl3+)))
 
 (define-public r-h5vc
@@ -5685,7 +5685,7 @@ that is stored in HDF5 files.")
      "Codelink UniSet Human 20k I Bioarray annotation data (chip h20kcod)")
     (description
      "Codelink @code{UniSet} Human 20k I Bioarray annotation data (chip h20kcod)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-h10kcod-db
@@ -5707,6 +5707,6 @@ assembled using data from public repositories")
      "Codelink UniSet Human I Bioarray (~10 000 human genes) annotation data (chip h10kcod)")
     (description
      "Codelink @code{UniSet} Human I Bioarray (~10 000 human genes) annotation data
-(chip h10kcod) assembled using data from public repositories")
+(chip h10kcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 

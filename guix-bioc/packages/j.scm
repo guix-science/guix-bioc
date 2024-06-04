@@ -89,7 +89,7 @@ provided phosphosites.")
     (synopsis "data package containing annotation data for JazaeriMetaData")
     (description
      "This package provides a data package containing annotation data for
-@code{JazaeriMetaData} assembled using data from public repositories")
+@code{JazaeriMetaData} assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-jaspar2024

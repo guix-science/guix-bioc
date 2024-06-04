@@ -237,6 +237,6 @@ Zebrafish.cdf file.")
      "Affymetrix Affymetrix Zebrafish Array annotation data (chip zebrafish)")
     (description
      "Affymetrix Affymetrix Zebrafish Array annotation data (chip zebrafish) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 

@@ -93,7 +93,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-sscrofa-ucsc-susscr11-refgene
@@ -115,7 +115,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-scerevisiae-ucsc-saccer3-sgdgene
@@ -137,7 +137,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-scerevisiae-ucsc-saccer2-sgdgene
@@ -159,7 +159,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-rnorvegicus-ucsc-rn7-refgene
@@ -181,7 +181,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-rnorvegicus-ucsc-rn6-refgene
@@ -203,7 +203,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-rnorvegicus-ucsc-rn6-ncbirefseq
@@ -225,7 +225,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-rnorvegicus-ucsc-rn5-refgene
@@ -247,7 +247,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-rnorvegicus-ucsc-rn4-ensgene
@@ -269,7 +269,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-rnorvegicus-biomart-igis
@@ -291,7 +291,7 @@ run-time information.  It is typically more meaningful.")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from @code{BioMart} by exposing these
-as @code{TxDb} objects")
+as @code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-ptroglodytes-ucsc-pantro6-refgene
@@ -313,7 +313,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-ptroglodytes-ucsc-pantro5-refgene
@@ -335,7 +335,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-ptroglodytes-ucsc-pantro4-refgene
@@ -357,7 +357,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-mmusculus-ucsc-mm39-refgene
@@ -379,7 +379,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-mmusculus-ucsc-mm39-knowngene
@@ -401,7 +401,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-mmusculus-ucsc-mm10-ensgene
@@ -423,7 +423,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-mmulatta-ucsc-rhemac8-refgene
@@ -445,7 +445,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-mmulatta-ucsc-rhemac3-refgene
@@ -467,7 +467,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-mmulatta-ucsc-rhemac10-refgene
@@ -489,7 +489,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-hsapiens-ucsc-hg38-refgene
@@ -511,7 +511,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-hsapiens-ucsc-hg19-lincrnastranscripts
@@ -534,7 +534,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-hsapiens-ucsc-hg18-knowngene
@@ -556,7 +556,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-hsapiens-biomart-igis
@@ -577,7 +577,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from @code{BioMart} by exposing these
-as @code{TxDb} objects")
+as @code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-ggallus-ucsc-galgal6-refgene
@@ -599,7 +599,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-ggallus-ucsc-galgal5-refgene
@@ -621,7 +621,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-ggallus-ucsc-galgal4-refgene
@@ -643,7 +643,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-drerio-ucsc-danrer11-refgene
@@ -665,7 +665,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-drerio-ucsc-danrer10-refgene
@@ -687,7 +687,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-dmelanogaster-ucsc-dm3-ensgene
@@ -709,7 +709,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-cfamiliaris-ucsc-canfam6-refgene
@@ -731,7 +731,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-cfamiliaris-ucsc-canfam5-refgene
@@ -753,7 +753,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-cfamiliaris-ucsc-canfam4-refgene
@@ -775,7 +775,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-cfamiliaris-ucsc-canfam3-refgene
@@ -797,7 +797,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-celegans-ucsc-ce11-refgene
@@ -819,7 +819,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-celegans-ucsc-ce11-ensgene
@@ -841,7 +841,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-btaurus-ucsc-bostau9-refgene
@@ -863,7 +863,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-btaurus-ucsc-bostau8-refgene
@@ -885,7 +885,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects")
+@code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-athaliana-biomart-plantsmart51
@@ -930,7 +930,7 @@ as @code{TxDb} objects.  This package is for Arabidopsis thaliana (@code{taxID}:
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from @code{BioMart} by exposing these
-as @code{TxDb} objects")
+as @code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-athaliana-biomart-plantsmart25
@@ -952,7 +952,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from @code{BioMart} by exposing these
-as @code{TxDb} objects")
+as @code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txdb-athaliana-biomart-plantsmart22
@@ -974,7 +974,7 @@ as @code{TxDb} objects")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from @code{BioMart} by exposing these
-as @code{TxDb} objects")
+as @code{TxDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-txcutr
@@ -4012,7 +4012,7 @@ in idat format.")
     (propagated-inputs (list r-biobase))
     (home-page "https://bioconductor.org/packages/TCGAcrcmRNA")
     (synopsis "TCGA CRC 450 mRNA dataset")
-    (description "colorectal cancer @code{mRNA} profile provided by TCGA")
+    (description "colorectal cancer @code{mRNA} profile provided by TCGA.")
     (license license:gpl2)))
 
 (define-public r-tcgacrcmirna
@@ -4031,7 +4031,7 @@ in idat format.")
     (propagated-inputs (list r-biobase))
     (home-page "https://bioconductor.org/packages/TCGAcrcmiRNA")
     (synopsis "TCGA CRC 450 miRNA dataset")
-    (description "colorectal cancer @code{miRNA} profile provided by TCGA")
+    (description "colorectal cancer @code{miRNA} profile provided by TCGA.")
     (license license:gpl2)))
 
 (define-public r-tcc
@@ -4235,7 +4235,7 @@ included in this package the sequence feature scores from @code{TargetScanHuman}
 for each @code{miRNA-mRNA} interaction.  Thus, the user can use these static
 sequence-based scores together with user-supplied tissue/cell-specific
 fold-change due to @code{miRNA} overexpression to predict @code{miRNA} targets
-using the package @code{TargetScore} (download separately)")
+using the package @code{TargetScore} (download separately).")
     (license license:gpl2)))
 
 (define-public r-targetscore

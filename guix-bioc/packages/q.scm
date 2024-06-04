@@ -69,7 +69,7 @@ package also includes a mixed effects model implementation, as described in
 (Turner JA et al, BMC Bioinformatics, 2015), and a meta-analysis framework as
 described in (Meng H, et al.  P@code{LoS} Comput Biol.  2019).  For questions,
 contact Chris Bolen (cbolen1@@gmail.com) or Steven Kleinstein
-(steven.kleinstein@@yale.edu)")
+(steven.kleinstein@@yale.edu).")
     (license license:gpl2+)))
 
 (define-public r-qubicdata

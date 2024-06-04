@@ -242,7 +242,7 @@ including the plyranges Bioconductor package.")
      "Affymetrix nugomm1a520177 annotation data (chip nugomm1a520177)")
     (description
      "Affymetrix nugomm1a520177 annotation data (chip nugomm1a520177) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-nugohs1a520180probe
@@ -306,7 +306,7 @@ data from public repositories")
      "Affymetrix nugohs1a520180 annotation data (chip nugohs1a520180)")
     (description
      "Affymetrix nugohs1a520180 annotation data (chip nugohs1a520180) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-nucpos
@@ -490,7 +490,7 @@ reveals novel drug-binding proteins.")
      "Norway981 http://genome-www5.stanford.edu/ Annotation Data (Norway981)")
     (description
      "Norway981 http://genome-www5.stanford.edu/ Annotation Data (Norway981) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-normr
@@ -876,7 +876,7 @@ dispersion parameter that can be both commonwise across gene both genewise.")
     (home-page "https://bioconductor.org/packages/Neve2006")
     (synopsis "expression and CGH data on breast cancer cell lines")
     (description
-     "Experimental organization of combined expression and CGH data")
+     "Experimental organization of combined expression and CGH data.")
     (license license:artistic2.0)))
 
 (define-public r-neuca
@@ -1211,7 +1211,7 @@ design and performance evaluation using standard measures. @code{netDx} natively
 groups molecular data into pathway-level features and connects with Cytoscape
 for network visualization of pathway themes.  For method details see: Pai et al.
 (2019). @code{netDx}: interpretable patient classification using integrated
-patient similarity networks.  Molecular Systems Biology.  15, e8497")
+patient similarity networks.  Molecular Systems Biology.  15, e8497.")
     (license license:expat)))
 
 (define-public r-netboost
@@ -1478,7 +1478,8 @@ commonly used for representing such secondary structures.")
     (home-page "https://bioconductor.org/packages/NCIgraphData")
     (synopsis "Data for the NCIgraph software package")
     (description
-     "This package provides pathways from the NCI Pathways Database as R graph objects")
+     "This package provides pathways from the NCI Pathways Database as R graph
+objects.")
     (license license:gpl3)))
 
 (define-public r-ncigraph

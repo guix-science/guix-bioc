@@ -113,7 +113,7 @@ YG_S98.cdf file.")
      "Affymetrix Affymetrix YG_S98 Array annotation data (chip ygs98)")
     (description
      "Affymetrix Affymetrix YG_S98 Array annotation data (chip ygs98) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-yeastrnaseq
@@ -173,7 +173,7 @@ bwa, and converted to BAM format with samtools.")
     (synopsis "Yeast Gold Standard Data")
     (description
      "This package provides a collection of so-called gold (and other) standard data
-sets")
+sets.")
     (license license:artistic2.0)))
 
 (define-public r-yeastexpdata
@@ -216,7 +216,7 @@ yeast.")
      "Spellman et al. (1998) and Pramila/Breeden (2006) yeast cell cycle microarray data")
     (description
      "@code{ExpressionSet} for Spellman et al. (1998) yeast cell cycle microarray
-experiment")
+experiment.")
     (license license:artistic2.0)))
 
 (define-public r-yeast2probe
@@ -281,7 +281,7 @@ Yeast_2.cdf file.")
      "Affymetrix Affymetrix Yeast_2 Array annotation data (chip yeast2)")
     (description
      "Affymetrix Affymetrix Yeast_2 Array annotation data (chip yeast2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-yeast-db0

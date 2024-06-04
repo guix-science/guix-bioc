@@ -175,7 +175,7 @@ cell type.")
     (home-page "https://bioconductor.org/packages/frmaExampleData")
     (synopsis "Frma Example Data")
     (description
-     "Data files used by the examples in frma and @code{frmaTools} packages")
+     "Data files used by the examples in frma and @code{frmaTools} packages.")
     (license license:gpl2+)))
 
 (define-public r-frma
@@ -222,7 +222,7 @@ cell type.")
      "Epistasis Analysis for Quantitative Traits by Functional Regression Model")
     (description
      "This package provides a Tool for Epistasis Analysis Based on Functional
-Regression Model")
+Regression Model.")
     (license license:gpl2)))
 
 (define-public r-frenchfish
@@ -940,7 +940,7 @@ manual gating strategy based on the density of the data.")
     (synopsis "Analyze flow cytometric data using gate information")
     (description
      "This package provides a package to analyze flow cytometric data using gate
-information to follow population/community dynamics")
+information to follow population/community dynamics.")
     (license license:gpl2)))
 
 (define-public r-flowcut
@@ -1004,7 +1004,7 @@ compositional data analysis.")
     (synopsis "Analyze flow cytometric data using histogram information")
     (description
      "This package provides a package to analyze flow cytometric data of complex
-microbial communities based on histogram images")
+microbial communities based on histogram images.")
     (license license:gpl2)))
 
 (define-public r-flowcatchr
@@ -1426,7 +1426,7 @@ PMC7386360, PMID: 32764205).")
     (synopsis "exprSet for Karaman et al. (2003) fibroblasts data")
     (description
      "@code{exprSet} for Karaman et al. (2003) human, bonobo and gorilla fibroblasts
-data")
+data.")
     (license license:lgpl2.0+)))
 
 (define-public r-fgnet
@@ -1720,7 +1720,7 @@ an optimized feature set.")
 normalized expression data array, experimental design and computes adjusted
 p-values It returns the fdr adjusted p-values and plots, according to the
 methods described in (Reiner, Yekutieli and Benjamini 2002).  The second, is
-fdr.gui() which creates a simple graphic user interface to access fdr.ma")
+fdr.gui() which creates a simple graphic user interface to access fdr.ma.")
     (license license:gpl2+)))
 
 (define-public r-fdb-ucsc-trnas
@@ -1741,7 +1741,7 @@ fdr.gui() which creates a simple graphic user interface to access fdr.ma")
     (synopsis "Annotation package for FeatureDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as
-@code{FeatureDb} objects")
+@code{FeatureDb} objects.")
     (license license:artistic2.0)))
 
 (define-public r-fdb-ucsc-snp137common-hg19
@@ -1761,7 +1761,7 @@ fdr.gui() which creates a simple graphic user interface to access fdr.ma")
     (home-page "https://bioconductor.org/packages/FDb.UCSC.snp137common.hg19")
     (synopsis "UCSC common SNPs track for dbSNP build 137")
     (description
-     "@code{makeFeatureDbFromUCSC} cannot cope with this track, hence a package")
+     "@code{makeFeatureDbFromUCSC} cannot cope with this track, hence a package.")
     (license license:artistic2.0)))
 
 (define-public r-fdb-ucsc-snp135common-hg19
@@ -1781,7 +1781,7 @@ fdr.gui() which creates a simple graphic user interface to access fdr.ma")
     (home-page "https://bioconductor.org/packages/FDb.UCSC.snp135common.hg19")
     (synopsis "UCSC common SNPs track for dbSNP build 135")
     (description
-     "@code{makeFeatureDbFromUCSC} cannot cope with this track, hence a package")
+     "@code{makeFeatureDbFromUCSC} cannot cope with this track, hence a package.")
     (license license:artistic2.0)))
 
 (define-public r-fdb-infiniummethylation-hg18
@@ -1805,7 +1805,7 @@ fdr.gui() which creates a simple graphic user interface to access fdr.ma")
     (synopsis
      "Annotation package for Illumina Infinium DNA methylation probes")
     (description
-     "Compiled @code{HumanMethylation27} and @code{HumanMethylation450} annotations")
+     "Compiled @code{HumanMethylation27} and @code{HumanMethylation450} annotations.")
     (license license:artistic2.0)))
 
 (define-public r-fdb-fantom4-promoters-hg19
@@ -1826,7 +1826,7 @@ fdr.gui() which creates a simple graphic user interface to access fdr.ma")
     (synopsis
      "Annotation package for FANTOM4 promoters identified from THP-1 cells")
     (description
-     "FANTOM4 promoters, @code{liftOver'ed} from hg18 to hg19, @code{CpGs} quantified")
+     "FANTOM4 promoters, @code{liftOver'ed} from hg18 to hg19, @code{CpGs} quantified.")
     (license license:artistic2.0)))
 
 (define-public r-fci

@@ -1942,7 +1942,7 @@ hm450.hg19.manifest - hocomoco.table - human.TF - LUSC_meth_refined: Meth -
 LUSC_RNA_refined: @code{GeneExp} - Probes.motif.hg19.450K -
 Probes.motif.hg19.EPIC - Probes.motif.hg38.450K - Probes.motif.hg38.EPIC -
 TF.family - TF.subfamily - Human_genes__GRCh37_p13 - Human_genes__GRCh38_p12 -
-Human_genes__GRCh37_p13__tss - Human_genes__GRCh38_p12__tss")
+Human_genes__GRCh37_p13__tss - Human_genes__GRCh38_p12__tss.")
     (license license:gpl3)))
 
 (define-public r-elmer
@@ -2329,7 +2329,7 @@ The file name was E\\_coli\\_probe\\_tab.")
     (description
      "Experimental data with Affymetrix E. coli chips, as reported in She-pin Hung,
 Pierre Baldi, and G. Wesley Hatfield, J. Biol.  Chem., Vol.  277, Issue 43,
-40309-40323, October 25, 2002")
+40309-40323, October 25, 2002.")
     (license license:gpl2+)))
 
 (define-public r-ecolik12-db0
@@ -2479,7 +2479,7 @@ E_coli_2.cdf file.")
      "Affymetrix Affymetrix E_coli_2 Array annotation data (chip ecoli2)")
     (description
      "Affymetrix Affymetrix E_coli_2 Array annotation data (chip ecoli2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-ebsea
@@ -2520,7 +2520,7 @@ obtained from RNA-seq sequencing data.")
     (synopsis "EBcoexpress for Differential Co-Expression Analysis")
     (description
      "An Empirical Bayesian Approach to Differential Co-Expression Analysis at the
-Gene-Pair Level")
+Gene-Pair Level.")
     (license license:gpl2+)))
 
 (define-public r-eatonetalchipseq
@@ -2542,7 +2542,7 @@ Gene-Pair Level")
      "ChIP-seq data of ORC-binding sites in Yeast excerpted from Eaton et al. 2010")
     (description
      "@code{ChIP-seq} analysis subset from \"Conserved nucleosome positioning defines
-replication origins\" (PMID 20351051)")
+replication origins\" (PMID 20351051).")
     (license (license:fsdg-compatible "Artistic 2.0"))))
 
 (define-public r-easyrnaseq

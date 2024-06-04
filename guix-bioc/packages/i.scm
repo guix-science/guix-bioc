@@ -63,7 +63,7 @@
     (home-page "https://bioconductor.org/packages/Iyer517")
     (synopsis "exprSets for Iyer, Eisen et all 1999 Science paper")
     (description "representation of public Iyer data from
-http://genome-www.stanford.edu/serum/clusters.html")
+http://genome-www.stanford.edu/serum/clusters.html.")
     (license license:artistic2.0)))
 
 (define-public r-iwtomics
@@ -1306,7 +1306,7 @@ integration step.")
     (synopsis "An R package for computing the number of susceptibility SNPs")
     (description
      "An R package for computing the number of susceptibility SNPs and power of future
-studies")
+studies.")
     (license (license:fsdg-compatible "GPL-2 + file LICENSE"))))
 
 (define-public r-inpas
@@ -1501,7 +1501,7 @@ exploration and selection of candidate biomarkers.")
      "INDAC FlyChip_long_oligonucleotide_002 (FL002) annotation data (chip indac)")
     (description
      "INDAC @code{FlyChip_long_oligonucleotide_002} (FL002) annotation data (chip
-indac) assembled using data from public repositories")
+indac) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-impcdata
@@ -1826,7 +1826,7 @@ populations and gene expression visualization are provided.")
     (synopsis "Illumina Ratv1 annotation data (chip illuminaRatv1)")
     (description
      "Illumina Ratv1 annotation data (chip @code{illuminaRatv1}) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminamousev2-db
@@ -1847,7 +1847,7 @@ from public repositories")
     (synopsis "Illumina MouseWG6v2 annotation data (chip illuminaMousev2)")
     (description
      "Illumina @code{MouseWG6v2} annotation data (chip @code{illuminaMousev2})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminamousev1p1-db
@@ -1868,7 +1868,7 @@ assembled using data from public repositories")
     (synopsis "Illumina MouseWG6v1p1 annotation data (chip illuminaMousev1p1)")
     (description
      "Illumina @code{MouseWG6v1p1} annotation data (chip @code{illuminaMousev1p1})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminamousev1-db
@@ -1889,7 +1889,7 @@ assembled using data from public repositories")
     (synopsis "Illumina MouseWG6v1 annotation data (chip illuminaMousev1)")
     (description
      "Illumina @code{MouseWG6v1} annotation data (chip @code{illuminaMousev1})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanwgdaslv4-db
@@ -1911,7 +1911,7 @@ assembled using data from public repositories")
      "Illumina HumanWGDASLv4 annotation data (chip illuminaHumanWGDASLv4)")
     (description
      "Illumina @code{HumanWGDASLv4} annotation data (chip
-@code{illuminaHumanWGDASLv4}) assembled using data from public repositories")
+@code{illuminaHumanWGDASLv4}) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanwgdaslv3-db
@@ -1933,7 +1933,7 @@ assembled using data from public repositories")
      "Illumina HumanHT12WGDASLv3 annotation data (chip illuminaHumanWGDASLv3)")
     (description
      "Illumina @code{HumanHT12WGDASLv3} annotation data (chip
-@code{illuminaHumanWGDASLv3}) assembled using data from public repositories")
+@code{illuminaHumanWGDASLv3}) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanv4-db
@@ -1954,7 +1954,7 @@ assembled using data from public repositories")
     (synopsis "Illumina HumanHT12v4 annotation data (chip illuminaHumanv4)")
     (description
      "Illumina @code{HumanHT12v4} annotation data (chip @code{illuminaHumanv4})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanv3-db
@@ -1975,7 +1975,7 @@ assembled using data from public repositories")
     (synopsis "Illumina HumanHT12v3 annotation data (chip illuminaHumanv3)")
     (description
      "Illumina @code{HumanHT12v3} annotation data (chip @code{illuminaHumanv3})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanv2beadid-db
@@ -2024,7 +2024,7 @@ Nucleic Acids Research.")
     (synopsis "Illumina HumanWG6v2 annotation data (chip illuminaHumanv2)")
     (description
      "Illumina @code{HumanWG6v2} annotation data (chip @code{illuminaHumanv2})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanv1-db
@@ -2045,7 +2045,7 @@ assembled using data from public repositories")
     (synopsis "Illumina HumanWG6v1 annotation data (chip illuminaHumanv1)")
     (description
      "Illumina @code{HumanWG6v1} annotation data (chip @code{illuminaHumanv1})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanmethylationepicv2manifest
@@ -2159,7 +2159,7 @@ update of the original EPIC v1.0 array (i.e., the 850K methylation array).")
     (synopsis
      "Probe sequence data for microarrays of type IlluminaHumanMethylation450k")
     (description
-     "Probe sequences from Illumina (ftp.illumina.com) for hm450 probes")
+     "Probe sequences from Illumina (ftp.illumina.com) for hm450 probes.")
     (license license:lgpl2.0+)))
 
 (define-public r-illuminahumanmethylation27kmanifest
@@ -2179,7 +2179,7 @@ update of the original EPIC v1.0 array (i.e., the 850K methylation array).")
     (home-page
      "https://bioconductor.org/packages/IlluminaHumanMethylation27kmanifest")
     (synopsis "Annotation for Illumina's 27k methylation arrays")
-    (description "Manifest for Illumina's 27k array data")
+    (description "Manifest for Illumina's 27k array data.")
     (license license:artistic2.0)))
 
 (define-public r-illuminahumanmethylation27kanno-ilmn12-hg19
@@ -2225,7 +2225,7 @@ update of the original EPIC v1.0 array (i.e., the 850K methylation array).")
     (description
      "Illumina Illumina Human Methylation 27k annotation data (chip
 @code{IlluminaHumanMethylation27k}) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-illuminadatatestfiles
@@ -2244,7 +2244,7 @@ repositories")
     (home-page "https://bioconductor.org/packages/IlluminaDataTestFiles")
     (synopsis "Illumina microarray files (IDAT) for testing")
     (description
-     "Example data for Illumina microarray output files, for testing purposes")
+     "Example data for Illumina microarray output files, for testing purposes.")
     (license license:artistic2.0)))
 
 (define-public r-ihwpaper
@@ -2544,7 +2544,7 @@ e0266929. <https://doi.org/10.1371/journal.pone.0266929>.")
     (synopsis "idiogram")
     (description
      "This package provides a package for plotting genomic data by chromosomal
-location")
+location.")
     (license license:gpl2)))
 
 (define-public r-icnv
@@ -2710,7 +2710,7 @@ information with transcript expression analysis.")
     (native-inputs (list pkg-config))
     (home-page "http://www.rglab.org")
     (synopsis "integrated Bayesian Modeling of eQTL data")
-    (description "integrated Bayesian Modeling of @code{eQTL} data")
+    (description "integrated Bayesian Modeling of @code{eQTL} data.")
     (license license:artistic2.0)))
 
 (define-public r-ibh
@@ -2757,7 +2757,7 @@ analysis.  We apply it to meta-gene set analysis of large numbers of gene
 expression datasets.  The iterative algorithm extracts groups of phenotypes from
 multiple studies that are associated with similar gene sets. @code{iBBiG} does
 not require prior knowledge of the number or scale of clusters and allows
-discovery of clusters with diverse sizes")
+discovery of clusters with diverse sizes.")
     (license license:artistic2.0)))
 
 (define-public r-iasva

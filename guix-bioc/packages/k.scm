@@ -216,7 +216,7 @@ PWM:substrate matches, and integrate these data to infer kinase activity.")
     (propagated-inputs (list r-biobase))
     (home-page "http://www.dkfz.de/mga")
     (synopsis "DKFZ kidney package")
-    (description "kidney microarray data")
+    (description "kidney microarray data.")
     (license license:gpl2)))
 
 (define-public r-keggorthology
@@ -388,7 +388,7 @@ biological functions.")
     (home-page "https://bioconductor.org/packages/KCsmart")
     (synopsis "Multi sample aCGH analysis package using kernel convolution")
     (description
-     "Multi sample @code{aCGH} analysis package using kernel convolution")
+     "Multi sample @code{aCGH} analysis package using kernel convolution.")
     (license license:gpl3)))
 
 (define-public r-kboost

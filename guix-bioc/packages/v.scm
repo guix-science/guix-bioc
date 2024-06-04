@@ -54,7 +54,7 @@
     (synopsis "VirtUaL ChIP-Seq data Analysis using Networks, dummy dataset")
     (description
      "This package provides a dummy regulatory network and @code{ChIP-Seq} dataset for
-running examples in the vulcan package")
+running examples in the vulcan package.")
     (license license:lgpl3)))
 
 (define-public r-vulcan
@@ -114,7 +114,7 @@ network over a differential binding signature.")
     (synopsis "variant-transcription factor-phenotype networks")
     (description
      "variant-transcription factor-phenotype networks, inspired by Maurano et al.,
-Science (2012), PMID 22955828")
+Science (2012), PMID 22955828.")
     (license license:artistic2.0)))
 
 (define-public r-vsclust
@@ -420,7 +420,7 @@ reproducibility.")
      "Virtual Inference of Protein-activity by Enriched Regulon analysis")
     (description
      "Inference of protein activity from gene expression data, including the VIPER and
-@code{msVIPER} algorithms")
+@code{msVIPER} algorithms.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-vidger
@@ -759,7 +759,7 @@ feature weighting by means of Automatic Relevance Determination.")
 RNA-seq data and visualizations of gene splicing information for
 publication-quality multi-panel figures in a population. (Warning: The
 visualizing function is removed due to the dependent package Sushi deprecated.
-If you want to use it, please change back to an older version.)")
+If you want to use it, please change back to an older version.).")
     (license license:gpl2+)))
 
 (define-public r-varianttoolsdata

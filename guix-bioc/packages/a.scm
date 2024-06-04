@@ -179,7 +179,7 @@ ATH1-121501.CDF file.")
      "Affymetrix Affymetrix ATH1-121501 Array annotation data (chip ath1121501)")
     (description
      "Affymetrix Affymetrix ATH1-121501 Array annotation data (chip ath1121501)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-atacseqtfea
@@ -752,7 +752,7 @@ users estimate costs for specific task sets.")
      "Colon normal tissue and cancer samples used in Corrada Bravo, et al.  gene
 expression anti-profiles paper: BMC Bioinformatics 2012, 13:272
 doi:10.1186/1471-2105-13-272.  Measurements are z-scores obtained from the
-@code{GeneExpression} Barcode in the frma package")
+@code{GeneExpression} Barcode in the frma package.")
     (license license:artistic2.0)))
 
 (define-public r-anopheles-db0
@@ -955,7 +955,7 @@ arrays.  This data was published in Mary E. Ross, Xiaodong Zhou, Guangchun Song,
 Sheila A. Shurtleff, Kevin Girtman, W. Kent Williams, Hsi-Che Liu, Rami Mahfouz,
 Susana C. Raimondi, Noel Lenny, Anami Patel, and James R. Downing (2003)
 Classification of pediatric acute lymphoblastic leukemia by gene expression
-profiling Blood 102: 2951-2959")
+profiling Blood 102: 2951-2959.")
     (license license:gpl2)))
 
 (define-public r-alabaster-vcf
@@ -1451,7 +1451,7 @@ AG.CDF file.")
     (synopsis "Affymetrix Affymetrix AG Array annotation data (chip ag)")
     (description
      "Affymetrix Affymetrix AG Array annotation data (chip ag) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-affymoe4302expr
@@ -1634,6 +1634,6 @@ attacks.")
      "Codelink ADME Rat 16-Assay Bioarray annotation data (chip adme16cod)")
     (description
      "Codelink ADME Rat 16-Assay Bioarray annotation data (chip adme16cod) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 

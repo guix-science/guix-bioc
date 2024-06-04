@@ -20,7 +20,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -274,7 +273,7 @@ These data belong to the following publications: Armstrong et al.  Nat Genet
 30:41-47, 2002; Cahoy et al.  J Neurosci 28:264-278, 2008; Carrel and Willard,
 Nature, 434:400-404, 2005; Huang et al.  PNAS, 104:9758-9763, 2007; Pickrell et
 al.  Nature, 464:768-722, 2010; Skaletsky et al.  Nature, 423:825-837; Verhaak
-et al.  Cancer Cell 17:98-110, 2010")
+et al.  Cancer Cell 17:98-110, 2010.")
     (license license:artistic2.0)))
 
 (define-public r-gsri
@@ -745,7 +744,7 @@ permutations is necessary for more accurate p-values estimation.")
      "Synthetic Expression Data for Gene Regulatory Network Inference")
     (description
      "Simulated expression data for five large Gene Regulatory Networks from different
-simulators")
+simulators.")
     (license license:gpl3)))
 
 (define-public r-grmetrics
@@ -856,7 +855,7 @@ proteins tertiary structure via a graph theoretical model.")
     (home-page "https://bioconductor.org/packages/GraphAT")
     (synopsis "Graph Theoretic Association Tests")
     (description
-     "This package provides functions and data used in Balasubramanian, et al. (2004)")
+     "This package provides functions and data used in Balasubramanian, et al. (2004).")
     (license license:lgpl2.0+)))
 
 (define-public r-graphalignment
@@ -877,7 +876,7 @@ proteins tertiary structure via a graph theoretical model.")
      "Graph alignment is an extension package for the R programming environment which
 provides functions for finding an alignment between two networks based on link
 and node similarity scores. (J. Berg and M. Laessig, \"Cross-species analysis of
-biological networks by Bayesian alignment\", PNAS 103 (29), 10967-10972 (2006))")
+biological networks by Bayesian alignment\", PNAS 103 (29), 10967-10972 (2006)).")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-graper
@@ -1199,7 +1198,7 @@ GP53.CDF file.")
     (synopsis "Functions for Gene Ontology database")
     (description
      "Wraper functions for description/comparison of oligo ID list using Gene Ontology
-database")
+database.")
     (license license:gpl2)))
 
 (define-public r-gothic
@@ -1380,7 +1379,7 @@ https://github.com/@code{geneticsMiNIng}).")
     (synopsis "exprSets for golub leukemia data")
     (description
      "representation of public golub data with some covariate data of provenance
-unknown to the maintainer at present; now employs @code{ExpressionSet} format")
+unknown to the maintainer at present; now employs @code{ExpressionSet} format.")
     (license license:lgpl2.0+)))
 
 (define-public r-goexpress
@@ -2249,7 +2248,7 @@ direct visualization of the results from various omics analysis packages.")
     (description
      "Illumina Golden Gate Human Methylation Cancer Panel Version 1 annotation data
 (chip GG@code{HumanMethCancerPanelv1}) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-gg4way
@@ -3108,7 +3107,7 @@ arrays using the crlmm package.  Annotation build is hg19.")
     (propagated-inputs (list r-readr r-curl))
     (home-page "https://bioconductor.org/packages/genomes")
     (synopsis "Genome sequencing project metadata")
-    (description "Download genome and assembly reports from NCBI")
+    (description "Download genome and assembly reports from NCBI.")
     (license license:gpl3)))
 
 (define-public r-genomeintervals
@@ -3194,7 +3193,7 @@ Abelian group of prime-power order.")
     (synopsis "genotyping and copy number study tools")
     (description
      "Simultaneous identification of copy number states and genotype calls for regions
-of either copy number variations or copy number aberrations")
+of either copy number variations or copy number aberrations.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-genextender
@@ -3677,7 +3676,7 @@ expression data.  Inputting a list of genes of potential targets of one TF from
     (synopsis "MetaAnalysis for High Throughput Experiments")
     (description
      "This package provides a collection of meta-analysis tools for analysing high
-throughput experimental data")
+throughput experimental data.")
     (license license:artistic2.0)))
 
 (define-public r-genegeneinter
@@ -4391,7 +4390,7 @@ local webpage.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/gcspikelite")
     (synopsis "Spike-in data for GC/MS data and methods within flagme")
-    (description "Spike-in data for GC/MS data and methods within flagme")
+    (description "Spike-in data for GC/MS data and methods within flagme.")
     (license license:lgpl2.0+)))
 
 (define-public r-gcrisprtools
@@ -4603,7 +4602,7 @@ cell type.")
      "http://genome-www.stanford.edu/yeast_stress/data/rawdata/complete_dataset.txt")
     (synopsis
      "ExpressionSet for response of yeast to heat shock and other environmental stresses")
-    (description "Data from PMID 11102521")
+    (description "Data from PMID 11102521.")
     (license license:artistic2.0)))
 
 (define-public r-gars

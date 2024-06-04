@@ -174,7 +174,7 @@ for these when developing new algorithms.")
     (synopsis
      "ExpressionSets for Parmigiani et al., 2004 Clinical Cancer Research paper")
     (description
-     "Data from three large lung cancer studies provided as @code{ExpressionSets}")
+     "Data from three large lung cancer studies provided as @code{ExpressionSets}.")
     (license license:gpl2+)))
 
 (define-public r-lungcancerlines
@@ -265,7 +265,7 @@ qualities information.")
      "Illumina Rat Illumina expression annotation data (chip lumiRatAll)")
     (description
      "Illumina Rat Illumina expression annotation data (chip @code{lumiRatAll})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-lumimouseidmapping
@@ -310,7 +310,7 @@ qualities information.")
      "Illumina Mouse Illumina expression annotation data (chip lumiMouseAll)")
     (description
      "Illumina Mouse Illumina expression annotation data (chip @code{lumiMouseAll})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-lumihumanidmapping
@@ -355,7 +355,7 @@ qualities information.")
      "Illumina Human Illumina expression annotation data (chip lumiHumanAll)")
     (description
      "Illumina Human Illumina expression annotation data (chip @code{lumiHumanAll})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-lumibarnes
@@ -754,7 +754,7 @@ for PCA and PLS.")
     (synopsis
      "BS-seq data of H1 and IMR90 cell line excerpted from Lister et al. 2009")
     (description
-     "Base resolution bisulfite sequencing data of Human DNA methylomes")
+     "Base resolution bisulfite sequencing data of Human DNA methylomes.")
     (license (license:fsdg-compatible "Artistic 2.0"))))
 
 (define-public r-lisaclust
@@ -1086,7 +1086,7 @@ analysis of two-color microarray data using the limma package.")
     (description
      "This package provides data that were presented in the article \"Comprehensive
 mapping of long-range interactions reveals folding principles of the human
-genome\", Science 2009 Oct 9;326(5950):289-93.  PMID: 19815776")
+genome\", Science 2009 Oct 9;326(5950):289-93.  PMID: 19815776.")
     (license license:lgpl2.0+)))
 
 (define-public r-levi
@@ -1239,7 +1239,7 @@ significantly changed.")
     (synopsis
      "leeBamViews -- multiple yeast RNAseq samples excerpted from Lee 2009")
     (description
-     "data from PMID 19096707; prototype for managing multiple NGS samples")
+     "data from PMID 19096707; prototype for managing multiple NGS samples.")
     (license (license:fsdg-compatible "Artistic 2.0"))))
 
 (define-public r-ledpred
@@ -1316,7 +1316,7 @@ assumption for the alternative hypothesis.")
     (synopsis "package containing metadata for LAPOINTE arrays")
     (description
      "This package provides a package containing metadata for LAPOINTE arrays
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-lapmix

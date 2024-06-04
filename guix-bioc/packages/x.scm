@@ -243,7 +243,7 @@ X_laevis_2.CDF file.")
     (synopsis "Affymetrix Xenopus laevis annotation data (chip xlaevis)")
     (description
      "Affymetrix Xenopus laevis annotation data (chip xlaevis) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-xhybcasneuf
@@ -264,7 +264,7 @@ from public repositories")
     (home-page "https://bioconductor.org/packages/XhybCasneuf")
     (synopsis "EBI/PSB cross-hybridisation study package")
     (description
-     "Cross-hybridisation study on the ATH1 Affymetrix @code{GeneChip}")
+     "Cross-hybridisation study on the ATH1 Affymetrix @code{GeneChip}.")
     (license license:artistic2.0)))
 
 (define-public r-xeva

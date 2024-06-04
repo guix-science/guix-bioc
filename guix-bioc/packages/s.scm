@@ -1649,7 +1649,7 @@ normalization, batch correction and evaluation with informative visualizations."
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/ssviz")
     (synopsis "small RNA-seq visualizer and analysis toolkit")
-    (description "Small RNA sequencing viewer")
+    (description "Small RNA sequencing viewer.")
     (license license:gpl2)))
 
 (define-public r-ssrch
@@ -2588,7 +2588,7 @@ in details in E. Carlon and T. Heim, Physica A 362, 433 (2006).")
     (synopsis "Part of Affymetrix's Spike-In Experiment Data")
     (description
      "Includes probe-level and expression data for the HGU133 and HGU95 spike-in
-experiments")
+experiments.")
     (license license:lgpl2.0+)))
 
 (define-public r-spikein
@@ -2745,7 +2745,7 @@ pathways most relevant to the condition under the study.")
     (synopsis "S-system parameter estimation method")
     (description
      "This package can optimize the parameter in S-system models given time series
-data")
+data.")
     (license license:gpl2)))
 
 (define-public r-spectraltad
@@ -3608,7 +3608,7 @@ can adjust for variability in cell type mixture.")
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/SomaticCancerAlterations")
     (synopsis "Somatic Cancer Alterations")
-    (description "Collection of somatic cancer alteration datasets")
+    (description "Collection of somatic cancer alteration datasets.")
     (license license:gpl3)))
 
 (define-public r-somaticadata
@@ -3628,7 +3628,7 @@ can adjust for variability in cell type mixture.")
     (synopsis
      "An example cancer whole genome sequencing data for the SomatiCA package")
     (description
-     "An example cancer whole genome sequencing data for the @code{SomatiCA} package")
+     "An example cancer whole genome sequencing data for the @code{SomatiCA} package.")
     (license license:artistic2.0)))
 
 (define-public r-somascan-db
@@ -4007,7 +4007,7 @@ in).")
     (build-system r-build-system)
     (home-page "http://fleming.ulb.ac.be/SNAGEE")
     (synopsis "SNAGEE data")
-    (description "SNAGEE data - gene list and correlation matrix")
+    (description "SNAGEE data - gene list and correlation matrix.")
     (license license:artistic2.0)))
 
 (define-public r-snagee
@@ -4050,7 +4050,7 @@ problematic studies and samples in any public data set.")
     (home-page "https://bioconductor.org/packages/SNAData")
     (synopsis "Social Networks Analysis Data Examples")
     (description
-     "Data from Wasserman & Faust (1999) \"Social Network Analysis\"")
+     "Data from Wasserman & Faust (1999) \"Social Network Analysis\".")
     (license license:lgpl2.0+)))
 
 (define-public r-smoothclust
@@ -4179,7 +4179,7 @@ contaminants are commonly found in AP-MS data.")
      "Functions for analysis of real-time quantitative PCR data at SIRS-Lab GmbH")
     (description
      "This package provides functions for analysis of real-time quantitative PCR data
-at SIRS-Lab @code{GmbH}")
+at SIRS-Lab @code{GmbH}.")
     (license license:gpl2+)))
 
 (define-public r-slalom
@@ -4473,7 +4473,7 @@ perform quality controls over sequencing libraries, extract methylation
 information at the single molecule level accounting for the two possible kind of
 SMF experiments (single enzyme or double enzyme), classify single molecules
 based on their patterns of molecular occupancy, plot SMF information at a given
-genomic location")
+genomic location.")
     (license license:gpl3)))
 
 (define-public r-singlecelltk
@@ -5558,7 +5558,7 @@ and c) permuted data and/or metadata.")
     (home-page "https://bioconductor.org/packages/SIFT.Hsapiens.dbSNP137")
     (synopsis "PROVEAN/SIFT Predictions for Homo sapiens dbSNP build 137")
     (description
-     "Database of PROVEAN/SIFT predictions for Homo sapiens @code{dbSNP} build 137")
+     "Database of PROVEAN/SIFT predictions for Homo sapiens @code{dbSNP} build 137.")
     (license license:artistic2.0)))
 
 (define-public r-sift-hsapiens-dbsnp132
@@ -5578,7 +5578,7 @@ and c) permuted data and/or metadata.")
     (home-page "https://bioconductor.org/packages/SIFT.Hsapiens.dbSNP132")
     (synopsis "SIFT Predictions for Homo sapiens dbSNP build 132")
     (description
-     "Database of SIFT predictions for Homo sapiens @code{dbSNP} build 132")
+     "Database of SIFT predictions for Homo sapiens @code{dbSNP} build 132.")
     (license license:artistic2.0)))
 
 (define-public r-siamcat
@@ -5751,7 +5751,7 @@ embedded onto R Shiny apps.")
     (synopsis "SHDZ http://genome-www5.stanford.edu/ Annotation Data (SHDZ)")
     (description
      "SHDZ http://genome-www5.stanford.edu/ Annotation Data (SHDZ) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-sharedobject
@@ -5956,7 +5956,7 @@ this package have been moved to the sechm package (see vignette for details).")
      "serumStimulation is a data package which is used by examples in package pcaGoPromoter")
     (description
      "This package contains 13 micro array data results from a serum stimulation
-experiment")
+experiment.")
     (license license:gpl2+)))
 
 (define-public r-seqvartools

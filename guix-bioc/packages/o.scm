@@ -175,7 +175,7 @@ analyze and visualize the results.")
     (home-page "https://bioconductor.org/packages/OTUbase")
     (synopsis "Provides structure and functions for the analysis of OTU data")
     (description
-     "This package provides a platform for Operational Taxonomic Unit based analysis")
+     "This package provides a platform for Operational Taxonomic Unit based analysis.")
     (license license:artistic2.0)))
 
 (define-public r-osat
@@ -918,7 +918,7 @@ in the data.")
     (synopsis "FHCRC Nelson Lab OperonHumanV3 Annotation Data (OperonHumanV3)")
     (description
      "FHCRC Nelson Lab @code{OperonHumanV3} Annotation Data (@code{OperonHumanV3})
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-openstats
@@ -1266,7 +1266,7 @@ expression between previously unknown subtypes.")
      "OnassisJavaLibs, java libraries to run conceptmapper and semantic similarity")
     (description
      "This package provides a package that contains java libraries to call
-conceptmapper and compute semnatic similarity from R")
+conceptmapper and compute semnatic similarity from R.")
     (license license:gpl2)))
 
 (define-public r-ompbam
@@ -1447,7 +1447,7 @@ i.e.  genomic, transcriptomic and epigenetic (DNA methylation).")
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/OMICsPCAdata")
     (synopsis "Supporting data for package OMICsPCA")
-    (description "Supporting data for package OMI@code{CsPCA}")
+    (description "Supporting data for package OMI@code{CsPCA}.")
     (license license:gpl3)))
 
 (define-public r-omicspca
@@ -1687,7 +1687,7 @@ expression profiles and clinical associations were found.")
     (propagated-inputs (list r-widgettools r-tkwidgets r-olin r-marray))
     (home-page "http://olin.sysbiolab.eu")
     (synopsis "Graphical user interface for OLIN")
-    (description "Graphical user interface for the OLIN package")
+    (description "Graphical user interface for the OLIN package.")
     (license license:gpl2)))
 
 (define-public r-olin
@@ -1708,7 +1708,7 @@ expression profiles and clinical associations were found.")
      "Optimized local intensity-dependent normalisation of two-color microarrays")
     (description
      "This package provides functions for normalisation of two-color microarrays by
-optimised local regression and for detection of artefacts in microarray data")
+optimised local regression and for detection of artefacts in microarray data.")
     (license license:gpl2)))
 
 (define-public r-oligodata

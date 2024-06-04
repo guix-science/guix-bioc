@@ -476,7 +476,7 @@ U133_X3P.cdf file.")
     (synopsis "Affymetrix Human X3P Array annotation data (chip u133x3p)")
     (description
      "Affymetrix Human X3P Array annotation data (chip u133x3p) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-u133aaofav2cdf

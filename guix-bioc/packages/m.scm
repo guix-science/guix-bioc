@@ -84,7 +84,7 @@
     (synopsis "Accesses MyVariant.info variant query and annotation services")
     (description
      "@code{MyVariant.info} is a comprehensive aggregation of variant annotation
-resources.  myvariant is a wrapper for querying @code{MyVariant.info} services")
+resources.  myvariant is a wrapper for querying @code{MyVariant.info} services.")
     (license license:artistic2.0)))
 
 (define-public r-mygene
@@ -134,7 +134,7 @@ gene annotation data.  It's designed with simplicity and performance emphasized.
      "Codelink Mouse Whole Genome Bioarray (~36 000 mouse gene targets) annotation data (chip mwgcod)")
     (description
      "Codelink Mouse Whole Genome Bioarray (~36 000 mouse gene targets) annotation
-data (chip mwgcod) assembled using data from public repositories")
+data (chip mwgcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mwastools
@@ -193,7 +193,7 @@ using STOCSY; and biological interpretation of MWAS results.")
     (synopsis
      "affy and illumina raw data for assessing outlier detector performance")
     (description
-     "affy and illumina raw data for assessing outlier detector performance")
+     "affy and illumina raw data for assessing outlier detector performance.")
     (license license:artistic2.0)))
 
 (define-public r-musicatk
@@ -531,7 +531,7 @@ framework.")
     (home-page "https://bioconductor.org/packages/multiscan")
     (synopsis "R package for combining multiple scans")
     (description
-     "Estimates gene expressions from several laser scans of the same microarray")
+     "Estimates gene expressions from several laser scans of the same microarray.")
     (license license:gpl2+)))
 
 (define-public r-multirnaflow
@@ -652,7 +652,7 @@ resources, including validated @code{microRNA-target} databases
     (home-page "https://bioconductor.org/packages/MultiMed")
     (synopsis "Testing multiple biological mediators simultaneously")
     (description
-     "This package implements methods for testing multiple mediators")
+     "This package implements methods for testing multiple mediators.")
     (license (license:fsdg-compatible "GPL (>= 2) + file LICENSE"))))
 
 (define-public r-multihiccompare
@@ -1006,7 +1006,7 @@ Mu6500@code{subA.CDF} file.")
     (synopsis "FHCRC Genomics Shared Resource Mu22v3 Annotation Data (Mu22v3)")
     (description
      "FHCRC Genomics Shared Resource Mu22v3 Annotation Data (Mu22v3) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mu19ksubccdf
@@ -1049,7 +1049,7 @@ Mu19@code{KsubC.CDF} file.")
      "Affymetrix Affymetrix Mu19KsubC Array annotation data (chip mu19ksubc)")
     (description
      "Affymetrix Affymetrix Mu19@code{KsubC} Array annotation data (chip mu19ksubc)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mu19ksubbcdf
@@ -1092,7 +1092,7 @@ Mu19@code{KsubB.CDF} file.")
      "Affymetrix Affymetrix Mu19KsubB Array annotation data (chip mu19ksubb)")
     (description
      "Affymetrix Affymetrix Mu19@code{KsubB} Array annotation data (chip mu19ksubb)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mu19ksubacdf
@@ -1135,7 +1135,7 @@ Mu19@code{KsubA.CDF} file.")
      "Affymetrix Affymetrix Mu19KsubA Array annotation data (chip mu19ksuba)")
     (description
      "Affymetrix Affymetrix Mu19@code{KsubA} Array annotation data (chip mu19ksuba)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mu15v1-db
@@ -1156,7 +1156,7 @@ assembled using data from public repositories")
     (synopsis "FHCRC Genomics Shared Resource Mu15v1 Annotation Data (Mu15v1)")
     (description
      "FHCRC Genomics Shared Resource Mu15v1 Annotation Data (Mu15v1) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mu11ksubbprobe
@@ -1221,7 +1221,7 @@ Mu11@code{KsubB.CDF} file.")
      "Affymetrix Affymetrix Mu11KsubB Array annotation data (chip mu11ksubb)")
     (description
      "Affymetrix Affymetrix Mu11@code{KsubB} Array annotation data (chip mu11ksubb)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mu11ksubaprobe
@@ -1286,7 +1286,7 @@ Mu11@code{KsubA.CDF} file.")
      "Affymetrix Affymetrix Mu11KsubA Array annotation data (chip mu11ksuba)")
     (description
      "Affymetrix Affymetrix Mu11@code{KsubA} Array annotation data (chip mu11ksuba)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mtbls2
@@ -1336,7 +1336,7 @@ secondary metabolites.")
     (synopsis "Affymetrix mta10 annotation data (chip mta10transcriptcluster)")
     (description
      "Affymetrix mta10 annotation data (chip mta10transcriptcluster) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mta10probeset-db
@@ -1357,7 +1357,7 @@ data from public repositories")
     (synopsis "Affymetrix mta10 annotation data (chip mta10probeset)")
     (description
      "Affymetrix mta10 annotation data (chip mta10probeset) assembled using data from
-public repositories")
+public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-msstatstmt
@@ -1824,7 +1824,7 @@ the Functional Genomics Center Zurich.")
     (synopsis
      "Fragmentation spectral libraries and data to test the msPurity package")
     (description
-     "Fragmentation spectral libraries and data to test the @code{msPurity} package")
+     "Fragmentation spectral libraries and data to test the @code{msPurity} package.")
     (license license:gpl2+)))
 
 (define-public r-mspurity
@@ -2372,7 +2372,7 @@ rate.")
     (synopsis "FHCRC Nelson Lab mpedbarray Annotation Data (mpedbarray)")
     (description
      "FHCRC Nelson Lab mpedbarray Annotation Data (mpedbarray) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mousethymusageing
@@ -2460,7 +2460,7 @@ advantage of their very high homozygosity rate (>95%).")
     (synopsis "data package containing annotation data for mouseCHRLOC")
     (description
      "Annotation data file for @code{mouseCHRLOC} assembled using data from public
-data repositories")
+data repositories.")
     (license (license:fsdg-compatible "The Artistic License, Version 2.0"))))
 
 (define-public r-mouseagingdata
@@ -2581,7 +2581,7 @@ Mouse430A_2.cdf file.")
      "Affymetrix Affymetrix Mouse430A_2 Array annotation data (chip mouse430a2)")
     (description
      "Affymetrix Affymetrix Mouse430A_2 Array annotation data (chip mouse430a2)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mouse4302probe
@@ -2685,7 +2685,7 @@ Mouse430_2.cdf file.")
      "Affymetrix Affymetrix Mouse430_2 Array annotation data (chip mouse4302)")
     (description
      "Affymetrix Affymetrix Mouse430_2 Array annotation data (chip mouse4302)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mouse-db0
@@ -3252,7 +3252,7 @@ omics data.")
      "Affymetrix mogene21 annotation data (chip mogene21sttranscriptcluster)")
     (description
      "Affymetrix mogene21 annotation data (chip mogene21sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene21stprobeset-db
@@ -3273,7 +3273,7 @@ using data from public repositories")
     (synopsis "Affymetrix mogene21 annotation data (chip mogene21stprobeset)")
     (description
      "Affymetrix mogene21 annotation data (chip mogene21stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene20sttranscriptcluster-db
@@ -3296,7 +3296,7 @@ data from public repositories")
      "Affymetrix mogene20 annotation data (chip mogene20sttranscriptcluster)")
     (description
      "Affymetrix mogene20 annotation data (chip mogene20sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene20stprobeset-db
@@ -3317,7 +3317,7 @@ using data from public repositories")
     (synopsis "Affymetrix mogene20 annotation data (chip mogene20stprobeset)")
     (description
      "Affymetrix mogene20 annotation data (chip mogene20stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene11sttranscriptcluster-db
@@ -3340,7 +3340,7 @@ data from public repositories")
      "Affymetrix mogene11 annotation data (chip mogene11sttranscriptcluster)")
     (description
      "Affymetrix mogene11 annotation data (chip mogene11sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene11stprobeset-db
@@ -3361,7 +3361,7 @@ using data from public repositories")
     (synopsis "Affymetrix mogene11 annotation data (chip mogene11stprobeset)")
     (description
      "Affymetrix mogene11 annotation data (chip mogene11stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene10stv1probe
@@ -3427,7 +3427,7 @@ The file name was @code{MoGene-1\\_0-st-v1\\_probe\\_tab}.")
      "Affymetrix mogene10 annotation data (chip mogene10sttranscriptcluster)")
     (description
      "Affymetrix mogene10 annotation data (chip mogene10sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene10stprobeset-db
@@ -3448,7 +3448,7 @@ using data from public repositories")
     (synopsis "Affymetrix mogene10 annotation data (chip mogene10stprobeset)")
     (description
      "Affymetrix mogene10 annotation data (chip mogene10stprobeset) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mogene-1-0-st-v1frmavecs
@@ -3608,7 +3608,7 @@ using @code{AffyCompatible}.")
      "Affymetrix moex10 annotation data (chip moex10sttranscriptcluster)")
     (description
      "Affymetrix moex10 annotation data (chip moex10sttranscriptcluster) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-moex10stprobeset-db
@@ -3629,7 +3629,7 @@ using data from public repositories")
     (synopsis "Affymetrix moex10 annotation data (chip moex10stprobeset)")
     (description
      "Affymetrix moex10 annotation data (chip moex10stprobeset) assembled using data
-from public repositories")
+from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-moe430bprobe
@@ -3694,7 +3694,7 @@ MOE430B.CDF file.")
      "Affymetrix Affymetrix MOE430B Array annotation data (chip moe430b)")
     (description
      "Affymetrix Affymetrix MOE430B Array annotation data (chip moe430b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-moe430aprobe
@@ -3759,7 +3759,7 @@ MOE430A.CDF file.")
      "Affymetrix Affymetrix MOE430A Array annotation data (chip moe430a)")
     (description
      "Affymetrix Affymetrix MOE430A Array annotation data (chip moe430a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-modcon
@@ -3966,7 +3966,7 @@ expectation maximization algorithm.")
      "Subset of BAM files, including WT_2.bam, Null_2.bam, Resc_2.bam, Input.bam from
 the \"Cfp1\" experiment (see Clouaire et al., Genes Dev.  2012).  Data is
 available under @code{ArrayExpress} accession numbers E-ERAD-79.  Additionally,
-corresponding subset of peaks called by MACS")
+corresponding subset of peaks called by MACS.")
     (license license:lgpl2.0+)))
 
 (define-public r-mmdiff2
@@ -4043,7 +4043,7 @@ annotation files for the region.")
      "Agilent Chips that use Agilent design number 026655 annotation data (chip MmAgilentDesign026655)")
     (description
      "Agilent Chips that use Agilent design number 026655 annotation data (chip
-@code{MmAgilentDesign026655}) assembled using data from public repositories")
+@code{MmAgilentDesign026655}) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mm24kresogen-db
@@ -4065,7 +4065,7 @@ annotation files for the region.")
      "RNG_MRC Mouse Pangenomic 24k Set annotation data (chip mm24kresogen)")
     (description
      "RNG_MRC Mouse Pangenomic 24k Set annotation data (chip mm24kresogen) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mlseq
@@ -4397,7 +4397,7 @@ multi-sample levels, as well as several functions to conduct modular analysis of
      "gene target tabale of miRNA for human/mouse used for MiRaGE package")
     (description
      "gene target tabale of @code{miRNA} for human/mouse used for @code{MiRaGE}
-package")
+package.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mirnatap-db
@@ -5675,7 +5675,7 @@ applied to (Tree)@code{SummarizedExperiment} objects.")
      "Codelink Mouse Inflammation 16 Bioarray annotation data (chip mi16cod)")
     (description
      "Codelink Mouse Inflammation 16 Bioarray annotation data (chip mi16cod) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgug4122a-db
@@ -5697,7 +5697,7 @@ using data from public repositories")
      "Agilent \"Mouse Genome, Whole\" annotation data (chip mgug4122a)")
     (description
      "Agilent \"Mouse Genome, Whole\" annotation data (chip mgug4122a) assembled using
-data from public repositories")
+data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgug4121a-db
@@ -5718,7 +5718,7 @@ data from public repositories")
     (synopsis "Agilent Mouse annotation data (chip mgug4121a)")
     (description
      "Agilent Mouse annotation data (chip mgug4121a) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgug4120a-db
@@ -5739,7 +5739,7 @@ repositories")
     (synopsis "Agilent annotation data (chip mgug4120a)")
     (description
      "Agilent annotation data (chip mgug4120a) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgug4104a-db
@@ -5760,7 +5760,7 @@ repositories")
     (synopsis "Agilent annotation data (chip mgug4104a)")
     (description
      "Agilent annotation data (chip mgug4104a) assembled using data from public
-repositories")
+repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mguatlas5k-db
@@ -5782,7 +5782,7 @@ repositories")
      "Clontech BD Atlas Long Oligos Mouse 5K annotation data (chip mguatlas5k)")
     (description
      "Clontech BD Atlas Long Oligos Mouse 5K annotation data (chip mguatlas5k)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgu74cv2probe
@@ -5847,7 +5847,7 @@ MG_U74Cv2.CDF file.")
      "Affymetrix Affymetrix MG_U74Cv2 Array annotation data (chip mgu74cv2)")
     (description
      "Affymetrix Affymetrix MG_U74Cv2 Array annotation data (chip mgu74cv2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgu74cprobe
@@ -5912,7 +5912,7 @@ MG_U74C.cdf file.")
      "Affymetrix Affymetrix MG_U74C Array annotation data (chip mgu74c)")
     (description
      "Affymetrix Affymetrix MG_U74C Array annotation data (chip mgu74c) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgu74bv2probe
@@ -5977,7 +5977,7 @@ MG_U74Bv2.CDF file.")
      "Affymetrix Affymetrix MG_U74Bv2 Array annotation data (chip mgu74bv2)")
     (description
      "Affymetrix Affymetrix MG_U74Bv2 Array annotation data (chip mgu74bv2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgu74bprobe
@@ -6042,7 +6042,7 @@ MG_U74B.cdf file.")
      "Affymetrix Affymetrix MG_U74B Array annotation data (chip mgu74b)")
     (description
      "Affymetrix Affymetrix MG_U74B Array annotation data (chip mgu74b) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgu74av2probe
@@ -6107,7 +6107,7 @@ MG_U74Av2.CDF file.")
      "Affymetrix Affymetrix MG_U74Av2 Array annotation data (chip mgu74av2)")
     (description
      "Affymetrix Affymetrix MG_U74Av2 Array annotation data (chip mgu74av2) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgu74aprobe
@@ -6172,7 +6172,7 @@ MG_U74A.cdf file.")
      "Affymetrix Affymetrix MG_U74A Array annotation data (chip mgu74a)")
     (description
      "Affymetrix Affymetrix MG_U74A Array annotation data (chip mgu74a) assembled
-using data from public repositories")
+using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-mgsa
@@ -6268,7 +6268,7 @@ data is directly compatible with miaverse framework.")
     (synopsis "Marker Gene Finder in Microarray gene expression data")
     (description
      "The package is designed to detect marker genes from Microarray gene expression
-data sets")
+data sets.")
     (license license:gpl3)))
 
 (define-public r-mfa
@@ -6458,7 +6458,7 @@ bisulfite-seq datasets (e.g., WGBS and RRBS), provided as
     (home-page "https://bioconductor.org/packages/MethylSeekR")
     (synopsis "Segmentation of Bis-seq data")
     (description
-     "This is a package for the discovery of regulatory regions from Bis-seq data")
+     "This is a package for the discovery of regulatory regions from Bis-seq data.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-methylscaper
@@ -7192,7 +7192,7 @@ several statistical tests and reports the results in an interactive way.")
     (synopsis "Meta-analysis of RNA-Seq count data in multiple studies")
     (description
      "The probabilities by one-sided NOISeq are combined by Fisher's method or
-Stouffer's method")
+Stouffer's method.")
     (license license:artistic2.0)))
 
 (define-public r-metascope
@@ -7319,7 +7319,7 @@ plots, heatmaps, and pathway models.")
     (build-system r-build-system)
     (home-page "https://bioconductor.org/packages/metaMSdata")
     (synopsis "Example CDF data for the metaMS package")
-    (description "Example CDF data for the @code{metaMS} package")
+    (description "Example CDF data for the @code{metaMS} package.")
     (license license:gpl2+)))
 
 (define-public r-metams
@@ -7358,7 +7358,7 @@ plots, heatmaps, and pathway models.")
     (synopsis "Hierarchical Dependence in Meta-Analysis")
     (description
      "This package provides tools for meta-analysis in the presence of hierarchical
-(and/or sampling) dependence, including with gene expression studies")
+(and/or sampling) dependence, including with gene expression studies.")
     (license license:gpl3)))
 
 (define-public r-metagxpancreas
@@ -8081,7 +8081,7 @@ integrated with Bioconductor's infrastructure for a seamless analysis workflow."
     (synopsis "Modelling Experimental Data from MeDIP Enrichment")
     (description
      "MEDME allows the prediction of absolute and relative methylation levels based on
-measures obtained by @code{MeDIP-microarray} experiments")
+measures obtained by @code{MeDIP-microarray} experiments.")
     (license license:gpl2+)))
 
 (define-public r-medipsdata
@@ -8264,7 +8264,7 @@ data generated with the Illumina Infinium technology (HM27, HM450 and HMEPIC).")
     (synopsis "Measurement Error model estimate for correlation coefficient")
     (description
      "Two-stage measurement error model for correlation estimation with smaller bias
-than the usual sample correlation")
+than the usual sample correlation.")
     (license license:lgpl2.0+)))
 
 (define-public r-meal
@@ -8861,7 +8861,7 @@ developmental biology.")
     (home-page "https://bioconductor.org/packages/massiR")
     (synopsis "massiR: MicroArray Sample Sex Identifier")
     (description
-     "Predicts the sex of samples in gene expression microarray datasets")
+     "Predicts the sex of samples in gene expression microarray datasets.")
     (license license:gpl3)))
 
 (define-public r-massarray
@@ -9996,7 +9996,7 @@ The original data can be found at: https://github.com/macs3-project/MACS/.")
     (synopsis "Visualize artificial correlation in microarray data")
     (description
      "Graphically displays correlation in microarray data that is due to insufficient
-normalization")
+normalization.")
     (license license:gpl2+)))
 
 (define-public r-macarron
@@ -10149,7 +10149,7 @@ residuals in UMI-tagged data using a library-size aware negative binomial model.
      "Codelink UniSet Mouse 20k I Bioarray annotation data (chip m20kcod)")
     (description
      "Codelink @code{UniSet} Mouse 20k I Bioarray annotation data (chip m20kcod)
-assembled using data from public repositories")
+assembled using data from public repositories.")
     (license license:artistic2.0)))
 
 (define-public r-m10kcod-db
@@ -10171,6 +10171,6 @@ assembled using data from public repositories")
      "Codelink UniSet Mouse I Bioarray (~10 000 mouse gene targets) annotation data (chip m10kcod)")
     (description
      "Codelink @code{UniSet} Mouse I Bioarray (~10 000 mouse gene targets) annotation
-data (chip m10kcod) assembled using data from public repositories")
+data (chip m10kcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
