@@ -1399,13 +1399,13 @@ and @code{SpectroMine}.")
 (define-public r-msstatsshiny
   (package
     (name "r-msstatsshiny")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsShiny" version))
        (sha256
-        (base32 "1jxibwgnlqn5yrjacsv2z674kbiwkphwq4l7qbp93bn2qn3brqk3"))))
+        (base32 "0h79yy5b9n2kfpbc3fhfajfmrqdzghj3ycaparn1v1dzjmi87z9y"))))
     (properties `((upstream-name . "MSstatsShiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -3818,13 +3818,13 @@ biological processes.")
 (define-public r-mobilerna
   (package
     (name "r-mobilerna")
-    (version "1.0.1")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mobileRNA" version))
        (sha256
-        (base32 "1rp6y71rnqxpjmjfa4mx1l7ndb94l7443xvjzkvkh8axizwlml6y"))))
+        (base32 "10p37qr8wz6chh44fh1nri2db5qqghbbzbpjm02safxdx7h88081"))))
     (properties `((upstream-name . "mobileRNA")))
     (build-system r-build-system)
     (inputs (list samtools htseq hisat2 conda))

@@ -25,6 +25,7 @@
   #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages v)
+  #:use-module (gnu packages java)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -8330,6 +8331,43 @@ and for chromosomes 18 and 19 in @code{mESC}.")
 relationship between candidate genes and a set of phenotypes based on additional
 genes related to the candidate (e.g. Pathways or network neighbors).")
     (license (license:fsdg-compatible "CC BY-NC-ND 4.0"))))
+
+(define-public r-paxtoolsr
+  (package
+    (name "r-paxtoolsr")
+    (version "1.38.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "paxtoolsr" version))
+       (sha256
+        (base32 "0m3r8ynqkhksgj0d3si3wcnk5a801g1qklin8zm81cr1nlfx67gw"))))
+    (properties `((upstream-name . "paxtoolsr")))
+    (build-system r-build-system)
+    (inputs (list openjdk))
+    (propagated-inputs (list r-xml
+                             r-rjson
+                             r-rjava
+                             r-readr
+                             r-rappdirs
+                             r-r-utils
+                             r-plyr
+                             r-jsonlite
+                             r-igraph
+                             r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BioPAX/paxtoolsr")
+    (synopsis
+     "Access Pathways from Multiple Databases Through BioPAX and Pathway Commons")
+    (description
+     "The package provides a set of R functions for interacting with @code{BioPAX} OWL
+files using Paxtools and the querying Pathway Commons (PC) molecular interaction
+database.  Pathway Commons is a project by the Memorial Sloan-Kettering Cancer
+Center (MSKCC), Dana-Farber Cancer Institute (DFCI), and the University of
+Toronto.  Pathway Commons databases include: BIND, @code{BioGRID}, CORUM, CTD,
+DIP, @code{DrugBank}, HPRD, @code{HumanCyc}, @code{IntAct}, KEGG,
+@code{MirTarBase}, Panther, @code{PhosphoSitePlus}, Reactome, RECON, TRANSFAC.")
+    (license license:lgpl3)))
 
 (define-public r-pathwaypca
   (package
