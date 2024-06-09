@@ -2712,13 +2712,13 @@ assembled using data from public repositories.")
 (define-public r-motiftestr
   (package
     (name "r-motiftestr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifTestR" version))
        (sha256
-        (base32 "1qaq4mylc52b6adgp8qvyx5z26gzmp20pghrs9ixr2rj209q0wn0"))))
+        (base32 "19m8y69cd1x79cqwgwf6360mv7kn0a2gv3lphy2i60p6vlq99s8j"))))
     (properties `((upstream-name . "motifTestR")))
     (build-system r-build-system)
     (propagated-inputs (list r-universalmotif
@@ -2846,6 +2846,46 @@ motifs as the centers of the mixture of normal distribution curves.")
 within the cell, allowing flexible experimental design including time course and
 multiple groups.")
     (license license:gpl3)))
+
+(define-public r-mosdef
+  (package
+    (name "r-mosdef")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mosdef" version))
+       (sha256
+        (base32 "14zv9mgiqcj2s34hg8wfdij1gss324rkq42clg8f3ancambj74vp"))))
+    (properties `((upstream-name . "mosdef")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-topgo
+                             r-summarizedexperiment
+                             r-scales
+                             r-s4vectors
+                             r-rlang
+                             r-rcolorbrewer
+                             r-htmltools
+                             r-goseq
+                             r-go-db
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggforce
+                             r-dt
+                             r-deseq2
+                             r-clusterprofiler
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/imbeimainz/mosdef")
+    (synopsis
+     "MOSt frequently used and useful Differential Expression Functions")
+    (description
+     "This package provides functionality to run a number of tasks in the differential
+expression analysis workflow.  This encompasses the most widely used steps, from
+running various enrichment analysis tools with a unified interface to creating
+plots and beautifying table components linking to external websites and
+databases.  This streamlines the generation of comprehensive analysis reports.")
+    (license license:expat)))
 
 (define-public r-mosbi
   (package
@@ -4645,6 +4685,7 @@ validate the results, and functions to conduct enrichment analyses.")
                              r-ggpubr
                              r-ggplot2
                              r-geneset
+                             r-genekitr
                              r-fgsea
                              r-edger
                              r-deseq2

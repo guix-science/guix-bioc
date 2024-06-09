@@ -4107,6 +4107,47 @@ conditions, QC metrics and if they were used after filtering steps and also if
 the features were differently expressed in the different experiments.")
     (license license:artistic2.0)))
 
+(define-public r-smite
+  (package
+    (name "r-smite")
+    (version "1.32.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SMITE" version))
+       (sha256
+        (base32 "0dp4yas2gdwnvvbxdkid61j9c2a32cfcn3iw9nwijp6aqlv9rrv9"))))
+    (properties `((upstream-name . "SMITE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-s4vectors
+                             r-reactome-db
+                             r-plyr
+                             r-org-hs-eg-db
+                             r-keggrest
+                             r-iranges
+                             r-igraph
+                             r-hmisc
+                             r-goseq
+                             r-ggplot2
+                             r-genomicranges
+                             r-genelendatabase
+                             r-bionet
+                             r-biobase
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GreallyLab/SMITE")
+    (synopsis
+     "Significance-based Modules Integrating the Transcriptome and Epigenome")
+    (description
+     "This package builds on the Epimods framework which facilitates finding weighted
+subnetworks (\"modules\") on Illumina Infinium 27k arrays using the
+@code{SpinGlass} algorithm, as implemented in the @code{iGraph} package.  We
+have created a class of gene centric annotations associated with p-values and
+effect sizes and scores from any researchers prior statistical results to find
+functional modules.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-smartid
   (package
     (name "r-smartid")

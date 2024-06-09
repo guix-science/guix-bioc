@@ -44,13 +44,13 @@
 (define-public r-autonomics
   (package
     (name "r-autonomics")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "autonomics" version))
        (sha256
-        (base32 "0z2zzib4852ycnvrqiidyn6yq9wh06d7p5ssnhyydvwxp1gnwska"))))
+        (base32 "1fzzj0v6v4jvr3wh5bnjr6h2ny8zfm9pdlbhq5syaa2plvsbblpy"))))
     (properties `((upstream-name . "autonomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vsn
@@ -1348,14 +1348,14 @@ the details, see the README.md of lrbase-workflow.")
 (define-public r-ahensdbs
   (package
     (name "r-ahensdbs")
-    (version "1.3.1")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AHEnsDbs" version
                               'annotation))
        (sha256
-        (base32 "18v0cn80b09g5661an8yhd2rq7ln6gk0w7gsixq8kgnngshndjng"))))
+        (base32 "02gvrlfld6y03gcw7931fplm220dhnhh12xljb0xm6f3inl0vwa6"))))
     (properties `((upstream-name . "AHEnsDbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-ensembldb r-annotationhubdata))

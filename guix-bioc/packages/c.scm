@@ -2194,13 +2194,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "0fis09ahsah659gj9jaj2wqrpagkin6i8q51g93cmz1dlslrm80x"))))
+        (base32 "04xvbfql9rkgzmrzplb4h7zb361m4s50gd4drbp09fm7wjpxs23w"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -7884,13 +7884,13 @@ curated knowledge driven taxa sets.")
 (define-public r-cbaf
   (package
     (name "r-cbaf")
-    (version "1.26.2")
+    (version "1.26.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cbaf" version))
        (sha256
-        (base32 "1dsni3va144hlyqlxasd0q6grmh3h3n8y3kbc1psji3cn2kcq65r"))))
+        (base32 "1lpz3n288v32nbb0g4jb1mxmx79amm29m40w3sfkgllnjjdwsyd3"))))
     (properties `((upstream-name . "cbaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer

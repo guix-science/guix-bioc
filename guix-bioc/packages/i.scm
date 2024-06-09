@@ -2547,6 +2547,62 @@ e0266929. <https://doi.org/10.1371/journal.pone.0266929>.")
 location.")
     (license license:gpl2)))
 
+(define-public r-ideal
+  (package
+    (name "r-ideal")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ideal" version))
+       (sha256
+        (base32 "1fmqawzlg7dzhb6imsq9wjb3i4qr91f6aj4n4akpkrky7djdn3p2"))))
+    (properties `((upstream-name . "ideal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-upsetr
+                             r-topgo
+                             r-summarizedexperiment
+                             r-stringr
+                             r-shinydashboard
+                             r-shinybs
+                             r-shinyace
+                             r-shiny
+                             r-s4vectors
+                             r-rmarkdown
+                             r-rlang
+                             r-rintrojs
+                             r-rentrez
+                             r-plotly
+                             r-pheatmap
+                             r-pcaexplorer
+                             r-limma
+                             r-knitr
+                             r-iranges
+                             r-ihw
+                             r-heatmaply
+                             r-gplots
+                             r-gostats
+                             r-goseq
+                             r-go-db
+                             r-ggrepel
+                             r-ggplot2
+                             r-genomicranges
+                             r-dt
+                             r-dplyr
+                             r-deseq2
+                             r-biocparallel
+                             r-base64enc
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/federicomarini/ideal")
+    (synopsis "Interactive Differential Expression AnaLysis")
+    (description
+     "This package provides functions for an Interactive Differential Expression
+@code{AnaLysis} of RNA-sequencing datasets, to extract quickly and effectively
+information downstream the step of differential expression.  A Shiny application
+encapsulates the whole package.")
+    (license license:expat)))
+
 (define-public r-icnv
   (package
     (name "r-icnv")

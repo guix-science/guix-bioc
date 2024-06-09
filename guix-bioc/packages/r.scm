@@ -3325,6 +3325,37 @@ RG_U34A.cdf file.")
 using data from public repositories.")
     (license license:artistic2.0)))
 
+(define-public r-rgsepd
+  (package
+    (name "r-rgsepd")
+    (version "1.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "rgsepd" version))
+       (sha256
+        (base32 "18r2naxir299k0gcd9j3a5rvdma590m06v38j8wiligsgw5cmkfg"))))
+    (properties `((upstream-name . "rgsepd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-org-hs-eg-db
+                             r-gplots
+                             r-goseq
+                             r-go-db
+                             r-deseq2
+                             r-biomart
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/rgsepd")
+    (synopsis "Gene Set Enrichment / Projection Displays")
+    (description
+     "R/GSEPD is a bioinformatics package for R to help disambiguate transcriptome
+samples (a matrix of RNA-Seq counts at transcript IDs) by automating
+differential expression (with DESeq2), then gene set enrichment (with GOSeq),
+and finally a N-dimensional projection to quantify in which ways each sample is
+like either treatment group.")
+    (license license:gpl3)))
+
 (define-public r-rgsea
   (package
     (name "r-rgsea")

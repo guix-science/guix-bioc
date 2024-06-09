@@ -3385,6 +3385,55 @@ rich and user-friendly graphical interfaces, so that no programming skill is
 required (see `Prostar` package).")
     (license license:artistic2.0)))
 
+(define-public r-damsel
+  (package
+    (name "r-damsel")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Damsel" version))
+       (sha256
+        (base32 "0n60wkrwk1npg1361x5plam6rabmqzlxdcij1qf5q351wfkqlp8y"))))
+    (properties `((upstream-name . "Damsel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rsubread
+                             r-rsamtools
+                             r-rlang
+                             r-reshape2
+                             r-plyranges
+                             r-patchwork
+                             r-magrittr
+                             r-goseq
+                             r-ggplot2
+                             r-ggbio
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-edger
+                             r-dplyr
+                             r-biostrings
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Oshlack/Damsel")
+    (synopsis "Damsel: an end to end analysis of DamID")
+    (description
+     "Damsel provides an end to end analysis of @code{DamID} data.  Damsel takes bam
+files from Dam-only control and fusion samples and counts the reads matching to
+each GATC region. @code{edgeR} is utilised to identify regions of enrichment in
+the fusion relative to the control.  Enriched regions are combined into peaks,
+and are associated with nearby genes.  Damsel allows for IGV style plots to be
+built as the results build, inspired by ggcoverage, and using the functionality
+and layering ability of ggplot2.  Damsel also conducts gene ontology testing
+with bias correction through goseq, and future versions of Damsel will also
+incorporate motif enrichment analysis.  Overall, Damsel is the first package
+allowing for an end to end analysis with visual capabilities.  The goal of
+Damsel was to bring all the analysis into one place, and allow for exploratory
+analysis within R.")
+    (license license:expat)))
+
 (define-public r-damirseq
   (package
     (name "r-damirseq")
