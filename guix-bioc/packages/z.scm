@@ -136,14 +136,14 @@ to be compatible with linear mixed models implemented in
 (define-public r-zebrafishrnaseq
   (package
     (name "r-zebrafishrnaseq")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zebrafishRNASeq" version
                               'experiment))
        (sha256
-        (base32 "1d1ix8cmjhimrl2zmykndzhp4dpyr4nashckzs3kf53cflq8bcip"))))
+        (base32 "0khmilw21jnq2ivl7bh7fwz9nxlphljl5fh4w28q9gzydrv0vxci"))))
     (properties `((upstream-name . "zebrafishRNASeq")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

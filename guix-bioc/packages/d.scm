@@ -566,13 +566,13 @@ push the gene expression values of the connected genes to some extreme values.")
 (define-public r-dreamlet
   (package
     (name "r-dreamlet")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dreamlet" version))
        (sha256
-        (base32 "096kjih2b1076sdv3nvha975lmbkibgbyp3xrnfxswjfjsh68rqr"))))
+        (base32 "06mpmwjxp7zs9fsggf2b3qc5vgmx6l5s7prl6l7b753zfq5gvjbg"))))
     (properties `((upstream-name . "dreamlet")))
     (build-system r-build-system)
     (propagated-inputs (list r-zenith

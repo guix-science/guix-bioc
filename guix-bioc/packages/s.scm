@@ -2119,13 +2119,13 @@ locations (spots).")
 (define-public r-spotclean
   (package
     (name "r-spotclean")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpotClean" version))
        (sha256
-        (base32 "1mxw6gjjdg7a1g30gcwkr1k4zys0bwqlmh8wv4p6jfa2hcxa0cza"))))
+        (base32 "1wq1igfyadmzszacnwx8rfhm82xslzqzjkvx6xigs1fng0c7yn61"))))
     (properties `((upstream-name . "SpotClean")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
