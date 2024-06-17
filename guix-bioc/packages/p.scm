@@ -790,13 +790,13 @@ Prostate Cancer dataset.")
 (define-public r-prostar
   (package
     (name "r-prostar")
-    (version "1.36.1")
+    (version "1.36.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Prostar" version))
        (sha256
-        (base32 "08pgvgl7781x9rvl3cg7pm4155y5yrk3j35667z9i3p0na8wmxvw"))))
+        (base32 "140whr7klab1as5y8h9lbmlgn4f63kfdfhzjyxjp8pk3aq1xv53i"))))
     (properties `((upstream-name . "Prostar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2326,13 +2326,13 @@ details on how to use these datasets, see the plotgardener package vignettes.")
 (define-public r-plotgardener
   (package
     (name "r-plotgardener")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plotgardener" version))
        (sha256
-        (base32 "1bpxszy3i4fbp2wz0swy6zwszd531ahpyfnh25d63n8qd35489wa"))))
+        (base32 "1pcjc4an5pspafb9pvmia73g8cdp6n2paz2m952p1xnwsp9ijsi7"))))
     (properties `((upstream-name . "plotgardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

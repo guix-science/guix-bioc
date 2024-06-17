@@ -2194,13 +2194,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "04xvbfql9rkgzmrzplb4h7zb361m4s50gd4drbp09fm7wjpxs23w"))))
+        (base32 "13yw1mrx38im9g87is0ska6piw0ibzfmkk1h46alj1hxc0n3n5gh"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -8087,13 +8087,13 @@ spectrometry imaging.")
 (define-public r-cardinal
   (package
     (name "r-cardinal")
-    (version "3.6.1")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Cardinal" version))
        (sha256
-        (base32 "1g38x8acpv5nlqzfn5g0h77pmn3426i6y0n8sa14hbkj16xjkagc"))))
+        (base32 "038dlgr4p1x42hb5xrz8apvdi4d18si2vr3r8g3i4aiyvpc2rfwj"))))
     (properties `((upstream-name . "Cardinal")))
     (build-system r-build-system)
     (propagated-inputs (list r-s4vectors

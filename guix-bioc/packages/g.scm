@@ -24,7 +24,6 @@
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
-  #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -2827,13 +2826,13 @@ annotations and intuitive visualization options are implemented in this package.
 (define-public r-genomicplot
   (package
     (name "r-genomicplot")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GenomicPlot" version))
        (sha256
-        (base32 "0gx8kasidp0j5hcdc9yya1g4v5av21s9rb57wymxsqwv11rp5c5c"))))
+        (base32 "0s5slbkr6cpy5asl8v1fr914zgqg1q6gcwwf9nb0r8qh469c54pd"))))
     (properties `((upstream-name . "GenomicPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3750,7 +3749,6 @@ RNA Package is needed to ensure @code{GeneGA} to function properly.")
                              r-mclust
                              r-limma
                              r-impute
-                             r-ic10
                              r-biomart
                              r-amap
                              r-aims))
@@ -4488,13 +4486,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "1.8.0")
+    (version "1.8.18")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "0qmnlvra9fx9xja1al1iqz8rdh4w7q1w2h0z8wslladadv614ihv"))))
+        (base32 "1il1h9njfvhi4kxn30bhc31nkmr91b9imfafq68ccz947ckzhkpm"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

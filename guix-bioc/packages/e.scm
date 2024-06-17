@@ -1101,13 +1101,13 @@ between chromatin accessibility and gene expressions.")
 (define-public r-epiregulon
   (package
     (name "r-epiregulon")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epiregulon" version))
        (sha256
-        (base32 "0gcg3ci4dn9jiz6avjgd3ss5lgpmqyll60lw62vzapgq5w1ap322"))))
+        (base32 "0zhnra2kl1r2kh9g21fx3nqyb5sksnf7j81dzhjnwjvmlr52xp8w"))))
     (properties `((upstream-name . "epiregulon")))
     (build-system r-build-system)
     (arguments
