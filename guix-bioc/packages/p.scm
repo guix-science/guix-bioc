@@ -970,13 +970,13 @@ Mulvey et al.  2015.")
 (define-public r-proloc
   (package
     (name "r-proloc")
-    (version "1.44.0")
+    (version "1.44.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pRoloc" version))
        (sha256
-        (base32 "0g3wlr8f5lhsz9yqs0fx2x1f07y5mxcknq0790l0hirmhlj0vvzr"))))
+        (base32 "09vm0308qzc5hrvck2ksyn5f4zgdg9jpgcxg4zzrczs4ygp5jpzz"))))
     (properties `((upstream-name . "pRoloc")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -2538,13 +2538,13 @@ data.")
 (define-public r-pipets
   (package
     (name "r-pipets")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PIPETS" version))
        (sha256
-        (base32 "12cbjmdgbjif3kjm9km55nvnb0srw8nzcf3x3gw86v1wi718jzv7"))))
+        (base32 "0pp0zn37rcnwx54hxsc8lw7j2zygah4xgdjhw29bf5mriyw2ay4s"))))
     (properties `((upstream-name . "PIPETS")))
     (build-system r-build-system)
     (propagated-inputs (list r-genomicranges r-dplyr r-biocgenerics))
@@ -3426,13 +3426,13 @@ differential expression analysis with limma package are supported.")
 (define-public r-pgxrpi
   (package
     (name "r-pgxrpi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pgxRpi" version))
        (sha256
-        (base32 "063xyx9i6k06klb8zpq64ln77lyadz6m6h86krk4mfxfbn214v9b"))))
+        (base32 "1j6lbmpsi9lnwjq6q8v08vimqdy586xxm4ahkcbfsgscss3vj052"))))
     (properties `((upstream-name . "pgxRpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -3440,6 +3440,7 @@ differential expression analysis with limma package are supported.")
                              r-summarizedexperiment
                              r-s4vectors
                              r-plyr
+                             r-parallelly
                              r-lubridate
                              r-httr
                              r-ggplot2
@@ -9235,13 +9236,13 @@ from KEG@code{GdzPathwaysGEO} package.")
 (define-public r-padma
   (package
     (name "r-padma")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "padma" version))
        (sha256
-        (base32 "1b5pjjd7nn6b64b0cj0alqgbp9782vf33b4m7kz9dvzacsp9n2l0"))))
+        (base32 "0h0hhdq1hxvysf7hrk0jpy1jb1b7zq8gh6k905glhqykmdzm0p25"))))
     (properties `((upstream-name . "padma")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment r-s4vectors

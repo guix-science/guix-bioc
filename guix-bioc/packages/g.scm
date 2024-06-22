@@ -2192,13 +2192,13 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
 (define-public r-ggkegg
   (package
     (name "r-ggkegg")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggkegg" version))
        (sha256
-        (base32 "177hz7xfkfjzqb7v2c3jf94jqa0ckcmxb5w64jy25lci8bl1klaw"))))
+        (base32 "18j3li1msgra3lmk2hj0lz74cvlxl8mrx6maygdiybrmny74510g"))))
     (properties `((upstream-name . "ggkegg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml

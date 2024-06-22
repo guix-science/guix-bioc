@@ -4489,13 +4489,13 @@ returns simple, comprehensive, easy to analyze results.")
 (define-public r-tadar
   (package
     (name "r-tadar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "tadar" version))
        (sha256
-        (base32 "12jmrnaqf1hkdjw2qvxjkb2y2860ck9a5957h44nkhxf75lv35vb"))))
+        (base32 "19f9qzz2hg4j75v6xzma9va0wr3iq8la3dv0qj0aky81ncam4b8z"))))
     (properties `((upstream-name . "tadar")))
     (build-system r-build-system)
     (propagated-inputs (list r-variantannotation
