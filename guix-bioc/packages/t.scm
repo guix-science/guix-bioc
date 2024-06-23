@@ -4190,13 +4190,13 @@ been restricted for demonstration purposes.")
 (define-public r-targetsearch
   (package
     (name "r-targetsearch")
-    (version "2.6.1")
+    (version "2.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TargetSearch" version))
        (sha256
-        (base32 "1q6v6pfkpcm23a39vgp9ysbqa6wwkwv9dgnxd6m8gjlq3azgsnf6"))))
+        (base32 "0l3prcqi80g9n823gm2bnpn30r95dbmg5yfvdqwsvd465kyah3hz"))))
     (properties `((upstream-name . "TargetSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-ncdf4 r-assertthat))

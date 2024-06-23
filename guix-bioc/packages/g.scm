@@ -3887,13 +3887,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.0.6")
+    (version "3.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "0aprq1ac2npnbs8ic8lq2z1rp67gsff7450sg08gri40mcrn8xz5"))))
+        (base32 "0bd37bply9yfkwn24w9nzh6hwn9cs1wnwkdvbkbaabfnx7jq0qfz"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
