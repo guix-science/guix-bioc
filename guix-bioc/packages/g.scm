@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -3886,13 +3887,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.0.7")
+    (version "3.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "0bd37bply9yfkwn24w9nzh6hwn9cs1wnwkdvbkbaabfnx7jq0qfz"))))
+        (base32 "1g2yy1n8krl5iic1vq97v1ism36wjmav98x15ai42dlchnncm2ny"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3902,6 +3903,7 @@ tools for the developer.")
                              r-s4vectors
                              r-rlang
                              r-rappdirs
+                             r-r-utils
                              r-memoise
                              r-magrittr
                              r-lubridate
@@ -3912,6 +3914,7 @@ tools for the developer.")
                              r-data-table
                              r-bit64
                              r-biobase
+                             r-base64enc
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://pavlidislab.github.io/gemma.R/")
