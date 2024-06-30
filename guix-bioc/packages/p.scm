@@ -3426,13 +3426,13 @@ differential expression analysis with limma package are supported.")
 (define-public r-pgxrpi
   (package
     (name "r-pgxrpi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pgxRpi" version))
        (sha256
-        (base32 "1j6lbmpsi9lnwjq6q8v08vimqdy586xxm4ahkcbfsgscss3vj052"))))
+        (base32 "18c5xpfyqjjj5vc3nnajwq5sq1w24lqqs4ik91vjw5qg41rbspy3"))))
     (properties `((upstream-name . "pgxRpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer

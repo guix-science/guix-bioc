@@ -1881,13 +1881,13 @@ Shiny-based interactive app.")
 (define-public r-ginmapper
   (package
     (name "r-ginmapper")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ginmappeR" version))
        (sha256
-        (base32 "1xq49lsfw7zri66nxn1z8s2w9ylhl3s07lwm7vqq6xjgfwfd8jn2"))))
+        (base32 "133r7aqs31ml6v0n9z50xhm1py63hinhdhp2qz46py925r5ip4sz"))))
     (properties `((upstream-name . "ginmappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3982,13 +3982,13 @@ genome widely.")
 (define-public r-gedi
   (package
     (name "r-gedi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GeDi" version))
        (sha256
-        (base32 "193fnp0v74bsdszxxxywz9r45xqlmvn5vg0n5fcq1w8f15rpgizg"))))
+        (base32 "0s0fln04m7ywvv33qpagcabsp90v804fdd1yjzpqfk67xdwa1svg"))))
     (properties `((upstream-name . "GeDi")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2

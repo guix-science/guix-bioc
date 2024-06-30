@@ -548,13 +548,13 @@ underlying cellular trajectories.")
 (define-public r-velociraptor
   (package
     (name "r-velociraptor")
-    (version "1.14.2")
+    (version "1.14.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "velociraptor" version))
        (sha256
-        (base32 "02i60fjwy966gjqr2ib1916j4i8ip7fmk0x013azl5hm6q00c8xf"))))
+        (base32 "0i8kzj79qszqaq6ynij006r80g2jacm4pmjkvv1h36mxp3a6z559"))))
     (properties `((upstream-name . "velociraptor")))
     (build-system r-build-system)
     (propagated-inputs (list r-zellkonverter
