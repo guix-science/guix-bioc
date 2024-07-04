@@ -4031,13 +4031,13 @@ application for easy usage.")
 (define-public r-gdsarray
   (package
     (name "r-gdsarray")
-    (version "1.24.0")
+    (version "1.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GDSArray" version))
        (sha256
-        (base32 "0s78y646vr1m2lcsg91yy5xzc328hfbx0lnzyfg9pavp0d12yzip"))))
+        (base32 "01sjx63m9affj46s6l3byj9m127bipid230jdlxnwans38x5jsxr"))))
     (properties `((upstream-name . "GDSArray")))
     (build-system r-build-system)
     (propagated-inputs (list r-snprelate

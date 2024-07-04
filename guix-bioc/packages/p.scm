@@ -2326,13 +2326,13 @@ details on how to use these datasets, see the plotgardener package vignettes.")
 (define-public r-plotgardener
   (package
     (name "r-plotgardener")
-    (version "1.10.1")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plotgardener" version))
        (sha256
-        (base32 "1pcjc4an5pspafb9pvmia73g8cdp6n2paz2m952p1xnwsp9ijsi7"))))
+        (base32 "115j3fh9abdrlgf2dsd9jx4lja1pjfg0fh0if3vwg1gfv7qnzfrn"))))
     (properties `((upstream-name . "plotgardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

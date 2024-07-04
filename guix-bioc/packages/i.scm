@@ -349,13 +349,13 @@ However, writing results to csv works as before.")
 (define-public r-isobayes
   (package
     (name "r-isobayes")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "IsoBayes" version))
        (sha256
-        (base32 "19vga38f9srbsb6vglb0ni33cfrzrn5z94d0v4apnki4r6plp2k2"))))
+        (base32 "0nb31lm8000b6s5hbxlv3x31h0ym0jhvzh4fb5gncrvwg1rzbk33"))))
     (properties `((upstream-name . "IsoBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
