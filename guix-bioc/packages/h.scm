@@ -5084,6 +5084,39 @@ code.  The GEO datasets are downloaded from the URL
 <https://ftp.ncbi.nlm.nih.gov/geo/series/>.")
     (license license:gpl3)))
 
+(define-public r-hdxmsqc
+  (package
+    (name "r-hdxmsqc")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "hdxmsqc" version))
+       (sha256
+        (base32 "1ynjkwzfa84p2hg56nimbhfpw9ayah23lw8nb0mhkkqvb50nar19"))))
+    (properties `((upstream-name . "hdxmsqc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-spectra
+                             r-s4vectors
+                             r-qfeatures
+                             r-mscoreutils
+                             r-knitr
+                             r-ggplot2
+                             r-dplyr
+                             r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "http://github.com/ococrook/hdxmsqc")
+    (synopsis
+     "An R package for quality Control for hydrogen deuterium exchange mass spectrometry experiments")
+    (description
+     "The hdxmsqc package enables us to analyse and visualise the quality of HDX-MS
+experiments.  Either as a final quality check before downstream analysis and
+publication or as part of a interative procedure to determine the quality of the
+data.  The package builds on the QFeatures and Spectra packages to integrate
+with other mass-spectrometry data.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
 (define-public r-hdtd
   (package
     (name "r-hdtd")

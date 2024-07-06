@@ -5506,14 +5506,14 @@ automated analysis report generation.")
 (define-public r-microbiomedatasets
   (package
     (name "r-microbiomedatasets")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microbiomeDataSets" version
                               'experiment))
        (sha256
-        (base32 "0ng0sbdn3y2h7dyn42rq5ci12xx5y3hqb87n7xi7lc1gp1pcxcf2"))))
+        (base32 "1jc5xcf48xwa7m1g55z38mjnbsqj7gqzwdb37kg1q60rk6bj4mj2"))))
     (properties `((upstream-name . "microbiomeDataSets")))
     (build-system r-build-system)
     (arguments
@@ -7661,13 +7661,13 @@ distributions.")
 (define-public r-metabolomicsworkbenchr
   (package
     (name "r-metabolomicsworkbenchr")
-    (version "1.14.0")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metabolomicsWorkbenchR" version))
        (sha256
-        (base32 "0rsrla3gyh0fpx49kg0p5c02nskcl5rv7xmdnbgxk5d1kbzdsrcr"))))
+        (base32 "1aj3b9zpnvmb0h5bbmd7nsvfg50a834nwrgvqw6707ncyw1p7vgi"))))
     (properties `((upstream-name . "metabolomicsWorkbenchR")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

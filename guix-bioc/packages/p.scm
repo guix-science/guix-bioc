@@ -8532,13 +8532,13 @@ Sep 24;7(1):10.")
 (define-public r-pathlinkr
   (package
     (name "r-pathlinkr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pathlinkR" version))
        (sha256
-        (base32 "19i840an94hpyqxz4c4piqy322ynxzf48cxbmxvf5jylxdqjnzf2"))))
+        (base32 "1zwcrxi926m6zyhv3na7jv8cj61m93a3mg7zz6rqblvxrg218gmg"))))
     (properties `((upstream-name . "pathlinkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

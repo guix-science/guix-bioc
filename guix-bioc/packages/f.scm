@@ -2098,13 +2098,13 @@ pedigrees.")
 (define-public r-faers
   (package
     (name "r-faers")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "faers" version))
        (sha256
-        (base32 "04q6h3hc2697dpk66ra6lppv808n0vgxk1py26nxjkpmqyc076xx"))))
+        (base32 "09cha2kzc3bjgd4yww9pymvk7d1wnw3qh70vl1sra52vz89hif4j"))))
     (properties `((upstream-name . "faers")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

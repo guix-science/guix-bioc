@@ -8229,6 +8229,45 @@ based on any existing dataset.  This model can also transfer knowledge from a
 large set of integrated datasets to increase accuracy further.")
     (license license:gpl3)))
 
+(define-public r-scclassify
+  (package
+    (name "r-scclassify")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scClassify" version))
+       (sha256
+        (base32 "1ymrxm5xmhiaj5vzv2xy35pxn0jxjjjdzclx7f3qznbxyfkd35nm"))))
+    (properties `((upstream-name . "scClassify")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod
+                             r-s4vectors
+                             r-proxyc
+                             r-proxy
+                             r-mixtools
+                             r-minpack-lm
+                             r-mgcv
+                             r-matrix
+                             r-limma
+                             r-igraph
+                             r-hopach
+                             r-ggraph
+                             r-ggplot2
+                             r-diptest
+                             r-cluster
+                             r-cepo
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scClassify")
+    (synopsis "scClassify: single-cell Hierarchical Classification")
+    (description
+     "@code{scClassify} is a multiscale classification framework for single-cell
+RNA-seq data based on ensemble learning and cell type hierarchies, enabling
+sample size estimation required for accurate cell type classification and joint
+classification of cells using multiple references.")
+    (license license:gpl3)))
+
 (define-public r-sccb2
   (package
     (name "r-sccb2")

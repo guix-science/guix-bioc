@@ -6666,6 +6666,44 @@ binding energy, binding location, etc.).  The functions handle the given dataset
 as graph object and the processes progress via edge and node variables.")
     (license license:gpl3+)))
 
+(define-public r-cepo
+  (package
+    (name "r-cepo")
+    (version "1.10.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Cepo" version))
+       (sha256
+        (base32 "1vqfb797q3pd69ana2m7vbd89jzqkbhc3xhfzskj5cxrggd4d2cv"))))
+    (properties `((upstream-name . "Cepo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-patchwork
+                             r-hdf5array
+                             r-gseabase
+                             r-ggplot2
+                             r-dplyr
+                             r-delayedmatrixstats
+                             r-delayedarray
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/Cepo")
+    (synopsis "Cepo for the identification of differentially stable genes")
+    (description
+     "Defining the identity of a cell is fundamental to understand the heterogeneity
+of cells to various environmental signals and perturbations.  We present Cepo, a
+new method to explore cell identities from single-cell RNA-sequencing data using
+differential stability as a new metric to define cell identity genes.  Cepo
+computes cell-type specific gene statistics pertaining to differential stable
+gene expression.")
+    (license license:expat)))
+
 (define-public r-censcyt
   (package
     (name "r-censcyt")
