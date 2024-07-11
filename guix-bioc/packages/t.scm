@@ -1130,13 +1130,13 @@ relationship, the PT distributions generalizes this relationship to any orde.")
 (define-public r-tvtb
   (package
     (name "r-tvtb")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TVTB" version))
        (sha256
-        (base32 "0in5l9nq0br7c1n546wn29av5m25xxc82hvns5z8mshnnlk59pmn"))))
+        (base32 "1dacdp9rkh47mc1bpz1y0xhrncdc3hwgvi2436wpahra5adcg1mh"))))
     (properties `((upstream-name . "TVTB")))
     (build-system r-build-system)
     (propagated-inputs (list r-variantannotation
@@ -1151,7 +1151,6 @@ relationship, the PT distributions generalizes this relationship to any orde.")
                              r-ggally
                              r-genomicranges
                              r-genomeinfodb
-                             r-ensemblvep
                              r-ensembldb
                              r-biostrings
                              r-biocparallel

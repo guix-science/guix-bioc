@@ -8,10 +8,10 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages i)
-  #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages h)
   #:use-module (gnu packages compression)
@@ -420,16 +420,18 @@ of primers for standard PCR validation.")
 (define-public r-evaluomer
   (package
     (name "r-evaluomer")
-    (version "1.20.0")
+    (version "1.20.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "evaluomeR" version))
        (sha256
-        (base32 "1rcffshqlkilmfyziz95pac4c0rm5jjq0y9i3r47z55zmrnr4lz4"))))
+        (base32 "18hp7j6m7fpnaa4l9clqff1xg0lmvwsh0s26c5gq75r1d6k05m4p"))))
     (properties `((upstream-name . "evaluomeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
+                             r-sparcl
+                             r-rskc
                              r-reshape2
                              r-rdpack
                              r-randomforest
@@ -444,6 +446,8 @@ of primers for standard PCR validation.")
                              r-ggdendro
                              r-fpc
                              r-flexmix
+                             r-dplyr
+                             r-dendextend
                              r-corrplot
                              r-cluster
                              r-class))
