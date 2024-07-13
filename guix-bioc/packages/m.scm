@@ -3128,13 +3128,13 @@ chemotherapeutic treatments.")
 (define-public r-monalisa
   (package
     (name "r-monalisa")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "monaLisa" version))
        (sha256
-        (base32 "0znan1yh35mxrjn6x5xz2g5pl0dhh0nklyx8rbsn09hn1khb8y5l"))))
+        (base32 "1pa7q4jr21yx4qf17bs7pjk21fjp4fdlij95gw9ffc5a98513m7b"))))
     (properties `((upstream-name . "monaLisa")))
     (build-system r-build-system)
     (propagated-inputs (list r-xvector

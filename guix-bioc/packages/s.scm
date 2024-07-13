@@ -2048,13 +2048,13 @@ prior to a co-expression analysis.")
 (define-public r-spotsweeper
   (package
     (name "r-spotsweeper")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpotSweeper" version))
        (sha256
-        (base32 "1jkc37ymip3r29fh041mfa2bq17qhxq7mp0i35zrjh2lzm83qxas"))))
+        (base32 "18qw7xpkby87aasb2hb18x72l9yymly6hcjsarjmx2pcn6dcnpqq"))))
     (properties `((upstream-name . "SpotSweeper")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -2073,9 +2073,7 @@ prior to a co-expression analysis.")
 artifact-level QC in spot-based spatial transcripomics, such as 10x Visium.
 These methods calculate local (nearest-neighbors) mean and variance of standard
 QC metrics (library size, unique genes, and mitochondrial percentage) to
-identify outliers spot and large technical artifacts.  Scales linearly with the
-number of spots and is designed to be used with @code{SpatialExperiment}
-objects.")
+identify outliers spot and large technical artifacts.")
     (license license:expat)))
 
 (define-public r-spotlight
