@@ -2538,13 +2538,13 @@ data.")
 (define-public r-pipets
   (package
     (name "r-pipets")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PIPETS" version))
        (sha256
-        (base32 "0pp0zn37rcnwx54hxsc8lw7j2zygah4xgdjhw29bf5mriyw2ay4s"))))
+        (base32 "0argzw874689hn4dddips86rpvn4i176gxj18j3f2jx5z4j61y4a"))))
     (properties `((upstream-name . "PIPETS")))
     (build-system r-build-system)
     (propagated-inputs (list r-genomicranges r-dplyr r-biocgenerics))

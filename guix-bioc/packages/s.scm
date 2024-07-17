@@ -2048,13 +2048,13 @@ prior to a co-expression analysis.")
 (define-public r-spotsweeper
   (package
     (name "r-spotsweeper")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpotSweeper" version))
        (sha256
-        (base32 "18qw7xpkby87aasb2hb18x72l9yymly6hcjsarjmx2pcn6dcnpqq"))))
+        (base32 "058j58178k5c71ivwnb9l8japfldmdk6nqkzyxf9zmh3p9b7zkqz"))))
     (properties `((upstream-name . "SpotSweeper")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment

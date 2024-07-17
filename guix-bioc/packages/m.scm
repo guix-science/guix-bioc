@@ -199,13 +199,13 @@ using STOCSY; and biological interpretation of MWAS results.")
 (define-public r-musicatk
   (package
     (name "r-musicatk")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "musicatk" version))
        (sha256
-        (base32 "1mp8c42pk5pl4ymvz0vjvgh0vq10kk67844vvspbhwpfdmsabr2b"))))
+        (base32 "1bz303lmxjvj24pb03mc64pv0595snhn6g99q3a40w73sqlxh14c"))))
     (properties `((upstream-name . "musicatk")))
     (build-system r-build-system)
     (propagated-inputs (list r-variantannotation
@@ -242,7 +242,6 @@ using STOCSY; and biological interpretation of MWAS results.")
                              r-genomeinfodb
                              r-factoextra
                              r-dplyr
-                             r-deconstructsigs
                              r-decomptumor2sig
                              r-data-table
                              r-complexheatmap
