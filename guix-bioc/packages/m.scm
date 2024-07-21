@@ -8703,13 +8703,13 @@ remove probe affinity effect across multiple sequences.")
 (define-public r-matter
   (package
     (name "r-matter")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "matter" version))
        (sha256
-        (base32 "06ql73amrl5zy3ldm4ni3vwv65j1v9fy5s7a2pvwi31w4nwdly6h"))))
+        (base32 "17903fjwxa77llwcf1r783ca3nh10l4lpxd2q65s1jnvk9sjcn65"))))
     (properties `((upstream-name . "matter")))
     (build-system r-build-system)
     (propagated-inputs (list r-protgenerics

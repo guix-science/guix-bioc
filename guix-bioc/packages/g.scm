@@ -20,10 +20,12 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
+  #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -3749,6 +3751,7 @@ RNA Package is needed to ensure @code{GeneGA} to function properly.")
                              r-mclust
                              r-limma
                              r-impute
+                             r-ic10
                              r-biomart
                              r-amap
                              r-aims))

@@ -16,6 +16,7 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages r)
+  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages n)
@@ -23,7 +24,6 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages o)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
@@ -2346,17 +2346,17 @@ conditions.")
 (define-public r-splicewiz
   (package
     (name "r-splicewiz")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpliceWiz" version))
        (sha256
-        (base32 "11pad2gdra4bq6is34d7981f6vb4wzsmvihgf08514d1598qn1cc"))))
+        (base32 "00rrfa6dg4qas9hwi1cikdpv4k9gsvr89lgcp0d0yvmsa60inmlf"))))
     (properties `((upstream-name . "SpliceWiz")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zlibbioc
-                             r-summarizedexperiment
+    (inputs (list zlib))
+    (propagated-inputs (list r-summarizedexperiment
                              r-stringi
                              r-shinywidgets
                              r-shinyfiles
@@ -4423,18 +4423,18 @@ in precision medicine applications where the latter must be reported.")
 (define-public r-sipsic
   (package
     (name "r-sipsic")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SiPSiC" version))
        (sha256
-        (base32 "158sjiza9wqd5ipl3fm1gx63qas6j3rqlk6ayw5hnf0al1g64z5q"))))
+        (base32 "1lc82xx9w3gas876f0n3vksk1l9lh1cr3zk0dh4m93maapismaix"))))
     (properties `((upstream-name . "SiPSiC")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://doi.org/10.1101/2023.03.27.534310")
+    (home-page "https://www.genome.org/cgi/doi/10.1101/gr.278431.123")
     (synopsis "Calculate Pathway Scores for Each Cell in scRNA-Seq Data")
     (description
      "Infer biological pathway activity of cells from single-cell RNA-sequencing data
@@ -7524,14 +7524,14 @@ of wet-lab experiments.")
 (define-public r-scmultiome
   (package
     (name "r-scmultiome")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scMultiome" version
                               'experiment))
        (sha256
-        (base32 "1fiivxs35zanssfkjv83fa898fjr93xgq5g2i9m2qkv2pxqlyan8"))))
+        (base32 "0rgcg8qhpap7wnlndf9bmild55yxv21zdn89hs5h1503rfchlx2d"))))
     (properties `((upstream-name . "scMultiome")))
     (build-system r-build-system)
     (arguments
