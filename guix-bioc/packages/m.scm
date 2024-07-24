@@ -1662,13 +1662,13 @@ than memory data sets.")
 (define-public r-msstats
   (package
     (name "r-msstats")
-    (version "4.12.0")
+    (version "4.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstats" version))
        (sha256
-        (base32 "0nrh0hjbsxmf390k5bnniichkwlw3scq8y90bw7hqv21k7wzwfvp"))))
+        (base32 "10dsw777qiaj042mfsram39n4bq0sps18lfgl98wb9y0d67c8xaz"))))
     (properties `((upstream-name . "MSstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

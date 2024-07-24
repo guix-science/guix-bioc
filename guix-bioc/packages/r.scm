@@ -4968,22 +4968,22 @@ combination of its global similarity and local similarity.")
 (define-public r-rcpi
   (package
     (name "r-rcpi")
-    (version "1.40.0")
+    (version "1.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rcpi" version))
        (sha256
-        (base32 "1zi7fsq02cac60z92nan9374b2l07qx2fa7jrcngs0xgjcw6k31n"))))
+        (base32 "01p3z2ylkxvcyrzd9yizw2niw3fv3kn30is4cniy6r68qhm1msxy"))))
     (properties `((upstream-name . "Rcpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
                              r-rjson
-                             r-rcurl
-                             r-pwalign
+                             r-httr2
                              r-gosemsim
                              r-foreach
                              r-doparallel
+                             r-curl
                              r-biostrings))
     (native-inputs (list r-knitr))
     (home-page "https://nanx.me/Rcpi/")

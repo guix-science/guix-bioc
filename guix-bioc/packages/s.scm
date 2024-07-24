@@ -5817,6 +5817,51 @@ across multiple R processes.  It avoids the overhead of memory dulplication and
 data transfer, which make sharing big data object across many clusters possible.")
     (license license:gpl3)))
 
+(define-public r-sgcp
+  (package
+    (name "r-sgcp")
+    (version "1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SGCP" version))
+       (sha256
+        (base32 "0l16002hzn3myadjkdyj1s7l7kql6f3gd8fjm8rklgs8x6pblk8c"))))
+    (properties `((upstream-name . "SGCP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-summarizedexperiment
+                             r-rspectra
+                             r-rgraphviz
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-plyr
+                             r-org-hs-eg-db
+                             r-openxlsx
+                             r-graph
+                             r-gostats
+                             r-go-db
+                             r-ggridges
+                             r-ggplot2
+                             r-genefilter
+                             r-expm
+                             r-dplyr
+                             r-desctools
+                             r-caret
+                             r-annotate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/na396/SGCP")
+    (synopsis
+     "SGCP: A semi-supervised pipeline for gene clustering using self-training approach in gene co-expression networks")
+    (description
+     "SGC is a semi-supervised pipeline for gene clustering in gene co-expression
+networks.  SGC consists of multiple novel steps that enable the computation of
+highly enriched modules in an unsupervised manner.  But unlike all existing
+frameworks, it further incorporates a novel step that leverages Gene Ontology
+information in a semi-supervised clustering method that further improves the
+quality of the computed modules.")
+    (license license:gpl3)))
+
 (define-public r-sfedata
   (package
     (name "r-sfedata")

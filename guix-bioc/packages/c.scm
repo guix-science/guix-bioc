@@ -7649,19 +7649,25 @@ data from LGC company.")
 (define-public r-ccimpute
   (package
     (name "r-ccimpute")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ccImpute" version))
        (sha256
-        (base32 "0pjdlh77wpv54m2kc26kyzmpqikgz666dkw5h6af7q7lmgp0xc19"))))
+        (base32 "043lw1v8kkilki5gq6rjbfbyln39qlld55ch6wnz8qh2yv3k427i"))))
     (properties `((upstream-name . "ccImpute")))
     (build-system r-build-system)
-    (propagated-inputs (list r-simlr r-rcppeigen r-rcpp r-matrixstats
+    (propagated-inputs (list r-summarizedexperiment
+                             r-sparsematrixstats
+                             r-singlecellexperiment
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-irlba
                              r-biocparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/ccImpute")
+    (home-page "https://github.com/khazum/ccImpute/")
     (synopsis
      "ccImpute: an accurate and scalable consensus clustering based approach to impute dropout events in the single-cell RNA-seq data (https://doi.org/10.1186/s12859-022-04814-8)")
     (description
