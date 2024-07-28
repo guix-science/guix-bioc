@@ -2478,20 +2478,20 @@ on different array platforms.")
 (define-public r-spillr
   (package
     (name "r-spillr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spillR" version))
        (sha256
-        (base32 "1pqb9n0rvjx8wdw4vjfmi9m2d5lf6xddygpf1grab3yhkrn9akw8"))))
+        (base32 "18194i0zz2cz2wc69gpifk2s6h58acp57adlkp5ciwv68h2af5dd"))))
     (properties `((upstream-name . "spillR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-summarizedexperiment
-                             r-spatstat-geom
+                             r-spatstat-univar
                              r-s4vectors
                              r-ggplot2
                              r-dplyr
