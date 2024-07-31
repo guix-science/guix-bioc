@@ -3642,13 +3642,13 @@ foundation for integrative downstream analysis of the data.")
 (define-public r-bionar
   (package
     (name "r-bionar")
-    (version "1.6.1")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioNAR" version))
        (sha256
-        (base32 "0p1vrfwxfhaavsia3v5nnb5banz1js8nl31gs41nyn1m0njyd1fz"))))
+        (base32 "0gr3pf34xgs778bfndmml9df7l0w6ypa8d83h31krlxzd1h4wz0h"))))
     (properties `((upstream-name . "BioNAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgcna
@@ -3845,13 +3845,13 @@ accession number, and run web the services @code{lmsdSearch} and
 (define-public r-biodbkegg
   (package
     (name "r-biodbkegg")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbKegg" version))
        (sha256
-        (base32 "065a0c62xbbqc73gbcqcwfv1jyyy025dppjq93l0ic4qshh9kg79"))))
+        (base32 "0sk14rxjjh5n3h9k0bw3pawvw5jpxqznsil9x9kcpkrw99sl39mg"))))
     (properties `((upstream-name . "biodbKegg")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-lifecycle r-chk r-biodb))

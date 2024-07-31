@@ -2309,13 +2309,13 @@ statistical testig schemes.")
 (define-public r-mpra
   (package
     (name "r-mpra")
-    (version "1.26.0")
+    (version "1.26.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mpra" version))
        (sha256
-        (base32 "181v4ickndbng6bhvvzyn92kq61izjhx27hkbsryqgnf0xlx1c33"))))
+        (base32 "061pji88qrzclq7wyklba3492k133zzqsalx377n42fxrw0593z9"))))
     (properties `((upstream-name . "mpra")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -5298,13 +5298,13 @@ manipulating them.")
 (define-public r-microbiotaprocess
   (package
     (name "r-microbiotaprocess")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiotaProcess" version))
        (sha256
-        (base32 "0jqvxr77c9karq8wm53khs47vwrrvy86q6sl0dpsbydfmjw0blln"))))
+        (base32 "1x0yjxzdri6x1yin0d54r9wx48y3x2vy79wnkg37i070ira5hddw"))))
     (properties `((upstream-name . "MicrobiotaProcess")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

@@ -658,13 +658,13 @@ draw protein schematics.")
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doubletrouble" version))
        (sha256
-        (base32 "0xfrpz3ilxapcclxgf7drkwcrhvn2d70fx6q139faslp1zs19bv0"))))
+        (base32 "057l5qirwyh7swcyavyqd9d3qy9qxs8rasjzyglbz266sw3z5p36"))))
     (properties `((upstream-name . "doubletrouble")))
     (build-system r-build-system)
     (propagated-inputs (list r-syntenet
@@ -675,7 +675,6 @@ draw protein schematics.")
                              r-genomicranges
                              r-genomicfeatures
                              r-biostrings
-                             r-biocparallel
                              r-annotationdbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/almeidasilvaf/doubletrouble")
