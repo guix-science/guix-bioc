@@ -2658,13 +2658,13 @@ associated with a response variable.")
 (define-public r-spiat
   (package
     (name "r-spiat")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPIAT" version))
        (sha256
-        (base32 "0p0f9cbvxf6jdczlzd1lrx09lrlvggg40qf7s2k4qys6cj2g8pvg"))))
+        (base32 "0if22cin355bq5bz8cn56041h8rszg2wf00sljzcac3mv2k1bgs5"))))
     (properties `((upstream-name . "SPIAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -3008,13 +3008,13 @@ Development (LIBD) researchers and collaborators.")
 (define-public r-spatialheatmap
   (package
     (name "r-spatialheatmap")
-    (version "2.10.1")
+    (version "2.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialHeatmap" version))
        (sha256
-        (base32 "1akhvmznrzm2x0znpdln69364mi1d31b5an66j46n1sw4linadyz"))))
+        (base32 "0arr3v3simkkq3wpf32jgm35s7mwbmpgn17g2y3glam37w8yc7gd"))))
     (properties `((upstream-name . "spatialHeatmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

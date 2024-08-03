@@ -20,7 +20,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -1882,13 +1881,13 @@ Shiny-based interactive app.")
 (define-public r-ginmapper
   (package
     (name "r-ginmapper")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ginmappeR" version))
        (sha256
-        (base32 "133r7aqs31ml6v0n9z50xhm1py63hinhdhp2qz46py925r5ip4sz"))))
+        (base32 "1vc2pipyjld91a4v2hrc1lqdx1bsdlsgx334waz9axci8ci6h72g"))))
     (properties `((upstream-name . "ginmappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
