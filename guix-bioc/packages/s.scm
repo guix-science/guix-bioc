@@ -2346,13 +2346,13 @@ conditions.")
 (define-public r-splicewiz
   (package
     (name "r-splicewiz")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpliceWiz" version))
        (sha256
-        (base32 "00rrfa6dg4qas9hwi1cikdpv4k9gsvr89lgcp0d0yvmsa60inmlf"))))
+        (base32 "1n1j7fd8s2jkfh2w9a7101ckib0nmc9303mvnqxsij9x1934182r"))))
     (properties `((upstream-name . "SpliceWiz")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -2366,6 +2366,7 @@ conditions.")
                              r-s4vectors
                              r-rvest
                              r-rtracklayer
+                             r-rsqlite
                              r-rhdf5
                              r-rhandsontable
                              r-rcppprogress
@@ -4423,13 +4424,13 @@ in precision medicine applications where the latter must be reported.")
 (define-public r-sipsic
   (package
     (name "r-sipsic")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SiPSiC" version))
        (sha256
-        (base32 "1lc82xx9w3gas876f0n3vksk1l9lh1cr3zk0dh4m93maapismaix"))))
+        (base32 "1jdy75k7c3h5yyf358rmd562zva9yz3r9pbgq1lp4macr0l46bz4"))))
     (properties `((upstream-name . "SiPSiC")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-matrix))
@@ -9285,13 +9286,13 @@ The microarray data are derived from Roth et al. (2006) and Ge et al. (2005).")
 (define-public r-saigegds
   (package
     (name "r-saigegds")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SAIGEgds" version))
        (sha256
-        (base32 "1pkg72pqqlmj51vjz5p3qrj3b2lqqnzmh4ddbrn73rs66sgm9zkp"))))
+        (base32 "1nzr62hg99z0zzp0y74nis3xxgjsw2qc4w5xcm8p8j9kh9w7rwzk"))))
     (properties `((upstream-name . "SAIGEgds")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey

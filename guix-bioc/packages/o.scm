@@ -1058,13 +1058,13 @@ times but most of them were downloaded on August 08 2022.")
 (define-public r-ontoproc
   (package
     (name "r-ontoproc")
-    (version "1.26.0")
+    (version "1.26.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ontoProc" version))
        (sha256
-        (base32 "0v4dv6rjrivrx3npjycrlqyivbpksikkj6l8h772sa5hfnwmf943"))))
+        (base32 "0d3fypwwnb9qjdfkhd6w0ppy3hdp7ipds78300kq9yp0a6v7a9w2"))))
     (properties `((upstream-name . "ontoProc")))
     (build-system r-build-system)
     (inputs (list))

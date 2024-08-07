@@ -3693,6 +3693,34 @@ analysis.  Datasets may be used for testing of and as examples in packages, for
 tutorials and workflow demonstrations, or similar purposes.")
     (license license:expat)))
 
+(define-public r-tenxplore
+  (package
+    (name "r-tenxplore")
+    (version "1.26.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "tenXplore" version))
+       (sha256
+        (base32 "088vs1pcq92qgismxz886nmciharsvdnj0h2pbs40n391icbp7if"))))
+    (properties `((upstream-name . "tenXplore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-shiny
+                             r-org-mm-eg-db
+                             r-ontoproc
+                             r-matrixstats
+                             r-biocfilecache
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/tenXplore")
+    (synopsis
+     "ontological exploration of scRNA-seq of 1.3 million mouse neurons from 10x genomics")
+    (description
+     "Perform ontological exploration of @code{scRNA-seq} of 1.3 million mouse neurons
+from 10x genomics.")
+    (license license:artistic2.0)))
+
 (define-public r-tenxpbmcdata
   (package
     (name "r-tenxpbmcdata")

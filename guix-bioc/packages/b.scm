@@ -3845,13 +3845,13 @@ accession number, and run web the services @code{lmsdSearch} and
 (define-public r-biodbkegg
   (package
     (name "r-biodbkegg")
-    (version "1.10.1")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbKegg" version))
        (sha256
-        (base32 "0sk14rxjjh5n3h9k0bw3pawvw5jpxqznsil9x9kcpkrw99sl39mg"))))
+        (base32 "0rwxbg3ij5rg3agzsxib7f80b05ar40xnql2krl44c3n43yqkwyw"))))
     (properties `((upstream-name . "biodbKegg")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-lifecycle r-chk r-biodb))
@@ -3893,13 +3893,13 @@ search by mass and mass spectra annotation.")
 (define-public r-biodbexpasy
   (package
     (name "r-biodbexpasy")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbExpasy" version))
        (sha256
-        (base32 "1amzff4ndadialm5rhzy267c24h5fmh9w9w109zsbw8sixl0s0sd"))))
+        (base32 "0n5avxhv5131122h18d3r2v9c64i3nb251hmz8hhc6chmk203fmj"))))
     (properties `((upstream-name . "biodbExpasy")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-r6 r-chk r-biodb))

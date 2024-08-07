@@ -326,13 +326,13 @@ format.")
 (define-public r-mungesumstats
   (package
     (name "r-mungesumstats")
-    (version "1.12.0")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MungeSumstats" version))
        (sha256
-        (base32 "16msjxxmnzycj2nny35lvwvlxw1n4ga8g1wn4fcfv7xg4ad6vy4v"))))
+        (base32 "0qgcvdhb3z1380jfb3wl81kq9lgm90s6hnbkbrv3psn3bsgs78mi"))))
     (properties `((upstream-name . "MungeSumstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-variantannotation

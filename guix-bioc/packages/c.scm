@@ -4838,6 +4838,44 @@ Department of Medicine, Brigham and Women's Hospital, Harvard Medical School,
 Boston, Massachusetts.")
     (license license:lgpl2.0+)))
 
+(define-public r-cliquems
+  (package
+    (name "r-cliquems")
+    (version "1.18.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cliqueMS" version))
+       (sha256
+        (base32 "1k51j9q2s8065sxb04ywdh6kwh1y6w4kslk9iww9vmq0p1dwsdb7"))))
+    (properties `((upstream-name . "cliqueMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xcms
+                             r-slam
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-msnbase
+                             r-matrixstats
+                             r-igraph
+                             r-coop
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "http://cliquems.seeslab.net")
+    (synopsis
+     "Annotation of Isotopes, Adducts and Fragmentation Adducts for in-Source LC/MS Metabolomics Data")
+    (description
+     "Annotates data from liquid chromatography coupled to mass spectrometry (LC/MS)
+metabolomics experiments.  Based on a network algorithm (O.Senan, A. Aguilar-
+Mogas, M. Navarro, O. Yanes, R.Guimerà and M. Sales-Pardo, Bioinformatics,
+35(20), 2019), @code{CliqueMS} builds a weighted similarity network where nodes
+are features and edges are weighted according to the similarity of this
+features.  Then it searches for the most plausible division of the similarity
+network into cliques (fully connected components).  Finally it annotates
+metabolites within each clique, obtaining for each annotated metabolite the
+neutral mass and their features, corresponding to isotopes, ionization adducts
+and fragmentation adducts of that metabolite.")
+    (license license:gpl2+)))
+
 (define-public r-cliprofiler
   (package
     (name "r-cliprofiler")

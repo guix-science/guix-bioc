@@ -1645,13 +1645,13 @@ per-nucleotide basis using the bam_tally tool.")
 (define-public r-gloscope
   (package
     (name "r-gloscope")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GloScope" version))
        (sha256
-        (base32 "0gdr5ws5p1xj4ip9xk10igrlwdr10x11j0wsfkr0f0y6352f2gm6"))))
+        (base32 "02in9nq84gap80nyawvm434aqcc09idkfd3ihgnd3v8g6vx9sv3a"))))
     (properties `((upstream-name . "GloScope")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment
@@ -3888,13 +3888,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.0.11")
+    (version "3.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "04h42d39rq3d13ynyw4j4whqs55zvk1y2zw5anqqxmp4axnjqzkk"))))
+        (base32 "1r0p2syczc7czsw1m33gjlpwzaifwgfsalri4l17p1400hk6xf8g"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
