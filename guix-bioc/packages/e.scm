@@ -2552,13 +2552,13 @@ replication origins\" (PMID 20351051).")
 (define-public r-easyrnaseq
   (package
     (name "r-easyrnaseq")
-    (version "2.39.0")
+    (version "2.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "easyRNASeq" version))
        (sha256
-        (base32 "1dfg8k2jxhnyms7nkgsdyhwca0hnm45c2p3x5dxlm8kd69z7wzdj"))))
+        (base32 "1j36g6nyzbsaqz798q6yvgqx2vpjnzsi7b2pvldfpzkx1734isbx"))))
     (properties `((upstream-name . "easyRNASeq")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -2567,7 +2567,6 @@ replication origins\" (PMID 20351051).")
                              r-rsamtools
                              r-rappdirs
                              r-lsd
-                             r-locfit
                              r-iranges
                              r-genomicranges
                              r-genomicalignments

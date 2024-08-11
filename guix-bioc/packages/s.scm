@@ -16,9 +16,10 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages g)
+  #:use-module (guix-cran packages t)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages l)
-  #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages v)
   #:use-module (gnu packages java)
@@ -27,7 +28,6 @@
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
-  #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages a)
   #:use-module (gnu packages graph)
   #:use-module (guix-bioc packages z)
@@ -2187,6 +2187,57 @@ rescale the data and covariates, which are then used as input in spatially
 variable gene detection tools.")
     (license license:expat)))
 
+(define-public r-sponge
+  (package
+    (name "r-sponge")
+    (version "1.26.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SPONGE" version))
+       (sha256
+        (base32 "01sfkdd01l78z4p494080pq5f6wa65lp2m9ny5zbls7ibz9jpl48"))))
+    (properties `((upstream-name . "SPONGE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tnet
+                             r-tidyverse
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-randomforest
+                             r-ppcor
+                             r-metbrewer
+                             r-mass
+                             r-logging
+                             r-iterators
+                             r-igraph
+                             r-grbase
+                             r-glmnet
+                             r-ggridges
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-expm
+                             r-dplyr
+                             r-dorng
+                             r-data-table
+                             r-cvms
+                             r-complexheatmap
+                             r-caret
+                             r-biomart
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/SPONGE")
+    (synopsis "Sparse Partial Correlations On Gene Expression")
+    (description
+     "This package provides methods to efficiently detect competitive endogeneous RNA
+interactions between two genes.  Such interactions are mediated by one or
+several @code{miRNAs} such that both gene and @code{miRNA} expression data for a
+larger number of samples is needed as input.  The SPONGE package now also
+includes @code{spongEffects}: @code{ceRNA} modules offer patient-specific
+insights into the @code{miRNA} regulatory landscape.")
+    (license license:gpl3+)))
+
 (define-public r-splots
   (package
     (name "r-splots")
@@ -2613,13 +2664,13 @@ experiments.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.16.1")
+    (version "1.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "03bmjr4vbma5ynj773b364vb05vf06fyzvbq75qi7mczjyh4kckw"))))
+        (base32 "0xy964xx99wklh44m41h3066hndxv04i1jh623612sidhj4viih3"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2644,7 +2695,7 @@ experiments.")
                              r-classifyr
                              r-biocparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/spicyR")
+    (home-page "https://sydneybiox.github.io/spicyR/")
     (synopsis "Spatial analysis of in situ cytometry data")
     (description
      "The @code{spicyR} package provides a framework for performing inference on
@@ -4424,13 +4475,13 @@ in precision medicine applications where the latter must be reported.")
 (define-public r-sipsic
   (package
     (name "r-sipsic")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SiPSiC" version))
        (sha256
-        (base32 "1jdy75k7c3h5yyf358rmd562zva9yz3r9pbgq1lp4macr0l46bz4"))))
+        (base32 "0h9bd5dcl53m482icwj1yiz3016dy9f54hmqvxn8qjzjhqy9xic2"))))
     (properties `((upstream-name . "SiPSiC")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-matrix))

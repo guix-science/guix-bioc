@@ -760,13 +760,13 @@ for PCA and PLS.")
 (define-public r-lisaclust
   (package
     (name "r-lisaclust")
-    (version "1.12.1")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lisaClust" version))
        (sha256
-        (base32 "1yagv5c398kk95c8gyny7ldhh7mpf1yrqp65ijk0xgx5xpl3kcfd"))))
+        (base32 "19zb7h7k6yn2hjq204w49kz97r2fhflnw87b6qsmavhrpva6g9a1"))))
     (properties `((upstream-name . "lisaClust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

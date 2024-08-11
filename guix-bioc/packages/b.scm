@@ -3869,13 +3869,13 @@ Some functions for navigating along the pathways have also been implemented.")
 (define-public r-biodbhmdb
   (package
     (name "r-biodbhmdb")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbHmdb" version))
        (sha256
-        (base32 "0xf63zj1bpkaymv3psvrkibjbirqb7bych95p4l5crsg8af730ra"))))
+        (base32 "14g5c043rgwp259z5km4wvl5h9810fxpsja4wmk326plqpnqhcjr"))))
     (properties `((upstream-name . "biodbHmdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-testthat r-rcpp r-r6 r-biodb))

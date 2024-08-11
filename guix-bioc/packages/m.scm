@@ -4360,6 +4360,50 @@ expriments.  These experiments can be time point experiments, and or condition
 expriments.")
     (license license:expat)))
 
+(define-public r-mirsponger
+  (package
+    (name "r-mirsponger")
+    (version "2.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRspongeR" version))
+       (sha256
+        (base32 "0i7j33lwj5kw09dla7967f5z8zp8ls25db432m0ch2n8ialz0anc"))))
+    (properties `((upstream-name . "miRspongeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-sponge
+                             r-reactomepa
+                             r-rcpp
+                             r-org-hs-eg-db
+                             r-mcl
+                             r-linkcomm
+                             r-igraph
+                             r-foreach
+                             r-dose
+                             r-doparallel
+                             r-corpcor
+                             r-clusterprofiler))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/zhangjunpeng411/miRspongeR>")
+    (synopsis "Identification and analysis of miRNA sponge regulation")
+    (description
+     "This package provides several functions to explore @code{miRNA} sponge (also
+called @code{ceRNA} or @code{miRNA} decoy) regulation from putative
+@code{miRNA-target} interactions or/and transcriptomics data (including bulk,
+single-cell and spatial gene expression data).  It provides eight popular
+methods for identifying @code{miRNA} sponge interactions, and an integrative
+method to integrate @code{miRNA} sponge interactions from different methods, as
+well as the functions to validate @code{miRNA} sponge interactions, and infer
+@code{miRNA} sponge modules, conduct enrichment analysis of @code{miRNA} sponge
+modules, and conduct survival analysis of @code{miRNA} sponge modules.  By using
+a sample control variable strategy, it provides a function to infer
+sample-specific @code{miRNA} sponge interactions.  In terms of sample-specific
+@code{miRNA} sponge interactions, it implements three similarity methods to
+construct sample-sample correlation network.")
+    (license license:gpl3)))
+
 (define-public r-mirsm
   (package
     (name "r-mirsm")
