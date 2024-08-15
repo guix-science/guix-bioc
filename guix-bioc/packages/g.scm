@@ -20,7 +20,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -1882,20 +1881,22 @@ Shiny-based interactive app.")
 (define-public r-ginmapper
   (package
     (name "r-ginmapper")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ginmappeR" version))
        (sha256
-        (base32 "1vc2pipyjld91a4v2hrc1lqdx1bsdlsgx334waz9axci8ci6h72g"))))
+        (base32 "0s13z3naarspmdp9v82xjxqqhxygcsvw5vq6l1lmhj070fg8b9nz"))))
     (properties `((upstream-name . "ginmappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-uniprot-ws
+                             r-rvest
                              r-rentrez
                              r-memoise
                              r-keggrest
+                             r-jsonlite
                              r-httr
                              r-cachem))
     (native-inputs (list r-knitr))
@@ -3889,13 +3890,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.0.12")
+    (version "3.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "1r0p2syczc7czsw1m33gjlpwzaifwgfsalri4l17p1400hk6xf8g"))))
+        (base32 "1psiag87wbg7g0jjpd6hy1b4jcr8hx6hflqa5p0nnkw6zxp5cxkk"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

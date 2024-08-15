@@ -2287,13 +2287,13 @@ package to the Bioconductor IHW package.")
 (define-public r-igvshiny
   (package
     (name "r-igvshiny")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igvShiny" version))
        (sha256
-        (base32 "0nb8cals6nw5l70yrnwq1pcfdc3m0w9ncsrdrd2zsm4ni2lpqjvx"))))
+        (base32 "02n15bi9qxs5q1ripnvhjk4m9k9rwahi1dbwh4ym85aqjzxqpqks"))))
     (properties `((upstream-name . "igvShiny")))
     (build-system r-build-system)
     (arguments
