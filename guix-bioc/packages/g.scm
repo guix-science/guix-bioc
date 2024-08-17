@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -4253,13 +4254,13 @@ response analyses that the @code{gDR} suite offers.")
 (define-public r-gdnax
   (package
     (name "r-gdnax")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDNAx" version))
        (sha256
-        (base32 "12pyiwhwlxskq17vwmdwh5g3zlzbd15mbrxjv1pliblbzjvxfpzx"))))
+        (base32 "1fr5kyy2jhn2qia9wqd505kp9w5ad6d7bxvi5073m6rw1b7x6231"))))
     (properties `((upstream-name . "gDNAx")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
