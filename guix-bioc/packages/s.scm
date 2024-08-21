@@ -5872,13 +5872,13 @@ data transfer, which make sharing big data object across many clusters possible.
 (define-public r-sgcp
   (package
     (name "r-sgcp")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SGCP" version))
        (sha256
-        (base32 "0l16002hzn3myadjkdyj1s7l7kql6f3gd8fjm8rklgs8x6pblk8c"))))
+        (base32 "0njb0p4gb4yfbycnq62wxxbxk1881cdhybq8k0nz8zd2w61isp3w"))))
     (properties `((upstream-name . "SGCP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

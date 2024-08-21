@@ -8,7 +8,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages p)
-  #:use-module (guix-cran packages a)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages c)
@@ -167,7 +166,6 @@ knowledge and conclusions for the data and diseases to study.")
                              r-doparallel
                              r-deseq2
                              r-biobase
-                             r-aods3
                              r-ade4))
     (home-page "https://github.com/lbbe-software/kissDE")
     (synopsis "Retrieves Condition-Specific Variants in RNA-Seq Data")
