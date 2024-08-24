@@ -5872,13 +5872,13 @@ data transfer, which make sharing big data object across many clusters possible.
 (define-public r-sgcp
   (package
     (name "r-sgcp")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SGCP" version))
        (sha256
-        (base32 "0njb0p4gb4yfbycnq62wxxbxk1881cdhybq8k0nz8zd2w61isp3w"))))
+        (base32 "1pcql66jnvsmmghavhxz3vc693zg8w7d75znggmx6hdi4v7i47iq"))))
     (properties `((upstream-name . "SGCP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -5904,7 +5904,7 @@ data transfer, which make sharing big data object across many clusters possible.
     (native-inputs (list r-knitr))
     (home-page "https://github.com/na396/SGCP")
     (synopsis
-     "SGCP: A semi-supervised pipeline for gene clustering using self-training approach in gene co-expression networks")
+     "SGCP: a spectral self-learning method for clustering genes in co-expression networks")
     (description
      "SGC is a semi-supervised pipeline for gene clustering in gene co-expression
 networks.  SGC consists of multiple novel steps that enable the computation of

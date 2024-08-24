@@ -684,6 +684,37 @@ research and experimental settings.")
      "Significance assessment for distance measures of time-course protein profiles.")
     (license license:gpl3)))
 
+(define-public r-proteasy
+  (package
+    (name "r-proteasy")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "proteasy" version))
+       (sha256
+        (base32 "16cp8iklya589lb9y9sq43746kxvs7hndibzwpdklqz9b6yqmyj3"))))
+    (properties `((upstream-name . "proteasy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcpi
+                             r-ensembldb
+                             r-ensdb-rnorvegicus-v79
+                             r-ensdb-mmusculus-v79
+                             r-ensdb-hsapiens-v86
+                             r-data-table
+                             r-annotationfilter))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/martinry/proteasy")
+    (synopsis "Protease Mapping")
+    (description
+     "Retrieval of experimentally derived protease- and cleavage data derived from the
+MEROPS database.  Proteasy contains functions for mapping peptide termini to
+known sites where a protease cleaves.  This package also makes it possible to
+quickly look up known substrates based on a list of (potential) proteases, or
+vice versa - look up proteases based on a list of substrates.")
+    (license license:gpl3)))
+
 (define-public r-prostatecancervarambally
   (package
     (name "r-prostatecancervarambally")

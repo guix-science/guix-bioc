@@ -1763,13 +1763,13 @@ available.")
 (define-public r-differentialregulation
   (package
     (name "r-differentialregulation")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DifferentialRegulation" version))
        (sha256
-        (base32 "170sfmm11vcgwi4wak6y699cnmbqiw4p8bipb5k7qzqaww99541s"))))
+        (base32 "1hwb0y8xfz8zzvyag169p5igywx01n06nk03d49immm4l8fqjrwb"))))
     (properties `((upstream-name . "DifferentialRegulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tximport
