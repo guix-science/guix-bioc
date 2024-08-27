@@ -2456,29 +2456,6 @@ HMP Data Analysis and Coordination Center.  Processed data is provided as
 @code{SummarizedExperiment} class objects via @code{ExperimentHub}.")
     (license license:artistic2.0)))
 
-(define-public r-hmmcopy
-  (package
-    (name "r-hmmcopy")
-    (version "1.46.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "HMMcopy" version))
-       (sha256
-        (base32 "1i2n4i4vkxqfgdcmwhz1vcbhxk716m1blc2drzh5449y6x3qd026"))))
-    (properties `((upstream-name . "HMMcopy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
-    (home-page "https://bioconductor.org/packages/HMMcopy")
-    (synopsis
-     "Copy number prediction with correction for GC and mappability bias for HTS data")
-    (description
-     "Corrects GC and mappability biases for readcounts (i.e.  coverage) in
-non-overlapping windows of fixed length for single whole genome samples,
-yielding a rough estimate of copy number for furthur analysis.  Designed for
-rapid correction of high coverage whole genome tumour and normal samples.")
-    (license license:gpl3)))
-
 (define-public r-hmdbquery
   (package
     (name "r-hmdbquery")

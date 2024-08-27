@@ -21,7 +21,6 @@
   #:use-module (guix-cran packages i)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages e)
-  #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages t)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
