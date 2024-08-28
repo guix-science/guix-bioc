@@ -4415,13 +4415,13 @@ stored as average gene expression matrices.  For use with clustifyr
 (define-public r-clustifyr
   (package
     (name "r-clustifyr")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "clustifyr" version))
        (sha256
-        (base32 "14c7jr4q0zij2zqpcm6jihy0ch80yfp67lvhxiakcg33xq1jvmzv"))))
+        (base32 "1h684cyn16h2j9cl1rgzfpw07n6w4b7c5r9i4pg8ngkp56lj4isf"))))
     (properties `((upstream-name . "clustifyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

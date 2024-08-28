@@ -839,13 +839,13 @@ public repositories.")
 (define-public r-rsweep
   (package
     (name "r-rsweep")
-    (version "1.16.0")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rSWeeP" version))
        (sha256
-        (base32 "0l9qpmbgq7pp0g3m2df881zif42d6dbbgkiri97zklndgyi035jp"))))
+        (base32 "0866900bfmh1g1rjfn6046pd2yrhf9fnh62bc81vxsm2g2645rqy"))))
     (properties `((upstream-name . "rSWeeP")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))

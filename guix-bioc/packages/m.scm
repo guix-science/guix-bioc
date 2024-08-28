@@ -4362,13 +4362,13 @@ expriments.")
 (define-public r-mirsponger
   (package
     (name "r-mirsponger")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRspongeR" version))
        (sha256
-        (base32 "0i7j33lwj5kw09dla7967f5z8zp8ls25db432m0ch2n8ialz0anc"))))
+        (base32 "0ri3ll865y8xkv2r5psn099yqskw9mg0jg12g3zy4y73q6pzf6k9"))))
     (properties `((upstream-name . "miRspongeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4406,13 +4406,13 @@ construct sample-sample correlation network.")
 (define-public r-mirsm
   (package
     (name "r-mirsm")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRSM" version))
        (sha256
-        (base32 "0wxwz00fsv8jf291zlfjim89vhsbqwlc9klq0szzl1p7msrs7vga"))))
+        (base32 "1yszlnl67683bib11ppsggl3riyklnff3ssdal6i9wixq068rc22"))))
     (properties `((upstream-name . "miRSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgcna
@@ -4844,6 +4844,29 @@ of methods that estimate expression from the amplification curves.")
      "Annotation package containing all available @code{miRNA} names from 22 versions
 (data from http://www.mirbase.org/).")
     (license license:artistic2.0)))
+
+(define-public r-mirbaseconverter
+  (package
+    (name "r-mirbaseconverter")
+    (version "1.28.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miRBaseConverter" version))
+       (sha256
+        (base32 "02zrsfyy80522hx7863ggcvkm66pf6mzwbad589pdwnamppxfm6a"))))
+    (properties `((upstream-name . "miRBaseConverter")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/taoshengxu/miRBaseConverter")
+    (synopsis
+     "comprehensive and high-efficiency tool for converting and retrieving the information of miRNAs in different miRBase versions")
+    (description
+     "This package provides a comprehensive tool for converting and retrieving the
+@code{miRNA} Name, Accession, Sequence, Version, History and Family information
+in different @code{miRBase} versions.  It can process a huge number of
+@code{miRNAs} in a short time without other depends.")
+    (license license:gpl2+)))
 
 (define-public r-mirbase-db
   (package
