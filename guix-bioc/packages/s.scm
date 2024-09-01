@@ -5786,11 +5786,11 @@ and 9 are technical replicates of a control cell line.")
     (home-page "https://github.com/omorante/shiny_epico")
     (synopsis "ShinyÉPICo")
     (description
-     "@code{ShinyÉPICo} is a graphical pipeline to analyze Illumina DNA methylation
-arrays (450k or EPIC).  It allows to calculate differentially methylated
-positions and differentially methylated regions in a user-friendly interface.
-Moreover, it includes several options to export the results and obtain files to
-perform downstream analysis.")
+     "ShinyÉPICo is a graphical pipeline to analyze Illumina DNA methylation arrays
+(450k or EPIC).  It allows to calculate differentially methylated positions and
+differentially methylated regions in a user-friendly interface.  Moreover, it
+includes several options to export the results and obtain files to perform
+downstream analysis.")
     (license (license:fsdg-compatible "AGPL-3 + file LICENSE"))))
 
 (define-public r-shiny-gosling
