@@ -2409,13 +2409,13 @@ informative meta-data.")
 (define-public r-mousefm
   (package
     (name "r-mousefm")
-    (version "1.14.0")
+    (version "1.14.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MouseFM" version))
        (sha256
-        (base32 "0vwccf4fj664vbl0ggps51rac42j7xs5m33szhwdqpik6p2hyz7j"))))
+        (base32 "1mjq6cjasz4hra7ay9lnzqydqkj7yfrmhs9vpyhdrrclc02wzd2l"))))
     (properties `((upstream-name . "MouseFM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

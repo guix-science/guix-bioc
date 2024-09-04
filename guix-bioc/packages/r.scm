@@ -4968,13 +4968,13 @@ combination of its global similarity and local similarity.")
 (define-public r-rcpi
   (package
     (name "r-rcpi")
-    (version "1.40.1")
+    (version "1.40.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rcpi" version))
        (sha256
-        (base32 "01p3z2ylkxvcyrzd9yizw2niw3fv3kn30is4cniy6r68qhm1msxy"))))
+        (base32 "1p3mvbzsfbbly8cv2g50z9c063m4w9kbnmzcpbnxsaawqssm7ck4"))))
     (properties `((upstream-name . "Rcpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

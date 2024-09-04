@@ -3387,13 +3387,13 @@ required (see `Prostar` package).")
 (define-public r-damsel
   (package
     (name "r-damsel")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Damsel" version))
        (sha256
-        (base32 "0n60wkrwk1npg1361x5plam6rabmqzlxdcij1qf5q351wfkqlp8y"))))
+        (base32 "1k1h2dgs0cmwly7pyqp3lzfn5r6g0s9avns851jl6ifxk0qhlmfa"))))
     (properties `((upstream-name . "Damsel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

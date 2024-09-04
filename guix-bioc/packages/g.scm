@@ -20,7 +20,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -2195,13 +2194,13 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
 (define-public r-ggkegg
   (package
     (name "r-ggkegg")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggkegg" version))
        (sha256
-        (base32 "0j77l3bzddmkf45v66zvhypramhv9fprv4rxz5r6vkjhabgyjdfb"))))
+        (base32 "0rj2ghr6q9la8xcfnhnlqwg7v1xz5mi7z5wp7a7x71gngkrzmqi3"))))
     (properties `((upstream-name . "ggkegg")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2223,7 +2222,8 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
                              r-annotationdbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/noriakis/ggkegg")
-    (synopsis "KEGG pathway visualization by ggplot2")
+    (synopsis
+     "Analyzing and visualizing KEGG information using the grammar of graphics")
     (description
      "This package aims to import, parse, and analyze KEGG data such as KEGG PATHWAY
 and KEGG MODULE. The package supports visualizing KEGG information using ggplot2
@@ -4493,13 +4493,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "1.8.18")
+    (version "1.8.19")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "1il1h9njfvhi4kxn30bhc31nkmr91b9imfafq68ccz947ckzhkpm"))))
+        (base32 "10j4l6rkrn4f635xg1zl96af9ha35ysbhhdndn8adkc2ib5fwabr"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

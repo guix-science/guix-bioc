@@ -660,13 +660,13 @@ filtering, annotation and FDR estimation.")
 (define-public r-svmdo
   (package
     (name "r-svmdo")
-    (version "1.4.0")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SVMDO" version))
        (sha256
-        (base32 "11cn7kffgssbjk307vxjr6i2cs94fn6hhz09dbx5qgg89m4gsdgi"))))
+        (base32 "0fny2d6xym8jc8wsj5893phmp4yc7yiv1babh1szvdz36iy9gw2j"))))
     (properties `((upstream-name . "SVMDO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -680,6 +680,7 @@ filtering, annotation and FDR estimation.")
                              r-klar
                              r-golem
                              r-e1071
+                             r-dt
                              r-dplyr
                              r-dose
                              r-data-table
@@ -695,7 +696,7 @@ filtering, annotation and FDR estimation.")
      "It is an easy-to-use GUI using disease information for detecting tumor/normal
 sample discriminating gene sets from differentially expressed genes.  Our
 approach is based on an iterative algorithm filtering genes with disease
-ontology enrichment analysis and wilk and wilk’s lambda criterion connected to
+ontology enrichment analysis and wilk and wilks lambda criterion connected to
 SVM classification model construction.  Along with gene set extraction, SVMDO
 also provides individual prognostic marker detection.  The algorithm is designed
 for FPKM and RPKM normalized RNA-Seq transcriptome datasets.")

@@ -3940,13 +3940,13 @@ or other fields.")
 (define-public r-biocsklearn
   (package
     (name "r-biocsklearn")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocSklearn" version))
        (sha256
-        (base32 "19s38zpgdscbrqypyg17l1jw53x88lgkcrqg20gchfi6mig36a3w"))))
+        (base32 "0sgp3rjiw7y5qv9zppx208x9kbg878fkj9r034cl62cghzmbv5fx"))))
     (properties `((upstream-name . "BiocSklearn")))
     (build-system r-build-system)
     (inputs (list python-scikit-learn python python-pandas python-numpy
