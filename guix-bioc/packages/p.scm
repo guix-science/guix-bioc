@@ -3167,13 +3167,13 @@ between them.")
 (define-public r-phenomis
   (package
     (name "r-phenomis")
-    (version "1.6.2")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "phenomis" version))
        (sha256
-        (base32 "06bwkhp503mqf8yyzqkl1sym8p6vl20sbb3ms9d5p81gnm87wg6q"))))
+        (base32 "0m8a10n4wglhpaigm0wx7r0lrq474rxbnzyr778r8ngdimbbp3xr"))))
     (properties `((upstream-name . "phenomis")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram
