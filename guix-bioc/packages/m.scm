@@ -2409,13 +2409,13 @@ informative meta-data.")
 (define-public r-mousefm
   (package
     (name "r-mousefm")
-    (version "1.14.5")
+    (version "1.14.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MouseFM" version))
        (sha256
-        (base32 "1mjq6cjasz4hra7ay9lnzqydqkj7yfrmhs9vpyhdrrclc02wzd2l"))))
+        (base32 "19mmaylw0zn6pcp6ypah4ff3hqq3vbhrjd8r79gzp3fqvkdd9hp6"))))
     (properties `((upstream-name . "MouseFM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4200,13 +4200,13 @@ additional genomic context.")
 (define-public r-mitch
   (package
     (name "r-mitch")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mitch" version))
        (sha256
-        (base32 "1x65vxjbbd7vswv9lpa0fx5l1m629n0iayb54s3xhidn3xylizsb"))))
+        (base32 "1a81nfqh46szah1kcaidx8ns4m9izir14gif9722fxiax5q0xn08"))))
     (properties `((upstream-name . "mitch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown

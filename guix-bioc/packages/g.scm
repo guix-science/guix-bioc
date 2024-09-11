@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -4546,6 +4547,7 @@ lines (8-way RILs) which can be refered to as MAGIC population.")
                              r-pryr
                              r-plyr
                              r-network
+                             r-mwcsr
                              r-intergraph
                              r-igraph
                              r-htmlwidgets

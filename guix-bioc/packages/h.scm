@@ -86,13 +86,13 @@
 (define-public r-hybridexpress
   (package
     (name "r-hybridexpress")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HybridExpress" version))
        (sha256
-        (base32 "1cpvw6ycbh60wn39ws0l6hrgy9x97glb56f87sn2qg9li6hxjshh"))))
+        (base32 "01w3pnwsv4h53ws99mm2sa0lyh13fl09ggnkbvwr6c6103s9d2ik"))))
     (properties `((upstream-name . "HybridExpress")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
