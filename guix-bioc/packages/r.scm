@@ -4968,17 +4968,17 @@ combination of its global similarity and local similarity.")
 (define-public r-rcpi
   (package
     (name "r-rcpi")
-    (version "1.40.2")
+    (version "1.40.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rcpi" version))
        (sha256
-        (base32 "1p3mvbzsfbbly8cv2g50z9c063m4w9kbnmzcpbnxsaawqssm7ck4"))))
+        (base32 "0mlsbkn7diprbqb5x0czbq6lngfw1cll3n2fzsm6r4l2mb9wpmdv"))))
     (properties `((upstream-name . "Rcpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
-                             r-rjson
+                             r-jsonlite
                              r-httr2
                              r-gosemsim
                              r-foreach

@@ -8349,6 +8349,36 @@ using data from public repositories.")
 data from public repositories.")
     (license license:artistic2.0)))
 
+(define-public r-cancersubtypes
+  (package
+    (name "r-cancersubtypes")
+    (version "1.30.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CancerSubtypes" version))
+       (sha256
+        (base32 "01ii4xp26hd78843g3palpq09gw2w8qkyzk2f1l41kxxf8cfk2qr"))))
+    (properties `((upstream-name . "CancerSubtypes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-sigclust
+                             r-nmf
+                             r-limma
+                             r-impute
+                             r-consensusclusterplus
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/taoshengxu/CancerSubtypes")
+    (synopsis
+     "Cancer subtypes identification, validation and visualization based on multiple genomic data sets")
+    (description
+     "@code{CancerSubtypes} integrates the current common computational biology
+methods for cancer subtypes identification and provides a standardized framework
+for cancer subtype analysis based multi-omics data, such as gene expression,
+@code{miRNA} expression, DNA methylation and others.")
+    (license license:gpl2+)))
+
 (define-public r-cancerdata
   (package
     (name "r-cancerdata")

@@ -2617,6 +2617,52 @@ Tomato.cdf file.")
      "This packages contains data to be used with the tofsims package.")
     (license license:gpl3)))
 
+(define-public r-tnt
+  (package
+    (name "r-tnt")
+    (version "1.26.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "TnT" version))
+       (sha256
+        (base32 "0iya1hlr4hnfzqk0bnj5cia6bbnn65a1l5krk1diaf3gjpq537v0"))))
+    (properties `((upstream-name . "TnT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-s4vectors
+                             r-knitr
+                             r-jsonlite
+                             r-iranges
+                             r-htmlwidgets
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-data-table
+                             r-biobase))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/Marlin-Na/TnT")
+    (synopsis "Interactive Visualization for Genomic Features")
+    (description
+     "This package provides a R interface to the @code{TnT} javascript library
+(https://github.com/ tntvis) to provide interactive and flexible visualization
+of track-based genomic data.")
+    (license license:agpl3)))
+
 (define-public r-tmixclust
   (package
     (name "r-tmixclust")

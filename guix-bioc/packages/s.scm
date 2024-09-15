@@ -2665,13 +2665,13 @@ experiments.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.16.3")
+    (version "1.16.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "0xy964xx99wklh44m41h3066hndxv04i1jh623612sidhj4viih3"))))
+        (base32 "0nwh2kfnb88cr9x824ffhx8iprnxdgvm9y28rmnh7yg13230ns5y"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2689,6 +2689,7 @@ experiments.")
                              r-lmertest
                              r-ggplot2
                              r-ggforce
+                             r-extrafont
                              r-dplyr
                              r-data-table
                              r-concaveman
