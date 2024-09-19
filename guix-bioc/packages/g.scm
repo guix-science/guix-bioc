@@ -4494,13 +4494,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "1.8.20")
+    (version "1.8.21")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "0bdk921g5p0fhw4ihx9l6gm8zxkiifmgzir420gif50z2i3q27if"))))
+        (base32 "131clqz6v1gnpkmwymf2cfyl3pphvk2idxj18xp4q0qzcvdwjcdp"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

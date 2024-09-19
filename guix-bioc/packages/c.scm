@@ -4623,13 +4623,13 @@ algorithm, and can be additionally visualised.")
 (define-public r-clustall
   (package
     (name "r-clustall")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ClustAll" version))
        (sha256
-        (base32 "13qg0r6lqvzyggkf8gjyxh8d871f483fcrhgbhr4xwpfpwssv8k8"))))
+        (base32 "0bbkd9hrr043b45ijlj9qnzclj3hjb6hg7hlipbk017cn56c8pl1"))))
     (properties `((upstream-name . "ClustAll")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer

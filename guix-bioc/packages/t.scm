@@ -3085,13 +3085,13 @@ developmental microarray time course data.")
 (define-public r-tiledbarray
   (package
     (name "r-tiledbarray")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TileDBArray" version))
        (sha256
-        (base32 "1hgwcxffg50nfjb3bpl00h7vhmfs1x15ly7sd0lpcnamk7f9c003"))))
+        (base32 "0shd9y05vr659x8rvgqhwdd64599i2zaajdcqnyi9ai77lw7cycv"))))
     (properties `((upstream-name . "TileDBArray")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiledb r-s4vectors r-rcpp r-delayedarray))
