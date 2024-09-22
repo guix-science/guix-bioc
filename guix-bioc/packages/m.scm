@@ -4406,13 +4406,13 @@ construct sample-sample correlation network.")
 (define-public r-mirsm
   (package
     (name "r-mirsm")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRSM" version))
        (sha256
-        (base32 "1yszlnl67683bib11ppsggl3riyklnff3ssdal6i9wixq068rc22"))))
+        (base32 "0d7mmf97jg3ghsdxib5430xd0i4379j72skp41dhxnmscmfq0jad"))))
     (properties `((upstream-name . "miRSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-wgcna

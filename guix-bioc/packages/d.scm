@@ -3361,13 +3361,13 @@ quantitative experiments.  Proteomics, 16(1), 29-32.")
 (define-public r-dapar
   (package
     (name "r-dapar")
-    (version "1.36.2")
+    (version "1.36.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DAPAR" version))
        (sha256
-        (base32 "1800c6g39gg9q43v1s5r13qm4aj53x18qzbbyz75fpwrril967gr"))))
+        (base32 "1pqcygaviclyxzm9bgpc3sk4rsw91rim29wj48nd60wqvyc4pcdi"))))
     (properties `((upstream-name . "DAPAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-msnbase r-highcharter r-foreach r-dapardata

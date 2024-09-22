@@ -821,13 +821,13 @@ Prostate Cancer dataset.")
 (define-public r-prostar
   (package
     (name "r-prostar")
-    (version "1.36.2")
+    (version "1.36.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Prostar" version))
        (sha256
-        (base32 "140whr7klab1as5y8h9lbmlgn4f63kfdfhzjyxjp8pk3aq1xv53i"))))
+        (base32 "1s7blwzyggv7skbnpqrlx7f946cp78xk462flg7d0p9lnscs85i8"))))
     (properties `((upstream-name . "Prostar")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -3457,13 +3457,13 @@ differential expression analysis with limma package are supported.")
 (define-public r-pgxrpi
   (package
     (name "r-pgxrpi")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pgxRpi" version))
        (sha256
-        (base32 "18c5xpfyqjjj5vc3nnajwq5sq1w24lqqs4ik91vjw5qg41rbspy3"))))
+        (base32 "1j3cg1m2ic4q3wbm7bx68ka5fhzlbrrczfz8cxdv6rpdywh92m87"))))
     (properties `((upstream-name . "pgxRpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
