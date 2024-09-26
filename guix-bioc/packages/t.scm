@@ -1922,13 +1922,13 @@ different developmental systems from the mouse or human.")
 (define-public r-transomics2cytoscape
   (package
     (name "r-transomics2cytoscape")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "transomics2cytoscape" version))
        (sha256
-        (base32 "1f7qdymlgqh4la1rhlk5s580ka8p4f8ravm19i02ndx50jlnq12q"))))
+        (base32 "0ynd1wrp95m743zjmvwhgfqrspfmmf0099swws6hxdb4r5xz1l2c"))))
     (properties `((upstream-name . "transomics2cytoscape")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -201,6 +201,52 @@ different subsets of the same data without having to make separate objects for
 each new subset.")
     (license license:expat)))
 
+(define-public r-exomepeak2
+  (package
+    (name "r-exomepeak2")
+    (version "1.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "exomePeak2" version))
+       (sha256
+        (base32 "1navx2285inbyffnngvrxj1k8wxa4d2y28riggamd3fdpyz6nji3"))))
+    (properties `((upstream-name . "exomePeak2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-txdbmaker
+                             r-summarizedexperiment
+                             r-speedglm
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsamtools
+                             r-mclust
+                             r-magrittr
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomicalignments
+                             r-genomeinfodb
+                             r-deseq2
+                             r-bsgenome
+                             r-biostrings
+                             r-biocparallel
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/exomePeak2")
+    (synopsis "Peak Calling and differential analysis for MeRIP-Seq")
+    (description
+     "@code{exomePeak2} provides peak detection and differential methylation for
+Methylated RNA Immunoprecipitation Sequencing (@code{MeRIP-Seq}) data.
+@code{MeRIP-Seq} is a commonly applied sequencing assay that measures the
+location and abundance of RNA modification sites under specific cellular
+conditions.  The technique is sensitive to PCR amplification biases commonly
+found in NGS data.  In addition, the efficiency of immunoprecipitation often
+varies between different IP samples. @code{exomePeak2} can perform peak calling
+and differential analysis independent of GC content bias and IP efficiency
+changes.")
+    (license license:artistic2.0)))
+
 (define-public r-eximir
   (package
     (name "r-eximir")

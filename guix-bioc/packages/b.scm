@@ -232,13 +232,13 @@ modified in a structure probing experiment.")
 (define-public r-bugsigdbr
   (package
     (name "r-bugsigdbr")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bugsigdbr" version))
        (sha256
-        (base32 "0fg7rk14jgpr07wm93i40wklxphag9yw56kr59rw1cfdfhqnmsv7"))))
+        (base32 "1zqiaaagxzxp808awlm78y9l6plq4mb4gdn8ypqknlaa9a6frw3v"))))
     (properties `((upstream-name . "bugsigdbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom r-biocfilecache))

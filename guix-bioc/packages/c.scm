@@ -29,7 +29,6 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages f)
-  #:use-module (guix-cran packages o)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -2194,13 +2193,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "1b4g6wkk90kjrv8dz4larg3b7pyyid3z7336niwjp7x0ms6hp3zw"))))
+        (base32 "1rhgf94wjb8f45zybywn6kzqd1iav82i730a48wx2sicbdmkbi6c"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -7852,7 +7851,6 @@ patients.")
                              r-purrr
                              r-patchwork
                              r-org-hs-eg-db
-                             r-oaqc
                              r-magrittr
                              r-igraph
                              r-graphlayouts
