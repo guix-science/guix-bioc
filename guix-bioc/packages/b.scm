@@ -4442,13 +4442,13 @@ rate.")
 (define-public r-benchdamic
   (package
     (name "r-benchdamic")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "benchdamic" version))
        (sha256
-        (base32 "040lkmwz51za2biqlf3z3ai5j03rmw15kwz3i3v10rzq0322fsk3"))))
+        (base32 "1f5f1f5334rwsxzl1bf2b12rb1pmksyyrrdfsfdp8cmh5ybsp3mv"))))
     (properties `((upstream-name . "benchdamic")))
     (build-system r-build-system)
     (propagated-inputs (list r-zinbwave

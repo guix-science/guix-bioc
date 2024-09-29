@@ -2620,13 +2620,13 @@ Tomato.cdf file.")
 (define-public r-tnt
   (package
     (name "r-tnt")
-    (version "1.26.2")
+    (version "1.26.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TnT" version))
        (sha256
-        (base32 "0iya1hlr4hnfzqk0bnj5cia6bbnn65a1l5krk1diaf3gjpq537v0"))))
+        (base32 "0rndk2ga5r4yzandvf8fqcx1544a0lkfjq7x94p6kskdk13vp3hb"))))
     (properties `((upstream-name . "TnT")))
     (build-system r-build-system)
     (arguments
