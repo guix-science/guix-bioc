@@ -2398,13 +2398,13 @@ conditions.")
 (define-public r-splicewiz
   (package
     (name "r-splicewiz")
-    (version "1.6.3")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpliceWiz" version))
        (sha256
-        (base32 "10sb01l5bvvs5xmziwjx75qngk0pi77pr8i67qw1mr8pvw2mv7yz"))))
+        (base32 "1vr9g90c1nk55x6z4vfqb5bz7d2mfxsxn7a441qmd3aid9sizafm"))))
     (properties `((upstream-name . "SpliceWiz")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -2434,6 +2434,7 @@ conditions.")
                              r-matrixstats
                              r-magrittr
                              r-iranges
+                             r-httr
                              r-htmltools
                              r-heatmaply
                              r-hdf5array

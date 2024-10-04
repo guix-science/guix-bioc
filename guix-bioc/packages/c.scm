@@ -774,14 +774,14 @@ different TB gene signatures across multiple datasets.")
 (define-public r-curatedpcadata
   (package
     (name "r-curatedpcadata")
-    (version "1.0.0")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "curatedPCaData" version
                               'experiment))
        (sha256
-        (base32 "0wqvg0z19lxyqbbsl7fbq12jgycpqycx45vy24z4sph48kz2ag3w"))))
+        (base32 "180lhsh2si7vnr2xysb4225rbympx32kgxxvkis66r26qxr9z144"))))
     (properties `((upstream-name . "curatedPCaData")))
     (build-system r-build-system)
     (arguments
@@ -792,6 +792,7 @@ different TB gene signatures across multiple datasets.")
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-s4vectors
                              r-rlang
+                             r-reshape2
                              r-raggedexperiment
                              r-multiassayexperiment
                              r-experimenthub
@@ -2356,14 +2357,14 @@ step.")
 (define-public r-cosiadata
   (package
     (name "r-cosiadata")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CoSIAdata" version
                               'experiment))
        (sha256
-        (base32 "1mld9j54ywkgz63brf8lmfi57f1hmclyv3m9lw201wyni48nx377"))))
+        (base32 "094f3b2r659q3mlrzm6n2wvw13x8l1gll42a8win8kqbnkdd3jmj"))))
     (properties `((upstream-name . "CoSIAdata")))
     (build-system r-build-system)
     (arguments
