@@ -2194,13 +2194,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.4.5")
+    (version "2.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "1rhgf94wjb8f45zybywn6kzqd1iav82i730a48wx2sicbdmkbi6c"))))
+        (base32 "1r0h232f44hhwgd24ygfg28fj816plvj1c18sjsxr4c06wjgq68h"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -7828,13 +7828,13 @@ patients.")
 (define-public r-cbnplot
   (package
     (name "r-cbnplot")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CBNplot" version))
        (sha256
-        (base32 "1n85clswpk1xxfq423sgk38qb9kjkjj2kghnxw8a4618vxypwsrv"))))
+        (base32 "1xs754axnf25npdph2smvbyyss9g0qapkyzh39ir3vi4dy8mcmkm"))))
     (properties `((upstream-name . "CBNplot")))
     (build-system r-build-system)
     (arguments

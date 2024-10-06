@@ -204,13 +204,13 @@ each new subset.")
 (define-public r-exomepeak2
   (package
     (name "r-exomepeak2")
-    (version "1.16.1")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "exomePeak2" version))
        (sha256
-        (base32 "1navx2285inbyffnngvrxj1k8wxa4d2y28riggamd3fdpyz6nji3"))))
+        (base32 "09x1aagprbc4j6lqadi9mv9yb611478wc7kcs2skys0gs1q9q73c"))))
     (properties `((upstream-name . "exomePeak2")))
     (build-system r-build-system)
     (propagated-inputs (list r-txdbmaker

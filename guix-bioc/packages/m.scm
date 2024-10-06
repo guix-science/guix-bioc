@@ -6570,13 +6570,13 @@ bisulfite-seq datasets (e.g., WGBS and RRBS), provided as
 (define-public r-methylscaper
   (package
     (name "r-methylscaper")
-    (version "1.12.0")
+    (version "1.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylscaper" version))
        (sha256
-        (base32 "19xpagmx9rn840acbm2cj3vkvhjzr1rslsjmjgvgcm4fip1yrskp"))))
+        (base32 "1kxwda46xz3xg5633xav8ynby06zyzi4b51qnv7kvj57qzssih4i"))))
     (properties `((upstream-name . "methylscaper")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -6591,7 +6591,7 @@ bisulfite-seq datasets (e.g., WGBS and RRBS), provided as
                              r-biostrings
                              r-biocparallel))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/methylscaper")
+    (home-page "https://github.com/rhondabacher/methylscaper/")
     (synopsis "Visualization of Methylation Data")
     (description
      "methylscaper is an R package for processing and visualizing data jointly
