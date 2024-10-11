@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -4493,13 +4494,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "1.8.21")
+    (version "1.8.22")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "131clqz6v1gnpkmwymf2cfyl3pphvk2idxj18xp4q0qzcvdwjcdp"))))
+        (base32 "0yin2xwkqpiz2nwv9fjxh4xm7065bzdxhpfmpndqvmc73k26pnik"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

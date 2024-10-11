@@ -5071,13 +5071,13 @@ outperforms other heuristic methods.")
 (define-public r-classifyr
   (package
     (name "r-classifyr")
-    (version "3.8.3")
+    (version "3.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ClassifyR" version))
        (sha256
-        (base32 "1p52jn7zq8kyfksrg74vjy43aw20qc02fw1cbhhb8liqq5bhxak0"))))
+        (base32 "1vh0ajmm4db8xdl8rfjy9q259vbwl6hdp0m8psd6sgsn1crmbhdb"))))
     (properties `((upstream-name . "ClassifyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

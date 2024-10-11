@@ -7624,14 +7624,14 @@ of wet-lab experiments.")
 (define-public r-scmultiome
   (package
     (name "r-scmultiome")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scMultiome" version
                               'experiment))
        (sha256
-        (base32 "0rgcg8qhpap7wnlndf9bmild55yxv21zdn89hs5h1503rfchlx2d"))))
+        (base32 "1lmly57dabvh2wcd8nhc7wksppx54v1xkk90izpv3i2k8gpyiwsx"))))
     (properties `((upstream-name . "scMultiome")))
     (build-system r-build-system)
     (arguments
