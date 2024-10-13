@@ -221,13 +221,13 @@ others.  Detailed examples for using @code{systemPipeRdata} are given in
 (define-public r-syntenet
   (package
     (name "r-syntenet")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "syntenet" version))
        (sha256
-        (base32 "1220hbkmg10ly0i5m6wnqnsa6m2f2xgs85798y9mlcqwxrp5ih35"))))
+        (base32 "1valg9ds0bg5vx1n3ps4ffqrvaxlzgy66wr6a54842v7q0avrxwc"))))
     (properties `((upstream-name . "syntenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -236,7 +236,6 @@ others.  Detailed examples for using @code{systemPipeRdata} are given in
                              r-rcpp
                              r-rcolorbrewer
                              r-pheatmap
-                             r-networkd3
                              r-intergraph
                              r-igraph
                              r-ggplot2

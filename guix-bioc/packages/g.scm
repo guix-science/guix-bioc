@@ -20,6 +20,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages gcc)
@@ -1881,13 +1882,13 @@ Shiny-based interactive app.")
 (define-public r-ginmapper
   (package
     (name "r-ginmapper")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ginmappeR" version))
        (sha256
-        (base32 "0s13z3naarspmdp9v82xjxqqhxygcsvw5vq6l1lmhj070fg8b9nz"))))
+        (base32 "128pxnzz5jzjr1pb3shi9h700sx1xaigwq8p9ghj8b382wn114z6"))))
     (properties `((upstream-name . "ginmappeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -4493,13 +4494,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "1.8.22")
+    (version "1.8.25")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "0yin2xwkqpiz2nwv9fjxh4xm7065bzdxhpfmpndqvmc73k26pnik"))))
+        (base32 "1dva1zd2v7c59m16gbklk23hs993zxa1nvpbw7wl8nm5rwl95lqp"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
