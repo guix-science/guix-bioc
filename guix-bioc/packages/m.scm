@@ -7316,7 +7316,6 @@ Stouffer's method.")
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-taxize
                              r-summarizedexperiment
                              r-stringr
                              r-s4vectors
