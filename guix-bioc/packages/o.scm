@@ -1123,13 +1123,13 @@ based on the evidence against it and on the previous rejection decisions.")
 (define-public r-oncosimulr
   (package
     (name "r-oncosimulr")
-    (version "4.6.0")
+    (version "4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "OncoSimulR" version))
        (sha256
-        (base32 "1j7d7ajlalhiwn12kpbagx8f0gnfsals4p5bkiik7a5ybwann33r"))))
+        (base32 "05rgwqdfxh9yid0dmvfjzridjw23bqgsr38bpf5sbi7947jj4m6c"))))
     (properties `((upstream-name . "OncoSimulR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
