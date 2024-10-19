@@ -2131,13 +2131,13 @@ metabolism, while indicating gene sets whose expressions are altered.")
 (define-public r-trajectorygeometry
   (package
     (name "r-trajectorygeometry")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TrajectoryGeometry" version))
        (sha256
-        (base32 "102mhg46s6s95j98wsy0r6327riqhb5jcdzmksiwphsdpsp9c16s"))))
+        (base32 "1jmvf0b9fsyxs42j5zz1059p4sb50bz6ka59qs51xj35p6hx9hr4"))))
     (properties `((upstream-name . "TrajectoryGeometry")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-pracma r-ggplot2))

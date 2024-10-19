@@ -1100,13 +1100,13 @@ TN gene labels from the literature or experts.")
 (define-public r-netpathminer
   (package
     (name "r-netpathminer")
-    (version "1.40.0")
+    (version "1.40.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NetPathMiner" version))
        (sha256
-        (base32 "1fv4ijiksp2ff5sxjgp1bfzxfcqr853nrsdgfn0i8zqz9ba20a6p"))))
+        (base32 "0srf2ls4791ybikk51nhli816k06ld8y8a710g5gz54lg486i5bg"))))
     (properties `((upstream-name . "NetPathMiner")))
     (build-system r-build-system)
     (inputs (list libxml2 libxml2 libsbml))

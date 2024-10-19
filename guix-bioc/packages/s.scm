@@ -2397,13 +2397,13 @@ conditions.")
 (define-public r-splicewiz
   (package
     (name "r-splicewiz")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpliceWiz" version))
        (sha256
-        (base32 "1vr9g90c1nk55x6z4vfqb5bz7d2mfxsxn7a441qmd3aid9sizafm"))))
+        (base32 "19k90mdwwdpw86cz9945m1mcfmppa4i73ci2kgj39hz2l6khqsa3"))))
     (properties `((upstream-name . "SpliceWiz")))
     (build-system r-build-system)
     (inputs (list zlib))
