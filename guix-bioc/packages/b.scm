@@ -13,7 +13,6 @@
   #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages l)
-  #:use-module (guix-cran packages c)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -23,6 +22,7 @@
   #:use-module (guix-cran packages q)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages d)
+  #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages m)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -3671,7 +3671,6 @@ foundation for integrative downstream analysis of the data.")
                              r-dplyr
                              r-data-table
                              r-cowplot
-                             r-clustercons
                              r-annotationdbi))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/BioNAR")
