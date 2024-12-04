@@ -46,6 +46,9 @@
         (base32 "02z376zy7bqdghbfqqs6h62icfzq26k4aap5ks4hb745i4hrpgif"))))
     (properties `((upstream-name . "xtropicalisprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xtropicalisprobe")
     (synopsis "Probe sequence data for microarrays of type xtropicalis")
@@ -68,6 +71,9 @@ The file name was X\\_tropicalis\\_probe\\_tab.")
         (base32 "03plnc0dya0dgmvay3hyw5yi91ris6gl643chmjil7p8vn9lb5as"))))
     (properties `((upstream-name . "xtropicaliscdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xtropicaliscdf")
     (synopsis "xtropicaliscdf")
@@ -89,6 +95,9 @@ X_tropicalis.cdf file.")
         (base32 "0d4q32ij2x4726wvw06sgmivid0n94vfdmszdyh607xlcahqxa5z"))))
     (properties `((upstream-name . "XtraSNPlocs.Hsapiens.dbSNP144.GRCh38")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicranges
@@ -122,6 +131,9 @@ no-variation, mixed, and multinucleotide-polymorphism).")
         (base32 "0k823fvqjmdkmd47m7wyra6jxmv8lnk2i1xl4pp0mh3zgb87hgfb"))))
     (properties `((upstream-name . "XtraSNPlocs.Hsapiens.dbSNP144.GRCh37")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicranges
@@ -145,15 +157,18 @@ no-variation, mixed, and multinucleotide-polymorphism).")
 (define-public r-xnastring
   (package
     (name "r-xnastring")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XNAString" version))
        (sha256
-        (base32 "0dgdaq8w7q32scdxragi40x7mkgpvvyzs2bwfb6c2yb4n2j40imi"))))
+        (base32 "05d6f2zlv7rs36vncz0ywn4g51kch7cps8gmyax9vxv3jsszq2r0"))))
     (properties `((upstream-name . "XNAString")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringi
                              r-s4vectors
@@ -195,6 +210,9 @@ alignment functions from Biostrings and pwalign packages.")
         (base32 "0vrhbzi3myh10v7r5a6jqiinllns3n40nxs097px7g80x8ajkmb2"))))
     (properties `((upstream-name . "xlaevis2probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xlaevis2probe")
     (synopsis "Probe sequence data for microarrays of type xlaevis2")
@@ -217,6 +235,9 @@ The file name was X\\_laevis\\_2\\_probe\\_tab.")
         (base32 "1w7f6z5f0mfgblfjy840dxj3y1l9zz8fp4s8q6zd580nwaa50g78"))))
     (properties `((upstream-name . "xlaevis2cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xlaevis2cdf")
     (synopsis "xlaevis2cdf")
@@ -238,6 +259,9 @@ X_laevis_2.CDF file.")
         (base32 "0cdi71c8pflb8n4yfxc0wmfi51w6z0dlz7nw5hv0hkx547v79d53"))))
     (properties `((upstream-name . "xlaevis.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-xl-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xlaevis.db")
     (synopsis "Affymetrix Xenopus laevis annotation data (chip xlaevis)")
@@ -249,16 +273,19 @@ from public repositories.")
 (define-public r-xhybcasneuf
   (package
     (name "r-xhybcasneuf")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XhybCasneuf" version
                               'experiment))
        (sha256
-        (base32 "0n0k6h9b9gkywy6cmlx15g09287aqzvc228j3jgjkv0ljbwsq756"))))
+        (base32 "1pg3bwi3aprn4f9y43agd25sjhmxj619k61is7zgrkm2ljg4mj00"))))
     (properties `((upstream-name . "XhybCasneuf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tinesath1cdf r-rcolorbrewer r-ath1121501cdf
                              r-affy))
     (home-page "https://bioconductor.org/packages/XhybCasneuf")
@@ -270,15 +297,18 @@ from public repositories.")
 (define-public r-xeva
   (package
     (name "r-xeva")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Xeva" version))
        (sha256
-        (base32 "1n6bxj5gshr2rzcxw6dc5wcmj1ajssrqzp7a7b6rlnszk2h4vgys"))))
+        (base32 "13215sfszwqfpgr5glnsxhhg2qcxgq849hsyh25vln107ghq0w6d"))))
     (properties `((upstream-name . "Xeva")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-rmisc
                              r-pharmacogx
@@ -313,6 +343,9 @@ documentation.")
         (base32 "0prb14zn2gvgxq8w0y21x1ng51cn3bgjhkppf7zkmnq1xkzvq0pw"))))
     (properties `((upstream-name . "xenopuslaevisprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xenopuslaevisprobe")
     (synopsis "Probe sequence data for microarrays of type xenopuslaevis")
@@ -335,6 +368,9 @@ The file name was Xenopus\\_laevis\\_probe\\_tab.")
         (base32 "1bcz1hr7gxw6ac4qvw0giph6hfcf5i9b11s274ypq512qc1d32iq"))))
     (properties `((upstream-name . "xenopuslaeviscdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xenopuslaeviscdf")
     (synopsis "xenopuslaeviscdf")
@@ -346,16 +382,19 @@ Xenopus_laevis.cdf file.")
 (define-public r-xenopus-db0
   (package
     (name "r-xenopus-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xenopus.db0" version
                               'annotation))
        (sha256
-        (base32 "1d6bhq0ppgm087zkh4nmm3qx6f2mp0lblhzvayc6fqyzrzanvjiy"))))
+        (base32 "1pk2i3rl421hs79s6rzaxlha6x41ggq2k3salm73p3f4xymzrpc6"))))
     (properties `((upstream-name . "xenopus.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/xenopus.db0")
     (synopsis "Base Level Annotation databases for xenopus")
@@ -364,18 +403,58 @@ Xenopus_laevis.cdf file.")
 @code{AnnotationDbi} to produce regular annotation packages.")
     (license license:artistic2.0)))
 
+(define-public r-xenlite
+  (package
+    (name "r-xenlite")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "xenLite" version))
+       (sha256
+        (base32 "18nkq56gnb50i5a0wjqrlmdkp29qf5va5bkyjlvaz01gxrbx445g"))))
+    (properties `((upstream-name . "xenLite")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tenxio
+                             r-summarizedexperiment
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-shiny
+                             r-s4vectors
+                             r-matrix
+                             r-hdf5array
+                             r-ggplot2
+                             r-ebimage
+                             r-dplyr
+                             r-biocfilecache
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vjcitn/xenLite")
+    (synopsis "Simple classes and methods for managing Xenium datasets")
+    (description
+     "Define a relatively light class for managing Xenium data using Bioconductor.
+Address use of parquet for coordinates, @code{SpatialExperiment} for assay and
+sample data.  Address serialization and use of cloud storage.")
+    (license license:artistic2.0)))
+
 (define-public r-xde
   (package
     (name "r-xde")
-    (version "2.50.0")
+    (version "2.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XDE" version))
        (sha256
-        (base32 "1f0aahpyrmkg5h3v6v5qw35gsjskh6dh16bgygkssa1qcafmqfv1"))))
+        (base32 "1smp38qmpd1khziccmyqxq3wc8l4aviclsb0srmyjligjchp6x3p"))))
     (properties `((upstream-name . "XDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-siggenes
                              r-rcolorbrewer
                              r-mvtnorm
@@ -394,18 +473,19 @@ Xenopus_laevis.cdf file.")
 (define-public r-xcoredata
   (package
     (name "r-xcoredata")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcoredata" version
                               'experiment))
        (sha256
-        (base32 "0sn3h2c0h9jpdp17jcxskcqjy31vx6wz2d5xb98ag19cfbimv3nl"))))
+        (base32 "0y8z0gfkcacl82s6j5g3fjg7a5k8hyz4w4xfx6lyjsp7fxdbmc9f"))))
     (properties `((upstream-name . "xcoredata")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -420,15 +500,18 @@ Xenopus_laevis.cdf file.")
 (define-public r-xcore
   (package
     (name "r-xcore")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcore" version))
        (sha256
-        (base32 "04156svl1cjbhy51d7fbgdilp832wfifg37yr9civ829iyi79fha"))))
+        (base32 "11pam90f6q6f1lvjl54jdg8p9rd47pybdcl1xy7g0q1gyygdl6qs"))))
     (properties `((upstream-name . "xcore")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-multiassayexperiment
                              r-matrix

@@ -41,15 +41,18 @@
 (define-public r-usort
   (package
     (name "r-usort")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "uSORT" version))
        (sha256
-        (base32 "04k0763dykakv03gxvlwsp6qlg6lpzd5512p5rdq2v5dk19scvm1"))))
+        (base32 "1qcww8jc5zgv92bwa4w6lqpzppmp0j46riz5dqv8cssqnqx48zwb"))))
     (properties `((upstream-name . "uSORT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vgam
                              r-rspectra
                              r-rann
@@ -75,15 +78,18 @@ ordering, and post-analysis interpretation and visualization.")
 (define-public r-updhmm
   (package
     (name "r-updhmm")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UPDhmm" version))
        (sha256
-        (base32 "0qa6d3c2gvhfq5shgdpsgzrghx8jwpvx6an8rvidl5p7nzhhdjgi"))))
+        (base32 "01234ywkb6q04lk9xb6f68rq6b81q5wd0c3ra22cz1w84knqfgx0"))))
     (properties `((upstream-name . "UPDhmm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variantannotation r-s4vectors r-iranges r-hmm
                              r-genomicranges))
     (native-inputs (list r-knitr))
@@ -101,22 +107,25 @@ isodisomy, father heterodisomy and mother heterodisomy).")
 (define-public r-updateobject
   (package
     (name "r-updateobject")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "updateObject" version))
        (sha256
-        (base32 "151nma7yyhk8s67bqim6jn86p85zdq7hj0xvvpnsl78bacncca8c"))))
+        (base32 "1r195p39gcnlmcnp5x9mfkb8j53y1yh8rvh527xk54jd6wfd4w4w"))))
     (properties `((upstream-name . "updateObject")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list git))
     (propagated-inputs (list r-s4vectors r-digest r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/updateObject")
     (synopsis "Find/fix old serialized S4 instances")
     (description
-     "This package provides a set of tools built around @code{updateObject}() to work
+     "This package provides a set of tools built around @code{updateObject()} to work
 with old serialized S4 instances.  The package is primarily useful to package
 maintainers who want to update the serialized S4 instances included in their
 package.  This is still work-in-progress.")
@@ -125,15 +134,18 @@ package.  This is still work-in-progress.")
 (define-public r-uniquorn
   (package
     (name "r-uniquorn")
-    (version "2.24.0")
+    (version "2.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Uniquorn" version))
        (sha256
-        (base32 "1f2hp395gfxnrf9mg8kqd6cjr9b651gzrj2bcfv5hx2qh0mh1z75"))))
+        (base32 "153bjmgr63y4c12bhrxi9dzyd5sqfwzp8ly7bx2d39lvk0yaakwy"))))
     (properties `((upstream-name . "Uniquorn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexls
                              r-variantannotation
                              r-stringr
@@ -170,6 +182,9 @@ vcf file).")
         (base32 "10id2lk2mbccay7p44pk58zhkiqc58x237qr76plivgpcc8xhjzq"))))
     (properties `((upstream-name . "UniProtKeywords")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jokergoo/UniProtKeywords")
     (synopsis "Keywords from UniProt Database")
@@ -183,15 +198,18 @@ gene-keyword relations.")
 (define-public r-uniprot-ws
   (package
     (name "r-uniprot-ws")
-    (version "2.44.0")
+    (version "2.46.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UniProt.ws" version))
        (sha256
-        (base32 "1vcbphksaanggig1yfmrihhw1a4fmy1cl7yq5w3z3lb6zik5rgx8"))))
+        (base32 "00z3fgwq9p664qm9c277b7fg26kza222ja7nhbyy37qjw9h8zscc"))))
     (properties `((upstream-name . "UniProt.ws")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite
                              r-rjsoncons
                              r-progress
@@ -216,15 +234,18 @@ allows mapping of identifiers accross different databases.")
 (define-public r-undo
   (package
     (name "r-undo")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UNDO" version))
        (sha256
-        (base32 "1h7bri3hkl99gll5vpamgp7x60afdmq8h1mqw4plr9ypxv2kljpj"))))
+        (base32 "0n7gsrzybjvji5pyglbjcx9fajf750hj4lff9gjxpaz605rvbn10"))))
     (properties `((upstream-name . "UNDO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnls r-mass r-boot r-biocgenerics r-biobase))
     (home-page "https://bioconductor.org/packages/UNDO")
     (synopsis "Unsupervised Deconvolution of Tumor-Stromal Mixed Expressions")
@@ -237,15 +258,18 @@ data without any prior knowledge.")
 (define-public r-uncoverapplib
   (package
     (name "r-uncoverapplib")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "uncoverappLib" version))
        (sha256
-        (base32 "17p2aqpg3q6yqplw2haazm1hhr6s0nwhghcvn3j9128n5pg2j58x"))))
+        (base32 "1i28jakbyafa20a7lwbfwks55n7r58caz8c6lzcz63zb5rxijwi9"))))
     (properties `((upstream-name . "uncoverappLib")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
                              r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-stringr
@@ -286,15 +310,18 @@ statisticl summary of coverage given target file or genes name.")
 (define-public r-umi4cats
   (package
     (name "r-umi4cats")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UMI4Cats" version))
        (sha256
-        (base32 "1cf2jsmhsmw6i381wxnb0zsyhkr2mjlxlzpjnlfxyf4kr6n8k797"))))
+        (base32 "192ns76kri831g8x6x63yvpiknhydvvby5gcfsn5rgbpfws7pwng"))))
     (properties `((upstream-name . "UMI4Cats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-summarizedexperiment
@@ -346,15 +373,18 @@ integrated information from a UMI-4C assay.")
 (define-public r-ularcirc
   (package
     (name "r-ularcirc")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Ularcirc" version))
        (sha256
-        (base32 "0qzkvwg3gd9v9cqf3hmmyh4gzdqs5m6nxjjbnhqsdp6wshccdv4p"))))
+        (base32 "1891x3127lfkjnhjcjqm2l38kslv5zmc0pg1cfy1p7jndqxw8lxi"))))
     (properties `((upstream-name . "Ularcirc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-shinyjs
                              r-shinyfiles
@@ -404,6 +434,9 @@ and forward canonical junctions.")
         (base32 "0hi1h8vvbf27wk13gbfgm0amjqgl7b2qxlgakcbr87qxwbi02zv7"))))
     (properties `((upstream-name . "UCSCRepeatMasker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-rcurl r-genomeinfodb r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/UCSCRepeatMasker")
@@ -428,6 +461,9 @@ resources.")
         (base32 "0xzm6dkf78mp1yhdl3w0hg36saxgb4sxnq0dsvzjmfaca74ir2qy"))))
     (properties `((upstream-name . "u133x3pprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/u133x3pprobe")
     (synopsis "Probe sequence data for microarrays of type u133x3p")
@@ -450,6 +486,9 @@ The file name was U133\\_X3P\\_probe\\_tab.")
         (base32 "05bdb5bz1ffv7dhbzn0s5ybygah72zvhz8zcj8bn9dg0k40yqsrb"))))
     (properties `((upstream-name . "u133x3pcdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/u133x3pcdf")
     (synopsis "u133x3pcdf")
@@ -471,6 +510,9 @@ U133_X3P.cdf file.")
         (base32 "17wq16zhmpjpyxfhwr57kx61b4i87jkzza8qkqmcd6kcrhqkj92y"))))
     (properties `((upstream-name . "u133x3p.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/u133x3p.db")
     (synopsis "Affymetrix Human X3P Array annotation data (chip u133x3p)")
@@ -492,6 +534,9 @@ from public repositories.")
         (base32 "052hs4lwllq0p0fsx5d1ixqhrdl889k14z10kahpsjn60746qarm"))))
     (properties `((upstream-name . "u133aaofav2cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/u133aaofav2cdf")
     (synopsis "u133aaofav2cdf")

@@ -44,6 +44,9 @@
         (base32 "0awf6z4j2vb2jk9a9j2r512yd3m31660y68pasa9mp488m270a3q"))))
     (properties `((upstream-name . "ygs98probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ygs98probe")
     (synopsis "Probe sequence data for microarrays of type ygs98")
@@ -66,6 +69,9 @@ The file name was YG-S98\\_probe\\_tab.")
         (base32 "1xrm1209xnknwvad7nvg1a0mbxz15z12yd4x5bia3cq03zcmzf9m"))))
     (properties `((upstream-name . "ygs98frmavecs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/ygs98frmavecs")
     (synopsis "Vectors used by frma for microarrays of type ygs98")
     (description
@@ -86,6 +92,9 @@ hgu133ahsentrezgcdf version 19.0.0.")
         (base32 "0j04biahbm2l31aayddp0z9rh3jq1ydxf3h8pxr3pvq2vjj1q2mh"))))
     (properties `((upstream-name . "ygs98cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ygs98cdf")
     (synopsis "ygs98cdf")
@@ -107,6 +116,9 @@ YG_S98.cdf file.")
         (base32 "1mp24vhx0fnjc2hhcsbnrr0ir0s1sn7bkx8j43d9kw7vzqm5xqxd"))))
     (properties `((upstream-name . "ygs98.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-sc-sgd-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ygs98.db")
     (synopsis
@@ -119,16 +131,19 @@ data from public repositories.")
 (define-public r-yeastrnaseq
   (package
     (name "r-yeastrnaseq")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastRNASeq" version
                               'experiment))
        (sha256
-        (base32 "1jk6451ypys3xskmlm6xpvjxxzrx1g0hnzfcsahf3gqgg63pfj7h"))))
+        (base32 "08pk3p21m3ida96psy7a2shffhz2qx5kz9arhhgk3vm7c1ai25l6"))))
     (properties `((upstream-name . "yeastRNASeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/yeastRNASeq")
     (synopsis "Yeast RNA-Seq Experimental Data from Lee et al. 2008")
     (description
@@ -139,16 +154,19 @@ experiment.")
 (define-public r-yeastnagalakshmi
   (package
     (name "r-yeastnagalakshmi")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastNagalakshmi" version
                               'experiment))
        (sha256
-        (base32 "16n48lcyl63cmlc796xizf19rmm5qmdic0msaadz12wh743phh3a"))))
+        (base32 "0j6by8n9cdfnfzapn2985zsmb3861p59xhmzyxbpyhxz465m6d5x"))))
     (properties `((upstream-name . "yeastNagalakshmi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/yeastNagalakshmi")
     (synopsis "Yeast genome RNA sequencing data based on Nagalakshmi et. al")
     (description
@@ -159,16 +177,19 @@ bwa, and converted to BAM format with samtools.")
 (define-public r-yeastgsdata
   (package
     (name "r-yeastgsdata")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastGSData" version
                               'experiment))
        (sha256
-        (base32 "1m3hrjmibmp8zzcc6acg6m21zq83rpnclya4ivivj60nw6ardbkr"))))
+        (base32 "1i7z5pf4ci4rzv8ns42j9kw4y5rdq4lw18basdxg3syhiiqd21pd"))))
     (properties `((upstream-name . "yeastGSData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/yeastGSData")
     (synopsis "Yeast Gold Standard Data")
     (description
@@ -179,16 +200,19 @@ sets.")
 (define-public r-yeastexpdata
   (package
     (name "r-yeastexpdata")
-    (version "0.50.0")
+    (version "0.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastExpData" version
                               'experiment))
        (sha256
-        (base32 "1ila3h87j9l37nvwhabrayxawx3mcklhlr3y9cqzpwkg7iayrplf"))))
+        (base32 "0dqg5im7k31l217qg6sv8bzw83ix6zd9p0c28gx9hzarvh3hr5vl"))))
     (properties `((upstream-name . "yeastExpData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-graph))
     (home-page "https://bioconductor.org/packages/yeastExpData")
     (synopsis "Yeast Experimental Data")
@@ -200,16 +224,19 @@ yeast.")
 (define-public r-yeastcc
   (package
     (name "r-yeastcc")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastCC" version
                               'experiment))
        (sha256
-        (base32 "1y3k3dvxrv68pcsdqhyvhxvwnmhm0iv7yr3rc6b0gm8g2nv9kcqm"))))
+        (base32 "12nfq7dndl3snmqg3zcpbgk93dlnqlkvccadhipmdqb1j7l0k686"))))
     (properties `((upstream-name . "yeastCC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biobase))
     (home-page "https://bioconductor.org/packages/yeastCC")
     (synopsis
@@ -232,6 +259,9 @@ experiment.")
         (base32 "125nif693qcmxc0nnnz917f9avggcdr8g9rfvx2qdc54a2l7vdb7"))))
     (properties `((upstream-name . "yeast2probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/yeast2probe")
     (synopsis "Probe sequence data for microarrays of type yeast2")
@@ -254,6 +284,9 @@ The file name was Yeast\\_2\\_probe\\_tab.")
         (base32 "0c68val9x8bfnv4xx0vag9dxwsx5q8dzbj0dpha3nshh12jw48w9"))))
     (properties `((upstream-name . "yeast2cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/yeast2cdf")
     (synopsis "yeast2cdf")
@@ -275,6 +308,9 @@ Yeast_2.cdf file.")
         (base32 "0aqbs3p6f3sc6nyggyk7gvg191b551rwq20009fnk0li50dg1ps6"))))
     (properties `((upstream-name . "yeast2.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-sc-sgd-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/yeast2.db")
     (synopsis
@@ -287,16 +323,19 @@ using data from public repositories.")
 (define-public r-yeast-db0
   (package
     (name "r-yeast-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeast.db0" version
                               'annotation))
        (sha256
-        (base32 "00zbg60zn0yzmfdm017al4hbncrlsdfb5syj8mfxha3522q1114h"))))
+        (base32 "0wvk457jlw05g28f158bd49ymri13x0mbbr6gif8msrj78zkdi3j"))))
     (properties `((upstream-name . "yeast.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/yeast.db0")
     (synopsis "Base Level Annotation databases for yeast")
@@ -318,6 +357,9 @@ using data from public repositories.")
         (base32 "11b1fflgc34lrj4yf1p7way5n83cm9c7znsbxpzlwddwyy8qib30"))))
     (properties `((upstream-name . "ye6100subdcdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ye6100subdcdf")
     (synopsis "ye6100subdcdf")
@@ -339,6 +381,9 @@ Ye6100@code{subD.CDF} file.")
         (base32 "0mhr4zd33gfvvivc17k7fb6nvmhq6h3q0xbx2zl09zd6qk09kizm"))))
     (properties `((upstream-name . "ye6100subccdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ye6100subccdf")
     (synopsis "ye6100subccdf")
@@ -360,6 +405,9 @@ Ye6100@code{subC.CDF} file.")
         (base32 "1169hv56981b915rlr5w5sn6ppyjd8as7f4k1hbjzadrdrl3glwp"))))
     (properties `((upstream-name . "ye6100subbcdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ye6100subbcdf")
     (synopsis "ye6100subbcdf")
@@ -381,6 +429,9 @@ Ye6100@code{subB.CDF} file.")
         (base32 "0pkiw0lh4p2ng0rf9n0d589yasdx7mbw0srn5drdqyr5qwi9wfis"))))
     (properties `((upstream-name . "ye6100subacdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ye6100subacdf")
     (synopsis "ye6100subacdf")

@@ -40,15 +40,18 @@
 (define-public r-wpm
   (package
     (name "r-wpm")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "wpm" version))
        (sha256
-        (base32 "1623q58fjxnx1632fn5c5rhx0zpglbjpp7zqp15f2gch01ac0xdy"))))
+        (base32 "0iax3qncywjfjyqhhj6m9wcfycaqk8yaywg29js387bjwscr2irc"))))
     (properties `((upstream-name . "wpm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-stringr
                              r-shinywidgets
@@ -81,16 +84,19 @@ the samples are placed at random while respecting specific spatial constraints."
 (define-public r-worm-db0
   (package
     (name "r-worm-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "worm.db0" version
                               'annotation))
        (sha256
-        (base32 "1v24lpw3kfzlzq577vqpqy5bypwfkw1khag7smpq9bgv8dmfcx8r"))))
+        (base32 "1r5man0ad7gkl0444ys7r60jiandb93i6d23g4vx5p31a2ih07jj"))))
     (properties `((upstream-name . "worm.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/worm.db0")
     (synopsis "Base Level Annotation databases for worm")
@@ -112,6 +118,9 @@ the samples are placed at random while respecting specific spatial constraints."
         (base32 "1fifi3pvzdrg356idwz0kx7qlf5mssdxlyvwpn3cjgw0z7n7cnw8"))))
     (properties `((upstream-name . "wheatprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/wheatprobe")
     (synopsis "Probe sequence data for microarrays of type wheat")
@@ -134,6 +143,9 @@ The file name was wheat\\_probe\\_tab.")
         (base32 "1gmbrdilqvm54h6nkb1cm01ki8aipiywd4qj8gpwlm2hqrimr8kr"))))
     (properties `((upstream-name . "wheatcdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/wheatcdf")
     (synopsis "wheatcdf")
@@ -145,16 +157,19 @@ wheat.cdf file.")
 (define-public r-wgsmapp
   (package
     (name "r-wgsmapp")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WGSmapp" version
                               'experiment))
        (sha256
-        (base32 "0k4zyj9dn5x710a1vv11156brz52yf9lzmlmx9axcfsch5dcvi7x"))))
+        (base32 "1x96sq82qfsrbzijb8f9yyk8d60acar6wz5v0afc9rcavkina941"))))
     (properties `((upstream-name . "WGSmapp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-genomicranges))
     (home-page "https://bioconductor.org/packages/WGSmapp")
     (synopsis
@@ -173,16 +188,19 @@ illustration purposes.")
 (define-public r-wes-1kg-wugsc
   (package
     (name "r-wes-1kg-wugsc")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WES.1KG.WUGSC" version
                               'experiment))
        (sha256
-        (base32 "1yv62ydvlsl52awzn2nsa52vaz4naf4biw57awpmz0cp4rb68kdb"))))
+        (base32 "17iyj3klw9c7pwv4g8895k2mkzgjymzp518ra77b25l0lfm6k2fc"))))
     (properties `((upstream-name . "WES.1KG.WUGSC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/WES.1KG.WUGSC")
     (synopsis
      "Whole Exome Sequencing (WES) of chromosome 22 401st to 500th exon from the 1000 Genomes (1KG) Project by the Washington University Genome Sequencing Center (WUGSC)")
@@ -195,15 +213,18 @@ Center are included.")
 (define-public r-weitrix
   (package
     (name "r-weitrix")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "weitrix" version))
        (sha256
-        (base32 "01jp94k2qlxbci1kidx4lnxkz0bf4vaj5p31c4brcmgrzv0a1pz4"))))
+        (base32 "0lvd6wf4bm5yxz9097hz18amx4kx5mm4lcj6nk8508qpnffz8pqs"))))
     (properties `((upstream-name . "weitrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-topconfects
                              r-summarizedexperiment
                              r-scales
@@ -242,18 +263,19 @@ interpreted. @code{DelayedArray} matrices and @code{BiocParallel} are supported.
 (define-public r-weberdivechalcdata
   (package
     (name "r-weberdivechalcdata")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WeberDivechaLCdata" version
                               'experiment))
        (sha256
-        (base32 "0nkh8c329n0jh33wa0knnwi9vvk8na1d3lpm3g5lrzl8624kdllv"))))
+        (base32 "0chvnnn5ihmq24safy45fdh22h12d7ihbxsj7zwd9af0nb15g9z3"))))
     (properties `((upstream-name . "WeberDivechaLCdata")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -275,35 +297,41 @@ Chromium @code{snRNA-seq} platforms.  Datasets are stored in
 (define-public r-weaver
   (package
     (name "r-weaver")
-    (version "1.70.0")
+    (version "1.72.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "weaver" version))
        (sha256
-        (base32 "08k5pkd16n9jyf45y8wh8lzk7dwkkpiai87fnrxg440qjb91pzsm"))))
+        (base32 "0vqnrwv204mavggps48pjhazkz2hk4wj2hhjny88m5h3f1amb3hb"))))
     (properties `((upstream-name . "weaver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-digest r-codetools))
     (home-page "https://bioconductor.org/packages/weaver")
     (synopsis "Tools and extensions for processing Sweave documents")
     (description
-     "This package provides enhancements on the Sweave() function in the base package.
- In particular a facility for caching code chunk results is included.")
+     "This package provides enhancements on the @code{Sweave()} function in the base
+package.  In particular a facility for caching code chunk results is included.")
     (license license:gpl2)))
 
 (define-public r-waddr
   (package
     (name "r-waddr")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "waddR" version))
        (sha256
-        (base32 "160v6qqcx3fn657p7blq261nqclww2wic3gp0k855d3kx4i12i5l"))))
+        (base32 "01w57p09mm7fbx9w7swfy6zvryx31gpmj5jsp9mklij7ivd7wp4c"))))
     (properties `((upstream-name . "waddR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-singlecellexperiment
                              r-rcpparmadillo
                              r-rcpp

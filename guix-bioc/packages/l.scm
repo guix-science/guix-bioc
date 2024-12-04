@@ -55,6 +55,9 @@
         (base32 "1cdyn2imjh4zr23szndc4vwyiacxs1jsp14gil2dyq9aifa25qr7"))))
     (properties `((upstream-name . "LymphoSeqDB")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/LymphoSeqDB")
     (synopsis "LymphoSeq annotation databases")
     (description
@@ -65,15 +68,18 @@
 (define-public r-lymphoseq
   (package
     (name "r-lymphoseq")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LymphoSeq" version))
        (sha256
-        (base32 "0km3k6sbcb573mk0wb6hq1xqmbkksnvkv8mx5b9jqr4r840lh909"))))
+        (base32 "0ss46q1y07p17qgfir4vklpmqsx4ywgaa99rsdn8b41pdgcwxvy2"))))
     (properties `((upstream-name . "LymphoSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-venndiagram
                              r-upsetr
                              r-stringdist
@@ -103,16 +109,19 @@ value (.tsv) files exported from the @code{ImmunoSEQ} analyzer.")
 (define-public r-lydata
   (package
     (name "r-lydata")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lydata" version
                               'experiment))
        (sha256
-        (base32 "1f13r5krfqc2f4gc03dxk8ajxlm62yxif03m0nx8lqxvijgm4abq"))))
+        (base32 "1ag3bbjf3x3g3f3ivyyc7nrhny1562p27b8m2hs01krc1a80m1ym"))))
     (properties `((upstream-name . "lydata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/lydata")
     (synopsis "Example Dataset for crossmeta Package")
     (description
@@ -125,15 +134,18 @@ crossmeta package.")
 (define-public r-lute
   (package
     (name "r-lute")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lute" version))
        (sha256
-        (base32 "02hqwxmqld3fkvs7c7l8hz39wksxgbcnckgvkzgpaknsb2fdmml0"))))
+        (base32 "019cm45ahhqrrbj8bi8qdiajzp5238rc4ak8qlpnz1gf6y8zsbzm"))))
     (properties `((upstream-name . "lute")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-scran
@@ -159,16 +171,19 @@ for these when developing new algorithms.")
 (define-public r-lungexpression
   (package
     (name "r-lungexpression")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lungExpression" version
                               'experiment))
        (sha256
-        (base32 "1r4xn6r0vwnkfbi49gjrxgdscqdpwpfwzb61mrxa9m1hgjy1dr80"))))
+        (base32 "1wmxg0655i59rdf5h5p6fxah4vdmgkrcqrbpl5rgzi3kixrdpvqx"))))
     (properties `((upstream-name . "lungExpression")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biobase))
     (home-page "https://bioconductor.org/packages/lungExpression")
     (synopsis
@@ -177,41 +192,22 @@ for these when developing new algorithms.")
      "Data from three large lung cancer studies provided as @code{ExpressionSets}.")
     (license license:gpl2+)))
 
-(define-public r-lungcancerlines
-  (package
-    (name "r-lungcancerlines")
-    (version "0.42.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "LungCancerLines" version
-                              'experiment))
-       (sha256
-        (base32 "0gmjpagl71vddsvcx3iwql175lv0lc5m6j071wnwh10z59a9jams"))))
-    (properties `((upstream-name . "LungCancerLines")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsamtools))
-    (home-page "https://bioconductor.org/packages/LungCancerLines")
-    (synopsis "Reads from Two Lung Cancer Cell Lines")
-    (description
-     "Reads from an RNA-seq experiment between two lung cancer cell lines: H1993 (met)
-and H2073 (primary).  The reads are stored as Fastq files and are meant for use
-with the TP53Genome object in the @code{gmapR} package.")
-    (license license:artistic2.0)))
-
 (define-public r-lungcanceracvssccgeo
   (package
     (name "r-lungcanceracvssccgeo")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LungCancerACvsSCCGEO" version
                               'experiment))
        (sha256
-        (base32 "1h0m67ak452bbza0s3dsmh2vi9wdi1mgl4bvflhin1gxcgb6fk6p"))))
+        (base32 "0xnikck5idln235chn2lyrh7yaaihpwi3dm8d70i0hps9rg7ibix"))))
     (properties `((upstream-name . "LungCancerACvsSCCGEO")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://bioinformaticsprb.med.wayne.edu/")
     (synopsis
      "lung cancer dataset that can be used with maPredictDSC package for developing outcome prediction models from Affymetrix CEL files.")
@@ -236,6 +232,9 @@ available from GEO (GSE43580).")
         (base32 "1d30c3xkxcl8qk68ab7nf8k13m4yb2aqiavhi917yfic1mcbi9gh"))))
     (properties `((upstream-name . "lumiRatIDMapping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lumi r-annotationdbi))
     (home-page "https://bioconductor.org/packages/lumiRatIDMapping")
     (synopsis "Illumina Identifier mapping for Rat")
@@ -259,6 +258,9 @@ qualities information.")
         (base32 "1yh0q8aw33xsn4phj04v0mhjn8xh3z06jrg7yfi9qz1c985z1gw6"))))
     (properties `((upstream-name . "lumiRatAll.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-rn-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/lumiRatAll.db")
     (synopsis
@@ -281,6 +283,9 @@ assembled using data from public repositories.")
         (base32 "18mc7vwp2p53ns2paa4glj570shmbq9lk318g3p9nl09mxyadim9"))))
     (properties `((upstream-name . "lumiMouseIDMapping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lumi r-annotationdbi))
     (home-page "https://bioconductor.org/packages/lumiMouseIDMapping")
     (synopsis "Illumina Identifier mapping for Mouse")
@@ -304,6 +309,9 @@ qualities information.")
         (base32 "00iawk8wb1hnvmy898nl9hc85rfzzwi34lpnv2d37rw4wdn57z33"))))
     (properties `((upstream-name . "lumiMouseAll.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/lumiMouseAll.db")
     (synopsis
@@ -326,6 +334,9 @@ assembled using data from public repositories.")
         (base32 "0j29cd01z840jg4zq0yczjsqnya1vpx6hajqdq96msiy4i5fj534"))))
     (properties `((upstream-name . "lumiHumanIDMapping")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lumi r-dbi r-annotationdbi))
     (home-page "https://bioconductor.org/packages/lumiHumanIDMapping")
     (synopsis "Illumina Identifier mapping for Human")
@@ -349,6 +360,9 @@ qualities information.")
         (base32 "0kn2m31b4q8r1lm4iwda9i62la4akj0c35pi3khbfvkmdrvbvhd2"))))
     (properties `((upstream-name . "lumiHumanAll.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/lumiHumanAll.db")
     (synopsis
@@ -361,16 +375,19 @@ assembled using data from public repositories.")
 (define-public r-lumibarnes
   (package
     (name "r-lumibarnes")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lumiBarnes" version
                               'experiment))
        (sha256
-        (base32 "0in8rkcg1r7mjq3fzhyc8446dc09b1mm371vd6l0x541sj7x4n50"))))
+        (base32 "1d1xpxjh6shynsj3ngv3nryrkjkzqx3d1f14sjr93qlwsbvhypfm"))))
     (properties `((upstream-name . "lumiBarnes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lumi r-biobase))
     (home-page "https://bioconductor.org/packages/lumiBarnes")
     (synopsis "Barnes Benchmark Illumina Tissues Titration Data")
@@ -387,18 +404,19 @@ package).")
 (define-public r-lrcelltypemarkers
   (package
     (name "r-lrcelltypemarkers")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRcellTypeMarkers" version
                               'experiment))
        (sha256
-        (base32 "1cghhh1rv8w7819dzi982q862m6yj62pckx8r925j2di1him9db8"))))
+        (base32 "0q5mw2fdz3hlnxx3k7qca7wr50s49jymgqyr8ydq4dfqqcvmzxyr"))))
     (properties `((upstream-name . "LRcellTypeMarkers")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -419,17 +437,18 @@ more details, please visit: https://github.com/marvinquiet/LRcell.")
 (define-public r-lrcell
   (package
     (name "r-lrcell")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRcell" version))
        (sha256
-        (base32 "129wwaa6ppayyirlyra720a2yhabvihy11yfbr3yddnk7jzgzm8a"))))
+        (base32 "0h8jl25kzy03igndb56ard1vngmpmyggcmhzw5m5chx11vz7548v"))))
     (properties `((upstream-name . "LRcell")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -469,15 +488,18 @@ Thalamus).")
 (define-public r-lrbasedbi
   (package
     (name "r-lrbasedbi")
-    (version "2.14.0")
+    (version "2.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRBaseDbi" version))
        (sha256
-        (base32 "11h41iq3ivbyrd2xrhphryqkrfdyr8j8hjdyjbbfsxhq8b4pxz9a"))))
+        (base32 "0s2f2y2fzqz6fawc8rjpmiap5m9vzjwslvcgilb28cfzrz4azp6y"))))
     (properties `((upstream-name . "LRBaseDbi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rsqlite r-dbi r-biobase r-annotationdbi))
     (native-inputs (list))
     (home-page "https://bioconductor.org/packages/LRBaseDbi")
@@ -488,15 +510,18 @@ Thalamus).")
 (define-public r-lpnet
   (package
     (name "r-lpnet")
-    (version "2.36.0")
+    (version "2.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lpNet" version))
        (sha256
-        (base32 "14b7d942k15bjadakfvac8s9zhdhqw59pvpmal527rwm5z6avfvl"))))
+        (base32 "1c23mc2dswzvgmnnlk3vxlg5qzhj6jbi49dyn87nh6ywb5zcm51c"))))
     (properties `((upstream-name . "lpNet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-lpsolve r-kegggraph))
     (home-page "https://bioconductor.org/packages/lpNet")
     (synopsis "Linear Programming Model for Network Inference")
@@ -511,15 +536,18 @@ cross-validation or stratified n-fold cross-validation can be used.")
 (define-public r-lpe
   (package
     (name "r-lpe")
-    (version "1.78.0")
+    (version "1.80.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LPE" version))
        (sha256
-        (base32 "1a2bgk3a1irf45rda1dnbq0gak8ldw328ibvhp10fcj2dyvd53rx"))))
+        (base32 "15bjkkb089kq9k9i7qmchs245lf1kgdpcilkym44fsviy08lqzlg"))))
     (properties `((upstream-name . "LPE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://www.r-project.org")
     (synopsis
      "Methods for analyzing microarray data using Local Pooled Error (LPE) method")
@@ -546,6 +574,9 @@ LPE in multiple conditions, use HEM library.")
         (base32 "0ri301ci54s8wwkah1jccy5h44xg8yjk08j5b15qmdsm25hli4wm"))))
     (properties `((upstream-name . "LowMACAAnnotation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/LowMACAAnnotation")
     (synopsis "LowMACAAnnotation")
@@ -557,15 +588,18 @@ package.")
 (define-public r-loomexperiment
   (package
     (name "r-loomexperiment")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LoomExperiment" version))
        (sha256
-        (base32 "12xx78pbfdhh1iprm8vfbnwi3dm7slf47y5a6p78spnhsykb3ris"))))
+        (base32 "17cxi4f4bc65finx24bd6z15zpy9w19fwyzbi27iia022f28m5ya"))))
     (properties `((upstream-name . "LoomExperiment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-stringr
                              r-singlecellexperiment
@@ -587,17 +621,18 @@ Bioconductor \"Experiment\" classes to loom files and vice versa.")
 (define-public r-lola
   (package
     (name "r-lola")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LOLA" version))
        (sha256
-        (base32 "1i5axxzdwl6j1cgxfdfnaisv6bj4qbrhic5ba2k3wbhkgr144xcc"))))
+        (base32 "0gxz27jvhw64i7r9acn5kj95s1hr8n5kajig6wi2pqxkmasiafk1"))))
     (properties `((upstream-name . "LOLA")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -631,15 +666,18 @@ facilitating interpretation of functional genomics and epigenomics data.")
 (define-public r-logicfs
   (package
     (name "r-logicfs")
-    (version "2.24.0")
+    (version "2.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "logicFS" version))
        (sha256
-        (base32 "1dbc8zwgixjjcdhy3fgln08c0kycrzbcd46vqjb4l479pdrj2r0l"))))
+        (base32 "07sh012j904pv8hgs4h1kknwg76bympv5g2dhal86xmnllzn2sqr"))))
     (properties `((upstream-name . "logicFS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-survival r-mcbiopi r-logicreg))
     (home-page "https://bioconductor.org/packages/logicFS")
     (synopsis "Identification of SNP Interactions")
@@ -652,15 +690,18 @@ bagging version of logic regression for classification.")
 (define-public r-loci2path
   (package
     (name "r-loci2path")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "loci2path" version))
        (sha256
-        (base32 "0igamscdyblh7ymj62qimwr48qfvpqld4ami0m3bnlzkkds6xm2n"))))
+        (base32 "02g25ipim6v6xl6cpdrard9rbp3yz52yvkb0jrisjmxpr0ab07mn"))))
     (properties `((upstream-name . "loci2path")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wordcloud
                              r-s4vectors
                              r-rcolorbrewer
@@ -682,15 +723,18 @@ M@code{SigDB}.")
 (define-public r-lobstahs
   (package
     (name "r-lobstahs")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LOBSTAHS" version))
        (sha256
-        (base32 "0r5s92jfvavxg6amml14lfqv9azshdf6vq7pyf9izbd79whxr6wn"))))
+        (base32 "1pwzfclnna5f1a6sdcradf08i5a562m68ghrd216r8c38x7lg55k"))))
     (properties `((upstream-name . "LOBSTAHS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xcms r-camera))
     (native-inputs (list r-knitr))
     (home-page "http://bioconductor.org/packages/LOBSTAHS")
@@ -715,15 +759,18 @@ user in evaluating the accuracy of each assignment.")
 (define-public r-lmdme
   (package
     (name "r-lmdme")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lmdme" version))
        (sha256
-        (base32 "19rplb4ik9jpxqghmglqhv42plbgz01i4pdw7pr063cdc2n3n18g"))))
+        (base32 "1sg0kvgg33hkpv1fxbibpz0p1126c1izw9jq4133i932pzl5gx5s"))))
     (properties `((upstream-name . "lmdme")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stemhypoxia r-pls r-limma))
     (home-page "http://www.bdmg.com.ar/?page_id=38")
     (synopsis
@@ -739,16 +786,19 @@ for PCA and PLS.")
 (define-public r-listeretalbsseq
   (package
     (name "r-listeretalbsseq")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ListerEtAlBSseq" version
                               'experiment))
        (sha256
-        (base32 "0j4vvac93m8vqidwvqczggkfdk07dabycqprhsnmj8f0g8hpaq9v"))))
+        (base32 "0i3ql1pyyw53n8q3q2wwhqndhyb960l0j5616vx5777dfybm4j9n"))))
     (properties `((upstream-name . "ListerEtAlBSseq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-methylpipe))
     (home-page "https://bioconductor.org/packages/ListerEtAlBSseq")
     (synopsis
@@ -760,16 +810,20 @@ for PCA and PLS.")
 (define-public r-lisaclust
   (package
     (name "r-lisaclust")
-    (version "1.12.3")
+    (version "1.14.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lisaClust" version))
        (sha256
-        (base32 "19zb7h7k6yn2hjq204w49kz97r2fhflnw87b6qsmavhrpva6g9a1"))))
+        (base32 "11aqjzkchy1zmajgkw85yq2qx0ff2r803rk3a32wfkj8h5nbs02z"))))
     (properties `((upstream-name . "lisaClust")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
+                             r-testthat
                              r-summarizedexperiment
                              r-spicyr
                              r-spatstat-random
@@ -802,15 +856,18 @@ single-cell resolution.")
 (define-public r-liquidassociation
   (package
     (name "r-liquidassociation")
-    (version "1.58.0")
+    (version "1.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LiquidAssociation" version))
        (sha256
-        (base32 "0hgr074a4q64cyw2dbc3ncm9rwkv0d2fs5wzlkacr956wv3zzxld"))))
+        (base32 "14l5z0wahdgirz0rxnbkgmhv636w57yp17z5gw220a7vk2w5v4lf"))))
     (properties `((upstream-name . "LiquidAssociation")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yeastcc r-org-sc-sgd-db r-geepack r-biobase))
     (home-page "https://bioconductor.org/packages/LiquidAssociation")
     (synopsis "LiquidAssociation")
@@ -823,15 +880,18 @@ liquid association given a gene triplet data.")
 (define-public r-lipidr
   (package
     (name "r-lipidr")
-    (version "2.18.0")
+    (version "2.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lipidr" version))
        (sha256
-        (base32 "037xy9ci3h0913df5iy5xnciz26zr9frqfpk8krbx7qfzk4d0rk2"))))
+        (base32 "03k22sk8scxnb070p2ildp9fx2i1birhjfiqkspshzwwp8nsq0ij"))))
     (properties `((upstream-name . "lipidr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-summarizedexperiment
                              r-s4vectors
@@ -863,15 +923,18 @@ class, total chain length and unsaturation.")
 (define-public r-lionessr
   (package
     (name "r-lionessr")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lionessR" version))
        (sha256
-        (base32 "1rv9daa45if6nm3yh1sbpnywmdpdi0kmga25pwzfjwv26f9kyd6q"))))
+        (base32 "06shxn831j06qr96fdw9m0s5ng5r2gd2g3105g0cj0vz0d3plxaj"))))
     (properties `((upstream-name . "lionessR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment r-s4vectors))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mararie/lionessR")
@@ -890,15 +953,18 @@ and bipartite networks.")
 (define-public r-lintind
   (package
     (name "r-lintind")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LinTInd" version))
        (sha256
-        (base32 "01ij93fylp7bch2rywz31bpbhdgi8cbsn8nngsp730pd3pyw8mpf"))))
+        (base32 "0yvfwwc81nf29wvdhpwzxbpd5wg3mdb30384pj9sx3hlbp8spnfn"))))
     (properties `((upstream-name . "LinTInd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-stringdist
                              r-s4vectors
@@ -924,30 +990,33 @@ and bipartite networks.")
     (description
      "When we combine gene-editing technology and sequencing technology, we need to
 reconstruct a lineage tree from alleles generated and calculate the similarity
-between each pair of groups. @code{FindIndel}() and @code{IndelForm}() function
+between each pair of groups. @code{FindIndel()} and @code{IndelForm()} function
 will help you align each read to reference sequence and generate scar form
-strings respectively. @code{IndelIdents}() function will help you to define a
-scar form for each cell or read. @code{IndelPlot}() function will help you to
-visualize the distribution of deletion and insertion. @code{TagProcess}()
-function will help you to extract indels for each cell or read. @code{TagDist}()
+strings respectively. @code{IndelIdents()} function will help you to define a
+scar form for each cell or read. @code{IndelPlot()} function will help you to
+visualize the distribution of deletion and insertion. @code{TagProcess()}
+function will help you to extract indels for each cell or read. @code{TagDist()}
 function will help you to calculate the similarity between each pair of groups
-across the indwells they contain. @code{BuildTree}() function will help you to
-reconstruct a tree. @code{PlotTree}() function will help you to visualize the
+across the indwells they contain. @code{BuildTree()} function will help you to
+reconstruct a tree. @code{PlotTree()} function will help you to visualize the
 tree.")
     (license license:expat)))
 
 (define-public r-linkhd
   (package
     (name "r-linkhd")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LinkHD" version))
        (sha256
-        (base32 "00vfzs3121l4bqy3mb4pblfjcna5zaa4iqrzrz9pfkwm2wcf2zis"))))
+        (base32 "15db7s91qxj3vfnidrss03fklnv9z8g960vny7jmh3k4jr70wkva"))))
     (properties `((upstream-name . "LinkHD")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vegan
                              r-scales
                              r-rio
@@ -978,15 +1047,18 @@ variable and perform variable selection.")
 (define-public r-lineagespot
   (package
     (name "r-lineagespot")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lineagespot" version))
        (sha256
-        (base32 "0rjf4liq6lr6i3b2a0cn22qc1xisscsvn7zi11vq8wq0ym15pj6c"))))
+        (base32 "1yll19q8fmajpv56zwrdcc9sp3yjvymqdsbmbhysp7fkd3cpxkmm"))))
     (properties `((upstream-name . "lineagespot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variantannotation
                              r-summarizedexperiment
                              r-stringr
@@ -1009,15 +1081,18 @@ SARS-@code{CoV-2} lineages.")
 (define-public r-limpca
   (package
     (name "r-limpca")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpca" version))
        (sha256
-        (base32 "1id38g2s7g0shcqz37i03zhhypilny8z2dwf74anj8yj4d1isdfr"))))
+        (base32 "04cl6b2086azwri44ij266v6865xpld3v54nhjkm67bm89z5bcas"))))
     (properties `((upstream-name . "limpca")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-tibble
@@ -1049,15 +1124,18 @@ handle unbalanced design.")
 (define-public r-limmagui
   (package
     (name "r-limmagui")
-    (version "1.80.0")
+    (version "1.82.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limmaGUI" version))
        (sha256
-        (base32 "12ryq8l3jkxi5znzhb9bqp53sba7rk2fszsxp1dkwmyrdl12l4ns"))))
+        (base32 "1zqdm1hh4vh10shvdx2nrxp6dshicd1w5a0qblhjfy4wdba18jgz"))))
     (properties `((upstream-name . "limmaGUI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtable r-tkrplot r-r2html r-limma))
     (home-page "http://bioinf.wehi.edu.au/limmaGUI/")
     (synopsis "GUI for limma Package With Two Color Microarrays")
@@ -1069,16 +1147,19 @@ analysis of two-color microarray data using the limma package.")
 (define-public r-liebermanaidenhic2009
   (package
     (name "r-liebermanaidenhic2009")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LiebermanAidenHiC2009" version
                               'experiment))
        (sha256
-        (base32 "0hx2lfpidg54r6kslz3yx6d1lv4vjdrk6s2whii0070hbr18lvjj"))))
+        (base32 "0xa0j53i121r9yscklwcaibhm5826l878w2ys4hwn03kv1jbxm14"))))
     (properties `((upstream-name . "LiebermanAidenHiC2009")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-kernsmooth r-iranges))
     (home-page "https://bioconductor.org/packages/LiebermanAidenHiC2009")
     (synopsis
@@ -1092,15 +1173,18 @@ genome\", Science 2009 Oct 9;326(5950):289-93.  PMID: 19815776.")
 (define-public r-levi
   (package
     (name "r-levi")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "levi" version))
        (sha256
-        (base32 "0rknsfa5fbr4smxzj4p589sxxbypb2s1wvn33p9qj69mfcx7rmi3"))))
+        (base32 "1mqriv4rf23kx173gd51w3bxjl09bs8n1nl6ps8ki2s63lan4l43"))))
     (properties `((upstream-name . "levi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-testthat
                              r-shinyjs
@@ -1125,40 +1209,21 @@ genome\", Science 2009 Oct 9;326(5950):289-93.  PMID: 19815776.")
 displaying a heatmap with surface curves to evidence the altered regions.")
     (license license:gpl2+)))
 
-(define-public r-leukemiaseset
-  (package
-    (name "r-leukemiaseset")
-    (version "1.40.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "leukemiasEset" version
-                              'experiment))
-       (sha256
-        (base32 "0r5dmd9m8fcbdns3r1vsw4xmxdbjp5gf4klsb148rpgmp5avjar4"))))
-    (properties `((upstream-name . "leukemiasEset")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-biobase))
-    (home-page "https://bioconductor.org/packages/leukemiasEset")
-    (synopsis "Leukemia's microarray gene expression data (expressionSet)")
-    (description
-     "Expressionset containing gene expresion data from 60 bone marrow samples of
-patients with one of the four main types of leukemia (ALL, AML, CLL, CML) or
-non-leukemia.")
-    (license license:gpl2+)))
-
 (define-public r-les
   (package
     (name "r-les")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "les" version))
        (sha256
-        (base32 "1dsdrdv06ab7rxpvmbgq1b6dhajjaw7zgvi9nshadm5gg28i60x3"))))
+        (base32 "06xvl0kzp7sc7dyskcq2cfanz1jinxxa6m2npl2nmxwq1pfgm90h"))))
     (properties `((upstream-name . "les")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcolorbrewer r-gplots r-fdrtool r-boot))
     (home-page "https://bioconductor.org/packages/les")
     (synopsis "Identifying Differential Effects in Tiling Microarray Data")
@@ -1174,15 +1239,18 @@ the level of single probes.")
 (define-public r-lemur
   (package
     (name "r-lemur")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lemur" version))
        (sha256
-        (base32 "1hwnf8x9prqv96j66i5756510jviibbrchyizalhrlg8f427i5my"))))
+        (base32 "0gdfp0yyjzgs5qmzzpi2gm4jyyc96hvl85hl61g676rc87in07cv"))))
     (properties `((upstream-name . "lemur")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vctrs
                              r-summarizedexperiment
                              r-singlecellexperiment
@@ -1215,19 +1283,66 @@ differential expression test is conducted to assess which genes are
 significantly changed.")
     (license license:expat)))
 
+(define-public r-legato
+  (package
+    (name "r-legato")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "LegATo" version
+                              'experiment))
+       (sha256
+        (base32 "1lprd2g3qd0r3vqqzfaf3h25gyi4c0bbinqyvadvw3m68n55lcx0"))))
+    (properties `((upstream-name . "LegATo")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-stringr
+                             r-s4vectors
+                             r-rlang
+                             r-plyr
+                             r-multiassayexperiment
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-animalcules))
+    (native-inputs (list r-knitr))
+    (home-page "https://wejlab.github.io/LegATo-docs/")
+    (synopsis "LegATo: Longitudinal mEtaGenomic Analysis Toolkit")
+    (description
+     "@code{LegATo} is a suite of open-source software tools for longitudinal
+microbiome analysis.  It is extendable to several different study forms with
+optimal ease-of-use for researchers.  Microbiome time-series data presents
+distinct challenges including complex covariate dependencies and variety of
+longitudinal study designs.  This toolkit will allow researchers to determine
+which microbial taxa are affected over time by perturbations such as onset of
+disease or lifestyle choices, and to predict the effects of these perturbations
+over time, including changes in composition or stability of commensal bacteria.")
+    (license license:expat)))
+
 (define-public r-leebamviews
   (package
     (name "r-leebamviews")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "leeBamViews" version
                               'experiment))
        (sha256
-        (base32 "15prksw8pi302i8qpw3skwljyj3hfm9wld2lzpcgz7nnpzrqm8bc"))))
+        (base32 "1fqcjmhki1am8b2kw0cymnih3wii8v5a7mbk1imvkl858chh3npz"))))
     (properties `((upstream-name . "leeBamViews")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-rsamtools
                              r-iranges
@@ -1245,15 +1360,18 @@ significantly changed.")
 (define-public r-ledpred
   (package
     (name "r-ledpred")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LedPred" version))
        (sha256
-        (base32 "1ziw6ya46s55gynlrl8dh6p3n0l1m01b0q6b9y6fc13pknjjbarh"))))
+        (base32 "0f8c69k9gmm1fak48xp3h2d4n6y71qgjff2ifmyfsl8k0y39jyb3"))))
     (properties `((upstream-name . "LedPred")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat
                              r-rocr
                              r-rcurl
@@ -1280,15 +1398,18 @@ used to score the regulatory potential of unknown sequences.")
 (define-public r-lbe
   (package
     (name "r-lbe")
-    (version "1.72.0")
+    (version "1.74.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LBE" version))
        (sha256
-        (base32 "03vmsblzh5vw8p8xdd39cbl714rq1nh4wqflprsmpnyd1gkn8p4z"))))
+        (base32 "0hjgq630m4yy8pd4sm2s0nbxcm7y1rqg6kbggrk3hbiqbrzlq0ay"))))
     (properties `((upstream-name . "LBE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/LBE")
     (synopsis "Estimation of the false discovery rate")
     (description
@@ -1311,6 +1432,9 @@ assumption for the alternative hypothesis.")
         (base32 "0960gy5p4ybs5zs6251cgc3nk5a9gsh1nh23gkbkr3gc8jddinfm"))))
     (properties `((upstream-name . "LAPOINTE.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/LAPOINTE.db")
     (synopsis "package containing metadata for LAPOINTE arrays")
@@ -1322,15 +1446,18 @@ assembled using data from public repositories.")
 (define-public r-lapmix
   (package
     (name "r-lapmix")
-    (version "1.70.0")
+    (version "1.72.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lapmix" version))
        (sha256
-        (base32 "1s2f28v21yjxi8rx08cdhd8g76wxm9wq48lq0c6kd7w4iklwwxd1"))))
+        (base32 "19bhb7654h8pivsf3qxv518zp02ijbvlhkb4d93nyanns3g7zqas"))))
     (properties `((upstream-name . "lapmix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biobase))
     (home-page "http://www.r-project.org")
     (synopsis "Laplace Mixture Model in Microarray Experiments")
@@ -1343,17 +1470,18 @@ The main purpose is to identify differentially expressed genes.")
 (define-public r-lace
   (package
     (name "r-lace")
-    (version "2.8.0")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LACE" version))
        (sha256
-        (base32 "07izkiljmq0rbrijsgv45qvpp4zmaw78qqavzbvaw729pl172haz"))))
+        (base32 "1x1h38qav4f5gndlq6xf9rcwsv5pjphcxz11jsykv2bg33fcqaj2"))))
     (properties `((upstream-name . "LACE")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)

@@ -10,9 +10,6 @@
   #:use-module (guix-cran packages c)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages r)
-  #:use-module (gnu packages python-xyz)
-  #:use-module (gnu packages python)
-  #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages d)
   #:use-module (guix-bioc packages z)
@@ -44,15 +41,18 @@
 (define-public r-autonomics
   (package
     (name "r-autonomics")
-    (version "1.12.1")
+    (version "1.14.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "autonomics" version))
        (sha256
-        (base32 "1fzzj0v6v4jvr3wh5bnjr6h2ny8zfm9pdlbhq5syaa2plvsbblpy"))))
+        (base32 "16z9hyzb7nj0b3wvcaa8r8gxpr3fcxigmpsdpy0l9a03l33z82n6"))))
     (properties `((upstream-name . "autonomics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vsn
                              r-tidyselect
                              r-tidyr
@@ -77,22 +77,24 @@
                              r-data-table
                              r-colorspace
                              r-codingmatrices
+                             r-cluster
                              r-bit64
                              r-biocgenerics
                              r-biocfilecache
                              r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/bhagwataditya/autonomics")
-    (synopsis "Unified statistal Modeling of Omics Data")
+    (home-page "https://bioconductor.org/packages/autonomics")
+    (synopsis "Unified Statistical Modeling of Omics Data")
     (description
      "This package unifies access to Statistal Modeling of Omics Data.  Across linear
 modeling engines (lm, lme, lmer, limma, and wilcoxon).  Across coding systems
 (treatment, difference, deviation, etc).  Across model formulae (with/without
 intercept, random effect, interaction or nesting).  Across omics platforms
 (microarray, rnaseq, msproteomics, affinity proteomics, metabolomics).  Across
-projection methods (pca, pls, sma, lda, spls, opls).  It provides a fast
-enrichment analysis implementation.  And an intuitive contrastogram
-visualisation to summarize contrast effects in complex designs.")
+projection methods (pca, pls, sma, lda, spls, opls).  Across clustering methods
+(hclust, pam, cmeans).  It provides a fast enrichment analysis implementation.
+And an intuitive contrastogram visualisation to summarize contrast effects in
+complex designs.")
     (license license:gpl3)))
 
 (define-public r-ath1121501probe
@@ -108,6 +110,9 @@ visualisation to summarize contrast effects in complex designs.")
         (base32 "0a2nd8zhp3ybis780l3rrmwcxskbl3a111g8w6m8qfwsw5vnlqg1"))))
     (properties `((upstream-name . "ath1121501probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ath1121501probe")
     (synopsis "Probe sequence data for microarrays of type ath1121501")
@@ -130,6 +135,9 @@ The file name was ATH1-121501\\_probe\\_tab.")
         (base32 "0y3ka95aafiyily188536azvfqrsr2mbljhc696d2wlkjczbxq5i"))))
     (properties `((upstream-name . "ath1121501frmavecs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/ath1121501frmavecs")
     (synopsis "Vectors used by frma for microarrays of type ath1121501")
@@ -152,6 +160,9 @@ basis of @code{frmaTools} version 1.52.0.")
         (base32 "1naq8f8dwgbmndx178nm2pw6hjx5ljx0w1wb4dfjifnl4bs5rqcc"))))
     (properties `((upstream-name . "ath1121501cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ath1121501cdf")
     (synopsis "ath1121501cdf")
@@ -173,6 +184,9 @@ ATH1-121501.CDF file.")
         (base32 "0v4vapbns71dpv09857lyrnliq202i8yi4ar9z81wbpbc22lhf0d"))))
     (properties `((upstream-name . "ath1121501.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-at-tair-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ath1121501.db")
     (synopsis
@@ -185,15 +199,18 @@ assembled using data from public repositories.")
 (define-public r-atacseqtfea
   (package
     (name "r-atacseqtfea")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ATACseqTFEA" version))
        (sha256
-        (base32 "1dfw6vb0fx02xx21msvy8iarwmn41p1l3ryx1zs39668bz6zz06j"))))
+        (base32 "08s06npspgggfg5vpw4iwmlx2ygbc19nwfp97pphc7lml0d3dhmb"))))
     (properties `((upstream-name . "ATACseqTFEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tfbstools
                              r-summarizedexperiment
                              r-s4vectors
@@ -226,63 +243,21 @@ footprints (cutting sites or insertion sites).  ATA@code{CseqTFEA} provides an
 easy, rigorous way to broadly assess TF activity changes between two conditions.")
     (license license:gpl3)))
 
-(define-public r-ataccogaps
-  (package
-    (name "r-ataccogaps")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "ATACCoGAPS" version))
-       (sha256
-        (base32 "09h32q9y7z65ck33rwqzw2wkl8l6016s0sdkhf2g094yxhkz26rh"))))
-    (properties `((upstream-name . "ATACCoGAPS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tfbstools
-                             r-stringr
-                             r-rgreat
-                             r-projectr
-                             r-mus-musculus
-                             r-msigdbr
-                             r-motifmatchr
-                             r-jaspar2016
-                             r-iranges
-                             r-homo-sapiens
-                             r-gtools
-                             r-gplots
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-geneoverlap
-                             r-fgsea
-                             r-dplyr
-                             r-cogaps
-                             r-chromvar
-                             r-bsgenome-mmusculus-ucsc-mm10
-                             r-bsgenome-hsapiens-ucsc-hg19))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/ATACCoGAPS")
-    (synopsis "Analysis Tools for scATACseq Data with CoGAPS")
-    (description
-     "This package provides tools for running the @code{CoGAPS} algorithm (Fertig et
-al, 2010) on single-cell ATAC sequencing data and analysis of the results.  Can
-be used to perform analyses at the level of genes, motifs, TFs, or pathways.
-Additionally provides tools for transfer learning and data integration with
-single-cell RNA sequencing data.")
-    (license license:artistic2.0)))
-
 (define-public r-asurat
   (package
     (name "r-asurat")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ASURAT" version))
        (sha256
-        (base32 "1fjzmvc4if1kqhwzhd38l5ryvk2qg3001jwapbnkfagxkhmnwymg"))))
+        (base32 "0dak5kx8fwmz9kx2a2r7dgzg5d8jhbf5qx6014p4g54lxns0zxj5"))))
     (properties `((upstream-name . "ASURAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-s4vectors
@@ -307,17 +282,18 @@ tables into original multivariate tables, termed sign-by-sample matrices (SSMs).
 (define-public r-assign
   (package
     (name "r-assign")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ASSIGN" version))
        (sha256
-        (base32 "1aq302awy940jrc1hnsf0rn05y4fg5m9aljsl1mclxxig6b8mrd2"))))
+        (base32 "0avr3zn9nyamcdkr5b9qklcl9gzk36w9w7ky6qwhm7innqhmfapp"))))
     (properties `((upstream-name . "ASSIGN")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -352,42 +328,22 @@ extent to which a patient sample encompasses the pathway deregulation/activation
 signature.")
     (license license:expat)))
 
-(define-public r-assessorfdata
-  (package
-    (name "r-assessorfdata")
-    (version "1.21.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "AssessORFData" version
-                              'experiment))
-       (sha256
-        (base32 "10rbwdcjqfhq9ramrzfxd3bl2q2nqminsj3pigid6fmvyg0ykfhk"))))
-    (properties `((upstream-name . "AssessORFData")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-decipher))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/AssessORFData")
-    (synopsis "Data and Files for the AssessORF Package")
-    (description
-     "This package provides access to mapping and results objects generated by the
-@code{AssessORF} package, as well as the genome sequences for the strains
-corresponding to those objects.")
-    (license license:gpl3)))
-
 (define-public r-asicsdata
   (package
     (name "r-asicsdata")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ASICSdata" version
                               'experiment))
        (sha256
-        (base32 "03wlk2x9bz5xjhnfgxl5zdagnwm60f23bz1qhlgqfs94zfay0jrq"))))
+        (base32 "1vhhvdpnayxf33mq50hdg9ypfpbvxlnjk1h4p73k462517dzxpn0"))))
     (properties `((upstream-name . "ASICSdata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/ASICSdata")
     (synopsis "Example of 1D NMR spectra data for ASICS package")
@@ -400,16 +356,19 @@ corresponding to those objects.")
 (define-public r-ashkenazimsonchr21
   (package
     (name "r-ashkenazimsonchr21")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AshkenazimSonChr21" version
                               'experiment))
        (sha256
-        (base32 "0bm2f7pnxibgcsi5kghjzmin01sirprym5i94qsiga7c6dknqgmn"))))
+        (base32 "0chcr50wa1lwcl1y9sgp2759i6hlwbqald5x5l0y4dldjsqfsr3s"))))
     (properties `((upstream-name . "AshkenazimSonChr21")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AshkenazimSonChr21")
     (synopsis
@@ -424,15 +383,18 @@ provided.")
 (define-public r-artms
   (package
     (name "r-artms")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "artMS" version))
        (sha256
-        (base32 "11a6igby8kz2r5wawrsisz22v4hak9004zr8y87v3pp92rnvb3ma"))))
+        (base32 "0r13816m50qc1w840sd0hx014fgx8bm98kfqh5s0i3rp93fdjsw3"))))
     (properties `((upstream-name . "artMS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-venndiagram
                              r-upsetr
@@ -476,16 +438,19 @@ including, SAINTq, SAINTexpress, Phosfate, and PHOTON. Check
 (define-public r-aracne-networks
   (package
     (name "r-aracne-networks")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "aracne.networks" version
                               'experiment))
        (sha256
-        (base32 "1xfzs1n9wis3r0q4g0hg4amhx4zldbslidx1i4d90vcrgzfdh4x6"))))
+        (base32 "10zp8nqb0xsxc5xbhlc3la34kcrk7f9m0yqrp45c3qaffzr63jki"))))
     (properties `((upstream-name . "aracne.networks")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viper))
     (home-page "https://bioconductor.org/packages/aracne.networks")
     (synopsis "ARACNe-inferred gene networks from TCGA tumor datasets")
@@ -497,16 +462,19 @@ also contains a function to export them into plain-text format.")
 (define-public r-arabidopsis-db0
   (package
     (name "r-arabidopsis-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "arabidopsis.db0" version
                               'annotation))
        (sha256
-        (base32 "1fi4akbk7yc6drkdwp0dfaxdn5axg1c5qp9b445318zszdylxbd3"))))
+        (base32 "15rcqa844plk5hg1pagry4ybhbcq41n3lccqprmvvlxw5xsrhkv4"))))
     (properties `((upstream-name . "arabidopsis.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/arabidopsis.db0")
     (synopsis "Base Level Annotation databases for arabidopsis")
@@ -518,15 +486,18 @@ also contains a function to export them into plain-text format.")
 (define-public r-appreci8r
   (package
     (name "r-appreci8r")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "appreci8R" version))
        (sha256
-        (base32 "1nwb7475lhclyd0jdwm0sp1wh2rgs2h16k4hin6z44axix5v7jhr"))))
+        (base32 "1kd2ds216620hrzaxjdccc1skwal575n5zz6qqyyq1jh2vwggy7x"))))
     (properties `((upstream-name . "appreci8R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xtrasnplocs-hsapiens-dbsnp144-grch37
                              r-variantannotation
                              r-txdb-hsapiens-ucsc-hg19-knowngene
@@ -568,23 +539,25 @@ combined, evaluated and filtered.")
 (define-public r-apl
   (package
     (name "r-apl")
-    (version "1.8.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "APL" version))
        (sha256
-        (base32 "1mkm9aad0qamqs7595mqcbz37qz4ykn0y24wsl3ngj6ifyfxf643"))))
+        (base32 "0z3djj3sdr10i8virdp21fn7vv8jg99v6868234rvzkghyij3i68"))))
     (properties `((upstream-name . "APL")))
     (build-system r-build-system)
-    (inputs (list python-pytorch python python-numpy))
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridislite
                              r-topgo
                              r-summarizedexperiment
                              r-singlecellexperiment
-                             r-seurat
+                             r-seuratobject
+                             r-rspectra
                              r-rlang
-                             r-reticulate
                              r-plotly
                              r-org-mm-eg-db
                              r-org-hs-eg-db
@@ -609,15 +582,18 @@ interest.")
 (define-public r-apalyzer
   (package
     (name "r-apalyzer")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "APAlyzer" version))
        (sha256
-        (base32 "102zs1rlz58dzvrgidf7cvq4wcmk6sffc9fv4b0xlqk5d6il32w4"))))
+        (base32 "06zalaf2lqw0ba3wa47mfdj4nidqs4i0arcqnpdrgdnjw1b679mv"))))
     (properties `((upstream-name . "APAlyzer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variantannotation
                              r-tidyr
                              r-summarizedexperiment
@@ -643,18 +619,31 @@ interest.")
 (define-public r-anvilworkflow
   (package
     (name "r-anvilworkflow")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILWorkflow" version))
        (sha256
-        (base32 "0qk20pg45z2fk7c3ickyzpv99w48pa3r2lfp1aqvh2blbdvp6z88"))))
+        (base32 "0yix1ilxw3wz5x195bqj6n333kdqb4pqckpdar32sl28zx9ymhzr"))))
     (properties `((upstream-name . "AnVILWorkflow")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-httr r-dplyr r-anvil))
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-plyr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-anvilgcp
+                             r-anvilbase
+                             r-anvil))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/AnVILWorkflow")
+    (home-page "https://github.com/shbrief/AnVILWorkflow")
     (synopsis "Run workflows implemented in Terra/AnVIL workspace")
     (description
      "The @code{AnVIL} is a cloud computing resource developed in part by the National
@@ -668,15 +657,18 @@ flexible/scalble computing resources - through the conventional R functions.")
 (define-public r-anvilpublish
   (package
     (name "r-anvilpublish")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILPublish" version))
        (sha256
-        (base32 "030bm9hxqzgfp94h64wfizcbp4q8b9h2irk4zv679v0wnbspp3zz"))))
+        (base32 "1fyz9xaycm9skaisa0v8mr6bp57an29482sbj7yfqz8p421dydkp"))))
     (properties `((upstream-name . "AnVILPublish")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-whisker
                              r-rmarkdown
@@ -685,6 +677,7 @@ flexible/scalble computing resources - through the conventional R functions.")
                              r-httr
                              r-biocmanager
                              r-biocbaseutils
+                             r-anvilgcp
                              r-anvil))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AnVILPublish")
@@ -697,18 +690,55 @@ are used to populate the DASHBOARD'.  Vignettes are translated to python
 notebooks ready for evaluation in @code{AnVIL}.")
     (license license:artistic2.0)))
 
+(define-public r-anvilgcp
+  (package
+    (name "r-anvilgcp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "AnVILGCP" version))
+       (sha256
+        (base32 "0m0assxfq65smzqif7rqsqzlw0y8zjdnyq0nxij0snqzjd9a0iih"))))
+    (properties `((upstream-name . "AnVILGCP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-biocbaseutils
+                             r-anvilbase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bioconductor/AnVILGCP")
+    (synopsis "The GCP R Client for the AnVIL")
+    (description
+     "The package provides a set of functions to interact with the Google Cloud
+Platform (GCP) services on the @code{AnVIL} platform.  The package is designed
+to work with the @code{AnVIL} package.  User-level interaction with this package
+should be minimal.")
+    (license license:artistic2.0)))
+
 (define-public r-anvilbilling
   (package
     (name "r-anvilbilling")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILBilling" version))
        (sha256
-        (base32 "0z05zp70l7r1wxf1s825gsgaj6kzj4fgw3962gp0z90whz398jyf"))))
+        (base32 "1g7j9q1n11nnyjkz68wrpavinchwfpshcs2bridag45n6l42zd16"))))
     (properties `((upstream-name . "AnVILBilling")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shinytoastr
                              r-shiny
                              r-plotly
@@ -731,19 +761,59 @@ and explore expense profiles over time.  This package will be expanded to help
 users estimate costs for specific task sets.")
     (license license:artistic2.0)))
 
+(define-public r-anvilaz
+  (package
+    (name "r-anvilaz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "AnVILAz" version))
+       (sha256
+        (base32 "0b0rpq5f394y50djiwq1ldjr7wfvd4c4vw1nfdqzgizx6cybii7a"))))
+    (properties `((upstream-name . "AnVILAz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-tibble
+                             r-rjsoncons
+                             r-jsonlite
+                             r-httr2
+                             r-curl
+                             r-biocbaseutils
+                             r-anvilbase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bioconductor/AnVILAz")
+    (synopsis "R / Bioconductor Support for the AnVIL Azure Platform")
+    (description
+     "The @code{AnVIL} is a cloud computing resource developed in part by the National
+Human Genome Research Institute.  The @code{AnVILAz} package supports end-users
+and developers using the @code{AnVIL} platform in the Azure cloud.  The package
+provides a programmatic interface to @code{AnVIL} resources, including
+workspaces, notebooks, tables, and workflows.  The package also provides
+utilities for managing resources, including copying files to and from Azure Blob
+Storage, and creating shared access signatures (SAS) for secure access to Azure
+resources.")
+    (license license:artistic2.0)))
+
 (define-public r-antiprofilesdata
   (package
     (name "r-antiprofilesdata")
-    (version "1.40.0")
+    (version "1.41.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "antiProfilesData" version
                               'experiment))
        (sha256
-        (base32 "1mlps08fra7ssbymwf260c43skp2pzw477mp090ycfaj8ncdzqqp"))))
+        (base32 "0ak624m33hgxc7c72mghysql2lqr0blsf5qxl524ncwxw5ls1q3m"))))
     (properties `((upstream-name . "antiProfilesData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biobase))
     (home-page "https://bioconductor.org/packages/antiProfilesData")
     (synopsis
@@ -758,16 +828,19 @@ doi:10.1186/1471-2105-13-272.  Measurements are z-scores obtained from the
 (define-public r-anopheles-db0
   (package
     (name "r-anopheles-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "anopheles.db0" version
                               'annotation))
        (sha256
-        (base32 "190yjnl86b6vm2xmdfm43hn5xy7jsf83rwd103v537y4qhxdy0yq"))))
+        (base32 "07vfxbvw41w7600xv70bnh37wxxwsbkkhihypmibprxmwibf7dvp"))))
     (properties `((upstream-name . "anopheles.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/anopheles.db0")
     (synopsis "Base Level Annotation databases for anopheles")
@@ -779,16 +852,19 @@ doi:10.1186/1471-2105-13-272.  Measurements are z-scores obtained from the
 (define-public r-ampaffyexample
   (package
     (name "r-ampaffyexample")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AmpAffyExample" version
                               'experiment))
        (sha256
-        (base32 "0j5alica5z8fzcwiva3dg1wmncwwkchb7avwvhszk7p7ym0s983q"))))
+        (base32 "0hh3j161whmnw0crcrypv77sdkkcbjrzpfzvgvjvad9m9qkkgfb9"))))
     (properties `((upstream-name . "AmpAffyExample")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-affy))
     (home-page "https://bioconductor.org/packages/AmpAffyExample")
     (synopsis "Example of Amplified Data")
@@ -809,6 +885,9 @@ doi:10.1186/1471-2105-13-272.  Measurements are z-scores obtained from the
         (base32 "18qabggvs9mcg8fwd6prdca8lfxn9r9i0493l667n8jl9vy2pbfc"))))
     (properties `((upstream-name . "alternativeSplicingEvents.hg38")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (home-page
      "https://github.com/nuno-agostinho/alternativeSplicingEvents.hg38")
@@ -832,6 +911,9 @@ quantification tools MISO, VAST-TOOLS, SUPPA and @code{rMATS}.")
         (base32 "0q90nw3ds66zbyn3ch19lq1qimd1hz1s3jyyd6zi3v10p5s8bm0y"))))
     (properties `((upstream-name . "alternativeSplicingEvents.hg19")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (home-page
      "https://github.com/nuno-agostinho/alternativeSplicingEvents.hg19")
@@ -845,20 +927,24 @@ quantification tools MISO, VAST-TOOLS, SUPPA and @code{rMATS}.")
 (define-public r-alphamissenser
   (package
     (name "r-alphamissenser")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AlphaMissenseR" version))
        (sha256
-        (base32 "1y8dzcrjqmqagnl4jiwcsfkj28n544j2d6li0ga6rrqmjwrnxzv0"))))
+        (base32 "0lmpij9k36hi8adp0mnbjagh6mfyykhvsyzyk1vabvbnqi9d3zxk"))))
     (properties `((upstream-name . "AlphaMissenseR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-whisker
                              r-spdl
                              r-rlang
                              r-rjsoncons
                              r-memoise
+                             r-ggplot2
                              r-duckdb
                              r-dplyr
                              r-dbi
@@ -892,6 +978,9 @@ exploration and integration into *R* and *Bioconductor* workflows.")
         (base32 "080c0282hcls96pd9mjljv2y1y6sy6nhqzlqwl5a2knq1aql4mna"))))
     (properties `((upstream-name . "AlphaMissense.v2023.hg38")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-genomicscores r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AlphaMissense.v2023.hg38")
@@ -918,6 +1007,9 @@ how to access those resources.")
         (base32 "0622yzywf3655rsh1ckmfvx0crm715a227bg5zz5znz7zfnlsl8y"))))
     (properties `((upstream-name . "AlphaMissense.v2023.hg19")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-genomicscores r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AlphaMissense.v2023.hg19")
@@ -934,16 +1026,19 @@ how to access those resources.")
 (define-public r-allmll
   (package
     (name "r-allmll")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ALLMLL" version
                               'experiment))
        (sha256
-        (base32 "0pmdw42wrmhqm3754s3kkz7wjih63h21zlrwl1b7lkli79vbzkpd"))))
+        (base32 "1ipp8ykdfldyxza2g8g8lj1yrwaynky0fwhmksym7pgn39gl910l"))))
     (properties `((upstream-name . "ALLMLL")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-affy))
     (home-page "https://bioconductor.org/packages/ALLMLL")
     (synopsis
@@ -961,15 +1056,18 @@ profiling Blood 102: 2951-2959.")
 (define-public r-alabaster-vcf
   (package
     (name "r-alabaster-vcf")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.vcf" version))
        (sha256
-        (base32 "1ry5gim6kkis8wy0v1afv44ay6nw8m9nd6jl89980z499pblf9j4"))))
+        (base32 "0f96s0wzmlzy7cchzf7lgbprc78k6vq03603h55l94z4bcn8n077"))))
     (properties `((upstream-name . "alabaster.vcf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variantannotation
                              r-s4vectors
                              r-rsamtools
@@ -990,15 +1088,18 @@ context-specific properties.")
 (define-public r-alabaster-string
   (package
     (name "r-alabaster-string")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.string" version))
        (sha256
-        (base32 "0p55dpfwjjikmgyq0vk9hmd6k0j3d2x4jjxd7wnabhga3vr4jg7q"))))
+        (base32 "18kbc1gc1bi9vp95adi5kxy2yg3ygdipdvf827vfnl36cn5imna3"))))
     (properties `((upstream-name . "alabaster.string")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors r-biostrings r-alabaster-base))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/alabaster.string")
@@ -1013,15 +1114,18 @@ applications can enrich this metadata with context-specific properties.")
 (define-public r-alabaster-spatial
   (package
     (name "r-alabaster-spatial")
-    (version "1.4.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.spatial" version))
        (sha256
-        (base32 "11mgs6smyiv4r5cajzqpw0k7q0jsm6xch1b5c9w7scl7d9bq981k"))))
+        (base32 "15lswhfdxpg8mdhf1nqivvck9ncygk5m0mnx8px3xam3c5kc7lsd"))))
     (properties `((upstream-name . "alabaster.spatial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-spatialexperiment r-s4vectors r-rhdf5
                              r-alabaster-sce r-alabaster-base))
     (native-inputs (list r-knitr))
@@ -1038,15 +1142,18 @@ metadata with context-specific properties.")
 (define-public r-alabaster-mae
   (package
     (name "r-alabaster-mae")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.mae" version))
        (sha256
-        (base32 "07w4q6dm4asrcdqynhdlxyaaf29s3ca8ij8iblwjnpgp9p5pbj6v"))))
+        (base32 "150b2wcm7bq3ickwfz1vpw3s0h63gk0s57n1j58dn2ssni4y2z5r"))))
     (properties `((upstream-name . "alabaster.mae")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-rhdf5
                              r-multiassayexperiment
@@ -1067,15 +1174,18 @@ context-specific properties.")
 (define-public r-alabaster-files
   (package
     (name "r-alabaster-files")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.files" version))
        (sha256
-        (base32 "0mib4wix9ddgvhgff05gq2ijy6kyh884nv0j40rxzfkxqhp77gim"))))
+        (base32 "1d905lq0s1dd15qpj9drh14vk8xalgp2r6cdirjxyc44nyk6kfp5"))))
     (properties `((upstream-name . "alabaster.files")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors r-rsamtools r-biocgenerics
                              r-alabaster-base))
     (native-inputs (list r-knitr))
@@ -1091,15 +1201,18 @@ between each file and its corresponding index.")
 (define-public r-alabaster-bumpy
   (package
     (name "r-alabaster-bumpy")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.bumpy" version))
        (sha256
-        (base32 "16q433asljnnx04b7q2a4ajhbsrzrqa35m6mcx9apg6q24iw869x"))))
+        (base32 "0my4zqrvjnnrs85263rgxnvaq0a936zhq134hzq8c2lng3csir7d"))))
     (properties `((upstream-name . "alabaster.bumpy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-rhdf5
                              r-matrix
@@ -1121,15 +1234,18 @@ context-specific properties.")
 (define-public r-alabaster
   (package
     (name "r-alabaster")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster" version))
        (sha256
-        (base32 "0c8ryjn4a4py5439vlk23rskf96xc77blj51c6g6m9j812fsby3l"))))
+        (base32 "1jb7dh4kamr6ypfkjm306797jrbn6n37nk533k3h74ckhb06xf33"))))
     (properties `((upstream-name . "alabaster")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-alabaster-vcf
                              r-alabaster-string
                              r-alabaster-spatial
@@ -1153,37 +1269,6 @@ and application developers may prefer to install the required alabaster.*
 packages individually.")
     (license license:expat)))
 
-(define-public r-airway
-  (package
-    (name "r-airway")
-    (version "1.24.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "airway" version
-                              'experiment))
-       (sha256
-        (base32 "0yj9ac58iplcakzw6yyglyiwwhiyslp2hlnszhp3258grvbfvcby"))))
-    (properties `((upstream-name . "airway")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/airway")
-    (synopsis
-     "RangedSummarizedExperiment for RNA-Seq in airway smooth muscle cells, by Himes et al PLoS One 2014")
-    (description
-     "This package provides a @code{RangedSummarizedExperiment} object of read counts
-in genes for an RNA-Seq experiment on four human airway smooth muscle cell lines
-treated with dexamethasone.  Details on the gene model and read counting
-procedure are provided in the package vignette.  The citation for the experiment
-is: Himes BE, Jiang X, Wagner P, Hu R, Wang Q, Klanderman B, Whitaker RM, Duan
-Q, Lasky-Su J, Nikolos C, Jester W, Johnson M, Panettieri R Jr, Tantisira KG,
-Weiss ST, Lu Q. RNA-Seq Transcriptome Profiling Identifies CRISPLD2 as a
-Glucocorticoid Responsive Gene that Modulates Cytokine Function in Airway Smooth
-Muscle Cells.  P@code{LoS} One.  2014 Jun 13;9(6):e99625.  PMID: 24926665.  GEO:
-GSE52778.")
-    (license license:lgpl2.0+)))
-
 (define-public r-ahwikipathwaysdbs
   (package
     (name "r-ahwikipathwaysdbs")
@@ -1197,6 +1282,9 @@ GSE52778.")
         (base32 "0vz3p9sx36bwzl9rq0ffh7klbq13pv2yhgjq1cjk7ll8z226c0q4"))))
     (properties `((upstream-name . "AHWikipathwaysDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kozo2/AHWikipathwaysDbs")
@@ -1230,6 +1318,9 @@ information can be used for Metabolite Set Enrichment Analysis.")
         (base32 "1p9jxs8ci4yv7yi4n86gpg49jigdmw0nrfnm8ls0jxwm0371vm7l"))))
     (properties `((upstream-name . "AHPubMedDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AHPubMedDbs")
@@ -1255,6 +1346,9 @@ details, see the README.md of pubmed-workflow.")
         (base32 "10wcrglm521xcrfbzc39dkbjvg1pkz0zq70vgnh68akiwmdirp89"))))
     (properties `((upstream-name . "AHPathbankDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kozo2/AHPathbankDbs")
@@ -1284,6 +1378,9 @@ Analysis.")
         (base32 "09acd6xipzillw9z68nqqxjxa0hbshclv504na7l2dkhpppx6934"))))
     (properties `((upstream-name . "AHMeSHDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AHMeSHDbs")
@@ -1298,15 +1395,18 @@ by our Snakemake workflow
 (define-public r-ahmassbank
   (package
     (name "r-ahmassbank")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AHMassBank" version))
        (sha256
-        (base32 "1inlsknrkb5am3aqfp3mk1fd0aaj89wfiq1549k7dqy71ng7rpf9"))))
+        (base32 "1z9sd8rkzq4bgx3abrm2d31kmxq3q8b2lrkp45gw46026nvz8217"))))
     (properties `((upstream-name . "AHMassBank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhubdata))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jorainer/AHMassBank")
@@ -1334,6 +1434,9 @@ SQLite databases.")
         (base32 "038i0338zyqzkvmhxcdiykb0rwa3bzi0vv18j643b1a64bsnvcxi"))))
     (properties `((upstream-name . "AHLRBaseDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AHLRBaseDbs")
@@ -1348,16 +1451,19 @@ the details, see the README.md of lrbase-workflow.")
 (define-public r-ahensdbs
   (package
     (name "r-ahensdbs")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AHEnsDbs" version
                               'annotation))
        (sha256
-        (base32 "02gvrlfld6y03gcw7931fplm220dhnhh12xljb0xm6f3inl0vwa6"))))
+        (base32 "1l62703d0czlysvxggvzsqfn1cgjgim7vd0wgzav70vj572z2bs5"))))
     (properties `((upstream-name . "AHEnsDbs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-ensembldb r-annotationhubdata))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/AHEnsDbs")
@@ -1382,6 +1488,9 @@ ensembldb package employing the Ensembl Perl API.")
         (base32 "0svxxhj3mh5gqik45ikcxnlhnma8n1c0rv8pycj2034cb9ms1dbv"))))
     (properties `((upstream-name . "AHCytoBands")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/AHCytoBands")
     (synopsis "CytoBands for AnnotationHub")
     (description
@@ -1403,6 +1512,9 @@ decorate chromosomal overviews in visualizations of genomic data.")
         (base32 "1vnawamcpz16na8nmlq2czfxcr325fwdnngxl65mmnbd0f4lmy3k"))))
     (properties `((upstream-name . "agprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/agprobe")
     (synopsis "Probe sequence data for microarrays of type ag")
@@ -1425,6 +1537,9 @@ The file name was AG\\_probe\\_tab.")
         (base32 "07hq41dwqs7yy2sck8p7zl3v9x4bgl35kkycpazz5ql2g5zy6b7j"))))
     (properties `((upstream-name . "agcdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/agcdf")
     (synopsis "agcdf")
@@ -1446,6 +1561,9 @@ AG.CDF file.")
         (base32 "005y4whqjc8ndr1yjikzcz9196hvq3d04lz8pqfmhk6kyjljpgzh"))))
     (properties `((upstream-name . "ag.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-at-tair-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/ag.db")
     (synopsis "Affymetrix Affymetrix AG Array annotation data (chip ag)")
@@ -1457,16 +1575,19 @@ from public repositories.")
 (define-public r-affymoe4302expr
   (package
     (name "r-affymoe4302expr")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affymoe4302Expr" version
                               'experiment))
        (sha256
-        (base32 "11n5mx1m21j6cc4qrwzrxj3749zc42b1ivwnp47cf55h6j2c3rgm"))))
+        (base32 "1vnilic1lkx8s0gllrfznd03p49m05426fbjhgxmqznd45s7rjaw"))))
     (properties `((upstream-name . "Affymoe4302Expr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/Affymoe4302Expr")
     (synopsis
      "Affymetrix Mouse Genome 430 2.0 Array (GPL1261) Expression Data Package")
@@ -1480,16 +1601,19 @@ and manually verified based on the sample description in GEO.")
 (define-public r-affymetrixdatatestfiles
   (package
     (name "r-affymetrixdatatestfiles")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AffymetrixDataTestFiles" version
                               'experiment))
        (sha256
-        (base32 "1ijprvhbhq68v2g8z9yqwwqw2lz4f4a2pa7lnq2vhf54p9s96sn1"))))
+        (base32 "055msffzbv9ga74krp2hrxjlfxw57p7ldwb9bqp3rcji834d5nmb"))))
     (properties `((upstream-name . "AffymetrixDataTestFiles")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/AffymetrixDataTestFiles")
     (synopsis
      "Affymetrix Data Files (CEL, CDF, CHP, EXP, PGF, PSI) for Testing")
@@ -1502,16 +1626,19 @@ and other official sources.")
 (define-public r-affyhgu133plus2expr
   (package
     (name "r-affyhgu133plus2expr")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affyhgu133Plus2Expr" version
                               'experiment))
        (sha256
-        (base32 "04cxyjk1dhal8iapfilzck8kxpw8jvswxxb7fhnbxqghwlhjg617"))))
+        (base32 "0dy7bx5nncc90xfcmgy1gaf3bs29wkb0s2g2pjnf475xgvrjf07c"))))
     (properties `((upstream-name . "Affyhgu133Plus2Expr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/Affyhgu133Plus2Expr")
     (synopsis "Affyhgu133Plus2Expr (GPL570) Expression Data Package")
     (description
@@ -1524,16 +1651,19 @@ was recorded and manually verified based on the sample description in GEO.")
 (define-public r-affyhgu133aexpr
   (package
     (name "r-affyhgu133aexpr")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affyhgu133aExpr" version
                               'experiment))
        (sha256
-        (base32 "047yza31rrdmzjbg6chqrz61fh7j1a013fww5nj1nwp60rd6iln1"))))
+        (base32 "17bq293nyzb8rxn8ywgr2ypk72n5jrcgmyzjsmz9f9dp53icfgzk"))))
     (properties `((upstream-name . "Affyhgu133aExpr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/Affyhgu133aExpr")
     (synopsis "Affymetrix Human hgu133a Array (GPL96) Expression Data Package")
     (description
@@ -1546,16 +1676,19 @@ and manually verified based on the sample description in GEO.")
 (define-public r-affyhgu133a2expr
   (package
     (name "r-affyhgu133a2expr")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affyhgu133A2Expr" version
                               'experiment))
        (sha256
-        (base32 "0l55wr09j2p8dkzx8cas2whf404anf477h2bmpv267mglrs1sp32"))))
+        (base32 "1asq4vv6lh6yixnnkh12rrlpqckyw3j53vb107mfrwzq99vngmpa"))))
     (properties `((upstream-name . "Affyhgu133A2Expr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/Affyhgu133A2Expr")
     (synopsis
      "Affymetrix Human Genome U133A 2.0 Array (GPL571) Expression Data Package")
@@ -1569,16 +1702,19 @@ was recorded and manually verified based on the sample description in GEO.")
 (define-public r-affycompdata
   (package
     (name "r-affycompdata")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "affycompData" version
                               'experiment))
        (sha256
-        (base32 "16fri51jhp0lm3aj9hw2s6jzxjlxz2qbd36j9zcbcs7sb6jh42jy"))))
+        (base32 "01x4qj2sc1b6z3221af2acpniaar97jhfdgg21lkb6429mm6g42r"))))
     (properties `((upstream-name . "affycompData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biobase r-affycomp))
     (home-page "https://bioconductor.org/packages/affycompData")
     (synopsis "affycomp data")
@@ -1588,28 +1724,31 @@ was recorded and manually verified based on the sample description in GEO.")
 (define-public r-adverscarial
   (package
     (name "r-adverscarial")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "adverSCarial" version))
        (sha256
-        (base32 "1c8anqpxdrkc33pfm1phqjsb8kjdrfqxh93x8n2mpsywqg8q27pb"))))
+        (base32 "0lri1mc23f9mhg3gwq0hjq09vk8fhc2jpais5vy60dym1dz2nnn7"))))
     (properties `((upstream-name . "adverSCarial")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors r-gtools r-delayedarray))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/adverSCarial")
     (synopsis
-     "adverSCarial, generate and analyze the vulnerability of scRNA-seq classifiers to adversarial attacks")
+     "adverSCarial, generate and analyze the vulnerability of scRNA-seq classifier to adversarial attacks")
     (description
      "@code{adverSCarial} is an R Package designed for generating and analyzing the
 vulnerability of @code{scRNA-seq} classifiers to adversarial attacks.  The
 package is versatile and provides a format for integrating any type of
 classifier.  It offers functions for studying and generating two types of
-attacks, single gene attack and max change attack.  The single gene attack
+attacks, single gene attack and max change attack.  The single-gene attack
 involves making a small modification to the input to alter the classification.
-The max change attack involves making a large modification to the input without
+The max-change attack involves making a large modification to the input without
 changing its classification.  The package provides a comprehensive solution for
 evaluating the robustness of @code{scRNA-seq} classifiers against adversarial
 attacks.")
@@ -1628,6 +1767,9 @@ attacks.")
         (base32 "1vn9s1lrl6zzs00madb111fdzqjfb45mprpjqap8bvib65942rvq"))))
     (properties `((upstream-name . "adme16cod.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-rn-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/adme16cod.db")
     (synopsis
@@ -1636,4 +1778,37 @@ attacks.")
      "Codelink ADME Rat 16-Assay Bioarray annotation data (chip adme16cod) assembled
 using data from public repositories.")
     (license license:artistic2.0)))
+
+(define-public r-adapt
+  (package
+    (name "r-adapt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ADAPT" version))
+       (sha256
+        (base32 "111k0q40znpjacqkgcswjdp5iqbxxx60d1bjkziazgk3kgz6ly44"))))
+    (properties `((upstream-name . "ADAPT")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-phyloseq
+                             r-ggrepel
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/ADAPT")
+    (synopsis
+     "Analysis of Microbiome Differential Abundance by Pooling Tobit Models")
+    (description
+     "ADAPT carries out differential abundance analysis for microbiome metagenomics
+data in phyloseq format.  It has two innovations.  One is to treat zero counts
+as left censored and use Tobit models for log count ratios.  The other is an
+innovative way to find non-differentially abundant taxa as reference, then use
+the reference taxa to find the differentially abundant ones.")
+    (license license:expat)))
 

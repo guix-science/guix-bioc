@@ -48,18 +48,19 @@
 (define-public r-nxtirfdata
   (package
     (name "r-nxtirfdata")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NxtIRFdata" version
                               'experiment))
        (sha256
-        (base32 "0qwqpzaqp9m8202sp7pdpii90j9yh97ipk36ivh9ba3s05agwq8p"))))
+        (base32 "1i2s3mpv057qb543rs4dyqfr9h75w3v1rswrix5lbkp2654n323b"))))
     (properties `((upstream-name . "NxtIRFdata")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -83,15 +84,18 @@ under accession number GSE67039.")
 (define-public r-nupop
   (package
     (name "r-nupop")
-    (version "2.12.0")
+    (version "2.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NuPoP" version))
        (sha256
-        (base32 "1w6q7ms57wixw5w3fx74qc6l8mgcklysqq1s6jg69mipwgch62hm"))))
+        (base32 "1rrilv50pldi76sypxp42ibh676x9cp7d4cfcc9bh02220ai8zqv"))))
     (properties `((upstream-name . "NuPoP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://bioconductor.org/packages/NuPoP")
     (synopsis "An R package for nucleosome positioning prediction")
@@ -115,18 +119,19 @@ and will be posted at https://github.com/jipingw/@code{NuPoP}.")
 (define-public r-nullrangesdata
   (package
     (name "r-nullrangesdata")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nullrangesData" version
                               'experiment))
        (sha256
-        (base32 "099ynygy9ld7ckzh38rf5nglx70mjwha0jz3ngn85ncnaz64cw26"))))
+        (base32 "0mi1h40aagfxh79hpcd0bvbp7g4fwzggsnagny9i58sixbjj4kf8"))))
     (properties `((upstream-name . "nullrangesData")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -147,15 +152,18 @@ and the R scripts for object construction provided within the package.")
 (define-public r-nullranges
   (package
     (name "r-nullranges")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nullranges" version))
        (sha256
-        (base32 "0a20aqqja5nkp39v7mxjnc98in63zhl00mnhsm952ja7v1l2xfsw"))))
+        (base32 "0kv1jgdsaj65g1j848clszbnf0zwlpq75sxm4xal5ai4llx16206"))))
     (properties `((upstream-name . "nullranges")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-scales
                              r-s4vectors
                              r-rlang
@@ -194,6 +202,9 @@ including the plyranges Bioconductor package.")
         (base32 "1n70k0mhv146983myjgk1cgkr9rmmcpqdv8wpkcr320qcvgf9bn7"))))
     (properties `((upstream-name . "nugomm1a520177probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/nugomm1a520177probe")
     (synopsis "Probe sequence data for microarrays of type nugomm1a520177")
@@ -215,6 +226,9 @@ including the plyranges Bioconductor package.")
         (base32 "0skd5b76si0vydzk5qhg4f1a1j655alxflm9sqci8fi8safwj96a"))))
     (properties `((upstream-name . "nugomm1a520177cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/nugomm1a520177cdf")
     (synopsis "nugomm1a520177cdf")
@@ -236,6 +250,9 @@ including the plyranges Bioconductor package.")
         (base32 "1s3q5hgyz3ikf8bd8c20s6dsl48nymmjz9fwqpq58xrx91sqb7q5"))))
     (properties `((upstream-name . "nugomm1a520177.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-mm-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/nugomm1a520177.db")
     (synopsis
@@ -258,6 +275,9 @@ data from public repositories.")
         (base32 "1zyy4w7c2hx790kxa5bv94nijhmk5fb22ps19jbwwqf7r0d2ffhn"))))
     (properties `((upstream-name . "nugohs1a520180probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/nugohs1a520180probe")
     (synopsis "Probe sequence data for microarrays of type nugohs1a520180")
@@ -279,6 +299,9 @@ data from public repositories.")
         (base32 "1gpa769y27bs4ncicld4994sn6l1h738m1cbv27g58k58r930m1i"))))
     (properties `((upstream-name . "nugohs1a520180cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/nugohs1a520180cdf")
     (synopsis "nugohs1a520180cdf")
@@ -300,6 +323,9 @@ data from public repositories.")
         (base32 "0r0x8j3safvdncm4s91qircqdcxzyhmq2ad2sf73dcg74pjv0s2w"))))
     (properties `((upstream-name . "nugohs1a520180.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/nugohs1a520180.db")
     (synopsis
@@ -312,15 +338,18 @@ data from public repositories.")
 (define-public r-nucpos
   (package
     (name "r-nucpos")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nuCpos" version))
        (sha256
-        (base32 "03qv4p5mvwbnm2grfnrszphv3c0k2lwja5cbq27cv6il7bnz8m0m"))))
+        (base32 "0wsxwdwjf6fm2p92jnd1fs99mxchfdqpm1qa7q61g1l2xjsmjhpw"))))
     (properties `((upstream-name . "nuCpos")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/nuCpos")
     (synopsis "An R package for prediction of nucleosome positions")
     (description
@@ -336,15 +365,18 @@ the function for @code{dHMM-based} prediction was removed from this package.
 (define-public r-nucler
   (package
     (name "r-nucler")
-    (version "2.36.0")
+    (version "2.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nucleR" version))
        (sha256
-        (base32 "1gbn4rpgil579xkrwd78wc7h6h0f8j1kjz0vvlijy63i6g380wfk"))))
+        (base32 "0y63jh1d3ms4jpgvig64af64gandbn632fzibfjpyj015zyaamg8"))))
     (properties `((upstream-name . "nucleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shortread
                              r-s4vectors
                              r-rsamtools
@@ -367,15 +399,18 @@ the function for @code{dHMM-based} prediction was removed from this package.
 (define-public r-nucleosim
   (package
     (name "r-nucleosim")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nucleoSim" version))
        (sha256
-        (base32 "0f64601jm3bvcdpls3d5njpparkb5h5v6zvhb1jf46fdvyg4xcss"))))
+        (base32 "02fv54fb9qqmicyr8hkrr6rd9gg74wdg05v2k6gdmp9cph37dcqb"))))
     (properties `((upstream-name . "nucleoSim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors r-iranges))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/arnauddroitlab/nucleoSim")
@@ -393,15 +428,18 @@ maps.")
 (define-public r-ntw
   (package
     (name "r-ntw")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NTW" version))
        (sha256
-        (base32 "1knkqrs3rlhl9qvp6670hc7qhgyi6pmcs47xcivpn2jk6ss00xhk"))))
+        (base32 "044ampz8mwvs5kqfy97pz8f50d39ssjmgr5j5s7lyijr4y4dkvlx"))))
     (properties `((upstream-name . "NTW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://bioconductor.org/packages/NTW")
     (synopsis
@@ -415,15 +453,18 @@ Differential Equation) based method.")
 (define-public r-npgsea
   (package
     (name "r-npgsea")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "npGSEA" version))
        (sha256
-        (base32 "1d9q7jy6axmh62xs4m1lxfh8j7vwq4k995l28hcfwh7qk38k4gqr"))))
+        (base32 "17gn5axgplx935s9f4y1m21nxagkpdd29rvmrxc0qya6a8zfriy3"))))
     (properties `((upstream-name . "npGSEA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-gseabase r-biocgenerics r-biobase))
     (home-page "https://bioconductor.org/packages/npGSEA")
     (synopsis
@@ -445,15 +486,18 @@ results.")
 (define-public r-nparc
   (package
     (name "r-nparc")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NPARC" version))
        (sha256
-        (base32 "0giq5nxqnsqppz12adln7kvdb8lifch57wg6avdl88xrdzpl3vfw"))))
+        (base32 "1fic3ss8vnvz0gf8xfv0x995c0pw1s6qij3x3jyhwp0f4gn3h9mb"))))
     (properties `((upstream-name . "NPARC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-mass
@@ -484,6 +528,9 @@ reveals novel drug-binding proteins.")
         (base32 "04ngc2hilqi9m7933mnm7jcvkxlz68vqqh5b628db575vcxql9b9"))))
     (properties `((upstream-name . "Norway981.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/Norway981.db")
     (synopsis
@@ -496,15 +543,18 @@ using data from public repositories.")
 (define-public r-normr
   (package
     (name "r-normr")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "normr" version))
        (sha256
-        (base32 "1lkh4a6c499g4wicj4khkyhz361k4q0aydk4gc122vn4877z14c6"))))
+        (base32 "00rng96zpa0bp2j39ysvh6wf87pbbkxkaby651h8a3pl20bfs3s1"))))
     (properties `((upstream-name . "normr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rtracklayer
                              r-rcpp
                              r-qvalue
@@ -527,15 +577,18 @@ significantly enriched or depleted regions.")
 (define-public r-normqpcr
   (package
     (name "r-normqpcr")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NormqPCR" version))
        (sha256
-        (base32 "1fl7qm6qmzxvv41qd1y8ds3r6dqk39rqgh6sl8imbggmnpb27j9h"))))
+        (base32 "1ykpyv8wbz2lvw5b6bwi3b97sk084wdzafy0zrghbxhvpjdkaqiy"))))
     (properties `((upstream-name . "NormqPCR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-readqpcr r-rcolorbrewer r-qpcr r-biobase))
     (home-page "www.bioconductor.org/packages/release/bioc/html/NormqPCR.html")
     (synopsis "Functions for normalisation of RT-qPCR data")
@@ -547,15 +600,18 @@ the normalisation of real-time quantitative PCR data.")
 (define-public r-normalyzerde
   (package
     (name "r-normalyzerde")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NormalyzerDE" version))
        (sha256
-        (base32 "1kiwyf8fkdp7bml4b5f32schyl0s5c0b1ag4g826rakh487sb69b"))))
+        (base32 "17f6224zl25vi2z2mf69i4273356bwrq8myr0dvqap63cmfilbbc"))))
     (properties `((upstream-name . "NormalyzerDE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vsn
                              r-summarizedexperiment
                              r-preprocesscore
@@ -565,7 +621,6 @@ the normalisation of real-time quantitative PCR data.")
                              r-ggplot2
                              r-ggforce
                              r-car
-                             r-biobase
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ComputationalProteomics/NormalyzerDE")
@@ -582,15 +637,18 @@ utility for Limma- or ANOVA- based differential expression analysis.")
 (define-public r-normalize450k
   (package
     (name "r-normalize450k")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "normalize450K" version))
        (sha256
-        (base32 "0iavswwgv0qhnwlf99nxrpmswbd5m9ihi7i68gby07hmsl5gci2a"))))
+        (base32 "1hlj8habzbsmxdia5aw3khpl12v4zchchs8nk4mmvvhwa81lr326"))))
     (properties `((upstream-name . "normalize450K")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-quadprog r-illuminaio r-biobase))
     (home-page "https://bioconductor.org/packages/normalize450K")
     (synopsis "Preprocessing of Illumina Infinium 450K data")
@@ -608,15 +666,18 @@ precision for accuracy of beta-values.")
 (define-public r-norce
   (package
     (name "r-norce")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NoRCE" version))
        (sha256
-        (base32 "0di23zmjfba4nmbbkcn2xhqamxxn4hfkhyh3skc46b66rl1yjy3n"))))
+        (base32 "0npl2x2d5jxjljwd6z3rdhw39psy1mdv2rb03ag4mj1zkxqjdzyf"))))
     (properties `((upstream-name . "NoRCE")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zlibbioc
                              r-tidyr
                              r-summarizedexperiment
@@ -670,15 +731,18 @@ the following species: human, mouse, rat, zebrafish, fruit fly, worm, and yeast.
 (define-public r-nnsvg
   (package
     (name "r-nnsvg")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nnSVG" version))
        (sha256
-        (base32 "00346z7i5hgljylv00l5pcmj3y769mqnhac0f4l7jhiww3xswfbs"))))
+        (base32 "0gvrazxcw7v9ylcvm73npgqsc0knyy8vrdf6ypkbiyjz5n9vw27b"))))
     (properties `((upstream-name . "nnSVG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-spatialexperiment
                              r-singlecellexperiment
@@ -703,15 +767,18 @@ can be applied to datasets containing thousands or more spatial locations.")
 (define-public r-nnnorm
   (package
     (name "r-nnnorm")
-    (version "2.68.0")
+    (version "2.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nnNorm" version))
        (sha256
-        (base32 "1r3klap7yazz73jh7dja1wlgg9ladfw1aaljirbiq1dvlb1q1i8f"))))
+        (base32 "1cr3ddbrfjhlqxjm43knmmmw8xzx9j2j1kkkxd1cj1nh86v3hn5n"))))
     (properties `((upstream-name . "nnNorm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-nnet r-marray))
     (home-page "http://bioinformaticsprb.med.wayne.edu/tarca/")
     (synopsis
@@ -725,15 +792,18 @@ package is based on robust neural networks fitting.")
 (define-public r-nipalsmcia
   (package
     (name "r-nipalsmcia")
-    (version "1.2.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nipalsMCIA" version))
        (sha256
-        (base32 "1h2ibn5p4y24lmkmbp5n082n3ypj24nqsnrrs2nfmzn5jg7bq687"))))
+        (base32 "08gcky7vcbsyv5pr254nnv2f7sjlal7092dsq74m2rcmmykb555c"))))
     (properties `((upstream-name . "nipalsMCIA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-scales
                              r-rspectra
@@ -759,15 +829,18 @@ to bulk- and single cell- multi-omics studies.")
 (define-public r-ngsreports
   (package
     (name "r-ngsreports")
-    (version "2.6.1")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ngsReports" version))
        (sha256
-        (base32 "13dmy1g822h8w9f2ylvs40zn810zxamy9jr7vncsbbk6cr87h9lg"))))
+        (base32 "01mgah5b8741y9pqrww9ikwmw823xr5i00jsjbazmhr82h2ksm4z"))))
     (properties `((upstream-name . "ngsReports")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-tidyselect
                              r-tidyr
@@ -803,16 +876,19 @@ plotly objects.")
 (define-public r-ngscopydata
   (package
     (name "r-ngscopydata")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NGScopyData" version
                               'experiment))
        (sha256
-        (base32 "1j780dkzv08ajyz0c9dh2ygqsyycyhnzvxl1jrc3gvxdddr1syvj"))))
+        (base32 "123gla377dck6vvki3dxv7absscp73229i2sl1p1kfzmy0bvf4lk"))))
     (properties `((upstream-name . "NGScopyData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page
      "http://www.bioconductor.org/packages/release/data/experiment/html/NGScopyData.html")
     (synopsis
@@ -831,15 +907,18 @@ subsampled data on chr6 (hg19).")
 (define-public r-newwave
   (package
     (name "r-newwave")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NewWave" version))
        (sha256
-        (base32 "03m6dd0p2d542k36jwvz9ik8cddw1q3dz9ghqy0w1dbf685r0kf0"))))
+        (base32 "14iwsgcl9pfljb0zvsfmm7wr38zrcvd5i9vpx4aira7b2l9c18rc"))))
     (properties `((upstream-name . "NewWave")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-sharedobject
@@ -862,16 +941,19 @@ dispersion parameter that can be both commonwise across gene both genewise.")
 (define-public r-neve2006
   (package
     (name "r-neve2006")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Neve2006" version
                               'experiment))
        (sha256
-        (base32 "0w3ph610lhxyg1knhsnnxpw32sw2n5p57svpbhqm3zmphx29nw3h"))))
+        (base32 "0qbqd501scsdx0d7s1pxfjdy2r7nj9d0dgfs368cpbf28wab51jw"))))
     (properties `((upstream-name . "Neve2006")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-hgu133a-db r-biobase r-annotate))
     (home-page "https://bioconductor.org/packages/Neve2006")
     (synopsis "expression and CGH data on breast cancer cell lines")
@@ -879,44 +961,21 @@ dispersion parameter that can be both commonwise across gene both genewise.")
      "Experimental organization of combined expression and CGH data.")
     (license license:artistic2.0)))
 
-(define-public r-neuca
-  (package
-    (name "r-neuca")
-    (version "1.10.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "NeuCA" version))
-       (sha256
-        (base32 "0k5bqdrja3x238fyrd7dm5jm94igh25b0ipb2zj6scpa4m15n67l"))))
-    (properties `((upstream-name . "NeuCA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-singlecellexperiment r-limma r-keras
-                             r-kableextra r-e1071))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/NeuCA")
-    (synopsis "NEUral network-based single-Cell Annotation tool")
-    (description
-     "@code{NeuCA} is is a neural-network based method for @code{scRNA-seq} data
-annotation.  It can automatically adjust its classification strategy depending
-on cell type correlations, to accurately annotate cell. @code{NeuCA} can
-automatically utilize the structure information of the cell types through a
-hierarchical tree to improve the annotation accuracy.  It is especially helpful
-when the data contain closely correlated cell types.")
-    (license license:gpl2)))
-
 (define-public r-netzoor
   (package
     (name "r-netzoor")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netZooR" version))
        (sha256
-        (base32 "0z1wi0csnpjz70q5pl5wmdfgqnq66yk9gysxxid8rmkagqxvbg73"))))
+        (base32 "11rq1lhxhwij6wik087wmnzk8aswhmmf3yzcpiljxbk8szsm8np7"))))
     (properties `((upstream-name . "netZooR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yarn
                              r-viridislite
                              r-vegan
@@ -968,15 +1027,18 @@ analyses and SAMBAR infers missing mutation data based on pathway information.")
 (define-public r-netsmooth
   (package
     (name "r-netsmooth")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netSmooth" version))
        (sha256
-        (base32 "0nry64lvqwwq672c6callfjfa0y14igvqpvrvfs2hm0qj8qmg2q8"))))
+        (base32 "0pwnzapfv4c39zggzfylxp7lz7hid3483qq1wdphz99nf796x3hm"))))
     (properties `((upstream-name . "netSmooth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
                              r-scater
@@ -1000,15 +1062,18 @@ noisy, sparse @code{scRNAseq} data.")
 (define-public r-netsam
   (package
     (name "r-netsam")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NetSAM" version))
        (sha256
-        (base32 "07l5cgl72mkh3j96lciwalsb0ps0bs7rfxzm78m5279palawf6vb"))))
+        (base32 "15c4z3fpk9kwqslkrds9jk8mf7gl618smi53dwgfbg3gi7vysgmp"))))
     (properties `((upstream-name . "NetSAM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wgcna
                              r-survival
                              r-seriation
@@ -1038,15 +1103,18 @@ sample features and modules or identify the associated GO terms for the modules.
 (define-public r-netresponse
   (package
     (name "r-netresponse")
-    (version "1.64.0")
+    (version "1.66.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netresponse" version))
        (sha256
-        (base32 "13lynfqsbv8cp6hd452bky4mkf029jwvryx8mzdcx15r4hwsqh5r"))))
+        (base32 "0xaikq96ip8g7xhsljr0z849aqj30sfdh4zdqxvabwbkh0ygxl8k"))))
     (properties `((upstream-name . "netresponse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rmarkdown
                              r-rgraphviz
                              r-reshape2
@@ -1071,15 +1139,18 @@ modeling.")
 (define-public r-netprior
   (package
     (name "r-netprior")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netprioR" version))
        (sha256
-        (base32 "0kgsgjc2q4wvdwbqfx79ql85k6xc60165zair7nwc89wn07rnswy"))))
+        (base32 "15v33ckc58r9yars5wpbm32pvlsdwnc5a6wnalkg72xjr5s1vqjy"))))
     (properties `((upstream-name . "netprioR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sparsemvn
                              r-proc
                              r-matrix
@@ -1100,15 +1171,18 @@ TN gene labels from the literature or experts.")
 (define-public r-netpathminer
   (package
     (name "r-netpathminer")
-    (version "1.40.2")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NetPathMiner" version))
        (sha256
-        (base32 "0srf2ls4791ybikk51nhli816k06ld8y8a710g5gz54lg486i5bg"))))
+        (base32 "0dh2wp4ljg5vw13cg8h4hdvhd6n5sj50xjj04h7zpp96a2rjcr1i"))))
     (properties `((upstream-name . "NetPathMiner")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list libxml2 libxml2 libsbml))
     (propagated-inputs (list r-igraph))
     (native-inputs (list pkg-config r-knitr))
@@ -1128,15 +1202,18 @@ manual investigation.")
 (define-public r-nethet
   (package
     (name "r-nethet")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nethet" version))
        (sha256
-        (base32 "1mr42pdm2sjpbmiiwjpqd0pvbnc5imlgmg14swc2pp66dl60g7b3"))))
+        (base32 "11kyawxhzwda4n14h1hgvbvzbxl1khxn3ssrwhncdd3fmlkd67hx"))))
     (properties `((upstream-name . "nethet")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-network
                              r-mvtnorm
                              r-multtest
@@ -1166,66 +1243,21 @@ make a novel network-based clustering algorithm available (mixed graphical
 lasso, Stadler and Mukherjee, 2013).")
     (license license:gpl2)))
 
-(define-public r-netdx
-  (package
-    (name "r-netdx")
-    (version "1.16.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "netDx" version))
-       (sha256
-        (base32 "00ghcj5hzb06pi9aj2rdnasyqgqnvr9qjb0m6b0476yv2mx5x24k"))))
-    (properties `((upstream-name . "netDx")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-s4vectors
-                             r-rtsne
-                             r-rocr
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-rappdirs
-                             r-pracma
-                             r-plotrix
-                             r-multiassayexperiment
-                             r-iranges
-                             r-igraph
-                             r-httr
-                             r-glmnet
-                             r-ggplot2
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-foreach
-                             r-doparallel
-                             r-combinat
-                             r-biocfilecache
-                             r-bigmemory))
-    (native-inputs (list r-knitr))
-    (home-page "http://netdx.org")
-    (synopsis "Network-based patient classifier")
-    (description
-     "@code{netDx} is a general-purpose algorithm to build a patient classifier from
-heterogenous patient data.  The method converts data into patient similarity
-networks at the level of features.  Feature selection identifies features of
-predictive value to each class.  Methods are provided for versatile predictor
-design and performance evaluation using standard measures. @code{netDx} natively
-groups molecular data into pathway-level features and connects with Cytoscape
-for network visualization of pathway themes.  For method details see: Pai et al.
-(2019). @code{netDx}: interpretable patient classification using integrated
-patient similarity networks.  Molecular Systems Biology.  15, e8497.")
-    (license license:expat)))
-
 (define-public r-netboost
   (package
     (name "r-netboost")
-    (version "2.12.0")
+    (version "2.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netboost" version))
        (sha256
-        (base32 "0xirmys108qhxg7073vm90463a7qs6z557516ff1yczhldaq4psy"))))
+        (base32 "036n93rrcv1b892xmijdvg6slla6h6hmf28rq1cr5fabcjzx6vf5"))))
     (properties `((upstream-name . "netboost")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list perl gzip bash))
     (propagated-inputs (list r-wgcna
                              r-rcppparallel
@@ -1248,16 +1280,19 @@ Loewenstein.")
 (define-public r-netactivitydata
   (package
     (name "r-netactivitydata")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NetActivityData" version
                               'experiment))
        (sha256
-        (base32 "1jcj9k5mzf30wimwwv4gix85n597bv20bjh32nrha2yqiihp9k34"))))
+        (base32 "0b6f07467l448dw2nrv243gf7mhhyq59w4by54iwdb9zk1gyvwlm"))))
     (properties `((upstream-name . "NetActivityData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/NetActivityData")
     (synopsis
@@ -1271,15 +1306,18 @@ autoencoders.  This data is required for getting the gene set scores with
 (define-public r-netactivity
   (package
     (name "r-netactivity")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NetActivity" version))
        (sha256
-        (base32 "0hssxa9i5c090929mnjs7nqn56fmg7qhq0iknfrl9d0wvpibm3bh"))))
+        (base32 "0m0256dsfkbx5b7qba04dywyphpqlw7zyciyddx48wzmxkasrabd"))))
     (properties `((upstream-name . "NetActivity")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-netactivitydata
                              r-deseq2
@@ -1302,18 +1340,19 @@ gene set scores using custom models.")
 (define-public r-nestlink
   (package
     (name "r-nestlink")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NestLink" version
                               'experiment))
        (sha256
-        (base32 "1yh1nivipyrx3h0par8cf943licl1rs47jvfwz1392hi09vji15j"))))
+        (base32 "0fgl07gqipxmj0yqqa97inqdv8fma2n8lm20irpj825798f0iq6z"))))
     (properties `((upstream-name . "NestLink")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1341,15 +1380,18 @@ Center Zurich.")
 (define-public r-nempi
   (package
     (name "r-nempi")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nempi" version))
        (sha256
-        (base32 "069b7kmpz38s7240ac8iw8m80w62lrly01khfl8b3kikhlr82jcq"))))
+        (base32 "16abvgv4vjbppkh41fsbjscxqjjfi0g8mqb8jf7k0psrvvfs0wg4"))))
     (properties `((upstream-name . "nempi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-randomforest
                              r-nnet
                              r-naturalsort
@@ -1371,15 +1413,18 @@ inference is done by Nested Effects Models.")
 (define-public r-nearbynding
   (package
     (name "r-nearbynding")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nearBynding" version))
        (sha256
-        (base32 "0ni6mipdbwzc0gi8mws1d1b8ylj0pjlvi81kv9r3pm93psr67pj3"))))
+        (base32 "0q5bpfvrb8qvklwc6zhvdrj0rq58p0gpqc08j7cgxhllkmiacisw"))))
     (properties `((upstream-name . "nearBynding")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list bedtools))
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
                              r-txdb-hsapiens-ucsc-hg19-knowngene
@@ -1414,15 +1459,18 @@ multiple formats.")
 (define-public r-ndexr
   (package
     (name "r-ndexr")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ndexr" version))
        (sha256
-        (base32 "1jl7z4a1rdsivc774k15v3q40isgp1ly3lsmgflfkq7jsx62xl5j"))))
+        (base32 "0m6hzx0nk2bq9l40mnjil1vjqys9lvgflifp8gnk3skiw2ddjrsm"))))
     (properties `((upstream-name . "ndexr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr r-rcx r-plyr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/frankkramer-lab/ndexr")
@@ -1436,15 +1484,18 @@ are offered as RCX object and as igraph representation.")
 (define-public r-ncrnatools
   (package
     (name "r-ncrnatools")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ncRNAtools" version))
        (sha256
-        (base32 "151s12kg88x4nymzvpzwlfil7rvrbaa99agfxzz03r8dyjnqrqlq"))))
+        (base32 "07kcwcf94vnm7byagnb4dkn1xpdimkp73vnglxh8d12s46vdpvcl"))))
     (properties `((upstream-name . "ncRNAtools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml2
                              r-s4vectors
                              r-iranges
@@ -1465,16 +1516,19 @@ commonly used for representing such secondary structures.")
 (define-public r-ncigraphdata
   (package
     (name "r-ncigraphdata")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NCIgraphData" version
                               'experiment))
        (sha256
-        (base32 "0macj01775q3dzqhvsbfb2gkz0s8w49vgbfh2nhpgfykwzx5bwjm"))))
+        (base32 "15bvrqyvd3lg9y5qy749dc7giq4hx9ixlk342gbf7n2jhnjhh0gz"))))
     (properties `((upstream-name . "NCIgraphData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bioconductor.org/packages/NCIgraphData")
     (synopsis "Data for the NCIgraph software package")
     (description
@@ -1485,15 +1539,18 @@ objects.")
 (define-public r-ncigraph
   (package
     (name "r-ncigraph")
-    (version "1.52.0")
+    (version "1.54.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NCIgraph" version))
        (sha256
-        (base32 "16kkg568hdjsn4jq9hd9gl1n31wavshn79bpwhg5jxci288zgai0"))))
+        (base32 "1bh1bpsb9fgnbyrfpi9n54ffxf513dqdr9w1i7xfnbkpv1q1zkmn"))))
     (properties `((upstream-name . "NCIgraph")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcy3 r-rbgl r-r-oo r-kegggraph r-graph))
     (home-page "https://bioconductor.org/packages/NCIgraph")
     (synopsis "Pathways from the NCI Pathways Database")
@@ -1505,15 +1562,18 @@ Database in R graph objects and to re-format them.")
 (define-public r-ncgtw
   (package
     (name "r-ncgtw")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ncGTW" version))
        (sha256
-        (base32 "1x9q4c3xkz984nz33bbh753181qx655zkl46i00h7a9khnab9cdv"))))
+        (base32 "1y1sc6qv5s2x0zg4wpvjflvzzi6zy4h0kvwds1j1kd9wm0ck9z6c"))))
     (properties `((upstream-name . "ncGTW")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xcms r-rcpp r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/ncGTW")
@@ -1528,15 +1588,18 @@ the user can choose to realign these feature groups by @code{ncGTW} or not.")
 (define-public r-nbamseq
   (package
     (name "r-nbamseq")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NBAMSeq" version))
        (sha256
-        (base32 "1iglbxv7wcgn7lwah8jd1q7gsrqjr3874nivl1msla35hkqw4v9a"))))
+        (base32 "0cd3vmkprf4klkg5m0ak0mmdhbvy6rgvi96rn8r2s1jp6chdvcxp"))))
     (properties `((upstream-name . "NBAMSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
                              r-mgcv
@@ -1558,16 +1621,19 @@ across genes in variance estimation.")
 (define-public r-nanotubes
   (package
     (name "r-nanotubes")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nanotubes" version
                               'experiment))
        (sha256
-        (base32 "0gsgs0i3117753pxypr2q8pc3zc8bd3fkp5xj30jx142wvi4y0al"))))
+        (base32 "0ah9f2arylvvg0ndbn65qc79f573lv8pl5mzv8mpcm3xdh0gcf7v"))))
     (properties `((upstream-name . "nanotubes")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MalteThodberg/nanotubes")
     (synopsis "Mouse nanotube CAGE data")
@@ -1581,15 +1647,18 @@ Sites (CTSSs).")
 (define-public r-nanotube
   (package
     (name "r-nanotube")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoTube" version))
        (sha256
-        (base32 "1i5fs2lkqmyl0hb1s6f56z3wmwhmvw2mkygl3ibn0qwfh460l4f1"))))
+        (base32 "0phdjxvikia3bx6l8v9b1r85kclrc5zi6s0jrsg2dvpdyhcyjwn0"))))
     (properties `((upstream-name . "NanoTube")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-reshape r-limma r-ggplot2 r-fgsea r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/NanoTube")
@@ -1606,15 +1675,18 @@ are included to enable interoperability with other Bioconductor
 (define-public r-nanostringnctools
   (package
     (name "r-nanostringnctools")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoStringNCTools" version))
        (sha256
-        (base32 "1n1zc99v5xzd89q512v24wa7gmbgdp8g9aixvh6cjismah0vpgjr"))))
+        (base32 "0yxp14jyw9xmnji1wc377hq3wnw4jrkcjwp1rqbfa75bnqcpfivk"))))
     (properties `((upstream-name . "NanoStringNCTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-rcolorbrewer
                              r-pheatmap
@@ -1639,15 +1711,18 @@ derived object.  Also includes methods for QC and normalizaztion of
 (define-public r-nanostringdiff
   (package
     (name "r-nanostringdiff")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoStringDiff" version))
        (sha256
-        (base32 "0rasmzc12xl6mh9l2989wgp9q30665iqqgxr1fy6r57j7hixwbc1"))))
+        (base32 "12nags3h5261k4qhr8lclyyjbk4ai3hmw9wixpf3pp4qfjqcrmrq"))))
     (properties `((upstream-name . "NanoStringDiff")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrixstats r-biobase))
     (home-page "https://bioconductor.org/packages/NanoStringDiff")
     (synopsis "Differential Expression Analysis of NanoString nCounter Data")
@@ -1663,18 +1738,19 @@ provided by @code{NanoString} @code{nCounter} Analyzer is fully utilized.")
 (define-public r-nanoporernaseq
   (package
     (name "r-nanoporernaseq")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoporeRNASeq" version
                               'experiment))
        (sha256
-        (base32 "0lpjxpw5jd4zj9pjd3xjcaxkcn135rbhz628zpl44qrdnmyjg2wk"))))
+        (base32 "0z0aa9nd0f3l1ncl8gbm50x779lgpazi6fwzxl7p1xnrikwa7lzp"))))
     (properties `((upstream-name . "NanoporeRNASeq")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -1695,15 +1771,18 @@ stored as bam files.  The original data is from the SG-NEx project.")
 (define-public r-nanomethviz
   (package
     (name "r-nanomethviz")
-    (version "3.0.2")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoMethViz" version))
        (sha256
-        (base32 "0nlbkikmxdq08m24sch8cy10m63v33536p5rx1zy5c4f4pa86yrw"))))
+        (base32 "17k55c7cr07ixnkas402jphjga5ixywmpiyd7bk8y6d5r5llxmgy"))))
     (properties `((upstream-name . "NanoMethViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-zlibbioc
                              r-withr
@@ -1711,7 +1790,6 @@ stored as bam files.  The original data is from the SG-NEx project.")
                              r-tibble
                              r-summarizedexperiment
                              r-stringr
-                             r-scico
                              r-scales
                              r-s4vectors
                              r-rsamtools
@@ -1732,7 +1810,6 @@ stored as bam files.  The original data is from the SG-NEx project.")
                              r-e1071
                              r-dplyr
                              r-dbscan
-                             r-data-table
                              r-cpp11
                              r-cli
                              r-bsseq
@@ -1755,15 +1832,18 @@ groups and across classes of genomic features.")
 (define-public r-nadfinder
   (package
     (name "r-nadfinder")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NADfinder" version))
        (sha256
-        (base32 "18bq7jf7f89263s4f4ib3qzlpwxsp181zjjm0cblkhjs7lw8p2zh"))))
+        (base32 "1vn1q0jks8d30mg9icn8s71ax9ixk2n2jxmsgprimvd9qrpwg7hj"))))
     (properties `((upstream-name . "NADfinder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-trackviewer
                              r-summarizedexperiment
                              r-signal

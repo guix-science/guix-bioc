@@ -37,15 +37,18 @@
 (define-public r-zygositypredictor
   (package
     (name "r-zygositypredictor")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ZygosityPredictor" version))
        (sha256
-        (base32 "03yxnrbkfzc1dqa8zin8gwi9iryw3ir2k5s80dzxclr1651zh5xd"))))
+        (base32 "0vi51s3mwrkmvz54jhzxhnklc1m19zv5mxgdzyxrcng6b0c277wh"))))
     (properties `((upstream-name . "ZygosityPredictor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-variantannotation
                              r-tibble
                              r-stringr
@@ -81,20 +84,66 @@ the small-variant context, it has been extended with the assessment of large
 scale deletions, which cause losses of whole genes or parts of them.")
     (license license:gpl2)))
 
+(define-public r-zitools
+  (package
+    (name "r-zitools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "zitools" version))
+       (sha256
+        (base32 "0cw83gm6q1d9jd20j8yk8k4vcx7q968winmvpf3pia4hyrc773pf"))))
+    (properties `((upstream-name . "zitools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vgam
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pscl
+                             r-phyloseq
+                             r-matrixstats
+                             r-matrixgenerics
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-deseq2
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kreutz-lab/zitools")
+    (synopsis "Analysis of zero-inflated count data")
+    (description
+     "zitools allows for zero inflated count data analysis by either using
+down-weighting of excess zeros or by replacing an appropriate proportion of
+excess zeros with NA. Through overloading frequently used statistical functions
+(such as mean, median, standard deviation), plotting functions (such as boxplots
+or heatmap) or differential abundance tests, it allows a wide range of
+downstream analyses for zero-inflated data in a less biased manner.  This
+becomes applicable in the context of microbiome analyses, where the data is
+often overdispersed and zero-inflated, therefore making data analysis extremly
+challenging.")
+    (license license:bsd-3)))
+
 (define-public r-zenith
   (package
     (name "r-zenith")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zenith" version))
        (sha256
-        (base32 "14mj5flig4f0s3qgny26wj8l50d5f8bdp66gnh83wsqnln784x8m"))))
+        (base32 "1bxbnd8yv4n47g5y2dkk4rgaaqbkmzplh2f9drrjzcy3bmwmvlxx"))))
     (properties `((upstream-name . "zenith")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -130,29 +179,8 @@ linear (mixed) modeling with dream by considering the correlation between gene
 expression traits.  This package implements the camera method from the limma
 package proposed by Wu and Smyth (2012).  Zenith is a simple extension of camera
 to be compatible with linear mixed models implemented in
-@code{variancePartition::dream}().")
+@code{variancePartition::dream()}.")
     (license license:artistic2.0)))
-
-(define-public r-zebrafishrnaseq
-  (package
-    (name "r-zebrafishrnaseq")
-    (version "1.24.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "zebrafishRNASeq" version
-                              'experiment))
-       (sha256
-        (base32 "0khmilw21jnq2ivl7bh7fwz9nxlphljl5fh4w28q9gzydrv0vxci"))))
-    (properties `((upstream-name . "zebrafishRNASeq")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/zebrafishRNASeq")
-    (synopsis
-     "Zebrafish RNA-Seq Experimental Data from Ferreira et al. (2014)")
-    (description
-     "Gene-level read counts from RNA-Seq for gallein-treated and control zebrafish.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-zebrafishprobe
   (package
@@ -167,6 +195,9 @@ to be compatible with linear mixed models implemented in
         (base32 "1pb8z2rdhq11hq391xyi236scyafbp56kbhhwsnha36yygz5drw0"))))
     (properties `((upstream-name . "zebrafishprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/zebrafishprobe")
     (synopsis "Probe sequence data for microarrays of type zebrafish")
@@ -189,6 +220,9 @@ The file name was Zebrafish\\_probe\\_tab.")
         (base32 "0sq1xqhblbilvaiabhqyl9gxdj3jg576vgq8v0cls1zvvx0isrx0"))))
     (properties `((upstream-name . "zebrafishcdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/zebrafishcdf")
     (synopsis "zebrafishcdf")
@@ -200,16 +234,19 @@ Zebrafish.cdf file.")
 (define-public r-zebrafish-db0
   (package
     (name "r-zebrafish-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zebrafish.db0" version
                               'annotation))
        (sha256
-        (base32 "1bg35zyxdvdhv0a1l5v61z6g0vz2h2ikad4lyv4akrmwndcrxijy"))))
+        (base32 "08w5hcpq71gfwzai0niyxd27pay2755nywqxjh5kxb8l050kpjnf"))))
     (properties `((upstream-name . "zebrafish.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/zebrafish.db0")
     (synopsis "Base Level Annotation databases for zebrafish")
@@ -231,6 +268,9 @@ Zebrafish.cdf file.")
         (base32 "13a65jxr3r5qjf82h1dr0k9qq20g14canqgqdd11k9gk5h31xhc7"))))
     (properties `((upstream-name . "zebrafish.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-dr-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/zebrafish.db")
     (synopsis

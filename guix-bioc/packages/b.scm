@@ -8,11 +8,10 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages p)
-  #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages i)
-  #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages l)
+  #:use-module (guix-cran packages e)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -23,7 +22,6 @@
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages c)
-  #:use-module (guix-cran packages m)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -53,15 +51,18 @@
 (define-public r-busseq
   (package
     (name "r-busseq")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BUSseq" version))
        (sha256
-        (base32 "19ajpfgz3aj1p6955z128smanna1gff6dfgh7dz8vhjyyz5nbi1q"))))
+        (base32 "0as429r1y5vm5230xk5bd980l6fa8p2vw40qrxb9law6fd9kp0w7"))))
     (properties `((upstream-name . "BUSseq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment r-singlecellexperiment
                              r-s4vectors r-gplots))
     (native-inputs (list r-knitr))
@@ -85,15 +86,18 @@ design fulfills the conditions listed in our manuscript.")
 (define-public r-busparse
   (package
     (name "r-busparse")
-    (version "1.18.1")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BUSpaRse" version))
        (sha256
-        (base32 "0dvs4c47v27ndc7xvpzx1acrh9v6dw99nz21lf1q7d0liiy26iyb"))))
+        (base32 "1i1jdn93w6cli6idfvll64pgskwjqap183vpaqcs60vpw1cdbsd0"))))
     (properties `((upstream-name . "BUSpaRse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-tidyr
                              r-tibble
@@ -145,15 +149,18 @@ bustools, and to read output of bustools into R as sparses matrices.")
 (define-public r-buscorrect
   (package
     (name "r-buscorrect")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BUScorrect" version))
        (sha256
-        (base32 "1crq6h9s3kxk1z7xpapq1jwwqwpa2fznhykm84k2zjl8jzvc7lmi"))))
+        (base32 "0iq8cz42pp3n1mg657n4pnsp5g9h5g201zpqndssdki9ahhyqppv"))))
     (properties `((upstream-name . "BUScorrect")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment r-gplots))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/BUScorrect")
@@ -174,15 +181,18 @@ distinguish subtypes, and (d) enjoying a linear-order computation complexity.")
 (define-public r-bus
   (package
     (name "r-bus")
-    (version "1.60.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BUS" version))
        (sha256
-        (base32 "1xwdqz9lyz110bh96ihldwg50k7fbnvnkivyqd9qj1iwk3vz7qd6"))))
+        (base32 "0hrxx8gsfjyppwiwfhvdprq64v290gcbwm9bx67vviawig1dj364"))))
     (properties `((upstream-name . "BUS")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-minet r-infotheo))
     (home-page "https://bioconductor.org/packages/BUS")
     (synopsis "Gene network reconstruction")
@@ -194,15 +204,18 @@ between genes and some external traits (i.e.  clinical).")
 (define-public r-bumhmm
   (package
     (name "r-bumhmm")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BUMHMM" version))
        (sha256
-        (base32 "0c35x7bjp97qiahykkvk8krsnvy1w29qvrb6x8wa4vwn58a56naa"))))
+        (base32 "0xsz9hsp7pxigjhk05srnlncnhfa2zzrqw4d9jbg9xl7xv7jnkh0"))))
     (properties `((upstream-name . "BUMHMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-stringi
                              r-iranges
@@ -232,15 +245,18 @@ modified in a structure probing experiment.")
 (define-public r-bugsigdbr
   (package
     (name "r-bugsigdbr")
-    (version "1.10.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bugsigdbr" version))
        (sha256
-        (base32 "1zqiaaagxzxp808awlm78y9l6plq4mb4gdn8ypqknlaa9a6frw3v"))))
+        (base32 "1rjmrdslx3ifbg268x57hiq189hjmj46w4vxrd79ism25lzqzp77"))))
     (properties `((upstream-name . "bugsigdbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vroom r-biocfilecache))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/waldronlab/bugsigdbr")
@@ -253,18 +269,56 @@ microbe signatures, and enable export of the extracted signatures to plain text
 files in standard file formats such as GMT.")
     (license license:gpl3)))
 
+(define-public r-bugphyzz
+  (package
+    (name "r-bugphyzz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "bugphyzz" version
+                              'experiment))
+       (sha256
+        (base32 "018rm85jyfp2gw4gnpaj1q7v97br1vhkf5zsdw4b4ahn0qx9haf5"))))
+    (properties `((upstream-name . "bugphyzz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-s4vectors
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/waldronlab/bugphyzz")
+    (synopsis
+     "harmonized data resource and software for enrichment analysis of microbial physiologies")
+    (description
+     "bugphyzz is an electronic database of standardized microbial annotations.  It
+facilitates the creation of microbial signatures based on shared attributes,
+which are utilized for bug set enrichment analysis.  The data also includes
+annotations imputed with ancestra state reconstruction methods.")
+    (license license:artistic2.0)))
+
 (define-public r-bufferedmatrixmethods
   (package
     (name "r-bufferedmatrixmethods")
-    (version "1.68.0")
+    (version "1.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BufferedMatrixMethods" version))
        (sha256
-        (base32 "1y8skcqbql4mi1zi53771jwsyw8665b13xyh9bnrv18j18axldk6"))))
+        (base32 "0bdgxjz6bk094znrs6w6h3z3nx6gk4nfz6c3r6l7n3v4b93vqgzp"))))
     (properties `((upstream-name . "BufferedMatrixMethods")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bufferedmatrix))
     (home-page "https://github.bom/bmbolstad/BufferedMatrixMethods")
     (synopsis
@@ -276,15 +330,18 @@ files in standard file formats such as GMT.")
 (define-public r-bufferedmatrix
   (package
     (name "r-bufferedmatrix")
-    (version "1.68.0")
+    (version "1.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BufferedMatrix" version))
        (sha256
-        (base32 "1rd446pzwplkjzqqg19ba3gn94kvsxxi472n6r9raxrggqic0bmi"))))
+        (base32 "14wd9chwhagy2m12fvn5s0z27dh2hirqbzk188sch9myg2jndhjf"))))
     (properties `((upstream-name . "BufferedMatrix")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://github.com/bmbolstad/BufferedMatrix")
     (synopsis "matrix data storage object held in temporary files")
     (description
@@ -295,15 +352,18 @@ outside main memory.  A buffer is used to speed up access to data.")
 (define-public r-bubbletree
   (package
     (name "r-bubbletree")
-    (version "2.34.0")
+    (version "2.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BubbleTree" version))
        (sha256
-        (base32 "0l69q8l6dacyqdbfdnxlg70f064xm8w5p07pi2x0baacxv8bs5d4"))))
+        (base32 "1f0ikkwyrjmbxdxbyqjf90j8q7dn4kd00lbxiv0b9qhabczp2dcb"))))
     (properties `((upstream-name . "BubbleTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-writexls
                              r-rcolorbrewer
                              r-plyr
@@ -341,6 +401,9 @@ outside main memory.  A buffer is used to speed up access to data.")
         (base32 "0k99hvgaswn96x4yanvr9cy8bdy69sd5q7yp6dj9synxj7s1fcw9"))))
     (properties `((upstream-name . "bsubtilisprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/bsubtilisprobe")
     (synopsis "Probe sequence data for microarrays of type bsubtilis")
@@ -363,6 +426,9 @@ The file name was Bsubtilis\\_probe\\_tab.")
         (base32 "1rihrjim37b49rhqr4nxga8sp67qri9xqlqc141mhbngh6cw3iyl"))))
     (properties `((upstream-name . "bsubtiliscdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/bsubtiliscdf")
     (synopsis "bsubtiliscdf")
@@ -374,16 +440,19 @@ Bsubtilis.CDF file.")
 (define-public r-bsseqdata
   (package
     (name "r-bsseqdata")
-    (version "0.42.0")
+    (version "0.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bsseqData" version
                               'experiment))
        (sha256
-        (base32 "06k6r288bqi9dshpdz6qlz0d3p1srz8yc1b0xrar9wy5fckdb97d"))))
+        (base32 "08vzvr6gqcgk1d3rhg5zcwg2lxsmj33phr37hy5hrpxn0syma018"))))
     (properties `((upstream-name . "bsseqData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsseq))
     (home-page "https://bioconductor.org/packages/bsseqData")
     (synopsis "Example whole genome bisulfite data for the bsseq package")
@@ -393,15 +462,18 @@ Bsubtilis.CDF file.")
 (define-public r-bsgenomeforge
   (package
     (name "r-bsgenomeforge")
-    (version "1.4.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BSgenomeForge" version))
        (sha256
-        (base32 "03a7765kzin4jahds48qbzp24wizl5vkrrib15bg4llvz78gmnnr"))))
+        (base32 "0zjr1wm274l3c5bkf030mvif5pnsb8hclsyzxjfsghs7c1z3wdas"))))
     (properties `((upstream-name . "BSgenomeForge")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors
                              r-rtracklayer
                              r-iranges
@@ -414,7 +486,7 @@ Bsubtilis.CDF file.")
                              r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/BSgenomeForge")
-    (synopsis "Forge BSgenome data packages")
+    (synopsis "Forge your own BSgenome data package")
     (description
      "This package provides a set of tools to forge BSgenome data packages.
 Supersedes the old seed-based tools from the BSgenome software package.  This
@@ -435,6 +507,9 @@ simplifying the old seed-based process.")
         (base32 "0v0hi2pbbi5ynd92bvbv4bzr7bgv48kvyz62hdv7k9gh7s5pg0id"))))
     (properties `((upstream-name . "BSgenome.Vvinifera.URGI.IGGP8X")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Vvinifera.URGI.IGGP8X")
@@ -460,6 +535,9 @@ selfing) as assembled by the IGGP (version 8X) and available at the URGI (INRA).
         (base32 "1saavsi75gw33jphhm3qb5psyfrv850ss4cmqr4i7aw1kc0fvs1j"))))
     (properties `((upstream-name . "BSgenome.Vvinifera.URGI.IGGP12Xv2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Vvinifera.URGI.IGGP12Xv2")
@@ -485,6 +563,9 @@ selfing) as assembled by the IGGP (version 12Xv2) and available at the URGI
         (base32 "1m8mqkiqs7291hccb8pfyf2yxpky45qr6j3d9wkvp9x3ra3h0yxf"))))
     (properties `((upstream-name . "BSgenome.Vvinifera.URGI.IGGP12Xv0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Vvinifera.URGI.IGGP12Xv0")
@@ -510,6 +591,9 @@ selfing) as assembled by the IGGP (version 12Xv0) and available at the URGI
         (base32 "1ikbd5q77l2zmbmbm511s41h00627zi0gq31cm4qr3k1cvlz8617"))))
     (properties `((upstream-name . "BSgenome.Tguttata.UCSC.taeGut2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Tguttata.UCSC.taeGut2")
@@ -533,6 +617,9 @@ selfing) as assembled by the IGGP (version 12Xv0) and available at the URGI
         (base32 "05g9qp2vkp8ia6kqgy07ihnr1w1ca8c96rg7vfahh2nsr5j6ymba"))))
     (properties `((upstream-name . "BSgenome.Tguttata.UCSC.taeGut1.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-tguttata-ucsc-taegut1 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Tguttata.UCSC.taeGut1.masked")
@@ -560,6 +647,9 @@ mask), and (2) the mask of intra-contig ambiguities (AMB mask).  Both masks are
         (base32 "0v8g4q64pj4mxr8wzyxm9w2d2lyzq1qzl5yvh2dvwpqnghicj10v"))))
     (properties `((upstream-name . "BSgenome.Tguttata.UCSC.taeGut1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Tguttata.UCSC.taeGut1")
@@ -583,6 +673,9 @@ mask), and (2) the mask of intra-contig ambiguities (AMB mask).  Both masks are
         (base32 "1naxnls0r1r6csfs88mmjnfa7nmsgjx5lngn1ln4llragjrqnngm"))))
     (properties `((upstream-name . "BSgenome.Tgondii.ToxoDB.7.0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Tgondii.ToxoDB.7.0")
     (synopsis "Toxoplasma gondii ME49 (ToxoDB-7.0)")
@@ -603,6 +696,9 @@ mask), and (2) the mask of intra-contig ambiguities (AMB mask).  Both masks are
         (base32 "0ym82vysn131anp8zmmkgyx6zmyh44am5i1m3j9kj5lvq874ycha"))))
     (properties `((upstream-name . "BSgenome.Sscrofa.UCSC.susScr3.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-sscrofa-ucsc-susscr3 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr3.masked")
@@ -631,6 +727,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0l70arnpshiviq3xj61fw87dhf8sggq6k1yryagbhdb40d5cq8lq"))))
     (properties `((upstream-name . "BSgenome.Sscrofa.UCSC.susScr3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr3")
@@ -653,6 +752,9 @@ Aug.  2011) and stored in Biostrings objects.")
         (base32 "0m7c2r74qp3rjnkxxyz18gd8xjk2f3cp1cr07bwd8v60mvgdn8cq"))))
     (properties `((upstream-name . "BSgenome.Sscrofa.UCSC.susScr11")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr11")
@@ -675,6 +777,9 @@ Feb.  2017) and stored in Biostrings objects.")
         (base32 "1pnd394xfy413nvxq3hrlv33girj8f9kzdzi9gx232lm12av6hxm"))))
     (properties `((upstream-name . "BSgenome.Scerevisiae.UCSC.sacCer3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Scerevisiae.UCSC.sacCer3")
@@ -698,6 +803,9 @@ Feb.  2017) and stored in Biostrings objects.")
         (base32 "1ilz326qx1ikapmsz00hg5g6i637qm9kwc21z93q890h7sgaz4k0"))))
     (properties `((upstream-name . "BSgenome.Scerevisiae.UCSC.sacCer2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Scerevisiae.UCSC.sacCer2")
@@ -721,6 +829,9 @@ Feb.  2017) and stored in Biostrings objects.")
         (base32 "1smx3zdmllrx5f1a7hv1w3jc59jwvkd2n37hz6hgb80da7lajn2b"))))
     (properties `((upstream-name . "BSgenome.Scerevisiae.UCSC.sacCer1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Scerevisiae.UCSC.sacCer1")
@@ -744,6 +855,9 @@ Feb.  2017) and stored in Biostrings objects.")
         (base32 "0bgmgxk5rq6m42z0mcpvq9i7r8rid3ws80jx5g9kkklv5kglfidy"))))
     (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn7")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn7")
@@ -766,6 +880,9 @@ rn7) and stored in Biostrings objects.")
         (base32 "1lyvf7l5vyrsmjhn5kz0lrj784hd0b0bcrwb4lavd3p5g38b3mmm"))))
     (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn6")
@@ -788,6 +905,9 @@ rn7) and stored in Biostrings objects.")
         (base32 "0ss14nlr6gqs414ckcz4zmyhfrwdp2snw9wh48yk4s8r4ij3z9rj"))))
     (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn5.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-rnorvegicus-ucsc-rn5 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn5.masked")
@@ -816,6 +936,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1s92983m73bi08ihvyd8c17yx29hz5xxrnrs2if8fda4asw1f3f0"))))
     (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn5")
@@ -838,6 +961,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0jfv1873ab1nwwdr18vrjqcdl4rhv3xgqbf4jfnjk7sjx154pfi6"))))
     (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn4.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-rnorvegicus-ucsc-rn4 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn4.masked")
@@ -866,6 +992,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1aww2bxyqbb81iln3vgrb0659r82v9yv1z41k9r3zws8b7k7df6x"))))
     (properties `((upstream-name . "BSgenome.Rnorvegicus.UCSC.rn4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn4")
@@ -888,6 +1017,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1l1fqnw1iqb2a7kvyvb0m1vdvq6cxs6py92yvbaf4zwklmgmdq0b"))))
     (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro6")
@@ -911,6 +1043,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0wxciajcyf0hr6g6zcji125jm18nnspwvnv5x3jibjvxzx55gcds"))))
     (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro5")
@@ -935,6 +1070,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "18ga0whdcp5zpigrmh68wjmn99lzvfyvgxjm58y0jx66rmg94mir"))))
     (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro3.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-ptroglodytes-ucsc-pantro3 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro3.masked")
@@ -964,6 +1102,9 @@ default.")
         (base32 "1vbfx0zrj4rcwcsm1q09xdiv0mmrycj8223lnxqb8nr5r017f7gm"))))
     (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro3")
@@ -988,6 +1129,9 @@ default.")
         (base32 "1dy1bf6rsmzv6qj9d2a1sz56w33pk63g3qxm8znfdw11hmdbq9m1"))))
     (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro2.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-ptroglodytes-ucsc-pantro2 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro2.masked")
@@ -1017,6 +1161,9 @@ default.")
         (base32 "14yvajlldr3qhclg9n2j48q60rgbz6x1ypgzd6dgf4c6jxl90p0q"))))
     (properties `((upstream-name . "BSgenome.Ptroglodytes.UCSC.panTro2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro2")
@@ -1040,6 +1187,9 @@ default.")
         (base32 "0jbxfix328qzsd94vjh7dlnzpygkdwbglcn4d1pdivm43ggww10a"))))
     (properties `((upstream-name . "BSgenome.Ppaniscus.UCSC.panPan2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ppaniscus.UCSC.panPan2")
@@ -1062,6 +1212,9 @@ default.")
         (base32 "0schlki35jmv678hgxv7jmrcmbv2wixqhpk18awpr2pwq2j1ahmc"))))
     (properties `((upstream-name . "BSgenome.Ppaniscus.UCSC.panPan1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ppaniscus.UCSC.panPan1")
@@ -1084,6 +1237,9 @@ default.")
         (base32 "1rppki62c916drc24jd2j1cmbhn3x316z16123gc654wj1c5s9vi"))))
     (properties `((upstream-name . "BSgenome.Osativa.MSU.MSU7")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Osativa.MSU.MSU7")
     (synopsis "Oryza sativa full genome (MSU7)")
@@ -1105,6 +1261,9 @@ Biostrings objects.")
         (base32 "1a2ywmy96cbwmvbdid73c0kln56qrbd7ipfzkzl97f56k3g985j5"))))
     (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm8.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-mmusculus-ucsc-mm8 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm8.masked")
@@ -1133,6 +1292,9 @@ the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1al34aa11d6kr0cr4xrabix1xmqc96zzgik5p4yc8r0rba3n100a"))))
     (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm8")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm8")
     (synopsis "Full genome sequences for Mus musculus (UCSC version mm8)")
@@ -1154,6 +1316,9 @@ the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0rpxdaa5w0p841kl5h6ngb49zr9q33ad0zgnw9xdpp1vfh0l47xm"))))
     (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm39")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm39")
@@ -1177,6 +1342,9 @@ based on assembly GRCm39) and stored in Biostrings objects.")
         (base32 "04352r264jmpm5abbcyylz0axw24sm58ki3xvp434kp3cfdx32gc"))))
     (properties `((upstream-name . "BSgenome.Mmusculus.UCSC.mm10.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-mmusculus-ucsc-mm10 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm10.masked")
@@ -1203,6 +1371,9 @@ mask of intra-contig ambiguities (AMB mask).")
         (base32 "18z6vl89jkjzvppz3r93b2s32l17hz6pfp36wv5wvhm0c0rhnhmw"))))
     (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac8")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac8")
@@ -1226,6 +1397,9 @@ mask of intra-contig ambiguities (AMB mask).")
         (base32 "0k3j40hrys60qdij5rsxdzyx9bfmryaki5p7i4d5m0xmldlk9anr"))))
     (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac3.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-mmulatta-ucsc-rhemac3 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac3.masked")
@@ -1255,6 +1429,9 @@ default.")
         (base32 "0r3v4p567rxcczwqi7zdz7pmdiffgrq83j488libdb4s0hdg5jmi"))))
     (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac3")
@@ -1278,6 +1455,9 @@ default.")
         (base32 "1j4z4iy13n4qbi9a50qw1hn8z14xz0z8hbiwhy2bb9znykkf4chd"))))
     (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac2.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-mmulatta-ucsc-rhemac2 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac2.masked")
@@ -1310,6 +1490,9 @@ Repeats Finder results.")
         (base32 "15vswd1fq7a7g1dkm0wzkmclih8z373nfzjyc3zrn9l0nawdv9jj"))))
     (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac2")
@@ -1333,6 +1516,9 @@ Repeats Finder results.")
         (base32 "06ja5fn3sgk2lmfwf7m5sqcz0dq732v8y4vhc2cnbbvhpyax0mbd"))))
     (properties `((upstream-name . "BSgenome.Mmulatta.UCSC.rheMac10")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac10")
@@ -1356,6 +1542,9 @@ Repeats Finder results.")
         (base32 "0c0569a1k36sk0vzf7afhnfm0n2nwcdp3dc88s1hghpg7lwi9g9j"))))
     (properties `((upstream-name . "BSgenome.Mfuro.UCSC.musFur1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Mfuro.UCSC.musFur1")
     (synopsis
@@ -1378,6 +1567,9 @@ Repeats Finder results.")
         (base32 "0zl73jkg56jrvqyqvp67jx63dl8li6pypkgn1dqj959qzdzc57j0"))))
     (properties `((upstream-name . "BSgenome.Mfascicularis.NCBI.6.0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mfascicularis.NCBI.6.0")
@@ -1402,6 +1594,9 @@ and stored in Biostrings objects.")
         (base32 "1lrdj7aibx4i60hpbaqgk3qir9zjs67mxdgp5jmgmw7gf2nwyn3x"))))
     (properties `((upstream-name . "BSgenome.Mfascicularis.NCBI.5.0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mfascicularis.NCBI.5.0")
@@ -1425,6 +1620,9 @@ by NCBI (Macaca_fascicularis_5.0, 2013-06-12) and stored in Biostrings objects."
         (base32 "16kzb66kjpmf9j92pwh98ah5rhrnfyzdpr0rk659zham6dzga9ck"))))
     (properties `((upstream-name . "BSgenome.Mdomestica.UCSC.monDom5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mdomestica.UCSC.monDom5")
@@ -1448,6 +1646,9 @@ by NCBI (Macaca_fascicularis_5.0, 2013-06-12) and stored in Biostrings objects."
         (base32 "1y5rxlms9fj20fz32l56i5j1c4fzly5zzvlxz01fs46qimnfb3ms"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hs1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hs1")
     (synopsis "Full genomic sequences for UCSC genome hs1 (Homo sapiens)")
@@ -1471,6 +1672,9 @@ sequences are stored in DNAString objects.")
         (base32 "1xw8vckhsak35r942yyvlrpbhb2w4vzah8wfgmn3vyj1zklk3913"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor")
@@ -1502,6 +1706,9 @@ reference genome.")
         (base32 "0290fk7jvlcb1mh6nlyqagqskfh0dvaysj1d6s15bgygnlm3r726"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major")
@@ -1528,6 +1735,9 @@ into the reference genome.")
         (base32 "031sr3y95c32igk3lrrsafdm9i1zprjran8gak06arqc0hvzbfk0"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg18.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-hsapiens-ucsc-hg18 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg18.masked")
@@ -1556,6 +1766,9 @@ the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1bd7hn4ksgpyhnbjb9qdqfz5cg6x5lsizbls55v9s9hnvfzq3yi6"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg18")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg18")
     (synopsis "Full genome sequences for Homo sapiens (UCSC version hg18)")
@@ -1567,16 +1780,19 @@ the AGAPS and AMB masks are \"active\" by default.")
 (define-public r-bsgenome-hsapiens-ucsc-hg17-masked
   (package
     (name "r-bsgenome-hsapiens-ucsc-hg17-masked")
-    (version "1.3.99")
+    (version "1.3.999")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg17.masked" version
                               'annotation))
        (sha256
-        (base32 "1pg39kmbmnync0xxdbgsn6gpz78hfbzd7iffidpv8mfk734srwzn"))))
+        (base32 "0mycmcp6j0zl3nw8fwypc94i9v1ii910myyr2ipawxi3yb3ch136"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg17.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-hsapiens-ucsc-hg17 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg17.masked")
@@ -1595,16 +1811,19 @@ the AGAPS and AMB masks are \"active\" by default.")
 (define-public r-bsgenome-hsapiens-ucsc-hg17
   (package
     (name "r-bsgenome-hsapiens-ucsc-hg17")
-    (version "1.3.1000")
+    (version "1.3.1001")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BSgenome.Hsapiens.UCSC.hg17" version
                               'annotation))
        (sha256
-        (base32 "1q8p0zp5xpp22znwnygl3jhc159db4q3kkpj5wfij5a6z19zs1w3"))))
+        (base32 "10vxkdr7vjbyginq5dnw6199l6kwvis45dhl9khh4aywv9l0ky0x"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.UCSC.hg17")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg17")
     (synopsis "Full genome sequences for Homo sapiens (UCSC version hg17)")
@@ -1626,6 +1845,9 @@ the AGAPS and AMB masks are \"active\" by default.")
         (base32 "080zq71fl1cx7sxi2il5v0mfj79hw93qy3fr1514fax8vslh5lfz"))))
     (properties `((upstream-name . "BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0")
@@ -1651,6 +1873,9 @@ et al.  Science, 2022.")
         (base32 "0w6pa6pcjmxy9zj21m4c585s7fihy3hcg0ysbjkizlsskmlva0dr"))))
     (properties `((upstream-name . "BSgenome.Gmax.NCBI.Gmv40")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Gmax.NCBI.Gmv40")
     (synopsis "Full genome sequences for Glycine max (Gmv40)")
@@ -1674,6 +1899,9 @@ objects.")
         (base32 "00b0awki35xkfjsvv9x1h0sykg5jbf36a37hj4spw028bkg8k7v2"))))
     (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal6")
@@ -1696,6 +1924,9 @@ objects.")
         (base32 "0gi82xr2b3fn3wi608nmqp3cgjx63rm82wy24p9l0s1qqh2z3jdb"))))
     (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal5")
@@ -1718,6 +1949,9 @@ objects.")
         (base32 "0fvqimjf1xvgka4nw66nd0rbyb7r93v8cyw33776lhfv68ny058v"))))
     (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal4.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-ggallus-ucsc-galgal4 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal4.masked")
@@ -1747,6 +1981,9 @@ default.")
         (base32 "1qfl046akdf43azigprc13sssgbmxdz9dmlrvy13ag8fgfkjxign"))))
     (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal4")
@@ -1769,6 +2006,9 @@ default.")
         (base32 "0igi02g46h1j87hv9bk45nbqahyjd0k75jkg0s6m9a62jsssg63l"))))
     (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal3.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-ggallus-ucsc-galgal3 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal3.masked")
@@ -1798,6 +2038,9 @@ default.")
         (base32 "1bgw45nizdm1kq0624asr4ky61cm8pmrq32574phvvq1jjpg4isp"))))
     (properties `((upstream-name . "BSgenome.Ggallus.UCSC.galGal3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ggallus.UCSC.galGal3")
@@ -1821,6 +2064,9 @@ default.")
         (base32 "13g2xc6v8qlrc0a0zly4ibhzgwg5dsrx1bmw4rrwnkk652alaivx"))))
     (properties `((upstream-name . "BSgenome.Gaculeatus.UCSC.gasAcu1.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-gaculeatus-ucsc-gasacu1 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Gaculeatus.UCSC.gasAcu1.masked")
@@ -1850,6 +2096,9 @@ from Tandem Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are
         (base32 "1w0jpv58kbjvjlsprn5g4nd3g6jhiyw3k6mlfnpnffcbdh27cq0k"))))
     (properties `((upstream-name . "BSgenome.Gaculeatus.UCSC.gasAcu1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Gaculeatus.UCSC.gasAcu1")
@@ -1873,6 +2122,9 @@ UCSC (@code{gasAcu1}, Feb.  2006) and stored in Biostrings objects.")
         (base32 "0dwqshpx3mm9k9p3x53hc62czpvqs6v2jw5i977x0y4hfig0zv8m"))))
     (properties `((upstream-name . "BSgenome.Dvirilis.Ensembl.dvircaf1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Dvirilis.Ensembl.dvircaf1")
@@ -1897,6 +2149,9 @@ Biostrings objects.")
         (base32 "153cf2ni7xffi7j7dafg04v6i65gh8d21v7l9szm4c18bywvcn5z"))))
     (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer7.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-drerio-ucsc-danrer7 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer7.masked")
@@ -1913,28 +2168,6 @@ Repeats Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by
 default.")
     (license license:artistic2.0)))
 
-(define-public r-bsgenome-drerio-ucsc-danrer7
-  (package
-    (name "r-bsgenome-drerio-ucsc-danrer7")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer7" version
-                              'annotation))
-       (sha256
-        (base32 "17x3hj08jag05y8q4aziy455jy15dpwkdbh97v3byzcda0kpwbpg"))))
-    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer7")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-bsgenome))
-    (home-page
-     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer7")
-    (synopsis "Full genome sequences for Danio rerio (UCSC version danRer7)")
-    (description
-     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
-(@code{danRer7}, Jul.  2010) and stored in Biostrings objects.")
-    (license license:artistic2.0)))
-
 (define-public r-bsgenome-drerio-ucsc-danrer6-masked
   (package
     (name "r-bsgenome-drerio-ucsc-danrer6-masked")
@@ -1948,6 +2181,9 @@ default.")
         (base32 "175gy5xfp5kzbgmagvls3233i925wppyk9alw75f7jnxfddxvq4k"))))
     (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer6.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-drerio-ucsc-danrer6 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer6.masked")
@@ -1977,6 +2213,9 @@ default.")
         (base32 "0h2chcpdi2vy29fg43r6q37vvb7p4d4cpnszlsmiy7ax358sd5ji"))))
     (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer6")
@@ -1999,6 +2238,9 @@ default.")
         (base32 "03y08jlknb52x37wg95xaf62n5fbsfpmx57bjyxz2gj0n8zhcdgv"))))
     (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer5.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-drerio-ucsc-danrer5 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer5.masked")
@@ -2028,6 +2270,9 @@ default.")
         (base32 "1mxmy4ika192xvlrsynyvnb7kvcvbsl89g39q53vrkibhml1q0v5"))))
     (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer5")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer5")
@@ -2050,6 +2295,9 @@ default.")
         (base32 "1grlxihdx65fwgb9gbp1jibbqan9a5667w4jgswhg0qsia608lzs"))))
     (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer10")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer10")
@@ -2072,6 +2320,9 @@ default.")
         (base32 "1qclf62c3qrdhnrb6p4rhj7wrarlsbm716d37k0gbdzkfm2vhyr7"))))
     (properties `((upstream-name . "BSgenome.Dmelanogaster.UCSC.dm2.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-dmelanogaster-ucsc-dm2 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Dmelanogaster.UCSC.dm2.masked")
@@ -2100,6 +2351,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1vnqbm1123zmpn1iwyygr1p4js0j6vifyz7iwzgkiw543yb1mwnl"))))
     (properties `((upstream-name . "BSgenome.Dmelanogaster.UCSC.dm2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Dmelanogaster.UCSC.dm2")
@@ -2123,6 +2377,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0px1p3hgbpk3pvmg77knqxwmh1jd8jjf763kzxf0725pnl9dca2v"))))
     (properties `((upstream-name . "BSgenome.Creinhardtii.JGI.v5.6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Creinhardtii.JGI.v5.6")
@@ -2147,6 +2404,9 @@ citation(\"BSgenome.Creinhardtii.JGI.v5.6\") for how to cite in publications.")
         (base32 "0hmxpm9mj8ahmpk2xp0qgsblvjz7wjcdmsz41ab5s404ggiylx79"))))
     (properties `((upstream-name . "BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.CneoformansVarGrubiiKN99.NCBI.ASM221672v1")
@@ -2170,6 +2430,9 @@ ASM221672v1 assembly accession GCA_002216725.1).")
         (base32 "0hfrcsarcm65hqr6032aar1rz09pvj22wj5dlmy459cqrpgr5prf"))))
     (properties `((upstream-name . "BSgenome.Cjacchus.UCSC.calJac4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac4")
@@ -2193,6 +2456,9 @@ ASM221672v1 assembly accession GCA_002216725.1).")
         (base32 "1s1srg6lr3dndbpv83bqlxz5lhyhxh431yrd919yl4fwmr5rvx0z"))))
     (properties `((upstream-name . "BSgenome.Cjacchus.UCSC.calJac3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac3")
@@ -2217,6 +2483,9 @@ ASM221672v1 assembly accession GCA_002216725.1).")
         (base32 "07y28g6b4sbp38yg5rwldda7s1cwcpil6rzsb4csskvs0xi5286l"))))
     (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam3.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-cfamiliaris-ucsc-canfam3 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam3.masked")
@@ -2246,6 +2515,9 @@ default.")
         (base32 "1ir092yh1h03ag1lnj2rh5hjp2mqrw7fcyb6mqyjm0h8g1pmpicr"))))
     (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam3")
@@ -2270,6 +2542,9 @@ default.")
         (base32 "14108j73z7959d070xiqar5s14pac18cs8a22lcggbmp5x93hmqz"))))
     (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam2.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-cfamiliaris-ucsc-canfam2 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam2.masked")
@@ -2299,6 +2574,9 @@ default.")
         (base32 "052p2lsm1ny0rjvhgd56w6z4nrqfc74vh0q7cmqz55xkhk01h7hm"))))
     (properties `((upstream-name . "BSgenome.Cfamiliaris.UCSC.canFam2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam2")
@@ -2322,6 +2600,9 @@ default.")
         (base32 "1x7nvisz7mjrpqlsiw4an04f8hksygzn96p5ld0388hljg78dax8"))))
     (properties `((upstream-name . "BSgenome.Celegans.UCSC.ce2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Celegans.UCSC.ce2")
     (synopsis
@@ -2344,6 +2625,9 @@ default.")
         (base32 "0d4bxfglpqiv1f0n6imdgz101g9383hfj3ra91268wryzlm0yk5w"))))
     (properties `((upstream-name . "BSgenome.Celegans.UCSC.ce11")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Celegans.UCSC.ce11")
     (synopsis
@@ -2366,6 +2650,9 @@ default.")
         (base32 "1asyyb1p1bzc7dv9s2igjxrf9f144vvz2xbv9qxg15w9qzzx7r33"))))
     (properties `((upstream-name . "BSgenome.Carietinum.NCBI.v1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Carietinum.NCBI.v1")
     (synopsis
@@ -2388,6 +2675,9 @@ default.")
         (base32 "04wzhrp0kb8mv7dg732daqr58djs5dwjm54hgmzbaafv1715i74k"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau9.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau9 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau9.masked")
@@ -2416,6 +2706,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0vx9z101faybqqdqfk306m7m3j490svmx7bn7knh5if66g0mzi7g"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau9")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau9")
@@ -2438,6 +2731,9 @@ Apr.  2018) and stored in Biostrings objects.")
         (base32 "07isv0lcvlsl0aha1p474l0pps0j7bsh455m33vfxwahivqsfy27"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau6.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau6 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau6.masked")
@@ -2466,6 +2762,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0waaf9wfmdl5jbi3la64vsiqb83lyw9fqg3sn90bf1q7k3k617p3"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau6")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau6")
@@ -2488,6 +2787,9 @@ Nov.  2009) and stored in Biostrings objects.")
         (base32 "0dkz9ixxa5x9l1v733a3sfrbnjd2kfmd5a2vxskkx9jm3hfbg6gr"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau4.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau4 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau4.masked")
@@ -2516,6 +2818,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "1z86qdpmilwrnjysn8qgxj3g7pqp9hwr25cpiabyczd216wy3zy5"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau4")
@@ -2538,6 +2843,9 @@ Oct.  2007) and stored in Biostrings objects.")
         (base32 "03l9xgbsfmrw3yk0hpza5gfhgd3cfflp5pqzi36ifnmpr40ca722"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau3.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-btaurus-ucsc-bostau3 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau3.masked")
@@ -2566,6 +2874,9 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
         (base32 "0vh3664q7pynfw763pwg2h74h0ncmi5nslvj7y5bj1q7pvf03zpc"))))
     (properties `((upstream-name . "BSgenome.Btaurus.UCSC.bosTau3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau3")
@@ -2588,6 +2899,9 @@ Aug.  2006) and stored in Biostrings objects.")
         (base32 "0n45sn80c5nchfj1wzbcaicfyg66id2zhr5xm3w238idkbj05l00"))))
     (properties `((upstream-name . "BSgenome.Athaliana.TAIR.TAIR9")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Athaliana.TAIR.TAIR9")
@@ -2611,6 +2925,9 @@ release\" based on the same genome assembly as TAIR9.")
         (base32 "0dsbjfh2yf0v3zmbypn9p3alvwhfw2qyr5vivyj7x9ablylb6qxc"))))
     (properties `((upstream-name . "BSgenome.Athaliana.TAIR.04232008")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Athaliana.TAIR.04232008")
@@ -2634,6 +2951,9 @@ from April 23, 2008) and stored in Biostrings objects.")
         (base32 "0n6m5jnpiz6bv46b7s396qkxha2d8271j747j50v2zb6a7wd0rjr"))))
     (properties `((upstream-name . "BSgenome.Aofficinalis.NCBI.V1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Aofficinalis.NCBI.V1")
@@ -2658,6 +2978,9 @@ by NCBI (Aspof.V1, Feb.  2017) and stored in Biostrings objects.")
         (base32 "128jmpnpbz1afqvhvdc9vrc8gmlyg26ca7qz362qsx89jrm4khpr"))))
     (properties `((upstream-name . "BSgenome.Amellifera.UCSC.apiMel2.masked")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome-amellifera-ucsc-apimel2 r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Amellifera.UCSC.apiMel2.masked")
@@ -2686,6 +3009,9 @@ repeats from @code{RepeatMasker} (RM mask).  Only the AGAPS and AMB masks are
         (base32 "1967w7aly7qydykk7rar712kvgsav3zjr4kirybkj17nwiynd74g"))))
     (properties `((upstream-name . "BSgenome.Amellifera.UCSC.apiMel2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Amellifera.UCSC.apiMel2")
@@ -2709,6 +3035,9 @@ repeats from @code{RepeatMasker} (RM mask).  Only the AGAPS and AMB masks are
         (base32 "1cglml4rlqr5hmf4dx51grx6s25h6xc3lqv569nx2sl4gdz28s47"))))
     (properties `((upstream-name . "BSgenome.Amellifera.NCBI.AmelHAv3.1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Amellifera.NCBI.AmelHAv3.1")
@@ -2732,6 +3061,9 @@ objects.")
         (base32 "02zs16q441zcbfp7xvv1gny5nn02ivfr8md1wh5s5rpnj6sdl6kj"))))
     (properties `((upstream-name . "BSgenome.Amellifera.BeeBase.assembly4")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Amellifera.BeeBase.assembly4")
@@ -2754,6 +3086,9 @@ objects.")
         (base32 "062ap94m6s4w8clg1zlj223wmgbmq19yhksx9fcdcqrxr5kbfv85"))))
     (properties `((upstream-name . "BSgenome.Alyrata.JGI.v1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Alyrata.JGI.v1")
     (synopsis "Arabidopsis lyrata full genome (JGI version V1.0)")
@@ -2765,15 +3100,18 @@ from March 24, 2011) and stored in Biostrings objects.")
 (define-public r-browserviz
   (package
     (name "r-browserviz")
-    (version "2.26.0")
+    (version "2.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BrowserViz" version))
        (sha256
-        (base32 "0wq1vc6m54kb8dw6c0qzw8hvvwjq78lqd18whph2nmywjcy9j9hw"))))
+        (base32 "1sgj7193rqvj0f5z64krkvs45k939xj4lrq7h2c6zdpvl01g37dc"))))
     (properties `((upstream-name . "BrowserViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httpuv r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://gladkia.github.io/BrowserViz/")
@@ -2786,16 +3124,19 @@ from March 24, 2011) and stored in Biostrings objects.")
 (define-public r-bronchialil13
   (package
     (name "r-bronchialil13")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bronchialIL13" version
                               'experiment))
        (sha256
-        (base32 "0g1cfhfjycpv1jmba5jddff88m7pbz1l02kci9w73qzjcnqgpp12"))))
+        (base32 "0fcin64vfvmdda664s1q5m9la8gxwsiqng1gwp2gr58kgr4ywyxy"))))
     (properties `((upstream-name . "bronchialIL13")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-affy))
     (home-page "http://www.biostat.harvard.edu/~carey")
     (synopsis "time course experiment involving il13")
@@ -2805,18 +3146,66 @@ http://pepr.cnmcresearch.org/browse.do?action=list_prj_exp&@code{projectId=95}
 Human Bronchial Cell line A549.")
     (license license:gpl2)))
 
+(define-public r-broadseq
+  (package
+    (name "r-broadseq")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "broadSeq" version))
+       (sha256
+        (base32 "143x96pa2bsq1amcx434p937d1v4q03s95bnhrs5pv4bwm3w151g"))))
+    (properties `((upstream-name . "broadSeq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-stringr
+                             r-sechm
+                             r-purrr
+                             r-plyr
+                             r-pheatmap
+                             r-noiseq
+                             r-ggpubr
+                             r-ggplotify
+                             r-ggplot2
+                             r-genefilter
+                             r-forcats
+                             r-edger
+                             r-ebseq
+                             r-dplyr
+                             r-deseq2
+                             r-delocal
+                             r-clusterprofiler
+                             r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dasroy/broadSeq")
+    (synopsis "broadSeq : for streamlined exploration of RNA-seq data")
+    (description
+     "This package helps user to do easily RNA-seq data analysis with multiple methods
+(usually which needs many different input formats).  Here the user will provid
+the expression data as a @code{SummarizedExperiment} object and will get results
+from different methods.  It will help user to quickly evaluate different
+methods.")
+    (license license:expat)))
+
 (define-public r-bridgedbr
   (package
     (name "r-bridgedbr")
-    (version "2.14.0")
+    (version "2.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BridgeDbR" version))
        (sha256
-        (base32 "0nsn1i5ah3l95wd1afcppxb364l44r3apma0aa79g4jday4zhbv5"))))
+        (base32 "1gqnmq3669rw39b1jizcq2f2vw5a3ca6b4m2m7zhi7gxz8mf27zr"))))
     (properties `((upstream-name . "BridgeDbR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rjava r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bridgedb/BridgeDbR")
@@ -2831,16 +3220,19 @@ identifier mappings files.")
 (define-public r-brgedata
   (package
     (name "r-brgedata")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "brgedata" version
                               'experiment))
        (sha256
-        (base32 "1h2ka8k12lx4326y50scw80n21xkf67ks7kqs2ss6sbwd536gm61"))))
+        (base32 "1ddcj8izlnzsn6chvyabha5qyigagqr2xa5paqi0h83kmmvpahkm"))))
     (properties `((upstream-name . "brgedata")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/brgedata")
@@ -2856,15 +3248,18 @@ MEAL, @code{MultiDataSet} and @code{omicRexposome}.")
 (define-public r-brew3r-r
   (package
     (name "r-brew3r-r")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BREW3R.r" version))
        (sha256
-        (base32 "0i0r5sryvq721dlffs9d092776jx0j7r9mfiyi24glgqalmrslag"))))
+        (base32 "19qvwv6papinrqcn98a7j06rckv3yjqba971ya7y8vzgmw9sf74p"))))
     (properties `((upstream-name . "BREW3R.r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors r-rlang r-genomicranges))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/lldelisle/BREW3R.r")
@@ -2879,15 +3274,18 @@ without increasing the overlap between gene ids.")
 (define-public r-brendadb
   (package
     (name "r-brendadb")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "brendaDb" version))
        (sha256
-        (base32 "1rhmd3v20y2cw70zpzykpz7bidf000dq904c2qlf58nqwclxj88l"))))
+        (base32 "15hqmpjci5kfv2gvrzjj3jxkmifjgx4h01w6alrrwhp09z729crm"))))
     (properties `((upstream-name . "brendaDb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -2911,16 +3309,19 @@ database.")
 (define-public r-breastcancerupp
   (package
     (name "r-breastcancerupp")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "breastCancerUPP" version
                               'experiment))
        (sha256
-        (base32 "183dy6c3wqc2m65vihdn840wvnq64vwndwcfsvhw39znqpszhs9k"))))
+        (base32 "1h76j3y2pwhgnayry539xgflq7hy0z61bgb7q9j7c90i1sv0d6h4"))))
     (properties `((upstream-name . "breastCancerUPP")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://compbio.dfci.harvard.edu/")
     (synopsis
      "Gene expression dataset published by Miller et al. [2005] (UPP)")
@@ -2932,16 +3333,19 @@ database.")
 (define-public r-breastcancerunt
   (package
     (name "r-breastcancerunt")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "breastCancerUNT" version
                               'experiment))
        (sha256
-        (base32 "0i8xw534hywfa382nyfy94g2fk0nfaid306dxrlijkfbs2b24dy9"))))
+        (base32 "0bix9n9s6jpxw61vbh3prj1xd12h6b03sf8r9fc9zvjagh0yr1wh"))))
     (properties `((upstream-name . "breastCancerUNT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://compbio.dfci.harvard.edu/")
     (synopsis
      "Gene expression dataset published by Sotiriou et al. [2007] (UNT)")
@@ -2953,16 +3357,19 @@ database.")
 (define-public r-breastcancertransbig
   (package
     (name "r-breastcancertransbig")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "breastCancerTRANSBIG" version
                               'experiment))
        (sha256
-        (base32 "0s2h6qy19jnk5s23r0vkv6j77n5qr7ncanmkz0ybx5qyfyicz9m4"))))
+        (base32 "1qhpmabn814p3k7my0r0423f8wxz0fsvb7rzql8fhrr057ngg341"))))
     (properties `((upstream-name . "breastCancerTRANSBIG")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://compbio.dfci.harvard.edu/")
     (synopsis
      "Gene expression dataset published by Desmedt et al. [2007] (TRANSBIG)")
@@ -2974,16 +3381,19 @@ database.")
 (define-public r-breastcancernki
   (package
     (name "r-breastcancernki")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "breastCancerNKI" version
                               'experiment))
        (sha256
-        (base32 "0vnwyqn5wg9iqmgb6zx6rciw62n8bxkdyfxlaggl35dpwwpzdb2f"))))
+        (base32 "05bs2rmsj5ca15rhc8q1670knsns7lgcvxzd0i5ak39vs4mj60l4"))))
     (properties `((upstream-name . "breastCancerNKI")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://compbio.dfci.harvard.edu/")
     (synopsis
      "Genexpression dataset published by van't Veer et al. [2002] and van de Vijver et al. [2002] (NKI)")
@@ -2995,16 +3405,19 @@ database.")
 (define-public r-breastcancermainz
   (package
     (name "r-breastcancermainz")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "breastCancerMAINZ" version
                               'experiment))
        (sha256
-        (base32 "1i2h0f38skkv1m5gas15jdjw4jl8ma4w1sv74j1x9g1zfl9xq3rg"))))
+        (base32 "03q5mq0rg4kv5nk9vk4lhyj2zbz3gc4x9b795v9i39lmab3qb9w6"))))
     (properties `((upstream-name . "breastCancerMAINZ")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://compbio.dfci.harvard.edu/")
     (synopsis
      "Gene expression dataset published by Schmidt et al. [2008] (MAINZ)")
@@ -3016,15 +3429,18 @@ in 2008, provided as an @code{eSet}.")
 (define-public r-branchpointer
   (package
     (name "r-branchpointer")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "branchpointer" version))
        (sha256
-        (base32 "034sa73ll152s24cgrz47br7kyswr7jn6c735mp6dvbhppmlj2xm"))))
+        (base32 "0r1qqdvwymhv7bw74bys2ns2i2l96amz7lmybih2n0vc3x7ndqzb"))))
     (properties `((upstream-name . "branchpointer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr
                              r-s4vectors
                              r-rtracklayer
@@ -3053,15 +3469,18 @@ mutations, SNPs.")
 (define-public r-brain
   (package
     (name "r-brain")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BRAIN" version))
        (sha256
-        (base32 "0l712ilc308amafhbl9g6g6jvn1px0x0wlc53y2ql397l9bivva3"))))
+        (base32 "1hvxfkxa2hrin416qkia343iijq4iam2sbvxqfjsy1n8j2s1sz85"))))
     (properties `((upstream-name . "BRAIN")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-polynomf r-lattice r-biostrings))
     (home-page "https://bioconductor.org/packages/BRAIN")
     (synopsis
@@ -3076,15 +3495,18 @@ P. Dittwald, T. Burzykowski and D. Valkenborg.")
 (define-public r-bprmeth
   (package
     (name "r-bprmeth")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BPRMeth" version))
        (sha256
-        (base32 "0ax88n7i72lhlrrq4zc6ay5mg9ds37qlg10xafgkilgliz309ykn"))))
+        (base32 "0mp30pcmvgvckxbay843srcq0c3808lz7k7b82nk8xdb1zvbmixd"))))
     (properties `((upstream-name . "BPRMeth")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-truncnorm
                              r-s4vectors
                              r-rcpparmadillo
@@ -3131,6 +3553,9 @@ profiles.")
         (base32 "0i4afa5dksnir2nfrfh2cynjm59sm6vfaqa9wyag8cxg7c2nlm1i"))))
     (properties `((upstream-name . "bovineprobe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/bovineprobe")
     (synopsis "Probe sequence data for microarrays of type bovine")
@@ -3153,6 +3578,9 @@ The file name was Bovine\\_probe\\_tab.")
         (base32 "13mf0yy0dypkm5n2ghl04xm6ayb9bn9qijqhgynksghi7s2k34mb"))))
     (properties `((upstream-name . "bovinecdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/bovinecdf")
     (synopsis "bovinecdf")
@@ -3164,16 +3592,19 @@ Bovine.cdf file.")
 (define-public r-bovine-db0
   (package
     (name "r-bovine-db0")
-    (version "3.19.1")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bovine.db0" version
                               'annotation))
        (sha256
-        (base32 "1qyhzbr81r302xnzg76njwj3b88rrbk02qsxsrg7728qwpwd412v"))))
+        (base32 "0z6g9kn85v88mm94qm4j0m6081qjqqrdwnxgz8j0i85cyw2l730q"))))
     (properties `((upstream-name . "bovine.db0")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/bovine.db0")
     (synopsis "Base Level Annotation databases for bovine")
@@ -3195,6 +3626,9 @@ Bovine.cdf file.")
         (base32 "06692b1n0lzhg0biixipsnwx33w9y8wkc7pc5q1lkjfzbmd2inml"))))
     (properties `((upstream-name . "bovine.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-bt-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/bovine.db")
     (synopsis
@@ -3207,15 +3641,18 @@ data from public repositories.")
 (define-public r-borealis
   (package
     (name "r-borealis")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "borealis" version))
        (sha256
-        (base32 "1m7yq1sx4ivbcrjm1w3l5qsyhlv0jdkb5l91kxd5hvisakfdrfz9"))))
+        (base32 "0z5giwwm3sg6z437ais2pdkmp44lyg2zms53jqqyhxqz230dkax9"))))
     (properties `((upstream-name . "borealis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-snow
                              r-rlang
                              r-r-utils
@@ -3245,15 +3682,18 @@ distributions.  This can be useful for rare disease diagnoses.")
 (define-public r-bobafit
   (package
     (name "r-bobafit")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BOBaFIT" version))
        (sha256
-        (base32 "18xzy91rblcdc4x8c4cxi5b03cskdwjpryzajhzycdpdb4hfg89q"))))
+        (base32 "0gvldzwzcdrl609678fnjr4afh2lwlg9zcc1g2rf3kps33g17wj5"))))
     (properties `((upstream-name . "BOBaFIT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-plyranges
@@ -3278,15 +3718,18 @@ function), @code{ComputeNormalChromosome} and @code{PlotCluster}.")
 (define-public r-bnem
   (package
     (name "r-bnem")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bnem" version))
        (sha256
-        (base32 "15jzsba3qdkj5y7gqxklgv69r5bq2li4irvjkhmbjnjlv0pv4wdg"))))
+        (base32 "08wkank5vg0liqzciafkivmpyqk3faznr2cq0dzkhwj249l7p5l0"))))
     (properties `((upstream-name . "bnem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-vsn
                              r-sva
                              r-snowfall
@@ -3320,15 +3763,18 @@ independently (OR-gate) or jointly (AND-gate).")
 (define-public r-bnbc
   (package
     (name "r-bnbc")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bnbc" version))
        (sha256
-        (base32 "09vy9igcnw927j0zb4znrbcknkaic69ly6w4syb1cwysr0rvmrdz"))))
+        (base32 "0fcnx7arvm520f0cj47dprlaxwbff4zx0md3yffrwyi9gs579jqk"))))
     (properties `((upstream-name . "bnbc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sva
                              r-summarizedexperiment
                              r-s4vectors
@@ -3353,17 +3799,18 @@ independently (OR-gate) or jointly (AND-gate).")
 (define-public r-bloodgen3module
   (package
     (name "r-bloodgen3module")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BloodGen3Module" version))
        (sha256
-        (base32 "0mksc9jfzcj255a01hg8gjrs6k2plkpfqgv951csldvy7vqrdkma"))))
+        (base32 "1lhjhy07ly81gj6dbs9i25lbr3vzygrv0nghwabkq0ypklzppg24"))))
     (properties `((upstream-name . "BloodGen3Module")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3405,16 +3852,19 @@ the modules in rows.")
 (define-public r-bloodcancermultiomics2017
   (package
     (name "r-bloodcancermultiomics2017")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BloodCancerMultiOmics2017" version
                               'experiment))
        (sha256
-        (base32 "16c6nirflpj0zf2wrj0hb5xcq2168si95np3sm76r3kvwlr48zm7"))))
+        (base32 "1nr4jb85qlg2i11i6p1x6xg7klffpy8wk7801z3gawkby1zywfs0"))))
     (properties `((upstream-name . "BloodCancerMultiOmics2017")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tibble
                              r-survival
                              r-summarizedexperiment
@@ -3446,15 +3896,18 @@ Invest. (2018) 128(1):427-445.  doi:10.1172/JCI93801.")
 (define-public r-blma
   (package
     (name "r-blma")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BLMA" version))
        (sha256
-        (base32 "1b6hcjy6dv55cpprm8ylz7akl4vyvi6lky0qc31q6skxxdp3266k"))))
+        (base32 "0mcmzc4siiv8k6dqq3w6f3p29fqg0ls0m8whbnr8gx6bswrmhhnq"))))
     (properties `((upstream-name . "BLMA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rontotools
                              r-padog
                              r-metafor
@@ -3473,16 +3926,19 @@ expression analysis, functional analysis, and pathway analysis.")
 (define-public r-blimatestingdata
   (package
     (name "r-blimatestingdata")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "blimaTestingData" version
                               'experiment))
        (sha256
-        (base32 "0414hiah3yzkcdayb43vz5dafv6samaczg556wyl7ig2275k3q6h"))))
+        (base32 "1q7z4wdpmrd33hh8gj5cavxiiaxflygzssrzy6nm5p240vya6wi3"))))
     (properties `((upstream-name . "blimaTestingData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "https://bitbucket.org/kulvait/blima")
     (synopsis "Data for testing of the package blima")
     (description
@@ -3494,15 +3950,18 @@ provide example data to test functionality provided by blima.")
 (define-public r-blima
   (package
     (name "r-blima")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "blima" version))
        (sha256
-        (base32 "1a5rzwgsvkwzl97p6pvbhi8dsvd7vbny0bajjp273czrm09yk8rc"))))
+        (base32 "1qk3kajfp5j4mk8g1hqijaxd5kihg12q67wa4aln25f6rsx55lsn"))))
     (properties `((upstream-name . "blima")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-biocgenerics r-biobase r-beadarray))
     (native-inputs (list r-knitr))
     (home-page "https://bitbucket.org/kulvait/blima")
@@ -3523,15 +3982,18 @@ differential expression testing.")
 (define-public r-blacksheepr
   (package
     (name "r-blacksheepr")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "blacksheepr" version))
        (sha256
-        (base32 "1avqq6m30x2bg3h32laxcpbd4f5s10548k3cj4xb1d25svnn8pax"))))
+        (base32 "0riggz2nx7w8cfacn7b2kx9gnh01jd50pa6xw4k3j5bxcj0zwpcs"))))
     (properties `((upstream-name . "blacksheepr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-viridis
                              r-summarizedexperiment
                              r-rcolorbrewer
@@ -3553,15 +4015,18 @@ compare.")
 (define-public r-biseq
   (package
     (name "r-biseq")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiSeq" version))
        (sha256
-        (base32 "12nkdaz54ga133v38mmqaf3xcsx7ps2rcxxvni100vsk93hv155z"))))
+        (base32 "0izla8shaqjyjv25sjqs1c1410s8fph2dq11n27r94gx21l8x8xf"))))
     (properties `((upstream-name . "BiSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-s4vectors
                              r-rtracklayer
@@ -3584,42 +4049,22 @@ detect differentially methylated regions (DMRs).  The package takes already
 aligned BS data from one or multiple samples.")
     (license license:lgpl3)))
 
-(define-public r-biotmledata
-  (package
-    (name "r-biotmledata")
-    (version "1.28.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "biotmleData" version
-                              'experiment))
-       (sha256
-        (base32 "0c50778lwkapgvwn7nvhjyn7irxn85d97mfyawgfgs9kzyfxx1a3"))))
-    (properties `((upstream-name . "biotmleData")))
-    (build-system r-build-system)
-    (home-page "https://bioconductor.org/packages/biotmleData")
-    (synopsis
-     "Example experimental microarray data set for the \"biotmle\" R package")
-    (description
-     "Microarray data (from the Illumina Ref-8 @code{BeadChips} platform) and
-phenotype-level data from an epidemiological investigation of benzene exposure,
-packaged using \"@code{SummarizedExperiemnt}\", for use as an example with the
-\"biotmle\" R package.")
-    (license (license:fsdg-compatible "file://LICENSE"))))
-
 (define-public r-bioplex
   (package
     (name "r-bioplex")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioPlex" version
                               'experiment))
        (sha256
-        (base32 "1bkakf7yi1lhwc48pmwifk7qdnc9hzaqnlcni7sy0ypwgb1mfsh7"))))
+        (base32 "0yjsfmj06jsrivj70y2c95kghicmq5m5jqacy6sqzk9gbg7sr594"))))
     (properties `((upstream-name . "BioPlex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-graph
                              r-geoquery
@@ -3642,15 +4087,18 @@ foundation for integrative downstream analysis of the data.")
 (define-public r-bionar
   (package
     (name "r-bionar")
-    (version "1.6.3")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioNAR" version))
        (sha256
-        (base32 "0gr3pf34xgs778bfndmml9df7l0w6ypa8d83h31krlxzd1h4wz0h"))))
+        (base32 "10y9lbcni6ba6f0crhipa80wm6zzixnmf1p6p1xsp28n3zghyn2x"))))
     (properties `((upstream-name . "BioNAR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-wgcna
                              r-viridis
                              r-stringr
@@ -3696,6 +4144,9 @@ pointing towards shared/common mechanisms.")
         (base32 "1ack8v1q0zg15gs816n9f4pwrzrpsv4va6j0r8847pw0pvavwpiq"))))
     (properties `((upstream-name . "BioMartGOGeneSets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-s4vectors r-genomicranges))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jokergoo/BioMartGOGeneSets")
@@ -3710,18 +4161,19 @@ collected with the @code{biomaRt} package.")
 (define-public r-bioimagedbs
   (package
     (name "r-bioimagedbs")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioImageDbs" version
                               'experiment))
        (sha256
-        (base32 "1cs6c80h34xbzpsgrpy5aj1f0nlxmy713jj1q5g156z5kiz3mzwc"))))
+        (base32 "128kzcn1v4qp3d4yyr5qkqgqzdjf37c0i07wz94zw883snbigqra"))))
     (properties `((upstream-name . "BioImageDbs")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -3747,18 +4199,55 @@ supervised labels.  The data is provided as R list data that can be loaded to
 Keras/tensorflow in R.")
     (license license:artistic2.0)))
 
+(define-public r-bioga
+  (package
+    (name "r-bioga")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BioGA" version))
+       (sha256
+        (base32 "1g3409z332cg9sbqs4ld9w7mlf9pilwmdwwbc1y5cpjs1xhms7pg"))))
+    (properties `((upstream-name . "BioGA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-sessioninfo
+                             r-rlang
+                             r-rcpp
+                             r-ggplot2
+                             r-biocviews
+                             r-biocstyle
+                             r-animation))
+    (native-inputs (list r-knitr))
+    (home-page "https://danymukesha.github.io/BioGA/")
+    (synopsis "Bioinformatics Genetic Algorithm (BioGA)")
+    (description
+     "Genetic algorithm are a class of optimization algorithms inspired by the process
+of natural selection and genetics.  This package allows users to analyze and
+optimize high throughput genomic data using genetic algorithms.  The functions
+provided are implemented in C++ for improved speed and efficiency, with an
+easy-to-use interface for use within R.")
+    (license license:expat)))
+
 (define-public r-biodbuniprot
   (package
     (name "r-biodbuniprot")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbUniprot" version))
        (sha256
-        (base32 "1jwv6y9kaq2d7iswgz602yhwg35c9d9yqa9c87d454n0wrl6h6yg"))))
+        (base32 "1srh6m3q76f5wc0a58vf353rcish9ciak9l1fxwp342bafnb3w8l"))))
     (properties `((upstream-name . "biodbUniprot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-biodb))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pkrog/biodbUniprot")
@@ -3773,15 +4262,18 @@ entries.")
 (define-public r-biodbnci
   (package
     (name "r-biodbnci")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbNci" version))
        (sha256
-        (base32 "11xzf804v9dp25zw7kxwws2q386h22ybibrcplm3wrkrxj223kks"))))
+        (base32 "1jdqsfly751pyh3d3nsc615glg5ni4xv9y3bbg7hv95i1501krkz"))))
     (properties `((upstream-name . "biodbNci")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-testthat r-rcpp r-r6 r-chk r-biodb))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/biodbNci")
@@ -3797,15 +4289,18 @@ accession number, and run specific web services.")
 (define-public r-biodbncbi
   (package
     (name "r-biodbncbi")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbNcbi" version))
        (sha256
-        (base32 "01v0lym2kldcjypqsx9b8k8hvxdmnr1rsczdzl87nsax22q6g9hc"))))
+        (base32 "0v3mbvjimy98d0a3j0238a5h7xi8qhxapjps9157qs7d7can7ivy"))))
     (properties `((upstream-name . "biodbNcbi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-xml r-r6 r-chk r-biodb))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pkrog/biodbNcbi")
@@ -3817,66 +4312,21 @@ retrieve entries by their accession number.  Web services can be accessed for
 searching the database by name or mass.")
     (license license:agpl3)))
 
-(define-public r-biodblipidmaps
-  (package
-    (name "r-biodblipidmaps")
-    (version "1.10.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "biodbLipidmaps" version))
-       (sha256
-        (base32 "1p181kwy9q8jj4m7flg71pqn7h6865hbwha4n6j2qki830vym6rv"))))
-    (properties `((upstream-name . "biodbLipidmaps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-lifecycle r-biodb))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pkrog/biodbLipidmaps")
-    (synopsis
-     "biodbLipidmaps, a library for connecting to the Lipidmaps Structure database")
-    (description
-     "The @code{biodbLipidmaps} library provides access to the Lipidmaps Structure
-Database, using biodb package framework.  It allows to retrieve entries by their
-accession number, and run web the services @code{lmsdSearch} and
-@code{lmsdRecord}.")
-    (license license:agpl3)))
-
-(define-public r-biodbkegg
-  (package
-    (name "r-biodbkegg")
-    (version "1.10.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "biodbKegg" version))
-       (sha256
-        (base32 "0rwxbg3ij5rg3agzsxib7f80b05ar40xnql2krl44c3n43yqkwyw"))))
-    (properties `((upstream-name . "biodbKegg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-lifecycle r-chk r-biodb))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pkrog/biodbKegg")
-    (synopsis "biodbKegg, a library for connecting to the KEGG Database")
-    (description
-     "The @code{biodbKegg} library is an extension of the biodb framework package that
-provides access to the KEGG databases Compound, Enzyme, Genes, Module, Orthology
-and Reaction.  It allows to retrieve entries by their accession numbers.  Web
-services like \"find\", \"list\" and \"@code{findExactMass}\" are also available.
-Some functions for navigating along the pathways have also been implemented.")
-    (license license:agpl3)))
-
 (define-public r-biodbhmdb
   (package
     (name "r-biodbhmdb")
-    (version "1.10.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbHmdb" version))
        (sha256
-        (base32 "14g5c043rgwp259z5km4wvl5h9810fxpsja4wmk326plqpnqhcjr"))))
+        (base32 "1v1s7ivcdjlj6xqs36h151kd08q38sfpk2p4q5ffcyrw73ax5jnj"))))
     (properties `((upstream-name . "biodbHmdb")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-zip r-testthat r-rcpp r-r6 r-biodb))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pkrog/biodbHmdb")
@@ -3889,42 +4339,21 @@ by name or description.  A future version of this package will also include a
 search by mass and mass spectra annotation.")
     (license license:agpl3)))
 
-(define-public r-biodbexpasy
-  (package
-    (name "r-biodbexpasy")
-    (version "1.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "biodbExpasy" version))
-       (sha256
-        (base32 "0n5avxhv5131122h18d3r2v9c64i3nb251hmz8hhc6chmk203fmj"))))
-    (properties `((upstream-name . "biodbExpasy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-r6 r-chk r-biodb))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/biodbExpasy")
-    (synopsis
-     "biodbExpasy, a library for connecting to Expasy ENZYME database")
-    (description
-     "The @code{biodbExpasy} library provides access to Expasy ENZYME database, using
-biodb package framework.  It allows to retrieve entries by their accession
-number.  Web services can be accessed for searching the database by name or
-comments.")
-    (license license:agpl3)))
-
 (define-public r-biodbchebi
   (package
     (name "r-biodbchebi")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biodbChebi" version))
        (sha256
-        (base32 "1w3mnryv1x5a68llnpqfdsrkzwrwq2b7n6hm458gfkw6ql070109"))))
+        (base32 "10v1vl60jkc6168gnb08bl2j3fvj971xwy2i1az2mzkjjlz3csng"))))
     (properties `((upstream-name . "biodbChebi")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-r6 r-biodb))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pkrog/biodbChebi")
@@ -3939,15 +4368,18 @@ or other fields.")
 (define-public r-biocsklearn
   (package
     (name "r-biocsklearn")
-    (version "1.26.1")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocSklearn" version))
        (sha256
-        (base32 "0sgp3rjiw7y5qv9zppx208x9kbg878fkj9r034cl62cghzmbv5fx"))))
+        (base32 "0ic17zcw4110rdk83p00ddq1lz2cm7vr5xpsb6y9ibf1hnk7s2al"))))
     (properties `((upstream-name . "BiocSklearn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list python-scikit-learn python python-pandas python-numpy
                   python-h5py))
     (propagated-inputs (list r-summarizedexperiment r-reticulate r-basilisk))
@@ -3962,15 +4394,18 @@ fault tolerant use of python modules requiring extensive iteration.")
 (define-public r-biocroxytest
   (package
     (name "r-biocroxytest")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "biocroxytest" version))
        (sha256
-        (base32 "0na0qbrqjfyq6wlxfnp6h6ljdmcxs5nq4spbifk6v74cxm7aqgni"))))
+        (base32 "0fh6h0isswnljvl8dqlcs6kka2834d3w2plx5prw7k7qhz99xcfg"))))
     (properties `((upstream-name . "biocroxytest")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-stringr r-roxygen2 r-glue r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xec-cm/biocroxytest")
@@ -3989,17 +4424,18 @@ server that is set up to run long tests.")
 (define-public r-biochubsshiny
   (package
     (name "r-biochubsshiny")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocHubsShiny" version))
        (sha256
-        (base32 "19ihc6fi04kbgmlvn5k1cjpckc03p5yfjpc3gjmmf3pn69qgljzf"))))
+        (base32 "119n3pgx7gpxjih4abjzxwnw6m5hy3fb2q85njlzdzwyqcihx068"))))
     (properties `((upstream-name . "BiocHubsShiny")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4025,40 +4461,21 @@ template code for reproducibility and for downloading resources via the
 indicated Hub package.")
     (license license:artistic2.0)))
 
-(define-public r-biochail
-  (package
-    (name "r-biochail")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "BiocHail" version))
-       (sha256
-        (base32 "1p8wkl31c7snv8l8zkmg2hf9pb2p0gif4gfgjia0npi91y2h5hfp"))))
-    (properties `((upstream-name . "BiocHail")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-dplyr r-biocgenerics
-                             r-biocfilecache r-basilisk))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/vjcitn/BiocHail")
-    (synopsis "basilisk and hail")
-    (description
-     "Use hail via basilisk when appropriate, or via reticulate.  This package can be
-used in terra.bio to interact with UK Biobank resources processed by hail.is.")
-    (license license:artistic2.0)))
-
 (define-public r-biocfhir
   (package
     (name "r-biocfhir")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocFHIR" version))
        (sha256
-        (base32 "0zw59xb6jxxqg9aiwn6h4ak4056b64y22irkysl51rvdrb12n32h"))))
+        (base32 "1rcvlbqszis0hf4s5skagljxjy8bwyzi4xyy8yigp3x3jjfm2dhn"))))
     (properties `((upstream-name . "BiocFHIR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-visnetwork
                              r-tidyr
                              r-shiny
@@ -4083,15 +4500,18 @@ illustrations.")
 (define-public r-biocbook
   (package
     (name "r-biocbook")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocBook" version))
        (sha256
-        (base32 "0rdsx2slwp69l6svsaj3pndd6bv318jkla5j84avwgfi63wks092"))))
+        (base32 "03kvqrj91jh9sg5dfga1jgqh0qhaz4853d7ysfy9mkhxdagxqljc"))))
     (properties `((upstream-name . "BiocBook")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-yaml
                              r-usethis
                              r-tibble
@@ -4127,15 +4547,18 @@ images for specific Bioconductor releases).")
 (define-public r-biocartaimage
   (package
     (name "r-biocartaimage")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioCartaImage" version))
        (sha256
-        (base32 "0kcqhgr6q86b874i56p0cai8kiqbx8q3vk40xq221dzjf19r8ag8"))))
+        (base32 "0mni5hf5ir8h0bx3d3d4xf35q0f8lajgzlgpjwz90ki4n099rv1h"))))
     (properties `((upstream-name . "BioCartaImage")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-magick))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jokergoo/BioCartaImage")
@@ -4149,17 +4572,18 @@ graphics to the genes of interest.")
 (define-public r-biocancer
   (package
     (name "r-biocancer")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bioCancer" version))
        (sha256
-        (base32 "0mwmdavakmrfa7d7h0h14lkk6k7ps3g8hvbja1hq01nkdfy7imvp"))))
+        (base32 "1334qfqyi6cmyvf7x98v0hnbz2wfdqq5v0s1zp35k1r91g86dhrr"))))
     (properties `((upstream-name . "bioCancer")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:modules '((guix build r-build-system)
                   (guix build minify-build-system)
                   (guix build utils)
@@ -4214,15 +4638,18 @@ of Cancer Genomic Data.")
 (define-public r-bindingsitefinder
   (package
     (name "r-bindingsitefinder")
-    (version "2.2.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BindingSiteFinder" version))
        (sha256
-        (base32 "1icgz7wfayqzr1wd0n7sb71bh149d4d1m7rh5s5ap07llnn7vsq1"))))
+        (base32 "057f0yd7kjgwjkgbndpwqhsky9wkwbam5wqsrz2y1yici9w1q1cq"))))
     (properties `((upstream-name . "BindingSiteFinder")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-s4vectors
@@ -4257,15 +4684,18 @@ visualization.  For details please see the vignette.")
 (define-public r-bg2
   (package
     (name "r-bg2")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BG2" version))
        (sha256
-        (base32 "0nby9b7kha4bz2x7a8b9nk78qai98m76csndnaikcpg79mpzygv5"))))
+        (base32 "1hhqij5k8pw3gply0x75lyz1ggzgbkw5rczcl14cwcv01js0j7h2"))))
     (properties `((upstream-name . "BG2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-memoise r-matrix r-mass r-ga r-caret))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/BG2")
@@ -4282,15 +4712,18 @@ and DMS 2054173.")
 (define-public r-bettr
   (package
     (name "r-bettr")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bettr" version))
        (sha256
-        (base32 "19z7df9kmk4zfbljlq5ginl82zml37iyjnjm0fqinm2b9i1ww432"))))
+        (base32 "03jv8nfbnxi200dy9kslsx9pyfzmzy992f3bnmdghkxq8fd3wzqc"))))
     (properties `((upstream-name . "bettr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-summarizedexperiment
@@ -4322,15 +4755,18 @@ to additional annotations.")
 (define-public r-betahmm
   (package
     (name "r-betahmm")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "betaHMM" version))
        (sha256
-        (base32 "1dwdjfvca22gaz0qjngf3fc32bpybz1dvvbwd91wgznzk7wjk6yq"))))
+        (base32 "1ip2acq40p7x0dgj2zcsz86dfkp6rd620csy8ip8f08hygas2y4d"))))
     (properties `((upstream-name . "betaHMM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-summarizedexperiment
@@ -4357,16 +4793,19 @@ considering the spatial.  Correlation of the adjacent @code{CpG} sites.")
 (define-public r-beta7
   (package
     (name "r-beta7")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "beta7" version
                               'experiment))
        (sha256
-        (base32 "0c7zal2hk7knw2mcfkfh7svz3b6nz98y895mhl3ari986wqpj4nv"))))
+        (base32 "16r77mvfajwvp59a40ffq23ryhx343l9zambyql29ba22g7jg653"))))
     (properties `((upstream-name . "beta7")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-marray))
     (home-page "https://bioconductor.org/packages/beta7")
     (synopsis
@@ -4379,15 +4818,18 @@ beta 7+ and beta 7- memory T helper cells.")
 (define-public r-bert
   (package
     (name "r-bert")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BERT" version))
        (sha256
-        (base32 "1n2v8sdvh40sqz8gpzszwhp2w6npxnl48bsp9l0bzz8w148cwyk8"))))
+        (base32 "1h4sx9bnvxhz7sxzw4nklfzirkc2ris3y4485jssf5np7k1si8j2"))))
     (properties `((upstream-name . "BERT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-sva
                              r-summarizedexperiment
                              r-logging
@@ -4401,7 +4843,8 @@ beta 7+ and beta 7- memory T helper cells.")
                              r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HSU-HPC/BERT/")
-    (synopsis "Hierarchical Batch-Effect Adjustment with Trees")
+    (synopsis
+     "High Performance Data Integration for Large-Scale Analyses of Incomplete Omic Profiles Using Batch-Effect Reduction Trees (BERT)")
     (description
      "This package provides efficient batch-effect adjustment of data with missing
 values.  BERT orders all batch effect correction to a tree of pairwise
@@ -4411,18 +4854,19 @@ computations.  BERT allows parallelization over sub-trees.")
 (define-public r-benchmarkfdrdata2019
   (package
     (name "r-benchmarkfdrdata2019")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "benchmarkfdrData2019" version
                               'experiment))
        (sha256
-        (base32 "1k8gpql57jps51bh5kdn5j5mgz36a369p4sz37sbqkfrskfs8m91"))))
+        (base32 "08wa4k2i4s92gfqcfh2fs7g7360dpbyz62qrkrs8xa7gfy3n3zfw"))))
     (properties `((upstream-name . "benchmarkfdrData2019")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4438,76 +4882,21 @@ and Kimes et al. (2019) to compare methods for controlling the false discovery
 rate.")
     (license license:expat)))
 
-(define-public r-benchdamic
-  (package
-    (name "r-benchdamic")
-    (version "1.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "benchdamic" version))
-       (sha256
-        (base32 "1f5f1f5334rwsxzl1bf2b12rb1pmksyyrrdfsfdp8cmh5ybsp3mv"))))
-    (properties `((upstream-name . "benchdamic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zinbwave
-                             r-treesummarizedexperiment
-                             r-tidytext
-                             r-summarizedexperiment
-                             r-seurat
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-plyr
-                             r-phyloseq
-                             r-noiseq
-                             r-mixomics
-                             r-microbiomestat
-                             r-mglm
-                             r-metagenomeseq
-                             r-mast
-                             r-maaslin2
-                             r-lme4
-                             r-limma
-                             r-gunifrac
-                             r-ggridges
-                             r-ggplot2
-                             r-ggdendro
-                             r-edger
-                             r-deseq2
-                             r-dearseq
-                             r-cowplot
-                             r-corncob
-                             r-biocparallel
-                             r-ancombc
-                             r-aldex2))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/benchdamic")
-    (synopsis "Benchmark of differential abundance methods on microbiome data")
-    (description
-     "Starting from a microbiome dataset (16S or WMS with absolute count values) it is
-possible to perform several analysis to assess the performances of many
-differential abundance detection methods.  A basic and standardized version of
-the main differential abundance analysis methods is supplied but the user can
-also add his method to the benchmark.  The analyses focus on 4 main aspects: i)
-the goodness of fit of each method's distributional assumptions on the observed
-count data, ii) the ability to control the false discovery rate, iii) the within
-and between method concordances, iv) the truthfulness of the findings if any
-apriori knowledge is given.  Several graphical functions are available for
-result visualization.")
-    (license license:artistic2.0)))
-
 (define-public r-beer
   (package
     (name "r-beer")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "beer" version))
        (sha256
-        (base32 "1b7pw7nwpryrdji14y9cbv03f8g8r8lzf1fd72ff2b69csp993ww"))))
+        (base32 "0mix24ny5g9b6lk1810f6288rbr7i3dlkw5ppxz1z03kzvisjpb0"))))
     (properties `((upstream-name . "beer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list jags))
     (propagated-inputs (list r-summarizedexperiment
                              r-rjags
@@ -4531,15 +4920,18 @@ to identify enriched antibody responses.")
 (define-public r-beat
   (package
     (name "r-beat")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BEAT" version))
        (sha256
-        (base32 "0s63nwf21ai1gys0dzjsjqy64sal7dpp040f0jqskyf2y6gdf9v9"))))
+        (base32 "0vsq1184n4nqjih31y1mkyzf3g38ajm26590g10d4ri63rqkdd5y"))))
     (properties `((upstream-name . "BEAT")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-shortread r-genomicranges r-bsgenome
                              r-biostrings))
     (home-page "https://bioconductor.org/packages/BEAT")
@@ -4547,44 +4939,22 @@ to identify enriched antibody responses.")
     (description "Model-based analysis of single-cell methylation data.")
     (license (license:fsdg-compatible "LGPL (>= 3.0)"))))
 
-(define-public r-bearscc
-  (package
-    (name "r-bearscc")
-    (version "1.24.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "BEARscc" version))
-       (sha256
-        (base32 "0f66pbhf4fz66021k7f6rlwzxdikznbhjqqpxwrj07yg65q5sd1l"))))
-    (properties `((upstream-name . "BEARscc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-singlecellexperiment r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/BEARscc")
-    (synopsis
-     "BEARscc (Bayesian ERCC Assesstment of Robustness of Single Cell Clusters)")
-    (description
-     "BEARscc is a noise estimation and injection tool that is designed to assess
-putative single-cell RNA-seq clusters in the context of experimental noise
-estimated by ERCC spike-in controls.")
-    (license license:gpl3)))
-
 (define-public r-beadsorted-saliva-epic
   (package
     (name "r-beadsorted-saliva-epic")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BeadSorted.Saliva.EPIC" version
                               'experiment))
        (sha256
-        (base32 "1pjnamvgx9w3g40j82rbdysbarx11gm8k6lb3vhkgb2nxv1vij84"))))
+        (base32 "0pdm4vvic78zaxr4r9lp00m0jaj4617pmpcxbxxy1xn83qgbd2hc"))))
     (properties `((upstream-name . "BeadSorted.Saliva.EPIC")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -4602,16 +4972,19 @@ Lauren Middleton et.  al. (2021).")
 (define-public r-beadarrayusecases
   (package
     (name "r-beadarrayusecases")
-    (version "1.42.0")
+    (version "1.44.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BeadArrayUseCases" version
                               'experiment))
        (sha256
-        (base32 "1s62vqvl3zxf97syp5lymacah594m8szk23skl4bk88jkzkkx6a5"))))
+        (base32 "0p7y8b75wf6628cig8mj87srp87c978mbyb3fzifxnr72m1wjg73"))))
     (properties `((upstream-name . "BeadArrayUseCases")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-limma r-geoquery r-beadarray))
     (home-page "https://bioconductor.org/packages/BeadArrayUseCases")
     (synopsis
@@ -4624,16 +4997,19 @@ expression data using Bioconductor.")
 (define-public r-beadarrayexampledata
   (package
     (name "r-beadarrayexampledata")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "beadarrayExampleData" version
                               'experiment))
        (sha256
-        (base32 "0l5n1d7x4gc3w2kc6vq0gqxp1wdpa2sn5k75yf5fc802m11nrkd1"))))
+        (base32 "1nii7320r2mhnis67gg8ckj3rcm5x878hzanb0rqmjki36n6yxsb"))))
     (properties `((upstream-name . "beadarrayExampleData")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biobase r-beadarray))
     (home-page "https://bioconductor.org/packages/beadarrayExampleData")
     (synopsis "Example data for the beadarray package")
@@ -4642,43 +5018,21 @@ expression data using Bioconductor.")
 and examples.")
     (license license:gpl2)))
 
-(define-public r-beachmat-hdf5
-  (package
-    (name "r-beachmat-hdf5")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "beachmat.hdf5" version))
-       (sha256
-        (base32 "1qjib3vw0b0nvfx3j5nfgwikcmc5jq49ddahv05arhdabd40vmg4"))))
-    (properties `((upstream-name . "beachmat.hdf5")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rhdf5lib r-rcpp r-hdf5array r-delayedarray
-                             r-beachmat))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/beachmat.hdf5")
-    (synopsis "beachmat bindings for HDF5-backed matrices")
-    (description
-     "Extends beachmat to support initialization of tatami matrices from HDF5-backed
-arrays.  This allows C++ code in downstream packages to directly call the HDF5
-C/C++ library to access array data, without the need for block processing via
-@code{DelayedArray}.  Some utilities are also provided for direct creation of an
-in-memory tatami matrix from a HDF5 file.")
-    (license license:gpl3)))
-
 (define-public r-bcseq
   (package
     (name "r-bcseq")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bcSeq" version))
        (sha256
-        (base32 "0bbr46clvr1nlqk7lkdyvz5y0yfvw1rxsm29gsanfqbxa3akvxn6"))))
+        (base32 "1yjy87nsng26x03lvqdwm1wdclf9wk7v4dad1ki08xv9gl8fzsvk"))))
     (properties `((upstream-name . "bcSeq")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-rcpp r-matrix r-biostrings))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jl354/bcSeq")
@@ -4697,22 +5051,28 @@ The package also supports multi-threading.")
 (define-public r-batchqc
   (package
     (name "r-batchqc")
-    (version "2.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BatchQC" version))
        (sha256
-        (base32 "1kijj3ivlrwk4490jsb7vsrc7kmx32hla52cg3zb3vj6l5cwq7g6"))))
+        (base32 "0jyxfyw2c1q930y2hi6xydpq98fwih3pyivv1dm51a901378cy7h"))))
     (properties `((upstream-name . "BatchQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyverse
                              r-tidyr
                              r-tibble
                              r-sva
                              r-summarizedexperiment
+                             r-shinythemes
+                             r-shinyjs
                              r-shiny
                              r-scran
+                             r-s4vectors
                              r-reshape2
                              r-reader
                              r-rcolorbrewer
@@ -4751,15 +5111,18 @@ and SVA.")
 (define-public r-basicstan
   (package
     (name "r-basicstan")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BASiCStan" version))
        (sha256
-        (base32 "1q6lhmdy19v30aq9hzphxicq6blyzr6z94wcqsqzwb0xjij1z5f9"))))
+        (base32 "1ss9bc2vnr7637rhmljijlr87rqx956br0ghrnsf80s6qvz01rzh"))))
     (properties `((upstream-name . "BASiCStan")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-stanheaders
                              r-singlecellexperiment
@@ -4789,15 +5152,18 @@ posterior distributions with difficult geometries.")
 (define-public r-basecallqc
   (package
     (name "r-basecallqc")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "basecallQC" version))
        (sha256
-        (base32 "033agi9xcyr2mpryyqjzd1diinv3cnam6f13qw4xfg0fncn0rm83"))))
+        (base32 "020hnl1vkfxncfahgypg3ryzskmzcg68cpkh04kmiz16vdrpjv6d"))))
     (properties `((upstream-name . "basecallQC")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (inputs (list))
     (propagated-inputs (list r-yaml
                              r-xml
@@ -4843,6 +5209,9 @@ metrics from Illumina XML output files.")
         (base32 "1kh5r748b4vkmvlfaclmrh07ypbrzgxn90liqfz1rwkabh6rfk71"))))
     (properties `((upstream-name . "barley1probe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/barley1probe")
     (synopsis "Probe sequence data for microarrays of type barley1")
@@ -4865,6 +5234,9 @@ The file name was Barley1\\_probe\\_tab.")
         (base32 "0rbij5cqr2sz33y5waybv85nrcgf70iwj5gk13g0xn9p1l1zxyn2"))))
     (properties `((upstream-name . "barley1cdf")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-annotationdbi))
     (home-page "https://bioconductor.org/packages/barley1cdf")
     (synopsis "barley1cdf")
@@ -4876,15 +5248,18 @@ Barley1.CDF file.")
 (define-public r-banksy
   (package
     (name "r-banksy")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Banksy" version))
        (sha256
-        (base32 "1qz5nhf2qcdwcbi4kbwdjgbxpql8w5391cnb8i73gj54chc8bvn1"))))
+        (base32 "0irm6jfqw1fnzqhqrgpdvq7gkgzbd172fz6xc7bmdhcdrz380xzx"))))
     (properties `((upstream-name . "Banksy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-uwot
                              r-summarizedexperiment
                              r-spatialexperiment
@@ -4915,15 +5290,18 @@ tissue domain segmentation.")
 (define-public r-bandle
   (package
     (name "r-bandle")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bandle" version))
        (sha256
-        (base32 "0lkmwr207s26kxmhfcsay4mb3fg70wjcrhhjj82g5yjrycmjidm9"))))
+        (base32 "0bq0wmsq4lv16d1hiqbqj6djv55zdnrz4zm7lhi4vxvn3rlywl4g"))))
     (properties `((upstream-name . "bandle")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-s4vectors
                              r-robustbase

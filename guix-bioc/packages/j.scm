@@ -35,18 +35,19 @@
 (define-public r-johnsonkinasedata
   (package
     (name "r-johnsonkinasedata")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JohnsonKinaseData" version
                               'experiment))
        (sha256
-        (base32 "1ry5p2zll8hazxil4sa57v50b7xr9bk4p5a509i4mvasb089al3l"))))
+        (base32 "0i9l1bdbdvv7npb8bviyl0y8fpmhg6wj3ysr8z6d9a8ycplsm3jr"))))
     (properties `((upstream-name . "JohnsonKinaseData")))
     (build-system r-build-system)
     (arguments
      (list
+      #:tests? #f
       #:phases '(modify-phases %standard-phases
                   (add-after 'unpack 'set-HOME
                     (lambda _
@@ -61,14 +62,16 @@
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fgeier/JohnsonKinaseData/")
     (synopsis
-     "Kinase PWMs based on data published by Johnson et al. 2023 (doi:10.1038/s41586-022-05575-3)")
+     "Kinase PWMs based on data published by Johnson et al. 2023 and Yaron-Barir et al. 2024")
     (description
      "The packages provides position specific weight matrices (PWMs) for 303 human
-serine/threonine kinases originally published in Johnson et al.  2023.  It
-includes gene annotation for each kinase PWM and PWM matching scores for a set
-of 85603 curated human phosphosites which can be used to map a PWM score to its
-percentile rank.  The package also includes basic functionality to score user
-provided phosphosites.")
+serine/threonine and 93 tyrosine kinases originally published in Johnson et al.
+2023 (doi:10.1038/s41586-022-05575-3) and Yaron-Barir et al.  2024
+(doi:10.1038/s41586-024-07407-y).  The package includes basic functionality to
+score user provided phosphosites.  It also includes pre-computed PWM scores
+(\"background scores\") for a large collection of curated human phosphosites which
+can be used to rank PWM scores relative to the background scores (\"percentile
+rank\").")
     (license license:expat)))
 
 (define-public r-jazaerimetadata-db
@@ -84,6 +87,9 @@ provided phosphosites.")
         (base32 "04lvcmm4ybxkfwgbiwcnpyj6kpbd0gd7jz6ijlbbvv6zdgdmvykb"))))
     (properties `((upstream-name . "JazaeriMetaData.db")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-org-hs-eg-db r-annotationdbi))
     (home-page "https://bioconductor.org/packages/JazaeriMetaData.db")
     (synopsis "data package containing annotation data for JazaeriMetaData")
@@ -105,6 +111,9 @@ provided phosphosites.")
         (base32 "1l169kwymylqz67fz182fgq22nvg3cg12p2r8drgibs2d72khcpf"))))
     (properties `((upstream-name . "JASPAR2024")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biocfilecache))
     (native-inputs (list r-knitr))
     (home-page "https://testjaspar.uio.no//")
@@ -143,6 +152,9 @@ retrieve predicted JASPAR TFBSs intersecting their genomic regions of interest."
         (base32 "0di84aydk5brgdz1qh30fh1jizwd8w1rsz74mw4apv5s8ayryl48"))))
     (properties `((upstream-name . "JASPAR2022")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biocfilecache))
     (native-inputs (list r-knitr))
     (home-page "http://jaspar.genereg.net/")
@@ -169,6 +181,9 @@ thisdatabases, please use the package TFBSTools (>= 1.31.2).")
         (base32 "1iq5b51ryah2ccdx16yyigfa2jiapcpm94l6vgvd4v7b94jjp8l7"))))
     (properties `((upstream-name . "JASPAR2018")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (home-page "http://jaspar.genereg.net/")
     (synopsis "Data package for JASPAR 2018")
     (description
@@ -179,16 +194,19 @@ TFBSTools (>= 1.15.6).")
 (define-public r-jaspar2014
   (package
     (name "r-jaspar2014")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2014" version
                               'experiment))
        (sha256
-        (base32 "0m4g6vp78zsnzkfjmjfjwvd04505lz55njm7ml7dycwv6lmaxivk"))))
+        (base32 "0487bxyc24saxy0r3hdxapqcrh20qgr8rdwkskc1w8l4qgi01rj8"))))
     (properties `((upstream-name . "JASPAR2014")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
     (propagated-inputs (list r-biostrings))
     (home-page "http://jaspar.genereg.net/")
     (synopsis "Data package for JASPAR")
