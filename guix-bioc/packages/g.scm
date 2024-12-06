@@ -1979,13 +1979,13 @@ Shiny-based interactive app.")
 (define-public r-ginmapper
   (package
     (name "r-ginmapper")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ginmappeR" version))
        (sha256
-        (base32 "1j4m2wq3amypg84kzwi8f445xisxn70xqcblkhjjakn8zkfd3g40"))))
+        (base32 "0h6zzrxs3fd65a2qwbm1yiw7niwaa51avgy4fvcsbrlz8jd4vh0q"))))
     (properties `((upstream-name . "ginmappeR")))
     (build-system r-build-system)
     (arguments

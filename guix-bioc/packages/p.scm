@@ -3167,13 +3167,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "1.20.3")
+    (version "1.20.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "0pfps0yhfmvhryvj2vnqnxfj4mp1g0gc6ja3k4csvkrd2rzba6a7"))))
+        (base32 "0vv0a6vknjx3zh92ypmbvl4rcbrpfzsgnj1vmjx0y4p3vxkwvhx0"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments
@@ -3187,6 +3187,7 @@ profiles with @code{PhyloProfile} package.")
                              r-yaml
                              r-xml2
                              r-umap
+                             r-tsne
                              r-stringr
                              r-shinyjs
                              r-shinyfiles
@@ -3200,6 +3201,7 @@ profiles with @code{PhyloProfile} package.")
                              r-pbapply
                              r-gridextra
                              r-ggplot2
+                             r-fastcluster
                              r-extrafont
                              r-experimenthub
                              r-energy
