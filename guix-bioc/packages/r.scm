@@ -4397,6 +4397,51 @@ upon @code{regioneR} by adding new plotting functions for obtaining
 publication-ready graphs.")
     (license license:artistic2.0)))
 
+(define-public r-regionalst
+  (package
+    (name "r-regionalst")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "RegionalST" version))
+       (sha256
+        (base32 "1mc2gx8cf2d91cf7r71pmbim0wmfd38i9ldavwakajvq7j0s4pw4"))))
+    (properties `((upstream-name . "RegionalST")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-toast
+                             r-tibble
+                             r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-shiny
+                             r-seurat
+                             r-scater
+                             r-s4vectors
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-fgsea
+                             r-dplyr
+                             r-colorspace
+                             r-biocstyle
+                             r-bayesspace
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/RegionalST")
+    (synopsis
+     "Investigating regions of interest and performing regional cell type-specific analysis with spatial transcriptomics data")
+    (description
+     "This package analyze spatial transcriptomics data through cross-regional cell
+type-specific analysis.  It selects regions of interest (ROIs) and identifys
+cross-regional cell type-specific differential signals.  The ROIs can be
+selected using automatic algorithm or through manual selection.  It facilitates
+manual selection of ROIs using a shiny application.")
+    (license license:gpl3)))
+
 (define-public r-regionalpcs
   (package
     (name "r-regionalpcs")

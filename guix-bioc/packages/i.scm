@@ -863,6 +863,60 @@ via S4 classes.  Special attention is given to single-cell data in a
 reduction results.")
     (license license:expat)))
 
+(define-public r-isanalytics
+  (package
+    (name "r-isanalytics")
+    (version "1.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ISAnalytics" version))
+       (sha256
+        (base32 "1yigf51xmwr9481ag0xh7bcp5wkvxfjqv0w3sg8z7xnbkjb3zb57"))))
+    (properties `((upstream-name . "ISAnalytics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinywidgets
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-lifecycle
+                             r-glue
+                             r-ggrepel
+                             r-ggplot2
+                             r-fs
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-datamods
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://calabrialab.github.io/ISAnalytics")
+    (synopsis
+     "Analyze gene therapy vector insertion sites data identified from genomics next generation sequencing reads for clonal tracking studies")
+    (description
+     "In gene therapy, stem cells are modified using viral vectors to deliver the
+therapeutic transgene and replace functional properties since the genetic
+modification is stable and inherited in all cell progeny.  The retrieval and
+mapping of the sequences flanking the virus-host DNA junctions allows the
+identification of insertion sites (IS), essential for monitoring the evolution
+of genetically modified cells in vivo.  A comprehensive toolkit for the analysis
+of IS is required to foster clonal trackign studies and supporting the
+assessment of safety and long term efficacy in vivo.  This package is aimed at
+(1) supporting automation of IS workflow, (2) performing base and advance
+analysis for IS tracking (clonal abundance, clonal expansions and statistics for
+insertional mutagenesis, etc.), (3) providing basic biology insights of
+transduced stem cells in vivo.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-ipo
   (package
     (name "r-ipo")

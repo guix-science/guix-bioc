@@ -9042,6 +9042,43 @@ signatures.")
 example data objects to illustrate @code{mCSEA} package functionality.")
     (license license:gpl2)))
 
+(define-public r-mcsea
+  (package
+    (name "r-mcsea")
+    (version "1.26.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mCSEA" version))
+       (sha256
+        (base32 "1y6ppaahz9v73xniq3p0y4vphgx71nn6mz214v51560rsahgyhdq"))))
+    (properties `((upstream-name . "mCSEA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-s4vectors
+                             r-mcseadata
+                             r-limma
+                             r-iranges
+                             r-homo-sapiens
+                             r-gviz
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-fgsea
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/mCSEA")
+    (synopsis "Methylated CpGs Set Enrichment Analysis")
+    (description
+     "Identification of diferentially methylated regions (DMRs) in predefined regions
+(promoters, @code{CpG} islands...) from the human genome using Illumina's 450K
+or EPIC microarray data.  Provides methods to rank @code{CpG} probes based on
+linear models and includes plotting functions.")
+    (license license:gpl2)))
+
 (define-public r-mcbiclust
   (package
     (name "r-mcbiclust")
