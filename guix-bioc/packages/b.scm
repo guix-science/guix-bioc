@@ -4087,13 +4087,13 @@ foundation for integrative downstream analysis of the data.")
 (define-public r-bionar
   (package
     (name "r-bionar")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioNAR" version))
        (sha256
-        (base32 "10y9lbcni6ba6f0crhipa80wm6zzixnmf1p6p1xsp28n3zghyn2x"))))
+        (base32 "014bidfkpxvrnnda4yky9q3n2hgi7z1ywnhp0n1cl3aqy671ix3q"))))
     (properties `((upstream-name . "BioNAR")))
     (build-system r-build-system)
     (arguments

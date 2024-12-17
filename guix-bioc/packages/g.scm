@@ -19,7 +19,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -2737,6 +2736,38 @@ analyze and interpret the data quickly.  This functionality ensures that users
 have access to both detailed three-dimensional visualizations and more
 accessible two-dimensional views, catering to various analytical needs.")
     (license license:expat)))
+
+(define-public r-geometadb
+  (package
+    (name "r-geometadb")
+    (version "1.68.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GEOmetadb" version))
+       (sha256
+        (base32 "17q9ab1jly5g0q0ijd6bm2j6xr097bk4n6kyp6g9zh6pcb76yhl8"))))
+    (properties `((upstream-name . "GEOmetadb")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rsqlite r-r-utils))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GEOmetadb")
+    (synopsis "compilation of metadata from NCBI GEO")
+    (description
+     "The NCBI Gene Expression Omnibus (GEO) represents the largest public repository
+of microarray data.  However, finding data of interest can be challenging using
+current tools.  GEOmetadb is an attempt to make access to the metadata
+associated with samples, platforms, and datasets much more feasible.  This is
+accomplished by parsing all the NCBI GEO metadata into a SQLite database that
+can be stored and queried locally.  GEOmetadb is simply a thin wrapper around
+the SQLite database along with associated documentation.  Finally, the SQLite
+database is updated regularly as new data is added to GEO and can be downloaded
+at will for the most up-to-date metadata.  GEOmetadb paper:
+http://bioinformatics.oxfordjournals.org/cgi/content/short/24/23/2798 .")
+    (license license:artistic2.0)))
 
 (define-public r-geofastq
   (package
