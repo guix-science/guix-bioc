@@ -801,14 +801,14 @@ resources.")
 (define-public r-antiprofilesdata
   (package
     (name "r-antiprofilesdata")
-    (version "1.41.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "antiProfilesData" version
                               'experiment))
        (sha256
-        (base32 "0ak624m33hgxc7c72mghysql2lqr0blsf5qxl524ncwxw5ls1q3m"))))
+        (base32 "0590iff9pf7nc34w0llg2jk8gc8004vl5fxg93nb91n0jm86crdp"))))
     (properties `((upstream-name . "antiProfilesData")))
     (build-system r-build-system)
     (arguments
