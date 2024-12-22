@@ -883,6 +883,54 @@ meaningful.  It takes in binary (mutation) as well as continuous data (other
 omic types).")
     (license license:expat)))
 
+(define-public r-surfr
+  (package
+    (name "r-surfr")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SurfR" version))
+       (sha256
+        (base32 "0hv5d7s1id54x458bp4hjdy2cd4214ys28bhlx9ixsbzr6xci34i"))))
+    (properties `((upstream-name . "SurfR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-venn
+                             r-tidyr
+                             r-tcgabiolinks
+                             r-summarizedexperiment
+                             r-stringr
+                             r-spsimseq
+                             r-scales
+                             r-rjson
+                             r-rhdf5
+                             r-openxlsx
+                             r-metarnaseq
+                             r-magrittr
+                             r-knitr
+                             r-httr
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-biomart
+                             r-biocstyle
+                             r-biocfilecache
+                             r-assertr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/auroramaurizio/SurfR")
+    (synopsis "Surface Protein Prediction and Identification")
+    (description
+     "Identify Surface Protein coding genes from a list of candidates.  Systematically
+download data from GEO and TCGA or use your own data.  Perform DGE on bulk
+RNAseq data.  Perform Meta-analysis.  Descriptive enrichment analysis and plots.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-surfaltr
   (package
     (name "r-surfaltr")
@@ -3309,13 +3357,13 @@ the project is available here: https://spatialheatmap.org.")
 (define-public r-spatialfeatureexperiment
   (package
     (name "r-spatialfeatureexperiment")
-    (version "1.8.3")
+    (version "1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpatialFeatureExperiment" version))
        (sha256
-        (base32 "09zpr6psw7p3xihs11sv7vavmwpj1pwz8skyk506l6fw1bb1gamn"))))
+        (base32 "15rh84pd0i1m2i8nx010srgiaq8i7mg837459q7r429hjdciwcvn"))))
     (properties `((upstream-name . "SpatialFeatureExperiment")))
     (build-system r-build-system)
     (arguments
@@ -6172,14 +6220,14 @@ quality of the computed modules.")
 (define-public r-sfedata
   (package
     (name "r-sfedata")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SFEData" version
                               'experiment))
        (sha256
-        (base32 "118bbdmis6n8xyfrl79g87x2nagssnwbiwlgd9wxg7sckv8p913g"))))
+        (base32 "19wclzk4pd9lms64wfjpy8yd8iq6lv2a563lqdqcbk072i3c7m24"))))
     (properties `((upstream-name . "SFEData")))
     (build-system r-build-system)
     (arguments
