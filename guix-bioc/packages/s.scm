@@ -197,13 +197,13 @@ the environment in the future with contributions from the community.")
 (define-public r-syntenet
   (package
     (name "r-syntenet")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "syntenet" version))
        (sha256
-        (base32 "1w8zicd8jv8irj2x9fan5afhyp817yxpicrmbxbjiqp2jwd6xvw6"))))
+        (base32 "18bx1zaj4vdaw6hvxfnfqj78ssmdc4rcsm89bz4yl5vjqfljbam8"))))
     (properties `((upstream-name . "syntenet")))
     (build-system r-build-system)
     (arguments
@@ -3906,6 +3906,50 @@ The file name was Soybean\\_probe\\_tab.")
      "This package provides a package containing an environment representing the
 Soybean.cdf file.")
     (license license:lgpl2.0+)))
+
+(define-public r-somnibus
+  (package
+    (name "r-somnibus")
+    (version "1.14.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "SOMNiBUS" version))
+       (sha256
+        (base32 "1dfb7sy8b613agknmi1sa46f7dc701h714b633isx1lajkbmahm9"))))
+    (properties `((upstream-name . "SOMNiBUS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-vgam
+                             r-tidyr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-reshape2
+                             r-mgcv
+                             r-matrix
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-data-table
+                             r-bsseq
+                             r-biocmanager
+                             r-annotatr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kaiqiong/SOMNiBUS")
+    (synopsis "Smooth modeling of bisulfite sequencing")
+    (description
+     "This package aims to analyse count-based methylation data on predefined genomic
+regions, such as those obtained by targeted sequencing, and thus to identify
+differentially methylated regions (DMRs) that are associated with phenotypes or
+traits.  The method is built a rich flexible model that allows for the effects,
+on the methylation levels, of multiple covariates to vary smoothly along genomic
+regions.  At the same time, this method also allows for sequencing errors and
+can adjust for variability in cell type mixture.")
+    (license license:expat)))
 
 (define-public r-somaticcanceralterations
   (package
@@ -7634,13 +7678,13 @@ as a base classifier.")
 (define-public r-scrapper
   (package
     (name "r-scrapper")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scrapper" version))
        (sha256
-        (base32 "00swpvarwsbzksg0srajaarvnfjk90469syrmw3vrmjzbgy47qdz"))))
+        (base32 "0gvivdlrkbv3s8maz4iaxws3rmk1j80fjcgr7mkhnwxh1cavw0ai"))))
     (properties `((upstream-name . "scrapper")))
     (build-system r-build-system)
     (arguments
@@ -8337,13 +8381,13 @@ data of chromosome 4.")
 (define-public r-scifer
   (package
     (name "r-scifer")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scifer" version))
        (sha256
-        (base32 "0j2b09hyfgap2axzzfhl04k10r0qn1rqgml9563pk1b0ps31iqrw"))))
+        (base32 "1f5s4hma2p4fvpspldrs52ry2kvy22gmylbyslid15cy4slx1knh"))))
     (properties `((upstream-name . "scifer")))
     (build-system r-build-system)
     (arguments

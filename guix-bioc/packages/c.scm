@@ -8803,13 +8803,13 @@ spectrometry imaging.")
 (define-public r-cardinal
   (package
     (name "r-cardinal")
-    (version "3.8.2")
+    (version "3.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Cardinal" version))
        (sha256
-        (base32 "1wrrsrkjl9zai9syjany7lp2g40bhri5w64fsnprgkv2rk41qxks"))))
+        (base32 "1nza7j7y22f16pwdgzplx8bacqdp4i2rmsr6zfa874ivr0mf5grj"))))
     (properties `((upstream-name . "Cardinal")))
     (build-system r-build-system)
     (arguments

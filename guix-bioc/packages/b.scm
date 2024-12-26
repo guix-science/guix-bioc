@@ -4755,13 +4755,13 @@ to additional annotations.")
 (define-public r-betahmm
   (package
     (name "r-betahmm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "betaHMM" version))
        (sha256
-        (base32 "1ip2acq40p7x0dgj2zcsz86dfkp6rd620csy8ip8f08hygas2y4d"))))
+        (base32 "06r5b8yw1rpi49chmzkrgbzrgdds2i16xb6mb7fdphzzr0q0v4ki"))))
     (properties `((upstream-name . "betaHMM")))
     (build-system r-build-system)
     (arguments
