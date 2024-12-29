@@ -1917,13 +1917,13 @@ the @code{MsExperiment} package, and its infrastructure to store spectral data."
 (define-public r-msqrob2
   (package
     (name "r-msqrob2")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msqrob2" version))
        (sha256
-        (base32 "0lndc9c749qdsdarq7z0spc0rmppds2zrfdpx1005cxwmxm5fxyw"))))
+        (base32 "0kwfvmcngwzxm38837lp1jpd20k4cag638q4p7gz9c98qff1rkln"))))
     (properties `((upstream-name . "msqrob2")))
     (build-system r-build-system)
     (arguments

@@ -5482,13 +5482,13 @@ outperforms other heuristic methods.")
 (define-public r-classifyr
   (package
     (name "r-classifyr")
-    (version "3.10.4")
+    (version "3.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ClassifyR" version))
        (sha256
-        (base32 "00fkb8cxz4qxdx8vrj8yla51ykwdyzbdiw098sznli2yhkx61z4y"))))
+        (base32 "11pwk9aic12472sz5b33qjz427b477wyaclrjra7s8xjmacs49p3"))))
     (properties `((upstream-name . "ClassifyR")))
     (build-system r-build-system)
     (arguments
@@ -5507,6 +5507,8 @@ outperforms other heuristic methods.")
                              r-generics
                              r-genefilter
                              r-dplyr
+                             r-dcanr
+                             r-broom
                              r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://sydneybiox.github.io/ClassifyR/")
@@ -8437,13 +8439,13 @@ visualized.")
 (define-public r-cbioportaldata
   (package
     (name "r-cbioportaldata")
-    (version "2.18.0")
+    (version "2.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cBioPortalData" version))
        (sha256
-        (base32 "0wjkwa7pfk3nvylf0nkix8x7zcmgrk0gasr2wx5bnbhvv5x6n4rd"))))
+        (base32 "192p8nw4963dwncwh1y4akfzlk1gcyjifann531hm0mk13qk2qfs"))))
     (properties `((upstream-name . "cBioPortalData")))
     (build-system r-build-system)
     (arguments

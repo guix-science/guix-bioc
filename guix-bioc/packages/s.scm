@@ -24,11 +24,13 @@
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages v)
   #:use-module (guix-cran packages o)
+  #:use-module (gnu packages python-xyz)
+  #:use-module (gnu packages python)
+  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages i)
   #:use-module (gnu packages graph)
-  #:use-module (gnu packages python)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -6751,6 +6753,109 @@ data for ~2000 sequencing libraries.  It also includes all the exon-exon
 junctions discovered from the study. @code{TaqMan} RT-PCR data for ~1000 genes
 and ERCC spike-in sequence data are included in this package as well.")
     (license license:gpl3)))
+
+(define-public r-seqarchrplus
+  (package
+    (name "r-seqarchrplus")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seqArchRplus" version))
+       (sha256
+        (base32 "1i3v3w3hg09f8anz39d0pd124ymj1l1qd6bxyvgwmh8hfbcn5rcp"))))
+    (properties `((upstream-name . "seqArchRplus")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-seqpattern
+                             r-seqarchr
+                             r-scales
+                             r-s4vectors
+                             r-rcolorbrewer
+                             r-magick
+                             r-iranges
+                             r-heatmaps
+                             r-gridextra
+                             r-ggplot2
+                             r-ggimage
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-factoextra
+                             r-cowplot
+                             r-clusterprofiler
+                             r-cli
+                             r-chipseeker
+                             r-bsgenome
+                             r-biostrings
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/snikumbh/seqArchRplus")
+    (synopsis
+     "Downstream analyses of promoter sequence architectures and HTML report generation")
+    (description
+     "@code{seqArchRplus} facilitates downstream analyses of promoter sequence
+architectures/clusters identified by @code{seqArchR} (or any other tool/method).
+ With additional available information such as the TPM values and interquantile
+widths (IQWs) of the CAGE tag clusters, @code{seqArchRplus} can order the input
+promoter clusters by their shape (IQWs), and write the cluster information as
+browser/IGV track files.  Provided visualizations are of two kind: per
+sample/stage and per cluster visualizations.  Those of the first kind include:
+plot panels for each sample showing per cluster shape, TPM and other score
+distributions, sequence logos, and peak annotations.  The second include per
+cluster chromosome-wise and strand distributions, motif occurrence heatmaps and
+GO term enrichments.  Additionally, @code{seqArchRplus} can also generate HTML
+reports for easy viewing and comparison of promoter architectures between
+samples/stages.")
+    (license license:gpl3)))
+
+(define-public r-seqarchr
+  (package
+    (name "r-seqarchr")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seqArchR" version))
+       (sha256
+        (base32 "1gw9qclal1ibiy09pbpz89m3ccgan24zi8m347zjc36zqwk9x51n"))))
+    (properties `((upstream-name . "seqArchR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list python-scikit-learn python python-packaging))
+    (propagated-inputs (list r-reticulate
+                             r-reshape2
+                             r-prettyunits
+                             r-matrixstats
+                             r-matrix
+                             r-mass
+                             r-ggseqlogo
+                             r-ggplot2
+                             r-fpc
+                             r-cvtools
+                             r-cluster
+                             r-cli
+                             r-biostrings
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://snikumbh.github.io/seqArchR/")
+    (synopsis "Identify Different Architectures of Sequence Elements")
+    (description
+     "@code{seqArchR} enables unsupervised discovery of _de novo_ clusters with
+characteristic sequence architectures characterized by position-specific motifs
+or composition of stretches of nucleotides, e.g., CG-richness. @code{seqArchR}
+does _not_ require any specifications w.r.t.  the number of clusters, the length
+of any individual motifs, or the distance between motifs if and when they occur
+in pairs/groups; it directly detects them from the data. @code{seqArchR} uses
+non-negative matrix factorization (NMF) as its backbone, and employs a
+chunking-based iterative procedure that enables processing of large sequence
+collections efficiently.  Wrapper functions are provided for visualizing cluster
+architectures as sequence logos.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-seq2pathway-data
   (package

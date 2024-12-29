@@ -1383,13 +1383,13 @@ studies.")
 (define-public r-inpas
   (package
     (name "r-inpas")
-    (version "2.14.0")
+    (version "2.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "InPAS" version))
        (sha256
-        (base32 "1srbzj144m4sz6x61f3sj84xh016zn3skmhi8b23057azz4g52a5"))))
+        (base32 "0xqw7aqbl86kg599m6pasy5w4jc8ma0za0ysbxh1iv10n5dka9ix"))))
     (properties `((upstream-name . "InPAS")))
     (build-system r-build-system)
     (arguments

@@ -2241,6 +2241,39 @@ a tool for across-tissue and tissue-specific transcriptional age calculation
 based on GTEx RNASeq data.")
     (license license:gpl2)))
 
+(define-public r-rmspc
+  (package
+    (name "r-rmspc")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "rmspc" version))
+       (sha256
+        (base32 "0vqpkfa2lq8f484ihis283gdmda4x492m5hygfvz9y83lwb5syrm"))))
+    (properties `((upstream-name . "rmspc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr r-rtracklayer r-processx
+                             r-genomicranges r-biocmanager))
+    (native-inputs (list r-knitr))
+    (home-page "https://genometric.github.io/MSPC/")
+    (synopsis "Multiple Sample Peak Calling")
+    (description
+     "The rmspc package runs MSPC (Multiple Sample Peak Calling) software using R. The
+analysis of @code{ChIP-seq} samples outputs a number of enriched regions
+(commonly known as \"peaks\"), each indicating a protein-DNA interaction or a
+specific chromatin modification.  When replicate samples are analyzed,
+overlapping peaks are expected.  This repeated evidence can therefore be used to
+locally lower the minimum significance required to accept a peak.  MSPC uses
+combined evidence from replicated experiments to evaluate peak calling output,
+rescuing peaks, and reduce false positives.  It takes any number of replicates
+as input and improves sensitivity and specificity of peak calling on each, and
+identifies consensus regions between the input samples.")
+    (license license:gpl3)))
+
 (define-public r-rmmquant
   (package
     (name "r-rmmquant")
