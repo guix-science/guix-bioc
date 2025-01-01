@@ -7509,6 +7509,83 @@ Group WNT (MB_WNT), Group SHH (MB_SHH) and Pilocytic Astrocytoma
 (@code{PiloAstro}).")
     (license license:gpl2)))
 
+(define-public r-methodical
+  (package
+    (name "r-methodical")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "methodical" version))
+       (sha256
+        (base32 "0w93w55r8k5fyhkq5rg2qqz5yamz0ziwm6idm68ykv1xh15f3fgw"))))
+    (properties `((upstream-name . "methodical")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (inputs (list kallisto))
+    (propagated-inputs (list r-usethis
+                             r-tumourmethdata
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-scales
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rhdf5
+                             r-remotes
+                             r-rcpproll
+                             r-rcmdcheck
+                             r-r-utils
+                             r-matrixgenerics
+                             r-knitr
+                             r-iranges
+                             r-hdf5array
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-foreach
+                             r-experimenthub
+                             r-dplyr
+                             r-devtools
+                             r-delayedarray
+                             r-data-table
+                             r-cowplot
+                             r-bsgenome-hsapiens-ucsc-hg38
+                             r-bsgenome-hsapiens-ucsc-hg19
+                             r-bsgenome
+                             r-biostrings
+                             r-biocstyle
+                             r-biocparallel
+                             r-biocmanager
+                             r-bioccheck
+                             r-annotatr
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richardheery/methodical")
+    (synopsis
+     "Discovering genomic regions where methylation is strongly associated with transcriptional activity")
+    (description
+     "DNA methylation is generally considered to be associated with transcriptional
+silencing.  However, comprehensive, genome-wide investigation of this
+relationship requires the evaluation of potentially millions of correlation
+values between the methylation of individual genomic loci and expression of
+associated transcripts in a relatively large numbers of samples.  Methodical
+makes this process quick and easy while keeping a low memory footprint.  It also
+provides a novel method for identifying regions where a number of methylation
+sites are consistently strongly associated with transcriptional expression.  In
+addition, Methodical enables housing DNA methylation data from diverse sources
+(e.g. WGBS, RRBS and methylation arrays) with a common framework, lifting over
+DNA methylation data between different genome builds and creating
+base-resolution plots of the association between DNA methylation and
+transcriptional activity at transcriptional start sites.")
+    (license license:gpl3+)))
+
 (define-public r-methinheritsim
   (package
     (name "r-methinheritsim")
