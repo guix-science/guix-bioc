@@ -19,6 +19,7 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -3374,13 +3375,13 @@ basic infrastructure for and is enhanced by the package girafe'.")
 (define-public r-genomautomorphism
   (package
     (name "r-genomautomorphism")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GenomAutomorphism" version))
        (sha256
-        (base32 "1dspdjks4ydw6x1cllq5lv83bb1br0dz542cjbbcvxr0ksn4pgrx"))))
+        (base32 "1f0hy36hwq0gaml4b3g7rfhqlbj2laa3bwsf0mppc1bmm3n5x9sb"))))
     (properties `((upstream-name . "GenomAutomorphism")))
     (build-system r-build-system)
     (arguments

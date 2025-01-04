@@ -888,13 +888,13 @@ omic types).")
 (define-public r-surfr
   (package
     (name "r-surfr")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SurfR" version))
        (sha256
-        (base32 "0hv5d7s1id54x458bp4hjdy2cd4214ys28bhlx9ixsbzr6xci34i"))))
+        (base32 "0ls9dyhjvqq97bf1msfz8p89cwvmlnimvxfi297bmcawhvmki75f"))))
     (properties `((upstream-name . "SurfR")))
     (build-system r-build-system)
     (arguments
@@ -921,7 +921,6 @@ omic types).")
                              r-dplyr
                              r-deseq2
                              r-biomart
-                             r-biocstyle
                              r-biocfilecache
                              r-assertr))
     (native-inputs (list r-knitr))

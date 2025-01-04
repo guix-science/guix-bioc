@@ -91,24 +91,29 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
 (define-public r-knowyourcg
   (package
     (name "r-knowyourcg")
-    (version "1.2.1")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "knowYourCG" version))
        (sha256
-        (base32 "1ks52kmffzy0scr7rxvdn41zx40incblmqk7rsrrk7d094kg7xgk"))))
+        (base32 "0djdi1d1qlifdil407vda7psy4ib5z29n43g2q1p3gwhwmqd06zh"))))
     (properties `((upstream-name . "knowYourCG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-wheatmap
+                             r-tibble
+                             r-stringr
                              r-sesamedata
                              r-s4vectors
                              r-rlang
                              r-reshape2
+                             r-magrittr
                              r-iranges
+                             r-ggrepel
+                             r-ggplot2
                              r-genomicranges
                              r-dplyr))
     (native-inputs (list r-knitr))
