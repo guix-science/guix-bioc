@@ -7,6 +7,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (guix-cran packages x)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages s)
@@ -1285,14 +1286,14 @@ marray @code{MarrayRaw-objects} or limma RGList-objects are available.")
 (define-public r-tumourmethdata
   (package
     (name "r-tumourmethdata")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TumourMethData" version
                               'experiment))
        (sha256
-        (base32 "01xbsi6x4bafkp0m5xi4l2w62067xnfqnlkaz59ng1hf2ld2p690"))))
+        (base32 "14y58qa4khi4jdymilxrb6x57br1gjclw2q3n9mivjrj6z3r3nmw"))))
     (properties `((upstream-name . "TumourMethData")))
     (build-system r-build-system)
     (arguments
@@ -1302,12 +1303,25 @@ marray @code{MarrayRaw-objects} or limma RGList-objects are available.")
                   (add-after 'unpack 'set-HOME
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-summarizedexperiment
+    (propagated-inputs (list r-xlsx
+                             r-usethis
+                             r-tibble
+                             r-tcgautils
+                             r-summarizedexperiment
+                             r-stringr
+                             r-rmarkdown
                              r-rhdf5
+                             r-readr
                              r-r-utils
+                             r-openxlsx
+                             r-methrix
+                             r-knitr
                              r-hdf5array
                              r-genomicranges
-                             r-experimenthub))
+                             r-experimenthubdata
+                             r-experimenthub
+                             r-dplyr
+                             r-bsgenome-hsapiens-ucsc-hg19))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/richardheery/TumourMethData")
     (synopsis
