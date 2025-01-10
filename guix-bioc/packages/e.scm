@@ -558,14 +558,14 @@ microbiome of the reference condition.")
 (define-public r-etec16s
   (package
     (name "r-etec16s")
-    (version "1.33.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "etec16s" version
                               'experiment))
        (sha256
-        (base32 "1xbj8z68006riah51lpk0bh8hq240wl9n1inlss84yj6kn4y5m0w"))))
+        (base32 "114jmrnjm2xpfzx1m10bn73fy1am209c70ws4jwfggrbavg6xp8j"))))
     (properties `((upstream-name . "etec16s")))
     (build-system r-build-system)
     (arguments

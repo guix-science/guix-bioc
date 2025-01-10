@@ -14,13 +14,13 @@
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages q)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages i)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
-  #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages g)
@@ -882,6 +882,31 @@ from label-free proteomics experiments.  Contrarily to most other similar R
 packages, it is endowed with rich and user-friendly graphical interfaces, so
 that no programming skill is required.")
     (license license:artistic2.0)))
+
+(define-public r-props
+  (package
+    (name "r-props")
+    (version "1.28.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "PROPS" version))
+       (sha256
+        (base32 "0yc4mfwaamh1wsqzgrnh1mi2niajg0c3cckd935glmp2cv7cspsm"))))
+    (properties `((upstream-name . "PROPS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-sva r-reshape2 r-bnlearn r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/PROPS")
+    (synopsis "PRObabilistic Pathway Score (PROPS)")
+    (description
+     "This package calculates probabilistic pathway scores using gene expression data.
+ Gene expression values are aggregated into pathway-based scores using Bayesian
+network representations of biological pathways.")
+    (license license:gpl2)))
 
 (define-public r-proper
   (package

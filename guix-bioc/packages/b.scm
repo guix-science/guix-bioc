@@ -22,6 +22,7 @@
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages c)
+  #:use-module (guix-cran packages m)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -4881,6 +4882,68 @@ computations.  BERT allows parallelization over sub-trees.")
 and Kimes et al. (2019) to compare methods for controlling the false discovery
 rate.")
     (license license:expat)))
+
+(define-public r-benchdamic
+  (package
+    (name "r-benchdamic")
+    (version "1.12.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "benchdamic" version))
+       (sha256
+        (base32 "00wi2v5rmxgx2rny1yd8ndda33mkl7cxk0spwypginqc2jias8yp"))))
+    (properties `((upstream-name . "benchdamic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zinbwave
+                             r-treesummarizedexperiment
+                             r-tidytext
+                             r-summarizedexperiment
+                             r-seurat
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-plyr
+                             r-phyloseq
+                             r-noiseq
+                             r-mixomics
+                             r-microbiomestat
+                             r-microbiome
+                             r-mglm
+                             r-metagenomeseq
+                             r-mast
+                             r-maaslin2
+                             r-lme4
+                             r-limma
+                             r-gunifrac
+                             r-ggridges
+                             r-ggplot2
+                             r-ggdendro
+                             r-edger
+                             r-deseq2
+                             r-dearseq
+                             r-cowplot
+                             r-corncob
+                             r-biocparallel
+                             r-ancombc
+                             r-aldex2))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/benchdamic")
+    (synopsis "Benchmark of differential abundance methods on microbiome data")
+    (description
+     "Starting from a microbiome dataset (16S or WMS with absolute count values) it is
+possible to perform several analysis to assess the performances of many
+differential abundance detection methods.  A basic and standardized version of
+the main differential abundance analysis methods is supplied but the user can
+also add his method to the benchmark.  The analyses focus on 4 main aspects: i)
+the goodness of fit of each method's distributional assumptions on the observed
+count data, ii) the ability to control the false discovery rate, iii) the within
+and between method concordances, iv) the truthfulness of the findings if any
+apriori knowledge is given.  Several graphical functions are available for
+result visualization.")
+    (license license:artistic2.0)))
 
 (define-public r-beer
   (package

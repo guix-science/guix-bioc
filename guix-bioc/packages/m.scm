@@ -2264,14 +2264,14 @@ quantitative data from proteomics and metabolomics experiments.")
 (define-public r-msd16s
   (package
     (name "r-msd16s")
-    (version "1.25.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msd16s" version
                               'experiment))
        (sha256
-        (base32 "0lzcpwf9rhr8i80hn3dab0fpgx7qmy0q9l8j7fkrazq2paiiikj7"))))
+        (base32 "0wg705d0232d4916d3b84q62pdrzmf8v3k9apyh4fsmg4pk2xw6p"))))
     (properties `((upstream-name . "msd16s")))
     (build-system r-build-system)
     (arguments
@@ -5958,6 +5958,64 @@ analysis, Microbe-Disease association enrichment analysis, Metabo-Pathway
 analysis.")
     (license license:gpl2)))
 
+(define-public r-microbiomeexplorer
+  (package
+    (name "r-microbiomeexplorer")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "microbiomeExplorer" version))
+       (sha256
+        (base32 "144agzs1l8w0vmsmhidz3sa2qqpyfy8894dgm2ya2i1f9jmnwkdb"))))
+    (properties `((upstream-name . "microbiomeExplorer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-reshape2
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plotly
+                             r-metagenomeseq
+                             r-matrixstats
+                             r-magrittr
+                             r-lubridate
+                             r-limma
+                             r-knitr
+                             r-heatmaply
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-deseq2
+                             r-car
+                             r-broom
+                             r-biomformat
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/microbiomeExplorer")
+    (synopsis "Microbiome Exploration App")
+    (description
+     "The @code{MicrobiomeExplorer} R package is designed to facilitate the analysis
+and visualization of marker-gene survey feature data.  It allows a user to
+perform and visualize typical microbiome analytical workflows either through the
+command line or an interactive Shiny application included with the package.  In
+addition to applying common analytical workflows the application enables
+automated analysis report generation.")
+    (license license:expat)))
+
 (define-public r-microbiomedatasets
   (package
     (name "r-microbiomedatasets")
@@ -5995,6 +6053,41 @@ reference for workflows and vignettes published adjacent to the microbiome
 analysis tools on Bioconductor.  Additional datasets can be added overtime and
 additions from authors are welcome.")
     (license license:cc0)))
+
+(define-public r-microbiomedasim
+  (package
+    (name "r-microbiomedasim")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "microbiomeDASim" version))
+       (sha256
+        (base32 "1hm8qfzcg0r2npb0nwnn0pki1y013nxy8bph113favznmi3c58lq"))))
+    (properties `((upstream-name . "microbiomeDASim")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tmvtnorm
+                             r-phyloseq
+                             r-pbapply
+                             r-mvtnorm
+                             r-metagenomeseq
+                             r-matrix
+                             r-mass
+                             r-ggplot2
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/williazo/microbiomeDASim")
+    (synopsis "Microbiome Differential Abundance Simulation")
+    (description
+     "This package provides a toolkit for simulating differential microbiome data
+designed for longitudinal analyses.  Several functional forms may be specified
+for the mean trend.  Observations are drawn from a multivariate normal model.
+The objective of this package is to be able to simulate data in order to
+accurately compare different longitudinal methods for differential abundance.")
+    (license license:expat)))
 
 (define-public r-microbiomebenchmarkdata
   (package
@@ -9220,6 +9313,45 @@ small samples or a few replicate libraries.  It can be used to identify genes,
 @code{mRNA} isoforms or tags differentially expressed between two conditions.")
     (license license:gpl3)))
 
+(define-public r-mbqtl
+  (package
+    (name "r-mbqtl")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mbQTL" version))
+       (sha256
+        (base32 "0whrhcw4w1f3fbf8nk0wny1d06z7v6brmih1l9z0xk5024qmaxli"))))
+    (properties `((upstream-name . "mbQTL")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-readxl
+                             r-pheatmap
+                             r-metagenomeseq
+                             r-matrixeqtl
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "\"https://github.com/Mercedeh66/mbQTL\"")
+    (synopsis "mbQTL: A package for SNP-Taxa mGWAS analysis")
+    (description
+     "@code{mbQTL} is a statistical R package for simultaneous 16@code{srRNA,16srDNA}
+(microbial) and variant, SNP, SNV (host) relationship, correlation, regression
+studies.  We apply linear, logistic and correlation based statistics to identify
+the relationships of taxa, genus, species and variant, SNP, SNV in the infected
+host.  We produce various statistical significance measures such as P values,
+FDR, BC and probability estimation to show significance of these relationships.
+Further we provide various visualization function for ease and clarification of
+the results of these analysis.  The package is compatible with dataframe,
+MRexperiment and text formats.")
+    (license license:expat)))
+
 (define-public r-mbqn
   (package
     (name "r-mbqn")
@@ -10786,6 +10918,51 @@ The original data can be found at: https://github.com/macs3-project/MACS/.")
      "Graphically displays correlation in microarray data that is due to insufficient
 normalization.")
     (license license:gpl2+)))
+
+(define-public r-macarron
+  (package
+    (name "r-macarron")
+    (version "1.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Macarron" version))
+       (sha256
+        (base32 "1vmcjb2avjmni51n47srjzk5s3ybb7nsv7qs5lw64vp0p9pmsd4x"))))
+    (properties `((upstream-name . "Macarron")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-wgcna
+                             r-summarizedexperiment
+                             r-rjsonio
+                             r-psych
+                             r-plyr
+                             r-maaslin2
+                             r-logging
+                             r-httr
+                             r-ff
+                             r-dynamictreecut
+                             r-delayedarray
+                             r-data-table
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "http://huttenhower.sph.harvard.edu/macarron")
+    (synopsis
+     "Prioritization of potentially bioactive metabolic features from epidemiological and environmental metabolomics datasets")
+    (description
+     "Macarron is a workflow for the prioritization of potentially bioactive
+metabolites from metabolomics experiments.  Prioritization integrates strengths
+of evidences of bioactivity such as covariation with a known metabolite,
+abundance relative to a known metabolite and association with an environmental
+or phenotypic indicator of bioactivity.  Broadly, the workflow consists of
+stratified clustering of metabolic spectral features which co-vary in abundance
+in a condition, transfer of functional annotations, estimation of relative
+abundance and differential abundance analysis to identify associations between
+features and phenotype/condition.")
+    (license license:expat)))
 
 (define-public r-m6aboost
   (package
