@@ -19,7 +19,6 @@
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -2696,13 +2695,13 @@ also included.")
 (define-public r-geometrid
   (package
     (name "r-geometrid")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "geomeTriD" version))
        (sha256
-        (base32 "1nazp7gj89kpab1zw5j0bn87ar53dy95h8phvjz57kagx1vj5p34"))))
+        (base32 "08k117bhqbshxma4as44l107qncfa65cyha2f8i7y1xrakyrcsrl"))))
     (properties `((upstream-name . "geomeTriD")))
     (build-system r-build-system)
     (arguments

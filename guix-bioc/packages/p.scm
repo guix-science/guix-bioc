@@ -3702,13 +3702,13 @@ calculated from multiple alignments with other 99 vertebrate species.")
 (define-public r-pharmacogx
   (package
     (name "r-pharmacogx")
-    (version "3.10.0")
+    (version "3.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PharmacoGx" version))
        (sha256
-        (base32 "1ay7v34h0lfqkpa8a27lyb6j8ayq7b79kc1jixl60i2wqi6x69ps"))))
+        (base32 "06y3f2f7qw641432h7fb0ibipppqx9j41kx0rphircvy6qpbx70x"))))
     (properties `((upstream-name . "PharmacoGx")))
     (build-system r-build-system)
     (arguments

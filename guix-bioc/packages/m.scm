@@ -1827,13 +1827,13 @@ than memory data sets.")
 (define-public r-msstats
   (package
     (name "r-msstats")
-    (version "4.14.0")
+    (version "4.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstats" version))
        (sha256
-        (base32 "1zhgx2gm79wsl3gybnrsqqiyc5z2k59xra2lm7m75jlj5h651sch"))))
+        (base32 "16gaiaipl5p2zf6f2yracsrkk8fhwnn0740lf0fgc6psrh9cr5r5"))))
     (properties `((upstream-name . "MSstats")))
     (build-system r-build-system)
     (arguments

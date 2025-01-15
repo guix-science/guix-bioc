@@ -41,13 +41,13 @@
 (define-public r-koinar
   (package
     (name "r-koinar")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "koinar" version))
        (sha256
-        (base32 "1b2xb6bi7b6mvzni5shx8cxvyiqw0gplixn76asrrlpj9zh194g7"))))
+        (base32 "1w0ya1yvghhnn4zxh4khf7g09jlh6cjb9kcjag28yqqkf1l14pky"))))
     (properties `((upstream-name . "koinar")))
     (build-system r-build-system)
     (arguments
