@@ -17,9 +17,7 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (gnu packages compression)
-  #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -2540,13 +2538,13 @@ project, Lappalainen et al.")
 (define-public r-getdee2
   (package
     (name "r-getdee2")
-    (version "1.16.0")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "getDEE2" version))
        (sha256
-        (base32 "012dgvbk85z91jg3cy2hf9px5qzpmw82yp2qh9rygyv5gnd116li"))))
+        (base32 "0xc95r3j4bbk8a537hj9jjykjja22axv5gh7b12i305dvzjxrk8v"))))
     (properties `((upstream-name . "getDEE2")))
     (build-system r-build-system)
     (arguments
@@ -4563,13 +4561,13 @@ response analyses that the @code{gDR} suite offers.")
 (define-public r-gdnax
   (package
     (name "r-gdnax")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDNAx" version))
        (sha256
-        (base32 "0b3msd0ll0w5mpmv9153xj6byza8mhhl4naf7qp160l00as6wr0w"))))
+        (base32 "0f2k563lzbbdb5wf9hw0ljfrra3dizsvcis4nzqfgqaz5ppdrckw"))))
     (properties `((upstream-name . "gDNAx")))
     (build-system r-build-system)
     (arguments
