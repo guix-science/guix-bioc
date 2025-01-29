@@ -7574,13 +7574,13 @@ alignments and pre- and post-alignment QC metrics.")
 (define-public r-scrnaseqapp
   (package
     (name "r-scrnaseqapp")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scRNAseqApp" version))
        (sha256
-        (base32 "108jj1rgs4995wbwk2f4g9bv53d1ywmgzxzxidy6a8ygwaj9zwqz"))))
+        (base32 "1ahyzc3h9krypy8chjsj607sfmb5vvzf1wr623inz1125frws7cp"))))
     (properties `((upstream-name . "scRNAseqApp")))
     (build-system r-build-system)
     (arguments

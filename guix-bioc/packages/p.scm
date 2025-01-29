@@ -935,13 +935,13 @@ power in differential expression analysis from RNA-seq data.")
 (define-public r-prone
   (package
     (name "r-prone")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PRONE" version))
        (sha256
-        (base32 "1p1yjf5r2zqy9rvlckxsd17ngg0zrhaj9mwrp0yaqn5gahww06h6"))))
+        (base32 "1wikf9lhxkifb1zk8rvjmb9zcksm4fsr43jjg7bhsnw876ajkgjr"))))
     (properties `((upstream-name . "PRONE")))
     (build-system r-build-system)
     (arguments
@@ -982,7 +982,7 @@ power in differential expression analysis from RNA-seq data.")
                              r-circlize
                              r-biobase))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/lisiarend/PRONE")
+    (home-page "https://github.com/daisybio/PRONE")
     (synopsis "The PROteomics Normalization Evaluator")
     (description
      "High-throughput omics data are often affected by systematic biases introduced

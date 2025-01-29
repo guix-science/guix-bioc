@@ -1046,13 +1046,13 @@ as well as publish data to the Bioconductor S3 bucket.")
 (define-public r-hubmapr
   (package
     (name "r-hubmapr")
-    (version "1.0.4")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HuBMAPR" version))
        (sha256
-        (base32 "0bjz88i2dpg1pxmbfbwx60z47hy8f38xzidih6fs5hrmjl3pfah0"))))
+        (base32 "0qdifg4wciz2mic7l0n4lygqv4zmbb9hf97amjy7p4yixx5djfx6"))))
     (properties `((upstream-name . "HuBMAPR")))
     (build-system r-build-system)
     (arguments
@@ -1078,7 +1078,7 @@ retrieves the information for each of these entity types. @code{`*_details()}`
 are available for individual entries of each entity type. @code{`*_derived()}`
 are available for retrieving derived datasets or samples for individual entries
 of each entity type.  Data files can be accessed using
-@code{`files_globus_url()}`.")
+@code{`bulk_data_transfer()}`.")
     (license license:artistic2.0)))
 
 (define-public r-hu6800subdcdf

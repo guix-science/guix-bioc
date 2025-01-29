@@ -41,13 +41,13 @@
 (define-public r-autonomics
   (package
     (name "r-autonomics")
-    (version "1.14.6")
+    (version "1.14.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "autonomics" version))
        (sha256
-        (base32 "16z9hyzb7nj0b3wvcaa8r8gxpr3fcxigmpsdpy0l9a03l33z82n6"))))
+        (base32 "1wgzr20md0wlv5kiibg1jyvnpnhg94linlrfk7kcyg0grpw1hyfa"))))
     (properties `((upstream-name . "autonomics")))
     (build-system r-build-system)
     (arguments
