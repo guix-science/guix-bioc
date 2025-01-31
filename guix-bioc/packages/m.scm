@@ -1868,13 +1868,13 @@ significance analysis in DDA, SRM and DIA experiments.")
 (define-public r-msquality
   (package
     (name "r-msquality")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsQuality" version))
        (sha256
-        (base32 "1m41pzdc5l5xis3mxg0mvisyzngbkfqnj0xv5c2b9ibwagfjvhag"))))
+        (base32 "0cqsfydxz53ppqlq8nmqspxcg52jj0d01anw1r8m8f1fxxfghln4"))))
     (properties `((upstream-name . "MsQuality")))
     (build-system r-build-system)
     (arguments
@@ -7567,6 +7567,72 @@ Critical downstream step requires summarization of these files into
 methylation/coverage matrices.  This step of data aggregation is done by
 Methrix, including many other useful downstream functions.")
     (license license:expat)))
+
+(define-public r-methreg
+  (package
+    (name "r-methreg")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MethReg" version))
+       (sha256
+        (base32 "0aggc95l1lv2pck2p4vfj92lllkd6cgzqw18wy88zpm92qny8abl"))))
+    (properties `((upstream-name . "MethReg")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-tfbstools
+                             r-summarizedexperiment
+                             r-stringr
+                             r-sfsmisc
+                             r-sesamedata
+                             r-sesame
+                             r-s4vectors
+                             r-rsqlite
+                             r-rlang
+                             r-readr
+                             r-pscl
+                             r-progress
+                             r-plyr
+                             r-openxlsx
+                             r-matrix
+                             r-mass
+                             r-jaspar2024
+                             r-iranges
+                             r-ggpubr
+                             r-ggplot2
+                             r-genomicranges
+                             r-experimenthub
+                             r-dplyr
+                             r-delayedarray
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/MethReg")
+    (synopsis
+     "Assessing the regulatory potential of DNA methylation regions or sites on gene transcription")
+    (description
+     "Epigenome-wide association studies (EWAS) detects a large number of DNA
+methylation differences, often hundreds of differentially methylated regions and
+thousands of @code{CpGs}, that are significantly associated with a disease, many
+are located in non-coding regions.  Therefore, there is a critical need to
+better understand the functional impact of these @code{CpG} methylations and to
+further prioritize the significant changes. @code{MethReg} is an R package for
+integrative modeling of DNA methylation, target gene expression and
+transcription factor binding sites data, to systematically identify and rank
+functional @code{CpG} methylations. @code{MethReg} evaluates, prioritizes and
+annotates @code{CpG} sites with high regulatory potential using matched
+methylation and gene expression data, along with external TF-target interaction
+databases based on manually curation, @code{ChIP-seq} experiments or gene
+regulatory network analysis.")
+    (license license:gpl3)))
 
 (define-public r-methped
   (package

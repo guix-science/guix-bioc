@@ -4425,13 +4425,13 @@ server that is set up to run long tests.")
 (define-public r-biochubsshiny
   (package
     (name "r-biochubsshiny")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocHubsShiny" version))
        (sha256
-        (base32 "119n3pgx7gpxjih4abjzxwnw6m5hy3fb2q85njlzdzwyqcihx068"))))
+        (base32 "0fpp49zqsc96wlhbalqhdc5jldh96knmx9zi9rn2jgwvlvd15ql4"))))
     (properties `((upstream-name . "BiocHubsShiny")))
     (build-system r-build-system)
     (arguments
