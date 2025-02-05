@@ -1230,13 +1230,13 @@ subcellular localization.")
 (define-public r-structtoolbox
   (package
     (name "r-structtoolbox")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "structToolbox" version))
        (sha256
-        (base32 "174lbh1vnxxphfh9c62xixm2rgzvxlyk6qzzbfmxw2jwgndn2qvl"))))
+        (base32 "1xd890vmjczci1i0p4kwdljaj8ky23rqfkivn3nknav318m1py0s"))))
     (properties `((upstream-name . "structToolbox")))
     (build-system r-build-system)
     (arguments
@@ -3358,13 +3358,13 @@ the project is available here: https://spatialheatmap.org.")
 (define-public r-spatialfeatureexperiment
   (package
     (name "r-spatialfeatureexperiment")
-    (version "1.8.4")
+    (version "1.8.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpatialFeatureExperiment" version))
        (sha256
-        (base32 "15rh84pd0i1m2i8nx010srgiaq8i7mg837459q7r429hjdciwcvn"))))
+        (base32 "0wfsj5chjid5xs9hx2lwfgci9rlqwz98rxhszl4rfaf4axjl5a9n"))))
     (properties `((upstream-name . "SpatialFeatureExperiment")))
     (build-system r-build-system)
     (arguments

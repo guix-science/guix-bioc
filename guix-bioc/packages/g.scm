@@ -2352,13 +2352,13 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
 (define-public r-ggkegg
   (package
     (name "r-ggkegg")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggkegg" version))
        (sha256
-        (base32 "1h3v8p8j2rvmzdzg3pc4lnsy3dncrgdw5zr40bwknn9w7linaysz"))))
+        (base32 "0aqbxypqj63y02jxn3086mdkgxnh7f1zk0afd1w5spd3dymw3fpb"))))
     (properties `((upstream-name . "ggkegg")))
     (build-system r-build-system)
     (arguments
@@ -2375,7 +2375,6 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
                              r-gtable
                              r-ggraph
                              r-ggplot2
-                             r-getoptlong
                              r-dplyr
                              r-data-table
                              r-biocfilecache))
@@ -4820,13 +4819,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "1x81vdg927zvgd20xnbjqnjjd1506caqdxm0ysrzy07xb1njwlb0"))))
+        (base32 "1w3ww42l2db20ysckmrr1mvpk3flpgc6cx45fmdfkznc0qzj3f75"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (arguments
