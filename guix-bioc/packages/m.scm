@@ -511,13 +511,13 @@ as disease vs wildtype across development or anatomical region.")
 (define-public r-multistateqtl
   (package
     (name "r-multistateqtl")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multistateQTL" version))
        (sha256
-        (base32 "1ylh3lf3r22h4hqsp3z1ay3rab6l4ks6j1n0np0dgzsd2dcg0qkr"))))
+        (base32 "1cdmd2qahxkhfv05yhnbakf1xv5c77j1l0f0kfqp7xvy72ikpmxw"))))
     (properties `((upstream-name . "multistateQTL")))
     (build-system r-build-system)
     (arguments
@@ -7945,14 +7945,14 @@ Stouffer's method.")
 (define-public r-metascope
   (package
     (name "r-metascope")
-    (version "1.5.4")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaScope" version
                               'experiment))
        (sha256
-        (base32 "1f69bkm7qb027pl1c1w9vlvbcw0sxi0da5az21a8i8xrz42aab57"))))
+        (base32 "1f7w4dfv6sizpp97vjwm034ha4pcq93b3j0gg1l75s6ans8s89aw"))))
     (properties `((upstream-name . "MetaScope")))
     (build-system r-build-system)
     (arguments
@@ -7960,6 +7960,7 @@ Stouffer's method.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-taxize
                              r-summarizedexperiment
                              r-stringr
                              r-s4vectors

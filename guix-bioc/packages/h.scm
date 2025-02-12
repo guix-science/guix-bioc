@@ -6155,13 +6155,13 @@ package.")
 (define-public r-h5vc
   (package
     (name "r-h5vc")
-    (version "2.40.0")
+    (version "2.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "h5vc" version))
        (sha256
-        (base32 "16378qin0929m3pl4pqma37xsrd841fq29z19lzjycw190y757j9"))))
+        (base32 "06xn9k6kk4qasxaqd5q7n9r9ka03n56837dfcsqjni4jp7jx063r"))))
     (properties `((upstream-name . "h5vc")))
     (build-system r-build-system)
     (arguments

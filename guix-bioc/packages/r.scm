@@ -24,6 +24,7 @@
   #:use-module (gnu packages databases)
   #:use-module (gnu packages node)
   #:use-module (guix-cran packages d)
+  #:use-module (gnu packages admin)
   #:use-module (guix-cran packages t)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -5239,7 +5240,7 @@ bioinformatics and chemoinformatics tools for drug discovery.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list))
+    (inputs (list collectl))
     (propagated-inputs (list r-processx r-lubridate r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/vjcitn/Rcollectl")

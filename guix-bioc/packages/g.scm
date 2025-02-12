@@ -18,7 +18,6 @@
   #:use-module (guix-cran packages b)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -4391,14 +4390,14 @@ of the functions are utilized by the @code{gDRcore} package.")
 (define-public r-gdrtestdata
   (package
     (name "r-gdrtestdata")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRtestData" version
                               'experiment))
        (sha256
-        (base32 "1qqk9x8i2g5284p60hxznl95b6sp80qksx4qq724ycmknayg3kxb"))))
+        (base32 "0ybp2zrkjivrfl62zz7jljs1inlnx3iybwazyh0rxb255r9cg9ns"))))
     (properties `((upstream-name . "gDRtestData")))
     (build-system r-build-system)
     (arguments
