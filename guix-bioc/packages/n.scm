@@ -731,13 +731,13 @@ the following species: human, mouse, rat, zebrafish, fruit fly, worm, and yeast.
 (define-public r-nnsvg
   (package
     (name "r-nnsvg")
-    (version "1.10.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nnSVG" version))
        (sha256
-        (base32 "0gvrazxcw7v9ylcvm73npgqsc0knyy8vrdf6ypkbiyjz5n9vw27b"))))
+        (base32 "1v0dz95n0i2l39x55z4wgychyls67iifr54viqv3mzqkvcpk7f81"))))
     (properties `((upstream-name . "nnSVG")))
     (build-system r-build-system)
     (arguments
@@ -792,13 +792,13 @@ package is based on robust neural networks fitting.")
 (define-public r-nipalsmcia
   (package
     (name "r-nipalsmcia")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nipalsMCIA" version))
        (sha256
-        (base32 "16n0y9qvm2gb0n6ww1nxxhihgwq39qjpcl3nz0lzwhh0d32841l8"))))
+        (base32 "1f3f8c49ip7jcl1fibfwd38jzygdq1jc4knljhv8wwxks8xfnlic"))))
     (properties `((upstream-name . "nipalsMCIA")))
     (build-system r-build-system)
     (arguments
