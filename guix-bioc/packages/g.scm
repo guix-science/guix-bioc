@@ -18,7 +18,6 @@
   #:use-module (guix-cran packages b)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -4354,13 +4353,13 @@ that very large files can be processed.")
 (define-public r-gdrutils
   (package
     (name "r-gdrutils")
-    (version "1.4.0")
+    (version "1.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRutils" version))
        (sha256
-        (base32 "1frjy19fvd638vpczz5mxcv172rwvnrjyikbs4rsdr1q904cl3zh"))))
+        (base32 "0pn248fc96q9m25p2pl8zvg14wg5b7a00ilf308159d22x8ap9d0"))))
     (properties `((upstream-name . "gDRutils")))
     (build-system r-build-system)
     (arguments
@@ -4417,13 +4416,13 @@ pipeline.  It also contains qs files with MAE data processed by @code{gDR}.")
 (define-public r-gdrstyle
   (package
     (name "r-gdrstyle")
-    (version "1.4.0")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRstyle" version))
        (sha256
-        (base32 "02978mf93d0wjwm480xjgc9fn6dgbmypx6zfa4lcz2bb55nkppxg"))))
+        (base32 "0m792pvxymzc1c0l7qncm85br8agss97r7q2vmkzqq1lsm6cpywr"))))
     (properties `((upstream-name . "gDRstyle")))
     (build-system r-build-system)
     (arguments
@@ -4439,6 +4438,7 @@ pipeline.  It also contains qs files with MAE data processed by @code{gDR}.")
                              r-git2r
                              r-desc
                              r-checkmate
+                             r-biocstyle
                              r-biocmanager
                              r-bioccheck))
     (native-inputs (list r-knitr))
@@ -4454,13 +4454,13 @@ requirements met.")
 (define-public r-gdrimport
   (package
     (name "r-gdrimport")
-    (version "1.4.0")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRimport" version))
        (sha256
-        (base32 "19qc2n44hxli2ganbc8mljjkn6k9397zmvhw1xh90v1kq2r8ax46"))))
+        (base32 "1xyzlqcb62cvfbv3s27f3skg0qjwnpfbzk6jkkznll7p7j369p9i"))))
     (properties `((upstream-name . "gDRimport")))
     (build-system r-build-system)
     (arguments
@@ -4498,13 +4498,13 @@ formats.")
 (define-public r-gdrcore
   (package
     (name "r-gdrcore")
-    (version "1.4.0")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRcore" version))
        (sha256
-        (base32 "0zni9r0v9nw8cr9cf0x6fzhay4ll12zkaqfhhbfwsjfkpw53pnz4"))))
+        (base32 "0h942jaqa7336nqyw79ab4skq789y12g2rcpncvdbwvbwy48jkyx"))))
     (properties `((upstream-name . "gDRcore")))
     (build-system r-build-system)
     (arguments
@@ -4535,13 +4535,13 @@ function allowing analyzing the data in a straightforward way.")
 (define-public r-gdr
   (package
     (name "r-gdr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDR" version))
        (sha256
-        (base32 "1i2cpr7kp06p91dszap7lh3pdblv5j230n4zqxbgpqb9ylb8fsqa"))))
+        (base32 "1lpv6a5a1qaspa8b57z20856viwbhsspi04cl0rmbjfaar1mnlb1"))))
     (properties `((upstream-name . "gDR")))
     (build-system r-build-system)
     (arguments

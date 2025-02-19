@@ -7955,13 +7955,13 @@ using data from public repositories.")
 (define-public r-celda
   (package
     (name "r-celda")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "celda" version))
        (sha256
-        (base32 "1iszciqfcd1g12g5vjl667s7dw82bz48fjls32d94av1n1pxxz8v"))))
+        (base32 "14rcw2mz8kgn0nl6w9w6l3h3f66gjbzyxdbdr9xapafg29gqpw1h"))))
     (properties `((upstream-name . "celda")))
     (build-system r-build-system)
     (arguments
@@ -7981,6 +7981,7 @@ using data from public repositories.")
                              r-rcppeigen
                              r-rcpp
                              r-rcolorbrewer
+                             r-proc
                              r-plyr
                              r-mcmcprecision
                              r-matrixstats
@@ -7989,10 +7990,12 @@ using data from public repositories.")
                              r-gridextra
                              r-ggrepel
                              r-ggplot2
+                             r-ggdendro
                              r-foreach
                              r-enrichr
                              r-doparallel
                              r-digest
+                             r-dendextend
                              r-delayedarray
                              r-dbscan
                              r-data-table
@@ -8585,13 +8588,13 @@ reconstruction from genome scale data.")
 (define-public r-catscradle
   (package
     (name "r-catscradle")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CatsCradle" version))
        (sha256
-        (base32 "1xfinxwqrdlpr0x9jh37zw0f7sqsbi6484zljal1s7q7in47c38z"))))
+        (base32 "1g0wdzrca148bb7vjac183vxxng30d0hgh0vbv4xravzcpqfnzzy"))))
     (properties `((upstream-name . "CatsCradle")))
     (build-system r-build-system)
     (arguments

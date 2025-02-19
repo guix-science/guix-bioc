@@ -1046,13 +1046,13 @@ as well as publish data to the Bioconductor S3 bucket.")
 (define-public r-hubmapr
   (package
     (name "r-hubmapr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HuBMAPR" version))
        (sha256
-        (base32 "0qdifg4wciz2mic7l0n4lygqv4zmbb9hf97amjy7p4yixx5djfx6"))))
+        (base32 "0sx885vjnj47ld5zk0sbabpw6pcbwrhjvaqxlfj5sjnvd42zzvcw"))))
     (properties `((upstream-name . "HuBMAPR")))
     (build-system r-build-system)
     (arguments

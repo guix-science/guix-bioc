@@ -1720,13 +1720,13 @@ described in Peters et al. (2024).")
 (define-public r-epicompare
   (package
     (name "r-epicompare")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiCompare" version))
        (sha256
-        (base32 "0pdkpxmvazax047fa2q1sxm6rddzqv2r58kk3dsi7vbdsi4c0cxh"))))
+        (base32 "1s02yxpw3sr0qi7bizh1yxpzc8cx5pyqgx4s3ahzy2sx0as6kn16"))))
     (properties `((upstream-name . "EpiCompare")))
     (build-system r-build-system)
     (arguments
