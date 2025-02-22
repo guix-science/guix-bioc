@@ -3218,13 +3218,13 @@ if they are represented as sequences.")
 (define-public r-decontx
   (package
     (name "r-decontx")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "decontX" version))
        (sha256
-        (base32 "0fjnqpa8g2kz8myjk9xp4gi20r48ikn3fa5rvs1wisx819l3flhr"))))
+        (base32 "0rg5avvhxrnsnzkfbgry0s8s6wcahh5jy5g8jjvh3icfigk87krq"))))
     (properties `((upstream-name . "decontX")))
     (build-system r-build-system)
     (arguments
