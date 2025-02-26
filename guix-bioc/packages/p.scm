@@ -1068,13 +1068,13 @@ shiny.")
 (define-public r-proloc
   (package
     (name "r-proloc")
-    (version "1.46.0")
+    (version "1.46.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pRoloc" version))
        (sha256
-        (base32 "01rympyipv68yq6wsbyygcc9886cxb1rfj7s0x036g671pgnjxg4"))))
+        (base32 "0h1b9hqqc386fl3rzr9v21c84333qh6gcp3jamhai975qb1dnmjq"))))
     (properties `((upstream-name . "pRoloc")))
     (build-system r-build-system)
     (arguments

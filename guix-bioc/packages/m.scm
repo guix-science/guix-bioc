@@ -5958,6 +5958,71 @@ analysis, Microbe-Disease association enrichment analysis, Metabo-Pathway
 analysis.")
     (license license:gpl2)))
 
+(define-public r-microbiomemarker
+  (package
+    (name "r-microbiomemarker")
+    (version "1.12.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "microbiomeMarker" version))
+       (sha256
+        (base32 "0fkm2sqqsaa8kkdyp0j3zwx8lijgkgk4s45sir3s37an9yai2bp4"))))
+    (properties `((upstream-name . "microbiomeMarker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-vegan
+                             r-tidytree
+                             r-tidyr
+                             r-tibble
+                             r-s4vectors
+                             r-rlang
+                             r-purrr
+                             r-proc
+                             r-plotroc
+                             r-phyloseq
+                             r-patchwork
+                             r-multtest
+                             r-metagenomeseq
+                             r-mass
+                             r-magrittr
+                             r-limma
+                             r-iranges
+                             r-ggtree
+                             r-ggsignif
+                             r-ggplot2
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-complexheatmap
+                             r-coin
+                             r-caret
+                             r-biostrings
+                             r-biomformat
+                             r-biocparallel
+                             r-biocgenerics
+                             r-biobase
+                             r-ancombc
+                             r-aldex2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yiluheihei/microbiomeMarker")
+    (synopsis "microbiome biomarker analysis toolkit")
+    (description
+     "To date, a number of methods have been developed for microbiome marker discovery
+based on metagenomic profiles, e.g. L@code{EfSe}.  However, all of these methods
+have its own advantages and disadvantages, and none of them is considered
+standard or universal.  Moreover, different programs or softwares may be
+development using different programming languages, even in different operating
+systems.  Here, we have developed an all-in-one R package
+@code{microbiomeMarker} that integrates commonly used differential analysis
+methods as well as three machine learning-based approaches, including Logistic
+regression, Random forest, and Support vector machine, to facilitate the
+identification of microbiome markers.")
+    (license license:gpl3)))
+
 (define-public r-microbiomeexplorer
   (package
     (name "r-microbiomeexplorer")

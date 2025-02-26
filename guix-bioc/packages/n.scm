@@ -792,13 +792,13 @@ package is based on robust neural networks fitting.")
 (define-public r-nipalsmcia
   (package
     (name "r-nipalsmcia")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nipalsMCIA" version))
        (sha256
-        (base32 "1f3f8c49ip7jcl1fibfwd38jzygdq1jc4knljhv8wwxks8xfnlic"))))
+        (base32 "0z0l0ylbz2by3mvp1bj6wdwsqjk4zhhflvyfbxgvch1jisz3dbcy"))))
     (properties `((upstream-name . "nipalsMCIA")))
     (build-system r-build-system)
     (arguments

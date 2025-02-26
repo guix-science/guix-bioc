@@ -1230,13 +1230,13 @@ subcellular localization.")
 (define-public r-structtoolbox
   (package
     (name "r-structtoolbox")
-    (version "1.18.1")
+    (version "1.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "structToolbox" version))
        (sha256
-        (base32 "1xd890vmjczci1i0p4kwdljaj8ky23rqfkivn3nknav318m1py0s"))))
+        (base32 "1qddpr9y5wn2ljp2ahiqsn2vpgn38s47f2kglywfk6amq45v6qd9"))))
     (properties `((upstream-name . "structToolbox")))
     (build-system r-build-system)
     (arguments

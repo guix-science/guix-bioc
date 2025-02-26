@@ -1721,13 +1721,13 @@ aiming stable co-clusters across these samples.")
 (define-public r-immapex
   (package
     (name "r-immapex")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "immApex" version))
        (sha256
-        (base32 "0ygw7wa1qg5dqc4rnhv6fc9bqfgnqqpnmpinsgj5awryqna8fqd2"))))
+        (base32 "1h1pqqaz9acmsa1x9051d5g8clxhdx2mm4qahczr45wj6bdia22w"))))
     (properties `((upstream-name . "immApex")))
     (build-system r-build-system)
     (arguments
@@ -1745,9 +1745,9 @@ aiming stable co-clusters across these samples.")
                              r-httr
                              r-hash))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ncborcherding/immApex/")
+    (home-page "https://github.com/BorchLab/immApex/")
     (synopsis
-     "Tools for Adaptive Immune Receptor Sequence-Based Keras3 Modeling")
+     "Tools for Adaptive Immune Receptor Sequence-Based Machine and Deep Learning")
     (description
      "This package provides a set of tools to build tensorflow/keras3-based models in
 R from amino acid and nucleotide sequences focusing on adaptive immune
