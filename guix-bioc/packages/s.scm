@@ -1418,14 +1418,14 @@ the variance.")
 (define-public r-stexampledata
   (package
     (name "r-stexampledata")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "STexampleData" version
                               'experiment))
        (sha256
-        (base32 "1n2cq1ia7vi7a2gma9mhwv34dwy0fyxmap5fycy3f8f2bnm373kw"))))
+        (base32 "14xdinp0ix55lgs0adcxwnjascrpx4s39kghrhbcpjl0ainrdhk3"))))
     (properties `((upstream-name . "STexampleData")))
     (build-system r-build-system)
     (arguments
