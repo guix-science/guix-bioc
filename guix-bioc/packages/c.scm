@@ -2250,13 +2250,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "12qh5jrch349fd0kqx3nn79x1h7k0sjzvggaym1a2xjcmd6fq7sr"))))
+        (base32 "0zwmid743ffyy96n4wlpmcwfdfsica8qlnc0mnw9wsysbgs33v7v"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (arguments
@@ -2277,7 +2277,6 @@ Cotton.cdf file.")
                              r-rfast
                              r-rcolorbrewer
                              r-plyr
-                             r-pcatools
                              r-parallelly
                              r-paralleldist
                              r-matrix

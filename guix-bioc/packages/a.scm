@@ -1395,13 +1395,13 @@ by our Snakemake workflow
 (define-public r-ahmassbank
   (package
     (name "r-ahmassbank")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AHMassBank" version))
        (sha256
-        (base32 "1z9sd8rkzq4bgx3abrm2d31kmxq3q8b2lrkp45gw46026nvz8217"))))
+        (base32 "1hx80h7pi54arq7xnbn7gmz1hfbv7zn34gynwiinqb48b537ba6v"))))
     (properties `((upstream-name . "AHMassBank")))
     (build-system r-build-system)
     (arguments

@@ -675,13 +675,13 @@ Gene identifiers.")
 (define-public r-orfik
   (package
     (name "r-orfik")
-    (version "1.26.1")
+    (version "1.26.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ORFik" version))
        (sha256
-        (base32 "0x07lzq3asifzc2r4yk2marcb4v3wkzdaf8xalfq0aab8x3gl0fn"))))
+        (base32 "0wfmxxrw8jlw0l2vngka4ywn8nlvwyb0qqhprnmgjwbnn3fmy6yn"))))
     (properties `((upstream-name . "ORFik")))
     (build-system r-build-system)
     (arguments
@@ -1360,13 +1360,13 @@ conceptmapper and compute semnatic similarity from R.")
 (define-public r-omxplore
   (package
     (name "r-omxplore")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omXplore" version))
        (sha256
-        (base32 "05wamijib8f8i2kljcfrkkqaxaz3n71sprmr58wadpgfwh0j2zqw"))))
+        (base32 "13jns9k2gkf6gbs6ff9nfyc23mk8v7ni9ys245n6idfpzwixhpbi"))))
     (properties `((upstream-name . "omXplore")))
     (build-system r-build-system)
     (arguments

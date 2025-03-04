@@ -4465,13 +4465,13 @@ problematic studies and samples in any public data set.")
 (define-public r-smoothclust
   (package
     (name "r-smoothclust")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smoothclust" version))
        (sha256
-        (base32 "09s025p5cz9nrfx8kq838labsda57fk4scb8rvv856wrqf4qrccb"))))
+        (base32 "0ih7nj60vizmlbsa3qpp1gf5w4y7g8lgv341w9dnfc5l1y27mcqx"))))
     (properties `((upstream-name . "smoothclust")))
     (build-system r-build-system)
     (arguments

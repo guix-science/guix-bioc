@@ -731,13 +731,13 @@ the following species: human, mouse, rat, zebrafish, fruit fly, worm, and yeast.
 (define-public r-nnsvg
   (package
     (name "r-nnsvg")
-    (version "1.10.2")
+    (version "1.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nnSVG" version))
        (sha256
-        (base32 "1v0dz95n0i2l39x55z4wgychyls67iifr54viqv3mzqkvcpk7f81"))))
+        (base32 "18h5fbi2my59qm3shn6rdsqk7hpdrnq8pc1q2fwd2dh1r7rjk8gb"))))
     (properties `((upstream-name . "nnSVG")))
     (build-system r-build-system)
     (arguments
