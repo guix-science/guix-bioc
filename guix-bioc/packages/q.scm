@@ -213,13 +213,13 @@ validated using simulated, flow cytometry, and immunohistochemistry data.")
 (define-public r-qtlizer
   (package
     (name "r-qtlizer")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Qtlizer" version))
        (sha256
-        (base32 "0pdk81ja3arvfb5g8h8ybjm6k8idy19mdkly9bl2g0ksn1z3inf3"))))
+        (base32 "157glg7mqn9xm8rfcr7hiy8nw7wkl26ib8frry2pc0winp31h5ky"))))
     (properties `((upstream-name . "Qtlizer")))
     (build-system r-build-system)
     (arguments
