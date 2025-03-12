@@ -22,6 +22,7 @@
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages c)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages machine-learning)
@@ -1500,13 +1501,13 @@ public repositories.")
 (define-public r-msstatstmt
   (package
     (name "r-msstatstmt")
-    (version "2.14.1")
+    (version "2.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsTMT" version))
        (sha256
-        (base32 "1snqp1swramsc6bmmsnkq33vndmrfdc61vqm2mslgsh61p49mnmm"))))
+        (base32 "1kylq7igpi9lrsgbn3r0g9xd9gp3ky5r7fanqqbkhkh8k0hql1cq"))))
     (properties `((upstream-name . "MSstatsTMT")))
     (build-system r-build-system)
     (arguments
@@ -1827,13 +1828,13 @@ than memory data sets.")
 (define-public r-msstats
   (package
     (name "r-msstats")
-    (version "4.14.1")
+    (version "4.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstats" version))
        (sha256
-        (base32 "16gaiaipl5p2zf6f2yracsrkk8fhwnn0740lf0fgc6psrh9cr5r5"))))
+        (base32 "1d3jgdxwc8fs8xp1mrqzz13szwm6xi6hbg1j0fmllpm91q2wf0l1"))))
     (properties `((upstream-name . "MSstats")))
     (build-system r-build-system)
     (arguments
@@ -3970,7 +3971,8 @@ and illustrate running and analysing MOFA models.")
                   python
                   python-pandas
                   python-numpy
-                  python-h5py))
+                  python-h5py
+                  argparse))
     (propagated-inputs (list r-uwot
                              r-tidyr
                              r-stringi

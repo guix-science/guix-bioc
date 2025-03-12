@@ -17,6 +17,7 @@
   #:use-module (guix-cran packages s)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages h)
+  #:use-module (guix-cran packages n)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages d)
@@ -1360,13 +1361,13 @@ conceptmapper and compute semnatic similarity from R.")
 (define-public r-omxplore
   (package
     (name "r-omxplore")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omXplore" version))
        (sha256
-        (base32 "13jns9k2gkf6gbs6ff9nfyc23mk8v7ni9ys245n6idfpzwixhpbi"))))
+        (base32 "124zz6j64y5jcysrh6dvcaa4g18xqxld0rd09d10nfa8jmqhm5vk"))))
     (properties `((upstream-name . "omXplore")))
     (build-system r-build-system)
     (arguments
@@ -1383,6 +1384,7 @@ conceptmapper and compute semnatic similarity from R.")
                              r-shiny
                              r-rcolorbrewer
                              r-psmatch
+                             r-nipals
                              r-multiassayexperiment
                              r-msnbase
                              r-htmlwidgets

@@ -1483,13 +1483,13 @@ control the false discovery rate are obtained through random permutation.")
 (define-public r-crlmm
   (package
     (name "r-crlmm")
-    (version "1.64.0")
+    (version "1.64.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "crlmm" version))
        (sha256
-        (base32 "0fc87gn7k7i60sy5acg6dfs8bxamnch9riaxmzwpp7l20g5v6hd5"))))
+        (base32 "01hif8q23pxkg9yxbqpynlmhdahp0b8dmzc55y562sh6f0g99zy3"))))
     (properties `((upstream-name . "crlmm")))
     (build-system r-build-system)
     (arguments
@@ -5481,13 +5481,13 @@ outperforms other heuristic methods.")
 (define-public r-classifyr
   (package
     (name "r-classifyr")
-    (version "3.10.6")
+    (version "3.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ClassifyR" version))
        (sha256
-        (base32 "1s8q2mn537jx0dy7ylcnlyb8nhy86g40f5qkrqh2d8d0l3jhqzq0"))))
+        (base32 "16851d9bm5zk0s247z173s3x1xb9lxyvqw61d7kwy7bj5hsyla75"))))
     (properties `((upstream-name . "ClassifyR")))
     (build-system r-build-system)
     (arguments
