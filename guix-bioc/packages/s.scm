@@ -2824,13 +2824,13 @@ experiments.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "1afi2m2cxk9axdips4vk1d3rs3ws8d784b40ix9m8l1c5p8v1qa4"))))
+        (base32 "0ly86wf7n31chdiriqym0w1d0nrmvg109abnzliv64pfkdwd63hc"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (arguments
@@ -2844,12 +2844,14 @@ experiments.")
                              r-spatstat-explore
                              r-spatialexperiment
                              r-singlecellexperiment
+                             r-simpleseg
                              r-scam
                              r-s4vectors
                              r-rlang
                              r-pheatmap
                              r-magrittr
                              r-lmertest
+                             r-lifecycle
                              r-ggthemes
                              r-ggplot2
                              r-ggnewscale

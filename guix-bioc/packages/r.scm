@@ -1665,14 +1665,14 @@ time course gene expression data.")
 (define-public r-rnbeads-hg38
   (package
     (name "r-rnbeads-hg38")
-    (version "1.38.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RnBeads.hg38" version
                               'experiment))
        (sha256
-        (base32 "1wpnkh1rsirnvbbl7y89lmr9q5r6hr331n20qjav92j3g41r3bqp"))))
+        (base32 "0dxj7ncy6ixannldy5362ay3m49i2md2qs0psk1zqxmgv202v5j6"))))
     (properties `((upstream-name . "RnBeads.hg38")))
     (build-system r-build-system)
     (arguments
@@ -1681,7 +1681,7 @@ time course gene expression data.")
     (propagated-inputs (list r-genomicranges))
     (home-page "https://bioconductor.org/packages/RnBeads.hg38")
     (synopsis "RnBeads.hg38")
-    (description "@code{RnBeads} annotation package for genome assembly hg38.")
+    (description "@code{RnBeads} annotation package for the assembly hg38.")
     (license license:gpl3)))
 
 (define-public r-rnaseqsamplesizedata

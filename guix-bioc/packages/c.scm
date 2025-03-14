@@ -10,10 +10,10 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages t)
-  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)
+  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
@@ -403,7 +403,6 @@ differentially expressed features on the rows and samples on the columns.")
                              r-rlang
                              r-rcolorbrewer
                              r-pheatmap
-                             r-mbest
                              r-matrix
                              r-mass
                              r-magrittr
@@ -5481,13 +5480,13 @@ outperforms other heuristic methods.")
 (define-public r-classifyr
   (package
     (name "r-classifyr")
-    (version "3.10.7")
+    (version "3.10.9")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ClassifyR" version))
        (sha256
-        (base32 "16851d9bm5zk0s247z173s3x1xb9lxyvqw61d7kwy7bj5hsyla75"))))
+        (base32 "08782k7gdvqdg7v3jlkn011jp3r3d5il9gwdqiky99ympiyby6fb"))))
     (properties `((upstream-name . "ClassifyR")))
     (build-system r-build-system)
     (arguments
