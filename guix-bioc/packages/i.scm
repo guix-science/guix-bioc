@@ -1062,13 +1062,13 @@ functionally relevant targets for a given @code{miR}.")
 (define-public r-interest
   (package
     (name "r-interest")
-    (version "1.30.1")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "IntEREst" version))
        (sha256
-        (base32 "1f5icaq81jb1i7yjs5i0i1q92fh46i9dz7zm6ig94j8cfb0gqg4c"))))
+        (base32 "0jmrckj8my3cqqbc7jz7j89dlwg0b60mzddrgxlsnggw426g967p"))))
     (properties `((upstream-name . "IntEREst")))
     (build-system r-build-system)
     (arguments

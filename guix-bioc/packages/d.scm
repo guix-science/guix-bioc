@@ -769,13 +769,13 @@ draw protein schematics.")
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doubletrouble" version))
        (sha256
-        (base32 "09bzjfw199pp7dlcmpa0r7jnan8dhbx96n7yk5lfq160nwycq472"))))
+        (base32 "0lz5kxzfc4lszamx3991310xxv2xcik3xiwc3ns4x5ayqmzsjdys"))))
     (properties `((upstream-name . "doubletrouble")))
     (build-system r-build-system)
     (arguments
