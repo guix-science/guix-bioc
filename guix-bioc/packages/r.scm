@@ -2207,41 +2207,6 @@ Plotting: functions are provided to easily visualize decay data model, or
 half-life distributions using ggplot2 package functions.")
     (license license:gpl2)))
 
-(define-public r-rnaagecalc
-  (package
-    (name "r-rnaagecalc")
-    (version "1.18.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "RNAAgeCalc" version))
-       (sha256
-        (base32 "1f4vvx56jfs3ag0z1d815ysg54ff5p5l13cqq2gl9xfq2glqv6qn"))))
-    (properties `((upstream-name . "RNAAgeCalc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-recount
-                             r-org-hs-eg-db
-                             r-impute
-                             r-ggplot2
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/reese3928/RNAAgeCalc")
-    (synopsis "multi-tissue transcriptional age calculator")
-    (description
-     "It has been shown that both DNA methylation and RNA transcription are linked to
-chronological age and age related diseases.  Several estimators have been
-developed to predict human aging from DNA level and RNA level.  Most of the
-human transcriptional age predictor are based on microarray data and limited to
-only a few tissues.  To date, transcriptional studies on aging using RNASeq data
-from different human tissues is limited.  The aim of this package is to provide
-a tool for across-tissue and tissue-specific transcriptional age calculation
-based on GTEx RNASeq data.")
-    (license license:gpl2)))
-
 (define-public r-rmspc
   (package
     (name "r-rmspc")
@@ -4754,50 +4719,6 @@ RNA-seq data from human and mouse.  You can download
 @code{RangedSummarizedExperiment} objects at the gene, exon or exon-exon
 junctions level with sample metadata and QC statistics.  In addition we provide
 access to sample coverage @code{BigWig} files.")
-    (license license:artistic2.0)))
-
-(define-public r-recount
-  (package
-    (name "r-recount")
-    (version "1.32.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "recount" version))
-       (sha256
-        (base32 "0i512z370hrpgyddvgfd9mvcd0lhldbcs047q39brcf436a6glgs"))))
-    (properties `((upstream-name . "recount")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rentrez
-                             r-rcurl
-                             r-iranges
-                             r-geoquery
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-downloader
-                             r-derfinder
-                             r-biocparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/leekgroup/recount")
-    (synopsis "Explore and download data from the recount project")
-    (description
-     "Explore and download data from the recount project available at
-https://jhubiostatistics.shinyapps.io/recount/.  Using the recount package you
-can download @code{RangedSummarizedExperiment} objects at the gene, exon or
-exon-exon junctions level, the raw counts, the phenotype metadata used, the urls
-to the sample coverage @code{bigWig} files or the mean coverage @code{bigWig}
-file for a particular study.  The @code{RangedSummarizedExperiment} objects can
-be used by different packages for performing differential expression analysis.
-Using http://bioconductor.org/packages/derfinder you can perform
-annotation-agnostic differential expression analyses with the data from the
-recount project as described at
-http://www.nature.com/nbt/journal/v35/n4/full/nbt.3838.html.")
     (license license:artistic2.0)))
 
 (define-public r-reconsi

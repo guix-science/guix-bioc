@@ -888,13 +888,13 @@ omic types).")
 (define-public r-surfr
   (package
     (name "r-surfr")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SurfR" version))
        (sha256
-        (base32 "0ls9dyhjvqq97bf1msfz8p89cwvmlnimvxfi297bmcawhvmki75f"))))
+        (base32 "019rnzq4r4axahhfr2j2civ8645q0xag4bmf85lx3zmsc5ggjkrm"))))
     (properties `((upstream-name . "SurfR")))
     (build-system r-build-system)
     (arguments
@@ -2880,13 +2880,13 @@ associated with a response variable.")
 (define-public r-spiat
   (package
     (name "r-spiat")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPIAT" version))
        (sha256
-        (base32 "1q4c7kpnfbkiw3fwg16f2dzf3ygl38jp48mvlh1iymprzlnw408q"))))
+        (base32 "1q520p8xc5j6f3j0paanbbax0nljqlaf3liwrdq16w2vivg1bqrm"))))
     (properties `((upstream-name . "SPIAT")))
     (build-system r-build-system)
     (arguments
@@ -5308,13 +5308,13 @@ are provided to interpret hierarchies.")
 (define-public r-simpleseg
   (package
     (name "r-simpleseg")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "simpleSeg" version))
        (sha256
-        (base32 "0brm61896vaq7fhaqnnxdqhfc0qyihajbqvmakr8pfp8jhgbxzbh"))))
+        (base32 "1hlpsnhphllycq8ag61z4vnx4r3aln2qnc0xn1y18qiiyk7qqyia"))))
     (properties `((upstream-name . "simpleSeg")))
     (build-system r-build-system)
     (arguments

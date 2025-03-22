@@ -1013,13 +1013,13 @@ from public repositories.")
 (define-public r-hubpub
   (package
     (name "r-hubpub")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HubPub" version))
        (sha256
-        (base32 "0qwh71mg69q568sslpcczcsyldx7dffzprvyzmm6b46vd4mkzzwb"))))
+        (base32 "0cb7g55pr0g91j4z2sq4rl3grswmgikf93mwy8902dn2177i107w"))))
     (properties `((upstream-name . "HubPub")))
     (build-system r-build-system)
     (arguments
