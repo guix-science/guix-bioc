@@ -935,19 +935,20 @@ power in differential expression analysis from RNA-seq data.")
 (define-public r-prone
   (package
     (name "r-prone")
-    (version "1.0.3")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PRONE" version))
        (sha256
-        (base32 "1nh16w6h9g2gbafkhbds0l8a9vvn55046z36lar9p1f4dl6gnjpz"))))
+        (base32 "1ai4lp9w2jiansf1fkxvl65qpfziar6cizi15wf7j2lpkc6h3lzl"))))
     (properties `((upstream-name . "PRONE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vsn
+                             r-vegan
                              r-upsetr
                              r-tidyr
                              r-tibble

@@ -297,13 +297,13 @@ from public repositories.")
 (define-public r-xeva
   (package
     (name "r-xeva")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Xeva" version))
        (sha256
-        (base32 "13215sfszwqfpgr5glnsxhhg2qcxgq849hsyh25vln107ghq0w6d"))))
+        (base32 "0ifm36inlqivkmac0gixx3isd46ghv4ia51jqwiqgyw8k0nkif2v"))))
     (properties `((upstream-name . "Xeva")))
     (build-system r-build-system)
     (arguments

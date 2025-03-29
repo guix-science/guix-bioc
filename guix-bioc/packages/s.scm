@@ -1418,14 +1418,14 @@ the variance.")
 (define-public r-stexampledata
   (package
     (name "r-stexampledata")
-    (version "1.14.2")
+    (version "1.14.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "STexampleData" version
                               'experiment))
        (sha256
-        (base32 "0fxk6ksc67fv1chwqyh70prnk6f1vnk2yp1jh1pca0hxnk3iqi60"))))
+        (base32 "02lib5mvbxmrksd03bfrc58ywlpb7r1aka8h35l4ld0p57svipr8"))))
     (properties `((upstream-name . "STexampleData")))
     (build-system r-build-system)
     (arguments
@@ -8943,13 +8943,13 @@ computational tools.")
 (define-public r-scddboost
   (package
     (name "r-scddboost")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scDDboost" version))
        (sha256
-        (base32 "0lp4ficgglm7dfrnwhfvwn7ahmjrazszpb8yh61r90vhq7qq7cx3"))))
+        (base32 "0h9pgphj2m4wz3g7bm3px2fybli18gldh6bxygz3rapxzns0x1d7"))))
     (properties `((upstream-name . "scDDboost")))
     (build-system r-build-system)
     (arguments

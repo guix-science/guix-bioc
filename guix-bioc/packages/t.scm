@@ -4322,14 +4322,14 @@ command line package bustools.")
 (define-public r-tenet-annotationhub
   (package
     (name "r-tenet-annotationhub")
-    (version "0.99.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TENET.AnnotationHub" version
                               'annotation))
        (sha256
-        (base32 "0kfdwxbxi4y773nknpd712wz3zcqbigkycnsrrd40jp04my91mpm"))))
+        (base32 "0xxyh0w5vylncpckkna05ppmfyf3wzcgx1gr3w2vv41wny0bbgff"))))
     (properties `((upstream-name . "TENET.AnnotationHub")))
     (build-system r-build-system)
     (arguments

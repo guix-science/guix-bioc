@@ -5763,13 +5763,13 @@ http://preview.data.humancellatlas.org/).")
 (define-public r-hca
   (package
     (name "r-hca")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hca" version))
        (sha256
-        (base32 "0vjsgqlhhkiyvfqnfmw9sc05p3dvj7z662wg81p4q6sp8gylh156"))))
+        (base32 "0q8jcy222clbs69zhgjpzng31rjw2in4blgyr3pi5gsc8fv967nz"))))
     (properties `((upstream-name . "hca")))
     (build-system r-build-system)
     (arguments

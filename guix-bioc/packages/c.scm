@@ -474,6 +474,46 @@ and information to aid the data user in cleaning their data.  Our algorithm is
 able to distinguish between doublets and large cells.")
     (license license:artistic2.0)))
 
+(define-public r-cytofpower
+  (package
+    (name "r-cytofpower")
+    (version "1.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CyTOFpower" version))
+       (sha256
+        (base32 "1zqy7gpij93npk5gci6psxksr0ckia01mqm6vnzz08945la2ynxf"))))
+    (properties `((upstream-name . "CyTOFpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-shinymatrix
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shiny
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-diffcyt
+                             r-cytoglmm))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CyTOFpower")
+    (synopsis "Power analysis for CyTOF experiments")
+    (description
+     "This package is a tool to predict the power of @code{CyTOF} experiments in the
+context of differential state analyses.  The package provides a shiny app with
+two options to predict the power of an experiment: i.  generation of in-sicilico
+@code{CyTOF} data, using users input ii.  browsing in a grid of parameters for
+which the power was already precomputed.")
+    (license license:lgpl3)))
+
 (define-public r-cytodx
   (package
     (name "r-cytodx")
@@ -8440,13 +8480,13 @@ visualized.")
 (define-public r-cbioportaldata
   (package
     (name "r-cbioportaldata")
-    (version "2.18.1")
+    (version "2.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cBioPortalData" version))
        (sha256
-        (base32 "192p8nw4963dwncwh1y4akfzlk1gcyjifann531hm0mk13qk2qfs"))))
+        (base32 "1c78jcp1zkx04d5m34mwaw1jfyswn2dpvb8rhdjh0dhfal2qwlcr"))))
     (properties `((upstream-name . "cBioPortalData")))
     (build-system r-build-system)
     (arguments

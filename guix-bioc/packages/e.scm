@@ -1158,13 +1158,13 @@ such as peak height or gene expression value.")
 (define-public r-epiregulon-extra
   (package
     (name "r-epiregulon-extra")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epiregulon.extra" version))
        (sha256
-        (base32 "0w1jgpvdi4fz4yp5ix8dfvvkxs8hajd7dlki7lxfxp97y98mlw1s"))))
+        (base32 "04rwijl3vddl7b0j36qfsnzh672wfl4vmwfl5rfsk64alf2gfpc1"))))
     (properties `((upstream-name . "epiregulon.extra")))
     (build-system r-build-system)
     (arguments

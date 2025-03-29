@@ -2282,13 +2282,13 @@ for complex diseases.")
 (define-public r-despace
   (package
     (name "r-despace")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DESpace" version))
        (sha256
-        (base32 "0568npl5a7hmzvxma5vds5mmqh2yrjbzpbbaxisvx79ax6qi45vk"))))
+        (base32 "0z1fhd6axin10avkbf6547ilb2dmq2r3w42dss122gp0v53chf8p"))))
     (properties `((upstream-name . "DESpace")))
     (build-system r-build-system)
     (arguments
