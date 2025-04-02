@@ -31,9 +31,9 @@
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages q)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages w)
-  #:use-module (gnu packages web)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -7915,18 +7915,32 @@ MS/MS features based on their similarity to (known) related MS/MS features.")
 (define-public r-metaseqr2
   (package
     (name "r-metaseqr2")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaseqR2" version))
        (sha256
-        (base32 "0h5zkjck6l6dxf80flsnln525ykvxsalmmdzgbpcn22yd9fkj3zl"))))
+        (base32 "0kch8q13fc8fswnh3p4a7wm1g0szd8gdp42vdk77x266d4xs9h20"))))
     (properties `((upstream-name . "metaseqR2")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-vsn
@@ -7975,7 +7989,7 @@ MS/MS features based on their similarity to (known) related MS/MS features.")
                              r-biocgenerics
                              r-biobase
                              r-absseq))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "http://www.fleming.gr")
     (synopsis
      "An R package for the analysis and result reporting of RNA-Seq data by combining multiple statistical algorithms")
