@@ -728,6 +728,30 @@ visualized in several different ways. @code{NoRCE} is currently available for
 the following species: human, mouse, rat, zebrafish, fruit fly, worm, and yeast.")
     (license license:expat)))
 
+(define-public r-nondetects
+  (package
+    (name "r-nondetects")
+    (version "2.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "nondetects" version))
+       (sha256
+        (base32 "1lrbbqfij8p5j23sb3073mr8lp1dsvirzz90m78qic2h95jk3h4a"))))
+    (properties `((upstream-name . "nondetects")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mvtnorm r-limma r-htqpcr r-biobase r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/nondetects")
+    (synopsis "Non-detects in qPCR data")
+    (description
+     "This package provides methods to model and impute non-detects in the results of
+@code{qPCR} experiments.")
+    (license license:gpl3)))
+
 (define-public r-nnsvg
   (package
     (name "r-nnsvg")
