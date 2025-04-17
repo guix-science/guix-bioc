@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages k)
@@ -20,7 +20,6 @@
   #:use-module (gnu packages maths)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages n)
-  #:use-module (guix-cran packages i)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages node)
   #:use-module (guix-cran packages d)
@@ -5212,35 +5211,6 @@ visualization of microbiome datasets.  The package includes unconstrained as
 well as constrained analysis.  In addition, diagnostic plot to detect lack of
 fit are available.")
     (license license:gpl2)))
-
-(define-public r-rcistarget-hg19-motifdbs-cisbponly-500bp
-  (package
-    (name "r-rcistarget-hg19-motifdbs-cisbponly-500bp")
-    (version "1.26.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "RcisTarget.hg19.motifDBs.cisbpOnly.500bp"
-                              version
-                              'experiment))
-       (sha256
-        (base32 "1c3gsk4jvbwyj7s18hms29liha52820p5mmnpfnhxdhh8g6ll4sc"))))
-    (properties `((upstream-name . "RcisTarget.hg19.motifDBs.cisbpOnly.500bp")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-data-table))
-    (home-page "http://scenic.aertslab.org")
-    (synopsis
-     "RcisTarget motif databases for human (hg19) - Subset of 4.6k motifs")
-    (description
-     "@code{RcisTarget} databases: Gene-based motif rankings and annotation to
-transcription factors.  This package contains a subset of 4.6k motifs (cisbp
-motifs), scored only within 500bp upstream and the TSS. See @code{RcisTarget}
-tutorial to download the full databases, containing 20k motifs and search space
-up to 10kbp around the TSS.")
-    (license license:gpl3)))
 
 (define-public r-rcgh
   (package

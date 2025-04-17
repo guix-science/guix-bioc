@@ -4,21 +4,19 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
-  #:use-module (guix-cran packages a)
   #:use-module (gnu packages cran)
+  #:use-module (guix-cran packages a)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages s)
+  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages m)
-  #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages w)
-  #:use-module (guix-cran packages p)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages g)
@@ -29,6 +27,7 @@
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages f)
+  #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages k)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -1450,44 +1449,6 @@ across two different conditions.  The algorithm is inspired by Voigt et al.
 2017 and finds Conserved, Specific and Differentiated genes (hence the name
 CSD).  This package include efficient and variance calculation by bootstrapping
 and Welford's algorithm.")
-    (license license:gpl3)))
-
-(define-public r-csaw
-  (package
-    (name "r-csaw")
-    (version "1.40.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "csaw" version))
-       (sha256
-        (base32 "02ajgkpwz5s7i72swnlix1djmnv8zmp7yl2ppwq4m60rs23d06wg"))))
-    (properties `((upstream-name . "csaw")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-zlibbioc
-                             r-summarizedexperiment
-                             r-s4vectors
-                             r-rsamtools
-                             r-rhtslib
-                             r-rcpp
-                             r-metapod
-                             r-matrix
-                             r-limma
-                             r-iranges
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-edger
-                             r-biocparallel
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/csaw")
-    (synopsis "ChIP-Seq Analysis with Windows")
-    (description
-     "Detection of differentially bound regions in @code{ChIP-seq} data with sliding
-windows, with methods for normalization and proper FDR control.")
     (license license:gpl3)))
 
 (define-public r-csar
@@ -6673,36 +6634,6 @@ human hgu95av2 Affymetrix arrays.  It is a useful dataset for tutorials.")
      "chimeraviz manages data from fusion gene finders and provides useful
 visualization tools.")
     (license license:artistic2.0)))
-
-(define-public r-chihaya
-  (package
-    (name "r-chihaya")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "chihaya" version))
-       (sha256
-        (base32 "0k52ym2x489k1k4d52jyd6jy4wnr7gd2p9n1pwfqbca3b91cmaj0"))))
-    (properties `((upstream-name . "chihaya")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-rhdf5lib
-                             r-rhdf5
-                             r-rcpp
-                             r-matrix
-                             r-hdf5array
-                             r-delayedarray))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ArtifactDB/chihaya-R")
-    (synopsis "Save Delayed Operations to a HDF5 File")
-    (description
-     "Saves the delayed operations of a @code{DelayedArray} to a HDF5 file.  This
-enables efficient recovery of the @code{DelayedArray's} contents in other
-languages and analysis frameworks.")
-    (license license:gpl3)))
 
 (define-public r-chickenprobe
   (package

@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages i)
@@ -18,7 +18,6 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages a)
-  #:use-module (guix-cran packages q)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages c)
@@ -2281,31 +2280,6 @@ default.")
     (description
      "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
 (@code{danRer5}, Jul.  2007) and stored in Biostrings objects.")
-    (license license:artistic2.0)))
-
-(define-public r-bsgenome-drerio-ucsc-danrer10
-  (package
-    (name "r-bsgenome-drerio-ucsc-danrer10")
-    (version "1.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "BSgenome.Drerio.UCSC.danRer10" version
-                              'annotation))
-       (sha256
-        (base32 "1grlxihdx65fwgb9gbp1jibbqan9a5667w4jgswhg0qsia608lzs"))))
-    (properties `((upstream-name . "BSgenome.Drerio.UCSC.danRer10")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-bsgenome))
-    (home-page
-     "https://bioconductor.org/packages/BSgenome.Drerio.UCSC.danRer10")
-    (synopsis "Full genome sequences for Danio rerio (UCSC version danRer10)")
-    (description
-     "Full genome sequences for Danio rerio (Zebrafish) as provided by UCSC
-(@code{danRer10}, Sep.  2014) and stored in Biostrings objects.")
     (license license:artistic2.0)))
 
 (define-public r-bsgenome-dmelanogaster-ucsc-dm2-masked

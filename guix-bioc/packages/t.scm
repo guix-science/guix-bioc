@@ -5,8 +5,8 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages x)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages t)
@@ -716,31 +716,6 @@ as @code{TxDb} objects.")
     (propagated-inputs (list r-genomicfeatures r-annotationdbi))
     (home-page
      "https://bioconductor.org/packages/TxDb.Drerio.UCSC.danRer10.refGene")
-    (synopsis "Annotation package for TxDb object(s)")
-    (description
-     "Exposes an annotation databases generated from UCSC by exposing these as
-@code{TxDb} objects.")
-    (license license:artistic2.0)))
-
-(define-public r-txdb-dmelanogaster-ucsc-dm3-ensgene
-  (package
-    (name "r-txdb-dmelanogaster-ucsc-dm3-ensgene")
-    (version "3.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "TxDb.Dmelanogaster.UCSC.dm3.ensGene" version
-                              'annotation))
-       (sha256
-        (base32 "1337x23rdmiiza83ms225kri37h16q5hw1lw0m577abcgip3d7c7"))))
-    (properties `((upstream-name . "TxDb.Dmelanogaster.UCSC.dm3.ensGene")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-genomicfeatures r-annotationdbi))
-    (home-page
-     "https://bioconductor.org/packages/TxDb.Dmelanogaster.UCSC.dm3.ensGene")
     (synopsis "Annotation package for TxDb object(s)")
     (description
      "Exposes an annotation databases generated from UCSC by exposing these as

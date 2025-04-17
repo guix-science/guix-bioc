@@ -4,9 +4,9 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages m)
@@ -5327,73 +5327,6 @@ analyses are available.")
     (description
      "The package contains a modular pipeline for analysis of HELP microarray data,
 and includes graphical and mathematical tools with more general applications.")
-    (license license:gpl2+)))
-
-(define-public r-hellorangesdata
-  (package
-    (name "r-hellorangesdata")
-    (version "1.32.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "HelloRangesData" version
-                              'experiment))
-       (sha256
-        (base32 "0a6bjiyq8y505lcl4nn2jz7x5zkbspnw5l4zaar3p3hql981268a"))))
-    (properties `((upstream-name . "HelloRangesData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://bioconductor.org/packages/HelloRangesData")
-    (synopsis "Data for the HelloRanges tutorial vignette")
-    (description
-     "This package provides the data that were used in the bedtools tutorial by Aaron
-Quinlan (http://quinlanlab.org/tutorials/bedtools/bedtools.html).  Includes a
-subset of the @code{DnaseI} hypersensitivity data from \"Maurano et al.
-Systematic Localization of Common Disease-Associated Variation in Regulatory
-DNA. Science.  2012.  Vol.  337 no.  6099 pp.  1190-1195.\" The rest of the
-tracks were originally downloaded from the UCSC table browser.  See the
-@code{HelloRanges} vignette for a port of the bedtools tutorial to R.")
-    (license license:gpl2+)))
-
-(define-public r-helloranges
-  (package
-    (name "r-helloranges")
-    (version "1.32.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "HelloRanges" version))
-       (sha256
-        (base32 "11hmnqvmhd7rn5dcm20wg109sp8cmaq5k06x0cyaimi0dmf1psxv"))))
-    (properties `((upstream-name . "HelloRanges")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-variantannotation
-                             r-summarizedexperiment
-                             r-s4vectors
-                             r-rtracklayer
-                             r-rsamtools
-                             r-iranges
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomicalignments
-                             r-genomeinfodb
-                             r-docopt
-                             r-bsgenome
-                             r-biostrings
-                             r-biocio
-                             r-biocgenerics))
-    (home-page "https://bioconductor.org/packages/HelloRanges")
-    (synopsis "Introduce *Ranges to bedtools users")
-    (description
-     "Translates bedtools command-line invocations to R code calling functions from
-the Bioconductor *Ranges infrastructure.  This is intended to educate novice
-Bioconductor users and to compare the syntax and semantics of the two
-frameworks.")
     (license license:gpl2+)))
 
 (define-public r-heebodata

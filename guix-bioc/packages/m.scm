@@ -5,9 +5,9 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages g)
+  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages p)
@@ -8880,6 +8880,51 @@ spatial distribution of hundreds to tens of thousands of RNA species in
 individual cells.  The scope of the package is to provide MERFISH data for
 benchmarking and analysis.")
     (license license:artistic2.0)))
+
+(define-public r-memes
+  (package
+    (name "r-memes")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "memes" version))
+       (sha256
+        (base32 "0g1dpyyn5lnzy13h65m6wfnp4bsf7qs1jlc62qmjfq7aifw0hpxq"))))
+    (properties `((upstream-name . "memes")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-usethis
+                             r-universalmotif
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-processx
+                             r-patchwork
+                             r-matrixstats
+                             r-magrittr
+                             r-ggseqlogo
+                             r-ggplot2
+                             r-genomicranges
+                             r-dplyr
+                             r-cmdfun
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://snystrom.github.io/memes/")
+    (synopsis
+     "motif matching, comparison, and de novo discovery using the MEME Suite")
+    (description
+     "This package provides a seamless interface to the MEME Suite family of tools for
+motif analysis.  memes provides data aware utilities for using GRanges objects
+as entrypoints to motif analysis, data structures for examining & editing motif
+lists, and novel data visualizations.  memes functions and data structures are
+amenable to both base R and tidyverse workflows.")
+    (license license:expat)))
 
 (define-public r-melissa
   (package

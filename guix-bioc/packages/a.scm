@@ -4,14 +4,13 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages c)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages s)
-  #:use-module (guix-cran packages d)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -688,40 +687,6 @@ as R / Bioconductor packages.  The metadata about the package (e.g., select
 information from the package DESCRIPTION file and from vignette YAML headings)
 are used to populate the DASHBOARD'.  Vignettes are translated to python
 notebooks ready for evaluation in @code{AnVIL}.")
-    (license license:artistic2.0)))
-
-(define-public r-anvilgcp
-  (package
-    (name "r-anvilgcp")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "AnVILGCP" version))
-       (sha256
-        (base32 "0m0assxfq65smzqif7rqsqzlw0y8zjdnyq0nxij0snqzjd9a0iih"))))
-    (properties `((upstream-name . "AnVILGCP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-biocbaseutils
-                             r-anvilbase))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Bioconductor/AnVILGCP")
-    (synopsis "The GCP R Client for the AnVIL")
-    (description
-     "The package provides a set of functions to interact with the Google Cloud
-Platform (GCP) services on the @code{AnVIL} platform.  The package is designed
-to work with the @code{AnVIL} package.  User-level interaction with this package
-should be minimal.")
     (license license:artistic2.0)))
 
 (define-public r-anvilbilling
