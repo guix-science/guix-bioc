@@ -10,10 +10,10 @@
   #:use-module (guix-cran packages s)
   #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages t)
+  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)
-  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages w)
@@ -402,6 +402,7 @@ differentially expressed features on the rows and samples on the columns.")
                              r-rlang
                              r-rcolorbrewer
                              r-pheatmap
+                             r-mbest
                              r-matrix
                              r-mass
                              r-magrittr
