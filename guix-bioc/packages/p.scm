@@ -3439,8 +3439,7 @@ utilizing a weighted reference measure.")
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-smoothwin
-                             r-reshape
+    (propagated-inputs (list r-reshape
                              r-pingr
                              r-nortest
                              r-nlme
