@@ -36,14 +36,14 @@
 (define-public r-johnsonkinasedata
   (package
     (name "r-johnsonkinasedata")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JohnsonKinaseData" version
                               'experiment))
        (sha256
-        (base32 "0i9l1bdbdvv7npb8bviyl0y8fpmhg6wj3ysr8z6d9a8ycplsm3jr"))))
+        (base32 "0dpn8hw9f5bd7rf5ahz812hz93b1dc0zwszh3im2lq2ylfjy14c0"))))
     (properties `((upstream-name . "JohnsonKinaseData")))
     (build-system r-build-system)
     (arguments
@@ -75,6 +75,46 @@ can be used to rank PWM scores relative to the background scores (\"percentile
 rank\").")
     (license license:expat)))
 
+(define-public r-jazzpanda
+  (package
+    (name "r-jazzpanda")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "jazzPanda" version))
+       (sha256
+        (base32 "0wskp62qny21r6mfa8qa9bxhand3hzz80zbkwsmjm56ba7930cm9"))))
+    (properties `((upstream-name . "jazzPanda")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-spatstat-geom
+                             r-spatialexperiment
+                             r-magrittr
+                             r-glmnet
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-caret
+                             r-bumpymatrix
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/phipsonlab/jazzPanda")
+    (synopsis
+     "Finding spatially relevant marker genes in image based spatial transcriptomics data")
+    (description
+     "This package contains the function to find marker genes for image-based spatial
+transcriptomics data.  There are functions to create spatial vectors from the
+cell and transcript coordiantes, which are passed as inputs to find marker
+genes.  Marker genes are detected for every cluster by two approaches.  The
+first approach is by permtuation testing, which is implmented in parallel for
+finding marker genes for one sample study.  The other approach is to build a
+linear model for every gene.  This approach can account for multiple samples and
+backgound noise.")
+    (license license:gpl3)))
+
 (define-public r-jazaerimetadata-db
   (package
     (name "r-jazaerimetadata-db")
@@ -102,14 +142,14 @@ rank\").")
 (define-public r-jaspar2024
   (package
     (name "r-jaspar2024")
-    (version "0.99.6")
+    (version "0.99.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2024" version
                               'annotation))
        (sha256
-        (base32 "1l169kwymylqz67fz182fgq22nvg3cg12p2r8drgibs2d72khcpf"))))
+        (base32 "1zrbymy9r278znsrmy11m2akdlhyz4i4jq2px3vfxj98bw4msv6f"))))
     (properties `((upstream-name . "JASPAR2024")))
     (build-system r-build-system)
     (arguments
@@ -117,10 +157,10 @@ rank\").")
       #:tests? #f))
     (propagated-inputs (list r-biocfilecache))
     (native-inputs (list r-knitr))
-    (home-page "https://testjaspar.uio.no//")
+    (home-page "https://jaspar.elixir.no/")
     (synopsis "Data package for JASPAR database (version 2024)")
     (description
-     "JASPAR (https://testjaspar.uio.no/) is a widely-used open-access database
+     "JASPAR (https://jaspar.elixir.no/) is a widely-used open-access database
 presenting manually curated high-quality and non-redundant DNA-binding profiles
 for transcription factors (TFs) across taxa.  In this 10th release and
 20th-anniversary update, the CORE collection has expanded with 329 new profiles.
@@ -195,14 +235,14 @@ TFBSTools (>= 1.15.6).")
 (define-public r-jaspar2014
   (package
     (name "r-jaspar2014")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2014" version
                               'experiment))
        (sha256
-        (base32 "0487bxyc24saxy0r3hdxapqcrh20qgr8rdwkskc1w8l4qgi01rj8"))))
+        (base32 "052zhj7zcs143imb5gmd21ai76j7algi42dr4fc0j7i8y6klpq3a"))))
     (properties `((upstream-name . "JASPAR2014")))
     (build-system r-build-system)
     (arguments

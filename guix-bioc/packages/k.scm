@@ -7,6 +7,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages a)
   #:use-module (gnu packages java)
@@ -41,13 +42,13 @@
 (define-public r-koinar
   (package
     (name "r-koinar")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "koinar" version))
        (sha256
-        (base32 "1w0ya1yvghhnn4zxh4khf7g09jlh6cjb9kcjag28yqqkf1l14pky"))))
+        (base32 "13jj9saqwrq7jcys973rcdiwk110b75jd4ijilhxhh4dhqc55kmr"))))
     (properties `((upstream-name . "koinar")))
     (build-system r-build-system)
     (arguments
@@ -67,14 +68,14 @@ standard protocol used for nearly all web traffic.")
 (define-public r-kodata
   (package
     (name "r-kodata")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KOdata" version
                               'experiment))
        (sha256
-        (base32 "1iwjl8w5gbw190z40m4rani4kql2na4sil1wpdvbs5d4pnw5n2qa"))))
+        (base32 "1asi4nqaa2iick9vg0kc03j3hp7k2amw4x6l49i3jmyll7w87l9b"))))
     (properties `((upstream-name . "KOdata")))
     (build-system r-build-system)
     (arguments
@@ -91,18 +92,19 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
 (define-public r-knowyourcg
   (package
     (name "r-knowyourcg")
-    (version "1.2.5")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "knowYourCG" version))
        (sha256
-        (base32 "0djdi1d1qlifdil407vda7psy4ib5z29n43g2q1p3gwhwmqd06zh"))))
+        (base32 "0pvkvgwqc137f1jym6cqasfiy3ppf4llx5fggsv8ff8p1hak2x64"))))
     (properties `((upstream-name . "knowYourCG")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list zlib))
     (propagated-inputs (list r-wheatmap
                              r-tibble
                              r-stringr
@@ -120,24 +122,29 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
     (home-page "https://github.com/zhou-lab/knowYourCG")
     (synopsis "Functional analysis of DNA methylome datasets")
     (description
-     "@code{knowYourCG} automates the functional analysis of DNA methylation data.
-The package tests the enrichment of discrete @code{CpG} probes across thousands
-of curated biological and technical features.  GSEA-like analysis can be
-performed on continuous methylation data query sets. @code{knowYourCG} can also
-take beta matrices as input to perform feature aggregation over the curated
-database sets.")
+     "@code{KnowYourCG} (KYCG) is a supervised learning framework designed for the
+functional analysis of DNA methylation data.  Unlike existing tools that focus
+on genes or genomic intervals, @code{KnowYourCG} directly targets @code{CpG}
+dinucleotides, featuring automated supervised screenings of diverse biological
+and technical influences, including sequence motifs, transcription factor
+binding, histone modifications, replication timing, cell-type-specific
+methylation, and trait-epigenome associations. @code{KnowYourCG} addresses the
+challenges of data sparsity in various methylation datasets, including low-pass
+Nanopore sequencing, single-cell DNA methylomes, 5-hydroxymethylation profiles,
+spatial DNA methylation maps, and array-based datasets for epigenome-wide
+association studies and epigenetic clocks.")
     (license license:expat)))
 
 (define-public r-knowseq
   (package
     (name "r-knowseq")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KnowSeq" version))
        (sha256
-        (base32 "187jqsb1xy239ghlsrgdvlgsxwi9q3n4b9s427fk1kqlc7pfcngr"))))
+        (base32 "0k39fh0npnlj240y59wmzgg8fbfz7fkbafg5y2npjic68lqsp9pv"))))
     (properties `((upstream-name . "KnowSeq")))
     (build-system r-build-system)
     (arguments
@@ -186,13 +193,13 @@ knowledge and conclusions for the data and diseases to study.")
 (define-public r-kmcut
   (package
     (name "r-kmcut")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "kmcut" version))
        (sha256
-        (base32 "00gjb7vrmww3yxlmpbjgbmacxl5nms8qfdibpnhs68wmshxnhlim"))))
+        (base32 "18rbr8m5clgr1r2sw5kzbc31ikv9ibgckaygv1z3z50fi8klgv6i"))))
     (properties `((upstream-name . "kmcut")))
     (build-system r-build-system)
     (arguments
@@ -220,13 +227,13 @@ variable that has a sufficiently large proportion of unique values.")
 (define-public r-kissde
   (package
     (name "r-kissde")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "kissDE" version))
        (sha256
-        (base32 "1wccjy66gn1yivz52bgcfbs7f4vg12bav0n35ajcy0yz5pqw46xj"))))
+        (base32 "1wkmkwib59hlgdvcfjq46igcnmrxyrz3zpmn93bpk40is0n0yxyk"))))
     (properties `((upstream-name . "kissDE")))
     (build-system r-build-system)
     (arguments
@@ -257,13 +264,13 @@ alternative-splicings, indels).  It has been developed as a post-treatment of
 (define-public r-kinswingr
   (package
     (name "r-kinswingr")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KinSwingR" version))
        (sha256
-        (base32 "1w0l47p4dpcqx2abj0vinawb12v1zg3gsdgpg7rxjjgs268jd5xc"))))
+        (base32 "0izs400ylnhzlqq0ln2v0977yixvncfv90lp9q4cxdh6332k6b54"))))
     (properties `((upstream-name . "KinSwingR")))
     (build-system r-build-system)
     (arguments
@@ -283,14 +290,14 @@ PWM:substrate matches, and integrate these data to infer kinase activity.")
 (define-public r-kidpack
   (package
     (name "r-kidpack")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "kidpack" version
                               'experiment))
        (sha256
-        (base32 "0ggps36p3bb303yfv81zlcsix04xyfaiflmb2sjkdz170zzzvpam"))))
+        (base32 "1h73xym3kaxwn6c8g2fdkxijfb111x9cf7qgv52c43k9c0vbqql0"))))
     (properties `((upstream-name . "kidpack")))
     (build-system r-build-system)
     (arguments
@@ -305,13 +312,13 @@ PWM:substrate matches, and integrate these data to infer kinase activity.")
 (define-public r-keggorthology
   (package
     (name "r-keggorthology")
-    (version "2.58.0")
+    (version "2.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "keggorthology" version))
        (sha256
-        (base32 "0ca72gql95s5k6wk5yf1nnfwp29sqa4i1p4y5qwmpda5ikisi6hv"))))
+        (base32 "01l9mii8liqnp0ghz1im5icwmw7i2q0228axjiz2ifnxffcf18iw"))))
     (properties `((upstream-name . "keggorthology")))
     (build-system r-build-system)
     (arguments
@@ -328,13 +335,13 @@ a set of pathway IDs that are not to be confused with the KEGG ortholog IDs.")
 (define-public r-kegglincs
   (package
     (name "r-kegglincs")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KEGGlincs" version))
        (sha256
-        (base32 "18jacz85kz05wrl4pjqrfjlfs9msrchmaid67v602zbnlvgiiqz6"))))
+        (base32 "1yl4vma9dsb2mw16r9n285chw3xgsjij1wmvd6msrspjc97cb37j"))))
     (properties `((upstream-name . "KEGGlincs")))
     (build-system r-build-system)
     (arguments
@@ -365,14 +372,14 @@ the pathway maps from information obtained from KGML files.")
 (define-public r-keggdzpathwaysgeo
   (package
     (name "r-keggdzpathwaysgeo")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KEGGdzPathwaysGEO" version
                               'experiment))
        (sha256
-        (base32 "15xvh2vm2mzwfqq2jw667k33y9kayjnpligz34yczjhv59559xs8"))))
+        (base32 "09dkmlx6zacbgdw7y47459xy077g8i6lq93jxbp7c36cdcxmvb5w"))))
     (properties `((upstream-name . "KEGGdzPathwaysGEO")))
     (build-system r-build-system)
     (arguments
@@ -390,14 +397,14 @@ as gold standard in comparing gene set analysis methods by the PADOG package.")
 (define-public r-keggandmetacoredzpathwaysgeo
   (package
     (name "r-keggandmetacoredzpathwaysgeo")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KEGGandMetacoreDzPathwaysGEO" version
                               'experiment))
        (sha256
-        (base32 "0gpvw6hgn0xis0zkqx0i05hy2ijsda0kwsxddh9758r1ablzd0rl"))))
+        (base32 "0kfal9fhk8qnkpplzfs8dwlgw33lgmwipk35jb456p0p6sz32lpa"))))
     (properties `((upstream-name . "KEGGandMetacoreDzPathwaysGEO")))
     (build-system r-build-system)
     (arguments
@@ -416,13 +423,13 @@ datasets were used as gold standard in comparing gene set analysis methods.")
 (define-public r-kebabs
   (package
     (name "r-kebabs")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "kebabs" version))
        (sha256
-        (base32 "0i8jj2wjcpv02h8wrj7sbr5s4kgyvxq7yjc506w391am9z1qzai4"))))
+        (base32 "1nzy5jbh545x9pc4vk7q0vraq9576yzg03wisavag8y7pn4k8k8f"))))
     (properties `((upstream-name . "kebabs")))
     (build-system r-build-system)
     (arguments
@@ -472,13 +479,13 @@ biological functions.")
 (define-public r-kcsmart
   (package
     (name "r-kcsmart")
-    (version "2.64.0")
+    (version "2.66.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KCsmart" version))
        (sha256
-        (base32 "06frvvlkq8fp60kb2071kjnw6ln265gzzwsvnp02qwbxcp8axvh5"))))
+        (base32 "1ys7zpj87i21m7yg8afac85qmjrqqdlr6f7hys04zydpqzq3ldcv"))))
     (properties `((upstream-name . "KCsmart")))
     (build-system r-build-system)
     (arguments
@@ -494,13 +501,13 @@ biological functions.")
 (define-public r-kboost
   (package
     (name "r-kboost")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "KBoost" version))
        (sha256
-        (base32 "1vk6r4fkf54xnmf2hcaicy9vwdbi97n5kr45xx6w0f89d9n3mixg"))))
+        (base32 "1m352d1azcqsrjjrcz1s7c1bbqsdq8h8ak0p752ja8z6gcqhslf5"))))
     (properties `((upstream-name . "KBoost")))
     (build-system r-build-system)
     (arguments
@@ -528,13 +535,13 @@ that our method compares favourably to other methods across datasets.")
 (define-public r-katdetectr
   (package
     (name "r-katdetectr")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "katdetectr" version))
        (sha256
-        (base32 "1dslvwfqgpd3wahr1kkf02dan6kyy3xyr47k1zqj1shrkiva6rlm"))))
+        (base32 "02dsxyxslqzyh57zf92wnlxlaw1nm9l7ykspkgbphsky4rchnd5q"))))
     (properties `((upstream-name . "katdetectr")))
     (build-system r-build-system)
     (arguments

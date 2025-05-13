@@ -7,7 +7,6 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
-  #:use-module (gnu packages web)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
   #:use-module (guix-bioc packages w)
@@ -37,13 +36,13 @@
 (define-public r-zygositypredictor
   (package
     (name "r-zygositypredictor")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ZygosityPredictor" version))
        (sha256
-        (base32 "0vi51s3mwrkmvz54jhzxhnklc1m19zv5mxgdzyxrcng6b0c277wh"))))
+        (base32 "1ain9yvg80vw3av9izqb6my3pqsgp7cqmdcjgq7a3rdw1jwngv33"))))
     (properties `((upstream-name . "ZygosityPredictor")))
     (build-system r-build-system)
     (arguments
@@ -87,13 +86,13 @@ scale deletions, which cause losses of whole genes or parts of them.")
 (define-public r-zitools
   (package
     (name "r-zitools")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zitools" version))
        (sha256
-        (base32 "0cw83gm6q1d9jd20j8yk8k4vcx7q968winmvpf3pia4hyrc773pf"))))
+        (base32 "1wb4k0c4xxar3ncklvj96b41x15yj90jwbvrmlbqd559bhhqych3"))))
     (properties `((upstream-name . "zitools")))
     (build-system r-build-system)
     (arguments
@@ -132,32 +131,18 @@ challenging.")
 (define-public r-zenith
   (package
     (name "r-zenith")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zenith" version))
        (sha256
-        (base32 "1bxbnd8yv4n47g5y2dkk4rgaaqbkmzplh2f9drrjzcy3bmwmvlxx"))))
+        (base32 "0na9fx9h8a5c8h7fp8lm9pb6basdwz6y7gqq4bi2yfbpyk0k8dz4"))))
     (properties `((upstream-name . "zenith")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
+      #:tests? #f))
     (propagated-inputs (list r-variancepartition
                              r-tidyr
                              r-rfast
@@ -168,8 +153,9 @@ challenging.")
                              r-limma
                              r-gseabase
                              r-ggplot2
-                             r-enrichmentbrowser))
-    (native-inputs (list r-knitr esbuild))
+                             r-enrichmentbrowser
+                             r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://DiseaseNeuroGenomics.github.io/zenith")
     (synopsis
      "Gene set analysis following differential expression using linear (mixed) modeling with dream")
@@ -234,14 +220,14 @@ Zebrafish.cdf file.")
 (define-public r-zebrafish-db0
   (package
     (name "r-zebrafish-db0")
-    (version "3.20.0")
+    (version "3.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zebrafish.db0" version
                               'annotation))
        (sha256
-        (base32 "08w5hcpq71gfwzai0niyxd27pay2755nywqxjh5kxb8l050kpjnf"))))
+        (base32 "1b0pn4cvcn2hphklavxlqg6wzh7dl78l4nr7fhxv3b980qvi56p0"))))
     (properties `((upstream-name . "zebrafish.db0")))
     (build-system r-build-system)
     (arguments

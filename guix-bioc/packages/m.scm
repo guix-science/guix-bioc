@@ -10,6 +10,7 @@
   #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages m)
+  #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages l)
@@ -18,7 +19,6 @@
   #:use-module (guix-cran packages h)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages a)
-  #:use-module (guix-cran packages i)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages t)
@@ -63,13 +63,13 @@
 (define-public r-myvariant
   (package
     (name "r-myvariant")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "myvariant" version))
        (sha256
-        (base32 "1vmmlkqx4cjhsx126lq4ax8s4qwfl5jqwiwm12i5aqxp9k28586z"))))
+        (base32 "1kl4cndr9a5ri7zxl274z6d6a7584wx2hbkq7yhvz0ikhqdv9gp4"))))
     (properties `((upstream-name . "myvariant")))
     (build-system r-build-system)
     (arguments
@@ -93,13 +93,13 @@ resources.  myvariant is a wrapper for querying @code{MyVariant.info} services."
 (define-public r-mygene
   (package
     (name "r-mygene")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mygene" version))
        (sha256
-        (base32 "0a60g3i4f6mprd4rf9pw093lr9qlnr067pipncl9chabsy9fzkhl"))))
+        (base32 "18wk3ks222pwamq62pyfjwwrpkkj842p79wsnjbvx6km0fqycr16"))))
     (properties `((upstream-name . "mygene")))
     (build-system r-build-system)
     (arguments
@@ -149,13 +149,13 @@ data (chip mwgcod) assembled using data from public repositories.")
 (define-public r-mwastools
   (package
     (name "r-mwastools")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MWASTools" version))
        (sha256
-        (base32 "1kv2pxhmn7lwd63al4qvgbwi2ffgf12cb55siwb62q6767b5gw77"))))
+        (base32 "1n7iyay8l3gpqqa83h1fyl3lm51j6d8gkijrhpnj0amplg32j3n2"))))
     (properties `((upstream-name . "MWASTools")))
     (build-system r-build-system)
     (arguments
@@ -190,14 +190,14 @@ using STOCSY; and biological interpretation of MWAS results.")
 (define-public r-mvoutdata
   (package
     (name "r-mvoutdata")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mvoutData" version
                               'experiment))
        (sha256
-        (base32 "0w2fmzdfprk9kri8wmkr27p4gdps72i5gb9jj82pn7jlx3vqflkv"))))
+        (base32 "11c04vdbi6arzsdbchdyhiwnxhi67clcz2ackv7i5dw9mwsblhmv"))))
     (properties `((upstream-name . "mvoutData")))
     (build-system r-build-system)
     (arguments
@@ -211,16 +211,46 @@ using STOCSY; and biological interpretation of MWAS results.")
      "affy and illumina raw data for assessing outlier detector performance.")
     (license license:artistic2.0)))
 
+(define-public r-muspadata
+  (package
+    (name "r-muspadata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "muSpaData" version
+                              'experiment))
+       (sha256
+        (base32 "0a57adbmv1wa895pwhh6hd83y9iyjjb9pyl503aj78zwmzdx58ns"))))
+    (properties `((upstream-name . "muSpaData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-experimenthub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/peicai/muSpaData")
+    (synopsis
+     "Multi-sample multi-group spatially resolved transcriptomic data")
+    (description
+     "Data package containing a multi-sample multi-group spatial dataset in
+@code{SpatialExperiment} Bioconductor object format.")
+    (license license:expat)))
+
 (define-public r-musicatk
   (package
     (name "r-musicatk")
-    (version "2.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "musicatk" version))
        (sha256
-        (base32 "173dzy60b3avndz9hywqfm22hpgsq14gdxkxm2glna9qd5sqw2al"))))
+        (base32 "1sgxl4ar4ql3ajmpay1jgcid1yppmvvclic8gjhfp62im3blhib5"))))
     (properties `((upstream-name . "musicatk")))
     (build-system r-build-system)
     (arguments
@@ -297,13 +327,13 @@ COSMIC V3.")
 (define-public r-muscle
   (package
     (name "r-muscle")
-    (version "3.48.0")
+    (version "3.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "muscle" version))
        (sha256
-        (base32 "0q172f0bwpr5cc1madba8rj258kbjdw32s171y01gkb9jgqn60n3"))))
+        (base32 "03inf7jdmm03rgliwr4y80zpmbkl5aki6z475ayr8b2dbqvpy4f2"))))
     (properties `((upstream-name . "muscle")))
     (build-system r-build-system)
     (arguments
@@ -320,14 +350,14 @@ sequences.")
 (define-public r-muscdata
   (package
     (name "r-muscdata")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "muscData" version
                               'experiment))
        (sha256
-        (base32 "1y2aqhbj3v8z2rzibay6q5d3505vx6c5qmybj147k8nyvffc8w9r"))))
+        (base32 "0ssaphx9rxxgrr8hvhn8xbfsxcvhfajdrjr6ka52a2slb985kii3"))))
     (properties `((upstream-name . "muscData")))
     (build-system r-build-system)
     (arguments
@@ -350,13 +380,13 @@ format.")
 (define-public r-mungesumstats
   (package
     (name "r-mungesumstats")
-    (version "1.14.1")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MungeSumstats" version))
        (sha256
-        (base32 "1clkpvvwwxdb8c6xrxqc6bpz6q3r2vi7igq2yd5l5q93nlcnhff6"))))
+        (base32 "1raygfrqhpg4f1ifvc9f8ikb9p0mijc6l0mnlvz37bns9qgfip53"))))
     (properties `((upstream-name . "MungeSumstats")))
     (build-system r-build-system)
     (arguments
@@ -367,11 +397,8 @@ format.")
                              r-rtracklayer
                              r-rcurl
                              r-r-utils
-                             r-magrittr
-                             r-jsonlite
                              r-iranges
-                             r-httr
-                             r-googleauthr
+                             r-ieugwasr
                              r-genomicranges
                              r-genomeinfodb
                              r-dplyr
@@ -392,13 +419,13 @@ minimise inter-study differences.")
 (define-public r-mumosa
   (package
     (name "r-mumosa")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mumosa" version))
        (sha256
-        (base32 "0m7l0sn5npsvwcvpnsl61w8sgbnyanqdrz76chifzd9j7ydwwxqi"))))
+        (base32 "0scdf663lwpz1hzcz5kbh28x4vvkqrdvhhwf523l3h7mlyqrwgqx"))))
     (properties `((upstream-name . "mumosa")))
     (build-system r-build-system)
     (arguments
@@ -436,14 +463,14 @@ correlations between assay values for different modalities.")
 (define-public r-multiwgcnadata
   (package
     (name "r-multiwgcnadata")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiWGCNAdata" version
                               'experiment))
        (sha256
-        (base32 "1l2pqrxk6yab39ghgyicdchkkahaa57xhjglnjq15k4ss447cy01"))))
+        (base32 "0n9jdy44b56s5k8g8169pifksgqbw69qa9m3zkw1ib3lbfxadx3x"))))
     (properties `((upstream-name . "multiWGCNAdata")))
     (build-system r-build-system)
     (arguments
@@ -470,13 +497,13 @@ vignettes).")
 (define-public r-multiwgcna
   (package
     (name "r-multiwgcna")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiWGCNA" version))
        (sha256
-        (base32 "0lv1hxd23iglmk952y4lf75i50fp5jmb6iwbd3k617i4q3gxam8v"))))
+        (base32 "0p14v9kdg105jlglcm24h0mvrn7f4x7r4k1la3l5wlyk17jga24q"))))
     (properties `((upstream-name . "multiWGCNA")))
     (build-system r-build-system)
     (arguments
@@ -512,13 +539,13 @@ as disease vs wildtype across development or anatomical region.")
 (define-public r-multistateqtl
   (package
     (name "r-multistateqtl")
-    (version "1.2.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multistateQTL" version))
        (sha256
-        (base32 "0qmvs0z3b87y21q285qabkpf3lbcw94c6axdg8xd9k9k7lz1ihbq"))))
+        (base32 "1b4is7chha5w4ivvk5w5rpl7033bb0r8m72baz553dzrhzp8imvc"))))
     (properties `((upstream-name . "multistateQTL")))
     (build-system r-build-system)
     (arguments
@@ -554,13 +581,13 @@ framework.")
 (define-public r-multiscan
   (package
     (name "r-multiscan")
-    (version "1.66.0")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiscan" version))
        (sha256
-        (base32 "11vkd45kvxkrahkzwrl1xfhy4rhqdr5kmnnf82rzk40mi1j70dyf"))))
+        (base32 "0zq5gd4x28ilh70bdd535w2sgdssw6ddgnljah74fbjmxjj9q2p2"))))
     (properties `((upstream-name . "multiscan")))
     (build-system r-build-system)
     (arguments
@@ -576,13 +603,13 @@ framework.")
 (define-public r-multirnaflow
   (package
     (name "r-multirnaflow")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MultiRNAflow" version))
        (sha256
-        (base32 "12y734m5dnyyh1c8pdnh6v1xkjg0vm3c6c6zckgwl3rvwriq84ky"))))
+        (base32 "04cwbf5ahyxn06055dn0jvif54y6d53yxxqjqrkr8f0r1ir2x2zg"))))
     (properties `((upstream-name . "MultiRNAflow")))
     (build-system r-build-system)
     (arguments
@@ -622,13 +649,13 @@ are specific to a biological condition for each time.")
 (define-public r-multimodalexperiment
   (package
     (name "r-multimodalexperiment")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MultimodalExperiment" version))
        (sha256
-        (base32 "0a8ibx3xphay9lzg4g4f7pal805kd2mcsj8gxwfjxhvvdbdqz6cj"))))
+        (base32 "0yl420p6wpq92vpn1ji84qimw20975cwc08354qp0ccw29c1msrq"))))
     (properties `((upstream-name . "MultimodalExperiment")))
     (build-system r-build-system)
     (arguments
@@ -652,13 +679,13 @@ deliver fast and flexible management of multimodal data.")
 (define-public r-multimir
   (package
     (name "r-multimir")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiMiR" version))
        (sha256
-        (base32 "0ihj8zlw6g5hv6amrqqkzln8kd7lvhny4z15y4nc2rz7bf5kcsyy"))))
+        (base32 "0f64qmiv6kq6md4clyk369pp8zyzyygxw8wllrwmyik8y9zqfsxz"))))
     (properties `((upstream-name . "multiMiR")))
     (build-system r-build-system)
     (arguments
@@ -688,13 +715,13 @@ resources, including validated @code{microRNA-target} databases
 (define-public r-multimed
   (package
     (name "r-multimed")
-    (version "2.28.0")
+    (version "2.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MultiMed" version))
        (sha256
-        (base32 "1cfgv405ywrdlaa421707z0k5yn0iair4nzgg0ykxnbapszwqlmz"))))
+        (base32 "1rg3n2jli67dl5sgnbb987ax0vi31axx5n7hnmsvqngxd5iqpmff"))))
     (properties `((upstream-name . "MultiMed")))
     (build-system r-build-system)
     (arguments
@@ -709,13 +736,13 @@ resources, including validated @code{microRNA-target} databases
 (define-public r-multihiccompare
   (package
     (name "r-multihiccompare")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiHiCcompare" version))
        (sha256
-        (base32 "19z0f0dihfdvdw063a5728hm7wgh2brxp9hvv8b7y04q07ywd1cc"))))
+        (base32 "00gw159yyas5b8122z096rgiyr215i9c35way67s73h2zl8jbrs7"))))
     (properties `((upstream-name . "multiHiCcompare")))
     (build-system r-build-system)
     (arguments
@@ -754,13 +781,13 @@ manner.")
 (define-public r-multigsea
   (package
     (name "r-multigsea")
-    (version "1.16.2")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiGSEA" version))
        (sha256
-        (base32 "1d7l7mlw03sq5yj5dhxanm31m0gy7ix7ddbzq2kv3lpr56rdgqjx"))))
+        (base32 "0mxl9lgwv9gxb671fynhkl3mj9d5j6df2j9yr2w1g7bgp80hw434"))))
     (properties `((upstream-name . "multiGSEA")))
     (build-system r-build-system)
     (arguments
@@ -788,13 +815,13 @@ metabolomic level to calculate a combined GSEA-based enrichment score.")
 (define-public r-multicrispr
   (package
     (name "r-multicrispr")
-    (version "1.16.1")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multicrispr" version))
        (sha256
-        (base32 "0kyvmas6kni5x51pwfin7z6m67bg9lhaisqyxf0mcsgwiwz263n8"))))
+        (base32 "1q6s3rr6w66gykfh304sk3mw6ja8hxpszikvjyxjz1liyzqmarwr"))))
     (properties `((upstream-name . "multicrispr")))
     (build-system r-build-system)
     (arguments
@@ -832,13 +859,13 @@ target sets, enabling the design of large Crispr/Cas9 libraries.")
 (define-public r-multiclust
   (package
     (name "r-multiclust")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multiClust" version))
        (sha256
-        (base32 "0l1a9kajam5zl95j5yvjkjiblmg8wcsvna562drw5nh4lanldsk5"))))
+        (base32 "0hm1hpjaf5rnxzxlxpxhwsz3xdx2n1yvw5ljk7f2mslbphnbfmb6"))))
     (properties `((upstream-name . "multiClust")))
     (build-system r-build-system)
     (arguments
@@ -875,14 +902,14 @@ methodology works for all studies.")
 (define-public r-muleadata
   (package
     (name "r-muleadata")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "muleaData" version
                               'experiment))
        (sha256
-        (base32 "1zw62kqr429g4nqhvgjjmxir25g0wh0490gpmcfc0vg72a00gyhf"))))
+        (base32 "04i2d3vv0dcky2hb2zg59kaxrmvq7b20v3b96a2lkwanajy4g8x4"))))
     (properties `((upstream-name . "muleaData")))
     (build-system r-build-system)
     (arguments
@@ -904,13 +931,13 @@ for a list of changes in each version.")
 (define-public r-mulcom
   (package
     (name "r-mulcom")
-    (version "1.56.0")
+    (version "1.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Mulcom" version))
        (sha256
-        (base32 "1cnzwyn7rsjj1l2fia9mh0gljpqd2fyq6bwxzdjii5apm21sswyp"))))
+        (base32 "1bbrcidbrp6i7a370gigdlmlf34qjlg6yxj4lcmfxy88qbk2rs3f"))))
     (properties `((upstream-name . "Mulcom")))
     (build-system r-build-system)
     (arguments
@@ -927,14 +954,14 @@ calculation by Multiple Comparison test.")
 (define-public r-mugaexampledata
   (package
     (name "r-mugaexampledata")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MUGAExampleData" version
                               'experiment))
        (sha256
-        (base32 "1i2pck7nyq8g0vi61cqah570fcsmsx4wdif2siwi37vr17s9fvf7"))))
+        (base32 "130jd06sgbqcmpvf9plzp9b13y8vp4yx5fisg64yl81ir1kl5yjh"))))
     (properties `((upstream-name . "MUGAExampleData")))
     (build-system r-build-system)
     (arguments
@@ -951,13 +978,13 @@ package DOQTL.")
 (define-public r-mudata
   (package
     (name "r-mudata")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MuData" version))
        (sha256
-        (base32 "0pppxgmplp7qf6flhzf27i58xajglcbhxabbf1y3bs60fsgbyw43"))))
+        (base32 "1nf0mffw0r0z9l4pgssw1dc5v54nkmr6ccl9kg3fd7dpnkhlba70"))))
     (properties `((upstream-name . "MuData")))
     (build-system r-build-system)
     (arguments
@@ -1421,14 +1448,14 @@ assembled using data from public repositories.")
 (define-public r-mtbls2
   (package
     (name "r-mtbls2")
-    (version "1.36.0")
+    (version "1.37.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mtbls2" version
                               'experiment))
        (sha256
-        (base32 "1n1vz29y2yx1hbaxl1xl2lfvbd0f8knbngk07ibgi3dcfyjii6rz"))))
+        (base32 "17wrlvh14nxqvxgqljh7d01n1df6q8xj9p5pv5nr09r4bllmqhfk"))))
     (properties `((upstream-name . "mtbls2")))
     (build-system r-build-system)
     (arguments
@@ -1501,13 +1528,13 @@ public repositories.")
 (define-public r-msstatstmt
   (package
     (name "r-msstatstmt")
-    (version "2.14.2")
+    (version "2.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsTMT" version))
        (sha256
-        (base32 "1kylq7igpi9lrsgbn3r0g9xd9gp3ky5r7fanqqbkhkh8k0hql1cq"))))
+        (base32 "023xi2xq2ga9y7m6s4xgv9paj31j35g0yvz9wb9vnln410309bv8"))))
     (properties `((upstream-name . "MSstatsTMT")))
     (build-system r-build-system)
     (arguments
@@ -1540,13 +1567,13 @@ and @code{SpectroMine}.")
 (define-public r-msstatsshiny
   (package
     (name "r-msstatsshiny")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsShiny" version))
        (sha256
-        (base32 "1kklcz24v3xdbz9lqypw28dzjlcfhvdnq5c6nn983ay1cf12kk5h"))))
+        (base32 "01ia4rzzgminlr3gxvcv7g4y5lqa481d93rmr4iack9b0mmmjbiq"))))
     (properties `((upstream-name . "MSstatsShiny")))
     (build-system r-build-system)
     (arguments
@@ -1591,13 +1618,13 @@ recreates their analysis, supporting reproducible data analysis.")
 (define-public r-msstatsqcgui
   (package
     (name "r-msstatsqcgui")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsQCgui" version))
        (sha256
-        (base32 "0hd2s8l4r52cpgc7apwhbzpnq14qjgvgkd2ykzrlvk71sq8vgwvk"))))
+        (base32 "0i1s7hl4xp4wzwgy05y4pa0arxpndagljchbd59jb15k30rlb170"))))
     (properties `((upstream-name . "MSstatsQCgui")))
     (build-system r-build-system)
     (arguments
@@ -1620,13 +1647,13 @@ suitability monitoring and quality control tools for proteomic experiments.")
 (define-public r-msstatsqc
   (package
     (name "r-msstatsqc")
-    (version "2.24.0")
+    (version "2.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsQC" version))
        (sha256
-        (base32 "1h9k8k7080396h05cd4k2h100jv69c1rkscacs77kh200z8nb95g"))))
+        (base32 "0xxzxpd889xfdjjyh3w19n4wpnhilp20b33jagyiphn7zjmhyiw3"))))
     (properties `((upstream-name . "MSstatsQC")))
     (build-system r-build-system)
     (arguments
@@ -1650,13 +1677,13 @@ monitoring and quality control tools for proteomic experiments.")
 (define-public r-msstatsptm
   (package
     (name "r-msstatsptm")
-    (version "2.8.1")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsPTM" version))
        (sha256
-        (base32 "1fna3fww9np5hgc197a2ld14fcaavq1a5w46y9ff1kvl8miayjw7"))))
+        (base32 "148kh0i2ksqfykx0a8jwh7nz05403r6v61ihh63lrybr74vbdc9d"))))
     (properties `((upstream-name . "MSstatsPTM")))
     (build-system r-build-system)
     (arguments
@@ -1692,13 +1719,13 @@ abundance, and detection of changes in PTMs across experimental conditions.")
 (define-public r-msstatslobd
   (package
     (name "r-msstatslobd")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsLOBD" version))
        (sha256
-        (base32 "11jxy1npwb3dswrkr4ynswwx6jpg58wz9b6scmp5zw9qyf17syng"))))
+        (base32 "0jyp7lrk2f99gmxv76s9pbp7npybm3ml7wd97mdms8vw82alk2p9"))))
     (properties `((upstream-name . "MSstatsLOBD")))
     (build-system r-build-system)
     (arguments
@@ -1724,13 +1751,13 @@ package.  The methodology is described in Galitzine (2018)
 (define-public r-msstatslip
   (package
     (name "r-msstatslip")
-    (version "1.12.0")
+    (version "1.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsLiP" version))
        (sha256
-        (base32 "1s72lnj2ghdc0zfvn7qkzwqj0vz2fl35dbmd52mqrbcgc02k4f7a"))))
+        (base32 "1b4j52mqkkk8mqjxkyrjp8qw9vw1qli4xgcmrizyrjhkzchl520r"))))
     (properties `((upstream-name . "MSstatsLiP")))
     (build-system r-build-system)
     (arguments
@@ -1768,13 +1795,13 @@ functionality across the MSstats family of packages.")
 (define-public r-msstatsconvert
   (package
     (name "r-msstatsconvert")
-    (version "1.16.1")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsConvert" version))
        (sha256
-        (base32 "0rg721h3g68njkjz9rdfv99n5vslggiy96zc3grhbrlnq5x8ygzy"))))
+        (base32 "0hxmv5ngfkrsv5zib3jf68py333lk33mrmh3z21rb353qdkmks5n"))))
     (properties `((upstream-name . "MSstatsConvert")))
     (build-system r-build-system)
     (arguments
@@ -1791,16 +1818,50 @@ data processing tools into R format suitable for statistical analysis using the
 MSstats and M@code{SstatsTMT} packages.")
     (license license:artistic2.0)))
 
+(define-public r-msstatsbionet
+  (package
+    (name "r-msstatsbionet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MSstatsBioNet" version))
+       (sha256
+        (base32 "1gl7mx0x0jf90mmsggl8s6cp3r4g1agf6g2dzza9m0d8d05vzqzv"))))
+    (properties `((upstream-name . "MSstatsBioNet")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-rcy3
+                             r-r2r
+                             r-msstats
+                             r-jsonlite
+                             r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "http://msstats.org")
+    (synopsis "Network Analysis for MS-based Proteomics Experiments")
+    (description
+     "This package provides a set of tools for network analysis using mass
+spectrometry-based proteomics data and network databases.  The package takes as
+input the output of MSstats differential abundance analysis and provides
+functions to perform enrichment analysis and visualization in the context of
+prior knowledge from past literature.  Notably, this package integrates with
+INDRA, which is a database of biological networks extracted from the literature
+using text mining techniques.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
 (define-public r-msstatsbig
   (package
     (name "r-msstatsbig")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsBig" version))
        (sha256
-        (base32 "12x1nhq413wq6nd3c2y2iwbaii8kkxyn5pmnm8z0l4jabf0frdf5"))))
+        (base32 "0ry5pi8wy0ylncgcc9prmk57wka7z1vy7mzgqyflw4bqmcwa5mfz"))))
     (properties `((upstream-name . "MSstatsBig")))
     (build-system r-build-system)
     (arguments
@@ -1828,13 +1889,13 @@ than memory data sets.")
 (define-public r-msstats
   (package
     (name "r-msstats")
-    (version "4.14.2")
+    (version "4.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstats" version))
        (sha256
-        (base32 "1d3jgdxwc8fs8xp1mrqzz13szwm6xi6hbg1j0fmllpm91q2wf0l1"))))
+        (base32 "1jadszjnl6cz1zz95h25hhisvxcm2qp8plq8yqmjd9a87pldvxal"))))
     (properties `((upstream-name . "MSstats")))
     (build-system r-build-system)
     (arguments
@@ -1869,13 +1930,13 @@ significance analysis in DDA, SRM and DIA experiments.")
 (define-public r-msquality
   (package
     (name "r-msquality")
-    (version "1.6.2")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsQuality" version))
        (sha256
-        (base32 "0cqsfydxz53ppqlq8nmqspxcg52jj0d01anw1r8m8f1fxxfghln4"))))
+        (base32 "071zkcpjc189rfxdnq7qyjb34x6ap5ln1vji9sl3fbgw62zl0v00"))))
     (properties `((upstream-name . "MsQuality")))
     (build-system r-build-system)
     (arguments
@@ -1918,13 +1979,13 @@ the @code{MsExperiment} package, and its infrastructure to store spectral data."
 (define-public r-msqrob2
   (package
     (name "r-msqrob2")
-    (version "1.14.1")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msqrob2" version))
        (sha256
-        (base32 "0kwfvmcngwzxm38837lp1jpd20k4cag638q4p7gz9c98qff1rkln"))))
+        (base32 "0ik80pmwzyaaz287hab3nfivag4pzd1qkngc91vlmx21x0r4nzss"))))
     (properties `((upstream-name . "msqrob2")))
     (build-system r-build-system)
     (arguments
@@ -1959,14 +2020,14 @@ model results together with the raw data and preprocessed data.")
 (define-public r-msqc1
   (package
     (name "r-msqc1")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msqc1" version
                               'experiment))
        (sha256
-        (base32 "0qa0ki201miccd0pbcpc00wdpl3yxmwfjzwzk1jd816p10bn3qal"))))
+        (base32 "1c1s5cf3cmvh8bva5nm0qcm4063qwk681yq60m5apiq04yrqbdg4"))))
     (properties `((upstream-name . "msqc1")))
     (build-system r-build-system)
     (arguments
@@ -1986,14 +2047,14 @@ the Functional Genomics Center Zurich.")
 (define-public r-mspuritydata
   (package
     (name "r-mspuritydata")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msPurityData" version
                               'experiment))
        (sha256
-        (base32 "16j10ncisvqfhyqkwqin4vclw87slgn9v2zq62rq437wjh9y0iqx"))))
+        (base32 "0dna54y2rc1dm42i7lg707jq35dv2xwrv4fj3d06qaflj2rgwzgp"))))
     (properties `((upstream-name . "msPurityData")))
     (build-system r-build-system)
     (arguments
@@ -2010,13 +2071,13 @@ the Functional Genomics Center Zurich.")
 (define-public r-mspurity
   (package
     (name "r-mspurity")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msPurity" version))
        (sha256
-        (base32 "0pnb415v401l98brl61bnzxdl4d89psl1jr4cx4imdp7brixfhbl"))))
+        (base32 "1q20wrlzb51ri3sz70zxw65gg538jqvrl42hmrk8d2h1yl6ipxvm"))))
     (properties `((upstream-name . "msPurity")))
     (build-system r-build-system)
     (arguments
@@ -2059,13 +2120,13 @@ intensities used for the calculation.")
 (define-public r-msprep
   (package
     (name "r-msprep")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSPrep" version))
        (sha256
-        (base32 "0n10a75aj3f4pj7iw4dkzl24bywchfjrmsj37kj7ws3cwmhl6nna"))))
+        (base32 "0nxynjxddz4wj4lvgn223gz25r38lbpk3sh53gpgp7ncmjsvmpjm"))))
     (properties `((upstream-name . "MSPrep")))
     (build-system r-build-system)
     (arguments
@@ -2095,17 +2156,59 @@ different options for imputing missing data, and a variety of options for
 transforming, batch correcting, and normalizing data.")
     (license license:gpl3)))
 
+(define-public r-mspms
+  (package
+    (name "r-mspms")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mspms" version))
+       (sha256
+        (base32 "0bcjyw5d3l9f2h9157acxpjfn2shpgv4191p6880j77s5vi20xb5"))))
+    (properties `((upstream-name . "mspms")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-stringr
+                             r-rstatix
+                             r-rlang
+                             r-readr
+                             r-qfeatures
+                             r-purrr
+                             r-magrittr
+                             r-limma
+                             r-heatmaply
+                             r-ggseqlogo
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/baynec2/mspms")
+    (synopsis "Tools for the analysis of MSP-MS data")
+    (description
+     "This package provides functions for the analysis of data generated by the
+multiplex substrate profiling by mass spectrometry for proteases (MSP-MS)
+method.  Data exported from upstream proteomics software is accepted as input
+and subsequently processed for analysis.  Tools for statistical analysis,
+visualization, and interpretation of the data are provided.")
+    (license license:expat)))
+
 (define-public r-msmb
   (package
     (name "r-msmb")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSMB" version
                               'experiment))
        (sha256
-        (base32 "0vshdk1axyvccfixzd3bsgxf6gxpissakg1zk8pqnd87zfznkh8z"))))
+        (base32 "1i9vy140299kz55zjl19zcs0m1fc5sxc2bv2i0l081lqmwjyzk3p"))))
     (properties `((upstream-name . "MSMB")))
     (build-system r-build-system)
     (arguments
@@ -2123,13 +2226,13 @@ Huber.")
 (define-public r-mslp
   (package
     (name "r-mslp")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mslp" version))
        (sha256
-        (base32 "0z7igxk2rswznilvsbgxvy6ga7g8fd7i7schgg21bcfy1c0jly4f"))))
+        (base32 "1za9q8hmia7d8f795v7v53n4vadpyk8irmsszna3va6kk0ir1fby"))))
     (properties `((upstream-name . "mslp")))
     (build-system r-build-system)
     (arguments
@@ -2161,13 +2264,13 @@ perturbed.")
 (define-public r-msimpute
   (package
     (name "r-msimpute")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msImpute" version))
        (sha256
-        (base32 "0jizwv0jsc9kq22dm4df8fr50d1d4avx9syrj39fixmvajgk8x9a"))))
+        (base32 "1f05avwrxfbr4jf14x23w9zay74lnwfji82vbkjdsaxxsx3rwnw6"))))
     (properties `((upstream-name . "msImpute")))
     (build-system r-build-system)
     (arguments
@@ -2200,13 +2303,13 @@ if missingness is MNAR (\"v2-mnar\"), or by Peptide Identity Propagation (PIP)."
 (define-public r-msgbsr
   (package
     (name "r-msgbsr")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msgbsR" version))
        (sha256
-        (base32 "08g8xv3l6a0hxirrgrdsjrgdcrkinraws7bg9yv6dv43a1yabpqp"))))
+        (base32 "1j77bc05slhgznwmg6lym9vzk61dvhjd2iisksz1yn635cflfryp"))))
     (properties `((upstream-name . "msgbsR")))
     (build-system r-build-system)
     (arguments
@@ -2236,13 +2339,13 @@ if missingness is MNAR (\"v2-mnar\"), or by Peptide Identity Propagation (PIP)."
 (define-public r-msdatahub
   (package
     (name "r-msdatahub")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsDataHub" version))
        (sha256
-        (base32 "0cs37d0ba56mcig9gydx37gbgqfsqdgnawkcw18i06cladghprmw"))))
+        (base32 "0b96yw687i3b0g00aaah2r2968iqashif4sd4a51nrzrf1vmpfsa"))))
     (properties `((upstream-name . "MsDataHub")))
     (build-system r-build-system)
     (arguments
@@ -2265,14 +2368,14 @@ quantitative data from proteomics and metabolomics experiments.")
 (define-public r-msd16s
   (package
     (name "r-msd16s")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "msd16s" version
                               'experiment))
        (sha256
-        (base32 "0wg705d0232d4916d3b84q62pdrzmf8v3k9apyh4fsmg4pk2xw6p"))))
+        (base32 "16n944j8azzrmj5ymb1nkwg6jh0fls9ww6l5bjzch1m2prjlkxbl"))))
     (properties `((upstream-name . "msd16s")))
     (build-system r-build-system)
     (arguments
@@ -2291,13 +2394,13 @@ leads to large-scale alterations in intestinal microbiota composition'.")
 (define-public r-msbackendrawfilereader
   (package
     (name "r-msbackendrawfilereader")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendRawFileReader" version))
        (sha256
-        (base32 "06j1m0amjksxr52j46bmyiakj208jn8c1alf1k3xgsnacm5mrd94"))))
+        (base32 "1783c06bx4fvz50c5x6c5wjd2427crlyq61jcgjz8x712d1ji7iq"))))
     (properties `((upstream-name . "MsBackendRawFileReader")))
     (build-system r-build-system)
     (arguments
@@ -2324,13 +2427,13 @@ in this package are supposed to extend the Spectra Bioconductor package.")
 (define-public r-msbackendmsp
   (package
     (name "r-msbackendmsp")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMsp" version))
        (sha256
-        (base32 "0d6v4i55k34hnvv71lb1s4yj13ssfjwlkpwk27xxwzpm5i6n4frd"))))
+        (base32 "0c9f0ghkmh1xhbs2bfyn7ydwgwbpjwdrawcyixydwl00k9nma2h5"))))
     (properties `((upstream-name . "MsBackendMsp")))
     (build-system r-build-system)
     (arguments
@@ -2357,13 +2460,13 @@ infrastructure for MS data handling.")
 (define-public r-msbackendmgf
   (package
     (name "r-msbackendmgf")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMgf" version))
        (sha256
-        (base32 "0hr70d8kc27xfgvad23fyfkfh5mvld8z2xw8b2165b9f6gbwkrsi"))))
+        (base32 "0rwl5kmnvg31q7dgs2r5gkwwyn6n3yqcwxqcz4kc0yar85kgvmds"))))
     (properties `((upstream-name . "MsBackendMgf")))
     (build-system r-build-system)
     (arguments
@@ -2389,19 +2492,23 @@ package thus adds mgf file support to the Spectra package.")
 (define-public r-msbackendmetabolights
   (package
     (name "r-msbackendmetabolights")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMetaboLights" version))
        (sha256
-        (base32 "03np0c0b8hhv8axzcnxf3pxlbjvcxar7wyfj2jayrg8lzssv9q1n"))))
+        (base32 "1drirfjdfc026a7v0ll09cbiwjyxb088vm08mclvg5jk4hm5agq7"))))
     (properties `((upstream-name . "MsBackendMetaboLights")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-spectra r-s4vectors r-protgenerics r-curl
+    (propagated-inputs (list r-spectra
+                             r-s4vectors
+                             r-protgenerics
+                             r-progress
+                             r-curl
                              r-biocfilecache))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RforMassSpectrometry/MsBackendMetaboLights")
@@ -2420,13 +2527,13 @@ package.")
 (define-public r-msbackendmassbank
   (package
     (name "r-msbackendmassbank")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMassbank" version))
        (sha256
-        (base32 "001xnr19pg38g5cm4jxqbrwv135lyzhrhfdkbfwmq89imcw8inm4"))))
+        (base32 "1xnnlf893gq9bsv1x0ckq0qvmykb42lhrp2k1dp2d90p2va5ksnx"))))
     (properties `((upstream-name . "MsBackendMassbank")))
     (build-system r-build-system)
     (arguments
@@ -2454,13 +2561,13 @@ from this package are supposed to be used with the Spectra Bioconductor package.
 (define-public r-msa2dist
   (package
     (name "r-msa2dist")
-    (version "1.10.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSA2dist" version))
        (sha256
-        (base32 "0wcnaappdikx7ma2g59k0wq299a1s2wkk50ck08jrc0ixnbr3jlf"))))
+        (base32 "0i5wq4882jjm16gyx0k0qzmrb7mlpk5nkfj6fnaazqbqs5nqssgw"))))
     (properties `((upstream-name . "MSA2dist")))
     (build-system r-build-system)
     (arguments
@@ -2490,21 +2597,25 @@ from this package are supposed to be used with the Spectra Bioconductor package.
      "MSA2dist calculates pairwise distances between all sequences of a
 DNA@code{StringSet} or a AA@code{StringSet} using a custom score matrix and
 conducts codon based analysis.  It uses scoring matrices to be used in these
-pairwise distance calcualtions which can be adapted to any scoring for DNA or AA
+pairwise distance calculations which can be adapted to any scoring for DNA or AA
 characters.  E.g.  by using literal distances MSA2dist calculates pairwise IUPAC
-distances.")
+distances.  DNA@code{StringSet} alignments can be analysed as codon alignments
+to look for synonymous and nonsynonymous substitutions (@code{dN/dS}) in a
+parallelised fashion using a variety of substitution models.  Non-aligned coding
+sequences can be directly used to construct pairwise codon alignments
+(global/local) and calculate @code{dN/dS} without any external dependencies.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-mpranalyze
   (package
     (name "r-mpranalyze")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MPRAnalyze" version))
        (sha256
-        (base32 "0xmhmkcd79f33wnkjlxx70b5n406phc46cpc9vwy2yxjjls7az7f"))))
+        (base32 "0zrjii1daf025544fpqvximl7imwpkijpnvm74yxdis2ip43y6c4"))))
     (properties `((upstream-name . "MPRAnalyze")))
     (build-system r-build-system)
     (arguments
@@ -2528,13 +2639,13 @@ statistical testig schemes.")
 (define-public r-mpra
   (package
     (name "r-mpra")
-    (version "1.28.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mpra" version))
        (sha256
-        (base32 "04bbx660bq3fx27dzf5cl33plsg6ndyxv31pa0ind3ma4zzxa47m"))))
+        (base32 "1jdd51rjhzx8l3cj00l9z7bpxhqiiw47qhsv49av2qf5rf94w2bk"))))
     (properties `((upstream-name . "mpra")))
     (build-system r-build-system)
     (arguments
@@ -2557,13 +2668,13 @@ differential analysis in massively parallel report assays (MPRA).")
 (define-public r-mpfe
   (package
     (name "r-mpfe")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MPFE" version))
        (sha256
-        (base32 "0xvasm0fywkfdp8yq7vs35nkgjd2c2r5n472kbj1pw4wxbmbxaq3"))))
+        (base32 "0agif5jpqxids56m5a2866gw7ikk6w0x7yv05hy30ckjakx46fds"))))
     (properties `((upstream-name . "MPFE")))
     (build-system r-build-system)
     (arguments
@@ -2605,56 +2716,64 @@ from public repositories.")
 (define-public r-mpac
   (package
     (name "r-mpac")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MPAC" version))
        (sha256
-        (base32 "0i6cmsxabmlsnp1z7ip2dk9w8q820n5b43jm8v7r0ckx70ii3b5h"))))
+        (base32 "1yjrfwrickyj92qixbmg9aya22vlpcxb7fyklx491c85a5kyha5b"))))
     (properties `((upstream-name . "MPAC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
+    (propagated-inputs (list r-viridis
+                             r-survminer
+                             r-survival
+                             r-summarizedexperiment
+                             r-stringr
                              r-singlecellexperiment
                              r-scran
+                             r-scales
                              r-s4vectors
                              r-igraph
+                             r-ggraph
+                             r-ggplot2
                              r-fitdistrplus
                              r-fgsea
                              r-data-table
                              r-complexheatmap
+                             r-circlize
                              r-bluster
                              r-biocsingular
                              r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pliu55/MPAC")
-    (synopsis "Multi-omic Pathway Analysis of Cancer")
+    (synopsis "Multi-omic Pathway Analysis of Cells")
     (description
-     "Multi-omic Pathway Analysis of Cancer (MPAC), integrates multi-omic data for
-understanding cancer mechanisms.  It predicts novel patient groups with distinct
-pathway profiles as well as identifying key pathway proteins with potential
-clinical associations.  From CNA and RNA-seq data, it determines genes’ DNA and
-RNA states (i.e., repressed, normal, or activated), which serve as the input for
-PARADIGM to calculate Inferred Pathway Levels (IPLs).  It also permutes DNA and
-RNA states to create a background distribution to filter IPLs as a way to remove
-events observed by chance.  It provides multiple methods for downstream analysis
-and visualization.")
+     "Multi-omic Pathway Analysis of Cells (MPAC), integrates multi-omic data for
+understanding cellular mechanisms.  It predicts novel patient groups with
+distinct pathway profiles as well as identifying key pathway proteins with
+potential clinical associations.  From CNA and RNA-seq data, it determines
+genes’ DNA and RNA states (i.e., repressed, normal, or activated), which serve
+as the input for PARADIGM to calculate Inferred Pathway Levels (IPLs).  It also
+permutes DNA and RNA states to create a background distribution to filter IPLs
+as a way to remove events observed by chance.  It provides multiple methods for
+downstream analysis and visualization.")
     (license license:gpl3)))
 
 (define-public r-mousethymusageing
   (package
     (name "r-mousethymusageing")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MouseThymusAgeing" version
                               'experiment))
        (sha256
-        (base32 "0sbb4vr4gs2sbkn35cwhysx6gqp25l4ifx4pqvll7nywq9hr28if"))))
+        (base32 "1islg9ki7nyf1mkh3l1qwsxxbrr96i7wmi12mv0145wg2i6mxw2k"))))
     (properties `((upstream-name . "MouseThymusAgeing")))
     (build-system r-build-system)
     (arguments
@@ -2681,13 +2800,13 @@ informative meta-data.")
 (define-public r-mousefm
   (package
     (name "r-mousefm")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MouseFM" version))
        (sha256
-        (base32 "1i2rrd51757pdggx1ffv3rnv2d1z142ys4fbxl3vciy5i3rmgh4g"))))
+        (base32 "0v3dr3jlihqpx50nfy0qm8gjkwg9lqikpwmkaj2qwa55k73iilml"))))
     (properties `((upstream-name . "MouseFM")))
     (build-system r-build-system)
     (arguments
@@ -2742,14 +2861,14 @@ data repositories.")
 (define-public r-mouseagingdata
   (package
     (name "r-mouseagingdata")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MouseAgingData" version
                               'experiment))
        (sha256
-        (base32 "0cw03p2xk8amgswjzvka5l23crhd9f8p2ggr7rdib4wy3cidvhmg"))))
+        (base32 "0as04ldz8mwf5fdr1rlbf1pxyxzdslp06sh55zj8n448f9fxygms"))))
     (properties `((upstream-name . "MouseAgingData")))
     (build-system r-build-system)
     (arguments
@@ -2948,14 +3067,14 @@ Mouse430_2.cdf file.")
 (define-public r-mouse4302barcodevecs
   (package
     (name "r-mouse4302barcodevecs")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mouse4302barcodevecs" version
                               'experiment))
        (sha256
-        (base32 "108hilxnvywqy3m1iks6d1nlivxgpxjlgcn203nh9mpyzk98d0m3"))))
+        (base32 "0rx2an10s089s418hlcyafyzrmkyawnj1fdd236afswpc44is34y"))))
     (properties `((upstream-name . "mouse4302barcodevecs")))
     (build-system r-build-system)
     (arguments
@@ -2995,14 +3114,14 @@ assembled using data from public repositories.")
 (define-public r-mouse-db0
   (package
     (name "r-mouse-db0")
-    (version "3.20.0")
+    (version "3.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mouse.db0" version
                               'annotation))
        (sha256
-        (base32 "1xx66q0mgylyapflczrnmci933byb24b6psiqybx2a8zd2mw9i87"))))
+        (base32 "0fc50cnn62f3043f8jm1r0x4v1zj8xjcvnrgiqz474kf558wchbr"))))
     (properties `((upstream-name . "mouse.db0")))
     (build-system r-build-system)
     (arguments
@@ -3019,13 +3138,13 @@ assembled using data from public repositories.")
 (define-public r-motiftestr
   (package
     (name "r-motiftestr")
-    (version "1.2.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifTestR" version))
        (sha256
-        (base32 "1ysqk2xsxry9jm78qzph8myyl0f1bab1lfwwazga8513ffxnn4xn"))))
+        (base32 "0qdivy6ci9xcjjwbkklh69rqhfrvi733r2jraw9cina8jiwff2q9"))))
     (properties `((upstream-name . "motifTestR")))
     (build-system r-build-system)
     (arguments
@@ -3053,16 +3172,71 @@ statistical approaches.  The package also contains core functions to prepare
 data for analysis, and to visualise results.")
     (license license:gpl3)))
 
+(define-public r-motifpeeker
+  (package
+    (name "r-motifpeeker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MotifPeeker" version))
+       (sha256
+        (base32 "1rhmb7b28y96zdh9cxnh2c8qr7y0v05lxj9lil7cphlv2vdx3vfp"))))
+    (properties `((upstream-name . "MotifPeeker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-universalmotif
+                             r-tidyr
+                             r-summarizedexperiment
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsamtools
+                             r-rmarkdown
+                             r-purrr
+                             r-plotly
+                             r-memes
+                             r-iranges
+                             r-htmlwidgets
+                             r-htmltools
+                             r-heatmaply
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicalignments
+                             r-genomeinfodb
+                             r-dt
+                             r-dplyr
+                             r-bsgenome
+                             r-biostrings
+                             r-biocparallel
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurogenomics/MotifPeeker")
+    (synopsis
+     "Benchmarking Epigenomic Profiling Methods Using Motif Enrichment")
+    (description
+     "@code{MotifPeeker} is used to compare and analyse datasets from epigenomic
+profiling methods with motif enrichment as the key benchmark.  The package
+outputs an HTML report consisting of three sections: (1.  General Metrics)
+Overview of peaks-related general metrics for the datasets (F@code{RiP} scores,
+peak widths and motif-summit distances). (2.  Known Motif Enrichment Analysis)
+Statistics for the frequency of user-provided motifs enriched in the datasets.
+(3.  De-Novo Motif Enrichment Analysis) Statistics for the frequency of de-novo
+discovered motifs enriched in the datasets and compared with known motifs.")
+    (license license:gpl3+)))
+
 (define-public r-motifcounter
   (package
     (name "r-motifcounter")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifcounter" version))
        (sha256
-        (base32 "1babir5nypi3h2rbqfgkawsv1mbhqkkx8q583cszpwyivyird1x1"))))
+        (base32 "19wfy5cn76x9v7sb3pglk3c7lw997cidmsl39hhdyxsm76nfy0cv"))))
     (properties `((upstream-name . "motifcounter")))
     (build-system r-build-system)
     (arguments
@@ -3090,13 +3264,13 @@ fold-enrichment for a set of observed motif matches.")
 (define-public r-motif2site
   (package
     (name "r-motif2site")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Motif2Site" version))
        (sha256
-        (base32 "1c88m338j6gh2lvdpx3n2s2sx42qka5j6bxdhh46dcbgb09f6kf4"))))
+        (base32 "102qbjvv9bf0r6j26didxai0zv6aw5lzd8sh81khw9qbdbc9342w"))))
     (properties `((upstream-name . "Motif2Site")))
     (build-system r-build-system)
     (arguments
@@ -3128,13 +3302,13 @@ motifs as the centers of the mixture of normal distribution curves.")
 (define-public r-mosim
   (package
     (name "r-mosim")
-    (version "2.2.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOSim" version))
        (sha256
-        (base32 "114hmlbk3schfbm6zwczs59bn9hki9iid5ap55akjaxls1s0rsca"))))
+        (base32 "0fzk1zlhfxrmsw9lkl25zmaa9136kdj6mni4mgslik3ixkyg3w0x"))))
     (properties `((upstream-name . "MOSim")))
     (build-system r-build-system)
     (arguments
@@ -3169,13 +3343,13 @@ multiple groups.")
 (define-public r-mosclip
   (package
     (name "r-mosclip")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOSClip" version))
        (sha256
-        (base32 "16fscjhv7v4wq5kgm0snmjdykn1qam3rd424l0m2c94f3l8l60xf"))))
+        (base32 "0pskd9wfg7vgjf1as7jm31v0gkhxl4rhzgbbdck9x175h7p4mhj8"))))
     (properties `((upstream-name . "MOSClip")))
     (build-system r-build-system)
     (arguments
@@ -3221,13 +3395,13 @@ allows the user to dig inside the pathways itself.")
 (define-public r-mosbi
   (package
     (name "r-mosbi")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mosbi" version))
        (sha256
-        (base32 "09dp77ryr0cg1c8gj67a38s9y0pa7dlxrwjrvsi8vnkbn27ys712"))))
+        (base32 "160yz2bqx7rm8m90j282yr3dkaw3r1ckhnikb6zw4xkd7nwj3wkl"))))
     (properties `((upstream-name . "mosbi")))
     (build-system r-build-system)
     (arguments
@@ -3265,14 +3439,14 @@ algorithms.")
 (define-public r-mosaicsexample
   (package
     (name "r-mosaicsexample")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mosaicsExample" version
                               'experiment))
        (sha256
-        (base32 "0zr5xpm3znscr5bl2l22nsgikfbhap0f0zc6sh8vxjjj8scq4mma"))))
+        (base32 "0b5hl18092057qj1xqinvcrk5f6z5av0ii0cm059dyjc2srk0xlq"))))
     (properties `((upstream-name . "mosaicsExample")))
     (build-system r-build-system)
     (arguments
@@ -3293,13 +3467,13 @@ ambiguity scores of human genome HG18.")
 (define-public r-mosaics
   (package
     (name "r-mosaics")
-    (version "2.44.0")
+    (version "2.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mosaics" version))
        (sha256
-        (base32 "0f2qnqzm76hhcq113bag4p2g2li8rf2afdskj4hki8n0mnzgqgnc"))))
+        (base32 "1ya14fdxbbcflhiknmx8ar29y1sbpdih9q8g381s4vlli3k3zgxk"))))
     (properties `((upstream-name . "mosaics")))
     (build-system r-build-system)
     (arguments
@@ -3327,13 +3501,13 @@ MOS@code{AiCS-HMM}, a statistical framework to analyze one-sample or two-sample
 (define-public r-moonlightr
   (package
     (name "r-moonlightr")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MoonlightR" version))
        (sha256
-        (base32 "1rva7ggqb2n303lc9kz3a94qxjxjcp2g597lb2zaqwwnclc2i2y9"))))
+        (base32 "0hkq4821cg5ks49qqi256dnmys2yl9c660qhbidhq2h7ja3m8smi"))))
     (properties `((upstream-name . "MoonlightR")))
     (build-system r-build-system)
     (arguments
@@ -3383,13 +3557,13 @@ different resistances to chemotherapeutic treatments.")
 (define-public r-moonlight2r
   (package
     (name "r-moonlight2r")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Moonlight2R" version))
        (sha256
-        (base32 "01na4bl43h0hxwhajsaaqzjr7hqxcf7rxix8xkm6mlwq987k1n47"))))
+        (base32 "1rjldg6kh3iy5sbmj75j0n80hbl75capxv2yrqhabpm608gcax1d"))))
     (properties `((upstream-name . "Moonlight2R")))
     (build-system r-build-system)
     (arguments
@@ -3400,12 +3574,14 @@ different resistances to chemotherapeutic treatments.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (inputs (list))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-withr
+                             r-tidyr
                              r-tidyheatmap
                              r-tibble
                              r-stringr
                              r-seqminer
                              r-rtracklayer
+                             r-rlang
                              r-rismed
                              r-readr
                              r-rcolorbrewer
@@ -3428,6 +3604,7 @@ different resistances to chemotherapeutic treatments.")
                              r-dplyr
                              r-dose
                              r-doparallel
+                             r-data-table
                              r-complexheatmap
                              r-clusterprofiler
                              r-circlize
@@ -3466,36 +3643,41 @@ Moonlight2R can be used to discover OCGs and TSGs in the same cancer type.  This
 may for instance help in answering the question whether some genes change role
 between early stages (I, II) and late stages (III, IV).  In the future, this
 analysis could be useful to determine the causes of different resistances to
-chemotherapeutic treatments.")
+chemotherapeutic treatments.  An additional mechanistic layer evaluates if there
+are mutations affecting the protein stability of the transcription factors (TFs)
+of the TSGs and OCGs, as that may have an effect on the expression of the genes.")
     (license license:gpl3)))
 
 (define-public r-monalisa
   (package
     (name "r-monalisa")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "monaLisa" version))
        (sha256
-        (base32 "0pylick07qkv421l068z6pdjgms0cmns49fh9m9lz9g4r4b9w31y"))))
+        (base32 "16rp6c0hcl0xmw08xpq649sdf5dgcn4s8394lq562rrbb51wvsg4"))))
     (properties `((upstream-name . "monaLisa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-xvector
-                             r-vioplot
+                             r-tidyr
                              r-tfbstools
                              r-summarizedexperiment
                              r-stabs
                              r-s4vectors
                              r-rsqlite
+                             r-rlang
                              r-iranges
                              r-glmnet
+                             r-ggplot2
                              r-genomicranges
                              r-genomeinfodb
                              r-complexheatmap
+                             r-cli
                              r-circlize
                              r-bsgenome
                              r-biostrings
@@ -3515,13 +3697,13 @@ results are also provided.")
 (define-public r-moma
   (package
     (name "r-moma")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOMA" version))
        (sha256
-        (base32 "0af1yplxrbdgmr3vqjizy147gv5f9gl2frix51gj0i70h157wlgh"))))
+        (base32 "0fdhkb080hkwl7xzz3xmkfc21plhxji1mcnl8i6irdrl6azd1rcx"))))
     (properties `((upstream-name . "MOMA")))
     (build-system r-build-system)
     (arguments
@@ -3555,13 +3737,13 @@ visualization functions.")
 (define-public r-moleculeexperiment
   (package
     (name "r-moleculeexperiment")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MoleculeExperiment" version))
        (sha256
-        (base32 "07xys5p57k91mfxh1a2wcy5lj1c7v6k0wniqnk6v0sj8fmvkrf6z"))))
+        (base32 "0x7960yn8qbrlf4rqjs8lqhnn8x5ricqm4lrypcn2a2yla9sbyf3"))))
     (properties `((upstream-name . "MoleculeExperiment")))
     (build-system r-build-system)
     (arguments
@@ -3598,13 +3780,13 @@ standardised data formats accross vendors.")
 (define-public r-mogsa
   (package
     (name "r-mogsa")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mogsa" version))
        (sha256
-        (base32 "131l0xs5gvjkih18h4jckmwmsz4r90cnrrxqnyfrrk9kbdcsb8jw"))))
+        (base32 "13zfxl0saqs57i29ymrpx46awjljihhhvkylj86hv35x4ly4hql5"))))
     (properties `((upstream-name . "mogsa")))
     (build-system r-build-system)
     (arguments
@@ -3903,13 +4085,13 @@ data from public repositories.")
 (define-public r-mogamun
   (package
     (name "r-mogamun")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOGAMUN" version))
        (sha256
-        (base32 "15khhn3bvcnncc7mb4zvyxg1w3a5j90ywwqhdpj1h329pgnlzyfq"))))
+        (base32 "00cfx9m0b14bbci2j07vzmfcfwj5mbjsh9dxrvgwdmafiw0vvmfl"))))
     (properties `((upstream-name . "MOGAMUN")))
     (build-system r-build-system)
     (arguments
@@ -3930,14 +4112,14 @@ Genetic Algorithm, version II), which we adapted to work on networks.")
 (define-public r-mofadata
   (package
     (name "r-mofadata")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOFAdata" version
                               'experiment))
        (sha256
-        (base32 "007rmp37qwrsfm02g1xwzr3az9rv43hz58j41f982z0ikzz8hl2q"))))
+        (base32 "0aaw8wiv7v720iiiv7qab4hgp4midxjbykj4w91jjb6f2qmbl8b3"))))
     (properties `((upstream-name . "MOFAdata")))
     (build-system r-build-system)
     (arguments
@@ -3954,13 +4136,13 @@ and illustrate running and analysing MOFA models.")
 (define-public r-mofa2
   (package
     (name "r-mofa2")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOFA2" version))
        (sha256
-        (base32 "0m5xrphhlrzl16fg39m512rcmf0cnvjgw1pdmz43imyzh2339jrp"))))
+        (base32 "111i10ppnv8nkh7q2jhiz7w3r6iyw23a3pmmx8cnb1lhbl1p38lk"))))
     (properties `((upstream-name . "MOFA2")))
     (build-system r-build-system)
     (arguments
@@ -4231,13 +4413,13 @@ using data from public repositories.")
 (define-public r-modcon
   (package
     (name "r-modcon")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ModCon" version))
        (sha256
-        (base32 "1iq1b68cz9fkwba0nbm464n7x9zzi90vvcskm95rinmm4mbzif7f"))))
+        (base32 "0gz3gb0ljj2gvpgchr6v0lspx0ylfqbsw35s9pxry7qwwzybarx2"))))
     (properties `((upstream-name . "ModCon")))
     (build-system r-build-system)
     (arguments
@@ -4259,13 +4441,13 @@ e.g. in reporter systems to silence or activate cryptic splice donor sites.")
 (define-public r-moda
   (package
     (name "r-moda")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MODA" version))
        (sha256
-        (base32 "198rpf9zcid6ipzshcr0ip26apjznz4p8wmp5qycyv0sp9k2gcf8"))))
+        (base32 "1sgzwqh7445q1y6m1gslwhp14xqd2kqihdrmbjcw90ddbal0c249"))))
     (properties `((upstream-name . "MODA")))
     (build-system r-build-system)
     (arguments
@@ -4290,13 +4472,13 @@ biological processes.")
 (define-public r-mobilerna
   (package
     (name "r-mobilerna")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mobileRNA" version))
        (sha256
-        (base32 "0f4g54fyjwiqcwfrsrfgb7414x9mk4mcxpsyd6j0bx704qjr743v"))))
+        (base32 "0a7kd7a2avkiba4aixyv8bvk7rha91g25hg16nbkikv5px1x7ssw"))))
     (properties `((upstream-name . "mobileRNA")))
     (build-system r-build-system)
     (arguments
@@ -4344,13 +4526,13 @@ premise of mapping reads to all genotypes at the same time.")
 (define-public r-moanin
   (package
     (name "r-moanin")
-    (version "1.14.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "moanin" version))
        (sha256
-        (base32 "0ppcjynl9mplsz3fwyj47lni6dv53y4avaqsavf885bp33dn85gb"))))
+        (base32 "00361hb8ccnf01a7qx5qa8h4i1cicg71w40hi28mmr20q94rahxj"))))
     (properties `((upstream-name . "moanin")))
     (build-system r-build-system)
     (arguments
@@ -4383,13 +4565,13 @@ downstream analysis.")
 (define-public r-mnem
   (package
     (name "r-mnem")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mnem" version))
        (sha256
-        (base32 "0accy11xhqai777zb5c1b49k5fm8drng0jrwf467x7nvzwgkpfw9"))))
+        (base32 "077g7pmlx8qlj4hnn2xlyn1h0ydv0pxwjxc4jsmn7ni8hzcppi80"))))
     (properties `((upstream-name . "mnem")))
     (build-system r-build-system)
     (arguments
@@ -4431,14 +4613,14 @@ expectation maximization algorithm.")
 (define-public r-mmdiffbamsubset
   (package
     (name "r-mmdiffbamsubset")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MMDiffBamSubset" version
                               'experiment))
        (sha256
-        (base32 "0kyyz9fw03gfnpving4swjihz8wi0603l91f1qda5gqj692dg0rs"))))
+        (base32 "077rdraia5lxli9dk3ncp115f9swid1lcspq8kz875p6v52nky01"))))
     (properties `((upstream-name . "MMDiffBamSubset")))
     (build-system r-build-system)
     (arguments
@@ -4456,13 +4638,13 @@ corresponding subset of peaks called by MACS.")
 (define-public r-mmdiff2
   (package
     (name "r-mmdiff2")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MMDiff2" version))
        (sha256
-        (base32 "0n3a2ydxr36q02v6ndagm378zqa5sakz02zsk0d7z668wbjawn55"))))
+        (base32 "1fd8mzkmbxfs0px6vwi5zrzgaj23149mj4s2528p0dib6pakx1w3"))))
     (properties `((upstream-name . "MMDiff2")))
     (build-system r-build-system)
     (arguments
@@ -4540,13 +4722,13 @@ using data from public repositories.")
 (define-public r-mlseq
   (package
     (name "r-mlseq")
-    (version "2.24.0")
+    (version "2.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MLSeq" version))
        (sha256
-        (base32 "0h293r553nvkwr3kpp5l3jfkxpr699fvfp39d1k37gw9w7rn2r4k"))))
+        (base32 "1b1bv4p1z4kpldzla3yn0c52g66fnkr0nn1043niljc4b53lkv80"))))
     (properties `((upstream-name . "MLSeq")))
     (build-system r-build-system)
     (arguments
@@ -4577,13 +4759,13 @@ using data from public repositories.")
 (define-public r-mlp
   (package
     (name "r-mlp")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MLP" version))
        (sha256
-        (base32 "0sqk5cyffhwp1gpds4jxx06iypg3ygz2d7zrk8n4s8zx06q3x1ng"))))
+        (base32 "18vcin3m27b0yschk4c6p3ljgcv26jfvfnxvi95pdqms200ykq3m"))))
     (properties `((upstream-name . "MLP")))
     (build-system r-build-system)
     (arguments
@@ -4602,16 +4784,52 @@ barplot of pathway significance, Gene Ontology graph and pathway significance
 are available.")
     (license license:gpl3)))
 
+(define-public r-mitology
+  (package
+    (name "r-mitology")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mitology" version))
+       (sha256
+        (base32 "1kvka6ma0ax74521w31nijz0nkq9dl56f76ab1i9h6pr3jaaddj3"))))
+    (properties `((upstream-name . "mitology")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-scales
+                             r-org-hs-eg-db
+                             r-magrittr
+                             r-ggtree
+                             r-ggplot2
+                             r-complexheatmap
+                             r-circlize
+                             r-ape
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CaluraLab/mitology")
+    (synopsis "Study of mitochondrial activity from RNA-seq data")
+    (description
+     "mitology allows to study the mitochondrial activity throught high-throughput
+RNA-seq data.  It is based on a collection of genes whose proteins localize in
+to the mitochondria.  From these, mitology provides a reorganization of the
+pathways related to mitochondria activity from Reactome and Gene Ontology.
+Further a ready-to-use implementation of @code{MitoCarta3.0} pathways is
+included.")
+    (license license:agpl3)))
+
 (define-public r-mitoclone2
   (package
     (name "r-mitoclone2")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mitoClone2" version))
        (sha256
-        (base32 "0jsjjjgqnn380fg6v5336dvrcgkfjc4h1cv4y40srhx008f5g63y"))))
+        (base32 "1p7mg1cb8ma161hbhjpa7xcigszmzjwvgqv12gpadmn080z8lljm"))))
     (properties `((upstream-name . "mitoClone2")))
     (build-system r-build-system)
     (arguments
@@ -4640,13 +4858,13 @@ additional genomic context.")
 (define-public r-mitch
   (package
     (name "r-mitch")
-    (version "1.18.4")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mitch" version))
        (sha256
-        (base32 "1w75lsa5ygzr67mr5kfj36z40qzyb2q04mbvwgsyappkqdkscd15"))))
+        (base32 "1s7mqb4qxx2ylr966y0aj3m9slvcrxy5zxj77q7nfi256781lf4x"))))
     (properties `((upstream-name . "mitch")))
     (build-system r-build-system)
     (arguments
@@ -4655,6 +4873,7 @@ additional genomic context.")
     (propagated-inputs (list r-rmarkdown
                              r-reshape2
                              r-plyr
+                             r-network
                              r-mass
                              r-knitr
                              r-kableextra
@@ -4663,6 +4882,7 @@ additional genomic context.")
                              r-ggplot2
                              r-ggally
                              r-echarts4r
+                             r-dplyr
                              r-beeswarm))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/markziemann/mitch")
@@ -4686,13 +4906,13 @@ enrichments.")
 (define-public r-mistyr
   (package
     (name "r-mistyr")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mistyR" version))
        (sha256
-        (base32 "14jvn05faj2w344rn4297vc23y3q523rvqnkqg48c6sa3dw4gwp5"))))
+        (base32 "0wndy978qly0m9nk5q3ilycrk50198zbczxwsg8c2pm12i120fj1"))))
     (properties `((upstream-name . "mistyR")))
     (build-system r-build-system)
     (arguments
@@ -4740,16 +4960,56 @@ the total expression of each marker and is explained in terms of the
 interactions with other measurements that led to the observed contribution.")
     (license license:gpl3)))
 
+(define-public r-mist
+  (package
+    (name "r-mist")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mist" version))
+       (sha256
+        (base32 "1y1k3xz0di4g26hfplqv9cbnivmaws0wgxgz7qgyz2b27x13gkmw"))))
+    (properties `((upstream-name . "mist")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rlang
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-matrix
+                             r-car
+                             r-biocparallel
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://https://github.com/dxd429/mist")
+    (synopsis "Differential Methylation Analysis for scDNAm Data")
+    (description
+     "mist (Methylation Inference for Single-cell along Trajectory) is a hierarchical
+Bayesian framework for modeling DNA methylation trajectories and performing
+differential methylation (DM) analysis in single-cell DNA methylation
+(@code{scDNAm}) data.  It estimates developmental-stage-specific variations,
+identifies genomic features with drastic changes along pseudotime, and, for two
+phenotypic groups, detects features with distinct temporal methylation patterns.
+ mist uses Gibbs sampling to estimate parameters for temporal changes and
+stage-specific variations.")
+    (license license:expat)))
+
 (define-public r-missrows
   (package
     (name "r-missrows")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "missRows" version))
        (sha256
-        (base32 "09vjmb9p6xwxkz4y6mrzzvw4q8kc72rw9dwivafd55hn8l8410j5"))))
+        (base32 "0p979nxxwrzwn4pjxhy4hzrsa14j1y38sayinfzm6w04f9qhygdj"))))
     (properties `((upstream-name . "missRows")))
     (build-system r-build-system)
     (arguments
@@ -4773,13 +5033,13 @@ the pattern of missingness and visualize the uncertainty due to missing values."
 (define-public r-mirtarrnaseq
   (package
     (name "r-mirtarrnaseq")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mirTarRnaSeq" version))
        (sha256
-        (base32 "1yww4mx117bh6xkdmxnvxsyy5rxy8p679qm1gha3vxd7fnxca4zf"))))
+        (base32 "0zlhkcip070xvmb58lqn61ajihcz8i7w2y5dpvxq0rm4hg5yhnbb"))))
     (properties `((upstream-name . "mirTarRnaSeq")))
     (build-system r-build-system)
     (arguments
@@ -4814,13 +5074,13 @@ expriments.")
 (define-public r-mirsponger
   (package
     (name "r-mirsponger")
-    (version "2.10.0")
+    (version "2.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRspongeR" version))
        (sha256
-        (base32 "10r1rh2nvzwpz0wj2qr2mzzq4yqda6svhqq09ic7bhzzxxfk3qlp"))))
+        (base32 "1lxd782xrdvd68h13795142930nrvkcg3h1b06h1x39573gs34dr"))))
     (properties `((upstream-name . "miRspongeR")))
     (build-system r-build-system)
     (arguments
@@ -4861,13 +5121,13 @@ construct sample-sample correlation network.")
 (define-public r-mirsm
   (package
     (name "r-mirsm")
-    (version "2.2.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRSM" version))
        (sha256
-        (base32 "1zxsjm7yv1rndz709x6irdv29qjhi9h2g3c9b1y3hbh83yl1fcwx"))))
+        (base32 "0vkb5f9nycaijbk3ydalxc5f26l92iaxw69qywg99br7wl1kjxdv"))))
     (properties `((upstream-name . "miRSM")))
     (build-system r-build-system)
     (arguments
@@ -4921,14 +5181,14 @@ multi-sample levels, as well as several functions to conduct modular analysis of
 (define-public r-mirnatarget
   (package
     (name "r-mirnatarget")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRNATarget" version
                               'experiment))
        (sha256
-        (base32 "0arv3h8b3va3kcrpn8kj819mkqssjxi01322d3ijqy59ygbm91a3"))))
+        (base32 "14gq4w1aq10jdabnnxp0r6x2qqg2al9zkl3kqhgl4fvyl43a96k2"))))
     (properties `((upstream-name . "miRNATarget")))
     (build-system r-build-system)
     (arguments
@@ -4968,13 +5228,13 @@ package.")
 (define-public r-mirnatap
   (package
     (name "r-mirnatap")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRNAtap" version))
        (sha256
-        (base32 "0cigbnhd7025dnbnrjygxi494rdway499kg33mc62smxh39l1l8m"))))
+        (base32 "1aj7cm1sxc1s3c8m17bzprg1nafr1b7rgqhc7kn696gi20w8gqcd"))))
     (properties `((upstream-name . "miRNAtap")))
     (build-system r-build-system)
     (arguments
@@ -5000,13 +5260,13 @@ predictions are available for Homo sapiens, Mus musculus and Rattus norvegicus
 (define-public r-mirnapath
   (package
     (name "r-mirnapath")
-    (version "1.66.0")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRNApath" version))
        (sha256
-        (base32 "0mkhwyw2xg4b2bh2mnqwnl5qgm3iywwlf3imvczk2w9lkd9ld60j"))))
+        (base32 "0w9j0dp295153cvbmpkhs5n7nw3g4f6wpwkyp0qqipqi8n24hmzb"))))
     (properties `((upstream-name . "miRNApath")))
     (build-system r-build-system)
     (arguments
@@ -5027,13 +5287,13 @@ multiple genes, or many @code{miRNAs} affecting many genes.")
 (define-public r-mirnameconverter
   (package
     (name "r-mirnameconverter")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRNAmeConverter" version))
        (sha256
-        (base32 "15cyqd9vskx9ik0rc43s4cga8svlfqjil2mnj39gfd4sn4j9mxm6"))))
+        (base32 "0vl9g12gjf0zgw9vxl0hnrm4d16cmcb67dd0alzhrdhz015c50wa"))))
     (properties `((upstream-name . "miRNAmeConverter")))
     (build-system r-build-system)
     (arguments
@@ -5150,13 +5410,13 @@ The file name was @code{miRNA-1\\_0\\_probe\\_tab}.")
 (define-public r-mirlab
   (package
     (name "r-mirlab")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRLAB" version))
        (sha256
-        (base32 "0rw6rav765b9slw9p4ghjxp1b6x4s7f47q01nz6sav39193139gc"))))
+        (base32 "1nksyiixwb8331phw07jgwbcbqw1flix10gi1yqn24cdg2q7k5qp"))))
     (properties `((upstream-name . "miRLAB")))
     (build-system r-build-system)
     (arguments
@@ -5194,13 +5454,13 @@ validate the results, and functions to conduct enrichment analyses.")
 (define-public r-mirit
   (package
     (name "r-mirit")
-    (version "1.2.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MIRit" version))
        (sha256
-        (base32 "11wwbm6qvg6gjngn3zk8lgmrfrgaycfmmlkzpka10w0k57xflhgv"))))
+        (base32 "116l7y5lmv0d3aly24i8p3wwd4hhnwvar7cdq8g1j6ng5gc1jvm2"))))
     (properties `((upstream-name . "MIRit")))
     (build-system r-build-system)
     (arguments
@@ -5243,13 +5503,13 @@ characterization.")
 (define-public r-mirintegrator
   (package
     (name "r-mirintegrator")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mirIntegrator" version))
        (sha256
-        (base32 "0nzd6y95jlbal60axkfdrillghbzxa7vhwqb86hmb0g87hfzjmkw"))))
+        (base32 "05d5x4xzqz2bpi7wvbf8nx5x6cn24hmc4acq04b7g7fs3mj0zd2v"))))
     (properties `((upstream-name . "mirIntegrator")))
     (build-system r-build-system)
     (arguments
@@ -5272,14 +5532,14 @@ analysis of @code{microRNA} and @code{mRNA} expression levels.")
 (define-public r-mircompdata
   (package
     (name "r-mircompdata")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRcompData" version
                               'experiment))
        (sha256
-        (base32 "1wkr3i5pq9iwr2mrar9jky2z1qc7byxcfy9japidxfxsk287iapl"))))
+        (base32 "05lvx7i66wvxnzas6r3g4d7lwm55knxgjmqqccwwca9h6d4dvjwz"))))
     (properties `((upstream-name . "miRcompData")))
     (build-system r-build-system)
     (arguments
@@ -5297,13 +5557,13 @@ methods that estimate expression from the amplification curves.")
 (define-public r-mircomp
   (package
     (name "r-mircomp")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRcomp" version))
        (sha256
-        (base32 "0nvjyiixk934hlmr33agw0crhs3kds981pzzfn4k1jy01hzgqc62"))))
+        (base32 "1rndl30dybmp4abpswizd1bhqy66j4fqq8gdxllr4cnajz2759yr"))))
     (properties `((upstream-name . "miRcomp")))
     (build-system r-build-system)
     (arguments
@@ -5350,13 +5610,13 @@ of methods that estimate expression from the amplification curves.")
 (define-public r-mirbaseconverter
   (package
     (name "r-mirbaseconverter")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRBaseConverter" version))
        (sha256
-        (base32 "0nf24hkziq25xn1sikcgj4wfmggl51ndyfq3dxn9sdizdc5a087g"))))
+        (base32 "1hivi18pmmf3y6w89ha2030gyq746bl42xmma159n2dn57svbwv7"))))
     (properties `((upstream-name . "miRBaseConverter")))
     (build-system r-build-system)
     (arguments
@@ -5376,14 +5636,14 @@ in different @code{miRBase} versions.  It can process a huge number of
 (define-public r-mirbase-db
   (package
     (name "r-mirbase-db")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mirbase.db" version
                               'annotation))
        (sha256
-        (base32 "0l7ah1ia7q1h16av2v1qa9nqpr0604z5dlrq37kd0aiz8dcxyddk"))))
+        (base32 "06dgj82jlggb272b0nvx0y4q9w4kkq7lbn9i0z4m8h6z23qlw7d9"))))
     (properties `((upstream-name . "mirbase.db")))
     (build-system r-build-system)
     (arguments
@@ -5400,13 +5660,13 @@ in different @code{miRBase} versions.  It can process a huge number of
 (define-public r-mirage
   (package
     (name "r-mirage")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MiRaGE" version))
        (sha256
-        (base32 "00byplqc0bfgl4d0597z0as4p5k56xnxvydkvxx90gng6ikgl71m"))))
+        (base32 "07qv210jk2wv83rc2fc3p9vk1lljyrl2hp6lpk7vx2g1x62qnvbx"))))
     (properties `((upstream-name . "MiRaGE")))
     (build-system r-build-system)
     (arguments
@@ -5424,13 +5684,13 @@ in different @code{miRBase} versions.  It can process a huge number of
 (define-public r-mira
   (package
     (name "r-mira")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MIRA" version))
        (sha256
-        (base32 "173nj8hmycrddjnbx2if1w04085sw4sxhkxs52k1ifhwza6iibp3"))))
+        (base32 "1dpp2fwnp9yj69dq6c9d2fsxlvx2pq1k47lgbcvhckzn2h2m8cwx"))))
     (properties `((upstream-name . "MIRA")))
     (build-system r-build-system)
     (arguments
@@ -5461,13 +5721,13 @@ datasets.")
 (define-public r-miqc
   (package
     (name "r-miqc")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miQC" version))
        (sha256
-        (base32 "1mm5529h0xzj2lr61n49gl1x9hvrnwx10jlwgbb95cknyazn1dm6"))))
+        (base32 "0jdks2ra8v8lf46akyb9cchwhq7l457z1da2zfkw4kmrhbjdv4zc"))))
     (properties `((upstream-name . "miQC")))
     (build-system r-build-system)
     (arguments
@@ -5494,13 +5754,13 @@ probabilistic framework to predict the low-quality cells in a given dataset.")
 (define-public r-mipp
   (package
     (name "r-mipp")
-    (version "1.78.0")
+    (version "1.80.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MiPP" version))
        (sha256
-        (base32 "1r6cz4nz7xsmr1cylnsxzx0qdpmj3jzqlaypj33qfaz8vcpnaakj"))))
+        (base32 "1z6giz0m2ri6iy9p5rcpjalnzl3j6aqiqhf5giy29shhyqnw4zmk"))))
     (properties `((upstream-name . "MiPP")))
     (build-system r-build-system)
     (arguments
@@ -5518,13 +5778,13 @@ classes.")
 (define-public r-minimumdistance
   (package
     (name "r-minimumdistance")
-    (version "1.50.0")
+    (version "1.52.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MinimumDistance" version))
        (sha256
-        (base32 "0c80yrqg1l2iyfm50rhczbnlvy77psd4mzrx16xhyd65slb6mj2v"))))
+        (base32 "0dy6853l4iwa8dals9wipcqczg8p3lgisssvqqz19wcbcx21bk46"))))
     (properties `((upstream-name . "MinimumDistance")))
     (build-system r-build-system)
     (arguments
@@ -5556,13 +5816,13 @@ genotyping platforms.")
 (define-public r-mineica
   (package
     (name "r-mineica")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MineICA" version))
        (sha256
-        (base32 "0piyklqddp5wqqv7yx47195827w61x9p0gzdyxlg6a322iv42sn7"))))
+        (base32 "1kcaj2gmm7m4cm5w6rik0dsqscf9sph3adxmk9hd00cmpav78vxb"))))
     (properties `((upstream-name . "MineICA")))
     (build-system r-build-system)
     (arguments
@@ -5608,13 +5868,13 @@ from different datasets using correlation-based graph.")
 (define-public r-mina
   (package
     (name "r-mina")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mina" version))
        (sha256
-        (base32 "04a0sdif70v0136vzq5p7dhd4z4sjmvnz2fd0bkhcpz7s566w2gp"))))
+        (base32 "1jbygw7gzqrirdkq3c0p5hz9hbmaybj5aqcd2pd75dcy6lnvyk0v"))))
     (properties `((upstream-name . "mina")))
     (build-system r-build-system)
     (arguments
@@ -5658,13 +5918,13 @@ principled way.")
 (define-public r-mimager
   (package
     (name "r-mimager")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mimager" version))
        (sha256
-        (base32 "151rkn9rz89x15xh01dn6x48wvdx1wy4hgrwfancpjhq3vlbz0a2"))))
+        (base32 "1yb3wgc5ghw4k1sg8a9p00ff7dg4lbbghvp0mszagy1q7kllh9i1"))))
     (properties `((upstream-name . "mimager")))
     (build-system r-build-system)
     (arguments
@@ -5691,13 +5951,13 @@ principled way.")
 (define-public r-midashla
   (package
     (name "r-midashla")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "midasHLA" version))
        (sha256
-        (base32 "0yva9n4sg93g3skxaqv1156ccjflz8yg0xl896d661in2gxcr400"))))
+        (base32 "1cpmd8g0lmd567aqkzb1nidqz1qabrlsywwpdwxya0bdd45a8wz0"))))
     (properties `((upstream-name . "midasHLA")))
     (build-system r-build-system)
     (arguments
@@ -5737,13 +5997,13 @@ discoveries related to T cell, Natural Killer cell, and disease biology.")
 (define-public r-micsqtl
   (package
     (name "r-micsqtl")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MICSQTL" version))
        (sha256
-        (base32 "0xka43qw13b00g6rmbs0ilhz5alw4z1wx6d1kmfaga74wf103y5n"))))
+        (base32 "12ns11va32v6a41bqrksbs4mgppnv7zhlj6f911jxw952gghm406"))))
     (properties `((upstream-name . "MICSQTL")))
     (build-system r-build-system)
     (arguments
@@ -5782,13 +6042,13 @@ demonstrate the input and output of our tool.")
 (define-public r-microstasis
   (package
     (name "r-microstasis")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microSTASIS" version))
        (sha256
-        (base32 "1wvlx8w8ispcl2nsfjc3wl3fjy4gi9dqyikh3swi7vj9wzbkqn3y"))))
+        (base32 "1ixmd0srjndx43zsl183qzc1r4mhvm6cm2h5yshvijj4lhhgmfli"))))
     (properties `((upstream-name . "microSTASIS")))
     (build-system r-build-system)
     (arguments
@@ -5817,14 +6077,14 @@ visualize the output.")
 (define-public r-micrornaome
   (package
     (name "r-micrornaome")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microRNAome" version
                               'experiment))
        (sha256
-        (base32 "1mfdaahi4ww5j7bzzwwflqs7h2hx565dynm1r4w4csgki0vr0j4l"))))
+        (base32 "15wgmm2475knamin0cyqx4c76gmmri52wclrj6pg6s9mdib7bxi7"))))
     (properties `((upstream-name . "microRNAome")))
     (build-system r-build-system)
     (arguments
@@ -5843,13 +6103,13 @@ human cellular @code{microRNAome}.")
 (define-public r-microrna
   (package
     (name "r-microrna")
-    (version "1.64.0")
+    (version "1.66.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microRNA" version))
        (sha256
-        (base32 "1c9lqmrl7lmzr7r3174mw0dz070x3crlbay4rgnpml5jiqz0w6fm"))))
+        (base32 "14qc1xvldplxv1pxfaizd5hgvkzb6gybrvg54mfihp04c1laxhgf"))))
     (properties `((upstream-name . "microRNA")))
     (build-system r-build-system)
     (arguments
@@ -5866,13 +6126,13 @@ manipulating them.")
 (define-public r-microbiotaprocess
   (package
     (name "r-microbiotaprocess")
-    (version "1.18.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiotaProcess" version))
        (sha256
-        (base32 "0k12q5m8z6xfgnadkj4ckqgqai56i4wzz8gz1cd4yfqv8hcfdwwm"))))
+        (base32 "0zdlk4dr4cx9086r8kvjaf2fji2smz5wziipn5bzzzbq0zs6gnk2"))))
     (properties `((upstream-name . "MicrobiotaProcess")))
     (build-system r-build-system)
     (arguments
@@ -5923,13 +6183,13 @@ and common framework (tidy-like framework).")
 (define-public r-microbiomeprofiler
   (package
     (name "r-microbiomeprofiler")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiomeProfiler" version))
        (sha256
-        (base32 "0ibs1m9lhp59wxr75n8w9q313kk2aggcnch6xx7kp5ljmxmpsrmd"))))
+        (base32 "183shj5jdxpmb4gihwilfi5k63bl162svazn5xlkhyz4lgp7lrfc"))))
     (properties `((upstream-name . "MicrobiomeProfiler")))
     (build-system r-build-system)
     (arguments
@@ -5960,81 +6220,16 @@ analysis, Microbe-Disease association enrichment analysis, Metabo-Pathway
 analysis.")
     (license license:gpl2)))
 
-(define-public r-microbiomemarker
-  (package
-    (name "r-microbiomemarker")
-    (version "1.12.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "microbiomeMarker" version))
-       (sha256
-        (base32 "0fkm2sqqsaa8kkdyp0j3zwx8lijgkgk4s45sir3s37an9yai2bp4"))))
-    (properties `((upstream-name . "microbiomeMarker")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-vegan
-                             r-tidytree
-                             r-tidyr
-                             r-tibble
-                             r-s4vectors
-                             r-rlang
-                             r-purrr
-                             r-proc
-                             r-plotroc
-                             r-phyloseq
-                             r-patchwork
-                             r-multtest
-                             r-metagenomeseq
-                             r-mass
-                             r-magrittr
-                             r-limma
-                             r-iranges
-                             r-ggtree
-                             r-ggsignif
-                             r-ggplot2
-                             r-edger
-                             r-dplyr
-                             r-deseq2
-                             r-complexheatmap
-                             r-coin
-                             r-caret
-                             r-biostrings
-                             r-biomformat
-                             r-biocparallel
-                             r-biocgenerics
-                             r-biobase
-                             r-ancombc
-                             r-aldex2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yiluheihei/microbiomeMarker")
-    (synopsis "microbiome biomarker analysis toolkit")
-    (description
-     "To date, a number of methods have been developed for microbiome marker discovery
-based on metagenomic profiles, e.g. L@code{EfSe}.  However, all of these methods
-have its own advantages and disadvantages, and none of them is considered
-standard or universal.  Moreover, different programs or softwares may be
-development using different programming languages, even in different operating
-systems.  Here, we have developed an all-in-one R package
-@code{microbiomeMarker} that integrates commonly used differential analysis
-methods as well as three machine learning-based approaches, including Logistic
-regression, Random forest, and Support vector machine, to facilitate the
-identification of microbiome markers.")
-    (license license:gpl3)))
-
 (define-public r-microbiomeexplorer
   (package
     (name "r-microbiomeexplorer")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microbiomeExplorer" version))
        (sha256
-        (base32 "144agzs1l8w0vmsmhidz3sa2qqpyfy8894dgm2ya2i1f9jmnwkdb"))))
+        (base32 "195rmgpzjfr09anv2dbl5njnilylqlxl7q1isg42fvprqd4bf587"))))
     (properties `((upstream-name . "microbiomeExplorer")))
     (build-system r-build-system)
     (arguments
@@ -6086,14 +6281,14 @@ automated analysis report generation.")
 (define-public r-microbiomedatasets
   (package
     (name "r-microbiomedatasets")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microbiomeDataSets" version
                               'experiment))
        (sha256
-        (base32 "1mvdspp0kdv0x41z66iljr8x7cfyhsvp616h888sfiy7wh2jcmwc"))))
+        (base32 "17qmij0hlwr8ddg1xn7j8k50rl1jzcfr6hax810bc3wxzza9js1l"))))
     (properties `((upstream-name . "microbiomeDataSets")))
     (build-system r-build-system)
     (arguments
@@ -6124,13 +6319,13 @@ additions from authors are welcome.")
 (define-public r-microbiomedasim
   (package
     (name "r-microbiomedasim")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "microbiomeDASim" version))
        (sha256
-        (base32 "1hm8qfzcg0r2npb0nwnn0pki1y013nxy8bph113favznmi3c58lq"))))
+        (base32 "11lp6gdgvc6yg93ndxy50aya6apy6r5sxa13wx9p6bj9a0x7cnmg"))))
     (properties `((upstream-name . "microbiomeDASim")))
     (build-system r-build-system)
     (arguments
@@ -6159,14 +6354,14 @@ accurately compare different longitudinal methods for differential abundance.")
 (define-public r-microbiomebenchmarkdata
   (package
     (name "r-microbiomebenchmarkdata")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiomeBenchmarkData" version
                               'experiment))
        (sha256
-        (base32 "0ca79ss8a31diykqpy323dd4sb7iky4gqyvil2wagy6hq25mdqp7"))))
+        (base32 "159xgzk6fi9z6ys9cqvrmz9rgpklyidgpgi18hlp4665g7kq2064"))))
     (properties `((upstream-name . "MicrobiomeBenchmarkData")))
     (build-system r-build-system)
     (arguments
@@ -6189,13 +6384,13 @@ benchmarking differential abundance methods are available.")
 (define-public r-michip
   (package
     (name "r-michip")
-    (version "1.60.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MiChip" version))
        (sha256
-        (base32 "0xy1by5famnxbznplpma4bvp8fkn6a4fq4jj2359q8198vxrr4af"))))
+        (base32 "18wdspm6g8aj7gryha1sxda47yaq5prhr4099m0f9all6i3zkxx9"))))
     (properties `((upstream-name . "MiChip")))
     (build-system r-build-system)
     (arguments
@@ -6215,13 +6410,13 @@ packages.")
 (define-public r-miaviz
   (package
     (name "r-miaviz")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miaViz" version))
        (sha256
-        (base32 "1g4zbcl4158wjqwjbnw64l832k7jhy5x7z3jza8xvgsv6jzrfz91"))))
+        (base32 "005ny26n9w6l7dh0da5112h8g8fnridbsnn23rsphc45dbx9bz1a"))))
     (properties `((upstream-name . "miaViz")))
     (build-system r-build-system)
     (arguments
@@ -6237,9 +6432,9 @@ packages.")
                              r-summarizedexperiment
                              r-singlecellexperiment
                              r-scater
+                             r-scales
                              r-s4vectors
                              r-rlang
-                             r-purrr
                              r-mia
                              r-ggtree
                              r-ggrepel
@@ -6253,7 +6448,7 @@ packages.")
                              r-biocgenerics
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/miaViz")
+    (home-page "https://github.com/microbiome/miaViz")
     (synopsis "Microbiome Analysis Plotting and Visualization")
     (description
      "The @code{miaViz} package implements functions to visualize
@@ -6265,13 +6460,13 @@ analysis.  Part of the mia family of R/Bioconductor packages.")
 (define-public r-miasim
   (package
     (name "r-miasim")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miaSim" version))
        (sha256
-        (base32 "1kaa09xanmgbyljjc1c0w2ckm6r73sn4ynqm3fr38zmss1wjsawg"))))
+        (base32 "02qnkrsjl0qs66w5jvzz4yiqxjbckwi6p5nijq37n2xdv5bcqk4g"))))
     (properties `((upstream-name . "miaSim")))
     (build-system r-build-system)
     (arguments
@@ -6293,6 +6488,48 @@ used to determine the abundance matrix.  The resulting abundance matrix is
 applied to (Tree)@code{SummarizedExperiment} objects.")
     (license (list license:artistic2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-miadash
+  (package
+    (name "r-miadash")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "miaDash" version))
+       (sha256
+        (base32 "07dsqnbh9kv3p5h0hbzsfmw4cqwf6m16i0i04iz1prqx3qczlzis"))))
+    (properties `((upstream-name . "miaDash")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-vegan
+                             r-treesummarizedexperiment
+                             r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shiny
+                             r-scater
+                             r-s4vectors
+                             r-rintrojs
+                             r-mia
+                             r-iseetree
+                             r-isee
+                             r-htmltools
+                             r-biomformat
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/microbiome/miaDash")
+    (synopsis
+     "Shiny app for the interactive analysis and exploration of microbiome data")
+    (description
+     "@code{miaDash} provides a Graphical User Interface for the exploration of
+microbiome data.  This way, no knowledge of programming is required to perform
+analyses.  Datasets can be imported, manipulated, analysed and visualised with a
+user-friendly interface.")
+    (license license:artistic2.0)))
 
 (define-public r-mi16cod-db
   (package
@@ -6888,13 +7125,13 @@ using data from public repositories.")
 (define-public r-mgsa
   (package
     (name "r-mgsa")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mgsa" version))
        (sha256
-        (base32 "0jdv22xdkq2qgm17m8fsazshgpf0mvf44a46694qwn0y6pqm6rpy"))))
+        (base32 "0i8pncx71v58db7dpyibjkq938h4d4vmixyiy2pl4bjl4b0g081y"))))
     (properties `((upstream-name . "mgsa")))
     (build-system r-build-system)
     (arguments
@@ -6912,13 +7149,13 @@ with the Gene Ontology.")
 (define-public r-mgnifyr
   (package
     (name "r-mgnifyr")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MGnifyR" version))
        (sha256
-        (base32 "0ka9zlx035v65zdi2q7hni3768vgihaa91kwdg2l2dpmqzgq6ngk"))))
+        (base32 "17h6zckhd2l11yzqzk0nq9v066dfhbaicnngvygg8f7mvmlrbppn"))))
     (properties `((upstream-name . "MGnifyR")))
     (build-system r-build-system)
     (arguments
@@ -6951,13 +7188,13 @@ data is directly compatible with miaverse framework.")
 (define-public r-mgfr
   (package
     (name "r-mgfr")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MGFR" version))
        (sha256
-        (base32 "1ydgx34ixyzdlzz2ad8wb8srssqpzyi0vrh1xn5k3mqyz1s4zv4y"))))
+        (base32 "02d2m9yj5yq66b638jrwavpy2fsl41chh3gb13b4k0sca120bbxb"))))
     (properties `((upstream-name . "MGFR")))
     (build-system r-build-system)
     (arguments
@@ -6973,13 +7210,13 @@ data is directly compatible with miaverse framework.")
 (define-public r-mgfm
   (package
     (name "r-mgfm")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MGFM" version))
        (sha256
-        (base32 "0fjhfpmhchx64hf3c1gwm2l15p12r7zfa5js1n5rj604pi2ibpmh"))))
+        (base32 "0y35ai43i85w4rfzlmdyfpskywi9w8nakxi04ra2g6mbnlnfxp8v"))))
     (properties `((upstream-name . "MGFM")))
     (build-system r-build-system)
     (arguments
@@ -6996,13 +7233,13 @@ data sets.")
 (define-public r-mfa
   (package
     (name "r-mfa")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mfa" version))
        (sha256
-        (base32 "196yxm19imkraph1l7yp2pras7hi0yvlxk0xlxr08ikn6pszks2f"))))
+        (base32 "0zgwf9sxgn0xb103f94zkd96264fjb7cshbwmbardlz74wvrjd87"))))
     (properties `((upstream-name . "mfa")))
     (build-system r-build-system)
     (arguments
@@ -7030,13 +7267,13 @@ analysers.")
 (define-public r-metnet
   (package
     (name "r-metnet")
-    (version "1.24.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetNet" version))
        (sha256
-        (base32 "0dga9gqqy5qg4y6xpsq8x9391h04x6ipyniji27br5dz0qqgwff5"))))
+        (base32 "1pqvlnxa721ncqqmxkc5yyz4rjgca32533fn77acqsa05xiljhwg"))))
     (properties `((upstream-name . "MetNet")))
     (build-system r-build-system)
     (arguments
@@ -7077,13 +7314,13 @@ quantitative and structure information.")
 (define-public r-metmashr
   (package
     (name "r-metmashr")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetMashR" version))
        (sha256
-        (base32 "1dj9x41ar7y8a7iyljwpi3a9gx46xgjzds6axih5cfimiq967d0k"))))
+        (base32 "1505j1jvmgnrxpbpkyh6am0baqmy312sc0fkg1dgzimq6pmwm170"))))
     (properties `((upstream-name . "MetMashR")))
     (build-system r-build-system)
     (arguments
@@ -7112,13 +7349,13 @@ queries are included.")
 (define-public r-metid
   (package
     (name "r-metid")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetID" version))
        (sha256
-        (base32 "08ixkzhyqqkridjbms4x9f4ljmxbqidnb6habic24yjjb2qk1r8w"))))
+        (base32 "0sb67qwyyhzrqblrbgka07xh5wzf91cbnmhwjfca1959b09j44fw"))))
     (properties `((upstream-name . "MetID")))
     (build-system r-build-system)
     (arguments
@@ -7137,13 +7374,13 @@ ability to determine the identities of significant ions detected by LC-MS.")
 (define-public r-methylsig
   (package
     (name "r-methylsig")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylSig" version))
        (sha256
-        (base32 "0fa43yblryn765v32l3i9imlshailip0vgdh9rzp3hhadfs9yaq3"))))
+        (base32 "1ndsffrslk2m96f17mqpckd9igl3zva6r4xarxk89i3gl52y0xz1"))))
     (properties `((upstream-name . "methylSig")))
     (build-system r-build-system)
     (arguments
@@ -7173,14 +7410,14 @@ sliding window tests, and variance estimation.")
 (define-public r-methylseqdata
   (package
     (name "r-methylseqdata")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MethylSeqData" version
                               'experiment))
        (sha256
-        (base32 "0qflbqkslp2fhprhhjagskd91833lxsxydfq12an57v5ww25ix4r"))))
+        (base32 "0986miib6hpbxq5bbwl1jjfci51xrdacjyhhvhfv9fa020mj146h"))))
     (properties `((upstream-name . "MethylSeqData")))
     (build-system r-build-system)
     (arguments
@@ -7210,13 +7447,13 @@ bisulfite-seq datasets (e.g., WGBS and RRBS), provided as
 (define-public r-methylseekr
   (package
     (name "r-methylseekr")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MethylSeekR" version))
        (sha256
-        (base32 "0lsm8ic5g0pbdlm0b7yldrzdpj4mx41cjsbssp35k9xywq2bvs2r"))))
+        (base32 "0yrzg7b6m5fhqd270wrjx0lhk7g5gr1spqhvpz15iddkzspi5sd5"))))
     (properties `((upstream-name . "MethylSeekR")))
     (build-system r-build-system)
     (arguments
@@ -7237,13 +7474,13 @@ bisulfite-seq datasets (e.g., WGBS and RRBS), provided as
 (define-public r-methylscaper
   (package
     (name "r-methylscaper")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylscaper" version))
        (sha256
-        (base32 "1sp73xyy48jr9m41j743srvqif07lh5km8svb28357lng2pdp3ym"))))
+        (base32 "03896whn173rrzc7y4bxn8mljnqw3m9b3nm63jl5yv32x7scpkmw"))))
     (properties `((upstream-name . "methylscaper")))
     (build-system r-build-system)
     (arguments
@@ -7277,13 +7514,13 @@ discover methylation patterns and nucleosome positioning.")
 (define-public r-methylpipe
   (package
     (name "r-methylpipe")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylPipe" version))
        (sha256
-        (base32 "0dn2fb216y8f1mklrl6fhbkb6df9qr9ild92rdh9k0fzga8n6xhk"))))
+        (base32 "0d6cr165mf7b1jzcbmf1gak18z32cvnhfqskmvrwfjv4ixr7bby1"))))
     (properties `((upstream-name . "methylPipe")))
     (build-system r-build-system)
     (arguments
@@ -7314,13 +7551,13 @@ data derived from any methodology providing base- or low-resolution data.")
 (define-public r-methylmnm
   (package
     (name "r-methylmnm")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylMnM" version))
        (sha256
-        (base32 "1zqc7vkad0pma2hngaanxv0g3hzfy8hjgq4bp65mrjd34skr3r6q"))))
+        (base32 "1cls27s2qv18gggm1awz75ranng21w8rabs8cwj6spb11z5d5kzz"))))
     (properties `((upstream-name . "methylMnM")))
     (build-system r-build-system)
     (arguments
@@ -7337,13 +7574,13 @@ different samples comparation.")
 (define-public r-methylmix
   (package
     (name "r-methylmix")
-    (version "2.36.0")
+    (version "2.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MethylMix" version))
        (sha256
-        (base32 "0hkdn4930ic7cx16fixgi5bilv7plz910nv1skpjh2qi7xr95cnw"))))
+        (base32 "10nlklml75clsndjm07sbab4pwkp4qxdd3bh05mmmhjg375c7gdy"))))
     (properties `((upstream-name . "MethylMix")))
     (build-system r-build-system)
     (arguments
@@ -7381,13 +7618,13 @@ Genome Biology.  2015;16(1):17.  doi:10.1186/s13059-014-0579-8.")
 (define-public r-methylinheritance
   (package
     (name "r-methylinheritance")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylInheritance" version))
        (sha256
-        (base32 "01vigk36bv2pzqj0pf2m99wvq1jlpg4vgxhy9vaz29xxyi4y47bc"))))
+        (base32 "0dpq5vgb4zrj2pcwi0m8ykjvn0xr7hr4r0raksn8bgh0qyhn7mnf"))))
     (properties `((upstream-name . "methylInheritance")))
     (build-system r-build-system)
     (arguments
@@ -7415,13 +7652,13 @@ stochastic effect can be dismissed.")
 (define-public r-methylimp2
   (package
     (name "r-methylimp2")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methyLImp2" version))
        (sha256
-        (base32 "0drbwi9xdz32cm8pzaknm76mrwqc1m720gm8l44cnsh0ph9g7ilg"))))
+        (base32 "1aaqrckxfpp9vfhj7fi19y924xrn8bcr24gpignkjfv4czxv89fh"))))
     (properties `((upstream-name . "methyLImp2")))
     (build-system r-build-system)
     (arguments
@@ -7444,13 +7681,13 @@ available.")
 (define-public r-methylgsa
   (package
     (name "r-methylgsa")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylGSA" version))
        (sha256
-        (base32 "1cb9sl3cgn726iq6p0ki02vpypmpazcb0bxcnvd2f6bkyr7xigq7"))))
+        (base32 "0bpas0zl4rf4gfvcp38y3v2cnlpc2a4n39ani1f7k91s5lvylkxx"))))
     (properties `((upstream-name . "methylGSA")))
     (build-system r-build-system)
     (arguments
@@ -7483,13 +7720,13 @@ Rank Aggregation.  For more detailed help information, please see the vignette."
 (define-public r-methylclock
   (package
     (name "r-methylclock")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylclock" version))
        (sha256
-        (base32 "0853l4wpvjp2a86mjww4gwpb07i0v4j4m3j5y79nvi8iximz5kmp"))))
+        (base32 "1cyibj79zy3syqr2icqiddxphs1f4j24qihc8q96akj5ip7pisv6"))))
     (properties `((upstream-name . "methylclock")))
     (build-system r-build-system)
     (arguments
@@ -7535,13 +7772,13 @@ Biological DNAm clocks : Levine's clock and Telomere Length's clock.")
 (define-public r-methylcc
   (package
     (name "r-methylcc")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylCC" version))
        (sha256
-        (base32 "082ybsdqg5nhpkkw93b39ac1p5k6hkk62kbrl49xfna0qw7hqdaj"))))
+        (base32 "0s8f1yj1qd648cxd3wxzjzbv0z7csrxsdhy6g3p5shn8piplqxk5"))))
     (properties `((upstream-name . "methylCC")))
     (build-system r-build-system)
     (arguments
@@ -7575,13 +7812,13 @@ sequencing).")
 (define-public r-methtargetedngs
   (package
     (name "r-methtargetedngs")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MethTargetedNGS" version))
        (sha256
-        (base32 "0kj0ib0p9jql74d5jp0vyjs8cip728lac403pr93z0nbdlngmjyv"))))
+        (base32 "1n87jfs4pvhsr1qp1n1mnn9bibzm124ski7psq3gqrwkx7l9lwyz"))))
     (properties `((upstream-name . "MethTargetedNGS")))
     (build-system r-build-system)
     (arguments
@@ -7600,13 +7837,13 @@ sequencing).")
 (define-public r-methrix
   (package
     (name "r-methrix")
-    (version "1.20.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methrix" version))
        (sha256
-        (base32 "08rr73ns82chcds25xihqj1cz44wicmvqlcij6agv1rd4gv2wqgf"))))
+        (base32 "0bw86bizpc12ffc9mhpg77wwcvw970jv2xmy9mln5zfhsgxq9zgg"))))
     (properties `((upstream-name . "methrix")))
     (build-system r-build-system)
     (arguments
@@ -7638,13 +7875,13 @@ Methrix, including many other useful downstream functions.")
 (define-public r-methreg
   (package
     (name "r-methreg")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MethReg" version))
        (sha256
-        (base32 "0aggc95l1lv2pck2p4vfj92lllkd6cgzqw18wy88zpm92qny8abl"))))
+        (base32 "0k3ji740r12kdjbrlrycjqw5z4ar106k6v18p68zqa1ppbcpmlsa"))))
     (properties `((upstream-name . "MethReg")))
     (build-system r-build-system)
     (arguments
@@ -7704,13 +7941,13 @@ regulatory network analysis.")
 (define-public r-methped
   (package
     (name "r-methped")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MethPed" version))
        (sha256
-        (base32 "0bc5928i1jh9asn575gmqiykassilah94p78spfpr61yyzwgsw0f"))))
+        (base32 "0hvy4g3p1gx7jc5ff9xqy8ns3gv6b2jpiqw9c9skc8zv948z6z9f"))))
     (properties `((upstream-name . "MethPed")))
     (build-system r-build-system)
     (arguments
@@ -7738,13 +7975,13 @@ Group WNT (MB_WNT), Group SHH (MB_SHH) and Pilocytic Astrocytoma
 (define-public r-methodical
   (package
     (name "r-methodical")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methodical" version))
        (sha256
-        (base32 "0w93w55r8k5fyhkq5rg2qqz5yamz0ziwm6idm68ykv1xh15f3fgw"))))
+        (base32 "0ybnr5pbmlrpsk19yz04c1iais6mklcq7xcrbs0c9wc5r0yxmidp"))))
     (properties `((upstream-name . "methodical")))
     (build-system r-build-system)
     (arguments
@@ -7815,13 +8052,13 @@ transcriptional activity at transcriptional start sites.")
 (define-public r-methinheritsim
   (package
     (name "r-methinheritsim")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methInheritSim" version))
        (sha256
-        (base32 "1bj7kk0lz1gq62l5mr4m3zzpdpxjs32h6znpa2f68h78mjp5r3hl"))))
+        (base32 "1idnf3qwsymqhxn1sqjjmjf0w6fps519vla72r3493amipz8sb1l"))))
     (properties `((upstream-name . "methInheritSim")))
     (build-system r-build-system)
     (arguments
@@ -7845,13 +8082,13 @@ inheritance relation using a real control dataset.")
 (define-public r-methimpute
   (package
     (name "r-methimpute")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methimpute" version))
        (sha256
-        (base32 "09pgfwsga5whqhdp898h35zfwway8x3y7dbv2aaf2ad3d4k5rqly"))))
+        (base32 "04xidhw65jylc5gya5s2yjmbi5af2akvnsphpms0j5pnaiissfnm"))))
     (properties `((upstream-name . "methimpute")))
     (build-system r-build-system)
     (arguments
@@ -7878,13 +8115,13 @@ the genome.")
 (define-public r-metcirc
   (package
     (name "r-metcirc")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetCirc" version))
        (sha256
-        (base32 "1zgn54ssxmn7k2bdvw02wwsj6bddfyzngk3zanmmjmmfm3il28yy"))))
+        (base32 "05jd5vdfsjmh4zg77l6apjggda0yfrywzjg0i8584gbvwy93jrfx"))))
     (properties `((upstream-name . "MetCirc")))
     (build-system r-build-system)
     (arguments
@@ -7915,13 +8152,13 @@ MS/MS features based on their similarity to (known) related MS/MS features.")
 (define-public r-metaseqr2
   (package
     (name "r-metaseqr2")
-    (version "1.18.1")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaseqR2" version))
        (sha256
-        (base32 "0kch8q13fc8fswnh3p4a7wm1g0szd8gdp42vdk77x266d4xs9h20"))))
+        (base32 "16c0ic6mc48b7m2l96gy6m7qqfdpyp1nps82597zwbg6f3s53y2m"))))
     (properties `((upstream-name . "metaseqR2")))
     (build-system r-build-system)
     (arguments
@@ -8003,13 +8240,13 @@ several statistical tests and reports the results in an interactive way.")
 (define-public r-metaseq
   (package
     (name "r-metaseq")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaSeq" version))
        (sha256
-        (base32 "0ivmzci7gpkz9linwcm57c5kw08kd3k8gi826r5x6a65rnznqqpg"))))
+        (base32 "0svwvswj16nj2kswdgskwwam9w7vdkljn2hyyjawqwg0982llfim"))))
     (properties `((upstream-name . "metaSeq")))
     (build-system r-build-system)
     (arguments
@@ -8026,14 +8263,14 @@ Stouffer's method.")
 (define-public r-metascope
   (package
     (name "r-metascope")
-    (version "1.6.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaScope" version
                               'experiment))
        (sha256
-        (base32 "1f7w4dfv6sizpp97vjwm034ha4pcq93b3j0gg1l75s6ans8s89aw"))))
+        (base32 "1xv89nwqbcs4bx3p5f2ls8p1504fzg0rldkxs9f8fy0zk7dh85dk"))))
     (properties `((upstream-name . "MetaScope")))
     (build-system r-build-system)
     (arguments
@@ -8041,7 +8278,7 @@ Stouffer's method.")
       #:tests? #f))
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-taxize
+                             r-taxonomizr
                              r-summarizedexperiment
                              r-stringr
                              r-s4vectors
@@ -8071,13 +8308,13 @@ microbe identification.  It is in part an R translation of the @code{PathoScope}
 (define-public r-metapone
   (package
     (name "r-metapone")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metapone" version))
        (sha256
-        (base32 "1mhs96j6mwkdlf4h1g068fn2m3p2dif6m026k1wafhips24pindh"))))
+        (base32 "1dc91jw9mw08wpa2flnprxn6vnv0rwc4wbfm6wr9fws5gwyxdnhv"))))
     (properties `((upstream-name . "metapone")))
     (build-system r-build-system)
     (arguments
@@ -8106,13 +8343,13 @@ results in pathway tests.")
 (define-public r-metaphor
   (package
     (name "r-metaphor")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaPhOR" version))
        (sha256
-        (base32 "0jj9c4d2qdbz193gad89cay1h2hl0hbj70m1kakriw1117hnhzk6"))))
+        (base32 "0vwvxmzqpf9y16slqcm5rjg5bk1x48h0zf6acaa5z97hijya0v09"))))
     (properties `((upstream-name . "MetaPhOR")))
     (build-system r-build-system)
     (arguments
@@ -8144,14 +8381,14 @@ plots, heatmaps, and pathway models.")
 (define-public r-metamsdata
   (package
     (name "r-metamsdata")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaMSdata" version
                               'experiment))
        (sha256
-        (base32 "16a7ff9dc157gjiq6zk1ig3ql0g7yh22ccxjnw2hfk66s3idqfpc"))))
+        (base32 "0syqbh12lpblswwhb3f1fh4sp7vdmgkykrqxvcmb3kp48wmqvp9a"))))
     (properties `((upstream-name . "metaMSdata")))
     (build-system r-build-system)
     (arguments
@@ -8165,13 +8402,13 @@ plots, heatmaps, and pathway models.")
 (define-public r-metams
   (package
     (name "r-metams")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaMS" version))
        (sha256
-        (base32 "1fw4381jsfniwifrljwb2hfxfi537ial1a5x66gcc8xnr9cfzgls"))))
+        (base32 "1xlss98wk95khfld03jf9abljj80q1mys856y6gz63xr6759szsv"))))
     (properties `((upstream-name . "metaMS")))
     (build-system r-build-system)
     (arguments
@@ -8188,13 +8425,13 @@ plots, heatmaps, and pathway models.")
 (define-public r-metahdep
   (package
     (name "r-metahdep")
-    (version "1.64.0")
+    (version "1.66.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metahdep" version))
        (sha256
-        (base32 "01cyv9n0d3p7silkxdyqqfdkww22hfw138bpxfh1sqgbyi9iwk8r"))))
+        (base32 "051jjcyww8m5dfk4ssvr2fvf9mym2nfsw27vmbz0cwd64kfv35cn"))))
     (properties `((upstream-name . "metahdep")))
     (build-system r-build-system)
     (arguments
@@ -8210,14 +8447,14 @@ plots, heatmaps, and pathway models.")
 (define-public r-metagxpancreas
   (package
     (name "r-metagxpancreas")
-    (version "1.26.0")
+    (version "1.27.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaGxPancreas" version
                               'experiment))
        (sha256
-        (base32 "11fbrva5yhjqw29vyl823k8g1gy8a476d3d1754x2a8yj5aw7n80"))))
+        (base32 "0ymi13ry25rq61i657ci96b07wqgqkcfzfw9hcz0iq10sr01qj11"))))
     (properties `((upstream-name . "MetaGxPancreas")))
     (build-system r-build-system)
     (arguments
@@ -8246,14 +8483,14 @@ SE.")
 (define-public r-metagxovarian
   (package
     (name "r-metagxovarian")
-    (version "1.26.0")
+    (version "1.27.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaGxOvarian" version
                               'experiment))
        (sha256
-        (base32 "00wnfhj5bdq5gps26c3z0kv981wwy7qcradcjcc75v7la75wm8xw"))))
+        (base32 "0p748si4axvdslb487y240y2c4ap7mpyvr9z1s5849fn3zi05pgj"))))
     (properties `((upstream-name . "MetaGxOvarian")))
     (build-system r-build-system)
     (arguments
@@ -8280,14 +8517,14 @@ that are part of the @code{MetaGxData} package compendium.")
 (define-public r-metagxbreast
   (package
     (name "r-metagxbreast")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaGxBreast" version
                               'experiment))
        (sha256
-        (base32 "02bhrm1ancachq9yx1nkl1yzvcji8qnqx7v306gx9z5rahr53n15"))))
+        (base32 "0lj1p36xxim78qkwrczf7arkzhc979hvxsj3y29cdqjk8hrb0q1m"))))
     (properties `((upstream-name . "MetaGxBreast")))
     (build-system r-build-system)
     (arguments
@@ -8313,13 +8550,13 @@ are part of the @code{MetaGxData} package compendium.")
 (define-public r-metagene2
   (package
     (name "r-metagene2")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metagene2" version))
        (sha256
-        (base32 "14nrzk9d94sl4k67kx79wlk5kd4vd7c1lyzjlps7lpqv2717hylz"))))
+        (base32 "00xnp9h2avmr5x8njangxgf1qa09rllxqlbnzs3vmcagl9d58yih"))))
     (properties `((upstream-name . "metagene2")))
     (build-system r-build-system)
     (arguments
@@ -8355,13 +8592,13 @@ analysis is used to provide confidence intervals of per-sample mean coverages.")
 (define-public r-metacyto
   (package
     (name "r-metacyto")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaCyto" version))
        (sha256
-        (base32 "02nwni5z5gkcgfk5fnhkyjq9qpyirvz00jq251g6b2qbx8hn28i9"))))
+        (base32 "1whln405cwxzv0wa5vshjph64kga1l65sadqs2cxnvykdhfvrxyn"))))
     (properties `((upstream-name . "MetaCyto")))
     (build-system r-build-system)
     (arguments
@@ -8386,13 +8623,13 @@ collection of cytometry data from the @code{ImmPort} database.")
 (define-public r-metacca
   (package
     (name "r-metacca")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaCCA" version))
        (sha256
-        (base32 "173g1my2b3p6q2hixwpc6p9wgqz1hph6m5k0d2fs8s9mg90f9p90"))))
+        (base32 "0x5lx3dwq50z1qx9njdirvxz6aiis9n0agdnzb2z9c2yc8c0vzdz"))))
     (properties `((upstream-name . "metaCCA")))
     (build-system r-build-system)
     (arguments
@@ -8414,13 +8651,13 @@ achieve robustness.")
 (define-public r-metabosignal
   (package
     (name "r-metabosignal")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboSignal" version))
        (sha256
-        (base32 "1wgqyc2vjs7xakv03k0sgsqdnbwi08aqcf6f1qj50vcn72klf0vf"))))
+        (base32 "045l0n26qi9rng6rs1rvzd8nn34s5ssa9fhnzvkrdslkwvsdws8y"))))
     (properties `((upstream-name . "MetaboSignal")))
     (build-system r-build-system)
     (arguments
@@ -8453,13 +8690,13 @@ phenotypes.")
 (define-public r-metabomxtr
   (package
     (name "r-metabomxtr")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metabomxtr" version))
        (sha256
-        (base32 "0pl0ilcx32njxdv4i9gly5gfvna1wndv6jnz2c72q60w8ayak7rv"))))
+        (base32 "0h3yyq5f96z0qdmd16ard00sznyqiiv5nzz08x83y2br9vapfnx0"))))
     (properties `((upstream-name . "metabomxtr")))
     (build-system r-build-system)
     (arguments
@@ -8484,13 +8721,13 @@ distributions.")
 (define-public r-metabolomicsworkbenchr
   (package
     (name "r-metabolomicsworkbenchr")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metabolomicsWorkbenchR" version))
        (sha256
-        (base32 "0qajw2lpmp8b8j24m0cp88c39k6v1y10d5q1zl27gx4cqklgrijc"))))
+        (base32 "1yk4ddcwqi72aq1jr7gj9c862g6fy82i0s7rx8a6y8nfigd1nvqd"))))
     (properties `((upstream-name . "metabolomicsWorkbenchR")))
     (build-system r-build-system)
     (arguments
@@ -8540,16 +8777,61 @@ four publicly available source, including HMDB, Comptox Dashboard, @code{ChEBI},
 and the graphite Bioconductor R package.")
     (license license:gpl3)))
 
+(define-public r-metabodynamics
+  (package
+    (name "r-metabodynamics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetaboDynamics" version))
+       (sha256
+        (base32 "1llxv4295y78w6kwylm5vp6f0cbkvi2mzhzqm8z4lw1ad18ffyg0"))))
+    (properties `((upstream-name . "MetaboDynamics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-summarizedexperiment
+                             r-stringr
+                             r-stanheaders
+                             r-s4vectors
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-keggrest
+                             r-ggplot2
+                             r-dynamictreecut
+                             r-dplyr
+                             r-dendextend
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/KatjaDanielzik/MetaboDynamics")
+    (synopsis "Bayesian analysis of longitudinal metabolomics data")
+    (description
+     "@code{MetaboDynamics} is an R-package that provides a framework of probabilistic
+models to analyze longitudinal metabolomics data.  It enables robust estimation
+of mean concentrations despite varying spread between timepoints and reports
+differences between timepoints as well as metabolite specific dynamics profiles
+that can be used for identifying \"dynamics clusters\" of metabolites of similar
+dynamics.  Provides probabilistic over-representation analysis of KEGG
+functional modules and pathways as well as comparison between clusters of
+different experimental conditions.")
+    (license license:gpl3+)))
+
 (define-public r-metaboannotation
   (package
     (name "r-metaboannotation")
-    (version "1.10.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboAnnotation" version))
        (sha256
-        (base32 "0qzhl68viam5h1f3ky21m7092fwvfr7bjkzsbbfskn259pj9g5bc"))))
+        (base32 "0rdacrj5vdf0j2943biqkn0qbckrqa8ajl33b246pq55c8ndd76k"))))
     (properties `((upstream-name . "MetaboAnnotation")))
     (build-system r-build-system)
     (arguments
@@ -8582,13 +8864,13 @@ such matched data.")
 (define-public r-metabinr
   (package
     (name "r-metabinr")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metabinR" version))
        (sha256
-        (base32 "0q79qmrfa4yhnv45nqlx2nd94lj4992kmrj3w8sx2s8j3qfqf0c8"))))
+        (base32 "072fb1rrr5bjl543y6ivb6rkw8f61wpw5cxv3cq07hghmik2k0q1"))))
     (properties `((upstream-name . "metabinR")))
     (build-system r-build-system)
     (arguments
@@ -8609,13 +8891,13 @@ operates directly on input FASTA/FASTQ files for fast execution.")
 (define-public r-metabcombiner
   (package
     (name "r-metabcombiner")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metabCombiner" version))
        (sha256
-        (base32 "1vn41x25kxzcam5r43ik4q2xdy6h2j3rkqryr8hslbassbn0yq2h"))))
+        (base32 "0c2sspf2hq1malpz1yvqzb7i99bplixlmb4ymj8y6msycqdjldzp"))))
     (properties `((upstream-name . "metabCombiner")))
     (build-system r-build-system)
     (arguments
@@ -8645,13 +8927,13 @@ similar (but not necessarily identical) analytical methods.")
 (define-public r-messina
   (package
     (name "r-messina")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "messina" version))
        (sha256
-        (base32 "0341hblfhgnz18j0jlkwvkvapyvybs0sap8hgmvl3zh1yd7mff3l"))))
+        (base32 "0kgdya5miyrylwh743m4d0vb1x984wa8bw53vqws0xf768fsn2fk"))))
     (properties `((upstream-name . "messina")))
     (build-system r-build-system)
     (arguments
@@ -8674,13 +8956,13 @@ samples show unusual patterns of expression.")
 (define-public r-meskit
   (package
     (name "r-meskit")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MesKit" version))
        (sha256
-        (base32 "1risccm9r8zlfx3zpzfmwhnarjc9903nmfd3bp9i2xp8iqxpws3r"))))
+        (base32 "1mq8gdnmw9hjz51pairm95hpxpbih6sk06xxk5z19bcwv10ykpf1"))))
     (properties `((upstream-name . "MesKit")))
     (build-system r-build-system)
     (arguments
@@ -8722,13 +9004,13 @@ relationship between regions in MRS study.")
 (define-public r-meshr
   (package
     (name "r-meshr")
-    (version "2.12.0")
+    (version "2.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "meshr" version))
        (sha256
-        (base32 "0mwcir939fqbydx5wf8aiiyrw69n5bcsaw1md9m61q9xfz99p9cl"))))
+        (base32 "0cnmzz3ap6173410qa1qcy7xbcdr8ajzmdi6iykq0ahzyfdbnz6d"))))
     (properties `((upstream-name . "meshr")))
     (build-system r-build-system)
     (arguments
@@ -8755,13 +9037,13 @@ assembled using data from @code{MeSH}.")
 (define-public r-meshes
   (package
     (name "r-meshes")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "meshes" version))
        (sha256
-        (base32 "0kjdwydkrnf0sbigwjp017350b432d151m2jg5ghwmrdw9a5fa2b"))))
+        (base32 "1alqbcwi0ig5jfji1hi6m291y0ifm22j87nlkh2csb99fcs1j24f"))))
     (properties `((upstream-name . "meshes")))
     (build-system r-build-system)
     (arguments
@@ -8792,13 +9074,13 @@ Schlicker, Jiang, Lin and Wang respectively and supports more than 70 species.")
 (define-public r-meshdbi
   (package
     (name "r-meshdbi")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MeSHDbi" version))
        (sha256
-        (base32 "0bzkpzjvlgapxnlsvbqqxhcwbxp7g4a98lwr7nv5jdx05j10fpng"))))
+        (base32 "11xcaj09yrc3ama11irpy65amgfj2x996ialjvxnf6vlz4dx5hb4"))))
     (properties `((upstream-name . "MeSHDbi")))
     (build-system r-build-system)
     (arguments
@@ -8817,13 +9099,13 @@ Schlicker, Jiang, Lin and Wang respectively and supports more than 70 species.")
 (define-public r-mergeomics
   (package
     (name "r-mergeomics")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Mergeomics" version))
        (sha256
-        (base32 "0sg5wf2gm6sq9051mjsvlhnbbjbardypvw2nbn1wskdmkajy7afk"))))
+        (base32 "0v9dn19rx8q0vaysycv869al8krfv1s1xsi5rvkjw5f9nl7rlqph"))))
     (properties `((upstream-name . "Mergeomics")))
     (build-system r-build-system)
     (arguments
@@ -8842,14 +9124,14 @@ Weighted Key Driver Analysis (@code{wKDA}).")
 (define-public r-merfishdata
   (package
     (name "r-merfishdata")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MerfishData" version
                               'experiment))
        (sha256
-        (base32 "0dnkvmbjpzk0xv8xzpy3qs6yqlrc7ac78n63h21vn7f7zmq7cpmf"))))
+        (base32 "164wxfhxyg1p0xflmwq5v1xzppkwycbpffq25rkwyjrakxs7awl1"))))
     (properties `((upstream-name . "MerfishData")))
     (build-system r-build-system)
     (arguments
@@ -8884,13 +9166,13 @@ benchmarking and analysis.")
 (define-public r-memes
   (package
     (name "r-memes")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "memes" version))
        (sha256
-        (base32 "0g1dpyyn5lnzy13h65m6wfnp4bsf7qs1jlc62qmjfq7aifw0hpxq"))))
+        (base32 "1ivvnrnlz9239m2mvx804q1jli3rqzkagvhkjfi5m14v8rbb1zrc"))))
     (properties `((upstream-name . "memes")))
     (build-system r-build-system)
     (arguments
@@ -8929,13 +9211,13 @@ amenable to both base R and tidyverse workflows.")
 (define-public r-melissa
   (package
     (name "r-melissa")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Melissa" version))
        (sha256
-        (base32 "1jn8x6qch151h3iwx6w76ab8n7l9qnq4ccvf43bcsyy461ymr4n1"))))
+        (base32 "0y80p2jp4i7wsgqilaz1xkp573z97zxx0gwc7bg6d78bqsych11b"))))
     (properties `((upstream-name . "Melissa")))
     (build-system r-build-system)
     (arguments
@@ -8971,13 +9253,13 @@ modelling approach.")
 (define-public r-meigor
   (package
     (name "r-meigor")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEIGOR" version))
        (sha256
-        (base32 "0chwp09cys757cb7xzqcixyslsdp5909c91m0a8c75b0ld8qsra8"))))
+        (base32 "1f9nw1w31w31xlgw5xhk07c1kdh8ihl8ri8l1i6pzkq1n7iv9xn9"))))
     (properties `((upstream-name . "MEIGOR")))
     (build-system r-build-system)
     (arguments
@@ -8999,14 +9281,14 @@ integrated with Bioconductor's infrastructure for a seamless analysis workflow."
 (define-public r-meebodata
   (package
     (name "r-meebodata")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEEBOdata" version
                               'experiment))
        (sha256
-        (base32 "0imyssybgcl54capbh0bcppky0a8yb109gbsfh7g11j2af9nb0ps"))))
+        (base32 "1wcw8q4d4x0xb4xngsgsc1yavf059y19pggc4vdlzyfyjjghgk07"))))
     (properties `((upstream-name . "MEEBOdata")))
     (build-system r-build-system)
     (arguments
@@ -9020,13 +9302,13 @@ integrated with Bioconductor's infrastructure for a seamless analysis workflow."
 (define-public r-medme
   (package
     (name "r-medme")
-    (version "1.66.0")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEDME" version))
        (sha256
-        (base32 "0awv9p388lkgk9cwj2plnpw0nv7v6rf76isdz5iwwklvvrlykylx"))))
+        (base32 "14z92ds6s99v5ahvxi764hg1zzwdai0823vpv230c6vzsc9751af"))))
     (properties `((upstream-name . "MEDME")))
     (build-system r-build-system)
     (arguments
@@ -9043,14 +9325,14 @@ measures obtained by @code{MeDIP-microarray} experiments.")
 (define-public r-medipsdata
   (package
     (name "r-medipsdata")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEDIPSData" version
                               'experiment))
        (sha256
-        (base32 "0vrnyjsdags72fk6ipy3jiw9kq46yrmv4inzff8hrc20rcq74yav"))))
+        (base32 "1262iig4xpsy71qpgb054xcylyvzncdvlsdrmw2cgz9vl708xjh2"))))
     (properties `((upstream-name . "MEDIPSData")))
     (build-system r-build-system)
     (arguments
@@ -9068,13 +9350,13 @@ measures obtained by @code{MeDIP-microarray} experiments.")
 (define-public r-medips
   (package
     (name "r-medips")
-    (version "1.58.0")
+    (version "1.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEDIPS" version))
        (sha256
-        (base32 "0jf572ripjnpksyjbpid26rw08529ybdjcz1sa33vxkarbgg2lgp"))))
+        (base32 "1rvwnsrdcj437zq7g6z05phw1yvwa0jycvqlgqw9q1yl59nyqfmz"))))
     (properties `((upstream-name . "MEDIPS")))
     (build-system r-build-system)
     (arguments
@@ -9154,13 +9436,13 @@ Medicago.cdf file.")
 (define-public r-meb
   (package
     (name "r-meb")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEB" version))
        (sha256
-        (base32 "1b9rdbxwzkzxwpr0653q37wshhxfqhwllmciph06s0lzjinccxml"))))
+        (base32 "12dgmfqcxx387kbhq03a89rqfz04yjypyr5qqw5yhh4kss4jvnhd"))))
     (properties `((upstream-name . "MEB")))
     (build-system r-build-system)
     (arguments
@@ -9192,13 +9474,13 @@ identification.")
 (define-public r-meat
   (package
     (name "r-meat")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEAT" version))
        (sha256
-        (base32 "0ia95li2xp1rf3c48gz5rjmds3r2sfrl0jpr3vqqj9mkrzxr7q84"))))
+        (base32 "1qn4pkljvddq171qpmd97c11xvvfk6nk3v5h0lg4vj8wh8f0ky0n"))))
     (properties `((upstream-name . "MEAT")))
     (build-system r-build-system)
     (arguments
@@ -9225,13 +9507,13 @@ data generated with the Illumina Infinium technology (HM27, HM450 and HMEPIC).")
 (define-public r-measurementerror-cor
   (package
     (name "r-measurementerror-cor")
-    (version "1.78.0")
+    (version "1.80.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MeasurementError.cor" version))
        (sha256
-        (base32 "0wfi9a52vazl7zzp5rc47yar1yvmgp917pcq51zmrnvz90wvv1z4"))))
+        (base32 "10fj8lw7p86b4pm994i3g4b3djz74zwy4g42p74f6ld65ap141as"))))
     (properties `((upstream-name . "MeasurementError.cor")))
     (build-system r-build-system)
     (arguments
@@ -9247,13 +9529,13 @@ than the usual sample correlation.")
 (define-public r-meal
   (package
     (name "r-meal")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MEAL" version))
        (sha256
-        (base32 "06wmhpa3xqff1fcb8v35ia7zgn0zwmb3spzl75fw0xxk37czv8li"))))
+        (base32 "1agl6fa6ib8ynb7gi3bl12djj2zh3ppyvq8nwsrcki9nb5dz95kr"))))
     (properties `((upstream-name . "MEAL")))
     (build-system r-build-system)
     (arguments
@@ -9289,13 +9571,13 @@ of SNPs on a region can also be estimated.")
 (define-public r-mdts
   (package
     (name "r-mdts")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MDTS" version))
        (sha256
-        (base32 "0rjz1jmfihvg1ymyws8p0mibpa1yg1nh9l7h65620xmmk172xgv2"))))
+        (base32 "192l91jg1z52zsix988s2jx9ijlyd6i60mzwxr38gvr1i21rpyxc"))))
     (properties `((upstream-name . "MDTS")))
     (build-system r-build-system)
     (arguments
@@ -9320,13 +9602,13 @@ predictive value.")
 (define-public r-mdp
   (package
     (name "r-mdp")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mdp" version))
        (sha256
-        (base32 "1v01qhl9hk8bwar5ghfd11rwl8wpwcqm8phjxblxf963cgzxycry"))))
+        (base32 "1yy6g5xvm15r7h7p4yz30sf0a86kyy2xhfkcdhpdis0qhpsfvdx1"))))
     (properties `((upstream-name . "mdp")))
     (build-system r-build-system)
     (arguments
@@ -9351,14 +9633,14 @@ that are most perturbed in the test versus control classes.")
 (define-public r-mcsurvdata
   (package
     (name "r-mcsurvdata")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mcsurvdata" version
                               'experiment))
        (sha256
-        (base32 "165yychw6c1008nmaiac20zrk9ampmp7r3g1y3j9hv4lxjdczma6"))))
+        (base32 "0bqivqxmiz1ydikkx12yakrbyqx8siqfrsh5v8fhgc9jz9i2kldq"))))
     (properties `((upstream-name . "mcsurvdata")))
     (build-system r-build-system)
     (arguments
@@ -9383,14 +9665,14 @@ signatures.")
 (define-public r-mcseadata
   (package
     (name "r-mcseadata")
-    (version "1.26.1")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mCSEAdata" version
                               'experiment))
        (sha256
-        (base32 "1qynhnpw7ap3k9imfpjccm0bkhrggjspwjnawq3i9mz4ahm6i4gk"))))
+        (base32 "0rqk42sbrrhd28fasg6p64cdpiil9ipv98jwlhb13bqmfpw70p0y"))))
     (properties `((upstream-name . "mCSEAdata")))
     (build-system r-build-system)
     (arguments
@@ -9408,13 +9690,13 @@ example data objects to illustrate @code{mCSEA} package functionality.")
 (define-public r-mcsea
   (package
     (name "r-mcsea")
-    (version "1.26.2")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mCSEA" version))
        (sha256
-        (base32 "1y6ppaahz9v73xniq3p0y4vphgx71nn6mz214v51560rsahgyhdq"))))
+        (base32 "0j1yrdl9im2s8xfzb57km43v2613k8h6hq29ypxqm6g4x95nhpqf"))))
     (properties `((upstream-name . "mCSEA")))
     (build-system r-build-system)
     (arguments
@@ -9445,13 +9727,13 @@ linear models and includes plotting functions.")
 (define-public r-mcbiclust
   (package
     (name "r-mcbiclust")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MCbiclust" version))
        (sha256
-        (base32 "1i99yxbnr43mmwq1w1r3pjf0yzrzbcqs8yq247kw3pzyg02jr33q"))))
+        (base32 "1dhdwx3zxvjc14vzgapwd8640l6i410i0mhxlba31lrgn5x2qla4"))))
     (properties `((upstream-name . "MCbiclust")))
     (build-system r-build-system)
     (arguments
@@ -9480,13 +9762,13 @@ matrix containing m samples from the data set.")
 (define-public r-mbttest
   (package
     (name "r-mbttest")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MBttest" version))
        (sha256
-        (base32 "1x13z9f4jjpi9fhwwz69jd4cbqbrw6fk2k8jdflix8l1xmpqkxab"))))
+        (base32 "06b3fidffqk92p48wicddngf6n4d361fpg2rblyg8d4655scpym5"))))
     (properties `((upstream-name . "MBttest")))
     (build-system r-build-system)
     (arguments
@@ -9509,13 +9791,13 @@ small samples or a few replicate libraries.  It can be used to identify genes,
 (define-public r-mbqtl
   (package
     (name "r-mbqtl")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mbQTL" version))
        (sha256
-        (base32 "0whrhcw4w1f3fbf8nk0wny1d06z7v6brmih1l9z0xk5024qmaxli"))))
+        (base32 "03pkbw1xwvf7cdvghaly08vdgyql78qyf6fsmhn6dl082ab09fx2"))))
     (properties `((upstream-name . "mbQTL")))
     (build-system r-build-system)
     (arguments
@@ -9548,13 +9830,13 @@ MRexperiment and text formats.")
 (define-public r-mbqn
   (package
     (name "r-mbqn")
-    (version "2.18.0")
+    (version "2.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MBQN" version))
        (sha256
-        (base32 "17wx2f25mk34j9wchl7ircpirdnq1d65vmlvjf86sjgdrcf1g9jk"))))
+        (base32 "1kfa4ahxszqazd9vqpwjsafn2x7bki2qh1mfsfi6b3ypqnzls9vs"))))
     (properties `((upstream-name . "MBQN")))
     (build-system r-build-system)
     (arguments
@@ -9581,13 +9863,13 @@ location and scale.")
 (define-public r-mbpcr
   (package
     (name "r-mbpcr")
-    (version "1.60.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mBPCR" version))
        (sha256
-        (base32 "1yrvavhhi2nc6g6arzcxy92dxywsmi4smg3hksyjp9yc0pajdv4j"))))
+        (base32 "0swrs3x5yq6z63mwn0gzixacilb51nxzwgj9nnllhcl9kf8wmqxd"))))
     (properties `((upstream-name . "mBPCR")))
     (build-system r-build-system)
     (arguments
@@ -9605,13 +9887,13 @@ location and scale.")
 (define-public r-mbcb
   (package
     (name "r-mbcb")
-    (version "1.60.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MBCB" version))
        (sha256
-        (base32 "0qyghk27d6qdj5xzgnh5k267h106cqq7287cmczbfgjjk3x63jn6"))))
+        (base32 "1z8y0hg4qybwazig81kmhvi2ii09afc4iaggjmmwaf3n1vfcpcr3"))))
     (properties `((upstream-name . "MBCB")))
     (build-system r-build-system)
     (arguments
@@ -9629,13 +9911,13 @@ data.")
 (define-public r-mbased
   (package
     (name "r-mbased")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MBASED" version))
        (sha256
-        (base32 "0073j8fc2fqj2wg89b1p4h9v9hi4lrmyi01bsvd69mgsa3g843ka"))))
+        (base32 "0nq3p1wam0ms69w01j7j0myvamvbv5dsyz7gwxh3vs7j00wz6i5l"))))
     (properties `((upstream-name . "MBASED")))
     (build-system r-build-system)
     (arguments
@@ -9656,13 +9938,13 @@ appropriately assess the statistical significance of observed ASE.")
 (define-public r-mbamethyl
   (package
     (name "r-mbamethyl")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MBAmethyl" version))
        (sha256
-        (base32 "1fq2g3gf0hbl9c4rl6j506i37a022wvsvhfq3l0r032p1p43wvdb"))))
+        (base32 "1dq44ks1pzx9950w6fjn1wjhbir99s0llr1z47xwxr90p5zm9h6p"))))
     (properties `((upstream-name . "MBAmethyl")))
     (build-system r-build-system)
     (arguments
@@ -9680,13 +9962,13 @@ remove probe affinity effect across multiple sequences.")
 (define-public r-matter
   (package
     (name "r-matter")
-    (version "2.8.0")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "matter" version))
        (sha256
-        (base32 "1bycdzggnbrhi34w733s6jxlshxsny8qmy4h1ad2p7css14g2xkk"))))
+        (base32 "0wb3iq390by21dgxy8ca9bh3schdfmf04800rn860lkiimivh2xj"))))
     (properties `((upstream-name . "matter")))
     (build-system r-build-system)
     (arguments
@@ -9713,13 +9995,13 @@ sampled signals and images.")
 (define-public r-matrixrider
   (package
     (name "r-matrixrider")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MatrixRider" version))
        (sha256
-        (base32 "1lklc14jri0x8b3irm5rzs14ill6jdh3rs9230kmb38ylc38kpr5"))))
+        (base32 "0lmrfwfcymf3anc9x3d6lb5rchkip5wn4sjxpiv88rzvw1qhfql3"))))
     (properties `((upstream-name . "MatrixRider")))
     (build-system r-build-system)
     (arguments
@@ -9739,13 +10021,13 @@ described with a PFM matrix, for example gotten from Jaspar.")
 (define-public r-matrixqcvis
   (package
     (name "r-matrixqcvis")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MatrixQCvis" version))
        (sha256
-        (base32 "1im4gg1is7nhqf34zqbcn7w5y48anaphy6p5n82qgmn4j81rkmqc"))))
+        (base32 "1c230z0bkyk5ga2lc4imzjrgbqsria5xqyvv4i4sihggb8iwmfwg"))))
     (properties `((upstream-name . "MatrixQCvis")))
     (build-system r-build-system)
     (arguments
@@ -9811,13 +10093,13 @@ the data quality of other data types that can be represented in a
 (define-public r-matchbox
   (package
     (name "r-matchbox")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "matchBox" version))
        (sha256
-        (base32 "1yz90l4grhvvx6m3cpcxkdxmgs6paa355qgf3ad4j5g8nym318pn"))))
+        (base32 "0pyv16ymi5zj2hrlva8jdif42v1zkhn411k401mvqhscvpjs4z8q"))))
     (properties `((upstream-name . "matchBox")))
     (build-system r-build-system)
     (arguments
@@ -9835,13 +10117,13 @@ diagrams, and computing statistical significance.")
 (define-public r-mastr
   (package
     (name "r-mastr")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mastR" version))
        (sha256
-        (base32 "1a0z450vdsf00ccrrrd04l9ndp9arf8vszn5ammscqcj409vaz3i"))))
+        (base32 "16zcqcbn3s7jrff5mlr3p07k0ngg6whcpijk849nn483sflzsr45"))))
     (properties `((upstream-name . "mastR")))
     (build-system r-build-system)
     (arguments
@@ -9881,13 +10163,13 @@ developmental biology.")
 (define-public r-massir
   (package
     (name "r-massir")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "massiR" version))
        (sha256
-        (base32 "0bm8qbaxlpm5gb3asx9gc06civnvf4ljkg0vnldikriiyi3dhl22"))))
+        (base32 "0fq97ig43432yfk40sa734jxdmd0birriffjrjbh9xqrhyg03m1j"))))
     (properties `((upstream-name . "massiR")))
     (build-system r-build-system)
     (arguments
@@ -9903,13 +10185,13 @@ developmental biology.")
 (define-public r-massarray
   (package
     (name "r-massarray")
-    (version "1.58.0")
+    (version "1.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MassArray" version))
        (sha256
-        (base32 "0z8xp1xiq2nns5hakg5ixx785v3j4asqi2br7y4hbddqw5bnf590"))))
+        (base32 "1hb3wpvbfiqxfvncxcqgxvb8g32zdsiryhp4zqmf47dq4k8xvz7z"))))
     (properties `((upstream-name . "MassArray")))
     (build-system r-build-system)
     (arguments
@@ -9933,13 +10215,13 @@ tracks.  Multiple assays can be positionally combined for integrated analysis.")
 (define-public r-maskbad
   (package
     (name "r-maskbad")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "maskBAD" version))
        (sha256
-        (base32 "0h89xfw4747iszxhcfh9j428z49p869vhgj77a3ahjzgq1z7gd9k"))))
+        (base32 "1lw7r5r5z6qbj9j88wfyixy652a8wh10lkkcjx62039zsmdqgs8m"))))
     (properties `((upstream-name . "maskBAD")))
     (build-system r-build-system)
     (arguments
@@ -9955,13 +10237,13 @@ tracks.  Multiple assays can be positionally combined for integrated analysis.")
 (define-public r-masigpro
   (package
     (name "r-masigpro")
-    (version "1.78.0")
+    (version "1.80.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "maSigPro" version))
        (sha256
-        (base32 "134s42mmxy6563fplc9kn5ca1cbki9mnx0v3qms8jnrycglqw6yg"))))
+        (base32 "02vz1c9k3kgr8n7682sf040b693f46i75zxk4df5n31fvfwm91d7"))))
     (properties `((upstream-name . "maSigPro")))
     (build-system r-build-system)
     (arguments
@@ -9980,13 +10262,13 @@ time course microarray and RNA-Seq experiments.")
 (define-public r-martini
   (package
     (name "r-martini")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "martini" version))
        (sha256
-        (base32 "1qfqd7f1zjha7rjs3cdbbhwys0z0v1lhbi79qyqphdp7ipdjzz00"))))
+        (base32 "1wvlicmf472imy32v4r6jjwaw8g1ggpcppjb1i2fwgfxp249b7a4"))))
     (properties `((upstream-name . "martini")))
     (build-system r-build-system)
     (arguments
@@ -10013,13 +10295,13 @@ associated with the phenotype, that form a close subnetwork.")
 (define-public r-marr
   (package
     (name "r-marr")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "marr" version))
        (sha256
-        (base32 "132dh34w5lh56mmzb055l59wjchf2yvlbcw1jvs065q8i0aldgfy"))))
+        (base32 "1c21kssvg1ifs0ycsspssg38q3grl3ci2n676h0qb7hgx4138xqb"))))
     (properties `((upstream-name . "marr")))
     (build-system r-build-system)
     (arguments
@@ -10052,14 +10334,14 @@ data filtered by reproducible features and/or sample pairs.")
 (define-public r-marinerdata
   (package
     (name "r-marinerdata")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "marinerData" version
                               'experiment))
        (sha256
-        (base32 "0p5xphaw0061yc84cjpcmqhq7qvjfz623imxv4zx1sz1nmavbai7"))))
+        (base32 "0z9i4j7j2smzpy6rv8mbllz8xp676pjrmqk4v0pd64h13pxk9gb6"))))
     (properties `((upstream-name . "marinerData")))
     (build-system r-build-system)
     (arguments
@@ -10082,13 +10364,13 @@ files are used for testing mariner functions and some examples.")
 (define-public r-mariner
   (package
     (name "r-mariner")
-    (version "1.6.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mariner" version))
        (sha256
-        (base32 "1nasspyjsd8r11l2jsnrdxlr507b4zjzfv0sq8rf2j1mfn7ygn9m"))))
+        (base32 "0m493hwhh03py8gbjqb520saz5qcwn80gl2j6xkw2yk4j33a16r8"))))
     (properties `((upstream-name . "mariner")))
     (build-system r-build-system)
     (arguments
@@ -10134,14 +10416,14 @@ visualization.")
 (define-public r-maqcsubset
   (package
     (name "r-maqcsubset")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MAQCsubset" version
                               'experiment))
        (sha256
-        (base32 "114sk6yxcz8v7wx2dh661y7nazn8dfik045r2m6zfm0zdkqljd6w"))))
+        (base32 "0i5y2hxi1pvg0lr64016njy91013badaki35b9n7d16dbq87fdjg"))))
     (properties `((upstream-name . "MAQCsubset")))
     (build-system r-build-system)
     (arguments
@@ -10157,14 +10439,14 @@ visualization.")
 (define-public r-maqcexpression4plex
   (package
     (name "r-maqcexpression4plex")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "maqcExpression4plex" version
                               'experiment))
        (sha256
-        (base32 "059k1nsjc1c745vcpj3xnkfxymqpalmd8dn4drcj3z8f19gk76n4"))))
+        (base32 "09j7rkdwns21i6jl3pgpcc7fz4m50lr1swpfw4cz8gh3w3xxjlkg"))))
     (properties `((upstream-name . "maqcExpression4plex")))
     (build-system r-build-system)
     (arguments
@@ -10180,13 +10462,13 @@ visualization.")
 (define-public r-mapscape
   (package
     (name "r-mapscape")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mapscape" version))
        (sha256
-        (base32 "0lc0an3lag8jjcvqkqaws28j5qs40rbx1fhxs4xmcyi268971xdy"))))
+        (base32 "0qzhc56hn4231kqf7l4m7drzbvw15hmmskn9fzgcbx81ak1qba35"))))
     (properties `((upstream-name . "mapscape")))
     (build-system r-build-system)
     (arguments
@@ -10229,13 +10511,13 @@ distribution of clones throughout anatomic space.")
 (define-public r-mapredictdsc
   (package
     (name "r-mapredictdsc")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "maPredictDSC" version))
        (sha256
-        (base32 "1xrigbg2np1c54jny5897d2g85js2ckbccqhz5frh1a6ai3cmpjj"))))
+        (base32 "0xygg4gfjs4ydq35855kailrcwm4w9fn9k9qm5fbncaybz79xzdw"))))
     (properties `((upstream-name . "maPredictDSC")))
     (build-system r-build-system)
     (arguments
@@ -10266,13 +10548,13 @@ selection and classifier types.")
 (define-public r-mapfx
   (package
     (name "r-mapfx")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MAPFX" version))
        (sha256
-        (base32 "0cdmawbp6iz3wis4w848gcj3nvc598hyj1mycyw8gyifpfwg2yq7"))))
+        (base32 "077qqgd196spi064wj0hgj7xlhkv6qwas87gxip84fa9vj7rs35a"))))
     (properties `((upstream-name . "MAPFX")))
     (build-system r-build-system)
     (arguments
@@ -10318,13 +10600,13 @@ FFC assays as well.")
 (define-public r-mantelcorr
   (package
     (name "r-mantelcorr")
-    (version "1.76.0")
+    (version "1.78.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MantelCorr" version))
        (sha256
-        (base32 "0bwxwn3g2s8zyik1j8m0x47a7p3mzh9lb9a38afc6n01xcgsmx28"))))
+        (base32 "108sq7x47x4qwnzlypjak4wshja79hrd4njazp4fckfw8hd9ahsg"))))
     (properties `((upstream-name . "MantelCorr")))
     (build-system r-build-system)
     (arguments
@@ -10340,14 +10622,14 @@ microarray gene-expression data).")
 (define-public r-mammaprintdata
   (package
     (name "r-mammaprintdata")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mammaPrintData" version
                               'experiment))
        (sha256
-        (base32 "0limslpziil158drx8g783n425wnzvqr61h35hbv199nmrqc31in"))))
+        (base32 "1zav169428hj0rryxwf58mwiifzhxynbxp5gxa55203v0y2dqmb0"))))
     (properties `((upstream-name . "mammaPrintData")))
     (build-system r-build-system)
     (arguments
@@ -10364,14 +10646,14 @@ Buyse in 2006.  This cohorts were used to implement and validate the
 (define-public r-malaria-db0
   (package
     (name "r-malaria-db0")
-    (version "3.20.0")
+    (version "3.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "malaria.db0" version
                               'annotation))
        (sha256
-        (base32 "1m2s9pa0xhcgvxxz240chl3qscdy7bsk8f6wf27svws6h4d0zvrc"))))
+        (base32 "18lyczz2049sqgsqip7d40fhs5vzd1d1bb4hjl26gzgkh7b983vi"))))
     (properties `((upstream-name . "malaria.db0")))
     (build-system r-build-system)
     (arguments
@@ -10437,13 +10719,13 @@ Maize.cdf file.")
 (define-public r-mait
   (package
     (name "r-mait")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MAIT" version))
        (sha256
-        (base32 "1fq2wz12h115pgi7gc5qvz9c64qb863409x60kc2clzc0ddc8xfg"))))
+        (base32 "0rz7a8087pigsw4h1hm9cyd28ij6pqvyczgg7jiy4far0xsals52"))))
     (properties `((upstream-name . "MAIT")))
     (build-system r-build-system)
     (arguments
@@ -10471,13 +10753,13 @@ modular function design of the functions.")
 (define-public r-mai
   (package
     (name "r-mai")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MAI" version))
        (sha256
-        (base32 "0l1g08x75phw2cbn6d4yydp2j1ca037mdgc8vx93fng1yi9nk88j"))))
+        (base32 "1agndinb8dihfgp22x111vxg8y0lcm1ig7afi73czijjmdhwygj3"))))
     (properties `((upstream-name . "MAI")))
     (build-system r-build-system)
     (arguments
@@ -10515,13 +10797,13 @@ present.")
 (define-public r-magrene
   (package
     (name "r-magrene")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "magrene" version))
        (sha256
-        (base32 "17pasmfbp0vby6a27gqbj7c563ms4x6c7q3j4mlijmv894ldqvzn"))))
+        (base32 "11b535p06ivk2c40nq42q7jrfrpbv2x7qlyjybvd7fh9zfy9r7kp"))))
     (properties `((upstream-name . "magrene")))
     (build-system r-build-system)
     (arguments
@@ -10545,13 +10827,13 @@ Sorensen-Dice similarity index.")
 (define-public r-magpie
   (package
     (name "r-magpie")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "magpie" version))
        (sha256
-        (base32 "1zvkh41sis8w22xca1vn4ip15s98al1jfkg125idxbdj03y2lvzy"))))
+        (base32 "0rswjhicyn0yvc9pifyslpbxgqb2c5nv3kmzzs4crsygri2g16ax"))))
     (properties `((upstream-name . "magpie")))
     (build-system r-build-system)
     (arguments
@@ -10585,71 +10867,16 @@ It can also output results into .xlsx files or produce corresponding figures of
 choice.")
     (license license:expat)))
 
-(define-public r-mageckflute
-  (package
-    (name "r-mageckflute")
-    (version "2.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "MAGeCKFlute" version))
-       (sha256
-        (base32 "1m2yq73q9wwv5kfybgnkdb877dy539x9vpx713pr6xjpkqvksfiv"))))
-    (properties `((upstream-name . "MAGeCKFlute")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-reshape2
-                             r-pathview
-                             r-msigdbr
-                             r-gridextra
-                             r-ggrepel
-                             r-ggplot2
-                             r-enrichplot
-                             r-dose
-                             r-depmap
-                             r-clusterprofiler
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/MAGeCKFlute")
-    (synopsis
-     "Integrative Analysis Pipeline for Pooled CRISPR Functional Genetic Screens")
-    (description
-     "CRISPR (clustered regularly interspaced short palindrome repeats) coupled with
-nuclease Cas9 (CRISPR/Cas9) screens represent a promising technology to
-systematically evaluate gene functions.  Data analysis for CRISPR/Cas9 screens
-is a critical process that includes identifying screen hits and exploring
-biological functions for these hits in downstream analysis.  We have previously
-developed two algorithms, MA@code{GeCK} and MA@code{GeCK-VISPR}, to analyze
-CRISPR/Cas9 screen data in various scenarios.  These two algorithms allow users
-to perform quality control, read count generation and normalization, and
-calculate beta score to evaluate gene selection performance.  In downstream
-analysis, the biological functional analysis is required for understanding
-biological functions of these identified genes with different screening
-purposes.  Here, We developed MA@code{GeCKFlute} for supporting downstream
-analysis.  MA@code{GeCKFlute} provides several strategies to remove potential
-biases within @code{sgRNA-level} read counts and gene-level beta scores.  The
-downstream analysis with the package includes identifying essential,
-non-essential, and target-associated genes, and performing biological functional
-category analysis, pathway enrichment analysis and protein complex enrichment
-analysis of these genes.  The package also visualizes genes in multiple ways to
-benefit users exploring screening data.  Collectively, MA@code{GeCKFlute}
-enables accurate identification of essential, non-essential, and targeted genes,
-as well as their related biological functions.  This vignette explains the use
-of the package and demonstrates typical workflows.")
-    (license license:gpl3+)))
-
 (define-public r-magar
   (package
     (name "r-magar")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MAGAR" version))
        (sha256
-        (base32 "1hx5wxkld3fk4hw5k7bgfg1sykid0wxsplxv2dz5cjqa83ki4lvl"))))
+        (base32 "1m8q3xszwr2fw2wv1f4b0agxi8yk8n9dyq1fdil1480s22qc4yzn"))))
     (properties `((upstream-name . "MAGAR")))
     (build-system r-build-system)
     (arguments
@@ -10958,13 +11185,13 @@ for the human genome version GRCh38.")
 (define-public r-madseq
   (package
     (name "r-madseq")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MADSEQ" version))
        (sha256
-        (base32 "14rxkzcz0q5h6f9inzl3chjk2jhph0y538k6pshgx54vw68rqzpm"))))
+        (base32 "1fir4xvhg9n33wzq0s5191k9z1ywj02g8khz1337hp137i2vn6jy"))))
     (properties `((upstream-name . "MADSEQ")))
     (build-system r-build-system)
     (arguments
@@ -11001,13 +11228,13 @@ for the quantification of the fraction of aneuploid cells in the sample.")
 (define-public r-macsr
   (package
     (name "r-macsr")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MACSr" version))
        (sha256
-        (base32 "1g6ibxy2ffwq5gb9jh37mrql1aq7ap14spcrx0mrcb684rgvyi5x"))))
+        (base32 "1a9g40z16rwzq8aw0msgvjwqkxnjwpqm4m98n255vkw66fgdv08i"))))
     (properties `((upstream-name . "MACSr")))
     (build-system r-build-system)
     (arguments
@@ -11031,13 +11258,13 @@ the lastest MACS3.")
 (define-public r-macsquantifyr
   (package
     (name "r-macsquantifyr")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MACSQuantifyR" version))
        (sha256
-        (base32 "1nmbj1xqmrnr9ig1dc2l94signj1azkrq3madcciw2rkixr426lf"))))
+        (base32 "1xf8x90m4s334m6zgzyqqxbwpg46ly8d1m4d3pa49nnlq2a5i0b7"))))
     (properties `((upstream-name . "MACSQuantifyR")))
     (build-system r-build-system)
     (arguments
@@ -11067,14 +11294,14 @@ index.")
 (define-public r-macsdata
   (package
     (name "r-macsdata")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MACSdata" version
                               'experiment))
        (sha256
-        (base32 "15cs7096hyfqrw1b3lhnfzkirn3g9ryzymdypqdijjgp2l88j419"))))
+        (base32 "160khahwzj0nndj1ndx9jyyh9lgli179v5l640q7vfqc5cpwp193"))))
     (properties `((upstream-name . "MACSdata")))
     (build-system r-build-system)
     (arguments
@@ -11091,13 +11318,13 @@ The original data can be found at: https://github.com/macs3-project/MACS/.")
 (define-public r-macorrplot
   (package
     (name "r-macorrplot")
-    (version "1.76.0")
+    (version "1.78.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "maCorrPlot" version))
        (sha256
-        (base32 "1nqxjgcp038b8qwbssd25ca40rzq769psrsvllwlmlns1gf8ml3z"))))
+        (base32 "1brq3mpa2wvzvp89cpwy8gr1b3yx63gq6avdavgkhpd2rfspyk2b"))))
     (properties `((upstream-name . "maCorrPlot")))
     (build-system r-build-system)
     (arguments
@@ -11115,13 +11342,13 @@ normalization.")
 (define-public r-macarron
   (package
     (name "r-macarron")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Macarron" version))
        (sha256
-        (base32 "1vmcjb2avjmni51n47srjzk5s3ybb7nsv7qs5lw64vp0p9pmsd4x"))))
+        (base32 "10wivwyka0jn1cc57fds85zz0ybl3q0sk9hi6dczwb4wdz8d1l6m"))))
     (properties `((upstream-name . "Macarron")))
     (build-system r-build-system)
     (arguments
@@ -11157,16 +11384,64 @@ abundance and differential abundance analysis to identify associations between
 features and phenotype/condition.")
     (license license:expat)))
 
+(define-public r-maaslin3
+  (package
+    (name "r-maaslin3")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "maaslin3" version))
+       (sha256
+        (base32 "14x7kblx19ibdclgj9qsy01w1d916xk88hhf7f4rqf2zl242vrck"))))
+    (properties `((upstream-name . "maaslin3")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-treesummarizedexperiment
+                             r-tibble
+                             r-survival
+                             r-summarizedexperiment
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-plyr
+                             r-pbapply
+                             r-patchwork
+                             r-optparse
+                             r-multcomp
+                             r-logging
+                             r-lmertest
+                             r-lme4
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "http://huttenhower.sph.harvard.edu/maaslin3")
+    (synopsis
+     "\"Refining and extending generalized multivariate linear models for meta-omic association discovery\"")
+    (description
+     "@code{MaAsLin} 3 refines and extends generalized multivariate linear models for
+meta-omicron association discovery.  It finds abundance and prevalence
+associations between microbiome meta-omics features and complex metadata in
+population-scale epidemiological studies.  The software includes multiple
+analysis methods (including support for multiple covariates, repeated measures,
+and ordered predictors), filtering, normalization, and transform options to
+customize analysis for your specific study.")
+    (license license:expat)))
+
 (define-public r-m6aboost
   (package
     (name "r-m6aboost")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "m6Aboost" version))
        (sha256
-        (base32 "1r16yiq2banqks4jxvn9x8cfcsm1g8gr3hgjx0wzsy1cmwfw20x1"))))
+        (base32 "1rdi20nwd4j1bqckhlyj8gc8pzrviwww7q3lh1h6hrc20lf8ckrz"))))
     (properties `((upstream-name . "m6Aboost")))
     (build-system r-build-system)
     (arguments
@@ -11198,13 +11473,13 @@ a GRanges object.  More details can be found in the vignette.")
 (define-public r-m3drop
   (package
     (name "r-m3drop")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "M3Drop" version))
        (sha256
-        (base32 "1wqlkshzlq724n5r4c7bqlhvjz80fn74dd8kw5r290z9qicqxx6x"))))
+        (base32 "0aa3imi6j0nq1yk7b8iivyflxs83h3fqrys9cmhpi0nn6p5wyj1s"))))
     (properties `((upstream-name . "M3Drop")))
     (build-system r-build-system)
     (arguments
@@ -11235,14 +11510,14 @@ residuals in UMI-tagged data using a library-size aware negative binomial model.
 (define-public r-m3dexampledata
   (package
     (name "r-m3dexampledata")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "M3DExampleData" version
                               'experiment))
        (sha256
-        (base32 "08nid6lqbxf6jjqkp945wg5wr3pv33ljy499563rnvnnadi3gncm"))))
+        (base32 "1w03cxc5kvz0f81b52ygfl5y6b06ikbb6i3slmk7k76h5hv67gal"))))
     (properties `((upstream-name . "M3DExampleData")))
     (build-system r-build-system)
     (arguments

@@ -6,6 +6,9 @@
                 #:prefix license:)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
+  #:use-module (guix-cran packages k)
+  #:use-module (guix-cran packages l)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages w)
@@ -156,13 +159,13 @@ no-variation, mixed, and multinucleotide-polymorphism).")
 (define-public r-xnastring
   (package
     (name "r-xnastring")
-    (version "1.14.0")
+    (version "1.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XNAString" version))
        (sha256
-        (base32 "05d6f2zlv7rs36vncz0ywn4g51kch7cps8gmyax9vxv3jsszq2r0"))))
+        (base32 "1q50h6fvkc8fr5kvz3whvfiqx3fkxi8m7r1h459sqk362j9pydrj"))))
     (properties `((upstream-name . "XNAString")))
     (build-system r-build-system)
     (arguments
@@ -272,14 +275,14 @@ from public repositories.")
 (define-public r-xhybcasneuf
   (package
     (name "r-xhybcasneuf")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XhybCasneuf" version
                               'experiment))
        (sha256
-        (base32 "1pg3bwi3aprn4f9y43agd25sjhmxj619k61is7zgrkm2ljg4mj00"))))
+        (base32 "11gvq14f8nnn334q35r6yq8wcjfvn9mhy6v4ixnigvazm6bjvxdx"))))
     (properties `((upstream-name . "XhybCasneuf")))
     (build-system r-build-system)
     (arguments
@@ -296,13 +299,13 @@ from public repositories.")
 (define-public r-xeva
   (package
     (name "r-xeva")
-    (version "1.22.1")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Xeva" version))
        (sha256
-        (base32 "0ifm36inlqivkmac0gixx3isd46ghv4ia51jqwiqgyw8k0nkif2v"))))
+        (base32 "1f3jlk8827r1pq4aj7bkqla0i05f6qn4bya8gxxqghdby5nkphhp"))))
     (properties `((upstream-name . "Xeva")))
     (build-system r-build-system)
     (arguments
@@ -381,14 +384,14 @@ Xenopus_laevis.cdf file.")
 (define-public r-xenopus-db0
   (package
     (name "r-xenopus-db0")
-    (version "3.20.0")
+    (version "3.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xenopus.db0" version
                               'annotation))
        (sha256
-        (base32 "1pk2i3rl421hs79s6rzaxlha6x41ggq2k3salm73p3f4xymzrpc6"))))
+        (base32 "1439r2f9iz5mrjdr4fssybbjld4ll8wz6rvwa19466cbdln3a74a"))))
     (properties `((upstream-name . "xenopus.db0")))
     (build-system r-build-system)
     (arguments
@@ -405,13 +408,13 @@ Xenopus_laevis.cdf file.")
 (define-public r-xenlite
   (package
     (name "r-xenlite")
-    (version "1.0.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xenLite" version))
        (sha256
-        (base32 "18nkq56gnb50i5a0wjqrlmdkp29qf5va5bkyjlvaz01gxrbx445g"))))
+        (base32 "1ymbcb2w5997qhai5jpavqb1dk73bhg3c1m3bxbxpb1n5cd8j2fh"))))
     (properties `((upstream-name . "xenLite")))
     (build-system r-build-system)
     (arguments
@@ -439,16 +442,50 @@ Address use of parquet for coordinates, @code{SpatialExperiment} for assay and
 sample data.  Address serialization and use of cloud storage.")
     (license license:artistic2.0)))
 
+(define-public r-xeniumio
+  (package
+    (name "r-xeniumio")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "XeniumIO" version))
+       (sha256
+        (base32 "0yd0kf34dw3lyphvlqhw1h6b0qcyfq86lg4455mqvklx96vpvm3c"))))
+    (properties `((upstream-name . "XeniumIO")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visiumio
+                             r-tenxio
+                             r-summarizedexperiment
+                             r-spatialexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-jsonlite
+                             r-biocio
+                             r-biocgenerics
+                             r-biocbaseutils))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/waldronlab/XeniumIO")
+    (synopsis "Import and represent Xenium data from the 10X Xenium Analyzer")
+    (description
+     "The package allows users to readily import spatial data obtained from the 10X
+Xenium Analyzer pipeline.  Supported formats include parquet', h5', and mtx
+files.  The package mainly represents data as @code{SpatialExperiment} objects.")
+    (license license:artistic2.0)))
+
 (define-public r-xde
   (package
     (name "r-xde")
-    (version "2.52.0")
+    (version "2.54.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XDE" version))
        (sha256
-        (base32 "1smp38qmpd1khziccmyqxq3wc8l4aviclsb0srmyjligjchp6x3p"))))
+        (base32 "127s5y121g2x669mcmyvvx5qxbzp8nsqcda1gkfjskbmwi7lhycf"))))
     (properties `((upstream-name . "XDE")))
     (build-system r-build-system)
     (arguments
@@ -472,14 +509,14 @@ sample data.  Address serialization and use of cloud storage.")
 (define-public r-xcoredata
   (package
     (name "r-xcoredata")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcoredata" version
                               'experiment))
        (sha256
-        (base32 "0y8z0gfkcacl82s6j5g3fjg7a5k8hyz4w4xfx6lyjsp7fxdbmc9f"))))
+        (base32 "0b1hwnn0kvv4bq4k2qr3l251iljqk93wbhqzrvi6ax1i3vf217m5"))))
     (properties `((upstream-name . "xcoredata")))
     (build-system r-build-system)
     (arguments
@@ -499,13 +536,13 @@ sample data.  Address serialization and use of cloud storage.")
 (define-public r-xcore
   (package
     (name "r-xcore")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcore" version))
        (sha256
-        (base32 "11pam90f6q6f1lvjl54jdg8p9rd47pybdcl1xy7g0q1gyygdl6qs"))))
+        (base32 "1i17xqa5gyhhwa98dcfbc5nihwrql4ndpp7prcxvzwiahcgghxay"))))
     (properties `((upstream-name . "xcore")))
     (build-system r-build-system)
     (arguments
@@ -535,4 +572,81 @@ their unknown activities.  Obtained, estimates can be further tested for
 significance to select molecular signatures with the highest predicted effect on
 the observed expression changes.")
     (license license:gpl2)))
+
+(define-public r-xcell2
+  (package
+    (name "r-xcell2")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "xCell2" version))
+       (sha256
+        (base32 "1hrq387m65sf9nkv6rf8khkwmsk58jmrayn8sxdbnw44pljcw2hk"))))
+    (properties `((upstream-name . "xCell2")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble
+                             r-summarizedexperiment
+                             r-singscore
+                             r-singlecellexperiment
+                             r-rfast
+                             r-readr
+                             r-quadprog
+                             r-progress
+                             r-pracma
+                             r-ontologyindex
+                             r-minpack-lm
+                             r-matrix
+                             r-magrittr
+                             r-dplyr
+                             r-biocparallel
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AlmogAngel/xCell2")
+    (synopsis "Tool for Generic Cell Type Enrichment Analysis")
+    (description
+     "@code{xCell2} provides methods for cell type enrichment analysis using cell type
+signatures.  It includes three main functions - 1. @code{xCell2Train} for
+training custom references objects from bulk or single-cell RNA-seq datasets.
+2. @code{xCell2Analysis} for conducting the cell type enrichment analysis using
+the custom reference.  3. @code{xCell2GetLineage} for identifying dependencies
+between different cell types using ontology.")
+    (license license:gpl3+)))
+
+(define-public r-xaitest
+  (package
+    (name "r-xaitest")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "XAItest" version))
+       (sha256
+        (base32 "0i9ks1p3l354pxr9s3k0kjs6b064q9ff7w0qf09prn8cxkivpfig"))))
+    (properties `((upstream-name . "XAItest")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-randomforest
+                             r-limma
+                             r-lime
+                             r-kernelshap
+                             r-ggplot2
+                             r-dt
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GhislainFievet/XAItest")
+    (synopsis "XAItest: Enhancing Feature Discovery with eXplainable AI")
+    (description
+     "XAItest is an R Package that identifies features using @code{eXplainable} AI
+(XAI) methods such as SHAP or LIME. This package allows users to compare these
+methods with traditional statistical tests like t-tests, empirical Bayes, and
+Fisher's test.  Additionally, it includes a system that enables the comparison
+of feature importance with p-values by incorporating calibrated simulated data.")
+    (license license:expat)))
 

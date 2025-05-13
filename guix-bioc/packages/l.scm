@@ -67,13 +67,13 @@
 (define-public r-lymphoseq
   (package
     (name "r-lymphoseq")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LymphoSeq" version))
        (sha256
-        (base32 "0ss46q1y07p17qgfir4vklpmqsx4ywgaa99rsdn8b41pdgcwxvy2"))))
+        (base32 "0smb2fpixdxvf8rmvrzcpddqhf6q56qwxpkjq1432vlsxijmkhax"))))
     (properties `((upstream-name . "LymphoSeq")))
     (build-system r-build-system)
     (arguments
@@ -108,14 +108,14 @@ value (.tsv) files exported from the @code{ImmunoSEQ} analyzer.")
 (define-public r-lydata
   (package
     (name "r-lydata")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lydata" version
                               'experiment))
        (sha256
-        (base32 "1ag3bbjf3x3g3f3ivyyc7nrhny1562p27b8m2hs01krc1a80m1ym"))))
+        (base32 "0kk79mik1yn3kzx6nb2sm2q7i1qsv9qjyidbnnb4glrjd36khx81"))))
     (properties `((upstream-name . "lydata")))
     (build-system r-build-system)
     (arguments
@@ -133,13 +133,13 @@ crossmeta package.")
 (define-public r-lute
   (package
     (name "r-lute")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lute" version))
        (sha256
-        (base32 "019cm45ahhqrrbj8bi8qdiajzp5238rc4ak8qlpnz1gf6y8zsbzm"))))
+        (base32 "1f1i083aqhls9xf7hynb1xlk5r9ksm5jzy9l971ikh97jyxfwx22"))))
     (properties `((upstream-name . "lute")))
     (build-system r-build-system)
     (arguments
@@ -170,14 +170,14 @@ for these when developing new algorithms.")
 (define-public r-lungexpression
   (package
     (name "r-lungexpression")
-    (version "0.44.0")
+    (version "0.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lungExpression" version
                               'experiment))
        (sha256
-        (base32 "1wmxg0655i59rdf5h5p6fxah4vdmgkrcqrbpl5rgzi3kixrdpvqx"))))
+        (base32 "0ha34i1jy0lf80crxbm225hxny6kvmpi2j54zwaifyvm550ad7xl"))))
     (properties `((upstream-name . "lungExpression")))
     (build-system r-build-system)
     (arguments
@@ -194,14 +194,14 @@ for these when developing new algorithms.")
 (define-public r-lungcanceracvssccgeo
   (package
     (name "r-lungcanceracvssccgeo")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LungCancerACvsSCCGEO" version
                               'experiment))
        (sha256
-        (base32 "0xnikck5idln235chn2lyrh7yaaihpwi3dm8d70i0hps9rg7ibix"))))
+        (base32 "0xd6b2jppscvhy9krz3qnlwn36whp2c71ng6lkb0vj3952bmr1iz"))))
     (properties `((upstream-name . "LungCancerACvsSCCGEO")))
     (build-system r-build-system)
     (arguments
@@ -374,14 +374,14 @@ assembled using data from public repositories.")
 (define-public r-lumibarnes
   (package
     (name "r-lumibarnes")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lumiBarnes" version
                               'experiment))
        (sha256
-        (base32 "1d1xpxjh6shynsj3ngv3nryrkjkzqx3d1f14sjr93qlwsbvhypfm"))))
+        (base32 "0gv47xqc50nlmqnqfp2zidfdnr7706lvfsb94c3qbqa8dn9k3wkc"))))
     (properties `((upstream-name . "lumiBarnes")))
     (build-system r-build-system)
     (arguments
@@ -403,14 +403,14 @@ package).")
 (define-public r-lrcelltypemarkers
   (package
     (name "r-lrcelltypemarkers")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRcellTypeMarkers" version
                               'experiment))
        (sha256
-        (base32 "0q5mw2fdz3hlnxx3k7qca7wr50s49jymgqyr8ydq4dfqqcvmzxyr"))))
+        (base32 "0r0h4sw0xmkk4nbms1f632lmbpi79m0d1cmjf777ghxv3fqd43lx"))))
     (properties `((upstream-name . "LRcellTypeMarkers")))
     (build-system r-build-system)
     (arguments
@@ -436,13 +436,13 @@ more details, please visit: https://github.com/marvinquiet/LRcell.")
 (define-public r-lrcell
   (package
     (name "r-lrcell")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRcell" version))
        (sha256
-        (base32 "0h8jl25kzy03igndb56ard1vngmpmyggcmhzw5m5chx11vz7548v"))))
+        (base32 "1jdkj1slrq37amnjaqb8c6swzcz0n857wwv82ac2lbi60a96dn7n"))))
     (properties `((upstream-name . "LRcell")))
     (build-system r-build-system)
     (arguments
@@ -487,13 +487,13 @@ Thalamus).")
 (define-public r-lrbasedbi
   (package
     (name "r-lrbasedbi")
-    (version "2.16.0")
+    (version "2.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRBaseDbi" version))
        (sha256
-        (base32 "0s2f2y2fzqz6fawc8rjpmiap5m9vzjwslvcgilb28cfzrz4azp6y"))))
+        (base32 "0lip3bfij0gzqmsnvzvw6nnpw7jv5qlvvvnm58wf4q7nxywabq7w"))))
     (properties `((upstream-name . "LRBaseDbi")))
     (build-system r-build-system)
     (arguments
@@ -509,13 +509,13 @@ Thalamus).")
 (define-public r-lpnet
   (package
     (name "r-lpnet")
-    (version "2.38.0")
+    (version "2.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lpNet" version))
        (sha256
-        (base32 "1c23mc2dswzvgmnnlk3vxlg5qzhj6jbi49dyn87nh6ywb5zcm51c"))))
+        (base32 "02w8r6myyqbynynxmrzpjhxxdb8m04p9yxw7b4rmmi45052yamzd"))))
     (properties `((upstream-name . "lpNet")))
     (build-system r-build-system)
     (arguments
@@ -535,13 +535,13 @@ cross-validation or stratified n-fold cross-validation can be used.")
 (define-public r-lpe
   (package
     (name "r-lpe")
-    (version "1.80.0")
+    (version "1.82.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LPE" version))
        (sha256
-        (base32 "15bjkkb089kq9k9i7qmchs245lf1kgdpcilkym44fsviy08lqzlg"))))
+        (base32 "0r58af20b4mfwabm81rrkr55fzj7jwxhwmhj2lqz76h87jfwdfvh"))))
     (properties `((upstream-name . "LPE")))
     (build-system r-build-system)
     (arguments
@@ -587,13 +587,13 @@ package.")
 (define-public r-loomexperiment
   (package
     (name "r-loomexperiment")
-    (version "1.24.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LoomExperiment" version))
        (sha256
-        (base32 "17cxi4f4bc65finx24bd6z15zpy9w19fwyzbi27iia022f28m5ya"))))
+        (base32 "08vqs1nj7il0gj4kxd64pln6hb4m26yaarckvkdxs8clgl90syg1"))))
     (properties `((upstream-name . "LoomExperiment")))
     (build-system r-build-system)
     (arguments
@@ -620,13 +620,13 @@ Bioconductor \"Experiment\" classes to loom files and vice versa.")
 (define-public r-lola
   (package
     (name "r-lola")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LOLA" version))
        (sha256
-        (base32 "0gxz27jvhw64i7r9acn5kj95s1hr8n5kajig6wi2pqxkmasiafk1"))))
+        (base32 "0k7fj7rv43df27n54v58d3j1jk1h1847klms1l63vhf32xlgdsnh"))))
     (properties `((upstream-name . "LOLA")))
     (build-system r-build-system)
     (arguments
@@ -665,13 +665,13 @@ facilitating interpretation of functional genomics and epigenomics data.")
 (define-public r-logicfs
   (package
     (name "r-logicfs")
-    (version "2.26.0")
+    (version "2.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "logicFS" version))
        (sha256
-        (base32 "07sh012j904pv8hgs4h1kknwg76bympv5g2dhal86xmnllzn2sqr"))))
+        (base32 "1vps8qa10svfk5hxrj6xn9fmrbqn9mvph7rb1r419zr9z0p8nz4a"))))
     (properties `((upstream-name . "logicFS")))
     (build-system r-build-system)
     (arguments
@@ -689,13 +689,13 @@ bagging version of logic regression for classification.")
 (define-public r-loci2path
   (package
     (name "r-loci2path")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "loci2path" version))
        (sha256
-        (base32 "02g25ipim6v6xl6cpdrard9rbp3yz52yvkb0jrisjmxpr0ab07mn"))))
+        (base32 "1iwkwcxi593zyikjizs43li7f6r402m8a0m6n6b8a7f2nlblibzx"))))
     (properties `((upstream-name . "loci2path")))
     (build-system r-build-system)
     (arguments
@@ -722,13 +722,13 @@ M@code{SigDB}.")
 (define-public r-lobstahs
   (package
     (name "r-lobstahs")
-    (version "1.32.0")
+    (version "1.33.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LOBSTAHS" version))
        (sha256
-        (base32 "1pwzfclnna5f1a6sdcradf08i5a562m68ghrd216r8c38x7lg55k"))))
+        (base32 "0wh2akkwkh88wfh8gg1n1zq3jgp0a9wgyv0c6fcr8z5zwprkach6"))))
     (properties `((upstream-name . "LOBSTAHS")))
     (build-system r-build-system)
     (arguments
@@ -758,13 +758,13 @@ user in evaluating the accuracy of each assignment.")
 (define-public r-lmdme
   (package
     (name "r-lmdme")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lmdme" version))
        (sha256
-        (base32 "1sg0kvgg33hkpv1fxbibpz0p1126c1izw9jq4133i932pzl5gx5s"))))
+        (base32 "1l1kwsp3lf5r3x7pwqa7j1s3f5w61zc3hxwpgbjkfd86vv6c129w"))))
     (properties `((upstream-name . "lmdme")))
     (build-system r-build-system)
     (arguments
@@ -785,14 +785,14 @@ for PCA and PLS.")
 (define-public r-listeretalbsseq
   (package
     (name "r-listeretalbsseq")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ListerEtAlBSseq" version
                               'experiment))
        (sha256
-        (base32 "0i3ql1pyyw53n8q3q2wwhqndhyb960l0j5616vx5777dfybm4j9n"))))
+        (base32 "1by56gmaka3vv2fpkwb0w3l6jsn3ps3bl8gxy4p2pcsf8mr7z9a1"))))
     (properties `((upstream-name . "ListerEtAlBSseq")))
     (build-system r-build-system)
     (arguments
@@ -809,20 +809,19 @@ for PCA and PLS.")
 (define-public r-lisaclust
   (package
     (name "r-lisaclust")
-    (version "1.14.4")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lisaClust" version))
        (sha256
-        (base32 "11aqjzkchy1zmajgkw85yq2qx0ff2r803rk3a32wfkj8h5nbs02z"))))
+        (base32 "1pzdv5ivv75bhmjpsi3sagxc8w7zs9lsj5d5ildydsmifpfplab0"))))
     (properties `((upstream-name . "lisaClust")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-testthat
                              r-summarizedexperiment
                              r-spicyr
                              r-spatstat-random
@@ -830,9 +829,12 @@ for PCA and PLS.")
                              r-spatstat-explore
                              r-spatialexperiment
                              r-singlecellexperiment
+                             r-simpleseg
                              r-s4vectors
+                             r-rlang
                              r-purrr
                              r-pheatmap
+                             r-lifecycle
                              r-ggplot2
                              r-dplyr
                              r-data-table
@@ -855,13 +857,13 @@ single-cell resolution.")
 (define-public r-liquidassociation
   (package
     (name "r-liquidassociation")
-    (version "1.60.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LiquidAssociation" version))
        (sha256
-        (base32 "14l5z0wahdgirz0rxnbkgmhv636w57yp17z5gw220a7vk2w5v4lf"))))
+        (base32 "077fp1knsanjc1ijraakp60q6icyzgqx6hhqnysgbgg2i53ra7d3"))))
     (properties `((upstream-name . "LiquidAssociation")))
     (build-system r-build-system)
     (arguments
@@ -879,13 +881,13 @@ liquid association given a gene triplet data.")
 (define-public r-lipidr
   (package
     (name "r-lipidr")
-    (version "2.20.0")
+    (version "2.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lipidr" version))
        (sha256
-        (base32 "03k22sk8scxnb070p2ildp9fx2i1birhjfiqkspshzwwp8nsq0ij"))))
+        (base32 "0dy6jmlvgiz08xk7nniikhk49grrlli9p9cqqv36mvlq8rcg0v0n"))))
     (properties `((upstream-name . "lipidr")))
     (build-system r-build-system)
     (arguments
@@ -922,13 +924,13 @@ class, total chain length and unsaturation.")
 (define-public r-lionessr
   (package
     (name "r-lionessr")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lionessR" version))
        (sha256
-        (base32 "06shxn831j06qr96fdw9m0s5ng5r2gd2g3105g0cj0vz0d3plxaj"))))
+        (base32 "1d0biddlzh237zwi72njf876rv0nhjmxfpyf9dfnvxcbz6hhiq0a"))))
     (properties `((upstream-name . "lionessR")))
     (build-system r-build-system)
     (arguments
@@ -952,13 +954,13 @@ and bipartite networks.")
 (define-public r-lintind
   (package
     (name "r-lintind")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LinTInd" version))
        (sha256
-        (base32 "0yvfwwc81nf29wvdhpwzxbpd5wg3mdb30384pj9sx3hlbp8spnfn"))))
+        (base32 "0hk602dvj93j3nqplm8nrxy51xl59ynplif63w5scbvngnvhlc9y"))))
     (properties `((upstream-name . "LinTInd")))
     (build-system r-build-system)
     (arguments
@@ -1004,13 +1006,13 @@ tree.")
 (define-public r-linkhd
   (package
     (name "r-linkhd")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LinkHD" version))
        (sha256
-        (base32 "15db7s91qxj3vfnidrss03fklnv9z8g960vny7jmh3k4jr70wkva"))))
+        (base32 "1389pp0i4ahbi4i370p0il9rwiqk9plxy2a7s1x0nsycnb0df63q"))))
     (properties `((upstream-name . "LinkHD")))
     (build-system r-build-system)
     (arguments
@@ -1046,13 +1048,13 @@ variable and perform variable selection.")
 (define-public r-lineagespot
   (package
     (name "r-lineagespot")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lineagespot" version))
        (sha256
-        (base32 "1yll19q8fmajpv56zwrdcc9sp3yjvymqdsbmbhysp7fkd3cpxkmm"))))
+        (base32 "1n6x12ihigvz53av5gc1cw94fz45jiczawmvggykra1999k0f1yc"))))
     (properties `((upstream-name . "lineagespot")))
     (build-system r-build-system)
     (arguments
@@ -1077,16 +1079,58 @@ sequencing, and attempts to infer the potential distribution of the
 SARS-@code{CoV-2} lineages.")
     (license license:expat)))
 
+(define-public r-limrots
+  (package
+    (name "r-limrots")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "LimROTS" version))
+       (sha256
+        (base32 "1q8cznz9gngrd87raj76vs0daiiqcv7dy1x09dfykfa0zhxak8a1"))))
+    (properties `((upstream-name . "LimROTS")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-stringr
+                             r-s4vectors
+                             r-qvalue
+                             r-limma
+                             r-dplyr
+                             r-biocparallel
+                             r-basilisk-utils))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AliYoussef96/LimROTS")
+    (synopsis
+     "Hybrid Method Integrating Empirical Bayes and Reproducibility-Optimized Statistics for Robust Analysis of Proteomics and Metabolomics Data")
+    (description
+     "Differential expression analysis is a prevalent method utilised in the
+examination of diverse biological data.  The reproducibility-optimized test
+statistic (ROTS) modifies a t-statistic based on the data's intrinsic
+characteristics and ranks features according to their statistical significance
+for differential expression between two or more groups (f-statistic).  Focussing
+on proteomics and metabolomics, the current ROTS implementation cannot account
+for technical or biological covariates such as MS batches or gender differences
+among the samples.  Consequently, we developed @code{LimROTS}, which employs a
+reproducibility-optimized test statistic utilising the limma methodology to
+simulate complex experimental designs. @code{LimROTS} is a hybrid method
+integrating empirical bayes and reproducibility-optimized statistics for robust
+analysis of proteomics and metabolomics data.")
+    (license license:artistic2.0)))
+
 (define-public r-limpca
   (package
     (name "r-limpca")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpca" version))
        (sha256
-        (base32 "04cl6b2086azwri44ij266v6865xpld3v54nhjkm67bm89z5bcas"))))
+        (base32 "0dv8ncklx9pmwx4z9kfaa7ivxi4cd2pbdprjf1a17jvg2a9x4qsk"))))
     (properties `((upstream-name . "limpca")))
     (build-system r-build-system)
     (arguments
@@ -1120,16 +1164,50 @@ mutlivariate datasets having more variables than observations.  This method can
 handle unbalanced design.")
     (license license:artistic2.0)))
 
+(define-public r-limpa
+  (package
+    (name "r-limpa")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "limpa" version))
+       (sha256
+        (base32 "0l2kr2r5zhyp9v30jar4cdfv2q5fvcnshi0pc8vcy0f86mjksab0"))))
+    (properties `((upstream-name . "limpa")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-statmod r-limma r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/limpa")
+    (synopsis "Quantification and Differential Analysis of Proteomics Data")
+    (description
+     "Quantification and differential analysis of mass-spectrometry proteomics data,
+with probabilistic recovery of information from missing values.  Estimates the
+detection probability curve (DPC), which relates the probability of successful
+detection to the underlying expression level of each peptide, and uses it to
+incorporate peptide missing values into protein quantification and into
+subsequent differential expression analyses.  The package produces objects
+suitable for downstream analysis in limma.  The package accepts peptide-level
+data with missing values and produces complete protein quantifications without
+missing values.  The uncertainty introduced by missing value imputation is
+propagated through to the limma analyses using variance modeling and precision
+weights.  The package name \"limpa\" is an acronym for \"Linear Models for
+Proteomics Data\".")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-limmagui
   (package
     (name "r-limmagui")
-    (version "1.82.0")
+    (version "1.84.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limmaGUI" version))
        (sha256
-        (base32 "1zqdm1hh4vh10shvdx2nrxp6dshicd1w5a0qblhjfy4wdba18jgz"))))
+        (base32 "1jixz7ilwg45aarzxf6zba169i947jdx3kabg0gb4ggzizjqrx22"))))
     (properties `((upstream-name . "limmaGUI")))
     (build-system r-build-system)
     (arguments
@@ -1146,14 +1224,14 @@ analysis of two-color microarray data using the limma package.")
 (define-public r-liebermanaidenhic2009
   (package
     (name "r-liebermanaidenhic2009")
-    (version "0.44.0")
+    (version "0.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LiebermanAidenHiC2009" version
                               'experiment))
        (sha256
-        (base32 "0xa0j53i121r9yscklwcaibhm5826l878w2ys4hwn03kv1jbxm14"))))
+        (base32 "0jhfppda27ykz1759wnlh5kyadhyxsc3qmfhdlk8ya3kbyixhj2k"))))
     (properties `((upstream-name . "LiebermanAidenHiC2009")))
     (build-system r-build-system)
     (arguments
@@ -1169,16 +1247,44 @@ mapping of long-range interactions reveals folding principles of the human
 genome\", Science 2009 Oct 9;326(5950):289-93.  PMID: 19815776.")
     (license license:lgpl2.0+)))
 
+(define-public r-lheuristic
+  (package
+    (name "r-lheuristic")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Lheuristic" version))
+       (sha256
+        (base32 "1cxfzfdhhhzvaf2a0ky5vlibqvmv2wqwxlnj6pfgfb74hd26n005"))))
+    (properties `((upstream-name . "Lheuristic")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-multiassayexperiment r-hmisc r-ggpubr r-ggplot2
+                             r-energy))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ASPresearch/Lheuristic")
+    (synopsis "Detection of scatterplots with L-shaped pattern")
+    (description
+     "The Lheuristic package identifies scatterpots that follow and L-shaped, negative
+distribution.  It can be used to identify genes regulated by methylation by
+integration of an expression and a methylation array.  The package uses two
+different methods to detect expression and methyaltion L- shapped scatterplots.
+The parameters can be changed to detect other scatterplot patterns.")
+    (license license:expat)))
+
 (define-public r-levi
   (package
     (name "r-levi")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "levi" version))
        (sha256
-        (base32 "1mqriv4rf23kx173gd51w3bxjl09bs8n1nl6ps8ki2s63lan4l43"))))
+        (base32 "0awhv9zcy8jn0nxxcnk40w0yvjbg0xxhayvngqg89b7ja3jg1vfg"))))
     (properties `((upstream-name . "levi")))
     (build-system r-build-system)
     (arguments
@@ -1211,13 +1317,13 @@ displaying a heatmap with surface curves to evidence the altered regions.")
 (define-public r-les
   (package
     (name "r-les")
-    (version "1.56.0")
+    (version "1.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "les" version))
        (sha256
-        (base32 "06xvl0kzp7sc7dyskcq2cfanz1jinxxa6m2npl2nmxwq1pfgm90h"))))
+        (base32 "1gqxjgw1ffqqqzzaplriymlavx3v193p3inffh7bwchq4z02ksb1"))))
     (properties `((upstream-name . "les")))
     (build-system r-build-system)
     (arguments
@@ -1238,13 +1344,13 @@ the level of single probes.")
 (define-public r-lemur
   (package
     (name "r-lemur")
-    (version "1.4.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lemur" version))
        (sha256
-        (base32 "0gdfp0yyjzgs5qmzzpi2gm4jyyc96hvl85hl61g676rc87in07cv"))))
+        (base32 "1rhyh9r9mi3kybbfs0gvq0s7zb6qiy6d34qg44m6xkrj4ipwdhki"))))
     (properties `((upstream-name . "lemur")))
     (build-system r-build-system)
     (arguments
@@ -1285,14 +1391,14 @@ significantly changed.")
 (define-public r-legato
   (package
     (name "r-legato")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LegATo" version
                               'experiment))
        (sha256
-        (base32 "1lprd2g3qd0r3vqqzfaf3h25gyi4c0bbinqyvadvw3m68n55lcx0"))))
+        (base32 "09abxsrqzrih5grjjq9hv2yygcp783ldhnisr7w1gvc3mh5y8kl3"))))
     (properties `((upstream-name . "LegATo")))
     (build-system r-build-system)
     (arguments
@@ -1329,14 +1435,14 @@ over time, including changes in composition or stability of commensal bacteria."
 (define-public r-leebamviews
   (package
     (name "r-leebamviews")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "leeBamViews" version
                               'experiment))
        (sha256
-        (base32 "1fqcjmhki1am8b2kw0cymnih3wii8v5a7mbk1imvkl858chh3npz"))))
+        (base32 "1qlynyxr9vkm9mqclmkzs039zm5dr9x3a3v0cc2z97h9r1cbw2iw"))))
     (properties `((upstream-name . "leeBamViews")))
     (build-system r-build-system)
     (arguments
@@ -1359,13 +1465,13 @@ over time, including changes in composition or stability of commensal bacteria."
 (define-public r-ledpred
   (package
     (name "r-ledpred")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LedPred" version))
        (sha256
-        (base32 "0f8c69k9gmm1fak48xp3h2d4n6y71qgjff2ifmyfsl8k0y39jyb3"))))
+        (base32 "0v1f0y87wph6ycww1inz1wak2fvr28bas26sqvcc36wa0w5c6n7s"))))
     (properties `((upstream-name . "LedPred")))
     (build-system r-build-system)
     (arguments
@@ -1397,13 +1503,13 @@ used to score the regulatory potential of unknown sequences.")
 (define-public r-lbe
   (package
     (name "r-lbe")
-    (version "1.74.0")
+    (version "1.76.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LBE" version))
        (sha256
-        (base32 "0hjgq630m4yy8pd4sm2s0nbxcm7y1rqg6kbggrk3hbiqbrzlq0ay"))))
+        (base32 "0r7xhzgmbm6jgsf95421gw8124g6j05kiv17c802a4k3dkdnp3ya"))))
     (properties `((upstream-name . "LBE")))
     (build-system r-build-system)
     (arguments
@@ -1442,40 +1548,16 @@ assumption for the alternative hypothesis.")
 assembled using data from public repositories.")
     (license license:artistic2.0)))
 
-(define-public r-lapmix
-  (package
-    (name "r-lapmix")
-    (version "1.72.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "lapmix" version))
-       (sha256
-        (base32 "19bhb7654h8pivsf3qxv518zp02ijbvlhkb4d93nyanns3g7zqas"))))
-    (properties `((upstream-name . "lapmix")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-biobase))
-    (home-page "http://www.r-project.org")
-    (synopsis "Laplace Mixture Model in Microarray Experiments")
-    (description
-     "Laplace mixture modelling of microarray experiments.  A hierarchical Bayesian
-approach is used, and the hyperparameters are estimated using empirical Bayes.
-The main purpose is to identify differentially expressed genes.")
-    (license license:gpl2+)))
-
 (define-public r-lace
   (package
     (name "r-lace")
-    (version "2.10.0")
+    (version "2.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LACE" version))
        (sha256
-        (base32 "1x1h38qav4f5gndlq6xf9rcwsv5pjphcxz11jsykv2bg33fcqaj2"))))
+        (base32 "1f1d9k4mxkv17p2p00rrxh4nr6sxbpkp6s5jmsh17cb52japn4sj"))))
     (properties `((upstream-name . "LACE")))
     (build-system r-build-system)
     (arguments
