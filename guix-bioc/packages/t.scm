@@ -4256,13 +4256,13 @@ from 10x genomics.")
 (define-public r-tenxio
   (package
     (name "r-tenxio")
-    (version "1.10.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TENxIO" version))
        (sha256
-        (base32 "0b2whwz4pijjd62qnn0m07i609i27vrx4qqq3l9r2cppw7vlvfhi"))))
+        (base32 "0bmvwp3ji15i044c4x6y4cslaxq5glwar0a0662c121m9m7kbffb"))))
     (properties `((upstream-name . "TENxIO")))
     (build-system r-build-system)
     (arguments

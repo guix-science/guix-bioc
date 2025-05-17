@@ -924,13 +924,13 @@ evidence.")
 (define-public r-doppelgangr
   (package
     (name "r-doppelgangr")
-    (version "1.36.0")
+    (version "1.36.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doppelgangR" version))
        (sha256
-        (base32 "1zjp2ds2xfxl85sczca416jbcfxgxigr266rzd24d2ggcpbh8jc5"))))
+        (base32 "0cd4n5p5sh5pnszwb5vy28m722vk7i0xdkn86ki6jcrv528f3ijc"))))
     (properties `((upstream-name . "doppelgangR")))
     (build-system r-build-system)
     (arguments

@@ -3343,13 +3343,13 @@ multiple groups.")
 (define-public r-mosclip
   (package
     (name "r-mosclip")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOSClip" version))
        (sha256
-        (base32 "0pskd9wfg7vgjf1as7jm31v0gkhxl4rhzgbbdck9x175h7p4mhj8"))))
+        (base32 "0cf4anlxsqvwf7s0ljvs19ai63rhf08nanpy824p9zmi49q53v78"))))
     (properties `((upstream-name . "MOSClip")))
     (build-system r-build-system)
     (arguments
@@ -7514,13 +7514,13 @@ discover methylation patterns and nucleosome positioning.")
 (define-public r-methylpipe
   (package
     (name "r-methylpipe")
-    (version "1.42.0")
+    (version "1.42.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylPipe" version))
        (sha256
-        (base32 "0d6cr165mf7b1jzcbmf1gak18z32cvnhfqskmvrwfjv4ixr7bby1"))))
+        (base32 "1kv46iwy373l4dsnk7pa90cxz9dvs4xidhcxsnyw4zdd7flv8887"))))
     (properties `((upstream-name . "methylPipe")))
     (build-system r-build-system)
     (arguments
