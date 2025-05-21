@@ -6513,13 +6513,13 @@ designed to support different types of experiments.")
 (define-public r-chipseqr
   (package
     (name "r-chipseqr")
-    (version "1.61.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ChIPseqR" version))
        (sha256
-        (base32 "1bv6cflygkx59aqwjggw8r3dkh5sj8gid5i3r7rp72xbc4h4bq81"))))
+        (base32 "061kq36azgcyx38n58ibrjx4c2wmz9vb9p75ql4x1wchwidfx8zw"))))
     (properties `((upstream-name . "ChIPseqR")))
     (build-system r-build-system)
     (arguments

@@ -302,13 +302,13 @@ apply to other platforms with proper configuration.")
 (define-public r-synextend
   (package
     (name "r-synextend")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SynExtend" version))
        (sha256
-        (base32 "0phis9bjfgk4kjv17n95518fpxrikibqby53f363078dkb3cb0ff"))))
+        (base32 "0g3x7n7gbr9r5j7nsyrz63xfinwmj18kpbi3kzardhzwry4m3x23"))))
     (properties `((upstream-name . "SynExtend")))
     (build-system r-build-system)
     (arguments
