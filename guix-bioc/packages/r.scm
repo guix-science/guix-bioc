@@ -4291,7 +4291,6 @@ data.")
                              r-rsamtools
                              r-mass
                              r-iranges
-                             r-gsmoothr
                              r-gplots
                              r-genomicranges
                              r-genomicalignments

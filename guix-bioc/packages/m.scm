@@ -8,13 +8,13 @@
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages g)
   #:use-module (gnu packages statistics)
-  #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages c)
   #:use-module (gnu packages python)
   #:use-module (guix-cran packages h)
   #:use-module (gnu packages bioinformatics)
@@ -293,7 +293,6 @@ using STOCSY; and biological interpretation of MWAS results.")
                              r-dplyr
                              r-decomptumor2sig
                              r-data-table
-                             r-conclust
                              r-complexheatmap
                              r-cluster
                              r-bsgenome-mmusculus-ucsc-mm9
