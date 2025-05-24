@@ -302,13 +302,13 @@ apply to other platforms with proper configuration.")
 (define-public r-synextend
   (package
     (name "r-synextend")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SynExtend" version))
        (sha256
-        (base32 "0g3x7n7gbr9r5j7nsyrz63xfinwmj18kpbi3kzardhzwry4m3x23"))))
+        (base32 "0qc45qnsmn4mcybhamx4hd4jkr81fy7m5l74b6ssxkqhzgjq69sk"))))
     (properties `((upstream-name . "SynExtend")))
     (build-system r-build-system)
     (arguments
@@ -2974,13 +2974,13 @@ experiments.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "14qx5kags6c0yfqpmgnc58kr2v986h29fvwjr7czgmnpd05199x5"))))
+        (base32 "0xiklakkiz1z8vyyif8v0mwyy8y2w27nzzg58cx0iwb15z8wqa8c"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (arguments
@@ -3130,13 +3130,13 @@ data.")
 (define-public r-spectraql
   (package
     (name "r-spectraql")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpectraQL" version))
        (sha256
-        (base32 "16438fhl4gi3zspkkynry94pzzv1lxlvsxs3n1sm4bwccnwfdvdk"))))
+        (base32 "0mk34b4x9azinr887iid8s4zcnzvc3211zrn5z7in5phk9kiq6q8"))))
     (properties `((upstream-name . "SpectraQL")))
     (build-system r-build-system)
     (arguments
@@ -3737,14 +3737,14 @@ transcriptomics data.  This package provides wrappers to use the Python
 (define-public r-spatialdatasets
   (package
     (name "r-spatialdatasets")
-    (version "1.6.0")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpatialDatasets" version
                               'experiment))
        (sha256
-        (base32 "1dclkq9k31c4vw275dxp2x93p3wg7s14ikl98p6yq1hd3zfsx32q"))))
+        (base32 "085kjg5nirrpcmsks59vlw11n5sbpb9l7pcq8nac0b4d2l629x4z"))))
     (properties `((upstream-name . "SpatialDatasets")))
     (build-system r-build-system)
     (arguments

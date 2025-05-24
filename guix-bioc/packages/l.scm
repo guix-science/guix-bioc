@@ -1082,13 +1082,13 @@ SARS-@code{CoV-2} lineages.")
 (define-public r-limrots
   (package
     (name "r-limrots")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LimROTS" version))
        (sha256
-        (base32 "1q8cznz9gngrd87raj76vs0daiiqcv7dy1x09dfykfa0zhxak8a1"))))
+        (base32 "09sbim99c75qk7mfzlrp4qrxvir08qz15pwwlvgv5lkwrycl154k"))))
     (properties `((upstream-name . "LimROTS")))
     (build-system r-build-system)
     (arguments
@@ -1100,12 +1100,11 @@ SARS-@code{CoV-2} lineages.")
                              r-qvalue
                              r-limma
                              r-dplyr
-                             r-biocparallel
-                             r-basilisk-utils))
+                             r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AliYoussef96/LimROTS")
     (synopsis
-     "Hybrid Method Integrating Empirical Bayes and Reproducibility-Optimized Statistics for Robust Analysis of Proteomics and Metabolomics Data")
+     "LimROTS: A Hybrid Method Integrating Empirical Bayes and Reproducibility-Optimized Statistics for Robust Differential Expression Analysis")
     (description
      "Differential expression analysis is a prevalent method utilised in the
 examination of diverse biological data.  The reproducibility-optimized test

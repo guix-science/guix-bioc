@@ -3092,13 +3092,13 @@ Hilbert curves.")
 (define-public r-hilbertvis
   (package
     (name "r-hilbertvis")
-    (version "1.65.0")
+    (version "1.66.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HilbertVis" version))
        (sha256
-        (base32 "145xvvf6y2q8h2rg10xy1fkfislydxdy1f1v2zjgsv09x2hmcpz9"))))
+        (base32 "0mgj5m062nyh2f29xjmcwjhv5hqhj8138vhik8c8qn1x1wg2ddlj"))))
     (properties `((upstream-name . "HilbertVis")))
     (build-system r-build-system)
     (arguments
