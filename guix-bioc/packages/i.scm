@@ -1762,13 +1762,13 @@ aiming stable co-clusters across these samples.")
 (define-public r-immapex
   (package
     (name "r-immapex")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "immApex" version))
        (sha256
-        (base32 "0m4g0qriq0fxp9qhz3jlb03nir8sh81b4pdix63bb3bgkyn7sncn"))))
+        (base32 "04ns6k3054mw1gjvvyb4rpfvpah0s9r1nn5wx7ylnx92qrrp3qpz"))))
     (properties `((upstream-name . "immApex")))
     (build-system r-build-system)
     (arguments

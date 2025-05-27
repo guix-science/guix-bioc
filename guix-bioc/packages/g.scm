@@ -2141,13 +2141,13 @@ external data to the tree.")
 (define-public r-ggspavis
   (package
     (name "r-ggspavis")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggspavis" version))
        (sha256
-        (base32 "1d79n9wrzcrpczizmjpwx8b9a105l5mdhaz2ih1x98lj1f1zpsl9"))))
+        (base32 "0lsfi4ybxbws9ybffy50h42j9g4m42fdija2j2lm8ij331idfir4"))))
     (properties `((upstream-name . "ggspavis")))
     (build-system r-build-system)
     (arguments
@@ -4245,13 +4245,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.4.1")
+    (version "3.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "1qkmy4bm8vk4nc54xal55xnjnnpb49xb4gp6474ry02sx2jdkqkk"))))
+        (base32 "0fm727r13hzjqh8qpv4rirfncq62cqr01z9012wx3f0cfhxyrx9j"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (arguments

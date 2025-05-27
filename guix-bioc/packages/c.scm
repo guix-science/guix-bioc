@@ -3417,13 +3417,13 @@ tables and plots.")
 (define-public r-compounddb
   (package
     (name "r-compounddb")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CompoundDb" version))
        (sha256
-        (base32 "0r14ni8qqymw83dchz9xhp2hy8bmrz0n9xlsmwlgqpsrjpv1khjw"))))
+        (base32 "1n4ir5hr4clzj6qwxa9aa95msly2hdhcymnjyly81hw9vjbrv461"))))
     (properties `((upstream-name . "CompoundDb")))
     (build-system r-build-system)
     (arguments

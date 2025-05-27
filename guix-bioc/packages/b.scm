@@ -247,13 +247,13 @@ modified in a structure probing experiment.")
 (define-public r-bulksignalr
   (package
     (name "r-bulksignalr")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BulkSignalR" version))
        (sha256
-        (base32 "10fr2p5vpzvbydydvjskrymij6s8g1lwp2g0yvvlvzhpjabdkmn6"))))
+        (base32 "0dhnx48ff0kspy6dbi6cpr5wc8pwx23r3bbai6pjrfcmh54qnpz0"))))
     (properties `((upstream-name . "BulkSignalR")))
     (build-system r-build-system)
     (arguments
@@ -266,6 +266,7 @@ modified in a structure probing experiment.")
                              r-rtsne
                              r-rsqlite
                              r-rlang
+                             r-rcurl
                              r-rann
                              r-orthogene
                              r-multtest
@@ -4501,13 +4502,13 @@ server that is set up to run long tests.")
 (define-public r-biochubsshiny
   (package
     (name "r-biochubsshiny")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocHubsShiny" version))
        (sha256
-        (base32 "0vwmq3vci10l7ypih3mixns57c0nplnqw95blsmbnjv095nqlpqi"))))
+        (base32 "12ihq8c0byrf6xiqbbmlzv79sq4xy7sjw06v3apn08gvypl0ifys"))))
     (properties `((upstream-name . "BiocHubsShiny")))
     (build-system r-build-system)
     (arguments

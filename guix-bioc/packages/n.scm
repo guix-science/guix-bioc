@@ -731,13 +731,13 @@ the following species: human, mouse, rat, zebrafish, fruit fly, worm, and yeast.
 (define-public r-nondetects
   (package
     (name "r-nondetects")
-    (version "2.37.1")
+    (version "2.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nondetects" version))
        (sha256
-        (base32 "0xy5hbysrssrglxzlqmrcp5dxqndj062nnmxpw466hy6khn743p4"))))
+        (base32 "19jzd2yinjgqawk4ay1ywwlyw5q9yhrp3pa12z1w0caprxzxddkx"))))
     (properties `((upstream-name . "nondetects")))
     (build-system r-build-system)
     (arguments

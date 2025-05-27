@@ -3342,13 +3342,13 @@ multiple groups.")
 (define-public r-mosclip
   (package
     (name "r-mosclip")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOSClip" version))
        (sha256
-        (base32 "0cf4anlxsqvwf7s0ljvs19ai63rhf08nanpy824p9zmi49q53v78"))))
+        (base32 "1m69aywsksz05jbbvbvr2y5q12khydy9i0izcxl04gnf3790kgdf"))))
     (properties `((upstream-name . "MOSClip")))
     (build-system r-build-system)
     (arguments

@@ -9616,13 +9616,13 @@ Sep 24;7(1):10.")
 (define-public r-pathmed
   (package
     (name "r-pathmed")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pathMED" version))
        (sha256
-        (base32 "1l30vx82bi27zcyvd1cjspa09l219bxq2llz088gx8ilc222bxfj"))))
+        (base32 "041839r6xm84nspfyh7qkrwi22z6q3mqnmyz6ivsi6aq6yipxcik"))))
     (properties `((upstream-name . "pathMED")))
     (build-system r-build-system)
     (arguments
