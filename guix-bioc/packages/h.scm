@@ -3143,6 +3143,51 @@ package aims to provide an easy and flexible way to visualize data through
 Hilbert curve.")
     (license license:expat)))
 
+(define-public r-hiiragi2013
+  (package
+    (name "r-hiiragi2013")
+    (version "1.44.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Hiiragi2013" version
+                              'experiment))
+       (sha256
+        (base32 "1r8r7nbrj2qzzzsffvjal28bc7443znj3qnbk8sxfv1rq3yjql9y"))))
+    (properties `((upstream-name . "Hiiragi2013")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable
+                             r-rcolorbrewer
+                             r-mouse4302-db
+                             r-mass
+                             r-latticeextra
+                             r-lattice
+                             r-keggrest
+                             r-gtools
+                             r-gplots
+                             r-geneplotter
+                             r-genefilter
+                             r-cluster
+                             r-clue
+                             r-boot
+                             r-biobase
+                             r-affy))
+    (home-page "https://bioconductor.org/packages/Hiiragi2013")
+    (synopsis
+     "Cell-to-cell expression variability followed by signal reinforcement progressively segregates early mouse lineages")
+    (description
+     "This package contains the experimental data and a complete executable transcript
+(vignette) of the statistical analysis presented in the paper \"Cell-to-cell
+expression variability followed by signal reinforcement progressively segregates
+early mouse lineages\" by Y. Ohnishi, W. Huber, A. Tsumura, M. Kang, P.
+Xenopoulos, K. Kurimoto, A. K. Oles, M. J. Arauzo-Bravo, M. Saitou, A.-K.
+Hadjantonakis and T. Hiiragi; Nature Cell Biology (2014) 16(1): 27-37.  doi:
+10.1038/ncb2881.\".")
+    (license license:artistic2.0)))
+
 (define-public r-highlyreplicatedrnaseq
   (package
     (name "r-highlyreplicatedrnaseq")
