@@ -1232,13 +1232,13 @@ between each file and its corresponding index.")
 (define-public r-alabaster-bumpy
   (package
     (name "r-alabaster-bumpy")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.bumpy" version))
        (sha256
-        (base32 "1bv12pwwjri951r93vd2w1mrhhjk45rmz06zdvjw6dkyx76sim6w"))))
+        (base32 "1axx1pz6ba7lb7n81rvykd7wyiz5ljbdnflmgr6vsr9l9m0sg3vj"))))
     (properties `((upstream-name . "alabaster.bumpy")))
     (build-system r-build-system)
     (arguments

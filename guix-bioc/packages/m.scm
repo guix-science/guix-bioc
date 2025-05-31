@@ -8779,13 +8779,13 @@ and the graphite Bioconductor R package.")
 (define-public r-metabodynamics
   (package
     (name "r-metabodynamics")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboDynamics" version))
        (sha256
-        (base32 "1llxv4295y78w6kwylm5vp6f0cbkvi2mzhzqm8z4lw1ad18ffyg0"))))
+        (base32 "1kaasmn9qx8gd6kyw691a4v6ixznpds37j10694y3dq8rh7xa65y"))))
     (properties `((upstream-name . "MetaboDynamics")))
     (build-system r-build-system)
     (arguments
@@ -8798,6 +8798,7 @@ and the graphite Bioconductor R package.")
                              r-s4vectors
                              r-rstantools
                              r-rstan
+                             r-rlang
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp

@@ -487,13 +487,13 @@ Thalamus).")
 (define-public r-lrbasedbi
   (package
     (name "r-lrbasedbi")
-    (version "2.17.0")
+    (version "2.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRBaseDbi" version))
        (sha256
-        (base32 "0lip3bfij0gzqmsnvzvw6nnpw7jv5qlvvvnm58wf4q7nxywabq7w"))))
+        (base32 "1wpa7vw9in3whya5b6p6pd3ninrg405wymh8lfrz15djc73cfg7a"))))
     (properties `((upstream-name . "LRBaseDbi")))
     (build-system r-build-system)
     (arguments
@@ -1166,13 +1166,13 @@ handle unbalanced design.")
 (define-public r-limpa
   (package
     (name "r-limpa")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpa" version))
        (sha256
-        (base32 "0l2kr2r5zhyp9v30jar4cdfv2q5fvcnshi0pc8vcy0f86mjksab0"))))
+        (base32 "1zzv88m0mnlx0mzq6ya5haa0fw2p9grnjklmp6z9k9fa67ndlizf"))))
     (properties `((upstream-name . "limpa")))
     (build-system r-build-system)
     (arguments

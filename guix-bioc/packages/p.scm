@@ -948,13 +948,13 @@ power in differential expression analysis from RNA-seq data.")
 (define-public r-prone
   (package
     (name "r-prone")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PRONE" version))
        (sha256
-        (base32 "1zdp7s64nvs5knhk1f6kmvvsdga8k79fgj24bdr194zizz1fplvq"))))
+        (base32 "00hmcdf5v3n4asynakd1zdpgda6bf8pia6kvccbb7y1dpbvhgks1"))))
     (properties `((upstream-name . "PRONE")))
     (build-system r-build-system)
     (arguments
@@ -3338,13 +3338,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "167qajlbycq3piabhcyj6srfrzsawxip0pndjqnka1nnsm9wybqd"))))
+        (base32 "0zrcp7fql0cskqa2dx5rimy5074b27pp9h4cc9i5id2z90y71v89"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments

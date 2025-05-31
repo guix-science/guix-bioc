@@ -3067,13 +3067,13 @@ visualization.")
 (define-public r-hilbertvisgui
   (package
     (name "r-hilbertvisgui")
-    (version "1.65.0")
+    (version "1.66.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HilbertVisGUI" version))
        (sha256
-        (base32 "0sfc3k9mgpgn262cm6dv6c48dd1yvr6k7dm3skdmbqagnnaqll16"))))
+        (base32 "0pavdk7szz82vzplw5pk4zch6sq89s6xvzy2q6aq8i1mf6bb3f4i"))))
     (properties `((upstream-name . "HilbertVisGUI")))
     (build-system r-build-system)
     (arguments

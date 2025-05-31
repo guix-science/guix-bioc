@@ -947,13 +947,13 @@ omic types).")
 (define-public r-surfr
   (package
     (name "r-surfr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SurfR" version))
        (sha256
-        (base32 "0nmx9d5cp91zqglgddsdzcc8cdhnhz4wpaw5z5v7x652zc5a6hmg"))))
+        (base32 "04yh8ah8198bkp166vsqvi5hcsqkdids39pah6k15n4j22avc2g4"))))
     (properties `((upstream-name . "SurfR")))
     (build-system r-build-system)
     (arguments
@@ -8261,13 +8261,13 @@ as a base classifier.")
 (define-public r-scqtltools
   (package
     (name "r-scqtltools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scQTLtools" version))
        (sha256
-        (base32 "174lp7bb3fnydns175p8xqw11nyj33l7k1x7kk8kr136sp49czyy"))))
+        (base32 "0dghir23k80s6s9xy0ck4f0g7kl072lfmjq8bmggq80k3bk4wv6m"))))
     (properties `((upstream-name . "scQTLtools")))
     (build-system r-build-system)
     (arguments
@@ -8295,10 +8295,7 @@ as a base classifier.")
     (description
      "This package specializes in analyzing and visualizing @code{eQTL} at the
 single-cell level.  It can read gene expression matrices or Seurat data, or
-@code{SingleCellExperiment} object along with genotype data.  It offers a
-function for cis-@code{eQTL} analysis to detect @code{eQTL} within a given
-range, and another function to fit models with three methods.  Using this
-package, users can also generate single-cell level visualization result.")
+@code{SingleCellExperiment} object along with genotype data.")
     (license license:expat)))
 
 (define-public r-scpipe

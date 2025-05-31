@@ -4671,13 +4671,13 @@ analysis; and (4) regulators scoring and ranking.")
 (define-public r-reducedexperiment
   (package
     (name "r-reducedexperiment")
-    (version "0.99.6")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ReducedExperiment" version))
        (sha256
-        (base32 "1740r20m83407i79pbpqrqwwy0pc7vwgs9jdhgaw2r1aqq959wf4"))))
+        (base32 "0mj7gv60scgb860parqzfp4z1yx7mdjfgym54li16rva89d4m793"))))
     (properties `((upstream-name . "ReducedExperiment")))
     (build-system r-build-system)
     (arguments
