@@ -1750,13 +1750,13 @@ package.  The methodology is described in Galitzine (2018)
 (define-public r-msstatslip
   (package
     (name "r-msstatslip")
-    (version "1.13.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsLiP" version))
        (sha256
-        (base32 "1b4j52mqkkk8mqjxkyrjp8qw9vw1qli4xgcmrizyrjhkzchl520r"))))
+        (base32 "1dkiywwj8nj9hadjbhbgavkq4xczbvb9s3pwl01d4mig584j7cqc"))))
     (properties `((upstream-name . "MSstatsLiP")))
     (build-system r-build-system)
     (arguments

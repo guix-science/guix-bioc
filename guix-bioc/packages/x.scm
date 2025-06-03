@@ -576,19 +576,20 @@ the observed expression changes.")
 (define-public r-xcell2
   (package
     (name "r-xcell2")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xCell2" version))
        (sha256
-        (base32 "1hrq387m65sf9nkv6rf8khkwmsk58jmrayn8sxdbnw44pljcw2hk"))))
+        (base32 "18nvrfl47h92cf9fx0cxglswq18fbmxgh1lzxpfvkgqrb4clvwki"))))
     (properties `((upstream-name . "xCell2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-summarizedexperiment
                              r-singscore
                              r-singlecellexperiment

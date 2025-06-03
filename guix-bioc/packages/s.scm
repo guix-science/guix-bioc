@@ -2295,13 +2295,13 @@ identify outliers spot and large technical artifacts.")
 (define-public r-spotlight
   (package
     (name "r-spotlight")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPOTlight" version))
        (sha256
-        (base32 "15qlf9599zy3p4nhhc0dcnix9b89qr7yvpaqyi2xldsriwph3vwb"))))
+        (base32 "1kwx2nx6mh8sw6gj5m5w4i5cn056jxb4sf08jqnq9f0706arzrbp"))))
     (properties `((upstream-name . "SPOTlight")))
     (build-system r-build-system)
     (arguments
@@ -2309,16 +2309,15 @@ identify outliers spot and large technical artifacts.")
       #:tests? #f))
     (propagated-inputs (list r-sparsematrixstats
                              r-singlecellexperiment
-                             r-nnls
-                             r-nmf
-                             r-matrixstats
+                             r-rcppeigen
+                             r-rcpp
                              r-matrix
                              r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MarcElosua/SPOTlight")
     (synopsis "`SPOTlight`: Spatial Transcriptomics Deconvolution")
     (description
-     "`SPOTlight`provides a method to deconvolute spatial transcriptomics spots using
+     "`SPOTlight` provides a method to deconvolute spatial transcriptomics spots using
 a seeded NMF approach along with visualization tools to assess the results.
 Spatially resolved gene expression profiles are key to understand tissue
 organization and function.  However, novel spatial transcriptomics (ST)
@@ -8261,13 +8260,13 @@ as a base classifier.")
 (define-public r-scqtltools
   (package
     (name "r-scqtltools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scQTLtools" version))
        (sha256
-        (base32 "0dghir23k80s6s9xy0ck4f0g7kl072lfmjq8bmggq80k3bk4wv6m"))))
+        (base32 "0k1ps1l56a7ybk28py515c39a9b798ysh7c47zj3w6fqncc6gpl7"))))
     (properties `((upstream-name . "scQTLtools")))
     (build-system r-build-system)
     (arguments

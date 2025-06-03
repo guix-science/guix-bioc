@@ -3338,13 +3338,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "0zrcp7fql0cskqa2dx5rimy5074b27pp9h4cc9i5id2z90y71v89"))))
+        (base32 "1wpxxwm3g2pd94l37acmzar6xbf605wplp3bm5lws0k22h3qambg"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments
@@ -3372,6 +3372,7 @@ profiles with @code{PhyloProfile} package.")
                              r-rcolorbrewer
                              r-plotly
                              r-pbapply
+                             r-htmlwidgets
                              r-gridextra
                              r-ggplot2
                              r-fastcluster
@@ -9616,13 +9617,13 @@ Sep 24;7(1):10.")
 (define-public r-pathmed
   (package
     (name "r-pathmed")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pathMED" version))
        (sha256
-        (base32 "041839r6xm84nspfyh7qkrwi22z6q3mqnmyz6ivsi6aq6yipxcik"))))
+        (base32 "1v36dah8pd6fxwnyp89qlpnbd5cxq86ndk9l7bwrwri6p17kgrgy"))))
     (properties `((upstream-name . "pathMED")))
     (build-system r-build-system)
     (arguments

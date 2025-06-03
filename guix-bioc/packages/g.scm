@@ -4244,13 +4244,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.4.3")
+    (version "3.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "0fm727r13hzjqh8qpv4rirfncq62cqr01z9012wx3f0cfhxyrx9j"))))
+        (base32 "10snazyyvy285dqm6fmr6s3znszgqqik7fiyvka85v0srz1x1g8c"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (arguments
