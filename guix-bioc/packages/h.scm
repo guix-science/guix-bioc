@@ -2522,13 +2522,13 @@ each pathway.  Hipathia depends on this package to be functional.")
 (define-public r-hpaanalyze
   (package
     (name "r-hpaanalyze")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HPAanalyze" version))
        (sha256
-        (base32 "1jr0q37q3jrz7cii033g0fh0jm8b4r5mxys9s13gb528aw6n5zg5"))))
+        (base32 "0lsrk41g8hfpk4jrm6wyl41wlk5pkiy5vr5gcn3zdqn7zg133v28"))))
     (properties `((upstream-name . "HPAanalyze")))
     (build-system r-build-system)
     (arguments
@@ -2545,7 +2545,12 @@ each pathway.  Hipathia depends on this package to be functional.")
     (synopsis "Retrieve and analyze data from the Human Protein Atlas")
     (description
      "Provide functions for retrieving, exploratory analyzing and visualizing the
-Human Protein Atlas data.")
+Human Protein Atlas data.  HPAanalyze is designed to fullfill 3 main tasks: (1)
+Import, subsetting and export downloadable datasets; (2) Visualization of
+downloadable datasets for exploratory analysis; and (3) Working with the
+individual XML files.  This package aims to serve researchers with little
+programming experience, but also allow power users to use the imported data as
+desired.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-hopach
@@ -3146,14 +3151,14 @@ Hilbert curve.")
 (define-public r-hiiragi2013
   (package
     (name "r-hiiragi2013")
-    (version "1.44.1")
+    (version "1.44.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Hiiragi2013" version
                               'experiment))
        (sha256
-        (base32 "1r8r7nbrj2qzzzsffvjal28bc7443znj3qnbk8sxfv1rq3yjql9y"))))
+        (base32 "0kl423kr19ai4kz7a5dv3d0swgzp3911pgxyp8qf8kgy952a1rr1"))))
     (properties `((upstream-name . "Hiiragi2013")))
     (build-system r-build-system)
     (arguments

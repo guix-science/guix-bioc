@@ -5556,13 +5556,13 @@ methods that estimate expression from the amplification curves.")
 (define-public r-mircomp
   (package
     (name "r-mircomp")
-    (version "1.38.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRcomp" version))
        (sha256
-        (base32 "1rndl30dybmp4abpswizd1bhqy66j4fqq8gdxllr4cnajz2759yr"))))
+        (base32 "0haz9h44r4s7f2sbsrglicss91qchjjgp6s9z8qj50zngkm9jdk2"))))
     (properties `((upstream-name . "miRcomp")))
     (build-system r-build-system)
     (arguments

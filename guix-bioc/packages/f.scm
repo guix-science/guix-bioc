@@ -311,13 +311,13 @@ Process model for automated spot counting.")
 (define-public r-fraser
   (package
     (name "r-fraser")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FRASER" version))
        (sha256
-        (base32 "1x5lgjbxcr1vq22i29y6lczl3dmdpa5qqlygk7rnbvbv09199srh"))))
+        (base32 "0vxs2m6hnc64m2mv82v6g6yyaq96qfpc7m65b4q5dv17ixhsrx58"))))
     (properties `((upstream-name . "FRASER")))
     (build-system r-build-system)
     (arguments
@@ -329,12 +329,14 @@ Process model for automated spot counting.")
                              r-s4vectors
                              r-rsubread
                              r-rsamtools
+                             r-rmtstat
                              r-rhdf5
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
                              r-r-utils
                              r-prroc
+                             r-pracma
                              r-plotly
                              r-pheatmap
                              r-pcamethods
@@ -374,7 +376,7 @@ deviate significantly from this distribution.  FRASER is able to detect
 alternative splicing, but also intron retention.  The package aims to support
 diagnostics in the field of rare diseases where RNA-seq is performed to identify
 aberrant splicing defects.")
-    (license license:expat)))
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-fourdndata
   (package

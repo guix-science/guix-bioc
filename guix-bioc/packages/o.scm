@@ -116,13 +116,13 @@ burden in each tumor and characterize the types of splicing events that occur.")
 (define-public r-outrider
   (package
     (name "r-outrider")
-    (version "1.26.1")
+    (version "1.26.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "OUTRIDER" version))
        (sha256
-        (base32 "15p5rn3v4571q2b5vr95l7rab1phzx61rwn26mfr1s1nh2zvcaly"))))
+        (base32 "1pnkqc85myvvxam6m8x94iixyz4smh5kps66xzqsmpgsh2v6r999"))))
     (properties `((upstream-name . "OUTRIDER")))
     (build-system r-build-system)
     (arguments
@@ -132,11 +132,13 @@ burden in each tumor and characterize the types of splicing events that occur.")
                              r-summarizedexperiment
                              r-scales
                              r-s4vectors
+                             r-rmtstat
                              r-reshape2
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer
                              r-prroc
+                             r-pracma
                              r-plyr
                              r-plotly
                              r-pheatmap
@@ -165,7 +167,7 @@ negative binomial distribution with a gene-specific dispersion.  Outliers are
 then identified as read counts that significantly deviate from this
 distribution.  Furthermore, OUTRIDER provides useful plotting functions to
 analyze and visualize the results.")
-    (license license:expat)))
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-otubase
   (package

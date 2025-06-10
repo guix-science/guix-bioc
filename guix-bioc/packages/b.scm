@@ -306,13 +306,13 @@ prediction results.")
 (define-public r-bugsigdbr
   (package
     (name "r-bugsigdbr")
-    (version "1.14.1")
+    (version "1.14.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bugsigdbr" version))
        (sha256
-        (base32 "12wijccgfv7k0rd7h2klkmbv9mxc5ixjhd3bzy7fs4xizv6ig358"))))
+        (base32 "0ymr4di7daf5n0jy71lbn5wlyvdpid64n80inlvgf3n6w1qf76h4"))))
     (properties `((upstream-name . "bugsigdbr")))
     (build-system r-build-system)
     (arguments
