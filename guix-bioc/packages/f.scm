@@ -2109,13 +2109,13 @@ sophisticated approach that complements Pearson correlation of genomic coverage.
 (define-public r-fastreer
   (package
     (name "r-fastreer")
-    (version "1.12.0")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fastreeR" version))
        (sha256
-        (base32 "1jxacmqm1n0a491rkvijfz6ki1v8ff7d16cwj3f5aykark8abqz0"))))
+        (base32 "15q6mkka780kfydg2j8s5kk82gkqj8qaa7py6k9k85mq08iyqq6w"))))
     (properties `((upstream-name . "fastreeR")))
     (build-system r-build-system)
     (arguments
@@ -2134,10 +2134,10 @@ sophisticated approach that complements Pearson correlation of genomic coverage.
      "Phylogenetic, Distance and Other Calculations on VCF and Fasta Files")
     (description
      "Calculate distances, build phylogenetic trees or perform hierarchical clustering
-between the samples of a VCF or FASTA file.  Functions are implemented in Java
-and called via @code{rJava}.  Parallel implementation that operates directly on
-the VCF or FASTA file for fast execution.")
-    (license license:gpl3)))
+between the samples of a VCF or FASTA file.  Functions are implemented in
+Java-11 and called via @code{rJava}.  Parallel implementation that operates
+directly on the VCF or FASTA file for fast execution.")
+    (license (license:fsdg-compatible "GPL-3.0-only"))))
 
 (define-public r-fastqcleaner
   (package

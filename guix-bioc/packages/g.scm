@@ -18,7 +18,6 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -2141,13 +2140,13 @@ external data to the tree.")
 (define-public r-ggspavis
   (package
     (name "r-ggspavis")
-    (version "1.14.2")
+    (version "1.14.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggspavis" version))
        (sha256
-        (base32 "0lsfi4ybxbws9ybffy50h42j9g4m42fdija2j2lm8ij331idfir4"))))
+        (base32 "1fi54ndrlxpmwyrxq790nad781rjzb0v2ja398af58fhyqgrqzpz"))))
     (properties `((upstream-name . "ggspavis")))
     (build-system r-build-system)
     (arguments

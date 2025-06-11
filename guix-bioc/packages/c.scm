@@ -2361,13 +2361,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.8.1")
+    (version "2.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "1alb8kaca7lq6h5iia09933ccl6px4fdjl0m71spgfvrg1a16ab7"))))
+        (base32 "0jp7npxiarr1q2ad8v49dndlqj0yswl5x3qrdn5vx39qflnqm1hn"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (arguments
@@ -2375,7 +2375,6 @@ Cotton.cdf file.")
       #:tests? #f))
     (propagated-inputs (list r-zeallot
                              r-withr
-                             r-umap
                              r-tidyr
                              r-tibble
                              r-summarizedexperiment
@@ -2387,13 +2386,14 @@ Cotton.cdf file.")
                              r-rlang
                              r-rfast
                              r-rcolorbrewer
-                             r-plyr
+                             r-proxy
                              r-parallelly
                              r-paralleldist
                              r-matrix
                              r-ggthemes
                              r-ggrepel
                              r-ggplot2
+                             r-gghalves
                              r-dplyr
                              r-dendextend
                              r-complexheatmap
@@ -2771,13 +2771,13 @@ analysis results.")
 (define-public r-copynumberplots
   (package
     (name "r-copynumberplots")
-    (version "1.23.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CopyNumberPlots" version))
        (sha256
-        (base32 "09d9njacl5f363r397xb7k4596c7zj11lywh36m2vrvg88vy057c"))))
+        (base32 "1avcq4qjgwa9g2f3izvay5cj8vzm7gqp7ivfvmw02k9515bw7zs1"))))
     (properties `((upstream-name . "CopyNumberPlots")))
     (build-system r-build-system)
     (arguments
@@ -4412,13 +4412,13 @@ case-control studies.")
 (define-public r-cnvfilter
   (package
     (name "r-cnvfilter")
-    (version "1.21.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CNVfilteR" version))
        (sha256
-        (base32 "1jcdqcz83q3c5c78qm2jf7kgm7hrrjfb45byryfp5jazv7rkfkz9"))))
+        (base32 "1bfv1mrxa4jvzg6q8circwvdlllsc8pg5a9lq69p3l0wid10c8d5"))))
     (properties `((upstream-name . "CNVfilteR")))
     (build-system r-build-system)
     (arguments
