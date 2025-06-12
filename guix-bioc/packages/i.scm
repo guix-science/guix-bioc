@@ -2338,14 +2338,14 @@ assembled using data from public repositories.")
 (define-public r-illuminahumanmethylationmsamanifest
   (package
     (name "r-illuminahumanmethylationmsamanifest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "IlluminaHumanMethylationMSAmanifest" version
                               'annotation))
        (sha256
-        (base32 "01q7i5a2zc9pby9ivsqq8pdp80732akq4g8d594h9dn6qgm0znz3"))))
+        (base32 "1ksw8nr4ghvih4imc9bj7xm1wvnw5wg4mhzw8mcvdvw3bjz4ly64"))))
     (properties `((upstream-name . "IlluminaHumanMethylationMSAmanifest")))
     (build-system r-build-system)
     (arguments

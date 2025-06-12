@@ -664,14 +664,14 @@ research and experimental settings.")
 (define-public r-proteingymr
   (package
     (name "r-proteingymr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ProteinGymR" version
                               'experiment))
        (sha256
-        (base32 "0li7kra2p2hg77x2jsy96dz0q052lf05kr9y4v3r35p62rzhnc35"))))
+        (base32 "1xwva9gnfldgx2bw62zwz3wlc84k4jlnybq81nr0xqa6xdr9fycl"))))
     (properties `((upstream-name . "ProteinGymR")))
     (build-system r-build-system)
     (arguments
