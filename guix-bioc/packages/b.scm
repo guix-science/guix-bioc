@@ -3185,13 +3185,13 @@ Human Bronchial Cell line A549.")
 (define-public r-broadseq
   (package
     (name "r-broadseq")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "broadSeq" version))
        (sha256
-        (base32 "1s2jd5b0gyb692zdgn4vffvi3s9kjs8b1627wmhrdzf83xq4gf1g"))))
+        (base32 "11h5qshrarpzz9v4pzpzmrhcfwg2hfq2gfp4hxsxfhbi8w4j9grp"))))
     (properties `((upstream-name . "broadSeq")))
     (build-system r-build-system)
     (arguments

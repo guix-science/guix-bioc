@@ -4645,13 +4645,13 @@ response analyses that the @code{gDR} suite offers.")
 (define-public r-gdnax
   (package
     (name "r-gdnax")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDNAx" version))
        (sha256
-        (base32 "1zvippq7i4jrp0jsjcfgq64ghvnxnp7csx284zhyb2gghqgfad6w"))))
+        (base32 "0cnpgrsy8xz6xr8adyynlxwzkipd88035802albvyxlmms3jhr9v"))))
     (properties `((upstream-name . "gDNAx")))
     (build-system r-build-system)
     (arguments
