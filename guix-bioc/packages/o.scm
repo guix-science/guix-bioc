@@ -1162,13 +1162,13 @@ times but most of them were downloaded on August 08 2022.")
 (define-public r-ontoproc
   (package
     (name "r-ontoproc")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ontoProc" version))
        (sha256
-        (base32 "0xk5gvbf8jkkkxjcmgycprr8hngl4s005id1n9qhmxfzjad99bjh"))))
+        (base32 "050lg114ygfli28a6shc3r2aqn01vdja8dyaxm0hsavq9jslpf5s"))))
     (properties `((upstream-name . "ontoProc")))
     (build-system r-build-system)
     (arguments
@@ -1397,13 +1397,13 @@ conceptmapper and compute semnatic similarity from R.")
 (define-public r-omxplore
   (package
     (name "r-omxplore")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omXplore" version))
        (sha256
-        (base32 "1bqjd858vv4rzpfcsxql9dfbcq3b80l5xfkf81zj9ygmfhwz6hn9"))))
+        (base32 "1pfwvrz9p0rk9q5xbnfwsa7khqw4a1ixlsmm4k2iwxpykarh9ylh"))))
     (properties `((upstream-name . "omXplore")))
     (build-system r-build-system)
     (arguments

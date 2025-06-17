@@ -6541,13 +6541,13 @@ downstream analysis.")
 (define-public r-shinydsp
   (package
     (name "r-shinydsp")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "shinyDSP" version))
        (sha256
-        (base32 "0nd1vl899rk8cia4fmjkbnfxnma5k4alq09hmb410pyzzzchvn07"))))
+        (base32 "0bzahn3p6cg4bims86aac1ir1vvzrg2i1l3h8c9mk36dk35950y4"))))
     (properties `((upstream-name . "shinyDSP")))
     (build-system r-build-system)
     (arguments
@@ -8645,13 +8645,13 @@ manifold.")
 (define-public r-scnorm
   (package
     (name "r-scnorm")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SCnorm" version))
        (sha256
-        (base32 "1c99faz7rbfsjdxszy1xvc0rqwrimdzx2gvqd7mvawrl7cqqvcry"))))
+        (base32 "0zc5cxax45gf4k0lwhzbfignqr6f410sya2mgz8ba5nn2fx4rmrl"))))
     (properties `((upstream-name . "SCnorm")))
     (build-system r-build-system)
     (arguments
