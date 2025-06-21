@@ -3308,14 +3308,14 @@ characteristics.")
 (define-public r-phyloprofiledata
   (package
     (name "r-phyloprofiledata")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfileData" version
                               'experiment))
        (sha256
-        (base32 "0zbs9aaf8xmz3is9vf54d0iib00ypa6vly5s207dbcj7l1x4h0yc"))))
+        (base32 "1niq79869rrfy4vppcvai17j48zk2gwycs8plnyv12mxhxjiaz1b"))))
     (properties `((upstream-name . "PhyloProfileData")))
     (build-system r-build-system)
     (arguments
