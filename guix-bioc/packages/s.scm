@@ -682,13 +682,13 @@ filtering, annotation and FDR estimation.")
 (define-public r-svp
   (package
     (name "r-svp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SVP" version))
        (sha256
-        (base32 "1w07nxa1dhrvwj9691ll3lgnmmpcj9zgzkg2adxgds7m7h9b3k3z"))))
+        (base32 "14b21sixf25g5d41sb8rlx96w4qa7aydnnfkg95ah6bi88bn65aj"))))
     (properties `((upstream-name . "SVP")))
     (build-system r-build-system)
     (arguments
@@ -2973,13 +2973,13 @@ experiments.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "0xiklakkiz1z8vyyif8v0mwyy8y2w27nzzg58cx0iwb15z8wqa8c"))))
+        (base32 "0whm8kwby01rrcm2ym7z5xldkb5hid11w50z1iykbjxclv1gmzcz"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (arguments
@@ -5661,13 +5661,13 @@ are provided to interpret hierarchies.")
 (define-public r-simpleseg
   (package
     (name "r-simpleseg")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "simpleSeg" version))
        (sha256
-        (base32 "03592r9swg2w2d81y4kkm8fw3ypnx9dnq6nnbqa7al9cs5d9if1v"))))
+        (base32 "1ygp3ij55fifbscy823fr3j0097yp2kj31zv7gb25jickl0p15fd"))))
     (properties `((upstream-name . "simpleSeg")))
     (build-system r-build-system)
     (arguments
@@ -6541,13 +6541,13 @@ downstream analysis.")
 (define-public r-shinydsp
   (package
     (name "r-shinydsp")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "shinyDSP" version))
        (sha256
-        (base32 "0bzahn3p6cg4bims86aac1ir1vvzrg2i1l3h8c9mk36dk35950y4"))))
+        (base32 "00ha1cjk5g70szzxnani43ixgim43mrg89nf8rrqimvwsbbzndbn"))))
     (properties `((upstream-name . "shinyDSP")))
     (build-system r-build-system)
     (arguments
@@ -7901,13 +7901,13 @@ type label.")
 (define-public r-sctensor
   (package
     (name "r-sctensor")
-    (version "2.17.0")
+    (version "2.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scTensor" version))
        (sha256
-        (base32 "13sjq90kwj0a6lf7a3yn6h9a9dysdhka29xsbdxvd0vwmfifk1ph"))))
+        (base32 "1410amdbbzw8c4gn5lkidaxqrm2wlw564a5rgrfln55sn6w0k9lg"))))
     (properties `((upstream-name . "scTensor")))
     (build-system r-build-system)
     (arguments

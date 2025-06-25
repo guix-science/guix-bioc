@@ -3766,13 +3766,13 @@ required (see `Prostar` package).")
 (define-public r-dandelionr
   (package
     (name "r-dandelionr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dandelionR" version))
        (sha256
-        (base32 "074ffacb89bg59byslfq27r2fp7ldp5647hdikd4ihn68bm4xbvv"))))
+        (base32 "0jh7vvwpykjggwqpwfn7bqvnapn8ibyc6pwlpa32kddxj8y5kfyx"))))
     (properties `((upstream-name . "dandelionR")))
     (build-system r-build-system)
     (arguments
@@ -3784,6 +3784,7 @@ required (see `Prostar` package).")
                              r-singlecellexperiment
                              r-s4vectors
                              r-rlang
+                             r-rann
                              r-purrr
                              r-milor
                              r-matrix

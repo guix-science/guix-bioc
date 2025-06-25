@@ -4516,13 +4516,13 @@ data structure mentioned in the vignettes.")
 (define-public r-tdbasedufeadv
   (package
     (name "r-tdbasedufeadv")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TDbasedUFEadv" version))
        (sha256
-        (base32 "0r7cms37pzsjfj2gsgrqc1rrfifx6c2jjvl2gzkm7kij801lcbjn"))))
+        (base32 "01k0candqvkshpf6sc886c37481hh39b25ik67pvy7hqh8rg6h4r"))))
     (properties `((upstream-name . "TDbasedUFEadv")))
     (build-system r-build-system)
     (arguments

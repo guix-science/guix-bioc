@@ -1082,13 +1082,13 @@ SARS-@code{CoV-2} lineages.")
 (define-public r-limrots
   (package
     (name "r-limrots")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LimROTS" version))
        (sha256
-        (base32 "09sbim99c75qk7mfzlrp4qrxvir08qz15pwwlvgv5lkwrycl154k"))))
+        (base32 "1c0yrivrz5l8if150dzvqx7cxfn582sdd0ls2a9r724xarp65hhw"))))
     (properties `((upstream-name . "LimROTS")))
     (build-system r-build-system)
     (arguments
@@ -1166,13 +1166,13 @@ handle unbalanced design.")
 (define-public r-limpa
   (package
     (name "r-limpa")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpa" version))
        (sha256
-        (base32 "1zzv88m0mnlx0mzq6ya5haa0fw2p9grnjklmp6z9k9fa67ndlizf"))))
+        (base32 "1yfgrxykyn3j5ab5scv8cdhldn98i8l8i8ywid3i5z1x7p1vzh5p"))))
     (properties `((upstream-name . "limpa")))
     (build-system r-build-system)
     (arguments

@@ -3338,13 +3338,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "038im33ij200mnprq3d46q65ymjqwaxk9jspjn494156qaf2w5zz"))))
+        (base32 "13q3fip9rscc43izj1d73dc26n6yia88v2zmkk5mjhg50y6ddlic"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments
