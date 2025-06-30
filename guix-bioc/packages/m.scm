@@ -11342,13 +11342,13 @@ normalization.")
 (define-public r-macarron
   (package
     (name "r-macarron")
-    (version "1.12.0")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Macarron" version))
        (sha256
-        (base32 "10wivwyka0jn1cc57fds85zz0ybl3q0sk9hi6dczwb4wdz8d1l6m"))))
+        (base32 "1gmpw9lf39hdvaqfwqkr3vbq32g5ik8i48njdfmq2f42kdmdpxy6"))))
     (properties `((upstream-name . "Macarron")))
     (build-system r-build-system)
     (arguments

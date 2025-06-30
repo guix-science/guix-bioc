@@ -1166,13 +1166,13 @@ handle unbalanced design.")
 (define-public r-limpa
   (package
     (name "r-limpa")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpa" version))
        (sha256
-        (base32 "1yfgrxykyn3j5ab5scv8cdhldn98i8l8i8ywid3i5z1x7p1vzh5p"))))
+        (base32 "038qx6gniisgbjmiry7gidrg37vh2ddjsa4ydhv0843sjylpx6yw"))))
     (properties `((upstream-name . "limpa")))
     (build-system r-build-system)
     (arguments

@@ -2361,13 +2361,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.8.2")
+    (version "2.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "0jp7npxiarr1q2ad8v49dndlqj0yswl5x3qrdn5vx39qflnqm1hn"))))
+        (base32 "02sl3qgsiiai07q6lgd98764h63qbzw0s665rkr6xns9bdp2n3si"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (arguments
@@ -9472,13 +9472,13 @@ Memorial-Sloan-Kettering Cancer Center (MSKCC).")
 (define-public r-camutqc
   (package
     (name "r-camutqc")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CaMutQC" version))
        (sha256
-        (base32 "1r1c454h3jssr5pzl2vp0sgkgdybpdnkcvjr2qjsqq55mn7129m8"))))
+        (base32 "0rc5c1arb0xnphs9wvihz7p6pcm4bqd0jyy4n7nn6q8x2876rk5i"))))
     (properties `((upstream-name . "CaMutQC")))
     (build-system r-build-system)
     (arguments

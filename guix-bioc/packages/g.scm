@@ -18,7 +18,6 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages t)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -4245,13 +4244,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.4.4")
+    (version "3.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "10snazyyvy285dqm6fmr6s3znszgqqik7fiyvka85v0srz1x1g8c"))))
+        (base32 "00n90ysznnx3gv6j6646f7wjjfia56ig4d2qayq058shxwdcays3"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (arguments
