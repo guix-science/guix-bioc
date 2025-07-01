@@ -19,8 +19,8 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (guix-cran packages k)
-  #:use-module (guix-cran packages c)
   #:use-module (gnu packages python)
+  #:use-module (guix-cran packages c)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -1762,42 +1762,41 @@ aiming stable co-clusters across these samples.")
 (define-public r-immapex
   (package
     (name "r-immapex")
-    (version "1.2.1")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "immApex" version))
        (sha256
-        (base32 "04ns6k3054mw1gjvvyb4rpfvpah0s9r1nn5wx7ylnx92qrrp3qpz"))))
+        (base32 "1045g2ag0y84bcpcd26y58rrifx4q38gjy6gman9xlxnjxg0v221"))))
     (properties `((upstream-name . "immApex")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (inputs (list python))
     (propagated-inputs (list r-tensorflow
                              r-stringr
                              r-stringi
                              r-singlecellexperiment
                              r-rvest
-                             r-reticulate
-                             r-rcpp
                              r-matrixstats
                              r-magrittr
                              r-keras3
-                             r-igraph
                              r-httr
-                             r-hash))
+                             r-hash
+                             r-basilisk))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BorchLab/immApex/")
     (synopsis
      "Tools for Adaptive Immune Receptor Sequence-Based Machine and Deep Learning")
     (description
-     "This package provides a set of tools to build tensorflow/keras3-based models in
-R from amino acid and nucleotide sequences focusing on adaptive immune
-receptors.  The package includes pre-processing of sequences, unifying gene
-nomenclature usage, encoding sequences, and combining models.  This package will
-serve as the basis of future immune receptor sequence functions/packages/models
-compatible with the @code{scRepertoire} ecosystem.")
+     "This package provides a set of tools to for machine and deep learning in R from
+amino acid and nucleotide sequences focusing on adaptive immune receptors.  The
+package includes pre-processing of sequences, unifying gene nomenclature usage,
+encoding sequences, and combining models.  This package will serve as the basis
+of future immune receptor sequence functions/packages/models compatible with the
+@code{scRepertoire} ecosystem.")
     (license license:expat)))
 
 (define-public r-imman

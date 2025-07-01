@@ -3338,22 +3338,18 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "13q3fip9rscc43izj1d73dc26n6yia88v2zmkk5mjhg50y6ddlic"))))
+        (base32 "0hdmz9zjl10wq6n29nvqyjfp0gr72iy115hcgfnavg1bkrfg5qv8"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
+      #:tests? #f))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-xml2
@@ -3377,7 +3373,6 @@ profiles with @code{PhyloProfile} package.")
                              r-ggplot2
                              r-fastcluster
                              r-extrafont
-                             r-experimenthub
                              r-energy
                              r-dt
                              r-dplyr

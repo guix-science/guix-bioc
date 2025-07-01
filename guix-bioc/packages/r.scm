@@ -5507,13 +5507,13 @@ data.")
 (define-public r-rcellminer
   (package
     (name "r-rcellminer")
-    (version "2.30.0")
+    (version "2.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rcellminer" version))
        (sha256
-        (base32 "14mn84ivyr6l2vlgdmkn9ycbvm5m53jwra5a4gmahhn3h96nsqjf"))))
+        (base32 "067y9k9376x9vdkxghi6baarsif9f80cww2z7vdj01w2sw8jpffx"))))
     (properties `((upstream-name . "rcellminer")))
     (build-system r-build-system)
     (arguments

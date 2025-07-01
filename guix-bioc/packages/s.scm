@@ -4605,13 +4605,13 @@ accurately characterize the biological or clinical variables of interest.")
 (define-public r-snifter
   (package
     (name "r-snifter")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "snifter" version))
        (sha256
-        (base32 "13xad95ai6ck5v0q0yx5w199byapy1sx1lkkz6j9d1s0sqsb979k"))))
+        (base32 "165fs7f2lwhzvbb6i2vz5l4h7fl2gc5dvqkjbzj3prdqw3rhgmig"))))
     (properties `((upstream-name . "snifter")))
     (build-system r-build-system)
     (arguments

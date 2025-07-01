@@ -18,6 +18,7 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)
@@ -917,13 +918,13 @@ biological networks by Bayesian alignment\", PNAS 103 (29), 10967-10972 (2006)).
 (define-public r-graper
   (package
     (name "r-graper")
-    (version "1.23.0")
+    (version "1.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "graper" version))
        (sha256
-        (base32 "1xaa9656ng3fs94qhn761rg6ac4z5rypm1rvw5p4sbs487mdv0rs"))))
+        (base32 "067ppcg89dpi10qkqcnyyd7b3r15jwhmcczjzq2z2f8q4ahplp05"))))
     (properties `((upstream-name . "graper")))
     (build-system r-build-system)
     (arguments
