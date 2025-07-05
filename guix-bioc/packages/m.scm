@@ -2526,13 +2526,13 @@ package.")
 (define-public r-msbackendmassbank
   (package
     (name "r-msbackendmassbank")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMassbank" version))
        (sha256
-        (base32 "1xnnlf893gq9bsv1x0ckq0qvmykb42lhrp2k1dp2d90p2va5ksnx"))))
+        (base32 "03783makc8q3jpqmxx86ymhfb3q3679m8a1bvi8ad8z4n0yx4w3i"))))
     (properties `((upstream-name . "MsBackendMassbank")))
     (build-system r-build-system)
     (arguments
