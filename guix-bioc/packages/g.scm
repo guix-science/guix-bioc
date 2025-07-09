@@ -2201,13 +2201,13 @@ customizable using ggplot2 modifiers such as @code{theme()}.")
 (define-public r-ggsc
   (package
     (name "r-ggsc")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggsc" version))
        (sha256
-        (base32 "1xqrd0ghkav7wpb1s4wb42ic2h313varf3b4w0bqnaly3r05h9wr"))))
+        (base32 "0avni6b37snrpw9jldzmibklrz52jp46j680w8pgprbasfy27313"))))
     (properties `((upstream-name . "ggsc")))
     (build-system r-build-system)
     (arguments

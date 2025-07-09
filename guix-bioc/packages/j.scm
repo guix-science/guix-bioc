@@ -78,13 +78,13 @@ rank\").")
 (define-public r-jazzpanda
   (package
     (name "r-jazzpanda")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "jazzPanda" version))
        (sha256
-        (base32 "0wskp62qny21r6mfa8qa9bxhand3hzz80zbkwsmjm56ba7930cm9"))))
+        (base32 "0l24f6w6kv7g08gjisqpl48cgd6zx5lzb14zi8j09l691gls1xgz"))))
     (properties `((upstream-name . "jazzPanda")))
     (build-system r-build-system)
     (arguments

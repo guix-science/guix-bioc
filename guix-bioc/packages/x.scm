@@ -576,13 +576,13 @@ the observed expression changes.")
 (define-public r-xcell2
   (package
     (name "r-xcell2")
-    (version "1.0.2")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xCell2" version))
        (sha256
-        (base32 "18nvrfl47h92cf9fx0cxglswq18fbmxgh1lzxpfvkgqrb4clvwki"))))
+        (base32 "11n55axavmnqrxlgch881m2py364a5y91irlzz0vvzdlgd2yxyc2"))))
     (properties `((upstream-name . "xCell2")))
     (build-system r-build-system)
     (arguments
