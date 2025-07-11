@@ -919,13 +919,13 @@ quantification tools MISO, VAST-TOOLS, SUPPA and @code{rMATS}.")
 (define-public r-alphamissenser
   (package
     (name "r-alphamissenser")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AlphaMissenseR" version))
        (sha256
-        (base32 "0zxdq9afill3dkfvc0ykdr3vxz568siigxdb30n9va8kdf34iqwm"))))
+        (base32 "1wy5xzjjp138ld6lwmv412471ab4gr124zc3ca342h1ahsyjsgfm"))))
     (properties `((upstream-name . "AlphaMissenseR")))
     (build-system r-build-system)
     (arguments

@@ -664,14 +664,14 @@ research and experimental settings.")
 (define-public r-proteingymr
   (package
     (name "r-proteingymr")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ProteinGymR" version
                               'experiment))
        (sha256
-        (base32 "0afnmbs3s8w8whnds6sd4j04n44lidj3vywm5fq3y5pm91c5646z"))))
+        (base32 "15y4vkhbl0gzjq4a2dq5gvrxk3c9yh32w8p7fq1ddd90hx761n7w"))))
     (properties `((upstream-name . "ProteinGymR")))
     (build-system r-build-system)
     (arguments
@@ -3845,13 +3845,13 @@ calculated from multiple alignments with other 99 vertebrate species.")
 (define-public r-pharmacogx
   (package
     (name "r-pharmacogx")
-    (version "3.11.1")
+    (version "3.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PharmacoGx" version))
        (sha256
-        (base32 "00rlkl5bri5phsbhp0z80aqkpaxnw987qbggvwrzckqp03ndsp10"))))
+        (base32 "1nx93z9xzyqfqxnilkc7351bk8n8kzvf5w4hhcnc1c2wcb32zraf"))))
     (properties `((upstream-name . "PharmacoGx")))
     (build-system r-build-system)
     (arguments

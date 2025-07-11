@@ -18,13 +18,13 @@
   #:use-module (guix-cran packages r)
   #:use-module (gnu packages chemistry)
   #:use-module (gnu packages maths)
-  #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages n)
   #:use-module (gnu packages c)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
+  #:use-module (guix-cran packages l)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages node)
   #:use-module (guix-cran packages d)
@@ -2659,7 +2659,6 @@ data.")
                              r-png
                              r-plotrix
                              r-mcl
-                             r-linkcomm
                              r-knitr
                              r-igraph
                              r-hash

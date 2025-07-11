@@ -22,7 +22,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages g)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (guix-cran packages n)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages d)
   #:use-module (gnu packages tls)
@@ -6599,7 +6598,6 @@ types of experiments as well.")
                              r-s4vectors
                              r-rsamtools
                              r-reshape2
-                             r-nozzle-r1
                              r-iranges
                              r-gtools
                              r-ggplot2

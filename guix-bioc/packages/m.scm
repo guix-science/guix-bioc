@@ -5091,7 +5091,6 @@ expriments.")
                              r-rcpp
                              r-org-hs-eg-db
                              r-mcl
-                             r-linkcomm
                              r-igraph
                              r-foreach
                              r-dose
@@ -5134,9 +5133,7 @@ construct sample-sample correlation network.")
       #:tests? #f))
     (propagated-inputs (list r-wgcna
                              r-summarizedexperiment
-                             r-subspace
                              r-sombrero
-                             r-s4vd
                              r-rqubic
                              r-reactomepa
                              r-rcpp
@@ -5147,7 +5144,6 @@ construct sample-sample correlation network.")
                              r-mclust
                              r-mcl
                              r-matrixcorrelation
-                             r-linkcomm
                              r-isa2
                              r-igraph
                              r-ibbig
