@@ -9333,13 +9333,13 @@ predict risk scores of patients.")
 (define-public r-scdotplot
   (package
     (name "r-scdotplot")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scDotPlot" version))
        (sha256
-        (base32 "04mnm2l3gdrzqxlk47bjh00ac3d4qvpzaknd4x1gc8aq3zlplgn6"))))
+        (base32 "1zdfa1pqccx88m4j3dkdqbl4lq7w1w1cgfajvh11005ywmd39g12"))))
     (properties `((upstream-name . "scDotPlot")))
     (build-system r-build-system)
     (arguments

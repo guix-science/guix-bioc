@@ -2421,13 +2421,13 @@ repositories.")
 (define-public r-gg4way
   (package
     (name "r-gg4way")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gg4way" version))
        (sha256
-        (base32 "1igh50yhkj86va1wbx3jzyqxp83cr4sqdgi3n90295hfxaxxa609"))))
+        (base32 "1hlriz5hr31dn62dld1f6cg6dbr0gbahq7aavy4shchgbsnj6cji"))))
     (properties `((upstream-name . "gg4way")))
     (build-system r-build-system)
     (arguments
@@ -2697,13 +2697,13 @@ information to GEO by preparing a single file for upload (direct deposit).")
 (define-public r-geomxtools
   (package
     (name "r-geomxtools")
-    (version "3.11.0")
+    (version "3.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GeomxTools" version))
        (sha256
-        (base32 "052xdxg97zazwzwyx2ijyysny4nqpfdqbs81km2mnfph1b4d12kl"))))
+        (base32 "1v2gslpagchv0j4cgp431i8lbbkk4sfwndwdpxk61da36d83fg3k"))))
     (properties `((upstream-name . "GeomxTools")))
     (build-system r-build-system)
     (arguments

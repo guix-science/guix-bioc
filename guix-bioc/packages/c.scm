@@ -7708,13 +7708,13 @@ potential hubs on each network.")
 (define-public r-cellxgenedp
   (package
     (name "r-cellxgenedp")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cellxgenedp" version))
        (sha256
-        (base32 "0myv4zgnxzay5xn462l6nzixb57l544rqpiiksfqz631ng6f1zp3"))))
+        (base32 "0gc7vp94vrrqqdxmcdbvvarx3g3196jyzcpwaap8f5glkfvwc8yz"))))
     (properties `((upstream-name . "cellxgenedp")))
     (build-system r-build-system)
     (arguments
