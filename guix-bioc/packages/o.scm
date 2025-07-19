@@ -1082,13 +1082,13 @@ phenotype association in high-throughput screening pipelines.")
 (define-public r-openprimer
   (package
     (name "r-openprimer")
-    (version "1.29.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "openPrimeR" version))
        (sha256
-        (base32 "0r8cxhvr3mszv2l33v9cfi7i7vmk5bsg5lnr0bi7zc00zihjj20f"))))
+        (base32 "1yz39y7902qhb1yjrzzj7c0qkq9pld4wf352sb1p2dkxs8cr7qm5"))))
     (properties `((upstream-name . "openPrimeR")))
     (build-system r-build-system)
     (arguments

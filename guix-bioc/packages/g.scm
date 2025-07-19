@@ -1834,13 +1834,13 @@ the glmnet distribution families are supported, namely \"gaussian\", \"poisson\"
 (define-public r-gladiatox
   (package
     (name "r-gladiatox")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GladiaTOX" version))
        (sha256
-        (base32 "0k80njzbcgiy4gnddg2jcs7gxj291ihpn2lc4mcxkpd04i54441m"))))
+        (base32 "0a5lhxv8n3h6jimvq12qxcb2m6ix1mi23kjgfi2lxnfz1wdma1h4"))))
     (properties `((upstream-name . "GladiaTOX")))
     (build-system r-build-system)
     (arguments
@@ -1862,7 +1862,7 @@ the glmnet distribution families are supported, namely \"gaussian\", \"poisson\"
                              r-data-table
                              r-brew))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/GladiaTOX")
+    (home-page "https://github.com/philipmorrisintl/GladiaTOX")
     (synopsis "R Package for Processing High Content Screening data")
     (description
      "@code{GladiaTOX} R package is an open-source, flexible solution to high-content
@@ -2279,28 +2279,27 @@ models, implement association mapping, and generate a phenotype graph.")
 (define-public r-ggmsa
   (package
     (name "r-ggmsa")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggmsa" version))
        (sha256
-        (base32 "0hd5vvx3p767q2fxp4rwq5ds348ki29b0qkmk67mmlflh8cz8p8f"))))
+        (base32 "0abaqsxv9b2bniw74dg0nwianxi76z8mlnnjjlrfdbxivph9ccyw"))))
     (properties `((upstream-name . "ggmsa")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tidyr
-                             r-statebins
                              r-seqmagick
                              r-rcolorbrewer
                              r-r4rna
                              r-magrittr
                              r-ggtree
                              r-ggplot2
+                             r-ggfun
                              r-ggforce
-                             r-ggalt
                              r-dplyr
                              r-biostrings
                              r-aplot))
