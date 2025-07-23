@@ -2360,13 +2360,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.8.4")
+    (version "2.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "02sl3qgsiiai07q6lgd98764h63qbzw0s665rkr6xns9bdp2n3si"))))
+        (base32 "036l4ahlq8l2xyb5rabirpyy17amvflv0pw8021af4gxg3dnf1h8"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (arguments
@@ -4640,13 +4640,13 @@ cn.mops is very fast and written in C++.")
 (define-public r-cn-farms
   (package
     (name "r-cn-farms")
-    (version "1.55.0")
+    (version "1.56.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cn.farms" version))
        (sha256
-        (base32 "061qxr4pbl31kd6f3dhjazgmr23m48ng3vszvm0rxdz2bbzgq0yr"))))
+        (base32 "1q35z7mywmrkibgbhaddyrk78wbnyvlkxv43bsa59bdcsbw7ns6m"))))
     (properties `((upstream-name . "cn.farms")))
     (build-system r-build-system)
     (arguments
