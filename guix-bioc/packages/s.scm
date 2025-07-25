@@ -4144,13 +4144,13 @@ Soybean.cdf file.")
 (define-public r-sosta
   (package
     (name "r-sosta")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "sosta" version))
        (sha256
-        (base32 "1adj1s8xj9jrnacdwhsd2f4s03abp38qwpminv992lxs90m86m5k"))))
+        (base32 "1nassx117qqd53jnhvhj30f419l125nyr1f68d6n9zmvzmq9kqnl"))))
     (properties `((upstream-name . "sosta")))
     (build-system r-build-system)
     (arguments

@@ -9470,13 +9470,13 @@ Memorial-Sloan-Kettering Cancer Center (MSKCC).")
 (define-public r-camutqc
   (package
     (name "r-camutqc")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CaMutQC" version))
        (sha256
-        (base32 "1arl59f1p5hvj12pql4c3jkgdsfw4q68g52sc56dn9xw5z3bfr03"))))
+        (base32 "0zgrq0vh6klaqqlafbdihfpi7fpv7fbl130asp9xrrqgq4v7acg5"))))
     (properties `((upstream-name . "CaMutQC")))
     (build-system r-build-system)
     (arguments
