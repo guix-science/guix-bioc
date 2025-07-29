@@ -18,6 +18,7 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages t)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages l)

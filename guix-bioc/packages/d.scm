@@ -768,13 +768,13 @@ draw protein schematics.")
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doubletrouble" version))
        (sha256
-        (base32 "1m26a8m6sqsd1s2b6g1k7qb9n3ndrvlhz64py3fgqd38d1h47vpg"))))
+        (base32 "1a08sd6a56h75km9y306a7gfhlnv5m2zzs1kaixwqk2v2lfvq6g2"))))
     (properties `((upstream-name . "doubletrouble")))
     (build-system r-build-system)
     (arguments
@@ -3766,13 +3766,13 @@ required (see `Prostar` package).")
 (define-public r-dandelionr
   (package
     (name "r-dandelionr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dandelionR" version))
        (sha256
-        (base32 "0jh7vvwpykjggwqpwfn7bqvnapn8ibyc6pwlpa32kddxj8y5kfyx"))))
+        (base32 "0m8p003mgf03n69z0bcbid2insskg04vhhrvrppsciqcc9a4rbb4"))))
     (properties `((upstream-name . "dandelionR")))
     (build-system r-build-system)
     (arguments

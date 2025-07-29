@@ -199,20 +199,19 @@ the environment in the future with contributions from the community.")
 (define-public r-syntenet
   (package
     (name "r-syntenet")
-    (version "1.10.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "syntenet" version))
        (sha256
-        (base32 "1zrycma4mdxlcfph478pfcllm0nbvs1qaw7smk2ik6khrs6d66l6"))))
+        (base32 "0lxjxcx08n30s72n7sdpzssb1faxsclvd4rmd0gqfvh331y3j70q"))))
     (properties `((upstream-name . "syntenet")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-testthat
-                             r-rtracklayer
                              r-rlang
                              r-rcpp
                              r-rcolorbrewer

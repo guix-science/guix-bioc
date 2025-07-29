@@ -244,13 +244,13 @@ using STOCSY; and biological interpretation of MWAS results.")
 (define-public r-musicatk
   (package
     (name "r-musicatk")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "musicatk" version))
        (sha256
-        (base32 "1sgxl4ar4ql3ajmpay1jgcid1yppmvvclic8gjhfp62im3blhib5"))))
+        (base32 "115zg1ypa4jks26zg7rwg8a3pk1nh43c3760dfbk89szyry4vxq9"))))
     (properties `((upstream-name . "musicatk")))
     (build-system r-build-system)
     (arguments
@@ -302,7 +302,7 @@ using STOCSY; and biological interpretation of MWAS results.")
                              r-bsgenome
                              r-biostrings))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/musicatk")
+    (home-page "https://www.camplab.net/musicatk/")
     (synopsis "Mutational Signature Comprehensive Analysis Toolkit")
     (description
      "Mutational signatures are carcinogenic exposures or aberrant cellular processes
