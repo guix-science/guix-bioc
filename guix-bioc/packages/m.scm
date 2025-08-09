@@ -1794,13 +1794,13 @@ functionality across the MSstats family of packages.")
 (define-public r-msstatsconvert
   (package
     (name "r-msstatsconvert")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsConvert" version))
        (sha256
-        (base32 "0hxmv5ngfkrsv5zib3jf68py333lk33mrmh3z21rb353qdkmks5n"))))
+        (base32 "181s0cg3b65pkvgwb0w11fv7j9jaf6qp8fyy37vmbfkgfc1r5ihy"))))
     (properties `((upstream-name . "MSstatsConvert")))
     (build-system r-build-system)
     (arguments

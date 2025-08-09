@@ -722,13 +722,13 @@ M@code{SigDB}.")
 (define-public r-lobstahs
   (package
     (name "r-lobstahs")
-    (version "1.33.0")
+    (version "1.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LOBSTAHS" version))
        (sha256
-        (base32 "0wh2akkwkh88wfh8gg1n1zq3jgp0a9wgyv0c6fcr8z5zwprkach6"))))
+        (base32 "019m518sw3675fpj8szp5ww5jv1hl25kp7dxsk2zhfwz7pbj06cc"))))
     (properties `((upstream-name . "LOBSTAHS")))
     (build-system r-build-system)
     (arguments
