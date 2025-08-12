@@ -16,7 +16,6 @@
   #:use-module (gnu packages haskell-xyz)
   #:use-module (guix-cran packages s)
   #:use-module (gnu packages java)
-  #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages n)
   #:use-module (gnu packages compression)
@@ -1397,24 +1396,22 @@ conceptmapper and compute semnatic similarity from R.")
 (define-public r-omxplore
   (package
     (name "r-omxplore")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omXplore" version))
        (sha256
-        (base32 "1pfwvrz9p0rk9q5xbnfwsa7khqw4a1ixlsmm4k2iwxpykarh9ylh"))))
+        (base32 "0x9ag6brzimbfddi5v6q60bhp57zvrpkhk8cc2shzbm1j11fhnyn"))))
     (properties `((upstream-name . "omXplore")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-waiter
-                             r-visnetwork
+    (propagated-inputs (list r-visnetwork
                              r-vioplot
                              r-tidyr
                              r-tibble
-                             r-thematic
                              r-summarizedexperiment
                              r-shinyjs
                              r-shinyjqui
@@ -1432,10 +1429,9 @@ conceptmapper and compute semnatic similarity from R.")
                              r-factoextra
                              r-dt
                              r-dplyr
-                             r-dendextend
-                             r-bs4dash))
+                             r-dendextend))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/prostarproteomics/omXplore")
+    (home-page "https://github.com/edyp-lab/omXplore")
     (synopsis "Vizualization tools for 'omics' datasets with R")
     (description
      "This package contains a collection of functions (written as shiny modules) for

@@ -1191,13 +1191,13 @@ relationship, the PT distributions generalizes this relationship to any orde.")
 (define-public r-tvtb
   (package
     (name "r-tvtb")
-    (version "1.34.0")
+    (version "1.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TVTB" version))
        (sha256
-        (base32 "06rw3jsjkmnfh088yd31a2n7vnblg3ppgjiz2gd8skcic13asbvj"))))
+        (base32 "1w4ki0qrwk8sw5dy3020rqx8g2kymb4a17jlzl3wnadpsnn072zj"))))
     (properties `((upstream-name . "TVTB")))
     (build-system r-build-system)
     (arguments
