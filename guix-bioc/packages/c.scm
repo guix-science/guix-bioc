@@ -10,10 +10,10 @@
   #:use-module (guix-cran packages s)
   #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages t)
+  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)
-  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages p)
@@ -387,13 +387,13 @@ differentially expressed features on the rows and samples on the columns.")
 (define-public r-cytoglmm
   (package
     (name "r-cytoglmm")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CytoGLMM" version))
        (sha256
-        (base32 "1wp2vgvpyx5kdrdzv6mz83lwbgfi44abnjpwnh82dwzr9dz8yykg"))))
+        (base32 "1c7wyvqh9if4zbcn6m73fa4dk04bbp6nb8jdd0i5psga50bjm0c9"))))
     (properties `((upstream-name . "CytoGLMM")))
     (build-system r-build-system)
     (arguments
@@ -406,14 +406,17 @@ differentially expressed features on the rows and samples on the columns.")
                              r-rlang
                              r-rcolorbrewer
                              r-pheatmap
+                             r-mbest
                              r-matrix
                              r-mass
                              r-magrittr
+                             r-logging
                              r-ggrepel
                              r-ggplot2
                              r-flexmix
                              r-factoextra
                              r-dplyr
+                             r-doparallel
                              r-cowplot
                              r-caret
                              r-biocparallel))
@@ -474,6 +477,46 @@ type.  This package does not remove data from the dataset, but provides labels
 and information to aid the data user in cleaning their data.  Our algorithm is
 able to distinguish between doublets and large cells.")
     (license license:artistic2.0)))
+
+(define-public r-cytofpower
+  (package
+    (name "r-cytofpower")
+    (version "1.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CyTOFpower" version))
+       (sha256
+        (base32 "0a4qr7b095mvv9z0f75cja16zm73gpr888djn9vzmckmrmddns7f"))))
+    (properties `((upstream-name . "CyTOFpower")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-shinymatrix
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shiny
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-diffcyt
+                             r-cytoglmm))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/CyTOFpower")
+    (synopsis "Power analysis for CyTOF experiments")
+    (description
+     "This package is a tool to predict the power of @code{CyTOF} experiments in the
+context of differential state analyses.  The package provides a shiny app with
+two options to predict the power of an experiment: i.  generation of in-sicilico
+@code{CyTOF} data, using users input ii.  browsing in a grid of parameters for
+which the power was already precomputed.")
+    (license license:lgpl3)))
 
 (define-public r-cytodx
   (package

@@ -1330,13 +1330,13 @@ methods, inputs and outputs.")
 (define-public r-struct
   (package
     (name "r-struct")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "struct" version))
        (sha256
-        (base32 "1qily88h48gvj88ixrcjfk13cfr5dlq61rwp60nwh9jvvs93nn2v"))))
+        (base32 "0280k9mv8q46fh78yhr5hxp5xayszl0q8qn39xhndin7i50pwni3"))))
     (properties `((upstream-name . "struct")))
     (build-system r-build-system)
     (arguments

@@ -2109,13 +2109,13 @@ sophisticated approach that complements Pearson correlation of genomic coverage.
 (define-public r-fastreer
   (package
     (name "r-fastreer")
-    (version "1.12.2")
+    (version "1.12.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fastreeR" version))
        (sha256
-        (base32 "15q6mkka780kfydg2j8s5kk82gkqj8qaa7py6k9k85mq08iyqq6w"))))
+        (base32 "1ydbj10aksv1amkh7wpz76g1kx0r947qz4gxxindic8wk4kilcsn"))))
     (properties `((upstream-name . "fastreeR")))
     (build-system r-build-system)
     (arguments
@@ -2137,7 +2137,7 @@ sophisticated approach that complements Pearson correlation of genomic coverage.
 between the samples of a VCF or FASTA file.  Functions are implemented in
 Java-11 and called via @code{rJava}.  Parallel implementation that operates
 directly on the VCF or FASTA file for fast execution.")
-    (license (license:fsdg-compatible "GPL-3.0-only"))))
+    (license license:gpl3)))
 
 (define-public r-fastqcleaner
   (package

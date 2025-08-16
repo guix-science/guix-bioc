@@ -1929,13 +1929,13 @@ significance analysis in DDA, SRM and DIA experiments.")
 (define-public r-msquality
   (package
     (name "r-msquality")
-    (version "1.8.0")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsQuality" version))
        (sha256
-        (base32 "071zkcpjc189rfxdnq7qyjb34x6ap5ln1vji9sl3fbgw62zl0v00"))))
+        (base32 "07yjack89qq6875b8f995r37wwnb0c3ldkfbx2wmi5f08i7rr687"))))
     (properties `((upstream-name . "MsQuality")))
     (build-system r-build-system)
     (arguments

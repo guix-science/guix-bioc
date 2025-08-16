@@ -2538,13 +2538,13 @@ with several pathogens or which are grown from different cell lines.")
 (define-public r-plyxp
   (package
     (name "r-plyxp")
-    (version "1.2.0")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plyxp" version))
        (sha256
-        (base32 "16hjdwzv792il9dhqi3g8h0lb805hsj7mcj23lksxgxxwb9jl4zb"))))
+        (base32 "03c469y98jfwk48alfky18mpb9dmh57cahkp42dgdfr8pvdknx2p"))))
     (properties `((upstream-name . "plyxp")))
     (build-system r-build-system)
     (arguments
