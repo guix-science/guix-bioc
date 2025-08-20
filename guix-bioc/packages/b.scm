@@ -247,13 +247,13 @@ modified in a structure probing experiment.")
 (define-public r-bulksignalr
   (package
     (name "r-bulksignalr")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BulkSignalR" version))
        (sha256
-        (base32 "0dhnx48ff0kspy6dbi6cpr5wc8pwx23r3bbai6pjrfcmh54qnpz0"))))
+        (base32 "1m6cyx10zg6xly7n31yrpvc8apb59jbrgvgznsvn8w6ww3pnr31a"))))
     (properties `((upstream-name . "BulkSignalR")))
     (build-system r-build-system)
     (arguments
@@ -264,7 +264,6 @@ modified in a structure probing experiment.")
                              r-spatialexperiment
                              r-scales
                              r-rtsne
-                             r-rsqlite
                              r-rlang
                              r-rcurl
                              r-rann
@@ -280,9 +279,7 @@ modified in a structure probing experiment.")
                              r-ggplot2
                              r-ggalluvial
                              r-foreach
-                             r-dplyr
                              r-doparallel
-                             r-dbi
                              r-curl
                              r-complexheatmap
                              r-cli
