@@ -1676,13 +1676,13 @@ monitoring and quality control tools for proteomic experiments.")
 (define-public r-msstatsptm
   (package
     (name "r-msstatsptm")
-    (version "2.10.1")
+    (version "2.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsPTM" version))
        (sha256
-        (base32 "0by9a7393c3rnam0i6qr5knw9spca0w42rx311pc9lbphh31i1i2"))))
+        (base32 "0bjwi6fjf1br013bxr0swmds1krm3dg39da355xjf3xqp8b2k648"))))
     (properties `((upstream-name . "MSstatsPTM")))
     (build-system r-build-system)
     (arguments

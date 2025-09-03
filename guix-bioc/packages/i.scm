@@ -1659,13 +1659,13 @@ indac) assembled using data from public repositories.")
 (define-public r-immunotation
   (package
     (name "r-immunotation")
-    (version "1.16.0")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "immunotation" version))
        (sha256
-        (base32 "0ii5lhcwlr065kx7yjq3bby446i67msl4p3iyc9hxxbv4a8yqivf"))))
+        (base32 "0w6pr6l8qizw4fbfl74rrv8nblwd51d4kw6mxjgkb8lkqfz3b9mp"))))
     (properties `((upstream-name . "immunotation")))
     (build-system r-build-system)
     (arguments
