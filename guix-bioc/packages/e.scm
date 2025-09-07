@@ -1927,13 +1927,13 @@ into a network with edges connecting overlapping genes.")
 (define-public r-enrichmentbrowser
   (package
     (name "r-enrichmentbrowser")
-    (version "2.38.0")
+    (version "2.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EnrichmentBrowser" version))
        (sha256
-        (base32 "0z7yc1r41jikbhb3x2pgzhq7c3my0r9i9001wdvdsxpsxas11f4x"))))
+        (base32 "03rpsnm5kbmhj582mrfwsh2wkwpjrrxrvhv0jnq0aq5bj8pw1i07"))))
     (properties `((upstream-name . "EnrichmentBrowser")))
     (build-system r-build-system)
     (arguments
