@@ -5185,13 +5185,13 @@ using websockets.")
 (define-public r-rcx
   (package
     (name "r-rcx")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RCX" version))
        (sha256
-        (base32 "0vjjgz9l153g4k5phci7xi3w7xx3msjkhl3crb75qaldginlxj2n"))))
+        (base32 "00x4xyazr630xyk4b3nl49wwrz17pcqxixhcsxryq1h4n512hcx8"))))
     (properties `((upstream-name . "RCX")))
     (build-system r-build-system)
     (arguments

@@ -6137,7 +6137,6 @@ signatures, relating to multiple tumors and multiple cancer processes.")
                              r-tidyr
                              r-tibble
                              r-survminer
-                             r-survivalanalysis
                              r-survival
                              r-shinywidgets
                              r-shinydashboard
@@ -10727,13 +10726,13 @@ The microarray data are derived from Roth et al. (2006) and Ge et al. (2005).")
 (define-public r-saigegds
   (package
     (name "r-saigegds")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SAIGEgds" version))
        (sha256
-        (base32 "1xrwi3i07gnaka4alm9v9n2ix38afdr98g4dhlv79lv0bwl44hq5"))))
+        (base32 "18q69h52lq85myhzsh0rk9bfk39lj4f8r4j5ds3cyflpa6pqrijv"))))
     (properties `((upstream-name . "SAIGEgds")))
     (build-system r-build-system)
     (arguments
