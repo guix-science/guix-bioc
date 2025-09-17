@@ -19,6 +19,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages maths)
   #:use-module (guix-cran packages k)
+  #:use-module (guix-cran packages t)
   #:use-module (gnu packages python)
   #:use-module (guix-cran packages c)
   #:use-module (guix-bioc packages z)

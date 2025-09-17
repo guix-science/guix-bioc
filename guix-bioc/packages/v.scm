@@ -14,6 +14,7 @@
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages c)
+  #:use-module (guix-cran packages k)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)

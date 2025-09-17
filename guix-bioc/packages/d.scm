@@ -19,6 +19,7 @@
   #:use-module (guix-cran packages w)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages p)

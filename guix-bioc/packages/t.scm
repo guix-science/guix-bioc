@@ -8,6 +8,7 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages d)
+  #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
