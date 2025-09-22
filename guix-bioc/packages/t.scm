@@ -1496,13 +1496,13 @@ workflow, from raw data to multiple trial analysis.")
 (define-public r-tronco
   (package
     (name "r-tronco")
-    (version "2.40.0")
+    (version "2.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TRONCO" version))
        (sha256
-        (base32 "0il19f229glhim96sr6h1h31lkg86ancmqfr9r4gfkbmwf6lmnh5"))))
+        (base32 "09axgn5nxrxs26c25c3l0fhnqc664gnc5c15s4f9rfd9360wpvpz"))))
     (properties `((upstream-name . "TRONCO")))
     (build-system r-build-system)
     (arguments

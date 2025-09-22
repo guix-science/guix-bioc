@@ -2697,13 +2697,13 @@ information to GEO by preparing a single file for upload (direct deposit).")
 (define-public r-geomxtools
   (package
     (name "r-geomxtools")
-    (version "3.12.0")
+    (version "3.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GeomxTools" version))
        (sha256
-        (base32 "1v2gslpagchv0j4cgp431i8lbbkk4sfwndwdpxk61da36d83fg3k"))))
+        (base32 "1vvgbir74xr1yx7xwgml11752wk1f88il5vk7in3kcp3in8sfwil"))))
     (properties `((upstream-name . "GeomxTools")))
     (build-system r-build-system)
     (arguments

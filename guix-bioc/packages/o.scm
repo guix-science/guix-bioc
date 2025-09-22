@@ -1397,13 +1397,13 @@ conceptmapper and compute semnatic similarity from R.")
 (define-public r-omxplore
   (package
     (name "r-omxplore")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omXplore" version))
        (sha256
-        (base32 "0x9ag6brzimbfddi5v6q60bhp57zvrpkhk8cc2shzbm1j11fhnyn"))))
+        (base32 "1al7gyfd4ghwvhi3qc4jkj453wpiv809rwgf5377dhx8nsf8lsbj"))))
     (properties `((upstream-name . "omXplore")))
     (build-system r-build-system)
     (arguments

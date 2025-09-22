@@ -1447,14 +1447,14 @@ assembled using data from public repositories.")
 (define-public r-mtbls2
   (package
     (name "r-mtbls2")
-    (version "1.37.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mtbls2" version
                               'experiment))
        (sha256
-        (base32 "17wrlvh14nxqvxgqljh7d01n1df6q8xj9p5pv5nr09r4bllmqhfk"))))
+        (base32 "1gydb9l87lg8d3wlm0wns3d2ijajijmxq91crl1qn16krb63kcak"))))
     (properties `((upstream-name . "mtbls2")))
     (build-system r-build-system)
     (arguments
