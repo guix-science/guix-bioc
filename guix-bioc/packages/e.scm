@@ -1555,13 +1555,13 @@ protein-coding genes, distal enhancers, and genes encoding @code{microRNAs} and
 (define-public r-epigrahmm
   (package
     (name "r-epigrahmm")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epigraHMM" version))
        (sha256
-        (base32 "0b7ya0psb89fw3l575zc5jljrkpqmxgqx9wvn5sivgldfagl8ji8"))))
+        (base32 "1cj9zzprma7av2li0apzh8rhx43cr460k3g72jh0cqalxw0dcgj5"))))
     (properties `((upstream-name . "epigraHMM")))
     (build-system r-build-system)
     (arguments

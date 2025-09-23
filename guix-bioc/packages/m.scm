@@ -3137,13 +3137,13 @@ assembled using data from public repositories.")
 (define-public r-motiftestr
   (package
     (name "r-motiftestr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifTestR" version))
        (sha256
-        (base32 "0qdivy6ci9xcjjwbkklh69rqhfrvi733r2jraw9cina8jiwff2q9"))))
+        (base32 "0yzv15ca0zchx772xlgwq6b3pzl4dy73xqlycgd7pwj1n939kiid"))))
     (properties `((upstream-name . "motifTestR")))
     (build-system r-build-system)
     (arguments
@@ -3650,13 +3650,13 @@ of the TSGs and OCGs, as that may have an effect on the expression of the genes.
 (define-public r-monalisa
   (package
     (name "r-monalisa")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "monaLisa" version))
        (sha256
-        (base32 "16rp6c0hcl0xmw08xpq649sdf5dgcn4s8394lq562rrbb51wvsg4"))))
+        (base32 "0iwan8nr9ylz388krqspjvfgagak9kfzzq9a2i3bblbiplffy0bq"))))
     (properties `((upstream-name . "monaLisa")))
     (build-system r-build-system)
     (arguments
@@ -5449,13 +5449,13 @@ validate the results, and functions to conduct enrichment analyses.")
 (define-public r-mirit
   (package
     (name "r-mirit")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MIRit" version))
        (sha256
-        (base32 "116l7y5lmv0d3aly24i8p3wwd4hhnwvar7cdq8g1j6ng5gc1jvm2"))))
+        (base32 "02mfrv33fs6az8k09kzdkb9ql95zj8fbx786b73wn2gpm6f4fp8d"))))
     (properties `((upstream-name . "MIRit")))
     (build-system r-build-system)
     (arguments
@@ -6121,13 +6121,13 @@ manipulating them.")
 (define-public r-microbiotaprocess
   (package
     (name "r-microbiotaprocess")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiotaProcess" version))
        (sha256
-        (base32 "0zdlk4dr4cx9086r8kvjaf2fji2smz5wziipn5bzzzbq0zs6gnk2"))))
+        (base32 "0jb660ngx61qdg1hqv63x0w5brjc96qp6raplnw4rvivg31w378l"))))
     (properties `((upstream-name . "MicrobiotaProcess")))
     (build-system r-build-system)
     (arguments

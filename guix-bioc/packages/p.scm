@@ -3428,13 +3428,13 @@ vignette how to access those resources.")
 (define-public r-phosr
   (package
     (name "r-phosr")
-    (version "1.18.1")
+    (version "1.18.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhosR" version))
        (sha256
-        (base32 "157whkx3vnn6q8avn59ks8xhmr6fk8c0ffx12bspraxnf6d9al0g"))))
+        (base32 "1kzgv26fy3hwpx78vshdwdp7x8d6y5z27jr1z0kim6p9yrq6fnp5"))))
     (properties `((upstream-name . "PhosR")))
     (build-system r-build-system)
     (arguments
@@ -3467,13 +3467,11 @@ vignette how to access those resources.")
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/PhosR")
     (synopsis
-     "set of methods and tools for comprehensive analysis of phosphoproteomics data")
+     "Set of Methods and Tools for Comprehensive Analysis of Phosphoproteomics Data")
     (description
-     "@code{PhosR} is a package for the comprenhensive analysis of phosphoproteomic
-data.  There are two major components to @code{PhosR}: processing and downstream
-analysis. @code{PhosR} consists of various processing tools for
-phosphoproteomics data including filtering, imputation, normalisation, and
-functional analysis for inferring active kinases and signalling pathways.")
+     "Comprehensive analysis of phosphoproteomics data.  Provides methods and tools
+for filtering, imputation, normalisation, and downstream functional analysis to
+infer active kinases and signalling pathways.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-phosphonormalizer

@@ -1591,13 +1591,13 @@ analysis in metabolomics and proteomics.")
 (define-public r-statial
   (package
     (name "r-statial")
-    (version "1.10.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Statial" version))
        (sha256
-        (base32 "0nnbqj1qab4dhqzryfq1zq5dbvxpbqy84jl5842k4vb3r2fflrss"))))
+        (base32 "1bjbx4262s63dmc1km9al9qjcyzaxvfk63vngyfqbg0k97zshzsg"))))
     (properties `((upstream-name . "Statial")))
     (build-system r-build-system)
     (arguments
@@ -1620,6 +1620,7 @@ analysis in metabolomics and proteomics.")
                              r-magrittr
                              r-limma
                              r-ggplot2
+                             r-edger
                              r-dplyr
                              r-data-table
                              r-concaveman
@@ -5106,13 +5107,13 @@ encompass many of the standard designs encountered in practice.")
 (define-public r-sitepath
   (package
     (name "r-sitepath")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "sitePath" version))
        (sha256
-        (base32 "18sjabmiiigwr4cz8b0hn415hcb12qgw5mgvdsay1al4djz33n2d"))))
+        (base32 "11lh43hmvlgym2r3y2m40yzlb8jpdm7d3xsja11bqgdvj5w7p4wz"))))
     (properties `((upstream-name . "sitePath")))
     (build-system r-build-system)
     (arguments

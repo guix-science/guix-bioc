@@ -853,13 +853,13 @@ to bulk- and single cell- multi-omics studies.")
 (define-public r-ngsreports
   (package
     (name "r-ngsreports")
-    (version "2.10.0")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ngsReports" version))
        (sha256
-        (base32 "1b9ngp2s3xlws0p65qj290ysrgkffrfifxhh70d1l61hxcdvq9gq"))))
+        (base32 "0j3ny1vrp4vv0jwddfmssy3vck7nk4ywcz9i62j2nj1r114igkdf"))))
     (properties `((upstream-name . "ngsReports")))
     (build-system r-build-system)
     (arguments
