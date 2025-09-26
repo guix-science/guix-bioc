@@ -496,13 +496,13 @@ analysis, etc.")
 (define-public r-rtpca
   (package
     (name "r-rtpca")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rtpca" version))
        (sha256
-        (base32 "18ydwza5in3svszk4m73caki2asyqrzygr8vzg34x2nd5ylhincv"))))
+        (base32 "020r8qk4kcwxz7i066n26nhzmaf804ni3qhmrm6ad47wk9psar9h"))))
     (properties `((upstream-name . "Rtpca")))
     (build-system r-build-system)
     (arguments
@@ -3055,13 +3055,13 @@ and footprint visualization.")
 (define-public r-ribocrypt
   (package
     (name "r-ribocrypt")
-    (version "1.13.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RiboCrypt" version))
        (sha256
-        (base32 "0sxj27rpf43vqdf16k53msxxam16l1z441ndnqc1insx2ggkannp"))))
+        (base32 "127g8hbvyaf601i8jl557nm7dlbb4zm2dq1ahwfb9gk9n9x4avd0"))))
     (properties `((upstream-name . "RiboCrypt")))
     (build-system r-build-system)
     (arguments
@@ -3081,13 +3081,18 @@ and footprint visualization.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-writexl
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
                              r-shinyjqui
                              r-shinyhelper
                              r-shinycssloaders
                              r-shiny
+                             r-rtracklayer
                              r-rlang
                              r-rcurl
+                             r-rclipboard
                              r-plotly
                              r-orfik
                              r-nglviewer
@@ -3101,8 +3106,13 @@ and footprint visualization.")
                              r-genomicranges
                              r-genomicfeatures
                              r-genomeinfodb
+                             r-fst
+                             r-dt
                              r-dplyr
                              r-data-table
+                             r-crosstalk
+                             r-cowplot
+                             r-complexheatmap
                              r-bslib
                              r-biostrings
                              r-biocparallel

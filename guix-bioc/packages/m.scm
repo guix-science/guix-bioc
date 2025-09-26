@@ -1750,13 +1750,13 @@ package.  The methodology is described in Galitzine (2018)
 (define-public r-msstatslip
   (package
     (name "r-msstatslip")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsLiP" version))
        (sha256
-        (base32 "1dkiywwj8nj9hadjbhbgavkq4xczbvb9s3pwl01d4mig584j7cqc"))))
+        (base32 "0k14i3qncd69h8lzswkck5s0pgi9bksfq33h68skfbr4vbvx1wip"))))
     (properties `((upstream-name . "MSstatsLiP")))
     (build-system r-build-system)
     (arguments
@@ -3342,13 +3342,13 @@ multiple groups.")
 (define-public r-mosclip
   (package
     (name "r-mosclip")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOSClip" version))
        (sha256
-        (base32 "1m69aywsksz05jbbvbvr2y5q12khydy9i0izcxl04gnf3790kgdf"))))
+        (base32 "0gfdbpl261kh3vxir91b5kvkl7ybg9y3jk928dhn3ql7vh2mgh6s"))))
     (properties `((upstream-name . "MOSClip")))
     (build-system r-build-system)
     (arguments

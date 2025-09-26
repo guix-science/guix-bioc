@@ -2973,13 +2973,13 @@ experiments.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.20.3")
+    (version "1.20.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "0238x0z7a8iry6vs2vwd5lims2g2zwm3dp9ixjn9cgz9j1gbqvi8"))))
+        (base32 "0jmx6yy5kd8l2r1b6iqpyksn0qza2b875nfhfdjws45q6hqbxrc8"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (arguments
@@ -9816,14 +9816,14 @@ such as color blindness.")
 (define-public r-scatac-explorer
   (package
     (name "r-scatac-explorer")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scATAC.Explorer" version
                               'experiment))
        (sha256
-        (base32 "1yyrh5rvnk2zl7wf4myc1pf43daj9gvsygzbn70cbqyrj484rp2p"))))
+        (base32 "0255v3fvag42xy76kq8m0sw4ihmgdxg75hv8f5d7ns7xx9n2896m"))))
     (properties `((upstream-name . "scATAC.Explorer")))
     (build-system r-build-system)
     (arguments

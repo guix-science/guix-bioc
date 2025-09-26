@@ -2361,13 +2361,13 @@ of count-based models in SRT data analysis.")
 (define-public r-tpp2d
   (package
     (name "r-tpp2d")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TPP2D" version))
        (sha256
-        (base32 "0yf7g0yzh9hidk6qdp47y0263l2mn710zj0fw32j0ynjlm96m5l4"))))
+        (base32 "0q35yy97w3myk9b9w35mxysalj6zqy44fqgbq168karjm8mfp4ga"))))
     (properties `((upstream-name . "TPP2D")))
     (build-system r-build-system)
     (arguments
