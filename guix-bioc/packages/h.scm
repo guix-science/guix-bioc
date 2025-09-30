@@ -3529,13 +3529,13 @@ class stores the Hi-C contacts parsed from local contact matrix files.
 (define-public r-hicdoc
   (package
     (name "r-hicdoc")
-    (version "1.10.2")
+    (version "1.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCDOC" version))
        (sha256
-        (base32 "056i8q3fblmymlm7qdmijkdwc2gi278bb6pmh07sl2880iw7iwix"))))
+        (base32 "09ybycv9p2ccc9rx6gym8rn1pk37h2gxrqkf1qjz2qf8nh881h3g"))))
     (properties `((upstream-name . "HiCDOC")))
     (build-system r-build-system)
     (arguments

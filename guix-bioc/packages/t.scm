@@ -2144,13 +2144,13 @@ plots and barplots.")
 (define-public r-transite
   (package
     (name "r-transite")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "transite" version))
        (sha256
-        (base32 "0gy1vvvfhyfxjp1pjzbrkv1hk7skbps677128dk73vw615fiv73s"))))
+        (base32 "1fjq8dhgw1yxzbn6w1rqh702w8smy9fjps359sya4v4mhhwdzqa2"))))
     (properties `((upstream-name . "transite")))
     (build-system r-build-system)
     (arguments

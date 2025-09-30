@@ -1834,13 +1834,13 @@ the glmnet distribution families are supported, namely \"gaussian\", \"poisson\"
 (define-public r-gladiatox
   (package
     (name "r-gladiatox")
-    (version "1.24.1")
+    (version "1.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GladiaTOX" version))
        (sha256
-        (base32 "0a5lhxv8n3h6jimvq12qxcb2m6ix1mi23kjgfi2lxnfz1wdma1h4"))))
+        (base32 "07c7zhy7jrph9bx7gaxpccrml6z7014ngbbsg4j5y1vbhbfwfmx8"))))
     (properties `((upstream-name . "GladiaTOX")))
     (build-system r-build-system)
     (arguments

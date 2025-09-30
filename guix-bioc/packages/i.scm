@@ -2740,13 +2740,13 @@ ratios with covariates.")
 (define-public r-idr2d
   (package
     (name "r-idr2d")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "idr2d" version))
        (sha256
-        (base32 "0hj15k2525nnb440wsqksbv7wk1ghi9szf0n5dypvgd15lswgsaz"))))
+        (base32 "00haxs18zljsv83vzqrvdnc64yw1lpdc5bgxim73ryi26q8wsag9"))))
     (properties `((upstream-name . "idr2d")))
     (build-system r-build-system)
     (arguments

@@ -520,13 +520,13 @@ Bsubtilis.CDF file.")
 (define-public r-bsgenomeforge
   (package
     (name "r-bsgenomeforge")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BSgenomeForge" version))
        (sha256
-        (base32 "0118mxyg8xxkwkfg6k1zw2xnx4b6zacf3bn9jy0kfks555cfbjsy"))))
+        (base32 "0ayfdz6jlnzf09py5mjk3xi46xxhp0b5242rjrnganp8ir32zbzs"))))
     (properties `((upstream-name . "BSgenomeForge")))
     (build-system r-build-system)
     (arguments
@@ -4856,13 +4856,13 @@ to additional annotations.")
 (define-public r-betahmm
   (package
     (name "r-betahmm")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "betaHMM" version))
        (sha256
-        (base32 "0rkjnqbmxxkb4f3n4z8g2h4pbgp379vwdyvgsk6cqqzl4lnkzfns"))))
+        (base32 "095qxqsjn1d1yacp9ihxf0hhpqk7k1c86d18nix0zznxxwpalph7"))))
     (properties `((upstream-name . "betaHMM")))
     (build-system r-build-system)
     (arguments

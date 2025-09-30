@@ -946,13 +946,13 @@ omic types).")
 (define-public r-surfr
   (package
     (name "r-surfr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SurfR" version))
        (sha256
-        (base32 "04yh8ah8198bkp166vsqvi5hcsqkdids39pah6k15n4j22avc2g4"))))
+        (base32 "06zaq0rz7lljp99wi2xc0hadzwkpvw93wr8lvn6p3m4r9d4wfqhm"))))
     (properties `((upstream-name . "SurfR")))
     (build-system r-build-system)
     (arguments

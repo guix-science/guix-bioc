@@ -1719,13 +1719,13 @@ Concordance at the Top plots (CAT-plots).")
 (define-public r-fenr
   (package
     (name "r-fenr")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fenr" version))
        (sha256
-        (base32 "0drvdhi8zynnx7h77mlfkxf7sqw8hydz8ni7sz1zvs920s8x4h5h"))))
+        (base32 "00jwn7lkn1amqrf761d3i8g6nn35x6wwkzdgrp9a4hy193w0m5b7"))))
     (properties `((upstream-name . "fenr")))
     (build-system r-build-system)
     (arguments

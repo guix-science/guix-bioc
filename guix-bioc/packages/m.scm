@@ -7309,13 +7309,13 @@ quantitative and structure information.")
 (define-public r-metmashr
   (package
     (name "r-metmashr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetMashR" version))
        (sha256
-        (base32 "1505j1jvmgnrxpbpkyh6am0baqmy312sc0fkg1dgzimq6pmwm170"))))
+        (base32 "01nj4ds56xa6ljb57g8lwmmq5srix5camjbr6ac9mwf6visxwa8l"))))
     (properties `((upstream-name . "MetMashR")))
     (build-system r-build-system)
     (arguments
@@ -7613,13 +7613,13 @@ Genome Biology.  2015;16(1):17.  doi:10.1186/s13059-014-0579-8.")
 (define-public r-methylinheritance
   (package
     (name "r-methylinheritance")
-    (version "1.32.0")
+    (version "1.32.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylInheritance" version))
        (sha256
-        (base32 "0dpq5vgb4zrj2pcwi0m8ykjvn0xr7hr4r0raksn8bgh0qyhn7mnf"))))
+        (base32 "1ajbmjc2ppxyf7d3r5q57mrbvv0nw1l740vnk21jzjrsg9d01dxx"))))
     (properties `((upstream-name . "methylInheritance")))
     (build-system r-build-system)
     (arguments

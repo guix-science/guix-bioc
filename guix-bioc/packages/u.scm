@@ -307,13 +307,13 @@ statisticl summary of coverage given target file or genes name.")
 (define-public r-umi4cats
   (package
     (name "r-umi4cats")
-    (version "1.18.1")
+    (version "1.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UMI4Cats" version))
        (sha256
-        (base32 "09pqabcinqis4liq2i6ra5m6y01vl77zami05ziivhq8x13i6s64"))))
+        (base32 "05idbv0zavkcy8gr6vmaqiy2ay9mvgdgj4xjmmqfj5c2wnfm27vm"))))
     (properties `((upstream-name . "UMI4Cats")))
     (build-system r-build-system)
     (arguments
