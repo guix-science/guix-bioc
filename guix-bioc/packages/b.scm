@@ -247,13 +247,13 @@ modified in a structure probing experiment.")
 (define-public r-bulksignalr
   (package
     (name "r-bulksignalr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BulkSignalR" version))
        (sha256
-        (base32 "1m6cyx10zg6xly7n31yrpvc8apb59jbrgvgznsvn8w6ww3pnr31a"))))
+        (base32 "1kp5xxg85lr11hq8bf9fvdb5xf3c519b3kv65kzf7pb93zsqffqv"))))
     (properties `((upstream-name . "BulkSignalR")))
     (build-system r-build-system)
     (arguments

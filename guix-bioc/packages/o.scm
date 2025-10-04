@@ -381,13 +381,13 @@ Taxonomy IDs.")
 (define-public r-orthogene
   (package
     (name "r-orthogene")
-    (version "1.14.0")
+    (version "1.14.01")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "orthogene" version))
        (sha256
-        (base32 "0v6y1ih476spnvmbhnrbwiglpcapcg7a61min8jib89prhsqhvbi"))))
+        (base32 "1npc26xj0ks2q5yi2qx1na4sp4hrvx65rcim2llnkcaaizxvlvqm"))))
     (properties `((upstream-name . "orthogene")))
     (build-system r-build-system)
     (arguments

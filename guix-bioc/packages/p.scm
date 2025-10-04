@@ -4446,13 +4446,13 @@ proteomic studies using peptide-level mesurements respectively.")
 (define-public r-peakpanther
   (package
     (name "r-peakpanther")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "peakPantheR" version))
        (sha256
-        (base32 "04ixkcnwhb3677099wx58sjrdg2v6gmr592i916gskfzkk40pk62"))))
+        (base32 "008bdn5377c25kqsh96nxh7hpsjvigzi49w70gzxslkr0dmjgai8"))))
     (properties `((upstream-name . "peakPantheR")))
     (build-system r-build-system)
     (arguments

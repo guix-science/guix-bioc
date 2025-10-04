@@ -1591,13 +1591,13 @@ analysis in metabolomics and proteomics.")
 (define-public r-statial
   (package
     (name "r-statial")
-    (version "1.10.2")
+    (version "1.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Statial" version))
        (sha256
-        (base32 "1bjbx4262s63dmc1km9al9qjcyzaxvfk63vngyfqbg0k97zshzsg"))))
+        (base32 "0b6h2hgaxmdcl67z8ar25qmf6lxmr7dcvibjq4z97lh7f8fvgkiw"))))
     (properties `((upstream-name . "Statial")))
     (build-system r-build-system)
     (arguments
@@ -5341,13 +5341,13 @@ location.")
 (define-public r-singlecelltk
   (package
     (name "r-singlecelltk")
-    (version "2.18.1")
+    (version "2.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "singleCellTK" version))
        (sha256
-        (base32 "02b7wscz4r38rckbf3y1pjk94kkmvs3l8v1yb7ywgyk319hg6ig3"))))
+        (base32 "0sm36pw6lwddhdi5d4frsryw21zwgnbh8z5di39xcxnwh8www951"))))
     (properties `((upstream-name . "singleCellTK")))
     (build-system r-build-system)
     (arguments
