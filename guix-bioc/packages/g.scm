@@ -2738,13 +2738,13 @@ also included.")
 (define-public r-geometrid
   (package
     (name "r-geometrid")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "geomeTriD" version))
        (sha256
-        (base32 "02a1jy2p04ls17j453xf211pr7fq0a9nfg3m4710dfiyl0dx4h14"))))
+        (base32 "180zaj2msxwxrch23q1213fv7h8a2xmr7ply8dbzaaynhl4ax2jg"))))
     (properties `((upstream-name . "geomeTriD")))
     (build-system r-build-system)
     (arguments

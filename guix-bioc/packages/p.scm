@@ -664,14 +664,14 @@ research and experimental settings.")
 (define-public r-proteingymr
   (package
     (name "r-proteingymr")
-    (version "1.2.4")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ProteinGymR" version
                               'experiment))
        (sha256
-        (base32 "0czlxm1z5bpb096alwb96a3gwpv9244h0b8isbbfdiy70rcd21rm"))))
+        (base32 "1aam99bg30fai26ndln296cy0df8r2vch26y3x8wr05jz1nkz6rc"))))
     (properties `((upstream-name . "ProteinGymR")))
     (build-system r-build-system)
     (arguments
@@ -686,22 +686,12 @@ research and experimental settings.")
                              r-stringr
                              r-spdl
                              r-rlang
-                             r-r3dmol
                              r-queryup
                              r-purrr
-                             r-pals
                              r-lifecycle
                              r-htmltools
-                             r-ggplot2
-                             r-gghalves
-                             r-ggextra
-                             r-ggdist
-                             r-forcats
                              r-experimenthub
                              r-dplyr
-                             r-complexheatmap
-                             r-circlize
-                             r-bio3d
                              r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ccb-hms/ProteinGymR")

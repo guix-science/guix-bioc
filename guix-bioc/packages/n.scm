@@ -1636,13 +1636,13 @@ are included to enable interoperability with other Bioconductor
 (define-public r-nanostringnctools
   (package
     (name "r-nanostringnctools")
-    (version "1.16.1")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NanoStringNCTools" version))
        (sha256
-        (base32 "0bjjnxi7yp9r244mx7mcval71cn68ygbl48fzgqvic8dngymxfih"))))
+        (base32 "104758wfy8a65q4nf6pn90rhaxi4rsjcis701c6385gbaxwqj5m2"))))
     (properties `((upstream-name . "NanoStringNCTools")))
     (build-system r-build-system)
     (arguments

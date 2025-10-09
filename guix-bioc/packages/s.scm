@@ -2295,13 +2295,13 @@ identify outliers spot and large technical artifacts.")
 (define-public r-spotlight
   (package
     (name "r-spotlight")
-    (version "1.12.1")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPOTlight" version))
        (sha256
-        (base32 "1kwx2nx6mh8sw6gj5m5w4i5cn056jxb4sf08jqnq9f0706arzrbp"))))
+        (base32 "0vwviwlzjf962sw1vg9zl2rwy8cbz9s758g0rp9nndxvq1h41qa0"))))
     (properties `((upstream-name . "SPOTlight")))
     (build-system r-build-system)
     (arguments
@@ -3353,13 +3353,13 @@ relationship using a Gaussian Process model per gene.")
 (define-public r-spatialomicsoverlay
   (package
     (name "r-spatialomicsoverlay")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpatialOmicsOverlay" version))
        (sha256
-        (base32 "0dbhml4fybsxdk75nbxk2b39aymgzklki86rp0rz292hk9g8qqs2"))))
+        (base32 "1x46fips9gfzfshr4qvfd8qhxp88lypsglyxa6idwn8db0j33nq7"))))
     (properties `((upstream-name . "SpatialOmicsOverlay")))
     (build-system r-build-system)
     (arguments

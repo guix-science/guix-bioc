@@ -9673,13 +9673,13 @@ CAG@code{EfightR}, or @code{seqArchR}.")
 (define-public r-cageminer
   (package
     (name "r-cageminer")
-    (version "1.14.0")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cageminer" version))
        (sha256
-        (base32 "0qmvzjk08p547qjmjrmgk4n647qmy9v3djdic8hygkkq1ii9ilbp"))))
+        (base32 "1196q6zaaa1mfcgmxdh9j0rvbd4xh787j1l5hfni66ab872bd263"))))
     (properties `((upstream-name . "cageminer")))
     (build-system r-build-system)
     (arguments
