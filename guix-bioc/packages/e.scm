@@ -1890,13 +1890,13 @@ the model object, and 2.  a testing data set used to demonstrate the function.")
 (define-public r-enrichviewnet
   (package
     (name "r-enrichviewnet")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "enrichViewNet" version))
        (sha256
-        (base32 "0qi63zwn78506gryf438w3fdcv0m98v4db5v6wv44f35r74s1khv"))))
+        (base32 "02vdwvl3mrar4wyph0cvdazf7wycj28y560zqm2mbhpplhvhdh9i"))))
     (properties `((upstream-name . "enrichViewNet")))
     (build-system r-build-system)
     (arguments

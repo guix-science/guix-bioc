@@ -576,13 +576,13 @@ the observed expression changes.")
 (define-public r-xcell2
   (package
     (name "r-xcell2")
-    (version "1.0.9")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xCell2" version))
        (sha256
-        (base32 "1k1ab1rsiwzfagf0hd718mrxk5qwc47qjvf2qq3wqvv5fbpq0iqv"))))
+        (base32 "0vxgrp94cydbwjcx4ds3gjfq3hab9bkspqn4ncgzq2h3xka1lv0f"))))
     (properties `((upstream-name . "xCell2")))
     (build-system r-build-system)
     (arguments
@@ -620,13 +620,13 @@ between different cell types using ontology.")
 (define-public r-xaitest
   (package
     (name "r-xaitest")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XAItest" version))
        (sha256
-        (base32 "0i9ks1p3l354pxr9s3k0kjs6b064q9ff7w0qf09prn8cxkivpfig"))))
+        (base32 "0f6if0wq8wfhc27y9n232cadx3jrxarxlad1mgihgi3rb8gak67b"))))
     (properties `((upstream-name . "XAItest")))
     (build-system r-build-system)
     (arguments

@@ -7262,13 +7262,13 @@ analysers.")
 (define-public r-metnet
   (package
     (name "r-metnet")
-    (version "1.26.1")
+    (version "1.26.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetNet" version))
        (sha256
-        (base32 "1pqvlnxa721ncqqmxkc5yyz4rjgca32533fn77acqsa05xiljhwg"))))
+        (base32 "1yh9irw81zi59wl83blbrshymlwd8h89awcdfgbmfm9jzdcgkf1d"))))
     (properties `((upstream-name . "MetNet")))
     (build-system r-build-system)
     (arguments
