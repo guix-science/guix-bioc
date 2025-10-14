@@ -2660,13 +2660,13 @@ interactive Shiny apps that are provided by the package.")
 (define-public r-demuxsnp
   (package
     (name "r-demuxsnp")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "demuxSNP" version))
        (sha256
-        (base32 "02gnqd5myn8j4003hmyawaym43yb571dacd0i2np8sfzldc1v67m"))))
+        (base32 "1mywgv3b5zha1yplf9jwgkw1y1i070n4rv93d0y3gc57xamzk6lj"))))
     (properties `((upstream-name . "demuxSNP")))
     (build-system r-build-system)
     (arguments

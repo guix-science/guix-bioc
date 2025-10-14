@@ -1123,13 +1123,13 @@ analysis of proteomics and metabolomics data.")
 (define-public r-limpca
   (package
     (name "r-limpca")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpca" version))
        (sha256
-        (base32 "0dv8ncklx9pmwx4z9kfaa7ivxi4cd2pbdprjf1a17jvg2a9x4qsk"))))
+        (base32 "0p20q6z6gs0215lh46frq0ib8na71ckz2pccnpqdpqqslkjprv3a"))))
     (properties `((upstream-name . "limpca")))
     (build-system r-build-system)
     (arguments

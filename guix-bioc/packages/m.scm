@@ -244,13 +244,13 @@ using STOCSY; and biological interpretation of MWAS results.")
 (define-public r-musicatk
   (package
     (name "r-musicatk")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "musicatk" version))
        (sha256
-        (base32 "115zg1ypa4jks26zg7rwg8a3pk1nh43c3760dfbk89szyry4vxq9"))))
+        (base32 "021ddcbl0j3k6ybh4kk2qryn1g8m8xzxhk4s38ls5ac49z698hi6"))))
     (properties `((upstream-name . "musicatk")))
     (build-system r-build-system)
     (arguments
@@ -3137,13 +3137,13 @@ assembled using data from public repositories.")
 (define-public r-motiftestr
   (package
     (name "r-motiftestr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifTestR" version))
        (sha256
-        (base32 "0yzv15ca0zchx772xlgwq6b3pzl4dy73xqlycgd7pwj1n939kiid"))))
+        (base32 "1j7njl79ngm3ylb07l220ppr3i063x2b4r0dp5wkryhpxjx5v6h3"))))
     (properties `((upstream-name . "motifTestR")))
     (build-system r-build-system)
     (arguments

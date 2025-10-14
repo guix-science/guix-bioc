@@ -1914,13 +1914,13 @@ the packages @code{ShortRead}, IRanges and @code{genomeIntervals}.")
 (define-public r-gintomics
   (package
     (name "r-gintomics")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gINTomics" version))
        (sha256
-        (base32 "04b1ksazr3l1b1k5rylmswzlfgz5xixgds2n10a1yiqwbbcjkn2p"))))
+        (base32 "0bjxywla6r54km2sz5w2y47vc1kvkn78z1pvp6cc44yyarm5n0sa"))))
     (properties `((upstream-name . "gINTomics")))
     (build-system r-build-system)
     (arguments
@@ -2355,13 +2355,13 @@ manhattan_plot, qqunif, and @code{thinPoints}.")
 (define-public r-ggkegg
   (package
     (name "r-ggkegg")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggkegg" version))
        (sha256
-        (base32 "1cqg5inir80vwhzzd3jc7xs4j4nc7yy0lkiql6qviivrv0zs3yqj"))))
+        (base32 "1g5nzdhb29yqr9g2a8zh0d5n64ajgw3nhl2d1krm06cdmz3dfmly"))))
     (properties `((upstream-name . "ggkegg")))
     (build-system r-build-system)
     (arguments

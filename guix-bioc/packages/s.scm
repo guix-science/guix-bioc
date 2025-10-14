@@ -8000,13 +8000,13 @@ statistic.")
 (define-public r-scruff
   (package
     (name "r-scruff")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scruff" version))
        (sha256
-        (base32 "0pqpz83lc9djjqnjanrg18mcbmgv979s15daz6ndb78l83k8v24r"))))
+        (base32 "1xpv4l75pn78n8z37kq113vas1jxqv30gaywhg9c825rnwdii4vx"))))
     (properties `((upstream-name . "scruff")))
     (build-system r-build-system)
     (arguments
@@ -8023,6 +8023,7 @@ statistic.")
                              r-rsubread
                              r-rsamtools
                              r-plyr
+                             r-patchwork
                              r-parallelly
                              r-ggthemes
                              r-ggplot2
@@ -8608,13 +8609,13 @@ that are shared across cells from the same genetic background.")
 (define-public r-sconify
   (package
     (name "r-sconify")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Sconify" version))
        (sha256
-        (base32 "0mg5ffs28x78c4plp9307hsyrg5hhl9vgy9kn7zpa7dz3pv3x94y"))))
+        (base32 "01x51bzbnjpfm2s6971n6pmrapycda0d64lwi6qhcz20xn1kwi7x"))))
     (properties `((upstream-name . "Sconify")))
     (build-system r-build-system)
     (arguments

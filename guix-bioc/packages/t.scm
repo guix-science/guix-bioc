@@ -2056,13 +2056,13 @@ automates creation of a transomics network as shown in the figure in Yugi.2014
 (define-public r-transmogr
   (package
     (name "r-transmogr")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "transmogR" version))
        (sha256
-        (base32 "1wxr87svf3q7sdyjb4p5pink9kpcypbbchp9s5kyi3k1yg70gkj4"))))
+        (base32 "0x3f82vmvndga10lpyyagdb5jsq05kf9prz5y91wy9gk38m9rghm"))))
     (properties `((upstream-name . "transmogR")))
     (build-system r-build-system)
     (arguments
@@ -2073,7 +2073,7 @@ automates creation of a transomics network as shown in the figure in Yugi.2014
                              r-summarizedexperiment
                              r-scales
                              r-s4vectors
-                             r-rlang
+                             r-patchwork
                              r-matrixstats
                              r-jsonlite
                              r-iranges

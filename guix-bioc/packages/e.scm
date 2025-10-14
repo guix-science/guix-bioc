@@ -135,13 +135,13 @@ microarray data is contained in an @code{ExpressionSet} or MAList object.")
 (define-public r-exploremodelmatrix
   (package
     (name "r-exploremodelmatrix")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ExploreModelMatrix" version))
        (sha256
-        (base32 "0zm0kjx6ckxldq76yaac26s9bm398xk8fqan9p0jwsapp729l085"))))
+        (base32 "0qm0nm6vsxx0h68h20sr6jv9p0f5z9dai05zn61w696vqgzyx13n"))))
     (properties `((upstream-name . "ExploreModelMatrix")))
     (build-system r-build-system)
     (arguments

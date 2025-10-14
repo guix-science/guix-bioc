@@ -302,13 +302,13 @@ local caching of the models and datasets used internally in orthos.")
 (define-public r-orthos
   (package
     (name "r-orthos")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "orthos" version))
        (sha256
-        (base32 "0f742pna8d3iys5sgyzwj1hlj00hqjsgnnzs1pj8rbk1clzdwipp"))))
+        (base32 "1n5i44skgjy2akh2qmcz5bh4ajz6kk9wsq8sv2l0nzy8xma54vh8"))))
     (properties `((upstream-name . "orthos")))
     (build-system r-build-system)
     (arguments
