@@ -3284,13 +3284,13 @@ Rhesus.cdf file.")
 (define-public r-rhdf5client
   (package
     (name "r-rhdf5client")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rhdf5client" version))
        (sha256
-        (base32 "0s4826xj8k12d2dja93n35dip55653vp7h0rb4a7gw67hk6c9853"))))
+        (base32 "0jm2skq216ls9f0j3qd83w804dm30csmc56gjmc8f9jn6lsi3aq3"))))
     (properties `((upstream-name . "rhdf5client")))
     (build-system r-build-system)
     (arguments
@@ -6134,13 +6134,13 @@ using data from public repositories.")
 (define-public r-rarr
   (package
     (name "r-rarr")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rarr" version))
        (sha256
-        (base32 "0xgy7crpl8cx4a31ka3nsvd58jhq3181ihrid69b9cxlbi5dx0r1"))))
+        (base32 "147hln0ng5ac1vfhln086bsw884wkr3vh68iicid92rpb8li3rr9"))))
     (properties `((upstream-name . "Rarr")))
     (build-system r-build-system)
     (arguments

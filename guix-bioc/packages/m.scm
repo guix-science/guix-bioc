@@ -3556,13 +3556,13 @@ different resistances to chemotherapeutic treatments.")
 (define-public r-moonlight2r
   (package
     (name "r-moonlight2r")
-    (version "1.6.0")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Moonlight2R" version))
        (sha256
-        (base32 "1rjldg6kh3iy5sbmj75j0n80hbl75capxv2yrqhabpm608gcax1d"))))
+        (base32 "1477x55v0waxy1sl8xn8hkab01mynx8grypk28qm30rz92v0mcb0"))))
     (properties `((upstream-name . "Moonlight2R")))
     (build-system r-build-system)
     (arguments
@@ -6405,13 +6405,13 @@ packages.")
 (define-public r-miaviz
   (package
     (name "r-miaviz")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miaViz" version))
        (sha256
-        (base32 "005ny26n9w6l7dh0da5112h8g8fnridbsnn23rsphc45dbx9bz1a"))))
+        (base32 "0fd2w78b4v0z4xl1871xkpchd4jpwgv8w3b467b28pglhs02vnip"))))
     (properties `((upstream-name . "miaViz")))
     (build-system r-build-system)
     (arguments
@@ -11383,13 +11383,13 @@ features and phenotype/condition.")
 (define-public r-maaslin3
   (package
     (name "r-maaslin3")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "maaslin3" version))
        (sha256
-        (base32 "14x7kblx19ibdclgj9qsy01w1d916xk88hhf7f4rqf2zl242vrck"))))
+        (base32 "157b4kc4njksa4cwq0szxdlshsm9h9gz9iym3sj1pjq4rijx4c44"))))
     (properties `((upstream-name . "maaslin3")))
     (build-system r-build-system)
     (arguments
