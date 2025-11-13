@@ -11,6 +11,7 @@
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages s)
+  #:use-module (gnu packages duckdb)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)

@@ -18,6 +18,7 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages r)
+  #:use-module (gnu packages duckdb)
   #:use-module (guix-cran packages t)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages l)

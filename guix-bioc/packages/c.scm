@@ -14,6 +14,7 @@
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)
+  #:use-module (gnu packages duckdb)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages k)
