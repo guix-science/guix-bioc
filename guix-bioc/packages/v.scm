@@ -44,14 +44,14 @@
 (define-public r-vulcandata
   (package
     (name "r-vulcandata")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vulcandata" version
                               'experiment))
        (sha256
-        (base32 "15v9v4cchjlpm0wjd7jl1hp8r5wf8xzgnz6d095c5m8bihgf6hbx"))))
+        (base32 "0sgb0jy9ks9j46m13brld21m9xgrwji0922fl22m32b5j7a0yj8i"))))
     (properties `((upstream-name . "vulcandata")))
     (build-system r-build-system)
     (arguments
@@ -67,13 +67,13 @@ running examples in the vulcan package.")
 (define-public r-vulcan
   (package
     (name "r-vulcan")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vulcan" version))
        (sha256
-        (base32 "0pm8kflmm26yvzxb1npas98xpc0d04inzdaf9zgxj3283mdg0ymx"))))
+        (base32 "1m52ai4z96b7kddg1c1cnm33h0w0hyg6r9ny5z8y1zipk6qja8cv"))))
     (properties `((upstream-name . "vulcan")))
     (build-system r-build-system)
     (arguments
@@ -109,13 +109,13 @@ network over a differential binding signature.")
 (define-public r-vtpnet
   (package
     (name "r-vtpnet")
-    (version "0.48.0")
+    (version "0.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vtpnet" version))
        (sha256
-        (base32 "07fc511w8jk38blp4d81km8s71ffnshy6x8jjbfnx1vhfq4rjakj"))))
+        (base32 "0zv8ci26f849k0rhh5c5hkgckymsp18hvqrh922sdf25c1khc8l7"))))
     (properties `((upstream-name . "vtpnet")))
     (build-system r-build-system)
     (arguments
@@ -133,13 +133,13 @@ Science (2012), PMID 22955828.")
 (define-public r-vsclust
   (package
     (name "r-vsclust")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vsclust" version))
        (sha256
-        (base32 "1kackwsy9fp5dk69s89kwdspngz6ak3blffkqx2aj1yj5sbqn6c4"))))
+        (base32 "0gnk0bd3nqzla5fbxpx3zd1612qzq84zpw7hsk2l0f3xgwl1zfr6"))))
     (properties `((upstream-name . "vsclust")))
     (build-system r-build-system)
     (arguments
@@ -150,7 +150,10 @@ Science (2012), PMID 22955828.")
                              r-qvalue
                              r-multiassayexperiment
                              r-matrixstats
-                             r-limma))
+                             r-limma
+                             r-httr
+                             r-dose
+                             r-clusterprofiler))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/vsclust")
     (synopsis "Feature-based variance-sensitive quantitative clustering")
@@ -163,19 +166,20 @@ modules for statistical testing, clustering and enrichment analysis.")
 (define-public r-vplotr
   (package
     (name "r-vplotr")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VplotR" version))
        (sha256
-        (base32 "01qs6cnbb4vb3z5al2irgllg3xk3g6vy4ymb4jjybaz0kykbn8bn"))))
+        (base32 "1ljkd5yzi6yxcy0xcaqhv152vz9qfyg36ks9h24w93gynfjjl6rc"))))
     (properties `((upstream-name . "VplotR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zoo
+                             r-seqinfo
                              r-s4vectors
                              r-rsamtools
                              r-reshape2
@@ -202,13 +206,13 @@ loci of interest.")
 (define-public r-voyager
   (package
     (name "r-voyager")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Voyager" version))
        (sha256
-        (base32 "0q4bk4vgaxynrj2vqdlwv187fplxm86g5myizfwvb6s52q85d039"))))
+        (base32 "1iizz27aa18banbrnv45d1pd9avwal6hwwnv4g1sqjbgz6a69sg5"))))
     (properties `((upstream-name . "Voyager")))
     (build-system r-build-system)
     (arguments
@@ -254,13 +258,13 @@ plotting functions to plot SFE data and ESDA results.")
 (define-public r-vmrseq
   (package
     (name "r-vmrseq")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vmrseq" version))
        (sha256
-        (base32 "1z3l0nnh8q98rj6f2ihr9jknwy4jhjbhxg9q12sf5cz32qxx554a"))))
+        (base32 "138x3i1agw0j4m6i5jpvmfdk3kh9shy4pwzm93h4y8468hpfanm4"))))
     (properties `((upstream-name . "vmrseq")))
     (build-system r-build-system)
     (arguments
@@ -291,6 +295,7 @@ plotting functions to plot SFE data and ESDA results.")
                              r-genomicranges
                              r-gamlss-dist
                              r-dplyr
+                             r-devtools
                              r-delayedarray
                              r-data-table
                              r-bumphunter
@@ -359,13 +364,13 @@ Vitis_Vinifera.cdf file.")
 (define-public r-visse
   (package
     (name "r-visse")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vissE" version))
        (sha256
-        (base32 "0a1z4zjw740p6skm0pxvb7b7x5asdjk5dg2wa12nfc7im0a6nf41"))))
+        (base32 "1k7x0ihb34226xvq39v3hvknwybrwa0makdkq28zazfqlm1rk09g"))))
     (properties `((upstream-name . "vissE")))
     (build-system r-build-system)
     (arguments
@@ -402,13 +407,13 @@ then be investigated for their biological function using text-mining approaches.
 (define-public r-visiumstitched
   (package
     (name "r-visiumstitched")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "visiumStitched" version))
        (sha256
-        (base32 "1rg0bybpbzvxz4wbq0m9fgpbvcz99gdc3dg0rg3sm1shxx1s54xf"))))
+        (base32 "1w41968mlfkc5gmdw3h3jzmirvlnbsarkqirj0j2l4f1fgx2lgs7"))))
     (properties `((upstream-name . "visiumStitched")))
     (build-system r-build-system)
     (arguments
@@ -430,6 +435,7 @@ then be investigated for their biological function using text-mining approaches.
                              r-imager
                              r-dropletutils
                              r-dplyr
+                             r-clue
                              r-biocgenerics
                              r-biocbaseutils))
     (native-inputs (list r-knitr))
@@ -444,7 +450,7 @@ https://github.com/@code{LieberInstitute/visiumStitched_brain}.
 @code{visiumStitched} prepares @code{SpaceRanger} (10x Genomics) output files so
 you can stitch the images from groups of capture areas together with Fiji.  Then
 @code{visiumStitched} builds a @code{SpatialExperiment} object with the stitched
-data and makes an artificial hexogonal grid enabling the seamless use of spatial
+data and makes an artificial hexagonal grid enabling the seamless use of spatial
 clustering methods that rely on such grid to identify neighboring spots, such as
 PRECAST and @code{BayesSpace}.  The @code{SpatialExperiment} objects created by
 @code{visiumStitched} are compatible with @code{spatialLIBD}, which can be used
@@ -456,13 +462,13 @@ Seurat objects.")
 (define-public r-visiumio
   (package
     (name "r-visiumio")
-    (version "1.4.3")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VisiumIO" version))
        (sha256
-        (base32 "0j9yf2n8lvgygkb6l79n4yz64wl1bran1hdpjfggivccpi0c8icv"))))
+        (base32 "0cp81bgry06qlxp2czgj7l5mzzs41vsjmbp59wxhb7aprh9v2amz"))))
     (properties `((upstream-name . "VisiumIO")))
     (build-system r-build-system)
     (arguments
@@ -491,13 +497,13 @@ type of functions.  The package represents data mainly as
 (define-public r-viseago
   (package
     (name "r-viseago")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ViSEAGO" version))
        (sha256
-        (base32 "0hwaq9zlyfrb5yc10i4kbfxgq06b2272b0mb17smd5cmax3i336g"))))
+        (base32 "1mf5nmyp3n4xl555v0h8iypc3640pnc730v39n8wzmnjcq1rm9yz"))))
     (properties `((upstream-name . "ViSEAGO")))
     (build-system r-build-system)
     (arguments
@@ -556,13 +562,13 @@ reproducibility.")
 (define-public r-viper
   (package
     (name "r-viper")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "viper" version))
        (sha256
-        (base32 "090j9vvsi7876hhl15bkfasbicc2rndil6ji6v66b8vk86gdclaz"))))
+        (base32 "1glm6xmbsppi0yhriyn44h32whjy004szn5bq5qmj4jdprqbj4yj"))))
     (properties `((upstream-name . "viper")))
     (build-system r-build-system)
     (arguments
@@ -580,13 +586,13 @@ reproducibility.")
 (define-public r-vidger
   (package
     (name "r-vidger")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vidger" version))
        (sha256
-        (base32 "048sdliqp19726crn1jq0cw67wm237wmcc9sn8qchii4d0fijc4z"))))
+        (base32 "0nhbc0n82xk4qdkmv3d6fsaf7rmwq2hshi68yba6z75vjshkpfpa"))))
     (properties `((upstream-name . "vidger")))
     (build-system r-build-system)
     (arguments
@@ -617,13 +623,13 @@ tools: Cuffdiff, DESeq2, and @code{edgeR}.")
 (define-public r-verso
   (package
     (name "r-verso")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VERSO" version))
        (sha256
-        (base32 "0ldn8ahzy1wlsx2jly2vkcvkgknzqmh7mb573rzk05m9fpaaym7l"))))
+        (base32 "0cg61j5cwp1i9xaj5hknwavjfzq14f1sqkw6zqbghb6bhl99xccx"))))
     (properties `((upstream-name . "VERSO")))
     (build-system r-build-system)
     (arguments
@@ -651,45 +657,54 @@ this package we provide an R implementation of VERSO STEP 1.")
 (define-public r-venndetail
   (package
     (name "r-venndetail")
-    (version "1.23.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VennDetail" version))
        (sha256
-        (base32 "0c64dk2w4azavz2b9455gilimxnmng0ix02bksl4j99868wdfhgh"))))
+        (base32 "00c07hvqk5nmmklkaxqig5zn9j0g2fp1xbisfrjmzckcyjcdmmly"))))
     (properties `((upstream-name . "VennDetail")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-venndiagram
-                             r-upsetr
+    (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-shiny
+                             r-rlang
                              r-purrr
+                             r-plotly
+                             r-patchwork
                              r-magrittr
+                             r-htmlwidgets
                              r-ggplot2
-                             r-futile-logger
+                             r-dt
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/guokai8/VennDetail")
-    (synopsis "package for visualization and extract details")
+    (synopsis
+     "Comprehensive Visualization and Analysis of Multi-Set Intersections")
     (description
-     "This package provides a set of functions to generate high-resolution
-Venn,Vennpie plot,extract and combine details of these subsets with user
-datasets in data frame is available.")
+     "This package provides a comprehensive package for visualizing multi-set
+intersections and extracting detailed subset information. @code{VennDetail}
+generates high-resolution visualizations including traditional Venn diagrams,
+Venn-pie plots, and @code{UpSet-style} plots.  It provides functions to extract
+and combine subset details with user datasets in various formats.  The package
+is particularly useful for bioinformatics applications but can be used for any
+multi-set analysis.")
     (license license:gpl2)))
 
 (define-public r-veloviz
   (package
     (name "r-veloviz")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "veloviz" version))
        (sha256
-        (base32 "1n5xm73iygs8r3r75sibxinm32jh8609dy0ckghfzb0v4kliczcf"))))
+        (base32 "0gkvbcm1aj697fvb5yyw3hd7ysy7dbhz24xjqfnl8n0z3w3b8dvm"))))
     (properties `((upstream-name . "veloviz")))
     (build-system r-build-system)
     (arguments
@@ -714,13 +729,13 @@ underlying cellular trajectories.")
 (define-public r-velociraptor
   (package
     (name "r-velociraptor")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "velociraptor" version))
        (sha256
-        (base32 "0j9gi0p2jgqhzbyfdykwdsphyjg74phdz6fw1r92qz94fs2hpis3"))))
+        (base32 "11752daakbh8gzhg4sg7bcph5m9gl3a7x5vsg21hiplayh5vsw25"))))
     (properties `((upstream-name . "velociraptor")))
     (build-system r-build-system)
     (arguments
@@ -753,13 +768,13 @@ of the @code{SingleCellExperiment} class.")
 (define-public r-vegamc
   (package
     (name "r-vegamc")
-    (version "3.46.0")
+    (version "3.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VegaMC" version))
        (sha256
-        (base32 "0xxbpynwgaywrgkazd97shkk34yl3skhgbms1vxgypgrzhhhhiag"))))
+        (base32 "0b90r3960ghkqp12spj6hkm113r8bbpkl0j68w0mg2070dihdbh4"))))
     (properties `((upstream-name . "VegaMC")))
     (build-system r-build-system)
     (arguments
@@ -785,14 +800,14 @@ is reported.")
 (define-public r-vectrapolarisdata
   (package
     (name "r-vectrapolarisdata")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VectraPolarisData" version
                               'experiment))
        (sha256
-        (base32 "0wmyxfq96bwv8i0yywz0ib348m4wkkj1knpjndiay940b2m2d4qk"))))
+        (base32 "08bnkvj618iysnrsccrwx6ymr6chv2mgiw6jv4k4ix1apf5snnhs"))))
     (properties `((upstream-name . "VectraPolarisData")))
     (build-system r-build-system)
     (arguments
@@ -817,13 +832,13 @@ not included.")
 (define-public r-vdjdive
   (package
     (name "r-vdjdive")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VDJdive" version))
        (sha256
-        (base32 "102ldkmabxw755y32yxba6604a61gxlsrn5a1zpk8qh4l54zpvj6"))))
+        (base32 "03vz55d7lpclrw059hp914ak5jrhbmc20kp1siylz2m2izbz7vyy"))))
     (properties `((upstream-name . "VDJdive")))
     (build-system r-build-system)
     (arguments
@@ -856,13 +871,13 @@ quantification.")
 (define-public r-vcfarray
   (package
     (name "r-vcfarray")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VCFArray" version))
        (sha256
-        (base32 "1az9sk8xydmpqlb3xcv5df11gpmcy1b12nq33svka1h0gxi1ynlj"))))
+        (base32 "1j0ckv4d7a6nzxc53sih30kdb3l4bbk6db53zkv0hz4bpdzq6mrw"))))
     (properties `((upstream-name . "VCFArray")))
     (build-system r-build-system)
     (arguments
@@ -889,13 +904,13 @@ dimensions.")
 (define-public r-vbmp
   (package
     (name "r-vbmp")
-    (version "1.76.0")
+    (version "1.78.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "vbmp" version))
        (sha256
-        (base32 "107fdsascnkf2sddqg6n3ncc4b2qiknhx9s74lg05lbzr2p1i12q"))))
+        (base32 "0cnswf82mzb5i36p2asv73rxxjbmdzp0silqfpl3xvh7j8dwqmsw"))))
     (properties `((upstream-name . "vbmp")))
     (build-system r-build-system)
     (arguments
@@ -914,13 +929,13 @@ feature weighting by means of Automatic Relevance Determination.")
 (define-public r-vasp
   (package
     (name "r-vasp")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VaSP" version))
        (sha256
-        (base32 "0d7rn0v0w5a71703ivw590f93qaa7720zpa9zaqzy24bg4nh19gn"))))
+        (base32 "0nmjic140biq4rfi7gq2kwh4vk7bicqwmkc4ww93c1lwl674znd0"))))
     (properties `((upstream-name . "VaSP")))
     (build-system r-build-system)
     (arguments
@@ -950,14 +965,14 @@ If you want to use it, please change back to an older version.).")
 (define-public r-varianttoolsdata
   (package
     (name "r-varianttoolsdata")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VariantToolsData" version
                               'experiment))
        (sha256
-        (base32 "1l1pkigx88ds5kp698lg1a0sa7l0f0ydy0zgzqn3i41168hs5lzc"))))
+        (base32 "0cg2cv1l9hyxakdmk0zzk91yy2wcw2lkax8903bbczx9gh70rj91"))))
     (properties `((upstream-name . "VariantToolsData")))
     (build-system r-build-system)
     (arguments
@@ -975,13 +990,13 @@ NA12878 (CEU) and NA19240 (YRI), subset to the TP53 region.")
 (define-public r-variantexperiment
   (package
     (name "r-variantexperiment")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VariantExperiment" version))
        (sha256
-        (base32 "112w5sqkvx4vi50z9n6h2xxjrh4ir9n35k3zybvxmv0glksamizg"))))
+        (base32 "12y7jafybsr74mjgfph87kxhj990bf9v795n3yj1mx4m2wiw211l"))))
     (properties `((upstream-name . "VariantExperiment")))
     (build-system r-build-system)
     (arguments
@@ -1018,13 +1033,13 @@ Bioconductor.")
 (define-public r-varcon
   (package
     (name "r-varcon")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VarCon" version))
        (sha256
-        (base32 "0ssv561x3ippngwc64s1drf4ls7r93c082klkr2ayly1wp93kcyn"))))
+        (base32 "0fancb3r8r8kdzg0668fdjjx08q9zr0hp94ssyiyi20jsvwia0cq"))))
     (properties `((upstream-name . "VarCon")))
     (build-system r-build-system)
     (arguments
@@ -1057,13 +1072,13 @@ SNV.")
 (define-public r-vanillaice
   (package
     (name "r-vanillaice")
-    (version "1.70.1")
+    (version "1.72.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VanillaICE" version))
        (sha256
-        (base32 "0d2r25msysal3142gn804hmmr2pbwrsy508l5znqgh2wvzpynnk6"))))
+        (base32 "0n7ir8r23pf9mazgrmyqyr8d1h1n7pm7p995p1ip0rq4cvbdmz96"))))
     (properties `((upstream-name . "VanillaICE")))
     (build-system r-build-system)
     (arguments
@@ -1094,13 +1109,13 @@ throughput SNP arrays.")
 (define-public r-vaexprs
   (package
     (name "r-vaexprs")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VAExprs" version))
        (sha256
-        (base32 "1g4n28m54kmswfqklfkv8ssdqzfzywv7vwjkglf74z98plymhrc0"))))
+        (base32 "0ypi6hhqlkv80fgpg36jfsm365ibljsj4h3nn6yqazigaisi7y4c"))))
     (properties `((upstream-name . "VAExprs")))
     (build-system r-build-system)
     (arguments

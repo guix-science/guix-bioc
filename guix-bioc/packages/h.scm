@@ -7,13 +7,10 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
-  #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages a)
-  #:use-module (guix-cran packages m)
-  #:use-module (guix-cran packages p)
-  #:use-module (guix-cran packages s)
-  #:use-module (gnu packages web)
+  #:use-module (guix-cran packages r)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages g)
@@ -44,58 +41,16 @@
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
 
-(define-public r-hyper
-  (package
-    (name "r-hyper")
-    (version "2.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "hypeR" version))
-       (sha256
-        (base32 "1c4ag9k8f91xyz3b57qrykj8kn467fh31lh41xw7vh1w7kwb0vjb"))))
-    (properties `((upstream-name . "hypeR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-visnetwork
-                             r-stringr
-                             r-shiny
-                             r-scales
-                             r-rmarkdown
-                             r-rlang
-                             r-reshape2
-                             r-reactable
-                             r-r6
-                             r-purrr
-                             r-openxlsx
-                             r-msigdbr
-                             r-magrittr
-                             r-kableextra
-                             r-igraph
-                             r-httr
-                             r-htmltools
-                             r-ggplot2
-                             r-ggforce
-                             r-dplyr
-                             r-biocstyle))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/montilab/hypeR")
-    (synopsis "An R Package For Geneset Enrichment Workflows")
-    (description "An R Package for Geneset Enrichment Workflows.")
-    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
 (define-public r-hybridexpress
   (package
     (name "r-hybridexpress")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HybridExpress" version))
        (sha256
-        (base32 "0d0519kb7sjhnfap93mhxlsfi4mah2s21p7g79bdaks419j8s4c2"))))
+        (base32 "1awlw7q3c60qs507dy3dcvip3si2ds4qjpl9bc4fzy7wjnc2nfym"))))
     (properties `((upstream-name . "HybridExpress")))
     (build-system r-build-system)
     (arguments
@@ -149,6 +104,30 @@ commonly used in the literature.")
 hwgcod) assembled using data from public repositories.")
     (license license:artistic2.0)))
 
+(define-public r-hvp
+  (package
+    (name "r-hvp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "HVP" version))
+       (sha256
+        (base32 "0j2alj0a976lj056lhikapw48kfcdd1xn08d5gclnnwhr0d0nif1"))))
+    (properties `((upstream-name . "HVP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/HVP")
+    (synopsis "Hierarchical Variance Partitioning")
+    (description
+     "HVP is a quantitative batch effect metric that estimates the proportion of
+variance associated with batch effects in a data set.")
+    (license license:expat)))
+
 (define-public r-huo22-db
   (package
     (name "r-huo22-db")
@@ -176,13 +155,13 @@ assembled using data from public repositories.")
 (define-public r-hummingbird
   (package
     (name "r-hummingbird")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hummingbird" version))
        (sha256
-        (base32 "0k9rvgfmgj33n2qzdz8b9mp1nxnsf9kk6k3qin5shiacdfa97ir3"))))
+        (base32 "1aiv1aavc6al6hv05828alqmnf6q8af126aa3na3m0zvfjvaf2fa"))))
     (properties `((upstream-name . "hummingbird")))
     (build-system r-build-system)
     (arguments
@@ -209,14 +188,14 @@ in either or both of the two comparison groups.")
 (define-public r-humanstemcell
   (package
     (name "r-humanstemcell")
-    (version "0.48.0")
+    (version "0.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "humanStemCell" version
                               'experiment))
        (sha256
-        (base32 "1g4yvxhfmfibb3mz0y1rb1699qasrpp4xgz5z719lbv97w051196"))))
+        (base32 "1vynp6rm0fn4p5x7hmksl5zyga3vr4qaxy9jsv3r2ckcqbfyxfl8"))))
     (properties `((upstream-name . "humanStemCell")))
     (build-system r-build-system)
     (arguments
@@ -325,14 +304,14 @@ package.")
 (define-public r-humanhippocampus2024
   (package
     (name "r-humanhippocampus2024")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "humanHippocampus2024" version
                               'experiment))
        (sha256
-        (base32 "06n4qx0j4drmkampwwbsiclz4cyv6r7r35yqaf6xlrv2pxp694b2"))))
+        (base32 "1ykr2z2wmakdg2990my8wmq4m6pinavmrna67rys8alwyl2qk7fq"))))
     (properties `((upstream-name . "humanHippocampus2024")))
     (build-system r-build-system)
     (arguments
@@ -405,14 +384,14 @@ data repositories.")
 (define-public r-humanaffydata
   (package
     (name "r-humanaffydata")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HumanAffyData" version
                               'experiment))
        (sha256
-        (base32 "0pcpf4dw0fzr7jb32qhf0kj0ci2xzih16k3qscdyijybp5kvjw2a"))))
+        (base32 "0ax8wvz0i26awn04kz54li1vr2cnzmpkgjk8fivaq331s571c1zk"))))
     (properties `((upstream-name . "HumanAffyData")))
     (build-system r-build-system)
     (arguments
@@ -599,14 +578,14 @@ package.")
 (define-public r-human-db0
   (package
     (name "r-human-db0")
-    (version "3.21.0")
+    (version "3.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "human.db0" version
                               'annotation))
        (sha256
-        (base32 "0p5h54bz1qkc9812mfsmbxkj9m4xrb7nb17z1xi69vny03pxzw3v"))))
+        (base32 "1fmmc3rk0pv1yi25lnpgfcvvs2zahjqg4ckf27v2w1y150klvk02"))))
     (properties `((upstream-name . "human.db0")))
     (build-system r-build-system)
     (arguments
@@ -1047,13 +1026,13 @@ from public repositories.")
 (define-public r-hubpub
   (package
     (name "r-hubpub")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HubPub" version))
        (sha256
-        (base32 "05w075lp72b0njkf13mvsfy2q1c35bljy9srcczd8f9kvh79n73s"))))
+        (base32 "0vfjwncf9b9swngm360xfy7mblmw6bymqgs77v9qc3qd2wswydg8"))))
     (properties `((upstream-name . "HubPub")))
     (build-system r-build-system)
     (arguments
@@ -1080,13 +1059,13 @@ as well as publish data to the Bioconductor S3 bucket.")
 (define-public r-hubmapr
   (package
     (name "r-hubmapr")
-    (version "1.2.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HuBMAPR" version))
        (sha256
-        (base32 "1si9l6f029rjwa2jpgf1nmdkn8n1rfvvyhcaj6yrda6pyb0kpq8q"))))
+        (base32 "0frk061x9f1h5ypvnkqm1j940aqzysla6x095wll9f17vjl29zpx"))))
     (properties `((upstream-name . "HuBMAPR")))
     (build-system r-build-system)
     (arguments
@@ -1584,13 +1563,13 @@ assembled using data from public repositories.")
 (define-public r-htsfilter
   (package
     (name "r-htsfilter")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HTSFilter" version))
        (sha256
-        (base32 "16k9rhbhm24almk2sclsn4w3rp681pmv171y8w8w65mcrl9x3hm9"))))
+        (base32 "0fk74glws1gf07wz630afjfifvqn5gcacli01l3q5knwhf94x2an"))))
     (properties `((upstream-name . "HTSFilter")))
     (build-system r-build-system)
     (arguments
@@ -2443,68 +2422,23 @@ assembled using data from public repositories.")
 using data from public repositories.")
     (license license:artistic2.0)))
 
-(define-public r-hpip
-  (package
-    (name "r-hpip")
-    (version "1.14.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "HPiP" version))
-       (sha256
-        (base32 "0dbpzacyhwv0080ql3p3gsrmclb5sil9rj3kh2lf7b61qsikh701"))))
-    (properties `((upstream-name . "HPiP")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-prroc
-                             r-protr
-                             r-proc
-                             r-mcl
-                             r-magrittr
-                             r-igraph
-                             r-httr
-                             r-ggplot2
-                             r-dplyr
-                             r-corrplot
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mrbakhsh/HPiP")
-    (synopsis "Host-Pathogen Interaction Prediction")
-    (description
-     "H@code{PiP} (Host-Pathogen Interaction Prediction) uses an ensemble learning
-algorithm for prediction of host-pathogen protein-protein interactions (HP-PPIs)
-using structural and physicochemical descriptors computed from amino
-acid-composition of host and pathogen proteins.The proposed package can
-effectively address data shortages and data unavailability for HP-PPI network
-reconstructions.  Moreover, establishing computational frameworks in that regard
-will reveal mechanistic insights into infectious diseases and suggest potential
-HP-PPI targets, thus narrowing down the range of possible candidates for
-subsequent wet-lab experimental validations.")
-    (license license:expat)))
-
 (define-public r-hpannot
   (package
     (name "r-hpannot")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hpAnnot" version
                               'annotation))
        (sha256
-        (base32 "1rnvmwyjq6vd6bh8a8y8gsw07kd4184h1a02i6aapp0szfghq9bp"))))
+        (base32 "0bkfcj9igi7ylhf3arszqnqzaxsxvfv2gn2smzx6ymzq5a8sc0yg"))))
     (properties `((upstream-name . "hpAnnot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
+    (propagated-inputs (list r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/hpAnnot")
     (synopsis "Anotation package for Hipathia package")
@@ -2522,13 +2456,13 @@ each pathway.  Hipathia depends on this package to be functional.")
 (define-public r-hpaanalyze
   (package
     (name "r-hpaanalyze")
-    (version "1.26.1")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HPAanalyze" version))
        (sha256
-        (base32 "0lsrk41g8hfpk4jrm6wyl41wlk5pkiy5vr5gcn3zdqn7zg133v28"))))
+        (base32 "1mvn9gxlvsgy8688lrxa1an4mhxr6hhawqqqkxzwgnk68hra9n10"))))
     (properties `((upstream-name . "HPAanalyze")))
     (build-system r-build-system)
     (arguments
@@ -2556,13 +2490,13 @@ desired.")
 (define-public r-hopach
   (package
     (name "r-hopach")
-    (version "2.68.0")
+    (version "2.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hopach" version))
        (sha256
-        (base32 "1p6cjcs0jws31v53kys3az4hlln92mr1wq711n71p2xmxj3bs69s"))))
+        (base32 "00xbm6lld8w711x226rms020zpn0wi2ri7q59iwg4w4xmdjqq8xh"))))
     (properties `((upstream-name . "hopach")))
     (build-system r-build-system)
     (arguments
@@ -2585,13 +2519,13 @@ that each element belongs to each cluster (fuzzy clustering).")
 (define-public r-hoodscanr
   (package
     (name "r-hoodscanr")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hoodscanR" version))
        (sha256
-        (base32 "02xp81p1x8h2hykr3g70zm7ig86ljjz3rxsiy1p7j9xcp3fbkzjw"))))
+        (base32 "1fxf2zixbcz5g6nncgkdbiz4gb4iv2d085jz1li8cd6l2fxsyab1"))))
     (properties `((upstream-name . "hoodscanR")))
     (build-system r-build-system)
     (arguments
@@ -2624,14 +2558,14 @@ neighborhood colocalization analysis and neighborhood-based cell clustering.")
 (define-public r-homosapiendee2cellscore
   (package
     (name "r-homosapiendee2cellscore")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "homosapienDEE2CellScore" version
                               'experiment))
        (sha256
-        (base32 "1b34l52z6kiwaxfqajsz7h83a3cwkx1j4nznvm7c3q0lb8nzhfbb"))))
+        (base32 "067qjsjd5xrkgpx64rlxv4mf7mpvx8djrw449xiyc30g5d8v1mfx"))))
     (properties `((upstream-name . "homosapienDEE2CellScore")))
     (build-system r-build-system)
     (arguments
@@ -2663,13 +2597,13 @@ package was built as a way to generate and store canonical test data for
 (define-public r-holofoodr
   (package
     (name "r-holofoodr")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HoloFoodR" version))
        (sha256
-        (base32 "1siw3q0byd9vw892kg4rv40jp1d9v001gwfiwzlwn4vpni6hqrjg"))))
+        (base32 "1y7q3kldwdmj57jd6wy24ss0fw254sy6794lllhd98r2crp7qqv9"))))
     (properties `((upstream-name . "HoloFoodR")))
     (build-system r-build-system)
     (arguments
@@ -2677,6 +2611,7 @@ package was built as a way to generate and store canonical test data for
       #:tests? #f))
     (propagated-inputs (list r-treesummarizedexperiment
                              r-summarizedexperiment
+                             r-stringi
                              r-s4vectors
                              r-multiassayexperiment
                              r-jsonlite
@@ -2695,14 +2630,14 @@ loading of data into formats optimized for downstream analytics.")
 (define-public r-hmp2data
   (package
     (name "r-hmp2data")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HMP2Data" version
                               'experiment))
        (sha256
-        (base32 "1v226ysyjfp248bgqdrh4br8g9pb4q5nzblzs8fz1hqny3znj7x3"))))
+        (base32 "0vmx3pc0vfalarjzbblysb9ji191gkr51rhpbkpsa893dp361q5w"))))
     (properties `((upstream-name . "HMP2Data")))
     (build-system r-build-system)
     (arguments
@@ -2739,14 +2674,14 @@ also provided in the package.")
 (define-public r-hmp16sdata
   (package
     (name "r-hmp16sdata")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HMP16SData" version
                               'experiment))
        (sha256
-        (base32 "1bji8wz09k7lvmk3b2dka4ds18a7y7gv3v09yzacvm0q16dqz5hj"))))
+        (base32 "0dp0lbfa5h9613vbv2fj2zmi6r846zq1dfcz7vlhxynmhc229ib1"))))
     (properties `((upstream-name . "HMP16SData")))
     (build-system r-build-system)
     (arguments
@@ -2782,13 +2717,13 @@ HMP Data Analysis and Coordination Center.  Processed data is provided as
 (define-public r-hmdbquery
   (package
     (name "r-hmdbquery")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hmdbQuery" version))
        (sha256
-        (base32 "0qd610p0cksa1l3vbmrfzxszvrpbc2b4q24537dq7cbkf7vrwdri"))))
+        (base32 "1zasi8mb3pi5yxz2w7v7b5zwmkb8syl0ir41gafz0mq9pab3yj3a"))))
     (properties `((upstream-name . "hmdbQuery")))
     (build-system r-build-system)
     (arguments
@@ -2831,14 +2766,14 @@ PRTPlus 2.CDF file.")
 (define-public r-hivcdnavantwout03
   (package
     (name "r-hivcdnavantwout03")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HIVcDNAvantWout03" version
                               'experiment))
        (sha256
-        (base32 "0yjpl0y7pmcaqhfq06axignhx421madppyn2rff8xhf27ikz3lqd"))))
+        (base32 "1175j53352601v2dmgh8pihii3fj4yy9c87ij3qxw3dsmg28dx9c"))))
     (properties `((upstream-name . "HIVcDNAvantWout03")))
     (build-system r-build-system)
     (arguments
@@ -2861,13 +2796,13 @@ channel 2 (hiv2raw).")
 (define-public r-hireewas
   (package
     (name "r-hireewas")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HIREewas" version))
        (sha256
-        (base32 "105jw39xfm4l7c2ncliba2ismc9xw0chdzkhscd772g9nz20avhs"))))
+        (base32 "15s30lyw9nj63iar93pad6ciccb0ak1iyhpvdj14hc8j03gbgplh"))))
     (properties `((upstream-name . "HIREewas")))
     (build-system r-build-system)
     (arguments
@@ -2891,53 +2826,16 @@ methods but also enables the detection of risk-@code{CpG} sites for individual
 cell types.  The \"HIREewas\" R package is to implement HIRE model in R.")
     (license license:gpl2+)))
 
-(define-public r-hireadsprocessor
-  (package
-    (name "r-hireadsprocessor")
-    (version "1.44.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "hiReadsProcessor" version))
-       (sha256
-        (base32 "0xql5p20cqhwb5j13l643lshhrns45n4hg15x8lbk24r2zmb8azi"))))
-    (properties `((upstream-name . "hiReadsProcessor")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list))
-    (propagated-inputs (list r-soniclength
-                             r-readxl
-                             r-pwalign
-                             r-hiannotator
-                             r-genomicranges
-                             r-genomicalignments
-                             r-dplyr
-                             r-biostrings
-                             r-biocparallel
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/hiReadsProcessor")
-    (synopsis "Functions to process LM-PCR reads from 454/Illumina data")
-    (description
-     "@code{hiReadsProcessor} contains set of functions which allow users to process
-LM-PCR products sequenced using any platform.  Given an excel/txt file
-containing parameters for demultiplexing and sample metadata, the functions
-automate trimming of adaptors and identification of the genomic product.
-Genomic products are further processed for QC and abundance quantification.")
-    (license license:gpl3)))
-
 (define-public r-hippo
   (package
     (name "r-hippo")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HIPPO" version))
        (sha256
-        (base32 "0k43hcl0byjyi496g73xq8b23mn20m1i0zlfvf1vand6cwrs4zdh"))))
+        (base32 "19yhqi6558nkr7z7acpnz5ssbdwq40jaiklgmkrggp0ajgqzwgjj"))))
     (properties `((upstream-name . "HIPPO")))
     (build-system r-build-system)
     (arguments
@@ -2966,76 +2864,16 @@ faster than other existing methods since it only relies on PCA+Kmeans rather
 than graph-clustering or consensus clustering.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
-(define-public r-hipathia
-  (package
-    (name "r-hipathia")
-    (version "3.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "hipathia" version))
-       (sha256
-        (base32 "0lplbzcxgb1x5y5rqxr2jbl3a5fg7xh26p2i96mx39mmz8xvwnz0"))))
-    (properties `((upstream-name . "hipathia")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-visnetwork
-                             r-tibble
-                             r-summarizedexperiment
-                             r-servr
-                             r-s4vectors
-                             r-reshape2
-                             r-preprocesscore
-                             r-multiassayexperiment
-                             r-metbrewer
-                             r-matrixstats
-                             r-limma
-                             r-igraph
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-delayedarray
-                             r-coin
-                             r-annotationhub))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://bioconductor.org/packages/hipathia")
-    (synopsis "HiPathia: High-throughput Pathway Analysis")
-    (description
-     "Hipathia is a method for the computation of signal transduction along signaling
-pathways from transcriptomic data.  The method is based on an iterative
-algorithm which is able to compute the signal intensity passing through the
-nodes of a network by taking into account the level of expression of each gene
-and the intensity of the signal arriving to it.  It also provides a new approach
-to functional analysis allowing to compute the signal arriving to the functions
-annotated to each pathway.")
-    (license license:gpl2)))
-
 (define-public r-hilda
   (package
     (name "r-hilda")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiLDA" version))
        (sha256
-        (base32 "1zyf3z2p9ln3zxpqqb18zyn4c8yr6jccagc8wfya6yvp42f2h95y"))))
+        (base32 "15jh2brpk0kz15hra2h3fw5fygarxi5dgd6d1cmrbx4pxizg9lbc"))))
     (properties `((upstream-name . "HiLDA")))
     (build-system r-build-system)
     (arguments
@@ -3072,13 +2910,13 @@ visualization.")
 (define-public r-hilbertvisgui
   (package
     (name "r-hilbertvisgui")
-    (version "1.66.1")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HilbertVisGUI" version))
        (sha256
-        (base32 "0pavdk7szz82vzplw5pk4zch6sq89s6xvzy2q6aq8i1mf6bb3f4i"))))
+        (base32 "0c5fvhplpqmap0nsc04mlmybb5d092y655lyj771b1hpp40yd0dh"))))
     (properties `((upstream-name . "HilbertVisGUI")))
     (build-system r-build-system)
     (arguments
@@ -3097,13 +2935,13 @@ Hilbert curves.")
 (define-public r-hilbertvis
   (package
     (name "r-hilbertvis")
-    (version "1.66.1")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HilbertVis" version))
        (sha256
-        (base32 "0mgj5m062nyh2f29xjmcwjhv5hqhj8138vhik8c8qn1x1wg2ddlj"))))
+        (base32 "0x7bvirqibj0bykhv4f1qji8mbrsm288l9d901jjbvrwd0nfmh04"))))
     (properties `((upstream-name . "HilbertVis")))
     (build-system r-build-system)
     (arguments
@@ -3120,13 +2958,13 @@ means of Hilbert curves.")
 (define-public r-hilbertcurve
   (package
     (name "r-hilbertcurve")
-    (version "2.2.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HilbertCurve" version))
        (sha256
-        (base32 "08n25ybwmd5dwd8hl13pfnsni7m7l1irpijfryn649sgigg2nx96"))))
+        (base32 "0c9j2isy67012hyzfy8m30l900r9g4cfkcir1jvkcl3p8ndk74pj"))))
     (properties `((upstream-name . "HilbertCurve")))
     (build-system r-build-system)
     (arguments
@@ -3151,14 +2989,14 @@ Hilbert curve.")
 (define-public r-hiiragi2013
   (package
     (name "r-hiiragi2013")
-    (version "1.44.2")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Hiiragi2013" version
                               'experiment))
        (sha256
-        (base32 "0kl423kr19ai4kz7a5dv3d0swgzp3911pgxyp8qf8kgy952a1rr1"))))
+        (base32 "0zx30v78dn3j7kzsq5ajf58d0n37lvfw0jingqx5llp5bbcx8nd6"))))
     (properties `((upstream-name . "Hiiragi2013")))
     (build-system r-build-system)
     (arguments
@@ -3196,14 +3034,14 @@ Hadjantonakis and T. Hiiragi; Nature Cell Biology (2014) 16(1): 27-37.  doi:
 (define-public r-highlyreplicatedrnaseq
   (package
     (name "r-highlyreplicatedrnaseq")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HighlyReplicatedRNASeq" version
                               'experiment))
        (sha256
-        (base32 "0rmp259r5n0dqf8zn9wwfqlcbdan1qs3ni0f4izv4nj3mym435y9"))))
+        (base32 "075mi739jgr5h5zjxgd5qhqxmpqsqwzmr6dmvga7gmcyslldjkqg"))))
     (properties `((upstream-name . "HighlyReplicatedRNASeq")))
     (build-system r-build-system)
     (arguments
@@ -3228,13 +3066,13 @@ https://github.com/bartongroup/@code{profDGE48}.")
 (define-public r-hierinf
   (package
     (name "r-hierinf")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hierinf" version))
        (sha256
-        (base32 "10d5g0jcjidj4p4rajkg4f45nhgyqbwa6rlpbhwiljjk24lryjin"))))
+        (base32 "1k5i6k6wbz43mf7nsg48idykxr7mi42nc6qmsmpvcj863nkdhm89"))))
     (properties `((upstream-name . "hierinf")))
     (build-system r-build-system)
     (arguments
@@ -3258,13 +3096,13 @@ The functions can easily be run in parallel.")
 (define-public r-hiergwas
   (package
     (name "r-hiergwas")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hierGWAS" version))
        (sha256
-        (base32 "0539jn026704hcn2zdi3srszf1wahsxb5ph79jl7m2hx8hns05zr"))))
+        (base32 "0l58pcyhgxnc56j9gbp6dlw97apa2r67xcvli76ldk1mwpf0hxnb"))))
     (properties `((upstream-name . "hierGWAS")))
     (build-system r-build-system)
     (arguments
@@ -3283,13 +3121,13 @@ groups or single markers.")
 (define-public r-hicvenndiagram
   (package
     (name "r-hicvenndiagram")
-    (version "1.6.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hicVennDiagram" version))
        (sha256
-        (base32 "195chpsj850ypfxa2ibd1ndlfvyya1csq1q21h8gvan0q24k3ha4"))))
+        (base32 "11fc1ykmk0g5gpjxi195hqw2cxn212asarmj0pjcvjzh30k4i12d"))))
     (properties `((upstream-name . "hicVennDiagram")))
     (build-system r-build-system)
     (arguments
@@ -3310,6 +3148,7 @@ groups or single markers.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-svglite
+                             r-seqinfo
                              r-s4vectors
                              r-rtracklayer
                              r-reshape2
@@ -3318,7 +3157,6 @@ groups or single markers.")
                              r-htmlwidgets
                              r-ggplot2
                              r-genomicranges
-                             r-genomeinfodb
                              r-eulerr
                              r-complexupset))
     (native-inputs (list r-knitr esbuild))
@@ -3332,16 +3170,85 @@ specifically crafted to eliminate the deceptive visual representation caused by
 the counts method.")
     (license license:gpl3)))
 
+(define-public r-hicpotts
+  (package
+    (name "r-hicpotts")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "HiCPotts" version))
+       (sha256
+        (base32 "1bx691rszn4qzisjha4k829a3pf7z268k0vqkbg20xqhqisfcw87"))))
+    (properties `((upstream-name . "HiCPotts")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-strawr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rhdf5
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-iranges
+                             r-genomicranges
+                             r-bsgenome-dmelanogaster-ucsc-dm6
+                             r-bsgenome
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/igosungithub/HiCPotts")
+    (synopsis
+     "HiCPotts: Hierarchical Modeling to Identify and Correct Genomic Biases in Hi-C")
+    (description
+     "The @code{HiCPotts} package provides a comprehensive Bayesian framework for
+analyzing Hi-C interaction data, integrating both spatial and genomic biases
+within a probabilistic modeling framework.  At its core, @code{HiCPotts}
+leverages the Potts model (Wu, 1982)—a well-established graphical model—to
+capture and quantify spatial dependencies across interaction loci arranged on a
+genomic lattice.  By treating each interaction as a spatially correlated random
+variable, the Potts model enables robust segmentation of the genomic landscape
+into meaningful components, such as noise, true signals, and false signals.  To
+model the influence of various genomic biases, @code{HiCPotts} employs a
+regression-based approach incorporating multiple covariates: Genomic distance
+(D): The distance between interacting loci, recognized as a fundamental driver
+of contact frequency.  GC-content (GC): The local GC composition around the
+interacting loci, which can influence chromatin structure and interaction
+patterns.  Transposable elements (TEs): The presence and abundance of repetitive
+elements that may shape contact probability through chromatin organization.
+Accessibility score (Acc): A measure of chromatin openness, informing how
+accessible certain genomic regions are to interaction.  By embedding these
+covariates into a hierarchical mixture model, @code{HiCPotts} characterizes each
+interaction’s probability of belonging to one of several latent components.  The
+model parameters, including regression coefficients, zero-inflation parameters
+(for ZIP/ZINB distributions), and dispersion terms (for NB/ZINB distributions),
+are inferred via a MCMC sampler.  This algorithm draws samples from the joint
+posterior distribution, allowing for flexible posterior inference on model
+parameters and hidden states.  From these posterior samples, @code{HiCPotts}
+computes posterior means of regression parameters and other quantities of
+interest.  These posterior estimates are then used to calculate the posterior
+probabilities that assign each interaction to a specific component.  The
+resulting classification sheds light on the underlying structure: distinguishing
+genuine high-confidence interactions (signal) from background noise and
+potential false signals, while simultaneously quantifying the impact of genomic
+biases on observed interaction frequencies.  In summary, @code{HiCPotts}
+seamlessly integrates spatial modeling, bias correction, and probabilistic
+classification into a unified Bayesian inference framework.  It provides rich
+posterior summaries and interpretable, model-based assignments of interaction
+states, enabling researchers to better understand the interplay between genomic
+organization, biases, and spatial correlation in Hi-C data.")
+    (license license:gpl3)))
+
 (define-public r-hicparser
   (package
     (name "r-hicparser")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCParser" version))
        (sha256
-        (base32 "0dq5s8g6p77i1c7gmhzyz86ylqh3r4v77wf5i702cd7d9xzpaz6j"))))
+        (base32 "17jf2br63q3lfw5ndv0r6pzqx73gc2djfzk5wvl8rbx2x5g8zvis"))))
     (properties `((upstream-name . "HiCParser")))
     (build-system r-build-system)
     (arguments
@@ -3349,13 +3256,13 @@ the counts method.")
       #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-summarizedexperiment
+                             r-seqinfo
                              r-s4vectors
                              r-rcpp
                              r-pbapply
                              r-interactionset
                              r-gtools
                              r-genomicranges
-                             r-genomeinfodb
                              r-data-table
                              r-biocgenerics))
     (native-inputs (list r-knitr))
@@ -3369,59 +3276,17 @@ several files, for several replicates and conditions.  The data is formated in
 an @code{InteractionSet} object.")
     (license license:lgpl2.0+)))
 
-(define-public r-hicool
-  (package
-    (name "r-hicool")
-    (version "1.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "HiCool" version))
-       (sha256
-        (base32 "0cnzbi4if3cn0lr78yh4a76kn3pv8c332w69s3l9gsqxvjx16kqs"))))
-    (properties `((upstream-name . "HiCool")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-vroom
-                             r-stringr
-                             r-sessioninfo
-                             r-s4vectors
-                             r-rmdformats
-                             r-rmarkdown
-                             r-reticulate
-                             r-plotly
-                             r-iranges
-                             r-interactionset
-                             r-hicexperiment
-                             r-genomicranges
-                             r-dplyr
-                             r-biocio
-                             r-basilisk))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/js2264/HiCool")
-    (synopsis "HiCool")
-    (description
-     "@code{HiCool} provides an R interface to process and normalize Hi-C paired-end
-fastq reads into .(m)cool files. .(m)cool is a compact, indexed HDF5 file format
-specifically tailored for efficiently storing @code{HiC-based} data.  On top of
-processing fastq reads, @code{HiCool} provides a convenient reporting function
-to generate shareable reports summarizing Hi-C experiments and including quality
-controls.")
-    (license license:expat)))
-
 (define-public r-hicontactsdata
   (package
     (name "r-hicontactsdata")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiContactsData" version
                               'experiment))
        (sha256
-        (base32 "14q8jw3qs52lva9andvqahfcghzgdsgi0sdfnf7yx5jnvayj2w1y"))))
+        (base32 "0r9r9jvvr0fyvxmmgvm8c1bx8svn999q5rv7d9fiysjc1q2njc38"))))
     (properties `((upstream-name . "HiContactsData")))
     (build-system r-build-system)
     (arguments
@@ -3445,13 +3310,13 @@ Koszul lab from the Pasteur Institute.")
 (define-public r-hicontacts
   (package
     (name "r-hicontacts")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiContacts" version))
        (sha256
-        (base32 "1vwyzskp489vclaw43pqc8gwxr81vi4aia2cg0zjazn7wrjyjgzj"))))
+        (base32 "1qanyvd68z3v6x6570hh54ppqmx3k9v8r2z0ykc5a1wa6xi9cwp1"))))
     (properties `((upstream-name . "HiContacts")))
     (build-system r-build-system)
     (arguments
@@ -3488,13 +3353,13 @@ datasets imported in R by @code{HiCExperiment}.")
 (define-public r-hicexperiment
   (package
     (name "r-hicexperiment")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCExperiment" version))
        (sha256
-        (base32 "13ccm1d2k6p4lah9bqq2jqnfba1zm2xk6ifkwy6hzrrxyaxav8xm"))))
+        (base32 "1gx225p1xx576af9f996gaqqkqpiah8ayfgc9x2p449759jh2x7j"))))
     (properties `((upstream-name . "HiCExperiment")))
     (build-system r-build-system)
     (arguments
@@ -3502,13 +3367,13 @@ datasets imported in R by @code{HiCExperiment}.")
       #:tests? #f))
     (propagated-inputs (list r-vroom
                              r-strawr
+                             r-seqinfo
                              r-s4vectors
                              r-rhdf5
                              r-matrix
                              r-iranges
                              r-interactionset
                              r-genomicranges
-                             r-genomeinfodb
                              r-dplyr
                              r-biocparallel
                              r-biocio
@@ -3529,13 +3394,13 @@ class stores the Hi-C contacts parsed from local contact matrix files.
 (define-public r-hicdoc
   (package
     (name "r-hicdoc")
-    (version "1.10.3")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCDOC" version))
        (sha256
-        (base32 "09ybycv9p2ccc9rx6gym8rn1pk37h2gxrqkf1qjz2qf8nh881h3g"))))
+        (base32 "1hd259kdg3w3czcr6fczdsabsbqi62ca2y9ym5brykxwh4ak6i5l"))))
     (properties `((upstream-name . "HiCDOC")))
     (build-system r-build-system)
     (arguments
@@ -3543,6 +3408,7 @@ class stores the Hi-C contacts parsed from local contact matrix files.
       #:tests? #f))
     (inputs (list zlib))
     (propagated-inputs (list r-summarizedexperiment
+                             r-seqinfo
                              r-s4vectors
                              r-rcpp
                              r-pbapply
@@ -3552,7 +3418,6 @@ class stores the Hi-C contacts parsed from local contact matrix files.
                              r-gridextra
                              r-ggplot2
                              r-genomicranges
-                             r-genomeinfodb
                              r-data-table
                              r-cowplot
                              r-biocparallel
@@ -3573,13 +3438,13 @@ type of data: tabular `.tsv` files, Cooler `.cool` or `.mcool` files, Juicer
 (define-public r-hicdcplus
   (package
     (name "r-hicdcplus")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCDCPlus" version))
        (sha256
-        (base32 "1r4y5jn56f02bhxamsrimhrp6mk1gk51xnf6jpgi4g3mpli66yv7"))))
+        (base32 "1mgdj692ds66c46qzqnhszlww59ab32sg1rq9vqhmf9y27vkcj4i"))))
     (properties `((upstream-name . "HiCDCPlus")))
     (build-system r-build-system)
     (arguments
@@ -3625,14 +3490,14 @@ count variation.")
 (define-public r-hicdatalymphoblast
   (package
     (name "r-hicdatalymphoblast")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCDataLymphoblast" version
                               'experiment))
        (sha256
-        (base32 "19d4lzh7hysb0pvragad5gxhkl9vwknc5mdsmwp7sdbwsbcmib2j"))))
+        (base32 "1j2mipl1zgpf9jivfl652pmx0r42pgjjcx2iwq4xml2srvy3yd3f"))))
     (properties `((upstream-name . "HiCDataLymphoblast")))
     (build-system r-build-system)
     (arguments
@@ -3649,14 +3514,14 @@ paired reads were aligned separately with bowtie.")
 (define-public r-hicdatahumanimr90
   (package
     (name "r-hicdatahumanimr90")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCDataHumanIMR90" version
                               'experiment))
        (sha256
-        (base32 "0hnad27xhmf0d0yc5ynl41flqhj9kwhzc9682mgsyg42wvnxjva6"))))
+        (base32 "0ps0ak0gd03b1fm9zazh86qfcp47wkb3mh43vkzqbkcm8sx3b4vx"))))
     (properties `((upstream-name . "HiCDataHumanIMR90")))
     (build-system r-build-system)
     (arguments
@@ -3674,13 +3539,13 @@ were processed as explained in Dixon et al. (Nature 2012).")
 (define-public r-hiccompare
   (package
     (name "r-hiccompare")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCcompare" version))
        (sha256
-        (base32 "1v886calffi7al5aibyc8xdk68vla2mif5y3awb3s03s3cb16n2v"))))
+        (base32 "1q8w2m588pvsnv907mpz2n9q64230m0ijy3wnvzi6iy4wgkcwh6g"))))
     (properties `((upstream-name . "HiCcompare")))
     (build-system r-build-system)
     (arguments
@@ -3724,13 +3589,13 @@ method for detecting differences between Hi-C datasets.")
 (define-public r-hicbricks
   (package
     (name "r-hicbricks")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCBricks" version))
        (sha256
-        (base32 "0gn9n0rgppkwxj4l90aqvaw93mvxaqjfi5h8z52n9azcdb5n91ky"))))
+        (base32 "03fmkg629vsi38r93lxz1mqf38r051hy8l1djwmr6mcfmfcx5dgw"))))
     (properties `((upstream-name . "HiCBricks")))
     (build-system r-build-system)
     (arguments
@@ -3739,6 +3604,7 @@ method for detecting differences between Hi-C datasets.")
     (propagated-inputs (list r-viridis
                              r-tibble
                              r-stringr
+                             r-seqinfo
                              r-scales
                              r-s4vectors
                              r-rhdf5
@@ -3751,7 +3617,6 @@ method for detecting differences between Hi-C datasets.")
                              r-iranges
                              r-ggplot2
                              r-genomicranges
-                             r-genomeinfodb
                              r-digest
                              r-data-table
                              r-curl
@@ -3773,16 +3638,66 @@ algorithms for calling domain boundaries and functions for high quality data
 visualization.")
     (license license:expat)))
 
+(define-public r-hicapture
+  (package
+    (name "r-hicapture")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "HiCaptuRe" version))
+       (sha256
+        (base32 "1h0dc584zqqj4h1k7h8d0y6950r15r1mbwdvsmv29kklpagxbd2j"))))
+    (properties `((upstream-name . "HiCaptuRe")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-upsetr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-s4vectors
+                             r-memoise
+                             r-iranges
+                             r-interactionset
+                             r-igraph
+                             r-gplots
+                             r-ggvenndiagram
+                             r-ggpubr
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicinteractions
+                             r-genomeinfodb
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-bsgenome
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LaureTomas/HiCaptuRe")
+    (synopsis "HiCaptuRe: Manipulating and integrating Capture Hi-C data")
+    (description
+     "Capture Hi-C is a set of techniques that enable the detection of genomic
+interactions involving regions of interest, known as baits.  By focusing on
+selected loci, these approaches reduce sequencing costs while maintaining high
+resolution at the level of restriction fragments. @code{HiCaptuRe} provides
+tools to import, annotate, manipulate, and export Capture Hi-C data.  The
+package accounts for the specific structure of bait–@code{otherEnd}
+interactions, facilitates integration with other omics datasets, and enables
+comparison across samples and conditions.")
+    (license license:gpl3)))
+
 (define-public r-hicaggr
   (package
     (name "r-hicaggr")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HicAggR" version))
        (sha256
-        (base32 "1y8s6dp6ilia1gznv4v09xz7lmhg05h7szharapw0jdqszzygvif"))))
+        (base32 "1dqbbd049slzzlypfsjswaqvxrq724smcm2d4sbjq82ngrlgi9wx"))))
     (properties `((upstream-name . "HicAggR")))
     (build-system r-build-system)
     (arguments
@@ -3793,6 +3708,7 @@ visualization.")
                              r-tibble
                              r-stringr
                              r-strawr
+                             r-seqinfo
                              r-s4vectors
                              r-rtracklayer
                              r-rlang
@@ -3805,7 +3721,6 @@ visualization.")
                              r-gridextra
                              r-ggplot2
                              r-genomicranges
-                             r-genomeinfodb
                              r-dplyr
                              r-data-table
                              r-checkmate
@@ -3832,14 +3747,14 @@ with 3D genomics data, providing an easy access to @code{HiC} contact values.")
 (define-public r-hibed
   (package
     (name "r-hibed")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiBED" version
                               'experiment))
        (sha256
-        (base32 "1alnd1hjyzihp1vl09qslrjndwyffai34qyfdakir9l7wjx0i9fi"))))
+        (base32 "0caphr7ws9bpmhfn8d3yrlarrb8bx71agdjfmj9v1llq973shfvv"))))
     (properties `((upstream-name . "HiBED")))
     (build-system r-build-system)
     (arguments
@@ -3866,13 +3781,13 @@ bulk brain tissues.")
 (define-public r-hibag
   (package
     (name "r-hibag")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HIBAG" version))
        (sha256
-        (base32 "1yrbw13k0w448q0pg4k8ylik84v9lb5khj7ax2fn4gvmhaa26v7w"))))
+        (base32 "1qwq7z1b9w9fpaqwvizgzhlh1x1sb71frb5lmapa07v7vd2ma9l0"))))
     (properties `((upstream-name . "HIBAG")))
     (build-system r-build-system)
     (arguments
@@ -3891,46 +3806,6 @@ method, with haplotype inference for SNPs and HLA types.  Attribute bagging is a
 technique which improves the accuracy and stability of classifier ensembles
 using bootstrap aggregating and random variable selection.")
     (license license:gpl3)))
-
-(define-public r-hiannotator
-  (package
-    (name "r-hiannotator")
-    (version "1.42.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "hiAnnotator" version))
-       (sha256
-        (base32 "17c6v1w4lqiafvyfswf1p2wijzihawgazflwcviiq7dvx5qb0k6z"))))
-    (properties `((upstream-name . "hiAnnotator")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-scales
-                             r-rtracklayer
-                             r-iterators
-                             r-ggplot2
-                             r-genomicranges
-                             r-foreach
-                             r-dplyr
-                             r-bsgenome))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/hiAnnotator")
-    (synopsis "Functions for annotating GRanges objects")
-    (description
-     "@code{hiAnnotator} contains set of functions which allow users to annotate a
-GRanges object with custom set of annotations.  The basic philosophy of this
-package is to take two GRanges objects (query & subject) with common set of
-seqnames (i.e.  chromosomes) and return associated annotation per seqnames and
-rows from the query matching seqnames and rows from the subject (i.e.  genes or
-cpg islands).  The package comes with three types of annotation functions which
-calculates if a position from query is: within a feature, near a feature, or
-count features in defined window sizes.  Moreover, each function is equipped
-with parallel backend to utilize the foreach package.  In addition, the package
-is equipped with wrapper functions, which finds appropriate columns needed to
-make a GRanges object from a common data frame.")
-    (license license:gpl2+)))
 
 (define-public r-hi16cod-db
   (package
@@ -4575,14 +4450,14 @@ HG_U95A.CDF file.")
 (define-public r-hgu2beta7
   (package
     (name "r-hgu2beta7")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hgu2beta7" version
                               'experiment))
        (sha256
-        (base32 "0l63dic4b64r9mc0b68hb1a3mv5yz8iav95a4wxj5xx1fzhqvm0m"))))
+        (base32 "1sbsykivp7fd3fhsrhm8wbmz8sfsdh1yfsqz8hwn92xa9hlvcavm"))))
     (properties `((upstream-name . "hgu2beta7")))
     (build-system r-build-system)
     (arguments
@@ -4720,14 +4595,14 @@ hgu133ahsentrezgcdf version 19.0.0.")
 (define-public r-hgu133plus2cellscore
   (package
     (name "r-hgu133plus2cellscore")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hgu133plus2CellScore" version
                               'experiment))
        (sha256
-        (base32 "1naym2aikpj218l60ivfsfrxmzlvrazja6n6ffd6qzzmsdbxrxy7"))))
+        (base32 "0c1w7n62iiz6nhm1d3rkmwlx4ry7b35jvgdgdh06x0kg1bbcqrqm"))))
     (properties `((upstream-name . "hgu133plus2CellScore")))
     (build-system r-build-system)
     (arguments
@@ -4782,14 +4657,14 @@ HG-U133_Plus_2.cdf file.")
 (define-public r-hgu133plus2barcodevecs
   (package
     (name "r-hgu133plus2barcodevecs")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hgu133plus2barcodevecs" version
                               'experiment))
        (sha256
-        (base32 "0g24k5jnrx9dq9k3w10bc1ffwf6nz4k7pifkq4x6m5g83c8bcrqv"))))
+        (base32 "1579nvs7zrn37s3rdnmj2nfqv7f4ljhi21fz2ih904ps7nm82q1d"))))
     (properties `((upstream-name . "hgu133plus2barcodevecs")))
     (build-system r-build-system)
     (arguments
@@ -4999,14 +4874,14 @@ HG-U133A.cdf file.")
 (define-public r-hgu133abarcodevecs
   (package
     (name "r-hgu133abarcodevecs")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hgu133abarcodevecs" version
                               'experiment))
        (sha256
-        (base32 "1ldx7614bq1mijqppk9x9672k7ddsnnihjdjc887b161bvcx42ml"))))
+        (base32 "1f96v90k5qngcpi7z92g9ngbs28n8ldsy5vdi2xgnzyhwjrsxzpd"))))
     (properties `((upstream-name . "hgu133abarcodevecs")))
     (build-system r-build-system)
     (arguments
@@ -5192,13 +5067,13 @@ using data from public repositories.")
 (define-public r-hgc
   (package
     (name "r-hgc")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HGC" version))
        (sha256
-        (base32 "0n224nv1ylh79xbd9sdp6283zi3dmia5ng1k51wvkl6hq748m4ba"))))
+        (base32 "11ywqqpmfmjqasmzryqcqhrfsjd4whicxy0bcigy18g1fwr1aj83"))))
     (properties `((upstream-name . "HGC")))
     (build-system r-build-system)
     (arguments
@@ -5231,13 +5106,13 @@ built for R 3.6.")
 (define-public r-herper
   (package
     (name "r-herper")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Herper" version))
        (sha256
-        (base32 "1x4f11rrnf9sy496w2m94jrrs1ljidkswwyr645h3dcd6rf6igks"))))
+        (base32 "0ascr9kfk6wxbg6hav0ygkxcb88cqg7fphfa5s43hpiqmkvx6h25"))))
     (properties `((upstream-name . "Herper")))
     (build-system r-build-system)
     (arguments
@@ -5263,13 +5138,13 @@ internally support these system requirments pre-hoc.")
 (define-public r-heron
   (package
     (name "r-heron")
-    (version "1.6.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HERON" version))
        (sha256
-        (base32 "0wcfbvy367jjyjw3qpi08knv2kqz528f6grrnlfgcmnlwzxbdr9j"))))
+        (base32 "1s46g0l2yj7kxqw9bm0xj0ymxbbjhr2yq9zflapn5a0acnn764zv"))))
     (properties `((upstream-name . "HERON")))
     (build-system r-build-system)
     (arguments
@@ -5302,13 +5177,13 @@ on the sample level and calculates fractions of hits for different conditions.")
 (define-public r-hermes
   (package
     (name "r-hermes")
-    (version "1.12.1")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hermes" version))
        (sha256
-        (base32 "0vlh3dg1a7kxgw6i3pcsn1xbs06b1s9i7hn946pm0fkcqappfx5n"))))
+        (base32 "0ylqg4jhsv1qqd2663jskn2r1m6f79snx0pisn8i3p6yh7n2cpi8"))))
     (properties `((upstream-name . "hermes")))
     (build-system r-build-system)
     (arguments
@@ -5325,7 +5200,6 @@ on the sample level and calculates fractions of hits for different conditions.")
                              r-matrixstats
                              r-magrittr
                              r-limma
-                             r-lifecycle
                              r-iranges
                              r-ggrepel
                              r-ggplot2
@@ -5344,7 +5218,7 @@ on the sample level and calculates fractions of hits for different conditions.")
                              r-biobase
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/insightsengineering/hermes/")
+    (home-page "https://insightsengineering.github.io/hermes/")
     (synopsis "Preprocessing, analyzing, and reporting of RNA-seq data")
     (description
      "This package provides classes and functions for quality control, filtering,
@@ -5361,13 +5235,13 @@ analyses are available.")
 (define-public r-hem
   (package
     (name "r-hem")
-    (version "1.80.0")
+    (version "1.82.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HEM" version))
        (sha256
-        (base32 "12lb81lasxwazczibpydppbn2z64qfkcpbaa08f959i1gridf98b"))))
+        (base32 "0c78k48znjj9h5hbb4q8pamdjddcq7xpkc4isgvf6lr7ih9p26ka"))))
     (properties `((upstream-name . "HEM")))
     (build-system r-build-system)
     (arguments
@@ -5385,13 +5259,13 @@ analyses are available.")
 (define-public r-help
   (package
     (name "r-help")
-    (version "1.66.0")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HELP" version))
        (sha256
-        (base32 "1r63qfp77mm61yz7iz2hjgfcji028zsrkdxhk88m9w9adchi4fvp"))))
+        (base32 "1n0c5s2pr1xqr0amsaf6ibdria0hpk7aavw5x74j5h2lgy438irh"))))
     (properties `((upstream-name . "HELP")))
     (build-system r-build-system)
     (arguments
@@ -5408,14 +5282,14 @@ and includes graphical and mathematical tools with more general applications.")
 (define-public r-heebodata
   (package
     (name "r-heebodata")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HEEBOdata" version
                               'experiment))
        (sha256
-        (base32 "0lnacy70q33k0fr67jbwn597dh2fzdxnr6pg9b0xry8n5bj8sk4a"))))
+        (base32 "0028dg3p40hs84vy6c3cdmv36j97gvizv0dnmacslsx8p1d7kx0r"))))
     (properties `((upstream-name . "HEEBOdata")))
     (build-system r-build-system)
     (arguments
@@ -5429,25 +5303,25 @@ and includes graphical and mathematical tools with more general applications.")
 (define-public r-heatmaps
   (package
     (name "r-heatmaps")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "heatmaps" version))
        (sha256
-        (base32 "0midacxd3k8hvvymgy8k3v5cm7b8hb3rph258agkkr3dyxlpb2dm"))))
+        (base32 "1656vvcqjpiwibxqvlx0ysalnc53xifkh9ypb7j3prdpc7k243nx"))))
     (properties `((upstream-name . "heatmaps")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcolorbrewer
+    (propagated-inputs (list r-seqinfo
+                             r-rcolorbrewer
                              r-plotrix
                              r-matrix
                              r-kernsmooth
                              r-iranges
                              r-genomicranges
-                             r-genomeinfodb
                              r-ebimage
                              r-biostrings
                              r-biocgenerics))
@@ -5464,14 +5338,14 @@ genomic intervals, such as @code{ChIP-seq} signals at peaks or across promoters.
 (define-public r-healthyflowdata
   (package
     (name "r-healthyflowdata")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "healthyFlowData" version
                               'experiment))
        (sha256
-        (base32 "1s59j3yv90n4pmbpl9p61i9vf2j56msc18140sk3ifxrmqjjbfz6"))))
+        (base32 "1vfjln6w68i2zidxi7f19jjhrqhn21l7gcjsh23z206q33q8dx95"))))
     (properties `((upstream-name . "healthyFlowData")))
     (build-system r-build-system)
     (arguments
@@ -5488,14 +5362,14 @@ the @code{flowMatch} package.")
 (define-public r-healthycontrolspresencechecker
   (package
     (name "r-healthycontrolspresencechecker")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "healthyControlsPresenceChecker" version
                               'experiment))
        (sha256
-        (base32 "1i9rwpbri1hydq1yqyjiwm7c5skl033glvyzp4zr9irx0d8gqzmj"))))
+        (base32 "1zqcbqkgwbvysgbb4grmbnam1j8xjcmyjlwv243hq8xpx2f5y1rf"))))
     (properties `((upstream-name . "healthyControlsPresenceChecker")))
     (build-system r-build-system)
     (arguments
@@ -5520,13 +5394,13 @@ code.  The GEO datasets are downloaded from the URL
 (define-public r-hdxmsqc
   (package
     (name "r-hdxmsqc")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hdxmsqc" version))
        (sha256
-        (base32 "0vhy1qfjh99c3z49r4smhxij49ji3arqlv77w4kbdp3ac4wfwisb"))))
+        (base32 "03r8k913p3f4024jr6r5nd872ixxqfkhwngi2g930vw4j53y04k3"))))
     (properties `((upstream-name . "hdxmsqc")))
     (build-system r-build-system)
     (arguments
@@ -5556,13 +5430,13 @@ with other mass-spectrometry data.")
 (define-public r-hdtd
   (package
     (name "r-hdtd")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HDTD" version))
        (sha256
-        (base32 "0njyi579pvhjxrzrfv8rm74chhblzfd11p2c6nql7qkfw5lj687m"))))
+        (base32 "1qhvsrd50vxs16kkx0a60sb1jab88wnshi288n78dq8iz5kv52n4"))))
     (properties `((upstream-name . "HDTD")))
     (build-system r-build-system)
     (arguments
@@ -5589,14 +5463,14 @@ variables.")
 (define-public r-hd2013sgi
   (package
     (name "r-hd2013sgi")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HD2013SGI" version
                               'experiment))
        (sha256
-        (base32 "06lhjz7krn9481y2nw6bf2zdyr01af304h7wfkk38cppbdk530jj"))))
+        (base32 "1yxjlmjjy1qj43yjzp109pcj2c3r4slhs5lmvsj2q2px3fp90ak5"))))
     (properties `((upstream-name . "HD2013SGI")))
     (build-system r-build-system)
     (arguments
@@ -5698,14 +5572,14 @@ using data from public repositories.")
 (define-public r-hcatonsildata
   (package
     (name "r-hcatonsildata")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HCATonsilData" version
                               'experiment))
        (sha256
-        (base32 "0k5pj1jikmymm6khsd4dbfwbwvg1pakdlzy80x2bc391862gmn00"))))
+        (base32 "1p7hdkm58w35r6d9hgkbq0ns7i8qgm7a9zd5g81cbl1cxl49fh7d"))))
     (properties `((upstream-name . "HCATonsilData")))
     (build-system r-build-system)
     (arguments
@@ -5739,14 +5613,14 @@ of identified cell types is provided in form of a glossary.")
 (define-public r-hcadata
   (package
     (name "r-hcadata")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HCAData" version
                               'experiment))
        (sha256
-        (base32 "0wl6js48wpbi7vsmk4d85lk06yg0ws5qp0ilbycsd67paim450hc"))))
+        (base32 "0l7ysy52w4nj4jb8vp7rm219hlnla9qxaqpgcmkn9q2wvbzrdcds"))))
     (properties `((upstream-name . "HCAData")))
     (build-system r-build-system)
     (arguments
@@ -5769,56 +5643,16 @@ format of @code{SingleCellExperiment} objects (available in other formats here:
 http://preview.data.humancellatlas.org/).")
     (license license:expat)))
 
-(define-public r-hca
-  (package
-    (name "r-hca")
-    (version "1.16.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "hca" version))
-       (sha256
-        (base32 "1b2fj61m9h3h8ccly4y1ishr3ivrszpwc5j8rkkxy43nwmmv1r2p"))))
-    (properties `((upstream-name . "hca")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-shiny
-                             r-readr
-                             r-miniui
-                             r-jsonlite
-                             r-httr
-                             r-dt
-                             r-dplyr
-                             r-digest
-                             r-biocfilecache))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/hca")
-    (synopsis "Exploring the Human Cell Atlas Data Coordinating Platform")
-    (description
-     "This package provides users with the ability to query the Human Cell Atlas data
-repository for single-cell experiment data.  The @code{`projects()}`,
-@code{`files()}`, @code{`samples()}` and @code{`bundles()}` functions retrieve
-summary information on each of these indexes; corresponding @code{`*_details()}`
-are available for individual entries of each index.  File-based resources can be
-downloaded using @code{`files_download()}`.  Advanced use of the package allows
-the user to page through large result sets, and to flexibly query the
-list-of-lists structure representing query responses.")
-    (license license:expat)))
-
 (define-public r-harmonizr
   (package
     (name "r-harmonizr")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HarmonizR" version))
        (sha256
-        (base32 "016bkk6h9w430dpg1afnfwaiy4piz6qyyq26lwng2w0jpvyxr7h9"))))
+        (base32 "0xzniy0z030zbzx90rg6bx4filv3dkzgxihb0lvnvhgrdg67mb8x"))))
     (properties `((upstream-name . "HarmonizR")))
     (build-system r-build-system)
     (arguments
@@ -5847,14 +5681,14 @@ is meant to make as much data available as possible with minimal data loss.")
 (define-public r-harmonizedtcgadata
   (package
     (name "r-harmonizedtcgadata")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HarmonizedTCGAData" version
                               'experiment))
        (sha256
-        (base32 "0l2snkz7bblnrq8vdcn41kw7b69cfz0z1dkyiflbsrasxdsxqbnd"))))
+        (base32 "13ns6mx47kj3ij2sfpjfiqviqc6c38hnqbiskgglm32r46cp50ph"))))
     (properties `((upstream-name . "HarmonizedTCGAData")))
     (build-system r-build-system)
     (arguments
@@ -5877,14 +5711,14 @@ Network Fusion (ANF) for Cancer Patient Clustering\".")
 (define-public r-harmandata
   (package
     (name "r-harmandata")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HarmanData" version
                               'experiment))
        (sha256
-        (base32 "0s3z761gxn4lp7n8yq0xgqaxks77f29dfv6y9vhj7krhciskplkd"))))
+        (base32 "1lwb9bg1a081ri7kjk876198hlzsd3z3bg534si3ji5iamwhqqsp"))))
     (properties `((upstream-name . "HarmanData")))
     (build-system r-build-system)
     (arguments
@@ -5910,13 +5744,13 @@ exampling for the new methylation clustering functionality in Harman.")
 (define-public r-harman
   (package
     (name "r-harman")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Harman" version))
        (sha256
-        (base32 "0j99mi8mxrpmm2ypakc7k9ja59iqsxdn8189a70wipyzs5srnnp5"))))
+        (base32 "028pj0gkky32kz78jfkzxc3q67y7f10sdjiqnf7j5l8y7y38mv7y"))))
     (properties `((upstream-name . "Harman")))
     (build-system r-build-system)
     (arguments
@@ -5937,14 +5771,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-harbchip
   (package
     (name "r-harbchip")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "harbChIP" version
                               'experiment))
        (sha256
-        (base32 "0xi7s76v1rbg7fi20faalz41cvsy8v7050yz2kb3f0f89hin6hai"))))
+        (base32 "1pnc6bgpjjk68jva1mncwnlmwps15b6bkq9b4z780ggwjqyzc3ms"))))
     (properties `((upstream-name . "harbChIP")))
     (build-system r-build-system)
     (arguments
@@ -5959,14 +5793,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapmapsnp6
   (package
     (name "r-hapmapsnp6")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapmapsnp6" version
                               'experiment))
        (sha256
-        (base32 "059qh9b35506j31f0fjf55awapiznxngz70qa4hpcyj2s7v918rp"))))
+        (base32 "0g077wgn2f5gfl04x7pnhwbglgw5mfr9ys9ya2618v3aiq6v4zds"))))
     (properties `((upstream-name . "hapmapsnp6")))
     (build-system r-build-system)
     (arguments
@@ -5980,14 +5814,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapmapsnp5
   (package
     (name "r-hapmapsnp5")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapmapsnp5" version
                               'experiment))
        (sha256
-        (base32 "0ifan67mcbcv9ivw2wkdd6r04j2f9dr5mwnk5dzw3krc99qpk7sm"))))
+        (base32 "1a3qllhrzg3d5jarqglwk2npr3bl288jxc8n0fhcg022gfpsyy2k"))))
     (properties `((upstream-name . "hapmapsnp5")))
     (build-system r-build-system)
     (arguments
@@ -6001,14 +5835,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapmap500ksty
   (package
     (name "r-hapmap500ksty")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapmap500ksty" version
                               'experiment))
        (sha256
-        (base32 "1jcmi8f38nq2qkicmg5vrxj7n250dsr6346ncznrkzy0gz3839s4"))))
+        (base32 "137ixd8m88i9vvpkigm88p1kapxidcpcs3scnz5grdz5dimdgnjd"))))
     (properties `((upstream-name . "hapmap500ksty")))
     (build-system r-build-system)
     (arguments
@@ -6022,14 +5856,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapmap500knsp
   (package
     (name "r-hapmap500knsp")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapmap500knsp" version
                               'experiment))
        (sha256
-        (base32 "1jm1frcibnvc3xc06397dzza3m5jrf77h4dghks5vw4fvyq5pd6x"))))
+        (base32 "06gsmsmczzlmiysq8n4868cwqg2qw7kjvdmfaq930s8a15sf6qdi"))))
     (properties `((upstream-name . "hapmap500knsp")))
     (build-system r-build-system)
     (arguments
@@ -6065,14 +5899,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapmap100kxba
   (package
     (name "r-hapmap100kxba")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapmap100kxba" version
                               'experiment))
        (sha256
-        (base32 "0bjg4iy9ypc6xd129zprwrwbg9q6kvwb18iqdk3483c1siwppmc7"))))
+        (base32 "1zad5ayz45cr77l105jygq400f5xq74fynf4c9kqrp8fw2iqqqlc"))))
     (properties `((upstream-name . "hapmap100kxba")))
     (build-system r-build-system)
     (arguments
@@ -6086,14 +5920,14 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapmap100khind
   (package
     (name "r-hapmap100khind")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapmap100khind" version
                               'experiment))
        (sha256
-        (base32 "054kx5r7wpz0g8damyq5cplv5hkbzdnhshmasmjh06wai24v5g0d"))))
+        (base32 "043p38bg792by43m4zfzrqm04x4fs3ikcy1m95mkg60p479f6w0c"))))
     (properties `((upstream-name . "hapmap100khind")))
     (build-system r-build-system)
     (arguments
@@ -6107,13 +5941,13 @@ noise) is kept to a fraction which is set by the end-user.")
 (define-public r-hapfabia
   (package
     (name "r-hapfabia")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hapFabia" version))
        (sha256
-        (base32 "1qg4128q340q3zfzlyby1kpbslnk6pqd34rzp3c3xn6d56dkq4zp"))))
+        (base32 "1asxg02xrvqsx1vnyh14nd3xfsk8q0fi95w65c97dknrnhy1c2wl"))))
     (properties `((upstream-name . "hapFabia")))
     (build-system r-build-system)
     (arguments
@@ -6141,14 +5975,14 @@ different formats.")
 (define-public r-h5vcdata
   (package
     (name "r-h5vcdata")
-    (version "2.28.0")
+    (version "2.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "h5vcData" version
                               'experiment))
        (sha256
-        (base32 "0r2hpx30l9xg690l4ab01v6vvr15r9s24f58bkr4v8prdji8gkf3"))))
+        (base32 "09x31c7nrfimxv6l4y9d30rn4bmzqalrgpzldx6zmmffhyn7ck51"))))
     (properties `((upstream-name . "h5vcData")))
     (build-system r-build-system)
     (arguments
@@ -6164,13 +5998,13 @@ package.")
 (define-public r-h5vc
   (package
     (name "r-h5vc")
-    (version "2.42.0")
+    (version "2.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "h5vc" version))
        (sha256
-        (base32 "19m73bmcv51v3kxa2i6khwpz39gfyf18ajnzikv91x1la9d347mw"))))
+        (base32 "0a2ali36kigkn65a5gb11xid2c28432l3hvdkjf27h4z7jl1cv16"))))
     (properties `((upstream-name . "h5vc")))
     (build-system r-build-system)
     (arguments

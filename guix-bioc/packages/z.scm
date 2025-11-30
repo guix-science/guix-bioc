@@ -36,13 +36,13 @@
 (define-public r-zygositypredictor
   (package
     (name "r-zygositypredictor")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ZygosityPredictor" version))
        (sha256
-        (base32 "1ain9yvg80vw3av9izqb6my3pqsgp7cqmdcjgq7a3rdw1jwngv33"))))
+        (base32 "00nckxl38ajbzxlm011x3zx2q3ka844q6f4fxhyvd8587dl1qlxd"))))
     (properties `((upstream-name . "ZygosityPredictor")))
     (build-system r-build-system)
     (arguments
@@ -86,13 +86,13 @@ scale deletions, which cause losses of whole genes or parts of them.")
 (define-public r-zitools
   (package
     (name "r-zitools")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zitools" version))
        (sha256
-        (base32 "1wb4k0c4xxar3ncklvj96b41x15yj90jwbvrmlbqd559bhhqych3"))))
+        (base32 "01mgf9m4080ws92zbdgxg28qlh9ly83nqa78x20kwhci3x95xy88"))))
     (properties `((upstream-name . "zitools")))
     (build-system r-build-system)
     (arguments
@@ -131,13 +131,13 @@ challenging.")
 (define-public r-zenith
   (package
     (name "r-zenith")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zenith" version))
        (sha256
-        (base32 "0na9fx9h8a5c8h7fp8lm9pb6basdwz6y7gqq4bi2yfbpyk0k8dz4"))))
+        (base32 "02dm4gi996qb3v09915zg0b4ibakjv5gmv2p39i1x185y2rbjmr9"))))
     (properties `((upstream-name . "zenith")))
     (build-system r-build-system)
     (arguments
@@ -220,14 +220,14 @@ Zebrafish.cdf file.")
 (define-public r-zebrafish-db0
   (package
     (name "r-zebrafish-db0")
-    (version "3.21.0")
+    (version "3.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zebrafish.db0" version
                               'annotation))
        (sha256
-        (base32 "1b0pn4cvcn2hphklavxlqg6wzh7dl78l4nr7fhxv3b980qvi56p0"))))
+        (base32 "1kb8libhdkq3msa3h1nj4ysrfr1swn6irq2rnsihfamn5ggwnxkn"))))
     (properties `((upstream-name . "zebrafish.db0")))
     (build-system r-build-system)
     (arguments

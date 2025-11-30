@@ -7,22 +7,22 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages m)
+  #:use-module (gnu packages bioinformatics)
+  #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages n)
+  #:use-module (guix-cran packages i)
+  #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages b)
-  #:use-module (gnu packages web)
   #:use-module (guix-cran packages d)
-  #:use-module (guix-cran packages s)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages w)
   #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages t)
-  #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages h)
-  #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages f)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -53,14 +53,14 @@
 (define-public r-dyebiasexamples
   (package
     (name "r-dyebiasexamples")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dyebiasexamples" version
                               'experiment))
        (sha256
-        (base32 "12jx3ws9dvh5d96mvs51pi98ip3vca1pfndg50hy82r42k0wq1d5"))))
+        (base32 "10kvaj9a0h73jhq29l724x4vp7znd3hai5pja2288idzjfdp82jv"))))
     (properties `((upstream-name . "dyebiasexamples")))
     (build-system r-build-system)
     (arguments
@@ -79,13 +79,13 @@ E-MTAB-32.")
 (define-public r-dyebias
   (package
     (name "r-dyebias")
-    (version "1.68.0")
+    (version "1.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dyebias" version))
        (sha256
-        (base32 "0r42siraii99pvac7za1383c12pl1i2i2x4n64ca6rkyjqfpzqm6"))))
+        (base32 "0ylw1wli84p8yxn7sibdg134xkgq52mi7sjpj3sjkym3d70r525i"))))
     (properties `((upstream-name . "dyebias")))
     (build-system r-build-system)
     (arguments
@@ -109,14 +109,14 @@ Biol.  5:266 (2009), doi:10.1038/msb.2009.21).")
 (define-public r-dvddata
   (package
     (name "r-dvddata")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DvDdata" version
                               'experiment))
        (sha256
-        (base32 "0q2yc85imjjrnpm6dfs7g0dgwbhkgngbw8vpiasqnfh1srg17sx2"))))
+        (base32 "1m45kpafn321h070gcd1nd3q753ijv08sqywldflmzdjhdamashx"))))
     (properties `((upstream-name . "DvDdata")))
     (build-system r-build-system)
     (arguments
@@ -132,13 +132,13 @@ Biol.  5:266 (2009), doi:10.1038/msb.2009.21).")
 (define-public r-dupradar
   (package
     (name "r-dupradar")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dupRadar" version))
        (sha256
-        (base32 "1r9n8fjb2spkvdaqbzpa50dn6cv9l995ljn4ac52ypr2z920nph1"))))
+        (base32 "06xhsss7hqm4n9300ff13zn4w3640i52vf00kdxkvhqzdn2vzwih"))))
     (properties `((upstream-name . "dupRadar")))
     (build-system r-build-system)
     (arguments
@@ -154,19 +154,20 @@ Biol.  5:266 (2009), doi:10.1038/msb.2009.21).")
 (define-public r-duplexdiscoverer
   (package
     (name "r-duplexdiscoverer")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DuplexDiscovereR" version))
        (sha256
-        (base32 "1nm7jjrgvpivn4hfffridm5r0m933qwldvgbmqfxqn0hhczx335q"))))
+        (base32 "101ppsi4inl7c7np8aqchdr4kabqxpyvmr5g14akmyp5hdqy7jgc"))))
     (properties `((upstream-name . "DuplexDiscovereR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-scales
@@ -201,14 +202,14 @@ reproducibility of the experimental method.")
 (define-public r-duoclustering2018
   (package
     (name "r-duoclustering2018")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DuoClustering2018" version
                               'experiment))
        (sha256
-        (base32 "0rip26z3ghh04cfnfzydql3fsyv2l0njr35jk57bkh78aac5a8mm"))))
+        (base32 "0l9h160d4y2gay3zs4j4fv4a24ppk3ml5db5s6bqq2jkbnxc1si9"))))
     (properties `((upstream-name . "DuoClustering2018")))
     (build-system r-build-system)
     (arguments
@@ -242,13 +243,13 @@ data sets, and functions for plotting method performance.")
 (define-public r-dune
   (package
     (name "r-dune")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Dune" version))
        (sha256
-        (base32 "1xk27ywjd87qbbbzh1lwrbwzkq05hb3p3wz54i7p52rc5s3isp48"))))
+        (base32 "17vqzbl0zvmg1ndv99812hqmr6m8s14mw8bsa0mlv2piqh3iz5hs"))))
     (properties `((upstream-name . "Dune")))
     (build-system r-build-system)
     (arguments
@@ -276,13 +277,13 @@ ARI between labels, improving replicability.")
 (define-public r-dta
   (package
     (name "r-dta")
-    (version "2.54.0")
+    (version "2.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DTA" version))
        (sha256
-        (base32 "1jfdiisj2f77mgkyp7qgaf9zysj2nhbfrczqsnkws0c4mpzhiaz1"))))
+        (base32 "0xvwa03kivly6617l4lbwz78xzhz5qn7f05pn9a1qxgg2fxxw2mf"))))
     (properties `((upstream-name . "DTA")))
     (build-system r-build-system)
     (arguments
@@ -302,13 +303,13 @@ individual microarray or RNAseq measurements.")
 (define-public r-dstruct
   (package
     (name "r-dstruct")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dStruct" version))
        (sha256
-        (base32 "0xk5qmqkdi2pb6qfmxr1mm8lwdz9bxpxw0l49lfb3zwrhp5bssm7"))))
+        (base32 "1mifjcjgihr4gsshx1197x5wq87xyqwl38dmkb2pqppvf3ma2ppm"))))
     (properties `((upstream-name . "dStruct")))
     (build-system r-build-system)
     (arguments
@@ -333,17 +334,87 @@ Structure-Seq, SHAPE-Seq, etc.  See Choudhary et al., Genome Biology, 2019 for
 the underlying method.")
     (license license:gpl2+)))
 
+(define-public r-dspikein
+  (package
+    (name "r-dspikein")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DspikeIn" version))
+       (sha256
+        (base32 "0rdvkj2ncsvzj5zm2msq02aakx4g9yzsc63v873jk15y2ywncmsm"))))
+    (properties `((upstream-name . "DspikeIn")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-treesummarizedexperiment
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-scales
+                             r-s4vectors
+                             r-rlang
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-randomforest
+                             r-phyloseq
+                             r-phangorn
+                             r-patchwork
+                             r-officer
+                             r-msa
+                             r-microbiome
+                             r-matrixstats
+                             r-limma
+                             r-igraph
+                             r-ggtreeextra
+                             r-ggtree
+                             r-ggstar
+                             r-ggridges
+                             r-ggrepel
+                             r-ggraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggalluvial
+                             r-flextable
+                             r-edger
+                             r-dplyr
+                             r-deseq2
+                             r-decipher
+                             r-data-table
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mghotbi/DspikeIn")
+    (synopsis "Estimating Absolute Abundance from Microbial Spike-in Controls")
+    (description
+     "This package provides a reproducible and modular workflow for absolute microbial
+quantification using spike-in controls.  Supports both single spike-in taxa and
+synthetic microbial communities with user-defined spike-in volumes and genome
+copy numbers.  Compatible with phyloseq and @code{TreeSummarizedExperiment}
+(TSE) data structures.  The package implements methods for spike-in validation,
+preprocessing, scaling factor estimation, absolute abundance conversion, bias
+correction, and normalization.  Facilitates downstream statistical analyses with
+DESeq2', @code{edgeR}', and other Bioconductor-compatible methods.
+Visualization tools are provided via ggplot2', ggtree', and related packages.
+Includes detailed vignettes, case studies, and function-level documentation to
+guide users through experimental design, quantification, and interpretation.")
+    (license license:expat)))
+
 (define-public r-drugvsdiseasedata
   (package
     (name "r-drugvsdiseasedata")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DrugVsDiseasedata" version
                               'experiment))
        (sha256
-        (base32 "1w7fabfgw8qq93gk38xi8rsrhkp0ls7a28ih3knbrhf9smv23i30"))))
+        (base32 "166s6m9vj4sd9qbrxfbsp1my4kcnh0b85g4b90ksy71q9pfk2hhz"))))
     (properties `((upstream-name . "DrugVsDiseasedata")))
     (build-system r-build-system)
     (arguments
@@ -359,13 +430,13 @@ annotation information for use with the @code{DrugVsDisease} package.")
 (define-public r-drugvsdisease
   (package
     (name "r-drugvsdisease")
-    (version "2.50.0")
+    (version "2.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DrugVsDisease" version))
        (sha256
-        (base32 "0svqjmlkxfxwians5nmjhwzcyfq3p99ajywamhp9shsqjfqmry3x"))))
+        (base32 "1dgj492s26sbmxs8ac36cv6w9g6d4ay7p56hy3d5smmk21r5fsj7"))))
     (properties `((upstream-name . "DrugVsDisease")))
     (build-system r-build-system)
     (arguments
@@ -402,13 +473,13 @@ of significant scores are output in Cytoscape format.")
 (define-public r-drugtargetinteractions
   (package
     (name "r-drugtargetinteractions")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "drugTargetInteractions" version))
        (sha256
-        (base32 "129bdb7aaf16az9nms0qv4akgqjkqvrn95g8m6c311c44f9a9rvs"))))
+        (base32 "056dw485jmlb57w0mwmpww2xrpxkl2lai91rds77vcchvywmpa53"))))
     (properties `((upstream-name . "drugTargetInteractions")))
     (build-system r-build-system)
     (arguments
@@ -586,14 +657,14 @@ drosgenome1) assembled using data from public repositories.")
 (define-public r-droplettestfiles
   (package
     (name "r-droplettestfiles")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DropletTestFiles" version
                               'experiment))
        (sha256
-        (base32 "0h0c85j70d78hk6y5fpjvibxg0pd4zzb6ggahbwxyf1q9yfw4dj3"))))
+        (base32 "0z8a9bk80g0kb0llxh603wwlgkjxca5kh8ifrxspjgjjp33i8j5d"))))
     (properties `((upstream-name . "DropletTestFiles")))
     (build-system r-build-system)
     (arguments
@@ -619,13 +690,13 @@ to provide objects that are immediately ready for analysis.")
 (define-public r-drivernet
   (package
     (name "r-drivernet")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DriverNet" version))
        (sha256
-        (base32 "03cfjq0j72q2aqzkaz4qg2idmb4dfhi0grhd6d1m98q3xdnw37dw"))))
+        (base32 "1sy3jzbg2hh83s1w6qm9mi4qk3ppa5xzc8h59ylm0pr42mnhmfwg"))))
     (properties `((upstream-name . "DriverNet")))
     (build-system r-build-system)
     (arguments
@@ -647,14 +718,14 @@ push the gene expression values of the connected genes to some extreme values.")
 (define-public r-dresscheck
   (package
     (name "r-dresscheck")
-    (version "0.46.0")
+    (version "0.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dressCheck" version
                               'experiment))
        (sha256
-        (base32 "11dcrk6yvccr28vwamksmw6rlxmk1p51lrmcs13j2hj0hg36kdxf"))))
+        (base32 "043m5isrhg8b37pqirjmxskpw5s2m4h1grxav1d4igh3isl5324l"))))
     (properties `((upstream-name . "dressCheck")))
     (build-system r-build-system)
     (arguments
@@ -669,13 +740,13 @@ push the gene expression values of the connected genes to some extreme values.")
 (define-public r-dreamlet
   (package
     (name "r-dreamlet")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dreamlet" version))
        (sha256
-        (base32 "0cp6iwdkp399nzj3a7gmyak6y5v2kzkvhqcm7rrj047pxyjb7yc8"))))
+        (base32 "1vz6a353sqgizv41gm2hrc5dzmqlwcmg50p9kscwpzrhpxid7dxn"))))
     (properties `((upstream-name . "dreamlet")))
     (build-system r-build-system)
     (arguments
@@ -740,42 +811,16 @@ dimensional batch effects, and varying sequencing depth or observed cells per
 biosample.")
     (license license:artistic2.0)))
 
-(define-public r-drawproteins
-  (package
-    (name "r-drawproteins")
-    (version "1.28.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "drawProteins" version))
-       (sha256
-        (base32 "06fv2fhka123kj9rc2h0z07ym30wxk24fq8v0pzmf8gfyg4ywgfj"))))
-    (properties `((upstream-name . "drawProteins")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr r-readr r-httr r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/brennanpincardiff/drawProteins")
-    (synopsis "Package to Draw Protein Schematics from Uniprot API output")
-    (description
-     "This package draws protein schematics from Uniprot API output.  From the JSON
-returned by the GET command, it creates a dataframe from the Uniprot Features
-API. This dataframe can then be used by geoms based on ggplot2 and base R to
-draw protein schematics.")
-    (license license:expat)))
-
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")
-    (version "1.8.1")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doubletrouble" version))
        (sha256
-        (base32 "1a08sd6a56h75km9y306a7gfhlnv5m2zzs1kaixwqk2v2lfvq6g2"))))
+        (base32 "129q971qsa4hgvfw2kaf40228ssb4syacj2sb5v59dl41vdlj5ah"))))
     (properties `((upstream-name . "doubletrouble")))
     (build-system r-build-system)
     (arguments
@@ -810,16 +855,77 @@ distributions with Gaussian Mixture Models (GMMs), and classify gene pairs into
 age groups based on Ks peaks.")
     (license license:gpl3)))
 
+(define-public r-dotools
+  (package
+    (name "r-dotools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DOtools" version))
+       (sha256
+        (base32 "1g78ljyr71x1v9srnz9m7v4gkc1dbyqgsbkaqfpdmvs5ybwxrkg3"))))
+    (properties `((upstream-name . "DOtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-zellkonverter
+                             r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-singlecellexperiment
+                             r-seuratobject
+                             r-seurat
+                             r-scpubr
+                             r-scdblfinder
+                             r-sccustomize
+                             r-scales
+                             r-s4vectors
+                             r-rstatix
+                             r-rlang
+                             r-reticulate
+                             r-reshape2
+                             r-purrr
+                             r-progress
+                             r-openxlsx
+                             r-matrix
+                             r-magrittr
+                             r-ggtext
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggiraphextra
+                             r-ggcorrplot
+                             r-ggalluvial
+                             r-enrichr
+                             r-dropletutils
+                             r-dplyr
+                             r-deseq2
+                             r-curl
+                             r-cowplot
+                             r-cli
+                             r-basilisk))
+    (native-inputs (list r-knitr))
+    (home-page "https://marianoruzjurado.github.io/DOtools/")
+    (synopsis
+     "Convenient functions to streamline your single cell data analysis workflow")
+    (description
+     "This package provides functions for creating various visualizations, convenient
+wrappers, and quality-of-life utilities for single cell experiment objects.  It
+offers a streamlined approach to visualize results and integrates different
+tools for easy use.")
+    (license license:expat)))
+
 (define-public r-doser
   (package
     (name "r-doser")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doseR" version))
        (sha256
-        (base32 "0h6m4z9lk32xxy14dcrvpvwfsg574qgyfa89smrjxcnccsn3rck6"))))
+        (base32 "0v5gnikdjnsyy4iy45wvbhy16z5cbh9wcls460xmxdvxf2c4sb79"))))
     (properties `((upstream-name . "doseR")))
     (build-system r-build-system)
     (arguments
@@ -853,13 +959,13 @@ package has been tested using real and simulated data.")
 (define-public r-doscheda
   (package
     (name "r-doscheda")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Doscheda" version))
        (sha256
-        (base32 "03qvng07nv346gn6df3bp1574yiampl26zjcln4by7f0fjdisfx5"))))
+        (base32 "0dllqkqh9760hl9qjwqdz6npsprp48zw5rb4didj7ff13yl4nzbn"))))
     (properties `((upstream-name . "Doscheda")))
     (build-system r-build-system)
     (arguments
@@ -896,14 +1002,14 @@ pipeline, several visualisations and a downloadable report of an experiment.")
 (define-public r-dorothea
   (package
     (name "r-dorothea")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dorothea" version
                               'experiment))
        (sha256
-        (base32 "1y9makngh6v040vs62njm32zrr7jln4jkxxqkkbqa2lajy7v5n0b"))))
+        (base32 "140l6slrhgqic7d3ayq9201v0mkyyxnc93zpcdg3gldyhx6jcybd"))))
     (properties `((upstream-name . "dorothea")))
     (build-system r-build-system)
     (arguments
@@ -922,16 +1028,54 @@ assigned to each TF-target interaction based on the number of supporting
 evidence.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
+(define-public r-doremitra
+  (package
+    (name "r-doremitra")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DoReMiTra" version
+                              'experiment))
+       (sha256
+        (base32 "1i1njmfndwh9m63kpp2ym5jxy5bqygynx681hydzr4ya33hczpax"))))
+    (properties `((upstream-name . "DoReMiTra")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-scater
+                             r-s4vectors
+                             r-glue
+                             r-experimenthub
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AhmedSAHassan/DoReMiTra")
+    (synopsis "Orchestrating Blood Radiation Transcriptomic Data")
+    (description
+     "@code{DoReMiTra} is an R data package providing access to curated transcriptomic
+datasets related to blood radiation, with a focus on neutron, x-ray, and gamma
+ray studies.  It is designed to facilitate radiation biology research and
+support data exploration and reproducibility in radiation transcriptomics.  All
+datasets are provided as @code{SummarizedExperiment} objects, allowing seamless
+integration with the Bioconductor ecosystem.")
+    (license license:expat)))
+
 (define-public r-doppelgangr
   (package
     (name "r-doppelgangr")
-    (version "1.36.1")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "doppelgangR" version))
        (sha256
-        (base32 "0cd4n5p5sh5pnszwb5vy28m722vk7i0xdkn86ki6jcrv528f3ijc"))))
+        (base32 "00jn4m8ffp3ql9qhdybjngxjki3g2hpzwdjamld7h6v2gs5dpds7"))))
     (properties `((upstream-name . "doppelgangR")))
     (build-system r-build-system)
     (arguments
@@ -958,14 +1102,14 @@ unique identifiers found in @code{pData(eset}).")
 (define-public r-donapllp2013
   (package
     (name "r-donapllp2013")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DonaPLLP2013" version
                               'experiment))
        (sha256
-        (base32 "06qhvnd0b33695ps94k3zf0bg1kil65f8bzwwlrcfd029grjz2ah"))))
+        (base32 "0wbgg6xpl5f4xrh9np2gy0lmp3jf3njzf8wmcqcyh65xvspjl005"))))
     (properties `((upstream-name . "DonaPLLP2013")))
     (build-system r-build-system)
     (arguments
@@ -985,13 +1129,13 @@ analyze tissue-scale lifetime-ratio statistics.")
 (define-public r-dominosignal
   (package
     (name "r-dominosignal")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dominoSignal" version))
        (sha256
-        (base32 "02bsz2nd6yjybhnkna8ixhchq0hvbkhm0jz5cfbddyvgyqg5f7ix"))))
+        (base32 "15ff1p8p5v4gqkv1spnvkx62x5ddbvmd9mxlvkgqmfywzqid2r1h"))))
     (properties `((upstream-name . "dominoSignal")))
     (build-system r-build-system)
     (arguments
@@ -1025,13 +1169,13 @@ several methods for exploring, summarizing, and visualizing the analysis.")
 (define-public r-dominoeffect
   (package
     (name "r-dominoeffect")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DominoEffect" version))
        (sha256
-        (base32 "1x5pik4wj9b3zbmhd15v3pn8grhz1cn47d4cslwc8pgl7s3rzcwi"))))
+        (base32 "1i59118bqk25jqkjkg6ddc8xyls9dd2r15piw7a6rgf8d2hv395s"))))
     (properties `((upstream-name . "DominoEffect")))
     (build-system r-build-system)
     (arguments
@@ -1039,10 +1183,10 @@ several methods for exploring, summarizing, and visualizing the analysis.")
       #:tests? #f))
     (propagated-inputs (list r-variantannotation
                              r-summarizedexperiment
+                             r-seqinfo
                              r-pwalign
                              r-iranges
                              r-genomicranges
-                             r-genomeinfodb
                              r-data-table
                              r-biostrings
                              r-biomart
@@ -1056,17 +1200,57 @@ proteins.  These are individual amino acids that accumulate mutations at a much
 higher rate than their surrounding regions.")
     (license license:gpl3+)))
 
+(define-public r-dnea
+  (package
+    (name "r-dnea")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DNEA" version))
+       (sha256
+        (base32 "0fb16yraaxnp2ap4wk68vkr9ac3cgy37xjmkrsmwrjxiwfrmvmjm"))))
+    (properties `((upstream-name . "DNEA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-stringr
+                             r-netgsa
+                             r-matrix
+                             r-janitor
+                             r-igraph
+                             r-glasso
+                             r-gdata
+                             r-dplyr
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Karnovsky-Lab/DNEA")
+    (synopsis "Differential Network Enrichment Analysis for Biological Data")
+    (description
+     "The DNEA R package is the latest implementation of the Differential Network
+Enrichment Analysis algorithm and is the successor to the Filigree
+Java-application described in Iyer et al. (2020).  The package is designed to
+take as input an m x n expression matrix for some -omics modality (ie.
+metabolomics, lipidomics, proteomics, etc.) and jointly estimate the biological
+network associations of each condition using the DNEA algorithm described in Ma
+et al. (2019).  This approach provides a framework for data-driven enrichment
+analysis across two experimental conditions that utilizes the underlying
+correlation structure of the data to determine feature-feature interactions.")
+    (license license:expat)))
+
 (define-public r-dnazoodata
   (package
     (name "r-dnazoodata")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DNAZooData" version
                               'experiment))
        (sha256
-        (base32 "1kp79mnlqa32w8ackk7vcidjcr1vkiq9r0w21h6x2f1641qc8ihj"))))
+        (base32 "1hb0xm5iynjssvjm98jknp0f63s61p41f4gsvbqlhl1amdggzwq1"))))
     (properties `((upstream-name . "DNAZooData")))
     (build-system r-build-system)
     (arguments
@@ -1088,13 +1272,13 @@ multi-resolution `.hic` format.  A URL to corrected genome assemblies in
 (define-public r-dnashaper
   (package
     (name "r-dnashaper")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DNAshapeR" version))
        (sha256
-        (base32 "0c2jdwy42vlpyv18628df4b1byd1mkrqp1zdyqc0qs1fv33ig3zc"))))
+        (base32 "0069dcaa6dyjqclmdcmfwp16nl7mbxcdvl6kqii6xx5q6ha4khyj"))))
     (properties `((upstream-name . "DNAshapeR")))
     (build-system r-build-system)
     (arguments
@@ -1113,13 +1297,13 @@ predict, visualize and encode DNA shape features for statistical learning.")
 (define-public r-dnafusion
   (package
     (name "r-dnafusion")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DNAfusion" version))
        (sha256
-        (base32 "038f81458s3329rgsbjfn0hibj8awiybgglxlgdj56xkph0757d6"))))
+        (base32 "14hf9fjr0fn8r5k853wc0fcfy6xjrpiz6269l058q9fqanwwml90"))))
     (properties `((upstream-name . "DNAfusion")))
     (build-system r-build-system)
     (arguments
@@ -1133,8 +1317,7 @@ predict, visualize and encode DNA shape features for statistical learning.")
                              r-genomicfeatures
                              r-genomicalignments
                              r-biocgenerics
-                             r-biocbaseutils
-                             r-bamsignals))
+                             r-biocbaseutils))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/CTrierMaansson/DNAfusion")
     (synopsis "Identification of gene fusions using paired-end sequencing")
@@ -1150,13 +1333,13 @@ ALK-specific but not EML4-specific probes.")
 (define-public r-dnacycp2
   (package
     (name "r-dnacycp2")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DNAcycP2" version))
        (sha256
-        (base32 "1p5wfkawsa5d0q4xksy6k5sc78xyjq0c62wgn8nzsgc5yqd17ww3"))))
+        (base32 "1cn4ifnc03qjfzw37ycn95bm2sc2pksyryl0v783yhvpbplfzbih"))))
     (properties `((upstream-name . "DNAcycP2")))
     (build-system r-build-system)
     (arguments
@@ -1176,13 +1359,13 @@ cyclizability score for each 50 bp sequences in each entry of the sequence set."
 (define-public r-dnabarcodecompatibility
   (package
     (name "r-dnabarcodecompatibility")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DNABarcodeCompatibility" version))
        (sha256
-        (base32 "04pfilpvbp3n3a021x6i22y2lx05l99xlxq2qq71hzvq8icf7l2d"))))
+        (base32 "0mjbnq9aka47qi212y4dk7vrwq9jldl68k3x06jdsl5j1xid120c"))))
     (properties `((upstream-name . "DNABarcodeCompatibility")))
     (build-system r-build-system)
     (arguments
@@ -1212,25 +1395,25 @@ with least heterogeneity in barcode usage.")
 (define-public r-dmrscan
   (package
     (name "r-dmrscan")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMRScan" version))
        (sha256
-        (base32 "1ln100csirxyvy3z0sn7k1vqmhb6rgc5y6ngvg335b6rhfwnqs2s"))))
+        (base32 "0f4wmw9j7iwhwhbrdc8pbv5cb72yhz7w838k0xhv65sa92d9h93g"))))
     (properties `((upstream-name . "DMRScan")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpproll
+    (propagated-inputs (list r-seqinfo
+                             r-rcpproll
                              r-mvtnorm
                              r-matrix
                              r-mass
                              r-iranges
-                             r-genomicranges
-                             r-genomeinfodb))
+                             r-genomicranges))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/christpa/DMRScan")
     (synopsis "Detection of Differentially Methylated Regions")
@@ -1249,14 +1432,14 @@ between each @code{CpG}.")
 (define-public r-dmrcatedata
   (package
     (name "r-dmrcatedata")
-    (version "2.26.0")
+    (version "2.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMRcatedata" version
                               'experiment))
        (sha256
-        (base32 "1aqfcg0smcgpki0xaifd6rh0pah7mfrsf6ncv7rq44bwyi7hj920"))))
+        (base32 "0zilswq95yhqwvxbhh6mn0ma9653na53g53y545kkbn4p2cdmvf0"))))
     (properties `((upstream-name . "DMRcatedata")))
     (build-system r-build-system)
     (arguments
@@ -1285,27 +1468,38 @@ the Bioconductor package DMRcate.")
 (define-public r-dmrcaller
   (package
     (name "r-dmrcaller")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMRcaller" version))
        (sha256
-        (base32 "04cclx7p9clnraj6d14wsx60h6wlxs923dzqx287rxfkj5a61723"))))
+        (base32 "0v1jylpj5phgjszy67b4q4d5ac31k4v3np27nvvlbckh7ga5bz0m"))))
     (properties `((upstream-name . "DMRcaller")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-s4vectors
+    (propagated-inputs (list r-stringr
+                             r-seqinfo
+                             r-s4vectors
+                             r-rsamtools
                              r-rcpproll
                              r-rcpp
                              r-iranges
+                             r-interactionset
+                             r-inflection
                              r-genomicranges
+                             r-genomicalignments
+                             r-genomeinfodb
+                             r-bsgenome
+                             r-biostrings
+                             r-biocparallel
+                             r-biocmanager
                              r-betareg))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/DMRcaller")
-    (synopsis "Differentially Methylated Regions caller")
+    (synopsis "Differentially Methylated Regions Caller")
     (description
      "Uses Bisulfite sequencing data in two conditions and identifies differentially
 methylated regions between the conditions in CG and non-CG context.  The input
@@ -1313,16 +1507,51 @@ is the CX report files produced by Bismark and the output is a list of DMRs
 stored as GRanges objects.")
     (license license:gpl3)))
 
+(define-public r-dmgsea
+  (package
+    (name "r-dmgsea")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "dmGsea" version))
+       (sha256
+        (base32 "1fvxzdx7qc96ph0g571pz1xbvghhndlrq38j4zxq3vqmmd2jbh3s"))))
+    (properties `((upstream-name . "dmGsea")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-seqinfo
+                             r-poolr
+                             r-matrix
+                             r-dqrng
+                             r-biasedurn
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Bioconductor/dmGsea")
+    (synopsis
+     "Efficient Gene Set Enrichment Analysis for DNA Methylation Data")
+    (description
+     "The R package @code{dmGsea} provides efficient gene set enrichment analysis
+specifically for DNA methylation data.  It addresses key biases, including probe
+dependency and varying probe numbers per gene.  The package supports Illumina
+450K, EPIC, and mouse methylation arrays.  Users can also apply it to other
+omics data by supplying custom probe-to-gene mapping annotations. @code{dmGsea}
+is flexible, fast, and well-suited for large-scale epigenomic studies.")
+    (license license:artistic2.0)))
+
 (define-public r-dmchmm
   (package
     (name "r-dmchmm")
-    (version "1.30.1")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMCHMM" version))
        (sha256
-        (base32 "1xanic84pa5hi3zzqkklfc8awpyn04831r02di576fw037aski9c"))))
+        (base32 "0s8nng5gqal4c7nn3m7z5kzggwgsji6jnzmr0mh233zpqz31kj2h"))))
     (properties `((upstream-name . "DMCHMM")))
     (build-system r-build-system)
     (arguments
@@ -1366,13 +1595,13 @@ address the aforementioned drawbacks.")
 (define-public r-dmcfb
   (package
     (name "r-dmcfb")
-    (version "1.22.1")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DMCFB" version))
        (sha256
-        (base32 "1lw75h7iki6v66zrkcrwm5xi396b2xvaxsn53fa9nijgj91nwyj8"))))
+        (base32 "15yr4l1r5y1cf3s28nxpmdzak0akks2z4phmcn5dmmy5j7fzv9zz"))))
     (properties `((upstream-name . "DMCFB")))
     (build-system r-build-system)
     (arguments
@@ -1411,14 +1640,14 @@ estimation and inference in the proposed method.")
 (define-public r-dlbcl
   (package
     (name "r-dlbcl")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DLBCL" version
                               'experiment))
        (sha256
-        (base32 "0z7x42ndvjwq3ir25fqwfkbnsncwiavm2lrw1h5zcnwp86ashg19"))))
+        (base32 "1lx42nm5mpx3ds09l316iyx8l50250k4pz1nd8qk9g7hzn5m5rqz"))))
     (properties `((upstream-name . "DLBCL")))
     (build-system r-build-system)
     (arguments
@@ -1435,13 +1664,13 @@ lymphomas for the @code{BioNet} package.")
 (define-public r-dks
   (package
     (name "r-dks")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dks" version))
        (sha256
-        (base32 "1vibsj07rqix1b6dbgzv2z30jkv39mfqq1pajvxb99pb1q7gm009"))))
+        (base32 "1zhzcq6jgcnl8di11804d6b3z5jb077cg1p3rhilpzlqsww02ym8"))))
     (properties `((upstream-name . "dks")))
     (build-system r-build-system)
     (arguments
@@ -1463,13 +1692,13 @@ evaluated.")
 (define-public r-divergence
   (package
     (name "r-divergence")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "divergence" version))
        (sha256
-        (base32 "0vzv741qxkjkq8l5xq53qlrdr7mjq2qlacpddr0w8b6sc6kjblh4"))))
+        (base32 "0xahfjc5pclrq4m41z56ysyv83n8smw2jfv53312akcy8i16wbi7"))))
     (properties `((upstream-name . "divergence")))
     (build-system r-build-system)
     (arguments
@@ -1492,13 +1721,13 @@ multivariate features.")
 (define-public r-distinct
   (package
     (name "r-distinct")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "distinct" version))
        (sha256
-        (base32 "09qccx43sj7pcffh8gbi7213iyz8paxh6z70lff0dv0zs9nza8k7"))))
+        (base32 "0cpdszswk06pc0cyb51lmi4xrdcjxzadzkvj34y62i3fghfzhzxa"))))
     (properties `((upstream-name . "distinct")))
     (build-system r-build-system)
     (arguments
@@ -1541,13 +1770,13 @@ more groups of samples (i.e., experimental conditions), with at least 2 samples
 (define-public r-discorhythm
   (package
     (name "r-discorhythm")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DiscoRhythm" version))
        (sha256
-        (base32 "0i6l1q5xj3qn6pqzqdfpax1phh8c9vfan6k12vydlvbx2q14m1pb"))))
+        (base32 "0dgsfnw1zvf7m3z20wdakpv64yilq47lyj8cklkqs4kg2ks38cjc"))))
     (properties `((upstream-name . "DiscoRhythm")))
     (build-system r-build-system)
     (arguments
@@ -1598,13 +1827,13 @@ a R Shiny web interface to execute all workflow steps.")
 (define-public r-discordant
   (package
     (name "r-discordant")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "discordant" version))
        (sha256
-        (base32 "1gjqxjypv323pa9klbhax61i884n5rdvzgwxnqbhbam6vzcid6vv"))))
+        (base32 "07x2ck5vnb1nyk0lz1ffpgkfdas3x4p3fpw0zb7msvvpw9ny34jv"))))
     (properties `((upstream-name . "discordant")))
     (build-system r-build-system)
     (arguments
@@ -1628,61 +1857,16 @@ their type of coexpression or coabbundance.  Algorithm is explained further in
 \"Differential Correlation for Sequencing Data\"\" (Siska et al.  2016).")
     (license license:gpl3)))
 
-(define-public r-director
-  (package
-    (name "r-director")
-    (version "1.34.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "Director" version))
-       (sha256
-        (base32 "0xvpr1j36q46dlfympsivv5kxxnhskywc4fhxk0010yvx92ngpsw"))))
-    (properties `((upstream-name . "Director")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-htmltools))
-    (native-inputs (list esbuild))
-    (home-page "https://github.com/kzouchka/Director")
-    (synopsis "dynamic visualization tool of multi-level data")
-    (description
-     "Director is an R package designed to streamline the visualization of molecular
-effects in regulatory cascades.  It utilizes the R package htmltools and a
-modified Sankey plugin of the @code{JavaScript} library D3 to provide a fast and
-easy, browser-enabled solution to discovering potentially interesting downstream
-effects of regulatory and/or co-expressed molecules.  The diagrams are robust,
-interactive, and packaged as highly-portable HTML files that eliminate the need
-for third-party software to view.  This enables a straightforward approach for
-scientists to interpret the data produced, and bioinformatics developers an
-alternative means to present relevant data.")
-    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
-
 (define-public r-dinor
   (package
     (name "r-dinor")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dinoR" version))
        (sha256
-        (base32 "1ys0jygld8jz06lh3lpa9cvmda8cc80da791fvg1fjklvg0p1zjh"))))
+        (base32 "052lxngxi2pkxamppvafmczdxgviz7la2mbkf2jz0fa3f0di3czv"))))
     (properties `((upstream-name . "dinoR")))
     (build-system r-build-system)
     (arguments
@@ -1723,13 +1907,13 @@ counts per ROI, sample, and footprint category.")
 (define-public r-dino
   (package
     (name "r-dino")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Dino" version))
        (sha256
-        (base32 "1f75740fbnzkl4qmgr8vkc79xrj4cxy7rfwl3hmpjv28wwvnbmgl"))))
+        (base32 "1miqqyf792ijrc2b7rbwgl7yfbyng68wylip88230yik8jmdhdvp"))))
     (properties `((upstream-name . "Dino")))
     (build-system r-build-system)
     (arguments
@@ -1763,14 +1947,14 @@ expression data can otherwise present a challenge.")
 (define-public r-diggitdata
   (package
     (name "r-diggitdata")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diggitdata" version
                               'experiment))
        (sha256
-        (base32 "18v1fmagjiv2afwj40921gx3pafmcsb9minr0cwgdzkk8hx8hq5h"))))
+        (base32 "1xcnzw9yqg055i353b5d192050hkag635kdj63m0hfl63i34faa8"))))
     (properties `((upstream-name . "diggitdata")))
     (build-system r-build-system)
     (arguments
@@ -1788,13 +1972,13 @@ with the ARACNe and MINDy algorithms, respectively.")
 (define-public r-diggit
   (package
     (name "r-diggit")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diggit" version))
        (sha256
-        (base32 "19cg56s0aw2vnw8yg94l9zpg69q4cpmmqvdmh1wa31g0cg1rwsrw"))))
+        (base32 "1xi6rczrvky4s3xdb8dngadrm2iz5xj3mli869b0bn0ggsw735z0"))))
     (properties `((upstream-name . "diggit")))
     (build-system r-build-system)
     (arguments
@@ -1811,13 +1995,13 @@ algorithm.")
 (define-public r-diffutr
   (package
     (name "r-diffutr")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffUTR" version))
        (sha256
-        (base32 "0srj0jv7kq5zs87k3d4s6h94mfbg9gdb2p98rhyyrx9bc36ijcqi"))))
+        (base32 "00dprqbngf41n5yncaxn0kkfq0dxgz9df6c8p9064k3z35bsn5si"))))
     (properties `((upstream-name . "diffUTR")))
     (build-system r-build-system)
     (arguments
@@ -1855,13 +2039,13 @@ to differential UTR usage analysis using poly-A site databases.")
 (define-public r-diffustats
   (package
     (name "r-diffustats")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffuStats" version))
        (sha256
-        (base32 "0plyan6dyp19ssba30k5giafg18h92by1vmfzncknjykj1sb3r9q"))))
+        (base32 "1hq9j64lrk6f0xskz8jn1s5ddkr947y6clj94ylkan0i68gbbpzn"))))
     (properties `((upstream-name . "diffuStats")))
     (build-system r-build-system)
     (arguments
@@ -1894,14 +2078,14 @@ computation, characterisation and benchmarking.")
 (define-public r-diffloopdata
   (package
     (name "r-diffloopdata")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffloopdata" version
                               'experiment))
        (sha256
-        (base32 "1dpn8lacg41z95halnm228m748mynjn9irdbyq03jr7pwzbyy4yk"))))
+        (base32 "0xnizpp04fg8f9nslyyygpqsh7lkb0ziqijrqpvj59gfpn12lgzh"))))
     (properties `((upstream-name . "diffloopdata")))
     (build-system r-build-system)
     (arguments
@@ -1918,13 +2102,13 @@ package.")
 (define-public r-difflogo
   (package
     (name "r-difflogo")
-    (version "2.32.0")
+    (version "2.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DiffLogo" version))
        (sha256
-        (base32 "0rkwlsqqc1d2zw25415cj43033vh722jpgglr8k4ljbp99z5yydn"))))
+        (base32 "08wgvbjqwkrqdmh6xiyr1slvq4yasl70g6r8xlw11j1ipqrr37g4"))))
     (properties `((upstream-name . "DiffLogo")))
     (build-system r-build-system)
     (arguments
@@ -1940,13 +2124,13 @@ package.")
 (define-public r-diffhic
   (package
     (name "r-diffhic")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffHic" version))
        (sha256
-        (base32 "0yanl7awdxk9z4gxv48df9qpniwqmfalp4fisfac1yabrs681266"))))
+        (base32 "08bxncp88k15sj0xfhw9fsv9kk3g4f56qqp6ybrqq1ys64b56a3z"))))
     (properties `((upstream-name . "diffHic")))
     (build-system r-build-system)
     (arguments
@@ -1983,13 +2167,13 @@ available.")
 (define-public r-diffgeneanalysis
   (package
     (name "r-diffgeneanalysis")
-    (version "1.90.0")
+    (version "1.92.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffGeneAnalysis" version))
        (sha256
-        (base32 "0vsbl4g5rq5dg1l3n3kapfwl9bmrxibdrm39hcjjh0rf7w5kfd3k"))))
+        (base32 "1h9qsnj69xpzcrsx9pkf8bxinhpc08zmb5ykx7v339sghkvnqzn4"))))
     (properties `((upstream-name . "diffGeneAnalysis")))
     (build-system r-build-system)
     (arguments
@@ -2004,13 +2188,13 @@ available.")
 (define-public r-differentialregulation
   (package
     (name "r-differentialregulation")
-    (version "2.6.0")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DifferentialRegulation" version))
        (sha256
-        (base32 "0jjpaviyfms733m0v0lfig40rqg1j0jw3ifz8vd6knk8bcr3227q"))))
+        (base32 "09vbnd9as1925m9h2dhxxg8zwrqnjpql1qvkdx7c7rqm9wfhm6bx"))))
     (properties `((upstream-name . "DifferentialRegulation")))
     (build-system r-build-system)
     (arguments
@@ -2052,13 +2236,13 @@ Markov chain Monte Carlo (MCMC) techniques (Metropolis-within-Gibbs).")
 (define-public r-diffcoexp
   (package
     (name "r-diffcoexp")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "diffcoexp" version))
        (sha256
-        (base32 "0gx8c3wsdzx7yh9sqykvh346lk47xw8zph50x1j5jrkqbnvrahws"))))
+        (base32 "010hjbsk0y2gdk543jsjdykyd01141fmqn3pl57adhsgxmxcr8pp"))))
     (properties `((upstream-name . "diffcoexp")))
     (build-system r-build-system)
     (arguments
@@ -2082,13 +2266,13 @@ conditions.  DCGs are genes with significantly more DCLs than by chance.")
 (define-public r-dfplyr
   (package
     (name "r-dfplyr")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DFplyr" version))
        (sha256
-        (base32 "1n39rnvmr4hvhq4fpwisvib7xkzb1gdrv84jm4ccwzm4yrxdpb7y"))))
+        (base32 "1j1wqccxavzslg9mlkb6fdrzrzf6xzdjpwmgbd30y5n0y9gldd07"))))
     (properties `((upstream-name . "DFplyr")))
     (build-system r-build-system)
     (arguments
@@ -2109,13 +2293,13 @@ without conversion to an intermediate `tibble`.  Adds grouping infrastructure to
 (define-public r-dfp
   (package
     (name "r-dfp")
-    (version "1.66.0")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DFP" version))
        (sha256
-        (base32 "155v02mi40d81hddiv9750md91gb3y6qyjaif97vxahcr8f8lx8w"))))
+        (base32 "0mhyry6i640hs4b05q99fyh07ark0n2i0xq53432y7v2q61gzahc"))))
     (properties `((upstream-name . "DFP")))
     (build-system r-build-system)
     (arguments
@@ -2134,14 +2318,14 @@ discretized gene expression values.")
 (define-public r-dexmadata
   (package
     (name "r-dexmadata")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DExMAdata" version
                               'experiment))
        (sha256
-        (base32 "0x11gsn03kkpmdlqzf28ld8zlrah25znsd61gynvzidv69s9mv51"))))
+        (base32 "05623d8wjk4db0ac43frqn700pgx024vpby8yj4iz2pri9cjw6b2"))))
     (properties `((upstream-name . "DExMAdata")))
     (build-system r-build-system)
     (arguments
@@ -2159,13 +2343,13 @@ of the D@code{ExMA} package, which illustrate package functionality.")
 (define-public r-dexma
   (package
     (name "r-dexma")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DExMA" version))
        (sha256
-        (base32 "077y1vb8rnakqbgjhfb2brj3vx8m3hv1wqyxv60dz0dhxx7b2nvz"))))
+        (base32 "1khhz4mfm1fr1v125hkslhsp85r0x1z2mrni3jrnjasv6nghy2ca"))))
     (properties `((upstream-name . "DExMA")))
     (build-system r-build-system)
     (arguments
@@ -2197,23 +2381,23 @@ and show graphical representations of the results.")
 (define-public r-dewseq
   (package
     (name "r-dewseq")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEWSeq" version))
        (sha256
-        (base32 "042534cn0hczfzsh7dk5g3rsskkqf2mbs217j2gqlvblj84vnl35"))))
+        (base32 "194w9ky75zmkay98l41sn6129225acf2nlgd8mdvqh1w36l412sh"))))
     (properties `((upstream-name . "DEWSeq")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
+                             r-seqinfo
                              r-s4vectors
                              r-r-utils
                              r-genomicranges
-                             r-genomeinfodb
                              r-deseq2
                              r-data-table
                              r-biocparallel
@@ -2230,13 +2414,13 @@ binding regions @code{eCLIP} or @code{iCLIP} next generation sequencing data.")
 (define-public r-desubs
   (package
     (name "r-desubs")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEsubs" version))
        (sha256
-        (base32 "03y7pc094s9y36x6mm0xph6xj0z7ivzzs8awwc44pjs24p0776ic"))))
+        (base32 "0hmwnx0dpfpw6m2mcgy5ymplj6azfrk21nxmjnabpg7a8i61qj56"))))
     (properties `((upstream-name . "DEsubs")))
     (build-system r-build-system)
     (arguments
@@ -2276,13 +2460,13 @@ for complex diseases.")
 (define-public r-despace
   (package
     (name "r-despace")
-    (version "2.0.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DESpace" version))
        (sha256
-        (base32 "195by5l6iiga8xcvry11x9x0303f3h47i5qf4a32f2n3hzb9m8k7"))))
+        (base32 "05yf3brkgqixga8v8lmv6ksqj6baiz10dqknmn7ps37qhbkxv3as"))))
     (properties `((upstream-name . "DESpace")))
     (build-system r-build-system)
     (arguments
@@ -2330,14 +2514,14 @@ interaction between spatial clusters and conditions.")
 (define-public r-desousa2013
   (package
     (name "r-desousa2013")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DeSousa2013" version
                               'experiment))
        (sha256
-        (base32 "0cyk7xvl11v0mw2ydzcx88zpf9ns0ah57mx1im35pyig563gdwfl"))))
+        (base32 "1iz0h8qldrqb4vib22mq0z5lm436j6im9lzs1jqmf4bmr5r2z0w3"))))
     (properties `((upstream-name . "DeSousa2013")))
     (build-system r-build-system)
     (arguments
@@ -2370,13 +2554,13 @@ microarray data set in De Sousa et al.  accepted by Nature Medicine in 2013.")
 (define-public r-desingle
   (package
     (name "r-desingle")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEsingle" version))
        (sha256
-        (base32 "1djicbxx4j0nm5rydfn1yxcimvnldzxffpavcyw25f9fxlb05yb2"))))
+        (base32 "1kg5ak77ip6ncyvf6v1wayf00knxb824xgdlbg56bvjr26ijfnwc"))))
     (properties `((upstream-name . "DEsingle")))
     (build-system r-build-system)
     (arguments
@@ -2409,19 +2593,20 @@ different types of DE genes that are enriched in different biological functions.
 (define-public r-descan2
   (package
     (name "r-descan2")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEScan2" version))
        (sha256
-        (base32 "1ci8bwpgwk71kcgy1sqabapxbr5fj6nyn8wr2kyzn9lc1v387qkb"))))
+        (base32 "0f2r8008mm1w6gwq6wi8gixwpa1fhcz7h5zarscsbkdyaqmblpqm"))))
     (properties `((upstream-name . "DEScan2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
+                             r-seqinfo
                              r-s4vectors
                              r-rtracklayer
                              r-rcpparmadillo
@@ -2448,19 +2633,20 @@ epigenomic signals.")
 (define-public r-derfinderplot
   (package
     (name "r-derfinderplot")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "derfinderPlot" version))
        (sha256
-        (base32 "12sjwmjj9b61m6baa24ghg6iy0f87yq32km1rr59j5mmjmdhmrj1"))))
+        (base32 "1kh8snbldzxvs9n2i35dd1361hxnv8rwm0ll36kjywldlaa27bkj"))))
     (properties `((upstream-name . "derfinderPlot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-seqinfo
+                             r-scales
                              r-s4vectors
                              r-reshape2
                              r-rcolorbrewer
@@ -2485,13 +2671,13 @@ from the core functionality of derfinder.")
 (define-public r-deqms
   (package
     (name "r-deqms")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEqMS" version))
        (sha256
-        (base32 "19ryqbyng01ykjiphykrd57z1rh2gahzglb7z28kn64paamap2jc"))))
+        (base32 "0vlglhsgyz8jchfn799navmya7zdr654sad26w0690qlnyzdsqbf"))))
     (properties `((upstream-name . "DEqMS")))
     (build-system r-build-system)
     (arguments
@@ -2516,14 +2702,14 @@ both label-free and labelled proteomics data.")
 (define-public r-depmap
   (package
     (name "r-depmap")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "depmap" version
                               'experiment))
        (sha256
-        (base32 "1yfprycimjpf3wqvhkam8pckbasdyqwdzb76i8pgjwhwdg3bzc29"))))
+        (base32 "0sg4325aj0vkzvmpsr6zymf71247c8bp44bpjkpqxsxgiqs4a9ns"))))
     (properties `((upstream-name . "depmap")))
     (build-system r-build-system)
     (arguments
@@ -2567,13 +2753,13 @@ clinical use.  This data is distributed under the Creative Commons license
 (define-public r-depinfer
   (package
     (name "r-depinfer")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DepInfeR" version))
        (sha256
-        (base32 "1cl6bzp5hs10yh9r0rp7ww251farwr0w49izgwy8pah9x7ran52z"))))
+        (base32 "0pgxxlsa72h57592yrhz5n4i2332mphrjd32019vhiisligcadzr"))))
     (properties `((upstream-name . "DepInfeR")))
     (build-system r-build-system)
     (arguments
@@ -2602,13 +2788,13 @@ https://doi.org/10.1101/2022.01.11.475864.")
 (define-public r-dep
   (package
     (name "r-dep")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEP" version))
        (sha256
-        (base32 "1cf30pf5j51rhgp1i56w5j83yqpblk5pnigw1qxzm6d70277a8yg"))))
+        (base32 "1lwj3jz7vkri1kqav7shzxh0y2qdv37f566ss4lm4ifnzihg3y43"))))
     (properties `((upstream-name . "DEP")))
     (build-system r-build-system)
     (arguments
@@ -2660,13 +2846,13 @@ interactive Shiny apps that are provided by the package.")
 (define-public r-demuxsnp
   (package
     (name "r-demuxsnp")
-    (version "1.6.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "demuxSNP" version))
        (sha256
-        (base32 "1mywgv3b5zha1yplf9jwgkw1y1i070n4rv93d0y3gc57xamzk6lj"))))
+        (base32 "1jshg2rqmlw59cdha9k4zzrhp2z4kl8hqgb00h31khi296nrbv79"))))
     (properties `((upstream-name . "demuxSNP")))
     (build-system r-build-system)
     (arguments
@@ -2675,11 +2861,11 @@ interactive Shiny apps that are provided by the package.")
     (propagated-inputs (list r-variantannotation
                              r-summarizedexperiment
                              r-singlecellexperiment
+                             r-seqinfo
                              r-matrixgenerics
                              r-matrix
                              r-kernelknn
                              r-iranges
-                             r-genomeinfodb
                              r-ensembldb
                              r-dplyr
                              r-demuxmix
@@ -2701,13 +2887,13 @@ optimise SNP selection, create training data and merge SNP data into the
 (define-public r-demixt
   (package
     (name "r-demixt")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DeMixT" version))
        (sha256
-        (base32 "1cagx7i2vyzjyjh31zk23r6frnqqmj31ak5i1anw1qslqibwsb9m"))))
+        (base32 "0nqalk74r8k1sr1wc3n60dp19crv8arp3xczv371c29wvhgfmqn8"))))
     (properties `((upstream-name . "DeMixT")))
     (build-system r-build-system)
     (arguments
@@ -2739,13 +2925,13 @@ data from a mixture of two or three components.")
 (define-public r-demand
   (package
     (name "r-demand")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DeMAND" version))
        (sha256
-        (base32 "1w3qpiv7zj603c3iqasi702mx3sbxi6rkyj3q024wjwsbb1114n4"))))
+        (base32 "08pkxdhxzw2d4fx1r6h8b10bwkhhaipdr5fy6c5vh89z1lbjmxcg"))))
     (properties `((upstream-name . "DeMAND")))
     (build-system r-build-system)
     (arguments
@@ -2764,13 +2950,13 @@ network is dysregulated by the compound.")
 (define-public r-deltagseg
   (package
     (name "r-deltagseg")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "deltaGseg" version))
        (sha256
-        (base32 "0xdm81wb0pmz9rcplfrc7px47hlaqv3kf92idvn3ldm46z4jlw4a"))))
+        (base32 "0y7i05l2lbv2dnib5d069zrdhmr432ig4fj72p4w72mzizfmm7p9"))))
     (properties `((upstream-name . "deltaGseg")))
     (build-system r-build-system)
     (arguments
@@ -2794,13 +2980,13 @@ network is dysregulated by the compound.")
 (define-public r-deltacapturec
   (package
     (name "r-deltacapturec")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "deltaCaptureC" version))
        (sha256
-        (base32 "14qvbxbab930x4399vx64wz4l5bmspdj4kb7bmx8m1c0a2rwflws"))))
+        (base32 "06d8ml983s4l033vwnjh5sj8hz283zfrdkpfqj0z8nwm35vnq39j"))))
     (properties `((upstream-name . "deltaCaptureC")))
     (build-system r-build-system)
     (arguments
@@ -2825,50 +3011,16 @@ significant changes in the interaction counts between the data from two cell
 types or two treatments.")
     (license license:expat)))
 
-(define-public r-delocal
-  (package
-    (name "r-delocal")
-    (version "1.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "DELocal" version))
-       (sha256
-        (base32 "0hinzs1220hs7qfjv5na9cn7929wbrnvr409ay0vgphzkh92w30z"))))
-    (properties `((upstream-name . "DELocal")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-reshape2
-                             r-matrixstats
-                             r-limma
-                             r-ggplot2
-                             r-dplyr
-                             r-deseq2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dasroy/DELocal")
-    (synopsis
-     "Identifies differentially expressed genes with respect to other local genes")
-    (description
-     "The goal of DELocal is to identify DE genes compared to their neighboring genes
-from the same chromosomal location.  It has been shown that genes of related
-functions are generally very far from each other in the chromosome.  DELocal
-utilzes this information to identify DE genes comparing with their neighbouring
-genes.")
-    (license license:expat)))
-
 (define-public r-delayedtensor
   (package
     (name "r-delayedtensor")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DelayedTensor" version))
        (sha256
-        (base32 "1pqvabsdfg21axx3w12gg6kjadinwmrcrvr0jadzmxr8p816vprj"))))
+        (base32 "1wzjdmqmrgakkzsdjj7qpd9r6i07skq3l7hxkj3qlrfxp91rgad2"))))
     (properties `((upstream-name . "DelayedTensor")))
     (build-system r-build-system)
     (arguments
@@ -2899,13 +3051,13 @@ is inspired by numpy einsum.")
 (define-public r-delayedrandomarray
   (package
     (name "r-delayedrandomarray")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DelayedRandomArray" version))
        (sha256
-        (base32 "1l1m2lvzpgryw2d41gy2issr4lrxrrfqg9mypj18wwgyd6p6bfvi"))))
+        (base32 "039m4n7vd56vgnf1nxfga3f7f4sd533qy3wjb77ly9pfs2jnb546"))))
     (properties `((upstream-name . "DelayedRandomArray")))
     (build-system r-build-system)
     (arguments
@@ -2927,13 +3079,13 @@ arrays for the parameters.")
 (define-public r-delayeddataframe
   (package
     (name "r-delayeddataframe")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DelayedDataFrame" version))
        (sha256
-        (base32 "130qd102wyh9chdjsw1nbp5lzigzaajz429zslwjpbwvi9vd72zd"))))
+        (base32 "1yqvpkps2kcfdaadnh52rmhqa0z37579i9f1ff86xablmzi9znfg"))))
     (properties `((upstream-name . "DelayedDataFrame")))
     (build-system r-build-system)
     (arguments
@@ -2957,13 +3109,13 @@ call e.g., @code{DataFrame} constructor OR @code{as.list()} is invoked.")
 (define-public r-degseq
   (package
     (name "r-degseq")
-    (version "1.62.0")
+    (version "1.64.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEGseq" version))
        (sha256
-        (base32 "1903v9bfbaadr24g1c65qvb98qv1222lmmx6x3hni19cpsi233nz"))))
+        (base32 "00zsfy9fj89bkr997g9b1si1kvmi346v0xlxnzsassphc2pddfmi"))))
     (properties `((upstream-name . "DEGseq")))
     (build-system r-build-system)
     (arguments
@@ -2980,13 +3132,13 @@ data.")
 (define-public r-degraph
   (package
     (name "r-degraph")
-    (version "1.60.0")
+    (version "1.62.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEGraph" version))
        (sha256
-        (base32 "0qaxw5kb7qp11dlyb8rdajvhx04qnai16w6qckq64abn7g21lm5h"))))
+        (base32 "0ynrw24wx9xhyixv17spkz34bxfx9596arhx4iafjf33pr3b39ys"))))
     (properties `((upstream-name . "DEGraph")))
     (build-system r-build-system)
     (arguments
@@ -3018,13 +3170,13 @@ any gene expression data set and tools to visualize the results.")
 (define-public r-degnorm
   (package
     (name "r-degnorm")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DegNorm" version))
        (sha256
-        (base32 "1a4yxwj2jfjp06sw3kyh6zyh8h7f83prabp9h0zl3zzbp6fh44pn"))))
+        (base32 "1737fdfd5i80qh4dp21z5pq4d3xfzl79m59qwhmz40pljx98bl88"))))
     (properties `((upstream-name . "DegNorm")))
     (build-system r-build-system)
     (arguments
@@ -3052,25 +3204,27 @@ any gene expression data set and tools to visualize the results.")
     (synopsis "DegNorm: degradation normalization for RNA-seq data")
     (description
      "This package performs degradation normalization in bulk RNA-seq data to improve
-differential expression analysis accuracy.")
+differential expression analysis accuracy.  It provides estimates for each gene
+within each sample.")
     (license license:lgpl3+)))
 
 (define-public r-degcre
   (package
     (name "r-degcre")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DegCre" version))
        (sha256
-        (base32 "044kr8ic0rjd8l4y5ypdxf4ajh6q8w10p825acp4qn09fh453k4x"))))
+        (base32 "056716y8ychdbac6mvyp99n3ak5afnxgyksa1b524jzwipc3w0k9"))))
     (properties `((upstream-name . "DegCre")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg38-knowngene
+                             r-seqinfo
                              r-s4vectors
                              r-qvalue
                              r-plotgardener
@@ -3078,7 +3232,6 @@ differential expression analysis accuracy.")
                              r-iranges
                              r-interactionset
                              r-genomicranges
-                             r-genomeinfodb
                              r-biocparallel
                              r-biocgenerics))
     (native-inputs (list r-knitr))
@@ -3098,13 +3251,13 @@ visualization and conversion to other formats.")
 (define-public r-deformats
   (package
     (name "r-deformats")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DEFormats" version))
        (sha256
-        (base32 "011mbkvfmrdgrahp046yd1a5cc0hqpicfjg4hwak5nnliai7i9yh"))))
+        (base32 "1xjqkv3xwslgm0ifiwcg96hqml7w6v47z8c2q4hf0dk2a9f3sljw"))))
     (properties `((upstream-name . "DEFormats")))
     (build-system r-build-system)
     (arguments
@@ -3128,13 +3281,13 @@ analysis tools.")
 (define-public r-deeptarget
   (package
     (name "r-deeptarget")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DeepTarget" version))
        (sha256
-        (base32 "1yhyjspnfk3q3z4jny1lpbbvj62h7d8ka58xcwzj8ckp6pg04dp4"))))
+        (base32 "1fyr7y6bv4bgx6hsjac0zjh8h7i14qvxf6vhwnaj0kc5nprszzbn"))))
     (properties `((upstream-name . "DeepTarget")))
     (build-system r-build-system)
     (arguments
@@ -3164,13 +3317,13 @@ example.")
 (define-public r-deeppincs
   (package
     (name "r-deeppincs")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DeepPINCS" version))
        (sha256
-        (base32 "0sc72ghyrhr29xhyhwgnq0sqqdn9xlwkv3p3mfyrbb0rxrkm07zs"))))
+        (base32 "0p9hiqhv2kr44jw61bsg15ymxqzdxkq5vvywsgw2418428d3j2gp"))))
     (properties `((upstream-name . "DeepPINCS")))
     (build-system r-build-system)
     (arguments
@@ -3213,16 +3366,50 @@ proteins.  Although the model is designed for proteins, DNA and RNA can be used
 if they are represented as sequences.")
     (license license:artistic2.0)))
 
+(define-public r-deedeeexperiment
+  (package
+    (name "r-deedeeexperiment")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DeeDeeExperiment" version))
+       (sha256
+        (base32 "05sycr3kv44w3x66s280vp1nz4i8pxflxqrw1lwffg087ssbyp23"))))
+    (properties `((upstream-name . "DeeDeeExperiment")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-limma
+                             r-edger
+                             r-deseq2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/imbeimainz/DeeDeeExperiment")
+    (synopsis
+     "DeeDeeExperiment: An S4 Class for managing and exploring omics analysis results")
+    (description
+     "@code{DeeDeeExperiment} is an S4 class extending the @code{SingleCellExperiment}
+class, designed to integrate and manage omics analysis results.  It introduces
+two dedicated slots to store Differential Expression Analysis (DEA) results and
+Functional Enrichment Analysis (FEA) results, providing a structured approach
+for downstream analysis.")
+    (license license:expat)))
+
 (define-public r-deconvobuddies
   (package
     (name "r-deconvobuddies")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DeconvoBuddies" version))
        (sha256
-        (base32 "1qaajr5rm7qkqg7kg8qnqbaq7ijnzn83l4vncjf1hz4c5j8vzw1s"))))
+        (base32 "1q6zcp83yqnlifasz8dp37f9a6fh97fxlfjydm67gsqc7vcsiv7d"))))
     (properties `((upstream-name . "DeconvoBuddies")))
     (build-system r-build-system)
     (arguments
@@ -3242,10 +3429,11 @@ if they are represented as sequences.")
                              r-reshape2
                              r-rafalib
                              r-purrr
-                             r-matrixstats
+                             r-matrixgenerics
                              r-ggplot2
                              r-experimenthub
                              r-dplyr
+                             r-delayedmatrixstats
                              r-biocfilecache
                              r-annotationhub))
     (native-inputs (list r-knitr))
@@ -3260,13 +3448,13 @@ results.  Working to include DLPFC datasets.")
 (define-public r-decontx
   (package
     (name "r-decontx")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "decontX" version))
        (sha256
-        (base32 "0yar28k3nk3xxx067iflza2zyl6c59k7s04515jmz3i6l9hyh764"))))
+        (base32 "00w0xd9i6lhb84q7mjjy1wgrs4sb20hpjxmkfkymk2apf5azf9p7"))))
     (properties `((upstream-name . "decontX")))
     (build-system r-build-system)
     (arguments
@@ -3311,13 +3499,13 @@ the dataset.")
 (define-public r-debrowser
   (package
     (name "r-debrowser")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "debrowser" version))
        (sha256
-        (base32 "1p1r6hy8mamjvazg8cnz0v9i38fg15jnzndbm3707qa6caz5w7cz"))))
+        (base32 "0d90w8v43psm2z47i1np20jvy6l331n18wyzngqgk94g7qcacw98"))))
     (properties `((upstream-name . "debrowser")))
     (build-system r-build-system)
     (arguments
@@ -3375,13 +3563,13 @@ plots such as scatter, bar, box, volcano, ma plots and Heatmaps.")
 (define-public r-ddpcrclust
   (package
     (name "r-ddpcrclust")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ddPCRclust" version))
        (sha256
-        (base32 "0ky64kfan378xk4akjab7rh6s4bmghr2cdy8bvr07ihszbz3qrik"))))
+        (base32 "1vj6a3wd4r0w606cm6pkdxgmmq0cmibly1xs9fdnli8z6sxpnqn1"))))
     (properties `((upstream-name . "ddPCRclust")))
     (build-system r-build-system)
     (arguments
@@ -3410,13 +3598,13 @@ formatted, please check the vignette.")
 (define-public r-ddct
   (package
     (name "r-ddct")
-    (version "1.64.0")
+    (version "1.66.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ddCt" version))
        (sha256
-        (base32 "0qprpc9l6nzxlb66kq0zkylypc2ljjndbl5z70hpsy5vq5dwy1bv"))))
+        (base32 "0xl3034xixqms5q66glbc3c697fff1dd5qyn57pm4jbyn6gfrsrw"))))
     (properties `((upstream-name . "ddCt")))
     (build-system r-build-system)
     (arguments
@@ -3443,13 +3631,13 @@ of S4-Classes, methods and functions.")
 (define-public r-dcgsa
   (package
     (name "r-dcgsa")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dcGSA" version))
        (sha256
-        (base32 "0gpa7z68rrb7w866l3v37sx3i048r1jj42bxws26w8aldf6bzc7x"))))
+        (base32 "1dfnchgyiw7g424s24jshzcz56whdpxbzsapyw4bna0ldhd0m4mp"))))
     (properties `((upstream-name . "dcGSA")))
     (build-system r-build-system)
     (arguments
@@ -3470,74 +3658,16 @@ interest by fully taking advantage of the longitudinal nature of both the gene
 expression profiles and clinical outcomes.")
     (license license:gpl2)))
 
-(define-public r-dce
-  (package
-    (name "r-dce")
-    (version "1.13.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "dce" version))
-       (sha256
-        (base32 "02gnlskfgn38fcf5mchp6ippcd2rj4cl4w7r08igaqyl02zy2x80"))))
-    (properties `((upstream-name . "dce")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyverse
-                             r-tidygraph
-                             r-shadowtext
-                             r-rlang
-                             r-rgraphviz
-                             r-reshape2
-                             r-purrr
-                             r-ppcor
-                             r-pcalg
-                             r-org-hs-eg-db
-                             r-naturalsort
-                             r-mnem
-                             r-metap
-                             r-matrix
-                             r-mass
-                             r-magrittr
-                             r-logger
-                             r-igraph
-                             r-harmonicmeanp
-                             r-graphite
-                             r-graph
-                             r-glue
-                             r-glm2
-                             r-ggraph
-                             r-ggplot2
-                             r-expm
-                             r-epinem
-                             r-edger
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cbg-ethz/dce")
-    (synopsis "Pathway Enrichment Based on Differential Causal Effects")
-    (description
-     "Compute differential causal effects (dce) on (biological) networks.  Given
-observational samples from a control experiment and non-control (e.g., cancer)
-for two genes A and B, we can compute differential causal effects with a
-(generalized) linear regression.  If the causal effect of gene A on gene B in
-the control samples is different from the causal effect in the non-control
-samples the dce will differ from zero.  We regularize the dce computation by the
-inclusion of prior network information from pathway databases such as KEGG.")
-    (license license:gpl3)))
-
 (define-public r-dcats
   (package
     (name "r-dcats")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DCATS" version))
        (sha256
-        (base32 "0pia4rbg4mvxv2p175vg23hrclcnzxjfbiq3xs41r50xb1wq175x"))))
+        (base32 "00pc0dqf7v1pinbjw62rin9xn24j1bxxy2bf06cj1mwa8ws9fd9k"))))
     (properties `((upstream-name . "DCATS")))
     (build-system r-build-system)
     (arguments
@@ -3561,13 +3691,13 @@ reference group as normalization term.")
 (define-public r-dcanr
   (package
     (name "r-dcanr")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dcanr" version))
        (sha256
-        (base32 "1cmc40d8mbxh79pwwbqqwhbvmfib08asp04r2wi2gi24n80aw1im"))))
+        (base32 "0ga220j0na7biwrwxhzdjw0qv8624lcw05c5kagjd889rf27sizj"))))
     (properties `((upstream-name . "dcanr")))
     (build-system r-build-system)
     (arguments
@@ -3596,14 +3726,14 @@ are altered between two conditions (e.g., health and disease).")
 (define-public r-davidtiling
   (package
     (name "r-davidtiling")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "davidTiling" version
                               'experiment))
        (sha256
-        (base32 "08zghfvj79wh5v9v6pv2zik5hk2nsrpf7nlz3myk6sav72xffx1j"))))
+        (base32 "0dpxwv5v3s80jbwbmsix2x1mva6208c7a2yp3mvhkhvczdmnvjqf"))))
     (properties `((upstream-name . "davidTiling")))
     (build-system r-build-system)
     (arguments
@@ -3625,13 +3755,13 @@ scripts directory.")
 (define-public r-dart
   (package
     (name "r-dart")
-    (version "1.56.0")
+    (version "1.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DART" version))
        (sha256
-        (base32 "0qkdh3112j04vpxyqv8k1sznrmx34nayg8qdrz0b43kix9my6ffn"))))
+        (base32 "0gswcf08ab1bp0vpx5m66ckd768smvav43h7q4l9plw7sg7pc7mv"))))
     (properties `((upstream-name . "DART")))
     (build-system r-build-system)
     (arguments
@@ -3652,13 +3782,13 @@ individual samples.")
 (define-public r-dar
   (package
     (name "r-dar")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dar" version))
        (sha256
-        (base32 "1yxvfk4dp4hpb90qkgwj7b4g79ydzykpxapwd1lvzk0iqa7f2nyx"))))
+        (base32 "0dxpd19pqkqxpb6r9fzb068a4saspzasx5i171inib4jq7r6yicx"))))
     (properties `((upstream-name . "dar")))
     (build-system r-build-system)
     (arguments
@@ -3706,14 +3836,14 @@ way.")
 (define-public r-dapardata
   (package
     (name "r-dapardata")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DAPARdata" version
                               'experiment))
        (sha256
-        (base32 "0ccrnkk1j71nx0dv259vcqb25f6nygcsr68vvk6xmyp7ravrqkmh"))))
+        (base32 "1nv971z10cdnx9j4lv6hfwwcsn53fh74k4g6hs0rqqywg4ccz0zg"))))
     (properties `((upstream-name . "DAPARdata")))
     (build-system r-build-system)
     (arguments
@@ -3738,13 +3868,13 @@ quantitative experiments.  Proteomics, 16(1), 29-32.")
 (define-public r-dapar
   (package
     (name "r-dapar")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DAPAR" version))
        (sha256
-        (base32 "1v1bv7q161rd52ynp9xv333li41c3pxzm09wafpbg4hf98knnpbl"))))
+        (base32 "13miss07m8lsnly8nj7mqi9hlwdk9075av9pfi1aahr6bhwx4r43"))))
     (properties `((upstream-name . "DAPAR")))
     (build-system r-build-system)
     (arguments
@@ -3767,13 +3897,13 @@ required (see `Prostar` package).")
 (define-public r-dandelionr
   (package
     (name "r-dandelionr")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dandelionR" version))
        (sha256
-        (base32 "0m8p003mgf03n69z0bcbid2insskg04vhhrvrppsciqcc9a4rbb4"))))
+        (base32 "00035q1fvkn6i3j0phzwn6zrlwqb6wxad89rcs904srkh8kj8cic"))))
     (properties `((upstream-name . "dandelionR")))
     (build-system r-build-system)
     (arguments
@@ -3808,13 +3938,13 @@ by the Palantir Python package.")
 (define-public r-damsel
   (package
     (name "r-damsel")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Damsel" version))
        (sha256
-        (base32 "1hd923bx1ypvdgyixyd5bgshbc3ikikbx3nmvmnqicypalxnm8cz"))))
+        (base32 "08d2kpqrvs00l6j4dpibflzy55wpsfdqrxpnbb84dk6x85j0cr0r"))))
     (properties `((upstream-name . "Damsel")))
     (build-system r-build-system)
     (arguments
@@ -3861,13 +3991,13 @@ analysis within R.")
 (define-public r-damirseq
   (package
     (name "r-damirseq")
-    (version "2.20.0")
+    (version "2.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DaMiRseq" version))
        (sha256
-        (base32 "03953d0j4r9bh79wkcs9781nana3cwa9yf59vl64p87ng9xwbx08"))))
+        (base32 "1gm0wd304gd6xp339z6977yx0iwn3zqqf249hw882yi059xj295s"))))
     (properties `((upstream-name . "DaMiRseq")))
     (build-system r-build-system)
     (arguments
@@ -3922,13 +4052,13 @@ or correlation plot.")
 (define-public r-daglogo
   (package
     (name "r-daglogo")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dagLogo" version))
        (sha256
-        (base32 "12pbxddfxwcd7izamzqjiac0vm4572lv4ghn39zysb9j8fbbjscm"))))
+        (base32 "0cb5yqfjgy3qxnqbppavfifgmk2gys8yww200kqpgkkwn4wdw81k"))))
     (properties `((upstream-name . "dagLogo")))
     (build-system r-build-system)
     (arguments

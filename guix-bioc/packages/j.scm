@@ -36,14 +36,14 @@
 (define-public r-johnsonkinasedata
   (package
     (name "r-johnsonkinasedata")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JohnsonKinaseData" version
                               'experiment))
        (sha256
-        (base32 "0dpn8hw9f5bd7rf5ahz812hz93b1dc0zwszh3im2lq2ylfjy14c0"))))
+        (base32 "0j3xddfyhf5pcm6hqvmx0czm9k18mfkaczhh5q34hr2hlgykhkll"))))
     (properties `((upstream-name . "JohnsonKinaseData")))
     (build-system r-build-system)
     (arguments
@@ -78,13 +78,13 @@ rank\").")
 (define-public r-jazzpanda
   (package
     (name "r-jazzpanda")
-    (version "1.0.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "jazzPanda" version))
        (sha256
-        (base32 "1imq45l0yzdznvz0v0ibz2ghdhz9kzzi35x3ana7gc2zviabcgjl"))))
+        (base32 "0bkzi2x4xlaqwn1wjrkmf4vbnqbcqkyvs9mwkxrh5rwg8dq1znw3"))))
     (properties `((upstream-name . "jazzPanda")))
     (build-system r-build-system)
     (arguments
@@ -235,14 +235,14 @@ TFBSTools (>= 1.15.6).")
 (define-public r-jaspar2014
   (package
     (name "r-jaspar2014")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2014" version
                               'experiment))
        (sha256
-        (base32 "052zhj7zcs143imb5gmd21ai76j7algi42dr4fc0j7i8y6klpq3a"))))
+        (base32 "0bm4wgh3m9lwzfgrxyd1yjk4rz3m4xjz213qpa430p712as2kjz4"))))
     (properties `((upstream-name . "JASPAR2014")))
     (build-system r-build-system)
     (arguments
