@@ -1324,13 +1324,13 @@ be used for filtering.")
 (define-public r-stpipe
   (package
     (name "r-stpipe")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "stPipe" version))
        (sha256
-        (base32 "0x20phlrv0mlyr9q7hs5pdz9vcm1lvh0qdjp3z6kry53l4cqql0n"))))
+        (base32 "0hzhkcld5qkfq00rb01w57kgik1f5xmbm9ccc3i09xqiyh29llh4"))))
     (properties `((upstream-name . "stPipe")))
     (build-system r-build-system)
     (arguments

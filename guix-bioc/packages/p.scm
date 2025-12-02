@@ -2926,13 +2926,13 @@ data.")
 (define-public r-pirat
   (package
     (name "r-pirat")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Pirat" version))
        (sha256
-        (base32 "1walcav2kn13fj3k3088ymznvk9yl9zx7yb51qxkxgkdws59j15h"))))
+        (base32 "0r058blz4l6sq24r1aydpcqkn5jnz92d78gkqf3wzc5x1zpq8h15"))))
     (properties `((upstream-name . "Pirat")))
     (build-system r-build-system)
     (arguments

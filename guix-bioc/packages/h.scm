@@ -7,8 +7,8 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages statistics)
-  #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages a)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
   #:use-module (gnu packages compression)
@@ -40,6 +40,48 @@
   #:use-module (guix-bioc packages c)
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
+
+(define-public r-hyper
+  (package
+    (name "r-hyper")
+    (version "2.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "hypeR" version))
+       (sha256
+        (base32 "09z8vkw9zj6q92xb5q0782bxz826gw9vqsdxsrj9xknki3jr9ghb"))))
+    (properties `((upstream-name . "hypeR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-stringr
+                             r-shiny
+                             r-scales
+                             r-rmarkdown
+                             r-rlang
+                             r-reshape2
+                             r-reactable
+                             r-r6
+                             r-purrr
+                             r-openxlsx
+                             r-msigdbr
+                             r-magrittr
+                             r-kableextra
+                             r-igraph
+                             r-httr
+                             r-htmltools
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/montilab/hypeR")
+    (synopsis "An R Package For Geneset Enrichment Workflows")
+    (description "An R Package for Geneset Enrichment Workflows.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-hybridexpress
   (package

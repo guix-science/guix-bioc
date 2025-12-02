@@ -5540,13 +5540,13 @@ validate the results, and functions to conduct enrichment analyses.")
 (define-public r-mirit
   (package
     (name "r-mirit")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MIRit" version))
        (sha256
-        (base32 "0mk01yzi4aan6k1bxlpjaiyh3yx8h060pdhgif67hidk8yav9gzk"))))
+        (base32 "1zxhsdn050lwmq8xvw6rh9bcyrkrdfc36mqn2k0v9xl42ixqdjd9"))))
     (properties `((upstream-name . "MIRit")))
     (build-system r-build-system)
     (arguments
@@ -9587,6 +9587,43 @@ signatures.")
     (description
      "Data objects necessary to some @code{mCSEA} package functions.  There are also
 example data objects to illustrate @code{mCSEA} package functionality.")
+    (license license:gpl2)))
+
+(define-public r-mcsea
+  (package
+    (name "r-mcsea")
+    (version "1.30.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "mCSEA" version))
+       (sha256
+        (base32 "078yckgsfq4mj0fxqn0d3j9wd9rh4qirsjr6xjjmcjmk9yvw9zgy"))))
+    (properties `((upstream-name . "mCSEA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-s4vectors
+                             r-mcseadata
+                             r-limma
+                             r-iranges
+                             r-homo-sapiens
+                             r-gviz
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-fgsea
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/mCSEA")
+    (synopsis "Methylated CpGs Set Enrichment Analysis")
+    (description
+     "Identification of diferentially methylated regions (DMRs) in predefined regions
+(promoters, @code{CpG} islands...) from the human genome using Illumina's 450K
+or EPIC microarray data.  Provides methods to rank @code{CpG} probes based on
+linear models and includes plotting functions.")
     (license license:gpl2)))
 
 (define-public r-mcbiclust

@@ -24,6 +24,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages i)
+  #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -4052,6 +4053,62 @@ and recovery.  More details can be found in Zamanighomi et al.  2019 (in press).
      "This package provides tools for analyzing EWAS, @code{methQTL} and @code{GxE}
 genome widely.")
     (license license:artistic2.0)))
+
+(define-public r-gedi
+  (package
+    (name "r-gedi")
+    (version "1.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GeDi" version))
+       (sha256
+        (base32 "1isl95g4pck3q4w3aapgyq7zfayfb7k7r711gk13whn3v0z684yc"))))
+    (properties `((upstream-name . "GeDi")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wordcloud2
+                             r-visnetwork
+                             r-tm
+                             r-stringdb
+                             r-simona
+                             r-shinywidgets
+                             r-shinycssloaders
+                             r-shinybs
+                             r-shiny
+                             r-scales
+                             r-rintrojs
+                             r-readxl
+                             r-rcolorbrewer
+                             r-proxyc
+                             r-plotly
+                             r-matrix
+                             r-igraph
+                             r-ggplot2
+                             r-ggdendro
+                             r-fontawesome
+                             r-expm
+                             r-dt
+                             r-dplyr
+                             r-complexheatmap
+                             r-cluster
+                             r-circlize
+                             r-bs4dash
+                             r-biocparallel
+                             r-biocneighbors
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AnnekathrinSilvia/GeDi")
+    (synopsis
+     "Defining and visualizing the distances between different genesets")
+    (description
+     "The package provides different distances measurements to calculate the
+difference between genesets.  Based on these scores the genesets are clustered
+and visualized as graph.  This is all presented in an interactive Shiny
+application for easy usage.")
+    (license license:expat)))
 
 (define-public r-gdsarray
   (package
