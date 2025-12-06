@@ -3394,13 +3394,13 @@ integration with the broader ecosystem of tidy tools for data analysis.")
 (define-public r-tidyspatialexperiment
   (package
     (name "r-tidyspatialexperiment")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "tidySpatialExperiment" version))
        (sha256
-        (base32 "0zjii0y28p9m7clcpj8x75898m30d88i5mzw3a4fvw9az5k67fbc"))))
+        (base32 "07w744wnfli1k0hhc7gwf0l8mxc3690l27d87pdpy4ryxp0wgc9l"))))
     (properties `((upstream-name . "tidySpatialExperiment")))
     (build-system r-build-system)
     (arguments

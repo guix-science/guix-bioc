@@ -2396,13 +2396,13 @@ using data from public repositories.")
 (define-public r-pmscanr
   (package
     (name "r-pmscanr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PMScanR" version))
        (sha256
-        (base32 "15qmll6nirl8whq4r1g13h7xycm5lmzq4rlqh291kw13fyy80acm"))))
+        (base32 "08w073fg2wh1bnd6s6xv9ny5x4zr1lcp31m6nckimvprk1yvz4nn"))))
     (properties `((upstream-name . "PMScanR")))
     (build-system r-build-system)
     (arguments
