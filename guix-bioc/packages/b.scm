@@ -4021,6 +4021,7 @@ foundation for integrative downstream analysis of the data.")
                              r-viridis
                              r-stringr
                              r-scales
+                             r-rspectral
                              r-rspectra
                              r-rdpack
                              r-powerlaw

@@ -8357,7 +8357,6 @@ probe level analysis is also implemented.")
                              r-ggraph
                              r-ggplot2
                              r-ggh4x
-                             r-ggbump
                              r-forcats
                              r-dplyr
                              r-complexheatmap
