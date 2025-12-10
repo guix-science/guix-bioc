@@ -1130,13 +1130,13 @@ SARS-@code{CoV-2} lineages.")
 (define-public r-limrots
   (package
     (name "r-limrots")
-    (version "1.2.2")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LimROTS" version))
        (sha256
-        (base32 "1dqgl8aflj102v2pj94lf34dl040mazawzl8adry04lcgza9w759"))))
+        (base32 "0c0fp7f9s17rxmhx9ij65wjq6d1jrrh4d97kjqn7ay6sq5zj03h6"))))
     (properties `((upstream-name . "LimROTS")))
     (build-system r-build-system)
     (arguments
@@ -1166,7 +1166,7 @@ reproducibility-optimized test statistic utilising the limma methodology to
 simulate complex experimental designs. @code{LimROTS} is a hybrid method
 integrating empirical bayes and reproducibility-optimized statistics for robust
 analysis of proteomics and metabolomics data.")
-    (license license:artistic2.0)))
+    (license (license:fsdg-compatible "GPL (>= 2) + file LICENSE"))))
 
 (define-public r-limpca
   (package

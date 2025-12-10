@@ -1666,13 +1666,13 @@ normalization, batch correction and evaluation with informative visualizations."
 (define-public r-stadyum
   (package
     (name "r-stadyum")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "STADyUM" version))
        (sha256
-        (base32 "145qwzg0n88jdlgr0pfvnhmrk92f6hkfl3sq31vi0b3rlmazaw1f"))))
+        (base32 "0yl4dnwl8qgmyinqin6dqiagldhjq5bild8qkw6s9sl28992xfqq"))))
     (properties `((upstream-name . "STADyUM")))
     (build-system r-build-system)
     (arguments
@@ -1686,7 +1686,6 @@ normalization, batch correction and evaluation with informative visualizations."
                              r-rcpp
                              r-purrr
                              r-progress
-                             r-plyranges
                              r-mass
                              r-iranges
                              r-ggplot2

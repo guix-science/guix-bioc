@@ -4355,13 +4355,13 @@ response analyses that the @code{gDR} suite offers.")
 (define-public r-gdnax
   (package
     (name "r-gdnax")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDNAx" version))
        (sha256
-        (base32 "0nzqf4rnvn42br0awr8qwmp0w4cjnp6rwv414rz51pgan59vgcg9"))))
+        (base32 "09r55wxdqx0ccxfnkbb0xa1iiklp9zgl0qycb06p087h4m1gwpqk"))))
     (properties `((upstream-name . "gDNAx")))
     (build-system r-build-system)
     (arguments
@@ -4655,13 +4655,13 @@ lines (8-way RILs) which can be refered to as MAGIC population.")
 (define-public r-gatom
   (package
     (name "r-gatom")
-    (version "1.8.2")
+    (version "1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gatom" version))
        (sha256
-        (base32 "0z2pbfyfdvkv766a9vij3d8llz9xgdmmwn3kbk9igig38c7xrj1p"))))
+        (base32 "024cm5pn348wrwzg9q48sn3mz5avmq6i342s0lwrjahnqhm9xfy3"))))
     (properties `((upstream-name . "gatom")))
     (build-system r-build-system)
     (arguments
@@ -4670,7 +4670,6 @@ lines (8-way RILs) which can be refered to as MAGIC population.")
     (propagated-inputs (list r-xml
                              r-sna
                              r-shinycyjs
-                             r-pryr
                              r-plyr
                              r-network
                              r-mwcsr

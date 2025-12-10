@@ -25,6 +25,7 @@
   #:use-module (guix-cran packages g)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (guix-cran packages d)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages compression)
@@ -249,13 +250,13 @@ RNA-seq, and spectral flow cytometry using RMSD.")
 (define-public r-cytomds
   (package
     (name "r-cytomds")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CytoMDS" version))
        (sha256
-        (base32 "08iwzasgvgzgc4ihxqwqhj1l56ak4id719v0fgky7r40l4czrqkn"))))
+        (base32 "1rrp3ypa6wxi0nvsdlwn9bsyrh3mmcppspacm72a9lzgspvnnzr2"))))
     (properties `((upstream-name . "CytoMDS")))
     (build-system r-build-system)
     (arguments
@@ -6746,6 +6747,67 @@ Chicken.cdf file.")
      "Affymetrix Affymetrix Chicken Array annotation data (chip chicken) assembled
 using data from public repositories.")
     (license license:artistic2.0)))
+
+(define-public r-chevreulshiny
+  (package
+    (name "r-chevreulshiny")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "chevreulShiny" version))
+       (sha256
+        (base32 "1vmp1sb6xk9v8p1wghs6p7h00646hrx70ygjxk8icfnnrhlcr4s4"))))
+    (properties `((upstream-name . "chevreulShiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wiggleplotr
+                             r-waiter
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-singlecellexperiment
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyhelper
+                             r-shinyfiles
+                             r-shinydashboard
+                             r-shiny
+                             r-scales
+                             r-s4vectors
+                             r-rsqlite
+                             r-readr
+                             r-rappdirs
+                             r-purrr
+                             r-plotly
+                             r-patchwork
+                             r-ggplotify
+                             r-ggplot2
+                             r-future
+                             r-fs
+                             r-enhancedvolcano
+                             r-dt
+                             r-dplyr
+                             r-dbi
+                             r-dataeditr
+                             r-complexheatmap
+                             r-clustree
+                             r-chevreulprocess
+                             r-chevreulplot
+                             r-alabaster-base))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/whtns/chevreulShiny")
+    (synopsis "Tools for managing SingleCellExperiment objects as projects")
+    (description
+     "This package provides tools for managing @code{SingleCellExperiment} objects as
+projects.  Includes functions for analysis and visualization of single-cell
+data.  Also included is a shiny app for visualization of pre-processed
+@code{scRNA} data.  Supported by NIH grants R01CA137124 and R01EY026661 to David
+Cobrinik.")
+    (license license:expat)))
 
 (define-public r-chevreulprocess
   (package
