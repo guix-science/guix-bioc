@@ -44,19 +44,20 @@
 (define-public r-hyper
   (package
     (name "r-hyper")
-    (version "2.8.1")
+    (version "2.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hypeR" version))
        (sha256
-        (base32 "09z8vkw9zj6q92xb5q0782bxz826gw9vqsdxsrj9xknki3jr9ghb"))))
+        (base32 "14p8g26i8lwgmavqalahazaf2b36h6b1ygxhr25i46p2cppxpv2n"))))
     (properties `((upstream-name . "hypeR")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-visnetwork
+                             r-tibble
                              r-stringr
                              r-shiny
                              r-scales

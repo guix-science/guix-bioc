@@ -4248,13 +4248,13 @@ requirements met.")
 (define-public r-gdrimport
   (package
     (name "r-gdrimport")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gDRimport" version))
        (sha256
-        (base32 "1lxl7m5lvza1jwcbbfh71jwjn1s17ys06skwxmz6k98nbdgx98nh"))))
+        (base32 "0c9isnw5bvbgmlv362kd7pr9zkgzz26wp98cs4hsy41pv4ycnhph"))))
     (properties `((upstream-name . "gDRimport")))
     (build-system r-build-system)
     (arguments
