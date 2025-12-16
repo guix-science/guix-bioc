@@ -1374,6 +1374,30 @@ input parameters is the number of cores to be used.")
     (description "Suite of tools for functional analysis.")
     (license (license:fsdg-compatible "CC BY-NC-ND 4.0 + file LICENSE"))))
 
+(define-public r-rols
+  (package
+    (name "r-rols")
+    (version "3.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "rols" version))
+       (sha256
+        (base32 "16xayb5znsizvcsjzjjmmanhlq1dv75slr3mm51qs19cb69lrrkm"))))
+    (properties `((upstream-name . "rols")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-jsonlite r-httr2 r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "http://lgatto.github.io/rols/")
+    (synopsis "An R interface to the Ontology Lookup Service")
+    (description
+     "The rols package is an interface to the Ontology Lookup Service (OLS) to access
+and query hundred of ontolgies directly from R.")
+    (license license:gpl2)))
+
 (define-public r-rolde
   (package
     (name "r-rolde")

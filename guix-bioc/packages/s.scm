@@ -4719,13 +4719,13 @@ problematic studies and samples in any public data set.")
 (define-public r-smoppix
   (package
     (name "r-smoppix")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smoppix" version))
        (sha256
-        (base32 "0xpv3x32jzfl9z82v6cayfm0fha64c27pv8r6sd9jzpffblkimxv"))))
+        (base32 "0w4hvvarmiwrpgh0gcvxnpkq4l5wpjjldnhyyzxiabqw009wl70r"))))
     (properties `((upstream-name . "smoppix")))
     (build-system r-build-system)
     (arguments

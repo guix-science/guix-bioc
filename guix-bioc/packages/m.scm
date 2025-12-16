@@ -8721,13 +8721,13 @@ and the graphite Bioconductor R package.")
 (define-public r-metabodynamics
   (package
     (name "r-metabodynamics")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboDynamics" version))
        (sha256
-        (base32 "1xba89ira24vlidx9cf0rp6jjc3kfl4b324n8z1bpixzsnjqrw7h"))))
+        (base32 "1lpd5wjkn8dqyfga7fc9gslca1g3p1lfk7lb5vif5d49ar6wz1in"))))
     (properties `((upstream-name . "MetaboDynamics")))
     (build-system r-build-system)
     (arguments

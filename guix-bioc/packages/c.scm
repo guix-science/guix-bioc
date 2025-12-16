@@ -2521,6 +2521,61 @@ melanogaster, and Caenorhabditis elegans) and across more than 132 tissues.  The
 data is represented as a RData files and is available in @code{ExperimentHub}.")
     (license license:expat)))
 
+(define-public r-cosia
+  (package
+    (name "r-cosia")
+    (version "1.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CoSIA" version))
+       (sha256
+        (base32 "01v2h7i3xm64gb6kjnh06ld276aik72qig5qzv67ig7sqx52fz19"))))
+    (properties `((upstream-name . "CoSIA")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-rcolorbrewer
+                             r-plotly
+                             r-org-rn-eg-db
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-org-dr-eg-db
+                             r-org-dm-eg-db
+                             r-org-ce-eg-db
+                             r-magrittr
+                             r-homologene
+                             r-ggplot2
+                             r-experimenthub
+                             r-dplyr
+                             r-biomart
+                             r-annotationtools
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.lasseigne.org/")
+    (synopsis "An Investigation Across Different Species and Tissues")
+    (description
+     "Cross-Species Investigation and Analysis (@code{CoSIA}) is a package that
+provides researchers with an alternative methodology for comparing across
+species and tissues using normal wild-type RNA-Seq Gene Expression data from
+Bgee.  Using RNA-Seq Gene Expression data, @code{CoSIA} provides multiple
+visualization tools to explore the transcriptome diversity and variation across
+genes, tissues, and species. @code{CoSIA} uses the Coefficient of Variation and
+Shannon Entropy and Specificity to calculate transcriptome diversity and
+variation. @code{CoSIA} also provides additional conversion tools and utilities
+to provide a streamlined methodology for cross-species comparison.")
+    (license license:expat)))
+
 (define-public r-coseq
   (package
     (name "r-coseq")

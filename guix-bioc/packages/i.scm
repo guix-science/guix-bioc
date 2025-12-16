@@ -2583,13 +2583,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "00dqvkm26iczc15zmsrzjk09dvcyznd47c5zkph2bidq2zfd8s71"))))
+        (base32 "1891s7w77157was5z7473vay000i7ya4ga0r88jr0kc6khsgr1kr"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments
@@ -2613,7 +2613,7 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
     (description
      "The igblastr package provides functions to conveniently install and use a local
 @code{IgBLAST} installation from within R. @code{IgBLAST} is described at
-<https://pubmed.ncbi.nlm.nih.gov/23671333/>.  Online @code{IgBLAST}:
+<https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
 <https://www.ncbi.nlm.nih.gov/igblast/>.")
     (license license:artistic2.0)))
 
