@@ -3001,13 +3001,13 @@ means of Hilbert curves.")
 (define-public r-hilbertcurve
   (package
     (name "r-hilbertcurve")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HilbertCurve" version))
        (sha256
-        (base32 "0c9j2isy67012hyzfy8m30l900r9g4cfkcir1jvkcl3p8ndk74pj"))))
+        (base32 "184k9cpwm292b0y2g9j5i74zzqk1asb14h8xfilnp2rl7fa2fpkv"))))
     (properties `((upstream-name . "HilbertCurve")))
     (build-system r-build-system)
     (arguments

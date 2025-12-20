@@ -1938,13 +1938,13 @@ using text mining techniques.")
 (define-public r-msstatsbig
   (package
     (name "r-msstatsbig")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsBig" version))
        (sha256
-        (base32 "12hd5a0s1yfyzxmnrhpa8xicy5232m947d6gmqy4s6pfgi0mjzbs"))))
+        (base32 "1032wdivn85wjbmj7whyyhjw3cqld2s5b38kdviif3qnw95zc7h7"))))
     (properties `((upstream-name . "MSstatsBig")))
     (build-system r-build-system)
     (arguments
@@ -3641,13 +3641,13 @@ different resistances to chemotherapeutic treatments.")
 (define-public r-moonlight2r
   (package
     (name "r-moonlight2r")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Moonlight2R" version))
        (sha256
-        (base32 "0x8w3qgm0k7pq2kyc7y6nqsbdfwqg68ki6bm1vvgx0wpgy9zza86"))))
+        (base32 "1kp3jymwb5sz95qjpamf364yn00vklwvlvrviyb1gl9plyx0kv15"))))
     (properties `((upstream-name . "Moonlight2R")))
     (build-system r-build-system)
     (arguments

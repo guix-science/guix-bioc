@@ -4023,13 +4023,13 @@ image of the tissue.")
 (define-public r-spacetrooper
   (package
     (name "r-spacetrooper")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpaceTrooper" version))
        (sha256
-        (base32 "1xi8vzy975j6m7vgh9hxc5ifl6sj5m39fnaj4l8hxxqwxac7gkl5"))))
+        (base32 "00z46g30zsj7pfzraal5jz676cd7pxbmbl2xhh7fcm0vmqdgjsff"))))
     (properties `((upstream-name . "SpaceTrooper")))
     (build-system r-build-system)
     (arguments

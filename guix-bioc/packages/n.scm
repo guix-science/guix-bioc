@@ -151,13 +151,13 @@ and the R scripts for object construction provided within the package.")
 (define-public r-nullranges
   (package
     (name "r-nullranges")
-    (version "1.16.0")
+    (version "1.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nullranges" version))
        (sha256
-        (base32 "11mdbshvsg5d60gqa9alr43h2kwz0s35pwf5ibs4z5yfry2h3hhs"))))
+        (base32 "1j1h3cl2lr1sfg0hm5v3abdpz2rqaxq3lg7pvzadk3vz0hmd6jg7"))))
     (properties `((upstream-name . "nullranges")))
     (build-system r-build-system)
     (arguments
@@ -586,13 +586,13 @@ prioritization in untargeted LC-MS metabolomics research.")
 (define-public r-notame
   (package
     (name "r-notame")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "notame" version))
        (sha256
-        (base32 "0dyqnjci0nc8k56hqhs9wm6xlzn593m8bprhsc4jvylpxlfi64vv"))))
+        (base32 "1y22v32nfwdf4ba30kzn8jfsqn00lbz48qlkg136ldj2rjax6ps8"))))
     (properties `((upstream-name . "notame")))
     (build-system r-build-system)
     (arguments
