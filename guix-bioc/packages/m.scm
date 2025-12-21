@@ -5249,8 +5249,7 @@ construct sample-sample correlation network.")
                              r-clusterprofiler
                              r-biobase
                              r-biclust
-                             r-bicare
-                             r-bibitr))
+                             r-bicare))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zhangjunpeng411/miRSM")
     (synopsis "Inferring miRNA sponge modules in heterogeneous data")
