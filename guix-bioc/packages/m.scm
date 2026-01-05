@@ -4220,13 +4220,13 @@ and illustrate running and analysing MOFA models.")
 (define-public r-mofa2
   (package
     (name "r-mofa2")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOFA2" version))
        (sha256
-        (base32 "10a13ay9sckaajfqkx79274npiibghk98v717n0xzqxzcx6j7f79"))))
+        (base32 "1pkqr9z1k49xvp5q75788i64m3kl8fcizblabvxlm9n6s606l3gc"))))
     (properties `((upstream-name . "MOFA2")))
     (build-system r-build-system)
     (arguments
@@ -5161,13 +5161,13 @@ expriments.")
 (define-public r-mirsponger
   (package
     (name "r-mirsponger")
-    (version "2.14.0")
+    (version "2.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRspongeR" version))
        (sha256
-        (base32 "0mgfff2kiblr60ymdj31j856lgrai2chlcc54vsmz88pljsb605q"))))
+        (base32 "1q9y8zh4xv74wig5c6s6am3wlcwlf2vs24cw05d41dnbwdb91abd"))))
     (properties `((upstream-name . "miRspongeR")))
     (build-system r-build-system)
     (arguments
@@ -7314,6 +7314,41 @@ information are combined to form a adjacency matrix inferred from both
 quantitative and structure information.")
     (license license:gpl3+)))
 
+(define-public r-metmashr
+  (package
+    (name "r-metmashr")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MetMashR" version))
+       (sha256
+        (base32 "0cr1zklx33ssrf5l51rn41kvaihnnil8yg03l6rps9cd74rclkq0"))))
+    (properties `((upstream-name . "MetMashR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-struct
+                             r-scales
+                             r-rlang
+                             r-httr
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://computational-metabolomics.github.io/MetMashR/")
+    (synopsis "Metabolite Mashing with R")
+    (description
+     "This package provides a package to merge, filter sort, organise and otherwise
+mash together metabolite annotation tables.  Metabolite annotations can be
+imported from multiple sources (software) and combined using workflow steps
+based on S4 class templates derived from the `struct` package.  Other modular
+workflow steps such as filtering, merging, splitting, normalisation and rest-api
+queries are included.")
+    (license license:gpl3)))
+
 (define-public r-metid
   (package
     (name "r-metid")
@@ -8689,6 +8724,38 @@ phenotypes.")
 likelihoods for mixture models of truncated data with normal or lognormal
 distributions.")
     (license license:gpl2)))
+
+(define-public r-metabolomicsworkbenchr
+  (package
+    (name "r-metabolomicsworkbenchr")
+    (version "1.20.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "metabolomicsWorkbenchR" version))
+       (sha256
+        (base32 "0p630gz24yfma7fxxp7yyqfqic0gnh1z6wx5m8wv7xi715zx5brp"))))
+    (properties `((upstream-name . "metabolomicsWorkbenchR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-struct
+                             r-multiassayexperiment
+                             r-jsonlite
+                             r-httr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/metabolomicsWorkbenchR")
+    (synopsis "Metabolomics Workbench in R")
+    (description
+     "This package provides functions for interfacing with the Metabolomics Workbench
+RESTful API. Study, compound, protein and gene information can be searched for
+using the API. Methods to obtain study data in common Bioconductor formats such
+as @code{SummarizedExperiment} and @code{MultiAssayExperiment} are also
+included.")
+    (license license:gpl3)))
 
 (define-public r-metaboliteidmapping
   (package

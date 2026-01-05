@@ -6,12 +6,12 @@
                 #:prefix license:)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages s)
-  #:use-module (gnu packages web)
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages r)
@@ -218,6 +218,69 @@ and classification algorithm with an application of classifying 2-class
 microarray samples, as described in Yeung, Bumgarner and Raftery (Bioinformatics
 2005, 21: 2394-2402).")
     (license license:gpl2+)))
+
+(define-public r-isomirs
+  (package
+    (name "r-isomirs")
+    (version "1.38.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "isomiRs" version))
+       (sha256
+        (base32 "1mhipzl3w80qfbi7p5fr365p58442mamm19hswvimggl4wb8flmx"))))
+    (properties `((upstream-name . "isomiRs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-stringr
+                             r-s4vectors
+                             r-rlang
+                             r-reshape
+                             r-readr
+                             r-rcolorbrewer
+                             r-limma
+                             r-iranges
+                             r-gtools
+                             r-gridextra
+                             r-gplots
+                             r-ggplot2
+                             r-ggally
+                             r-genomicranges
+                             r-dplyr
+                             r-deseq2
+                             r-degreport
+                             r-cowplot
+                             r-cluster
+                             r-broom
+                             r-biocgenerics
+                             r-biobase
+                             r-annotationdbi))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://bioconductor.org/packages/isomiRs")
+    (synopsis "Analyze isomiRs and miRNAs from small RNA-seq")
+    (description
+     "Characterization of @code{miRNAs} and @code{isomiRs}, clustering and
+differential expression.")
+    (license license:expat)))
 
 (define-public r-isolde
   (package
@@ -2583,13 +2646,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "0mbgr5rw20d171bb323vj0j87mxagmm3ybqhsmzylq606l94alj7"))))
+        (base32 "04mjmfw2vwcbxkd2646n7kdn4gj31c882b2iyh950lxiabvxwn3g"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments

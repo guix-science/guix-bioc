@@ -8845,13 +8845,13 @@ reconstruction from genome scale data.")
 (define-public r-catscradle
   (package
     (name "r-catscradle")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CatsCradle" version))
        (sha256
-        (base32 "0vr49r5bq1g1h0wm9bypnvwlhj4i3fhf62grs66lyp7liyny8cjx"))))
+        (base32 "0wrxc7kj85kz6cky1j3aysc156zszh1c1dp6197cdzz4434271qr"))))
     (properties `((upstream-name . "CatsCradle")))
     (build-system r-build-system)
     (arguments

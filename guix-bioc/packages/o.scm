@@ -740,13 +740,13 @@ Gene identifiers.")
 (define-public r-orfik
   (package
     (name "r-orfik")
-    (version "1.30.1")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ORFik" version))
        (sha256
-        (base32 "0r3vm2zdcwgljzhdh9bpav7vkzvddv8m3mcfnqwkl7svlr0bzkjj"))))
+        (base32 "1x36mmygy3358wd7jaxd6gcwcxqdp902j9nv4kzgw95i8dvsvgid"))))
     (properties `((upstream-name . "ORFik")))
     (build-system r-build-system)
     (arguments
@@ -762,7 +762,7 @@ Gene identifiers.")
                              r-rsamtools
                              r-rcpp
                              r-r-utils
-                             r-qs
+                             r-qs2
                              r-jsonlite
                              r-iranges
                              r-httr

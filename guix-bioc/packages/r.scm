@@ -150,13 +150,13 @@ variants or multiple variants in a region (e.g. gene-based test).")
 (define-public r-rvisdiff
   (package
     (name "r-rvisdiff")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rvisdiff" version))
        (sha256
-        (base32 "0ayzc1zprrlkv1hvzrc8x9h25v5rmfz1kkrkszvbn6gka7ka2zqf"))))
+        (base32 "1dgj4nvh457342vg4nvkmlx8njyf44ab6b6pqmn6wzxms6yb7b3i"))))
     (properties `((upstream-name . "Rvisdiff")))
     (build-system r-build-system)
     (arguments
@@ -4599,20 +4599,20 @@ enriched/depleted RECSs between samples.")
 (define-public r-redisparam
   (package
     (name "r-redisparam")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RedisParam" version))
        (sha256
-        (base32 "0d88g6mxlifc86ar2695p5gjrbafc0vgjmbxayv9x0h5b0c9hg8z"))))
+        (base32 "0z03sfd8s1spbsrgj0205g566wszij2daqnyn8nj4qp396y502j1"))))
     (properties `((upstream-name . "RedisParam")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (inputs (list hiredis))
-    (propagated-inputs (list r-withr r-redux r-futile-logger r-biocparallel))
+    (propagated-inputs (list r-withr r-redux r-logger r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/RedisParam")
     (synopsis "Provide a 'redis' back-end for BiocParallel")

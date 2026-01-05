@@ -595,13 +595,13 @@ SWATH and statistical data analysis for SWATH generated data.")
 (define-public r-swath2stats
   (package
     (name "r-swath2stats")
-    (version "1.40.0")
+    (version "1.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SWATH2stats" version))
        (sha256
-        (base32 "1ds8ra2jr31hdp2ym65vgqsp79ipgv01q6qrhx4rnsn2jh95gvlq"))))
+        (base32 "1iz8wp30rpq6ps3klsbz48zvbjgnzqcrm7bcdh6j61qnqhjh4sfm"))))
     (properties `((upstream-name . "SWATH2stats")))
     (build-system r-build-system)
     (arguments
@@ -1251,6 +1251,79 @@ mapping of protein subcellular localization (Orre et al.  2019, Molecular Cell).
 @code{SubCellBarCode} R package robustly classifies proteins into corresponding
 subcellular localization.")
     (license license:gpl2)))
+
+(define-public r-structtoolbox
+  (package
+    (name "r-structtoolbox")
+    (version "1.22.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "structToolbox" version))
+       (sha256
+        (base32 "127w8wbzxlmh5fhzy6i5m8lxjkvxv8pllr7q6i5yajnp7vvx7wcd"))))
+    (properties `((upstream-name . "structToolbox")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-struct
+                             r-sp
+                             r-scales
+                             r-gridextra
+                             r-ggthemes
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/computational-metabolomics/structToolbox")
+    (synopsis
+     "Data processing & analysis tools for Metabolomics and other omics")
+    (description
+     "An extensive set of data (pre-)processing and analysis methods and tools for
+metabolomics and other omics, with a strong emphasis on statistics and machine
+learning.  This toolbox allows the user to build extensive and standardised
+workflows for data analysis.  The methods and tools have been implemented using
+class-based templates provided by the struct (Statistics in R Using Class-based
+Templates) package.  The toolbox includes pre-processing methods (e.g. signal
+drift and batch correction, normalisation, missing value imputation and
+scaling), univariate (e.g. ttest, various forms of ANOVA, Kruskal–Wallis test
+and more) and multivariate statistical methods (e.g. PCA and PLS, including
+cross-validation and permutation testing) as well as machine learning methods
+(e.g. Support Vector Machines).  The STATistics Ontology (STATO) has been
+integrated and implemented to provide standardised definitions for the different
+methods, inputs and outputs.")
+    (license license:gpl3)))
+
+(define-public r-struct
+  (package
+    (name "r-struct")
+    (version "1.22.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "struct" version))
+       (sha256
+        (base32 "0lyms7dmd3iz1wkhwf6gapv78aj2aq429rl5291qh6f79xwhivca"))))
+    (properties `((upstream-name . "struct")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment r-s4vectors r-rols
+                             r-ontologyindex r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/struct")
+    (synopsis "Statistics in R Using Class-based Templates")
+    (description
+     "Defines and includes a set of class-based templates for developing and
+implementing data processing and analysis workflows, with a strong emphasis on
+statistics and machine learning.  The templates can be used and where needed
+extended to wrap tools and methods from other packages into a common
+standardised structure to allow for effective and fast integration.  Model
+objects can be combined into sequences, and sequences nested in iterators using
+overloaded operators to simplify and improve readability of the code.  Ontology
+lookup has been integrated and implemented to provide standardised definitions
+for methods, inputs and outputs wrapped using the class-based templates.")
+    (license license:gpl3)))
 
 (define-public r-streamer
   (package
