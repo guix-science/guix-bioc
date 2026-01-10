@@ -382,13 +382,13 @@ Taxonomy IDs.")
 (define-public r-orthogene
   (package
     (name "r-orthogene")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "orthogene" version))
        (sha256
-        (base32 "00ixwgdmjyp7x3p9d4r9da777i7zrys9wilz8lm930cv5bcqsm06"))))
+        (base32 "0a45jgdgby479vc9byaxq6v0d3d8yb0phj0660a1xwhw11vhalw6"))))
     (properties `((upstream-name . "orthogene")))
     (build-system r-build-system)
     (arguments
@@ -397,9 +397,9 @@ Taxonomy IDs.")
     (propagated-inputs (list r-repmis
                              r-patchwork
                              r-matrix
+                             r-magrittr
                              r-jsonlite
                              r-homologene
-                             r-grr
                              r-gprofiler2
                              r-ggtree
                              r-ggpubr

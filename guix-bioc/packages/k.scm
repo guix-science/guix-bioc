@@ -92,18 +92,22 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
 (define-public r-knowyourcg
   (package
     (name "r-knowyourcg")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "knowYourCG" version))
        (sha256
-        (base32 "0z3xy1jhm4swzjvairkrxb8z9qqmlrjya8ivsd4jq8jvmawq9wjh"))))
+        (base32 "0lgr4ma12x8k2d6dpdinb0y9acp4iffd6kncd5hz03b4cnwpan8p"))))
     (properties `((upstream-name . "knowYourCG")))
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list zlib))
     (propagated-inputs (list r-wheatmap
                              r-tibble
@@ -117,7 +121,9 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
                              r-ggrepel
                              r-ggplot2
                              r-genomicranges
-                             r-dplyr))
+                             r-experimenthub
+                             r-dplyr
+                             r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/zhou-lab/knowYourCG")
     (synopsis "Functional analysis of DNA methylome datasets")

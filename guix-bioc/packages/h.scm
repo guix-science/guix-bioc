@@ -2601,14 +2601,14 @@ neighborhood colocalization analysis and neighborhood-based cell clustering.")
 (define-public r-homosapiendee2cellscore
   (package
     (name "r-homosapiendee2cellscore")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "homosapienDEE2CellScore" version
                               'experiment))
        (sha256
-        (base32 "067qjsjd5xrkgpx64rlxv4mf7mpvx8djrw449xiyc30g5d8v1mfx"))))
+        (base32 "15m2mnyhxpa417203k93632z0707cf949qi1lxywxh84blzjlg47"))))
     (properties `((upstream-name . "homosapienDEE2CellScore")))
     (build-system r-build-system)
     (arguments

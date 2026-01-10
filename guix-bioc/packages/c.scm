@@ -2312,13 +2312,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.10.0")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "0msq2ij3ppyzpsbc7ziyrhgwpxw3a91bncb4xg3bzz1w396q0hq4"))))
+        (base32 "0gy9qdx4xx6xsr728bhqkn3nimvc0kmqwa1y90jyfac0l1qm2f2w"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (arguments
@@ -2343,7 +2343,7 @@ Cotton.cdf file.")
                              r-ggthemes
                              r-ggrepel
                              r-ggplot2
-                             r-gghalves
+                             r-ggdist
                              r-dplyr
                              r-dendextend
                              r-complexheatmap
