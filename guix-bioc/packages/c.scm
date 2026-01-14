@@ -4233,13 +4233,13 @@ copy number aberrations on the gene level.")
 (define-public r-cnvmetrics
   (package
     (name "r-cnvmetrics")
-    (version "1.13.0")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CNVMetrics" version))
        (sha256
-        (base32 "0pvlc1blwqar2agnl3hdm467x162n8i3sb6kpzqsr2xw44zvx2w2"))))
+        (base32 "11x96rdp8kcml9i4q9xl8rjc3yir53jn1il7y5q9w9gnliwi5kdz"))))
     (properties `((upstream-name . "CNVMetrics")))
     (build-system r-build-system)
     (arguments

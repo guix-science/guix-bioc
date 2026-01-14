@@ -429,13 +429,13 @@ format.")
 (define-public r-mungesumstats
   (package
     (name "r-mungesumstats")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MungeSumstats" version))
        (sha256
-        (base32 "0g2995z6gj0xrn45bvjpvnlp9cd9iwxq8hwvl4lfvaij1qqlv7i7"))))
+        (base32 "1sar0pjyf21gv17i04dhlj83cyxkj4n7ypiaz6489a38d6arjb17"))))
     (properties `((upstream-name . "MungeSumstats")))
     (build-system r-build-system)
     (arguments
@@ -4945,13 +4945,13 @@ additional genomic context.")
 (define-public r-mitch
   (package
     (name "r-mitch")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mitch" version))
        (sha256
-        (base32 "0lixshjjlahm25yn3qn67k12m2wmpd4gmk7vydx9l2shflnsqh41"))))
+        (base32 "05a37yb29gyqxhp957g1hdp4x76x73bklpwrcb0kgivpssgqq42s"))))
     (properties `((upstream-name . "mitch")))
     (build-system r-build-system)
     (arguments

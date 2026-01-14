@@ -73,13 +73,13 @@ http://genome-www.stanford.edu/serum/clusters.html.")
 (define-public r-iwtomics
   (package
     (name "r-iwtomics")
-    (version "1.33.0")
+    (version "1.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "IWTomics" version))
        (sha256
-        (base32 "048vwzidmpzbbl3ymqc6in7xlhj2gcq35gmm88kl2knfc04i3qg5"))))
+        (base32 "07j7yg7jb2qws1ngq1gafv42rx0y4dv0dyvnhmga99zcpk8scqp3"))))
     (properties `((upstream-name . "IWTomics")))
     (build-system r-build-system)
     (arguments
@@ -1498,13 +1498,13 @@ information, partial information decomposition, and part mutual information.")
 (define-public r-infinityflow
   (package
     (name "r-infinityflow")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "infinityFlow" version))
        (sha256
-        (base32 "010wv8nm1hjpr7f2y1z3bv7mbjbzlr84id7qmmhgkp6b0gmkwmgp"))))
+        (base32 "1hw44vqassgsr55a6sscdhbkckgcx5q2m9h4l73mhafmaqb5yrri"))))
     (properties `((upstream-name . "infinityFlow")))
     (build-system r-build-system)
     (arguments
@@ -2646,13 +2646,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "04mjmfw2vwcbxkd2646n7kdn4gj31c882b2iyh950lxiabvxwn3g"))))
+        (base32 "12x7yza5xkbl4kdb00b4l8478rvhn233i87gx8qd8qj76vdgj65h"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments

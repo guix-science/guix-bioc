@@ -92,13 +92,13 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
 (define-public r-knowyourcg
   (package
     (name "r-knowyourcg")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "knowYourCG" version))
        (sha256
-        (base32 "0lgr4ma12x8k2d6dpdinb0y9acp4iffd6kncd5hz03b4cnwpan8p"))))
+        (base32 "0mp0xhifigss0ics2aypmfslv8wwm26nqchckv68adqdi7cn9wbh"))))
     (properties `((upstream-name . "knowYourCG")))
     (build-system r-build-system)
     (arguments

@@ -634,13 +634,13 @@ and visual comparison of samples and clusters.")
 (define-public r-lola
   (package
     (name "r-lola")
-    (version "1.39.1")
+    (version "1.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LOLA" version))
        (sha256
-        (base32 "1r1c7am8qdwll7vl9lz15hx9c0srcq9y9dwl46r4wzdlfq9nwic0"))))
+        (base32 "0x7l0jw4p87vz4v4j9dbjvcwkhfxj0lk7izdhm5pd1aw9xqbgkq9"))))
     (properties `((upstream-name . "LOLA")))
     (build-system r-build-system)
     (arguments

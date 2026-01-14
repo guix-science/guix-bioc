@@ -1854,13 +1854,13 @@ the model object, and 2.  a testing data set used to demonstrate the function.")
 (define-public r-enrichviewnet
   (package
     (name "r-enrichviewnet")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "enrichViewNet" version))
        (sha256
-        (base32 "02xzw4yg9mdc64mgyc25vdyxh5q09c3hpigcyqad80inf6lafy4x"))))
+        (base32 "1imdc3ls2d05sslyw3adxwswyycdq5zhx206mn64qiny8rydafzc"))))
     (properties `((upstream-name . "enrichViewNet")))
     (build-system r-build-system)
     (arguments
@@ -1873,8 +1873,7 @@ the model object, and 2.  a testing data set used to demonstrate the function.")
                              r-jsonlite
                              r-igraph
                              r-gprofiler2
-                             r-enrichplot
-                             r-dose))
+                             r-enrichplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/adeschen/enrichViewNet")
     (synopsis "From functional enrichment results to biological networks")
