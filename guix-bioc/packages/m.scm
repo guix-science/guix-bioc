@@ -7222,7 +7222,6 @@ with the Gene Ontology.")
       #:tests? #f))
     (propagated-inputs (list r-urltools
                              r-treesummarizedexperiment
-                             r-tidyjson
                              r-summarizedexperiment
                              r-s4vectors
                              r-reshape2
