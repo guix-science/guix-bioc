@@ -7208,13 +7208,13 @@ with the Gene Ontology.")
 (define-public r-mgnifyr
   (package
     (name "r-mgnifyr")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MGnifyR" version))
        (sha256
-        (base32 "0p60i8xlfpz742j3ypz9vbcmn7ndkxaqfixcfvxwkj3v32yfij91"))))
+        (base32 "1ncrrz82j7g86j2irsj1c09kx51rfv5ic0r6igqj1id1chnmr1px"))))
     (properties `((upstream-name . "MGnifyR")))
     (build-system r-build-system)
     (arguments

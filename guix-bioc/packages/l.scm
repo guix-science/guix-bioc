@@ -1214,13 +1214,13 @@ handle unbalanced design.")
 (define-public r-limpa
   (package
     (name "r-limpa")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpa" version))
        (sha256
-        (base32 "1phkbim5wzv2y5cnq7c92qgx0xai14vd2470viz6awiqdvgpdlyf"))))
+        (base32 "1f1p905cd04cj1iwlrx9rncv06kwkpdy78n2v1hmjkdklx711w7g"))))
     (properties `((upstream-name . "limpa")))
     (build-system r-build-system)
     (arguments
@@ -1232,17 +1232,18 @@ handle unbalanced design.")
     (synopsis "Quantification and Differential Analysis of Proteomics Data")
     (description
      "Quantification and differential analysis of mass-spectrometry proteomics data,
-with probabilistic recovery of information from missing values.  Estimates the
-detection probability curve (DPC), which relates the probability of successful
-detection to the underlying expression level of each peptide, and uses it to
-incorporate peptide missing values into protein quantification and into
-subsequent differential expression analyses.  The package produces objects
-suitable for downstream analysis in limma.  The package accepts peptide-level
-data with missing values and produces complete protein quantifications without
-missing values.  The uncertainty introduced by missing value imputation is
-propagated through to the limma analyses using variance modeling and precision
-weights.  The package name \"limpa\" is an acronym for \"Linear Models for
-Proteomics Data\".")
+with probabilistic recovery of information from missing values.  Avoids the need
+for imputation.  Estimates the detection probability curve (DPC), which relates
+the probability of successful detection to the underlying expression level of
+each peptide, and uses it to incorporate peptide missing values into protein
+quantification and into subsequent differential expression analyses.  The
+package produces objects suitable for downstream analysis in limma.  The package
+accepts feature-level data (fragments or precursors or peptides) including
+missing values and produces complete protein quantifications without the need
+for imputation.  The uncertainty of the protein quantifications is propagated
+through to the limma analyses using variance modeling and precision weights,
+ensuring accurate error rate control.  The package name \"limpa\" is an acronym
+for \"Linear Models for Proteomics Data\".")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-limmagui

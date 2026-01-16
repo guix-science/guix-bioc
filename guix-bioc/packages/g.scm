@@ -2750,6 +2750,50 @@ differential expression analysis on @code{GeoMx} RNA data.  The application of
 these methods are demonstrated by example data analysis vignette.")
     (license license:expat)))
 
+(define-public r-genvisr
+  (package
+    (name "r-genvisr")
+    (version "1.42.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "GenVisR" version))
+       (sha256
+        (base32 "1mr2jshrxvpkdd09vv8js9ph6phk3wrrglhm90nkiygxnlyz5jli"))))
+    (properties `((upstream-name . "GenVisR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-viridis
+                             r-variantannotation
+                             r-seqinfo
+                             r-scales
+                             r-rsamtools
+                             r-reshape2
+                             r-plyr
+                             r-iranges
+                             r-gtools
+                             r-gtable
+                             r-gridextra
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-dbi
+                             r-data-table
+                             r-bsgenome
+                             r-biostrings
+                             r-biomart
+                             r-biocgenerics
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/GenVisR")
+    (synopsis "Genomic Visualizations in R")
+    (description
+     "Produce highly customizable publication quality graphics for genomic data
+primarily at the cohort level.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-genproseq
   (package
     (name "r-genproseq")

@@ -3521,6 +3521,53 @@ Nature Neuroscience, 2021 project analyzed by Lieber Institute for Brain
 Development (LIBD) researchers and collaborators.")
     (license license:artistic2.0)))
 
+(define-public r-spatialheatmap
+  (package
+    (name "r-spatialheatmap")
+    (version "2.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "spatialHeatmap" version))
+       (sha256
+        (base32 "1cqbdvjvngsxypks8g8k8q0q7z96wi97l2rvbyxm3njsrw2nnd17"))))
+    (properties `((upstream-name . "spatialHeatmap")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-summarizedexperiment
+                             r-spscomps
+                             r-singlecellexperiment
+                             r-shinydashboard
+                             r-shiny
+                             r-s4vectors
+                             r-rsvg
+                             r-reshape2
+                             r-matrix
+                             r-igraph
+                             r-grimport
+                             r-gridextra
+                             r-ggplotify
+                             r-ggplot2
+                             r-genefilter
+                             r-edger
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://spatialheatmap.org")
+    (synopsis
+     "spatialHeatmap: Visualizing Spatial Assays in Anatomical Images and Large-Scale Data Extensions")
+    (description
+     "The @code{spatialHeatmap} package offers the primary functionality for
+visualizing cell-, tissue- and organ-specific assay data in spatial anatomical
+images.  Additionally, it provides extended functionalities for large-scale data
+mining routines and co-visualizing bulk and single-cell data.  A description of
+the project is available here: https://spatialheatmap.org.")
+    (license license:artistic2.0)))
+
 (define-public r-spatialfeatureexperiment
   (package
     (name "r-spatialfeatureexperiment")
