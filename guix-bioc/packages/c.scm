@@ -4799,7 +4799,6 @@ analyses.")
                              r-future-apply
                              r-future
                              r-dplyr
-                             r-blaster
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/snaketron/ClustIRR")
