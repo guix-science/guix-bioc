@@ -4556,13 +4556,13 @@ biological processes.")
 (define-public r-mobilerna
   (package
     (name "r-mobilerna")
-    (version "1.5.1")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mobileRNA" version))
        (sha256
-        (base32 "136jliyz1iyf3ncwsval34rnhdgpfgsh2jsxijwnax9vk7q9dixm"))))
+        (base32 "0l1hhqfp9i5l93j2gf2wmm9cbx4cd2rp3f4lq6wjhgnnhzmmkc84"))))
     (properties `((upstream-name . "mobileRNA")))
     (build-system r-build-system)
     (arguments
@@ -4573,7 +4573,6 @@ biological processes.")
                              r-tidyr
                              r-summarizedexperiment
                              r-simdesign
-                             r-seqinfo
                              r-scales
                              r-s4vectors
                              r-rtracklayer
@@ -4586,6 +4585,7 @@ biological processes.")
                              r-ggrepel
                              r-ggplot2
                              r-genomicranges
+                             r-genomeinfodb
                              r-edger
                              r-dplyr
                              r-deseq2

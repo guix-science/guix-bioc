@@ -4404,20 +4404,19 @@ other analyses.")
 (define-public r-tekrabber
   (package
     (name "r-tekrabber")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TEKRABber" version))
        (sha256
-        (base32 "13cqkkqhcwx9gygkkqjgjb3iph8q38nwx637dadk69gbqbslkm0g"))))
+        (base32 "1pbqd7qb9izd2iw9ajlkapgwgga2a0rqamv1pgryac8ir4mggm1d"))))
     (properties `((upstream-name . "TEKRABber")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-seqinfo
-                             r-scbn
+    (propagated-inputs (list r-scbn
                              r-rtracklayer
                              r-rcpp
                              r-magrittr
@@ -4426,7 +4425,8 @@ other analyses.")
                              r-doparallel
                              r-deseq2
                              r-biomart
-                             r-apeglm))
+                             r-apeglm
+                             r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ferygood/TEKRABber")
     (synopsis

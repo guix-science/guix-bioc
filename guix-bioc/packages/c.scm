@@ -2007,6 +2007,51 @@ readily used in other packages.  Both DNA- and RNA-targeting nucleases are
 supported.")
     (license license:expat)))
 
+(define-public r-crisprball
+  (package
+    (name "r-crisprball")
+    (version "1.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "CRISPRball" version))
+       (sha256
+        (base32 "1f6p6canyjx2wqd42x927q3544lv2zkyq3xi275h9gfwffpw3p9s"))))
+    (properties `((upstream-name . "CRISPRball")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-shinywidgets
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinycssloaders
+                             r-shinybs
+                             r-shiny
+                             r-plotly
+                             r-pcatools
+                             r-matrixstats
+                             r-interactivecomplexheatmap
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-dt
+                             r-dittoseq
+                             r-complexheatmap
+                             r-colourpicker
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/j-andrews7/CRISPRball")
+    (synopsis
+     "Shiny Application for Interactive CRISPR Screen Visualization, Exploration, Comparison, and Filtering")
+    (description
+     "This package provides a Shiny application for visualization, exploration,
+comparison, and filtering of CRISPR screens analyzed with MA@code{GeCK} RRA or
+MLE. Features include interactive plots with on-click labeling, full
+customization of plot aesthetics, data upload and/or download, and much more.
+Quickly and easily explore your CRISPR screen results and generate
+publication-quality figures in seconds.")
+    (license license:expat)))
+
 (define-public r-crimage
   (package
     (name "r-crimage")

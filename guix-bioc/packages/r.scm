@@ -4475,6 +4475,35 @@ selected using automatic algorithm or through manual selection.  It facilitates
 manual selection of ROIs using a shiny application.")
     (license license:gpl3)))
 
+(define-public r-regionalpcs
+  (package
+    (name "r-regionalpcs")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "regionalpcs" version))
+       (sha256
+        (base32 "14j8xx5fr6bir2z28hh6vvghas2n7iqkx6lwmyixks3a7gwzz5cd"))))
+    (properties `((upstream-name . "regionalpcs")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tibble r-pcatools r-genomicranges r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tyeulalio/regionalpcs")
+    (synopsis
+     "Summarizing Regional Methylation with Regional Principal Components Analysis")
+    (description
+     "This package provides functions to summarize DNA methylation data using regional
+principal components.  Regional principal components are computed using
+principal components analysis within genomic regions to summarize the
+variability in methylation levels across @code{CpGs}.  The number of principal
+components is chosen using either the Marcenko-Pasteur or Gavish-Donoho method
+to identify relevant signal in the data.")
+    (license license:expat)))
+
 (define-public r-regenrich
   (package
     (name "r-regenrich")

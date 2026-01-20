@@ -1510,13 +1510,13 @@ stored as GRanges objects.")
 (define-public r-dmgsea
   (package
     (name "r-dmgsea")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dmGsea" version))
        (sha256
-        (base32 "1fvxzdx7qc96ph0g571pz1xbvghhndlrq38j4zxq3vqmmd2jbh3s"))))
+        (base32 "089lsysgr6b92mfflf67dk9fs4j2was37mxzzijdl5h8i6a9njaw"))))
     (properties `((upstream-name . "dmGsea")))
     (build-system r-build-system)
     (arguments
