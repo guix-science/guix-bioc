@@ -1275,14 +1275,14 @@ curated list of CT genes and their main characteristics.")
 (define-public r-ctcf
   (package
     (name "r-ctcf")
-    (version "0.99.12")
+    (version "0.99.13")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CTCF" version
                               'annotation))
        (sha256
-        (base32 "0c9s6hb7vac0yirqfyf7k9xnf45qpcj39q37jzsmxdvj2xf7cwd4"))))
+        (base32 "097w2rad5fxyg2dkghz6ws93q1l7hlc6f9dnw1n30gs2bdv5hbyb"))))
     (properties `((upstream-name . "CTCF")))
     (build-system r-build-system)
     (arguments
