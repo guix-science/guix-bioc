@@ -2204,13 +2204,13 @@ intensities used for the calculation.")
 (define-public r-msprep
   (package
     (name "r-msprep")
-    (version "1.19.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSPrep" version))
        (sha256
-        (base32 "14n0f8rcx8fdn0w07wvbkprk3z31dfac6z8q7c50j0rp2xax9b69"))))
+        (base32 "0qdlzixhqlbjiln3w1qy9cx1r4slc2p0pfhqlcxrbhr4mmwpwqk3"))))
     (properties `((upstream-name . "MSPrep")))
     (build-system r-build-system)
     (arguments

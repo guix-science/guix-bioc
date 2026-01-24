@@ -1214,13 +1214,13 @@ handle unbalanced design.")
 (define-public r-limpa
   (package
     (name "r-limpa")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpa" version))
        (sha256
-        (base32 "1f1p905cd04cj1iwlrx9rncv06kwkpdy78n2v1hmjkdklx711w7g"))))
+        (base32 "1wmgb8hll379f057xgx6p755x5vjmx5q42fh8bkrhnlcc9bnsgj7"))))
     (properties `((upstream-name . "limpa")))
     (build-system r-build-system)
     (arguments
@@ -1234,16 +1234,17 @@ handle unbalanced design.")
      "Quantification and differential analysis of mass-spectrometry proteomics data,
 with probabilistic recovery of information from missing values.  Avoids the need
 for imputation.  Estimates the detection probability curve (DPC), which relates
-the probability of successful detection to the underlying expression level of
-each peptide, and uses it to incorporate peptide missing values into protein
+the probability of successful detection to the underlying log-intensity of each
+precursor ion, and uses it to incorporate missing values into protein
 quantification and into subsequent differential expression analyses.  The
 package produces objects suitable for downstream analysis in limma.  The package
-accepts feature-level data (fragments or precursors or peptides) including
-missing values and produces complete protein quantifications without the need
-for imputation.  The uncertainty of the protein quantifications is propagated
-through to the limma analyses using variance modeling and precision weights,
-ensuring accurate error rate control.  The package name \"limpa\" is an acronym
-for \"Linear Models for Proteomics Data\".")
+accepts precursor (or peptide) intensities including missing values and produces
+complete protein quantifications without the need for imputation.  The
+uncertainty of the protein quantifications is propagated through to the limma
+analyses using variance modeling and precision weights, ensuring accurate error
+rate control.  The analysis pipeline can alternatively work with PTM or protein
+level data.  The package name \"limpa\" is an acronym for \"Linear Models for
+Proteomics Data\".")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
 (define-public r-limmagui

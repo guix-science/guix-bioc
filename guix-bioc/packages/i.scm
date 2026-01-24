@@ -1064,6 +1064,50 @@ Groot NG, Bontrop RE, Guethlein LA, and Hammond JA KIR Nomenclature in non-human
 species Immunogenetics (2018), in preparation.")
     (license license:artistic2.0)))
 
+(define-public r-ipath
+  (package
+    (name "r-ipath")
+    (version "1.16.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "iPath" version))
+       (sha256
+        (base32 "02hq0wgkrvwjgx1qhw21xq30pmfrlr24dzizladq23qm1x458fn3"))))
+    (properties `((upstream-name . "iPath")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mclust
+                             r-matrixstats
+                             r-ggpubr
+                             r-ggplot2
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/iPath")
+    (synopsis
+     "iPath pipeline for detecting perturbed pathways at individual level")
+    (description
+     "@code{iPath} is the Bioconductor package used for calculating personalized
+pathway score and test the association with survival outcomes.  Abundant
+single-gene biomarkers have been identified and used in the clinics.  However,
+hundreds of oncogenes or tumor-suppressor genes are involved during the process
+of tumorigenesis.  We believe individual-level expression patterns of
+pre-defined pathways or gene sets are better biomarkers than single genes.  In
+this study, we devised a computational method named @code{iPath} to identify
+prognostic biomarker pathways, one sample at a time.  To test its utility, we
+conducted a pan-cancer analysis across 14 cancer types from The Cancer Genome
+Atlas and demonstrated that @code{iPath} is capable of identifying highly
+predictive biomarkers for clinical outcomes, including overall survival, tumor
+subtypes, and tumor stage classifications.  We found that pathway-based
+biomarkers are more robust and effective than single genes.")
+    (license license:gpl2)))
+
 (define-public r-intramirexplorer
   (package
     (name "r-intramirexplorer")

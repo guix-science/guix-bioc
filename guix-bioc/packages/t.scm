@@ -5010,13 +5010,13 @@ of two DNA-binding elements from comprable binding and expression data.")
 (define-public r-tapseq
   (package
     (name "r-tapseq")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TAPseq" version))
        (sha256
-        (base32 "0djj1sz0ml831rgv974277i65lrghv1a2xc8jjjd0cs5xzci97ri"))))
+        (base32 "027v8qnrz8aapkwicwbh9x2yg0a1w3pv7ls0n8fbh3qi60wgzqk1"))))
     (properties `((upstream-name . "TAPseq")))
     (build-system r-build-system)
     (arguments

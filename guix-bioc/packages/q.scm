@@ -466,13 +466,13 @@ Erdmann-Pham, 2023+ [@code{arXiv:2209.14235v2}]).")
 (define-public r-qplexanalyzer
   (package
     (name "r-qplexanalyzer")
-    (version "1.27.0")
+    (version "1.28.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qPLEXanalyzer" version))
        (sha256
-        (base32 "0xbb933yhfbmgibjzic342rci3sw9dwxgz5wxgxfmzqwyivjp3px"))))
+        (base32 "0nx1wx1hn0yyhcxbzp4hwjsfpkybsr98251300a54kg000w7d1p8"))))
     (properties `((upstream-name . "qPLEXanalyzer")))
     (build-system r-build-system)
     (arguments
