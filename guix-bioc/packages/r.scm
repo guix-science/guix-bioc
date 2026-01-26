@@ -5946,38 +5946,6 @@ using data from public repositories.")
 @code{AnnotationDbi} to produce regular annotation packages.")
     (license license:artistic2.0)))
 
-(define-public r-rarr
-  (package
-    (name "r-rarr")
-    (version "1.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "Rarr" version))
-       (sha256
-        (base32 "1j7zpz0fb996yywvrqbnw67p8a2m4y77kx6ijq7wgald6qg0y1v1"))))
-    (properties `((upstream-name . "Rarr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (inputs (list zlib))
-    (propagated-inputs (list r-r-utils
-                             r-paws-storage
-                             r-jsonlite
-                             r-delayedarray
-                             r-curl
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://huber-group-embl.github.io/Rarr/")
-    (synopsis "Read Zarr Files in R")
-    (description
-     "The Zarr specification defines a format for chunked, compressed, N-dimensional
-arrays.  It's design allows efficient access to subsets of the stored array, and
-supports both local and cloud storage systems.  Rarr aims to implement this
-specification in R with minimal reliance on an external tools or libraries.")
-    (license license:expat)))
-
 (define-public r-rarevariantvis
   (package
     (name "r-rarevariantvis")
