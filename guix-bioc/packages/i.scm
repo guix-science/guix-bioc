@@ -1542,13 +1542,13 @@ information, partial information decomposition, and part mutual information.")
 (define-public r-infinityflow
   (package
     (name "r-infinityflow")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "infinityFlow" version))
        (sha256
-        (base32 "1hw44vqassgsr55a6sscdhbkckgcx5q2m9h4l73mhafmaqb5yrri"))))
+        (base32 "11m3ay7dc6arajd8b08nq3cmrwg8bmcrkjyb7fin16j50bqnxpp1"))))
     (properties `((upstream-name . "infinityFlow")))
     (build-system r-build-system)
     (arguments
@@ -2690,13 +2690,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "12x7yza5xkbl4kdb00b4l8478rvhn233i87gx8qd8qj76vdgj65h"))))
+        (base32 "1zqd7q1lfjn2dzg0x7f2c29rpsa2g9sbhzk4br436pzmsbisafzh"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments

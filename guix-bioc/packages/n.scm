@@ -517,13 +517,13 @@ reveals novel drug-binding proteins.")
 (define-public r-notameviz
   (package
     (name "r-notameviz")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "notameViz" version))
        (sha256
-        (base32 "0hs3ckg0wff74zvmmcxpbkncxnz8hxm79vrjmzy3gfy0iwww1lhf"))))
+        (base32 "0il4y1i14rnb323v5bvd4dbr0v2cfrih374sm3sn0lkz591bh4a4"))))
     (properties `((upstream-name . "notameViz")))
     (build-system r-build-system)
     (arguments

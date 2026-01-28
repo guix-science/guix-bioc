@@ -1972,13 +1972,13 @@ than memory data sets.")
 (define-public r-msstats
   (package
     (name "r-msstats")
-    (version "4.18.0")
+    (version "4.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstats" version))
        (sha256
-        (base32 "084275gir4sndjwx40qn642k1jian24xkby30x1ld7b378nsnmmf"))))
+        (base32 "1k9709pas6z200gr1v5wknpc57205cjz9g61liqpi91w822g4rgp"))))
     (properties `((upstream-name . "MSstats")))
     (build-system r-build-system)
     (arguments
@@ -2611,13 +2611,13 @@ package.")
 (define-public r-msbackendmassbank
   (package
     (name "r-msbackendmassbank")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMassbank" version))
        (sha256
-        (base32 "06ac38fshnn1ra0k3dmmrlsc6036sx5kzb84h8j9k1j336ra3lm1"))))
+        (base32 "1jjy98l3ndljnj4s85dvjcr2ilqdxjif01ps2ndivrz091bi4k9r"))))
     (properties `((upstream-name . "MsBackendMassbank")))
     (build-system r-build-system)
     (arguments
@@ -2629,6 +2629,7 @@ package.")
                              r-mscoreutils
                              r-iranges
                              r-dbi
+                             r-data-table
                              r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RforMassSpectrometry/MsBackendMassbank")

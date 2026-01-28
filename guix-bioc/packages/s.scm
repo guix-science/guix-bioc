@@ -3524,13 +3524,13 @@ Development (LIBD) researchers and collaborators.")
 (define-public r-spatialheatmap
   (package
     (name "r-spatialheatmap")
-    (version "2.16.2")
+    (version "2.16.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialHeatmap" version))
        (sha256
-        (base32 "1qigsbsmfzj6wfszs16h8nfb7xzv9l4c322v2l23ig3b97x3fb7x"))))
+        (base32 "0jfbw6amlbbpr2bcsm517adp804lzh46cw545fbas79sgha1wlsa"))))
     (properties `((upstream-name . "spatialHeatmap")))
     (build-system r-build-system)
     (arguments
@@ -5506,13 +5506,13 @@ location.")
 (define-public r-singlecelltk
   (package
     (name "r-singlecelltk")
-    (version "2.20.0")
+    (version "2.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "singleCellTK" version))
        (sha256
-        (base32 "17my62dn584mvzzsnzv1m4h95lj22bsp280pypxab6f2g7achs5a"))))
+        (base32 "0n4j5b84sc7830jlgbdhrwwymnqzqvz0zj6x8chd3xg967c018bs"))))
     (properties `((upstream-name . "singleCellTK")))
     (build-system r-build-system)
     (arguments
@@ -8168,6 +8168,48 @@ semi-supervised learning algorithm @code{AdaSampling} technique.  The current
 version of @code{scReClassify} supports Support Vector Machine and Random Forest
 as a base classifier.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-scqtltools
+  (package
+    (name "r-scqtltools")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scQTLtools" version))
+       (sha256
+        (base32 "1bg493asmyykh6x7pcaqnjzim744j9h8j5vm3fdjbgn9w7i4ggkg"))))
+    (properties `((upstream-name . "scQTLtools")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yulab-utils
+                             r-vgam
+                             r-summarizedexperiment
+                             r-stringr
+                             r-singlecellexperiment
+                             r-seuratobject
+                             r-progress
+                             r-patchwork
+                             r-matrix
+                             r-magrittr
+                             r-limma
+                             r-gosemsim
+                             r-ggplot2
+                             r-gamlss
+                             r-dplyr
+                             r-deseq2
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/XFWuCN/scQTLtools")
+    (synopsis
+     "scQTLtools: an R/Bioconductor package for comprehensive identification and visualization of single-cell eQTLs")
+    (description
+     "@code{scQTLtools} is a comprehensive R/Bioconductor package that facilitates
+end-to-end single-cell @code{eQTL} analysis, from preprocessing to
+visualization.")
+    (license license:expat)))
 
 (define-public r-scpipe
   (package
