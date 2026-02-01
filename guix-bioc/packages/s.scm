@@ -119,7 +119,8 @@ easily substitute any of these features and/or custom with alternatives.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -5049,41 +5050,6 @@ transformation, imputation, batch effect correction, PCA, heatmap, differential
 expression, time-series clustering, gene set enrichment analysis, and kinase
 activity inference.")
     (license license:gpl3)))
-
-(define-public r-smartid
-  (package
-    (name "r-smartid")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "smartid" version))
-       (sha256
-        (base32 "0iqnk5hpin79l43gzr6s29y7y79cd0w88lggrxsb2612nygpadd5"))))
-    (properties `((upstream-name . "smartid")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
-                             r-sparsematrixstats
-                             r-mixtools
-                             r-mclust
-                             r-matrix
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://davislaboratory.github.io/smartid")
-    (synopsis "Scoring and Marker Selection Method Based on Modified TF-IDF")
-    (description
-     "This package enables automated selection of group specific signature, especially
-for rare population.  The package is developed for generating specifc lists of
-signature genes based on Term Frequency-Inverse Document Frequency (TF-IDF)
-modified methods.  It can also be used as a new gene-set scoring method or data
-transformation method.  Multiple visualization functions are implemented in this
-package.")
-    (license license:expat)))
 
 (define-public r-smad
   (package
@@ -10618,7 +10584,8 @@ molecular identifier (UMI) counts without any tunable parameters.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

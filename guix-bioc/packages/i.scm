@@ -235,7 +235,8 @@ microarray samples, as described in Yeung, Bumgarner and Raftery (Bioinformatics
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -856,7 +857,8 @@ object, in a manner that is compatible with interactive visualisation in
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1263,7 +1265,8 @@ communication in one or multiple conditions.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -1316,7 +1319,8 @@ widgets for more complex Shiny app development.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2562,7 +2566,8 @@ package to the Bioconductor IHW package.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -2686,43 +2691,6 @@ significance testing.")
      "This package is intended to identify differentially expressed genes driven by
 Copy Number Alterations from samples with both gene expression and CNA data.")
     (license license:gpl2)))
-
-(define-public r-igblastr
-  (package
-    (name "r-igblastr")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "igblastr" version))
-       (sha256
-        (base32 "1zqd7q1lfjn2dzg0x7f2c29rpsa2g9sbhzk4br436pzmsbisafzh"))))
-    (properties `((upstream-name . "igblastr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-xml2
-                             r-tibble
-                             r-s4vectors
-                             r-rvest
-                             r-r-utils
-                             r-jsonlite
-                             r-iranges
-                             r-httr
-                             r-genomeinfodb
-                             r-curl
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/igblastr")
-    (synopsis "User-friendly R Wrapper to IgBLAST")
-    (description
-     "The igblastr package provides functions to conveniently install and use a local
-@code{IgBLAST} installation from within R. @code{IgBLAST} is described at
-<https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
-<https://www.ncbi.nlm.nih.gov/igblast/>.")
-    (license license:artistic2.0)))
 
 (define-public r-ifaa
   (package

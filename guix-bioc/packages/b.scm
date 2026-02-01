@@ -3967,41 +3967,6 @@ detect differentially methylated regions (DMRs).  The package takes already
 aligned BS data from one or multiple samples.")
     (license license:lgpl3)))
 
-(define-public r-bioplex
-  (package
-    (name "r-bioplex")
-    (version "1.15.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "BioPlex" version
-                              'experiment))
-       (sha256
-        (base32 "0f6h59s50parzjzrh7pmz0qwrl9zim754azlf5r34w891mdi73c8"))))
-    (properties `((upstream-name . "BioPlex")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-summarizedexperiment
-                             r-graph
-                             r-geoquery
-                             r-genomicranges
-                             r-genomeinfodb
-                             r-biocfilecache))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ccb-hms/BioPlex")
-    (synopsis "R-side access to BioPlex protein-protein interaction data")
-    (description
-     "The @code{BioPlex} package implements access to the @code{BioPlex}
-protein-protein interaction networks and related resources from within R.
-Besides protein-protein interaction networks for HEK293 and HCT116 cells, this
-includes access to CORUM protein complex data, and transcriptome and proteome
-data for the two cell lines.  Functionality focuses on importing the various
-data resources and storing them in dedicated Bioconductor data structures, as a
-foundation for integrative downstream analysis of the data.")
-    (license license:artistic2.0)))
-
 (define-public r-bionar
   (package
     (name "r-bionar")
@@ -4423,7 +4388,8 @@ graphics to the genes of interest.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build

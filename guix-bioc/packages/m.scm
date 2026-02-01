@@ -12,9 +12,9 @@
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages i)
   #:use-module (guix-cran packages p)
-  #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages r)
+  #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages c)
   #:use-module (gnu packages python)
   #:use-module (guix-cran packages h)
@@ -1614,60 +1614,6 @@ processing tools, such as Proteome Discoverer, @code{MaxQuant}, @code{OpenMS}
 and @code{SpectroMine}.")
     (license license:artistic2.0)))
 
-(define-public r-msstatsshiny
-  (package
-    (name "r-msstatsshiny")
-    (version "1.12.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "MSstatsShiny" version))
-       (sha256
-        (base32 "0hrym0l2jwr0hvlnkmbxvpfyjn9jdxddyq2abvzq597liw8x5r26"))))
-    (properties `((upstream-name . "MSstatsShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-uuid
-                             r-tidyr
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinybusy
-                             r-shinybs
-                             r-shiny
-                             r-readxl
-                             r-plotly
-                             r-msstatstmt
-                             r-msstatsptm
-                             r-msstatsconvert
-                             r-msstatsbionet
-                             r-msstats
-                             r-mockery
-                             r-marray
-                             r-htmltools
-                             r-hmisc
-                             r-gplots
-                             r-ggrepel
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-data-table
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/MSstatsShiny")
-    (synopsis "MSstats GUI for Statistical Anaylsis of Proteomics Experiments")
-    (description
-     "M@code{SstatsShiny} is an R-Shiny graphical user interface (GUI) integrated with
-the R packages MSstats, M@code{SstatsTMT}, and M@code{SstatsPTM}.  It provides a
-point and click end-to-end analysis pipeline applicable to a wide variety of
-experimental designs.  These include data-dependedent acquisitions (DDA) which
-are label-free or tandem mass tag (TMT)-based, as well as DIA, SRM, and PRM
-acquisitions and those targeting post-translational modifications (PTMs).  The
-application automatically saves users selections and builds an R script that
-recreates their analysis, supporting reproducible data analysis.")
-    (license license:artistic2.0)))
-
 (define-public r-msstatsresponse
   (package
     (name "r-msstatsresponse")
@@ -2606,41 +2552,6 @@ downloaded and cached locally avoiding repetitive downloads.  MS data from
 metabolomics experiments can thus be directly and seamlessly integrated into
 R-based analysis workflows with the Spectra and @code{MsBackendMetaboLights}
 package.")
-    (license license:artistic2.0)))
-
-(define-public r-msbackendmassbank
-  (package
-    (name "r-msbackendmassbank")
-    (version "1.18.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "MsBackendMassbank" version))
-       (sha256
-        (base32 "1jjy98l3ndljnj4s85dvjcr2ilqdxjif01ps2ndivrz091bi4k9r"))))
-    (properties `((upstream-name . "MsBackendMassbank")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-spectra
-                             r-s4vectors
-                             r-protgenerics
-                             r-mscoreutils
-                             r-iranges
-                             r-dbi
-                             r-data-table
-                             r-biocparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RforMassSpectrometry/MsBackendMassbank")
-    (synopsis "Mass Spectrometry Data Backend for MassBank record Files")
-    (description
-     "Mass spectrometry (MS) data backend supporting import and export of MS/MS
-library spectra from @code{MassBank} record files.  Different backends are
-available that allow handling of data in plain @code{MassBank} text file format
-or allow also to interact directly with @code{MassBank} SQL databases.  Objects
-from this package are supposed to be used with the Spectra Bioconductor package.
- This package thus adds @code{MassBank} support to the Spectra package.")
     (license license:artistic2.0)))
 
 (define-public r-msa2dist
@@ -8168,7 +8079,8 @@ MS/MS features based on their similarity to (known) related MS/MS features.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -10082,52 +9994,6 @@ merging multiple datasets, removing redundant features, using CAT-plots and Venn
 diagrams, and computing statistical significance.")
     (license license:artistic2.0)))
 
-(define-public r-mastr
-  (package
-    (name "r-mastr")
-    (version "1.10.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "mastR" version))
-       (sha256
-        (base32 "1pdy3yzlkvf1j3j1zi8w1jy1rllacrp228i5wi57r8d32cp8y283"))))
-    (properties `((upstream-name . "mastR")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-tidyr
-                             r-summarizedexperiment
-                             r-singlecellexperiment
-                             r-seuratobject
-                             r-patchwork
-                             r-org-hs-eg-db
-                             r-msigdb
-                             r-matrix
-                             r-limma
-                             r-gseabase
-                             r-ggpubr
-                             r-ggplot2
-                             r-edger
-                             r-dplyr
-                             r-biobase
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://davislaboratory.github.io/mastR")
-    (synopsis "Markers Automated Screening Tool in R")
-    (description
-     "@code{mastR} is an R package designed for automated screening of signatures of
-interest for specific research questions.  The package is developed for
-generating refined lists of signature genes from multiple group comparisons
-based on the results from @code{edgeR} and limma differential expression (DE)
-analysis workflow.  It also takes into account the background noise of
-tissue-specificity, which is often ignored by other marker generation tools.
-This package is particularly useful for the identification of group markers in
-various biological and medical applications, including cancer research and
-developmental biology.")
-    (license license:expat)))
-
 (define-public r-massir
   (package
     (name "r-massir")
@@ -10492,7 +10358,8 @@ visualization.")
      (list
       #:tests? #f
       #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
                   (guix build utils)
                   (ice-9 match))
       #:imported-modules `(,@%r-build-system-modules (guix build
@@ -10560,58 +10427,6 @@ distribution of clones throughout anatomic space.")
 (Team221) in the IMPROVER Diagnostic Signature Challenge.  Additional
 functionality is added to compare 27 combinations of data preprocessing, feature
 selection and classifier types.")
-    (license license:gpl2)))
-
-(define-public r-mapfx
-  (package
-    (name "r-mapfx")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "MAPFX" version))
-       (sha256
-        (base32 "1fwdy5jv44bx0sbhqgi9mm1h144d7wak6j5q97np4pir2rg4b3qj"))))
-    (properties `((upstream-name . "MAPFX")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-xgboost
-                             r-uwot
-                             r-stringr
-                             r-rfast
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-pbapply
-                             r-igraph
-                             r-icellr
-                             r-gtools
-                             r-glmnetutils
-                             r-ggplot2
-                             r-flowcore
-                             r-e1071
-                             r-cowplot
-                             r-complexheatmap
-                             r-circlize
-                             r-biobase))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/HsiaoChiLiao/MAPFX")
-    (synopsis
-     "MAssively Parallel Flow cytometry Xplorer (MAPFX): A Toolbox for Analysing Data from the Massively-Parallel Cytometry Experiments")
-    (description
-     "MAPFX is an end-to-end toolbox that pre-processes the raw data from MPC
-experiments (e.g., @code{BioLegend's} LEGENDScreen and BD Lyoplates assays), and
-further imputes the ‘missing’ infinity markers in the wells without those
-measurements.  The pipeline starts by performing background correction on raw
-intensities to remove the noise from electronic baseline restoration and
-fluorescence compensation by adapting a normal-exponential convolution model.
-Unwanted technical variation, from sources such as well effects, is then removed
-using a log-normal model with plate, column, and row factors, after which
-infinity markers are imputed using the informative backbone markers as
-predictors.  The completed dataset can then be used for clustering and other
-statistical analyses.  Additionally, MAPFX can be used to normalise data from
-FFC assays as well.")
     (license license:gpl2)))
 
 (define-public r-mantelcorr
