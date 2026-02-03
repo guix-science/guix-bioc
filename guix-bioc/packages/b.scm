@@ -3967,6 +3967,37 @@ detect differentially methylated regions (DMRs).  The package takes already
 aligned BS data from one or multiple samples.")
     (license license:lgpl3)))
 
+(define-public r-bioplex
+  (package
+    (name "r-bioplex")
+    (version "1.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "BioPlex" version
+                              'experiment))
+       (sha256
+        (base32 "0kighz3gcr8vdqzl7zh24a1mh3v5j4jfmyfblc1vmhg4s0anr8b2"))))
+    (properties `((upstream-name . "BioPlex")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment r-graph r-geoquery
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ccb-hms/BioPlex")
+    (synopsis "R-side access to BioPlex protein-protein interaction data")
+    (description
+     "The @code{BioPlex} package implements access to the @code{BioPlex}
+protein-protein interaction networks and related resources from within R.
+Besides protein-protein interaction networks for HEK293 and HCT116 cells, this
+includes access to CORUM protein complex data, and transcriptome and proteome
+data for the two cell lines.  Functionality focuses on importing the various
+data resources and storing them in dedicated Bioconductor data structures, as a
+foundation for integrative downstream analysis of the data.")
+    (license license:artistic2.0)))
+
 (define-public r-bionar
   (package
     (name "r-bionar")

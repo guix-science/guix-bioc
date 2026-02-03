@@ -947,13 +947,13 @@ for importing methylation data.")
 (define-public r-isanalytics
   (package
     (name "r-isanalytics")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ISAnalytics" version))
        (sha256
-        (base32 "1b6q0cx3nvklp5458gs8qb33d0fs362y9sp90snjpajs52n07ilw"))))
+        (base32 "0y3a238hrbxb6p4b4q0i415c9dmmwr3qh4azwncj8dgwkcaxcaj2"))))
     (properties `((upstream-name . "ISAnalytics")))
     (build-system r-build-system)
     (arguments
@@ -2691,6 +2691,43 @@ significance testing.")
      "This package is intended to identify differentially expressed genes driven by
 Copy Number Alterations from samples with both gene expression and CNA data.")
     (license license:gpl2)))
+
+(define-public r-igblastr
+  (package
+    (name "r-igblastr")
+    (version "1.0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "igblastr" version))
+       (sha256
+        (base32 "073qlfpdidfbgr1f5in3vk4d6aqbapjz45szmv22yxc1sy7180jz"))))
+    (properties `((upstream-name . "igblastr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xtable
+                             r-xml2
+                             r-tibble
+                             r-s4vectors
+                             r-rvest
+                             r-r-utils
+                             r-jsonlite
+                             r-iranges
+                             r-httr
+                             r-genomeinfodb
+                             r-curl
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/igblastr")
+    (synopsis "User-friendly R Wrapper to IgBLAST")
+    (description
+     "The igblastr package provides functions to conveniently install and use a local
+@code{IgBLAST} installation from within R. @code{IgBLAST} is described at
+<https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
+<https://www.ncbi.nlm.nih.gov/igblast/>.")
+    (license license:artistic2.0)))
 
 (define-public r-ifaa
   (package

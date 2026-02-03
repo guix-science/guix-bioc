@@ -2689,13 +2689,13 @@ analysis in the R environment.  It provides a standards-based interface to the
 (define-public r-rigvf
   (package
     (name "r-rigvf")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rigvf" version))
        (sha256
-        (base32 "1kkrbpry5snnq2434482pq0rxm504gz68ljma5dd5ksibf82i6bf"))))
+        (base32 "04p1b64v1f1ml77vs9lsy35c2cmxxwwfcvmn4fpwq365dyvwrfzd"))))
     (properties `((upstream-name . "rigvf")))
     (build-system r-build-system)
     (arguments
@@ -3981,6 +3981,34 @@ to the integration of several omics table together.  A report can be generated
 with all settings and analysis results.")
     (license license:artistic2.0)))
 
+(define-public r-rfastp
+  (package
+    (name "r-rfastp")
+    (version "1.20.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Rfastp" version))
+       (sha256
+        (base32 "1sb8599dp149sq4wlbiq5vhrhazbfngd0wmndckz4zdz95yxxshi"))))
+    (properties `((upstream-name . "Rfastp")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rjson r-rhtslib r-reshape2 r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/Rfastp")
+    (synopsis
+     "An Ultra-Fast and All-in-One Fastq Preprocessor (Quality Control, Adapter, low quality and polyX trimming) and UMI Sequence Parsing)")
+    (description
+     "Rfastp is an R wrapper of fastp developed in c++.  fastp performs quality
+control for fastq files.  including low quality bases trimming, @code{polyX}
+trimming, adapter auto-detection and trimming, paired-end reads merging, UMI
+sequence/id handling.  Rfastp can concatenate multiple files into one file (like
+shell command cat) and accept multiple files as input.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-rfarm
   (package
     (name "r-rfarm")
@@ -4946,13 +4974,13 @@ Jerby-Arnon et al.")
 (define-public r-reactomegsa
   (package
     (name "r-reactomegsa")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ReactomeGSA" version))
        (sha256
-        (base32 "1nqz3xmxriybdx6yvdhah2sxz8mn44gplgssdcw5f9nl7aww9a0k"))))
+        (base32 "194dkp5shx9w50rmysfab7kfsfa0v9mp0lfn0f7hzag9x2dj7gjp"))))
     (properties `((upstream-name . "ReactomeGSA")))
     (build-system r-build-system)
     (arguments

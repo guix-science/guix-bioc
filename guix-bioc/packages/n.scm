@@ -1346,13 +1346,13 @@ lasso, Stadler and Mukherjee, 2013).")
 (define-public r-netboost
   (package
     (name "r-netboost")
-    (version "2.18.0")
+    (version "2.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netboost" version))
        (sha256
-        (base32 "0kqix8n5gr79hzizfwbg78l61zqkgmpjhgvlyb2h4sl7ka1m0rna"))))
+        (base32 "075wg8z46nxbk6hkq16gp7nrzr5g81pa0gq0grq18xgk459idlax"))))
     (properties `((upstream-name . "netboost")))
     (build-system r-build-system)
     (arguments
@@ -1365,16 +1365,13 @@ lasso, Stadler and Mukherjee, 2013).")
                              r-r-utils
                              r-impute
                              r-dynamictreecut
-                             r-colorspace
-                             r-biocstyle))
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page
      "https://bioconductor.org/packages/release/bioc/html/netboost.html")
     (synopsis "Network Analysis Supported by Boosting")
     (description
-     "Boosting supported network analysis for high-dimensional omics applications.
-This package comes bundled with the MC-UPGMA clustering package by Yaniv
-Loewenstein.")
+     "Boosting supported network analysis for high-dimensional omics applications.")
     (license license:gpl3)))
 
 (define-public r-netactivitydata

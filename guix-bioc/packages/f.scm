@@ -2270,6 +2270,59 @@ code for use in subsequent significance analyses.")
 produced by RIKEN Omics Science Center.")
     (license license:gpl3)))
 
+(define-public r-famat
+  (package
+    (name "r-famat")
+    (version "1.20.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "famat" version))
+       (sha256
+        (base32 "0kbvqiq2vl497lgjf995h85ix68zl2izis5c594s7d8cqsvd15h3"))))
+    (properties `((upstream-name . "famat")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-rwikipathways
+                             r-reactomepa
+                             r-reactome-db
+                             r-plotly
+                             r-org-hs-eg-db
+                             r-ontologyindex
+                             r-mgcv
+                             r-magrittr
+                             r-keggrest
+                             r-gprofiler2
+                             r-go-db
+                             r-enrichplot
+                             r-dt
+                             r-dplyr
+                             r-clusterprofiler
+                             r-biasedurn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/emiliesecherre/famat")
+    (synopsis "Functional analysis of metabolic and transcriptomic data")
+    (description
+     "Famat is made to collect data about lists of genes and metabolites provided by
+user, and to visualize it through a Shiny app.  Information collected is: -
+Pathways containing some of the user's genes and metabolites (obtained using a
+pathway enrichment analysis). - Direct interactions between user's elements
+inside pathways. - Information about elements (their identifiers and
+descriptions). - Go terms enrichment analysis performed on user's genes.  The
+Shiny app is composed of: - information about genes, metabolites, and direct
+interactions between them inside pathways. - an heatmap showing which elements
+from the list are in pathways (pathways are structured in hierarchies). -
+hierarchies of enriched go terms using Molecular Function and Biological
+Process.")
+    (license license:gpl3)))
+
 (define-public r-famagg
   (package
     (name "r-famagg")
