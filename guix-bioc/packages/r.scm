@@ -1691,14 +1691,14 @@ time course gene expression data.")
 (define-public r-rnbeads-hg38
   (package
     (name "r-rnbeads-hg38")
-    (version "1.42.0")
+    (version "1.42.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RnBeads.hg38" version
                               'experiment))
        (sha256
-        (base32 "0iy09yys2zfmsi2wwz8s4njscw1l7c6yibg6n25mdvhx2qp1i3w3"))))
+        (base32 "1dlnqkywcf0gwsfxhkhjxl6vpyvsdw5kpiv6p4zlgw4x4g7f24rp"))))
     (properties `((upstream-name . "RnBeads.hg38")))
     (build-system r-build-system)
     (arguments
