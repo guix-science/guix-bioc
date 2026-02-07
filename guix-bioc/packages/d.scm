@@ -811,6 +811,32 @@ dimensional batch effects, and varying sequencing depth or observed cells per
 biosample.")
     (license license:artistic2.0)))
 
+(define-public r-drawproteins
+  (package
+    (name "r-drawproteins")
+    (version "1.30.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "drawProteins" version))
+       (sha256
+        (base32 "1mwv088383m11sc7gnklcg5jm3cgbvmy9ggcafgcin275wcfrv5g"))))
+    (properties `((upstream-name . "drawProteins")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr r-readr r-httr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/brennanpincardiff/drawProteins")
+    (synopsis "Package to Draw Protein Schematics from Uniprot API output")
+    (description
+     "This package draws protein schematics from Uniprot API output.  From the JSON
+returned by the GET command, it creates a dataframe from the Uniprot Features
+API. This dataframe can then be used by geoms based on ggplot2 and base R to
+draw protein schematics.")
+    (license license:expat)))
+
 (define-public r-doubletrouble
   (package
     (name "r-doubletrouble")

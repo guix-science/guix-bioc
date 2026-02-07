@@ -956,13 +956,13 @@ for metabolomics analysis and teaching purposes.")
 (define-public r-nipalsmcia
   (package
     (name "r-nipalsmcia")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nipalsMCIA" version))
        (sha256
-        (base32 "1njd24qvzb3pp94rcadb4dn7h7q79s1ifizrw1b5hxc4lv19fxmr"))))
+        (base32 "1824gpk919vkd59anip3hc019i1xw4gh61g8179di408af77x4ff"))))
     (properties `((upstream-name . "nipalsMCIA")))
     (build-system r-build-system)
     (arguments

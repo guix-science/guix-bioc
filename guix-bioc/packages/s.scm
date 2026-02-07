@@ -3101,13 +3101,13 @@ tissues and conditions.")
 (define-public r-spiat
   (package
     (name "r-spiat")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPIAT" version))
        (sha256
-        (base32 "1y5j6sh5ls10w491sjrb99m80mwh29bdwkg97r3ykyh09wk2w5dq"))))
+        (base32 "0jv1klxy9ld8i9slv4a2mm8w1z0j8sp8bm3pfd6cahp99b52v0gs"))))
     (properties `((upstream-name . "SPIAT")))
     (build-system r-build-system)
     (arguments
@@ -8173,13 +8173,13 @@ as a base classifier.")
 (define-public r-scqtltools
   (package
     (name "r-scqtltools")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scQTLtools" version))
        (sha256
-        (base32 "1bg493asmyykh6x7pcaqnjzim744j9h8j5vm3fdjbgn9w7i4ggkg"))))
+        (base32 "0h8blizwkyi1aj6fqb7wblgfr96b6zimzzj8kl63nygmvx2v3gmq"))))
     (properties `((upstream-name . "scQTLtools")))
     (build-system r-build-system)
     (arguments
@@ -8196,7 +8196,6 @@ as a base classifier.")
                              r-matrix
                              r-magrittr
                              r-limma
-                             r-gosemsim
                              r-ggplot2
                              r-gamlss
                              r-dplyr

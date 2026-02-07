@@ -4222,13 +4222,13 @@ and illustrate running and analysing MOFA models.")
 (define-public r-mofa2
   (package
     (name "r-mofa2")
-    (version "1.20.1")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOFA2" version))
        (sha256
-        (base32 "1pkqr9z1k49xvp5q75788i64m3kl8fcizblabvxlm9n6s606l3gc"))))
+        (base32 "0xck3z9w8823dkvkpvnx3fcryr2wfk9dfzp1hdlggq08msf8samd"))))
     (properties `((upstream-name . "MOFA2")))
     (build-system r-build-system)
     (arguments

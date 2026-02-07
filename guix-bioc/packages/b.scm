@@ -4381,13 +4381,13 @@ images for specific Bioconductor releases).")
 (define-public r-biocartaimage
   (package
     (name "r-biocartaimage")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BioCartaImage" version))
        (sha256
-        (base32 "1p65sdfhsq2iwg87mmxb95r7z92jyrw6b7qxxy3rjb9iwzxqyzc1"))))
+        (base32 "18fcncpdg1pfaz0jsihmnz0y9n94v87mmqqbx5w2yd6czzii3gvd"))))
     (properties `((upstream-name . "BioCartaImage")))
     (build-system r-build-system)
     (arguments

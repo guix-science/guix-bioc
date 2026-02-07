@@ -1252,13 +1252,13 @@ communication in one or multiple conditions.")
 (define-public r-interactivecomplexheatmap
   (package
     (name "r-interactivecomplexheatmap")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "InteractiveComplexHeatmap" version))
        (sha256
-        (base32 "1fqkrf3mwfxd1sf813vxx23nj1zh4la43byxiglc4adf6s8mh67p"))))
+        (base32 "047q6z3lxpan8rhlajgkyb9px6kg5g21ncx31lzzsji50aiqdydz"))))
     (properties `((upstream-name . "InteractiveComplexHeatmap")))
     (build-system r-build-system)
     (arguments

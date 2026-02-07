@@ -3750,13 +3750,13 @@ compositional multiplots.")
 (define-public r-cola
   (package
     (name "r-cola")
-    (version "2.16.0")
+    (version "2.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cola" version))
        (sha256
-        (base32 "1h6w44nbach8wvnd3qjs107fmcqn3wzpqv587c651xqcjrq6d1w7"))))
+        (base32 "0ljg43idry67r2kabym87g2vppqah3aix8xjz4kmn33fg1wvgdkb"))))
     (properties `((upstream-name . "cola")))
     (build-system r-build-system)
     (arguments
