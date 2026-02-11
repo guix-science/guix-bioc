@@ -5052,13 +5052,13 @@ interactions with other measurements that led to the observed contribution.")
 (define-public r-mist
   (package
     (name "r-mist")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mist" version))
        (sha256
-        (base32 "0s8k2zcjnmm9l8ndwa8acgjkhgmamglbhxy1mx8qrzhgc3ahfmys"))))
+        (base32 "0aq0h0hxcraf6lnhgrq407qwz9gmhsmdqh2a2a56vzpghdqg7cjq"))))
     (properties `((upstream-name . "mist")))
     (build-system r-build-system)
     (arguments

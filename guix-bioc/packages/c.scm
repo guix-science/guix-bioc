@@ -8400,13 +8400,13 @@ reference data).")
 (define-public r-cdi
   (package
     (name "r-cdi")
-    (version "1.8.0")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CDI" version))
        (sha256
-        (base32 "1k5sxbbmcvb4widaf1r9fzlrhx6q6gqlpiy7lcfrhkhg8l8k2xz6"))))
+        (base32 "0h2qckfq26xq53hcsrb9a1wqf487kfpmvvb5v3l8988rb10lprax"))))
     (properties `((upstream-name . "CDI")))
     (build-system r-build-system)
     (arguments

@@ -2891,13 +2891,13 @@ placental DNA methylation array (450k/850k) data.")
 (define-public r-piuma
   (package
     (name "r-piuma")
-    (version "1.5.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PIUMA" version))
        (sha256
-        (base32 "1k2gv9m1wcsc3awcbhmcmw0n8jh2grpzkagdj3gvqmvxli7ds2zi"))))
+        (base32 "0jb0aakyz25f414mm3qgp2r8yprams8qiilv11xd0hs66jzfd3r8"))))
     (properties `((upstream-name . "PIUMA")))
     (build-system r-build-system)
     (arguments

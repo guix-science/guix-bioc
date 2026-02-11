@@ -2271,13 +2271,13 @@ Human_genes__GRCh37_p13__tss - Human_genes__GRCh38_p12__tss.")
 (define-public r-elmer
   (package
     (name "r-elmer")
-    (version "2.33.1")
+    (version "2.34.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ELMER" version))
        (sha256
-        (base32 "1ajwq8amzif2sxyz11a8axbd4jibp3f7pzrcl9f9zbwz8l5h6jmx"))))
+        (base32 "1937lf4jm0xmlrl8ps6lkxj4k6bc77din8jfs8l6m91pfg95k0yg"))))
     (properties `((upstream-name . "ELMER")))
     (build-system r-build-system)
     (arguments
