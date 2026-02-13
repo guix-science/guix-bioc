@@ -2269,13 +2269,13 @@ parameter to zero.")
 (define-public r-countsimqc
   (package
     (name "r-countsimqc")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "countsimQC" version))
        (sha256
-        (base32 "0kbcl53mi9ch3d336xccw500bvghjy6lify8jpj7hmnx7bxhzzlq"))))
+        (base32 "1gy7cmjd7bsp5phi7qadq7r2z5rvddqczjfpl4hrx0crvwwkppmk"))))
     (properties `((upstream-name . "countsimQC")))
     (build-system r-build-system)
     (arguments
@@ -2284,6 +2284,7 @@ parameter to zero.")
     (propagated-inputs (list r-tidyr
                              r-summarizedexperiment
                              r-rmarkdown
+                             r-rlang
                              r-randtests
                              r-ragg
                              r-ggplot2
@@ -2357,13 +2358,13 @@ Cotton.cdf file.")
 (define-public r-cotan
   (package
     (name "r-cotan")
-    (version "2.10.1")
+    (version "2.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "COTAN" version))
        (sha256
-        (base32 "0gy9qdx4xx6xsr728bhqkn3nimvc0kmqwa1y90jyfac0l1qm2f2w"))))
+        (base32 "0gxcmbrkwjqssl28xx0q5bhjq26h5c3g2i7b0444y3hssbdfcjwz"))))
     (properties `((upstream-name . "COTAN")))
     (build-system r-build-system)
     (arguments
@@ -2373,6 +2374,7 @@ Cotton.cdf file.")
                              r-withr
                              r-tidyr
                              r-tibble
+                             r-summarizedexperiment
                              r-stringr
                              r-singlecellexperiment
                              r-seurat

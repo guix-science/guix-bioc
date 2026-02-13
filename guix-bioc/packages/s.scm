@@ -3733,13 +3733,13 @@ data.")
 (define-public r-spatialdecon
   (package
     (name "r-spatialdecon")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpatialDecon" version))
        (sha256
-        (base32 "0y5wn3vi5a50c3745qxspxq89xj4j3bb0f2sj193j5qnyycli4px"))))
+        (base32 "1xh6kjncldgmm7dxa5xdswjlx4jbh8ivq6r11gz9h3slvjy3876m"))))
     (properties `((upstream-name . "SpatialDecon")))
     (build-system r-build-system)
     (arguments
