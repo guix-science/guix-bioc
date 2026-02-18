@@ -117,13 +117,13 @@ burden in each tumor and characterize the types of splicing events that occur.")
 (define-public r-outrider
   (package
     (name "r-outrider")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "OUTRIDER" version))
        (sha256
-        (base32 "0fgypmzap54d8bmln0y3fb9s2xyiz3v9zigfslwh7bbm8wnrqblx"))))
+        (base32 "0piainr4c1v47dpazf5f5h00qf81wbv3waxszrdvcxql1rji7m89"))))
     (properties `((upstream-name . "OUTRIDER")))
     (build-system r-build-system)
     (arguments

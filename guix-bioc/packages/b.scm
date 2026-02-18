@@ -5000,13 +5000,13 @@ outliers.")
 (define-public r-batchqc
   (package
     (name "r-batchqc")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BatchQC" version))
        (sha256
-        (base32 "12igzinwk2lkxkrsbxpm59jqizw0walvr7xrhhl18hjjfalff7ji"))))
+        (base32 "0q8kmp3dddlm1h90i8qjd9km71gyaxvdfmk2bm31ccpz29is8bjx"))))
     (properties `((upstream-name . "BatchQC")))
     (build-system r-build-system)
     (arguments

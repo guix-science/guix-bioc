@@ -3984,13 +3984,13 @@ with all settings and analysis results.")
 (define-public r-rfastp
   (package
     (name "r-rfastp")
-    (version "1.20.2")
+    (version "1.20.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rfastp" version))
        (sha256
-        (base32 "194l26dinqnl02zm154ia7j9cwig5fid1hpiaf5lyqbvas61d90k"))))
+        (base32 "02nw1c5dwrlv04bdg45h7i6kbp7whvzrhff5jqnmkqc1r171vb7l"))))
     (properties `((upstream-name . "Rfastp")))
     (build-system r-build-system)
     (arguments

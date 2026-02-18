@@ -9238,6 +9238,56 @@ proper attribution under GPL-2 license.")
 @code{scGPS} to investigate the relationships between subpopulations.")
     (license license:gpl3)))
 
+(define-public r-scfeatures
+  (package
+    (name "r-scfeatures")
+    (version "1.10.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "scFeatures" version))
+       (sha256
+        (base32 "0353iyami06mj62a8fpbxhbnyh7fnsrvsr901i640l3ilff0g6vj"))))
+    (properties `((upstream-name . "scFeatures")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-seurat
+                             r-rmarkdown
+                             r-reshape2
+                             r-proxyc
+                             r-msigdbr
+                             r-matrixgenerics
+                             r-gtools
+                             r-gsva
+                             r-glue
+                             r-ensembldb
+                             r-ensdb-mmusculus-v79
+                             r-ensdb-hsapiens-v79
+                             r-dt
+                             r-dplyr
+                             r-delayedmatrixstats
+                             r-delayedarray
+                             r-cli
+                             r-biocparallel
+                             r-aucell
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/scFeatures")
+    (synopsis
+     "scFeatures: Multi-view representations of single-cell and spatial data for disease outcome prediction")
+    (description
+     "@code{scFeatures} constructs multi-view representations of single-cell and
+spatial data. @code{scFeatures} is a tool that generates multi-view
+representations of single-cell and spatial data through the construction of a
+total of 17 feature types.  These features can then be used for a variety of
+analyses using other software in Biocondutor.")
+    (license license:gpl3)))
+
 (define-public r-scfeaturefilter
   (package
     (name "r-scfeaturefilter")

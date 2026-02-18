@@ -2443,13 +2443,13 @@ available for the class being predicted.")
 (define-public r-cosmosr
   (package
     (name "r-cosmosr")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cosmosR" version))
        (sha256
-        (base32 "0l816srg6rgmb53ws45vwv3w8bvlyh8qcyz1q2drz9fg0w93645b"))))
+        (base32 "1qw89akcyf0hbddrpb0v5abh4x4nyw4lcdw54pc0v7xxnnwpvijc"))))
     (properties `((upstream-name . "cosmosR")))
     (build-system r-build-system)
     (arguments
@@ -9172,13 +9172,13 @@ spectrometry imaging.")
 (define-public r-cardinal
   (package
     (name "r-cardinal")
-    (version "3.12.0")
+    (version "3.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Cardinal" version))
        (sha256
-        (base32 "0399hpf81s5hfd2yrq62md29p7y1f55wqb6kn9n3kg6i1z12qdpn"))))
+        (base32 "0zm3vl6xyasc108zzzpah9rpfic983f385idgpw19wpd20ydrlpw"))))
     (properties `((upstream-name . "Cardinal")))
     (build-system r-build-system)
     (arguments

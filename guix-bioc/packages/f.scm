@@ -311,19 +311,20 @@ Process model for automated spot counting.")
 (define-public r-fraser
   (package
     (name "r-fraser")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FRASER" version))
        (sha256
-        (base32 "1h9j04q0b956kikwlwzfgn6amd4wf56ybqim3r6vikmhqacm94l7"))))
+        (base32 "1z98r7rrik8qy5g0fsiib0krr46kgqxlakczn2jq4ps93iy7v1g6"))))
     (properties `((upstream-name . "FRASER")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-vgam
+                             r-txdbmaker
                              r-tibble
                              r-summarizedexperiment
                              r-s4vectors
