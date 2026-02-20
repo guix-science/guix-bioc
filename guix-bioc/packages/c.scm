@@ -7255,13 +7255,13 @@ diagnosis and disease monitoring.")
 (define-public r-cfdnapro
   (package
     (name "r-cfdnapro")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cfDNAPro" version))
        (sha256
-        (base32 "16387in3j9i6q059l1kh64lj3kh3wd23ia2x80dm7azdlykr616l"))))
+        (base32 "0lfzw0f3w30ililv0h3nfgwnymy28f6m1j0lhjza6ps2jk2ji3gl"))))
     (properties `((upstream-name . "cfDNAPro")))
     (build-system r-build-system)
     (arguments
@@ -9063,13 +9063,13 @@ adjusted and multiple solutions can be obtained and aggregated.")
 (define-public r-cardspa
   (package
     (name "r-cardspa")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CARDspa" version))
        (sha256
-        (base32 "04n4pffqrpgf57crdg3pg0av510y73fkwm6irsvy1kdj183585vv"))))
+        (base32 "1a2g5rfiyy6a4knmdbwp6d6p4plw6z7z931r8r35x9m42bjb2vcd"))))
     (properties `((upstream-name . "CARDspa")))
     (build-system r-build-system)
     (arguments
@@ -9085,7 +9085,6 @@ adjusted and multiple solutions can be obtained and aggregated.")
                              r-scatterpie
                              r-s4vectors
                              r-reshape2
-                             r-rcppml
                              r-rcpparmadillo
                              r-rcpp
                              r-rcolorbrewer

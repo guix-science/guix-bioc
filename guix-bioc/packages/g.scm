@@ -12,6 +12,7 @@
   #:use-module (guix-cran packages g)
   #:use-module (guix-cran packages f)
   #:use-module (gnu packages compression)
+  #:use-module (guix-cran packages u)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages s)
@@ -1442,6 +1443,64 @@ Visualisation function include gene expression profile, gene ontology-based
 heatmaps, and hierarchical clustering of experimental samples using gene
 expression data.")
     (license license:gpl3+)))
+
+(define-public r-goatea
+  (package
+    (name "r-goatea")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "goatea" version))
+       (sha256
+        (base32 "1b9l4xgbjr6psixvxbbr77wy6k1qaggkx293plfabd7297f21j7q"))))
+    (properties `((upstream-name . "goatea")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-upsetjs
+                             r-tidyr
+                             r-tibble
+                             r-shinyjs
+                             r-shinyjqui
+                             r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-plyr
+                             r-plotly
+                             r-openxlsx
+                             r-interactivecomplexheatmap
+                             r-igraph
+                             r-htmltools
+                             r-goat
+                             r-ggplot2
+                             r-enrichplot
+                             r-enhancedvolcano
+                             r-enhancedvolcano
+                             r-dt
+                             r-dplyr
+                             r-dose
+                             r-complexheatmap
+                             r-arrow
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mauritsunkel/goatea")
+    (synopsis "Interactive Exploration of GSEA by the GOAT Method")
+    (description
+     "Geneset Ordinal Association Test Enrichment Analysis (GOATEA) provides a Shiny
+interface with interactive visualizations and utility functions for performing
+and exploring automated gene set enrichment analysis using the GOAT package.
+GOATEA is designed to support large-scale and user-friendly enrichment workflows
+across multiple gene lists and comparisons, with flexible plotting and output
+options.  Visualizations pre-enrichment include interactive Volcano and
+@code{UpSet} (overlap) plots.  Visualizations post-enrichment include
+interactive geneset dotplot, geneset treeplot, gene-effectsize heatmap,
+gene-geneset heatmap and STRING database of protein-protein-interactions network
+graph.  GOAT reference: Frank Koopmans (2024) <doi:10.1038/s42003-024-06454-5>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-gnosis
   (package
@@ -4659,13 +4718,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "1v6hsldgfssn9426v1kscl89v4gcmpycnpilkzyzv5fa7fbwln6m"))))
+        (base32 "0yc490di5n5w04yv277wjpamgpwcmpbmjbacbxfjlbcj3wc8jfgj"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (arguments

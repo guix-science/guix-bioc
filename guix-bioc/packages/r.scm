@@ -4690,13 +4690,13 @@ distributions.")
 (define-public r-reder
   (package
     (name "r-reder")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RedeR" version))
        (sha256
-        (base32 "0sqqhr9blgarvi7dxyxmk0ikj9grqj9zbz9yqb55qhr67mzl3d3i"))))
+        (base32 "0hb5r5pdxlpcw86yzbfs6rns1m7ja423wv77lf5k43qlacm2qf94"))))
     (properties `((upstream-name . "RedeR")))
     (build-system r-build-system)
     (arguments
@@ -4707,9 +4707,9 @@ distributions.")
     (home-page "https://doi.org/10.1186/gb-2012-13-4-r29")
     (synopsis "Interactive visualization and manipulation of nested networks")
     (description
-     "@code{RedeR} is an R-based package combined with a stand-alone Java application
-for interactive visualization and manipulation of nested networks.  Graph, node,
-and edge attributes can be configured using either graphical or command-line
+     "@code{RedeR} combines an R package with a stand-alone Java application for
+interactive visualization and manipulation of nested networks.  Graph, node, and
+edge attributes can be configured using either graphical or command-line
 methods, following igraph syntax rules.")
     (license license:gpl3)))
 

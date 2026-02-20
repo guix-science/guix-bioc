@@ -749,13 +749,13 @@ for FPKM and RPKM normalized RNA-Seq transcriptome datasets.")
 (define-public r-svaretro
   (package
     (name "r-svaretro")
-    (version "1.15.1")
+    (version "1.16.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "svaRetro" version))
        (sha256
-        (base32 "0cb1d9h35q72058if30k1fixairvrvra0k9lcarg8kalav5x7467"))))
+        (base32 "1xgm6h1vxrg8ddh2nyy7j1z02ma288sg64hg6npy68yqcq0dwijl"))))
     (properties `((upstream-name . "svaRetro")))
     (build-system r-build-system)
     (arguments
@@ -774,7 +774,8 @@ for FPKM and RPKM normalized RNA-Seq transcriptome datasets.")
                              r-dplyr
                              r-biostrings
                              r-biocgenerics
-                             r-assertthat))
+                             r-assertthat
+                             r-annotationdbi))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/svaRetro")
     (synopsis "Retrotransposed transcript detection from structural variants")
@@ -8072,6 +8073,48 @@ facilitating comprehensive analysis.  Additionally, it includes a user
 management system to regulate database accessibility for different users.")
     (license license:gpl3)))
 
+(define-public r-screenr
+  (package
+    (name "r-screenr")
+    (version "1.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ScreenR" version))
+       (sha256
+        (base32 "05zln0g525jl8y292b4jlbghv5453432jdavn5fjcpg6225fdixp"))))
+    (properties `((upstream-name . "ScreenR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-limma
+                             r-ggvenn
+                             r-ggplot2
+                             r-edger
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://emanuelsoda.github.io/ScreenR/")
+    (synopsis "Package to Perform High Throughput Biological Screening")
+    (description
+     "@code{ScreenR} is a package suitable to perform hit identification in loss of
+function High Throughput Biological Screenings performed using barcoded
+@code{shRNA-based} libraries. @code{ScreenR} combines the computing power of
+software such as @code{edgeR} with the simplicity of use of the Tidyverse
+metapackage. @code{ScreenR} executes a pipeline able to find candidate hits from
+barcode counts, and integrates a wide range of visualization modes for each step
+of the analysis.")
+    (license license:expat)))
+
 (define-public r-screencounter
   (package
     (name "r-screencounter")
@@ -8885,13 +8928,13 @@ data of chromosome 4.")
 (define-public r-sclane
   (package
     (name "r-sclane")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scLANE" version))
        (sha256
-        (base32 "0g41wzi4jh12l3m85jw3acb92f49gybykjfj7y6s98vpv4ap0vii"))))
+        (base32 "1yafzrhxayxayz9f54bzcm54dl4gxny5iwxddjnc71fccjbxfr6z"))))
     (properties `((upstream-name . "scLANE")))
     (build-system r-build-system)
     (arguments

@@ -884,13 +884,13 @@ age groups based on Ks peaks.")
 (define-public r-dotools
   (package
     (name "r-dotools")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DOtools" version))
        (sha256
-        (base32 "1g78ljyr71x1v9srnz9m7v4gkc1dbyqgsbkaqfpdmvs5ybwxrkg3"))))
+        (base32 "0hxkj78h9zfl2zffd3z8bqbv795hjw7grv1j0qkjwr5ilbdx23bg"))))
     (properties `((upstream-name . "DOtools")))
     (build-system r-build-system)
     (arguments
@@ -923,6 +923,7 @@ age groups based on Ks peaks.")
                              r-ggiraphextra
                              r-ggcorrplot
                              r-ggalluvial
+                             r-fnn
                              r-enrichr
                              r-dropletutils
                              r-dplyr

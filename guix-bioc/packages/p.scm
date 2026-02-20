@@ -241,13 +241,13 @@ variation accounted for by the first principal component (PVAC).")
 (define-public r-purecn
   (package
     (name "r-purecn")
-    (version "2.16.0")
+    (version "2.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PureCN" version))
        (sha256
-        (base32 "1kzp4avvnzih12m7c46n440msrrb97ibsjzwf6ay1l7n8qrjmqqi"))))
+        (base32 "0g3rnrnjdx0jwv816g14rypjcvs4c7gynkdjd2h6zany572rbzdb"))))
     (properties `((upstream-name . "PureCN")))
     (build-system r-build-system)
     (arguments
