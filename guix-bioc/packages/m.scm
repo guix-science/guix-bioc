@@ -5541,13 +5541,13 @@ validate the results, and functions to conduct enrichment analyses.")
 (define-public r-mirit
   (package
     (name "r-mirit")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MIRit" version))
        (sha256
-        (base32 "1zxhsdn050lwmq8xvw6rh9bcyrkrdfc36mqn2k0v9xl42ixqdjd9"))))
+        (base32 "0jhvgdj2vmxzrdr7gbmlliq8p8pvm6h4z0mv721qdfq2cpxp5h67"))))
     (properties `((upstream-name . "MIRit")))
     (build-system r-build-system)
     (arguments

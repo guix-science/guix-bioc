@@ -1932,13 +1932,13 @@ the optimal one.")
 (define-public r-treeandleaf
   (package
     (name "r-treeandleaf")
-    (version "1.22.0")
+    (version "1.22.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TreeAndLeaf" version))
        (sha256
-        (base32 "0ql61a8a3wl1fp9wkliqk7794jhvgx062i1awy1k3aipwl9lwyay"))))
+        (base32 "170l3z54qv41y69rr9mzyp13gzb8ymz6hfa3xy9zv907r0yazqxn"))))
     (properties `((upstream-name . "TreeAndLeaf")))
     (build-system r-build-system)
     (arguments
@@ -1946,12 +1946,13 @@ the optimal one.")
       #:tests? #f))
     (propagated-inputs (list r-reder r-igraph r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/TreeAndLeaf")
+    (home-page "https://doi.org/10.1093/bioinformatics/btab819")
     (synopsis "Displaying binary trees with focus on dendrogram leaves")
     (description
-     "The @code{TreeAndLeaf} package combines unrooted and force-directed graph
-algorithms in order to layout binary trees, aiming to represent multiple layers
-of information onto dendrogram leaves.")
+     "@code{TreeAndLeaf} implements a hybrid layout strategy that enhances leaf-level
+visualization in dendrograms.  By integrating force-directed graph and tree
+layout algorithms, it enables projection of multiple layers of information onto
+graph–tree diagrams.")
     (license license:artistic2.0)))
 
 (define-public r-traser

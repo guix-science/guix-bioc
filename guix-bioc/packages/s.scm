@@ -4841,13 +4841,13 @@ problematic studies and samples in any public data set.")
 (define-public r-smoppix
   (package
     (name "r-smoppix")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smoppix" version))
        (sha256
-        (base32 "0w4hvvarmiwrpgh0gcvxnpkq4l5wpjjldnhyyzxiabqw009wl70r"))))
+        (base32 "1hsc40ljcfzqrkqlydppqdgjqpqzx4ga08nkfax2m9x73na9vxh0"))))
     (properties `((upstream-name . "smoppix")))
     (build-system r-build-system)
     (arguments
@@ -4858,15 +4858,15 @@ problematic studies and samples in any public data set.")
                              r-spatstat-model
                              r-spatstat-geom
                              r-spatialexperiment
-                             r-scam
                              r-rfast
+                             r-reformulas
                              r-rdpack
                              r-rcpp
                              r-openxlsx
+                             r-mgcv
                              r-lmertest
                              r-lme4
                              r-ggplot2
-                             r-extradistr
                              r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sthawinke/smoppix")
@@ -10822,13 +10822,13 @@ The microarray data are derived from Roth et al. (2006) and Ge et al. (2005).")
 (define-public r-saigegds
   (package
     (name "r-saigegds")
-    (version "2.10.0")
+    (version "2.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SAIGEgds" version))
        (sha256
-        (base32 "0y4zkdf6khicaxbm7d98pvbd083c4624cc290xc1sssxf8nxrahn"))))
+        (base32 "02zihfnx926lapb0n7rx153qpka0vql06ilkx1bby7n3dndpphdv"))))
     (properties `((upstream-name . "SAIGEgds")))
     (build-system r-build-system)
     (arguments

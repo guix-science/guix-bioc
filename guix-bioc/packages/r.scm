@@ -3911,13 +3911,13 @@ software for mass spectrometry and proteomics.")
 (define-public r-rflomics
   (package
     (name "r-rflomics")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RFLOMICS" version))
        (sha256
-        (base32 "17vjzydinij9sqj2ng6s2hjhb2652rsnzppalfrydf61kdjrk99g"))))
+        (base32 "1dizfkyizlrxfqz8qb0q853ydw1iyydd4jfw4bjzn5kk39kmi1fx"))))
     (properties `((upstream-name . "RFLOMICS")))
     (build-system r-build-system)
     (arguments
@@ -3960,8 +3960,8 @@ software for mass spectrometry and proteomics.")
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
+                             r-ggnetwork
                              r-factominer
-                             r-enrichplot
                              r-edger
                              r-dt
                              r-dplyr
@@ -4690,13 +4690,13 @@ distributions.")
 (define-public r-reder
   (package
     (name "r-reder")
-    (version "3.6.1")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RedeR" version))
        (sha256
-        (base32 "0hb5r5pdxlpcw86yzbfs6rns1m7ja423wv77lf5k43qlacm2qf94"))))
+        (base32 "16hszm19b3rm26pa5065illna0wcb2229rvyaczwhwivlgvykfam"))))
     (properties `((upstream-name . "RedeR")))
     (build-system r-build-system)
     (arguments
