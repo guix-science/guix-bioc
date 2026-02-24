@@ -9,6 +9,8 @@
   #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages a)
+  #:use-module (guix-cran packages m)
+  #:use-module (guix-cran packages p)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
   #:use-module (gnu packages compression)
@@ -2464,6 +2466,52 @@ assembled using data from public repositories.")
      "RNG_MRC Human Pangenomic 25k Set annotation data (chip hs25kresogen) assembled
 using data from public repositories.")
     (license license:artistic2.0)))
+
+(define-public r-hpip
+  (package
+    (name "r-hpip")
+    (version "1.16.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "HPiP" version))
+       (sha256
+        (base32 "1fi1babzl2g28q9846prqhlmfmgs0jxa34knvyc4phgxxnhlkbis"))))
+    (properties `((upstream-name . "HPiP")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-prroc
+                             r-protr
+                             r-proc
+                             r-mcl
+                             r-magrittr
+                             r-igraph
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-corrplot
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mrbakhsh/HPiP")
+    (synopsis "Host-Pathogen Interaction Prediction")
+    (description
+     "H@code{PiP} (Host-Pathogen Interaction Prediction) uses an ensemble learning
+algorithm for prediction of host-pathogen protein-protein interactions (HP-PPIs)
+using structural and physicochemical descriptors computed from amino
+acid-composition of host and pathogen proteins.The proposed package can
+effectively address data shortages and data unavailability for HP-PPI network
+reconstructions.  Moreover, establishing computational frameworks in that regard
+will reveal mechanistic insights into infectious diseases and suggest potential
+HP-PPI targets, thus narrowing down the range of possible candidates for
+subsequent wet-lab experimental validations.")
+    (license license:expat)))
 
 (define-public r-hpannot
   (package
