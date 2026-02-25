@@ -19,7 +19,6 @@
   #:use-module (guix-cran packages s)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages h)
-  #:use-module (guix-cran packages n)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages d)
