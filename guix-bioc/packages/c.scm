@@ -8792,13 +8792,13 @@ quantification, analysis and visualization of cancer progression pathways.")
 (define-public r-cbioportaldata
   (package
     (name "r-cbioportaldata")
-    (version "2.22.1")
+    (version "2.22.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cBioPortalData" version))
        (sha256
-        (base32 "1gnwqwvmzagi6dcs6q4jdc6spik2qj8niy43kqwi1ram21i0hii9"))))
+        (base32 "0nifzdkrqkf2n76kyrqbmxxz614z0xn6xd4n0j36l1nfcjp4hpn2"))))
     (properties `((upstream-name . "cBioPortalData")))
     (build-system r-build-system)
     (arguments

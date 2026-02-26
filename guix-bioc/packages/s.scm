@@ -7134,13 +7134,13 @@ population outlier.")
 (define-public r-seqsetvis
   (package
     (name "r-seqsetvis")
-    (version "1.30.0")
+    (version "1.30.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "seqsetvis" version))
        (sha256
-        (base32 "080njbczm82xy65z3lz1v5fxcvb5l4qamfjnxw73ib3by3wdskzr"))))
+        (base32 "0qbygjnlrl0vmbnxzija7amxgy0g54dvhaf05l1vkfv7ik52zg6n"))))
     (properties `((upstream-name . "seqsetvis")))
     (build-system r-build-system)
     (arguments
