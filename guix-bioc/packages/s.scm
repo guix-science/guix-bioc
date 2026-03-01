@@ -9334,13 +9334,13 @@ analyses using other software in Biocondutor.")
 (define-public r-scfeaturefilter
   (package
     (name "r-scfeaturefilter")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scFeatureFilter" version))
        (sha256
-        (base32 "0p3aacnj32nnwn8s7ywngs63gf0cciw517a42b610fzn0nf93b4w"))))
+        (base32 "1a6nw6p5b92d72dlxkwi87qc2d75687fwwmlcv96raswhxn6f8i7"))))
     (properties `((upstream-name . "scFeatureFilter")))
     (build-system r-build-system)
     (arguments
@@ -9348,7 +9348,7 @@ analyses using other software in Biocondutor.")
       #:tests? #f))
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/scFeatureFilter")
+    (home-page "https://bioconductor.org/packages/scFeatureFilter/")
     (synopsis
      "correlation-based method for quality filtering of single-cell RNAseq data")
     (description
@@ -9926,13 +9926,13 @@ analysis within R.")
 (define-public r-scarray-sat
   (package
     (name "r-scarray-sat")
-    (version "1.9.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SCArray.sat" version))
        (sha256
-        (base32 "0yd5pinqbdi5pq1vcbabwqnwhw3vrk3qbdyrqi82hib5zqxzw9zr"))))
+        (base32 "0f9v91z8qlqvnf7y0pw3qfl9pp54rk5kfq7bwq9spkqv1iafllbq"))))
     (properties `((upstream-name . "SCArray.sat")))
     (build-system r-build-system)
     (arguments

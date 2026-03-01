@@ -247,13 +247,13 @@ modified in a structure probing experiment.")
 (define-public r-bulksignalr
   (package
     (name "r-bulksignalr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BulkSignalR" version))
        (sha256
-        (base32 "1f26dnhg7kv10ngv8c3l2chb2qsy6q7j3krzzac0icy4z3knj4qy"))))
+        (base32 "0wz3phb4pj46jmcjj8135jq572s3yaks7zxgn945sl6198hc8mf3"))))
     (properties `((upstream-name . "BulkSignalR")))
     (build-system r-build-system)
     (arguments
@@ -4760,13 +4760,13 @@ to identify enriched antibody responses.")
 (define-public r-bedbaser
   (package
     (name "r-bedbaser")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bedbaser" version))
        (sha256
-        (base32 "1z7dlg7qy0d7zdgcmxzj9zm4cfs64sm90h3khd5x522jwlrbg1rs"))))
+        (base32 "02dd39ldb6fg1793450rg2vd1p1paj34l5agc8d2gqaldrd8ki1p"))))
     (properties `((upstream-name . "bedbaser")))
     (build-system r-build-system)
     (arguments
