@@ -10102,13 +10102,13 @@ corresponding to all human, mouse and rat mirbase @code{miRNAs}.  See the
 (define-public r-scanmirapp
   (package
     (name "r-scanmirapp")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scanMiRApp" version))
        (sha256
-        (base32 "0mfmlvdlzn9ldxhfrx1szhkssqqwqzy7l943j2y2rfsavg3w14lj"))))
+        (base32 "1id6i4zllnx1dazy0yk8p6vxmg58s5hqwfxjjdyd1xvn87v2842n"))))
     (properties `((upstream-name . "scanMiRApp")))
     (build-system r-build-system)
     (arguments

@@ -4558,13 +4558,13 @@ biological processes.")
 (define-public r-mobilerna
   (package
     (name "r-mobilerna")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "mobileRNA" version))
        (sha256
-        (base32 "0l1hhqfp9i5l93j2gf2wmm9cbx4cd2rp3f4lq6wjhgnnhzmmkc84"))))
+        (base32 "0gxbzsscs080jcn2z15aa3dxybl6i0vgip06v6sc0f5bg08hspn7"))))
     (properties `((upstream-name . "mobileRNA")))
     (build-system r-build-system)
     (arguments

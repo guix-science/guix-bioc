@@ -1124,6 +1124,50 @@ dispersion parameter that can be both commonwise across gene both genewise.")
      "Experimental organization of combined expression and CGH data.")
     (license license:artistic2.0)))
 
+(define-public r-netzoor
+  (package
+    (name "r-netzoor")
+    (version "1.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "netZooR" version))
+       (sha256
+        (base32 "0d4vn3fhmw6ri2g9rk6fl43nixixxf4gk5xrkb8h00fjqgna84ms"))))
+    (properties `((upstream-name . "netZooR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-reticulate
+                             r-reshape
+                             r-pandar
+                             r-matrixstats
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-data-table
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/netZoo/netZooR")
+    (synopsis
+     "Menagerie of Methods for the Inference and Analysis of Gene Regulatory Networks")
+    (description
+     "Unifies the implementations of several Network Zoo methods (netzoo,
+netzoo.github.io) into a single package by creating interfaces between network
+inference and network analysis methods.  Currently, the package has 3 methods
+for network inference including PANDA and its optimized implementation OTTER
+(network reconstruction using multiple lines of biological evidence), LIONESS
+(single-sample network inference), and EGRET (genotype-specific networks).
+Network analysis methods include CONDOR (community detection), ALPACA
+(differential community detection), CRANE (significance estimation of
+differential modules), MONSTER (estimation of network transition states).  In
+addition, YARN allows to process gene expression data for tissue-specific
+analyses and SAMBAR infers missing mutation data based on pathway information.")
+    (license license:gpl3)))
+
 (define-public r-netsmooth
   (package
     (name "r-netsmooth")

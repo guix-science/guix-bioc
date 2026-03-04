@@ -3761,14 +3761,14 @@ the modules in rows.")
 (define-public r-bloodcancermultiomics2017
   (package
     (name "r-bloodcancermultiomics2017")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BloodCancerMultiOmics2017" version
                               'experiment))
        (sha256
-        (base32 "095vzj9g8sj3zlkvc44938i6xi3c7q95080z9ygknmqczczr11b4"))))
+        (base32 "1dq7d4k8zwbgk6nyqfvicqy33f86rkygmhn3jjrv25nfasj9jifr"))))
     (properties `((upstream-name . "BloodCancerMultiOmics2017")))
     (build-system r-build-system)
     (arguments
@@ -4760,13 +4760,13 @@ to identify enriched antibody responses.")
 (define-public r-bedbaser
   (package
     (name "r-bedbaser")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bedbaser" version))
        (sha256
-        (base32 "02dd39ldb6fg1793450rg2vd1p1paj34l5agc8d2gqaldrd8ki1p"))))
+        (base32 "0wgjla1jvckk8ixjhrayb730djbl3ga7q753v8axgcsm3q785pgh"))))
     (properties `((upstream-name . "bedbaser")))
     (build-system r-build-system)
     (arguments
