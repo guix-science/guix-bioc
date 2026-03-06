@@ -3202,13 +3202,13 @@ data.")
 (define-public r-spectripy
   (package
     (name "r-spectripy")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpectriPy" version))
        (sha256
-        (base32 "0k96x0nijgw01d0x0irbnj1ia0i046zbndf4j7fhk4fqpc79qakl"))))
+        (base32 "063clz4afqawm5pifcksawmf8rrzxism5qzn6dpsbg1w6rxv2vcg"))))
     (properties `((upstream-name . "SpectriPy")))
     (build-system r-build-system)
     (arguments
@@ -8928,13 +8928,13 @@ data of chromosome 4.")
 (define-public r-sclane
   (package
     (name "r-sclane")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scLANE" version))
        (sha256
-        (base32 "1yafzrhxayxayz9f54bzcm54dl4gxny5iwxddjnc71fccjbxfr6z"))))
+        (base32 "0yqy9n5wnl3qj7cf28qnk7f36kgyxg6s40nwlxl27wriw4p24rmq"))))
     (properties `((upstream-name . "scLANE")))
     (build-system r-build-system)
     (arguments
