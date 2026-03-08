@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages g)
@@ -1478,7 +1477,6 @@ expression data.")
                              r-goat
                              r-ggplot2
                              r-enrichplot
-                             r-enhancedvolcano
                              r-enhancedvolcano
                              r-dt
                              r-dplyr

@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages o)
   #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages t)
@@ -1904,7 +1903,6 @@ OMA database.")
                              r-fpc
                              r-dplyr
                              r-dicer
-                             r-clvalid
                              r-clvalid))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/omada")

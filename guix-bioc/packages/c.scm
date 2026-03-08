@@ -8,7 +8,6 @@
   #:use-module (guix-cran packages a)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages s)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages t)
@@ -3899,13 +3898,13 @@ analysis.")
 (define-public r-cogeqc
   (package
     (name "r-cogeqc")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "cogeqc" version))
        (sha256
-        (base32 "19fyg5na5g30vp62ki8hxb0pg24k6dzd08xan7f7biqh0ygc2ig5"))))
+        (base32 "0c7vl2dd90bm4bvm9smixx0844zyb3sw85fw451zrrsbns3p27m8"))))
     (properties `((upstream-name . "cogeqc")))
     (build-system r-build-system)
     (arguments

@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages version-control)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)

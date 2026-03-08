@@ -7,7 +7,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
   #:use-module (guix-cran packages g)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages i)
@@ -2420,35 +2419,6 @@ if missingness is MNAR (\"v2-mnar\"), or by Peptide Identity Propagation (PIP)."
      "msgbsR: methylation sensitive genotyping by sequencing (MS-GBS) R functions")
     (description "Pipeline for the anaysis of a MS-GBS experiment.")
     (license license:gpl2)))
-
-(define-public r-msdatahub
-  (package
-    (name "r-msdatahub")
-    (version "1.10.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "MsDataHub" version))
-       (sha256
-        (base32 "09rfj583b1vz3p328pnlrzj7mxg6804ia1q84p9y5pvzcb0z17fv"))))
-    (properties `((upstream-name . "MsDataHub")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'set-HOME
-                    (lambda _
-                      (setenv "HOME" "/tmp"))))))
-    (propagated-inputs (list r-experimenthub))
-    (native-inputs (list r-knitr))
-    (home-page "https://rformassspectrometry.github.io/MsDataHub")
-    (synopsis "Mass Spectrometry Data on ExperimentHub")
-    (description
-     "The @code{MsDataHub} package uses the @code{ExperimentHub} infrastructure to
-distribute raw mass spectrometry data files, peptide spectrum matches or
-quantitative data from proteomics and metabolomics experiments.")
-    (license license:artistic2.0)))
 
 (define-public r-msd16s
   (package

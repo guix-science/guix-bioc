@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
@@ -1233,7 +1232,6 @@ between chromatin accessibility and gene expressions.")
                              r-bsgenome-hsapiens-ucsc-hg38
                              r-bsgenome-hsapiens-ucsc-hg19
                              r-biocparallel
-                             r-annotationhub
                              r-annotationhub))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/xiaosaiyao/epiregulon/")

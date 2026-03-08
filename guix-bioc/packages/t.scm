@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages t)
@@ -3784,7 +3783,6 @@ different input parameters.")
                              r-org-mm-eg-db
                              r-org-hs-eg-db
                              r-iranges
-                             r-genomicranges
                              r-genomicranges
                              r-genomicfeatures
                              r-experimenthub

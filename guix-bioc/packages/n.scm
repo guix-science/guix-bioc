@@ -6,7 +6,6 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages b)
@@ -1327,7 +1326,7 @@ TN gene labels from the literature or experts.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list libxml2 libxml2 libsbml))
+    (inputs (list libxml2 libsbml))
     (propagated-inputs (list r-igraph))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/ahmohamed/NetPathMiner")

@@ -7,7 +7,6 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages e)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages s)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages h)

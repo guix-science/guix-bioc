@@ -9,7 +9,6 @@
   #:use-module (guix-cran packages f)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages n)
-  #:use-module (gnu packages statistics)
   #:use-module (guix-cran packages r)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages xml)
@@ -839,7 +838,7 @@ standards.")
     (arguments
      (list
       #:tests? #f))
-    (inputs (list gsl gsl))
+    (inputs (list gsl))
     (home-page "https://bioconductor.org/packages/flowPeaks")
     (synopsis "An R package for flow data clustering")
     (description
