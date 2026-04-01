@@ -2856,13 +2856,13 @@ informative meta-data.")
 (define-public r-mousefm
   (package
     (name "r-mousefm")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MouseFM" version))
        (sha256
-        (base32 "1kyagqg0rs5pzqqjn8fsdbmkaj9vzq6jqvrmyjswibxdasgy8vwm"))))
+        (base32 "0fxdmrpk616amjr4zjj9krddwb41hksdryg0ysacibhv7ldr6dbr"))))
     (properties `((upstream-name . "MouseFM")))
     (build-system r-build-system)
     (arguments
@@ -3358,13 +3358,13 @@ motifs as the centers of the mixture of normal distribution curves.")
 (define-public r-mosim
   (package
     (name "r-mosim")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOSim" version))
        (sha256
-        (base32 "16mq70imxcp1xkvz2dyvzdcm3h1k6l2s1awmlw58ipk0ycsfsx49"))))
+        (base32 "0c5swr1l6zpyx600n4mrygh2i6j0l3r3164aq85v4drhvzmg7y39"))))
     (properties `((upstream-name . "MOSim")))
     (build-system r-build-system)
     (arguments
@@ -6408,13 +6408,13 @@ packages.")
 (define-public r-miaviz
   (package
     (name "r-miaviz")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miaViz" version))
        (sha256
-        (base32 "1zqicbb6bmx9whw0knmbf2z9ghypyrqf0rcjfvayfjb5gk404aba"))))
+        (base32 "0bmx0dachs2ras176hd4j7bgwaflydjyyir4sjm54v1d8j7fzfri"))))
     (properties `((upstream-name . "miaViz")))
     (build-system r-build-system)
     (arguments
@@ -7214,6 +7214,28 @@ The package can be used to import microbial data for instance into
 data is directly compatible with miaverse framework.")
     (license (list license:artistic2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-mgfr
+  (package
+    (name "r-mgfr")
+    (version "1.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "MGFR" version))
+       (sha256
+        (base32 "0aiziby1mngs1rrj3058ccfsx9ylrfhx4ld7z7114yw85v6cnqap"))))
+    (properties `((upstream-name . "MGFR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-biomart r-annotate))
+    (home-page "https://bioconductor.org/packages/MGFR")
+    (synopsis "Marker Gene Finder in RNA-seq data")
+    (description
+     "The package is designed to detect marker genes from RNA-seq data.")
+    (license license:gpl3)))
 
 (define-public r-mgfm
   (package
@@ -8126,13 +8148,13 @@ MS/MS features based on their similarity to (known) related MS/MS features.")
 (define-public r-metaseqr2
   (package
     (name "r-metaseqr2")
-    (version "1.22.0")
+    (version "1.22.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "metaseqR2" version))
        (sha256
-        (base32 "01s9gpndc1skpq69wdsm1kgcz7n4i1zm38g731zphhnw4w3kad54"))))
+        (base32 "1k88xycji2p0fdsdz0gr34mcilq9psqq78cwi0sv6r33s4ny4i72"))))
     (properties `((upstream-name . "metaseqR2")))
     (build-system r-build-system)
     (arguments

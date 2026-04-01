@@ -3141,6 +3141,51 @@ http://pepr.cnmcresearch.org/browse.do?action=list_prj_exp&@code{projectId=95}
 Human Bronchial Cell line A549.")
     (license license:gpl2)))
 
+(define-public r-broadseq
+  (package
+    (name "r-broadseq")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "broadSeq" version))
+       (sha256
+        (base32 "187yjkaxs3q7va37rfzn5rdnqzzkkyiqcn8pnfq8h4plf4ifl0hd"))))
+    (properties `((upstream-name . "broadSeq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-stringr
+                             r-sechm
+                             r-purrr
+                             r-plyr
+                             r-pheatmap
+                             r-noiseq
+                             r-ggpubr
+                             r-ggplotify
+                             r-ggplot2
+                             r-genefilter
+                             r-forcats
+                             r-edger
+                             r-ebseq
+                             r-dplyr
+                             r-deseq2
+                             r-delocal
+                             r-clusterprofiler
+                             r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dasroy/broadSeq")
+    (synopsis "broadSeq : for streamlined exploration of RNA-seq data")
+    (description
+     "This package helps user to do easily RNA-seq data analysis with multiple methods
+(usually which needs many different input formats).  Here the user will provid
+the expression data as a @code{SummarizedExperiment} object and will get results
+from different methods.  It will help user to quickly evaluate different
+methods.")
+    (license license:expat)))
+
 (define-public r-bridgedbr
   (package
     (name "r-bridgedbr")
@@ -3422,6 +3467,46 @@ users without programming experience.")
      "Gene expression data from the breast cancer study published by Schmidt et al.
 in 2008, provided as an @code{eSet}.")
     (license license:artistic2.0)))
+
+(define-public r-branchpointer
+  (package
+    (name "r-branchpointer")
+    (version "1.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "branchpointer" version))
+       (sha256
+        (base32 "1id6gm2w30kd85zkq16zjy9fr8ji9swx9r1jq7yi6lzxvsrj7295"))))
+    (properties `((upstream-name . "branchpointer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-seqinfo
+                             r-s4vectors
+                             r-rtracklayer
+                             r-plyr
+                             r-kernlab
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-gbm
+                             r-data-table
+                             r-cowplot
+                             r-caret
+                             r-bsgenome-hsapiens-ucsc-hg38
+                             r-biostrings
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/branchpointer")
+    (synopsis "Prediction of intronic splicing branchpoints")
+    (description
+     "Predicts branchpoint probability for sites in intronic branchpoint windows.
+Queries can be supplied as intronic regions; or to evaluate the effects of
+mutations, SNPs.")
+    (license license:bsd-3)))
 
 (define-public r-brain
   (package
@@ -3854,6 +3939,38 @@ expression analysis, functional analysis, and pathway analysis.")
      "Experiment data package.  The set were prepared using microarray images of human
 mesenchymal cells treated with various supplements.  This package is intended to
 provide example data to test functionality provided by blima.")
+    (license license:gpl3)))
+
+(define-public r-blima
+  (package
+    (name "r-blima")
+    (version "1.44.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "blima" version))
+       (sha256
+        (base32 "07w54n3m9l4zgascg2w9i4zmnnnmrhadrmwp1caq8r3xlls5ynd8"))))
+    (properties `((upstream-name . "blima")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-rcpp r-biocgenerics r-biobase r-beadarray))
+    (native-inputs (list r-knitr))
+    (home-page "https://bitbucket.org/kulvait/blima")
+    (synopsis
+     "Tools for the preprocessing and analysis of the Illumina microarrays on the detector (bead) level")
+    (description
+     "Package blima includes several algorithms for the preprocessing of Illumina
+microarray data.  It focuses to the bead level analysis and provides novel
+approach to the quantile normalization of the vectors of unequal lengths.  It
+provides variety of the methods for background correction including background
+subtraction, RMA like convolution and background outlier removal.  It also
+implements variance stabilizing transformation on the bead level.  There are
+also implemented methods for data summarization.  It also provides the methods
+for performing T-tests on the detector (bead) level and on the probe level for
+differential expression testing.")
     (license license:gpl3)))
 
 (define-public r-blase
@@ -4850,14 +4967,14 @@ Lauren Middleton et.  al. (2021).")
 (define-public r-beadarrayusecases
   (package
     (name "r-beadarrayusecases")
-    (version "1.47.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BeadArrayUseCases" version
                               'experiment))
        (sha256
-        (base32 "0jh4fgz7wl4ihfri27ri5gxwyqmbvi5rfm4rqhsdbgjzc912x00d"))))
+        (base32 "0gsp001ncmjrfxiqj254y15j3hyg4i92prrzjaxwkgx2q935j08y"))))
     (properties `((upstream-name . "BeadArrayUseCases")))
     (build-system r-build-system)
     (arguments
@@ -4875,14 +4992,14 @@ expression data using Bioconductor.")
 (define-public r-beadarrayexampledata
   (package
     (name "r-beadarrayexampledata")
-    (version "1.47.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "beadarrayExampleData" version
                               'experiment))
        (sha256
-        (base32 "0r9dl64qcgnfzpadlibw4q6q9acjzgs9wayih7fraqn7cm9w22d9"))))
+        (base32 "1hm0sv901ngvc1iji55x8f1989vy1qp7bp0hspibra9817qqbjc8"))))
     (properties `((upstream-name . "beadarrayExampleData")))
     (build-system r-build-system)
     (arguments

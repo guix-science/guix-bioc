@@ -3620,13 +3620,13 @@ these parent classes can still be used.")
 (define-public r-spatialfda
   (package
     (name "r-spatialfda")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spatialFDA" version))
        (sha256
-        (base32 "1ddz26xncw3wmdy0jjxkaymrxgwd3i3rdcygq867zijrqqz7m0w1"))))
+        (base32 "0kaa1ip81np919i3k9sbppbr3xg69v0qmcng7vjyv2ws956v8jms"))))
     (properties `((upstream-name . "spatialFDA")))
     (build-system r-build-system)
     (arguments
@@ -3646,6 +3646,7 @@ these parent classes can still be used.")
                              r-refund
                              r-purrr
                              r-patchwork
+                             r-mgcv
                              r-ggplot2
                              r-fda
                              r-experimenthub
@@ -4840,13 +4841,13 @@ problematic studies and samples in any public data set.")
 (define-public r-smoppix
   (package
     (name "r-smoppix")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smoppix" version))
        (sha256
-        (base32 "1hsc40ljcfzqrkqlydppqdgjqpqzx4ga08nkfax2m9x73na9vxh0"))))
+        (base32 "0443pasl02n6lr9c0c0r88frl41d71586n1nc7110206n6x7xh05"))))
     (properties `((upstream-name . "smoppix")))
     (build-system r-build-system)
     (arguments
@@ -5054,13 +5055,13 @@ activity inference.")
 (define-public r-smartid
   (package
     (name "r-smartid")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smartid" version))
        (sha256
-        (base32 "01ad90ibvx0j80nvfpdhws61831r0b6xdb3ldi5vsk0jadzyys15"))))
+        (base32 "0jrl0msqkpwb6brjdmzxvisq2v74akyvv305h59l5p0iypgbwc59"))))
     (properties `((upstream-name . "smartid")))
     (build-system r-build-system)
     (arguments
@@ -5344,13 +5345,13 @@ mapped to specific peaks, is generated using the given rules.")
 (define-public r-sitadela
   (package
     (name "r-sitadela")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "sitadela" version))
        (sha256
-        (base32 "118hxyj6m2j5c3vz8c00nf2lh7hyz39vvmm0zpnsmnp84g5dlwmz"))))
+        (base32 "03xg4h2z669qydgic0mlf7122byhpy3mdlrbgyf4183835rzzdch"))))
     (properties `((upstream-name . "sitadela")))
     (build-system r-build-system)
     (arguments
@@ -7346,6 +7347,46 @@ and ERCC spike-in sequence data are included in this package as well.")
      "Supporting data for the seq2patheway package.  Includes modified gene sets from
 @code{MsigDB} and org.Hs.eg.db; gene locus definitions from GENCODE project.")
     (license license:gpl2+)))
+
+(define-public r-seq2pathway
+  (package
+    (name "r-seq2pathway")
+    (version "1.42.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "seq2pathway" version))
+       (sha256
+        (base32 "1l0174af9ccv8jbf1lfizvqrn3krf881dpsgl2y424s8gsk605ar"))))
+    (properties `((upstream-name . "seq2pathway")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wgcna
+                             r-seq2pathway-data
+                             r-nnet
+                             r-gsa
+                             r-genomicranges
+                             r-biomart))
+    (home-page "https://bioconductor.org/packages/seq2pathway")
+    (synopsis
+     "a novel tool for functional gene-set (or termed as pathway) analysis of next-generation sequencing data")
+    (description
+     "Seq2pathway is a novel tool for functional gene-set (or termed as pathway)
+analysis of next-generation sequencing data, consisting of \"seq2gene\" and
+\"gene2path\" components.  The seq2gene links sequence-level measurements of
+genomic regions (including SNPs or point mutation coordinates) to gene-level
+scores, and the gene2pathway summarizes gene scores to pathway-scores for each
+sample.  The seq2gene has the feasibility to assign both coding and non-exon
+regions to a broader range of neighboring genes than only the nearest one, thus
+facilitating the study of functional non-coding regions.  The gene2pathway takes
+into account the quantity of significance for gene members within a pathway
+compared those outside a pathway.  The output of seq2pathway is a general
+structure of quantitative pathway-level scores, thus allowing one to functional
+interpret such datasets as RNA-seq, @code{ChIP-seq}, GWAS, and derived from
+other next generational sequencing experiments.")
+    (license license:gpl2)))
 
 (define-public r-seq-hotspot
   (package
@@ -10742,6 +10783,28 @@ details on how to use this package, some illustrations, and simple examples.")
 preprocessed for use with the @code{sampleClassifier} package.  The RNA-seq data
 are derived from Fagerberg et al. (2014) and the Illumina Body Map 2.0 data.
 The microarray data are derived from Roth et al. (2006) and Ge et al. (2005).")
+    (license license:artistic2.0)))
+
+(define-public r-sampleclassifier
+  (package
+    (name "r-sampleclassifier")
+    (version "1.34.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "sampleClassifier" version))
+       (sha256
+        (base32 "11a42a373wxcz0r2bsk0pz5x79c8q4870bl2iwqa1c96d0nmr9mj"))))
+    (properties `((upstream-name . "sampleClassifier")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-mgfr r-mgfm r-ggplot2 r-e1071 r-annotate))
+    (home-page "https://bioconductor.org/packages/sampleClassifier")
+    (synopsis "Sample Classifier")
+    (description
+     "The package is designed to classify microarray RNA-seq gene expression profiles.")
     (license license:artistic2.0)))
 
 (define-public r-saigegds

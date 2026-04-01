@@ -1126,13 +1126,13 @@ dispersion parameter that can be both commonwise across gene both genewise.")
 (define-public r-netzoor
   (package
     (name "r-netzoor")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "netZooR" version))
        (sha256
-        (base32 "0d4vn3fhmw6ri2g9rk6fl43nixixxf4gk5xrkb8h00fjqgna84ms"))))
+        (base32 "0dqi0jpffldd1ycanaxa7hxa3gncamzr0djz0yw94psv77flrmry"))))
     (properties `((upstream-name . "netZooR")))
     (build-system r-build-system)
     (arguments

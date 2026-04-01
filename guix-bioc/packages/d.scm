@@ -1154,13 +1154,13 @@ analyze tissue-scale lifetime-ratio statistics.")
 (define-public r-dominosignal
   (package
     (name "r-dominosignal")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dominoSignal" version))
        (sha256
-        (base32 "15ff1p8p5v4gqkv1spnvkx62x5ddbvmd9mxlvkgqmfywzqid2r1h"))))
+        (base32 "08qqqss4jr951wrcm26gcs6kfipk6kbf75jmwvgd0a4d1p9bhyy1"))))
     (properties `((upstream-name . "dominoSignal")))
     (build-system r-build-system)
     (arguments
@@ -2291,13 +2291,13 @@ conditions.  DCGs are genes with significantly more DCLs than by chance.")
 (define-public r-dfplyr
   (package
     (name "r-dfplyr")
-    (version "1.4.0")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DFplyr" version))
        (sha256
-        (base32 "1j1wqccxavzslg9mlkb6fdrzrzf6xzdjpwmgbd30y5n0y9gldd07"))))
+        (base32 "1dghlvsyib4xp5iml1ilpvw4v9aijw8flrjwrfhhwbh16mhdxx1h"))))
     (properties `((upstream-name . "DFplyr")))
     (build-system r-build-system)
     (arguments
@@ -3034,6 +3034,40 @@ digestion fragments and a preferred viewpoint region.  By binning this data and
 using permutation testing, this package can test whether there are statistically
 significant changes in the interaction counts between the data from two cell
 types or two treatments.")
+    (license license:expat)))
+
+(define-public r-delocal
+  (package
+    (name "r-delocal")
+    (version "1.10.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "DELocal" version))
+       (sha256
+        (base32 "1dhc8qc65hb5xh7xj48cd7pp7fz8s25si5dl7izdbp3cswm6a2gj"))))
+    (properties `((upstream-name . "DELocal")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-reshape2
+                             r-matrixstats
+                             r-limma
+                             r-ggplot2
+                             r-dplyr
+                             r-deseq2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dasroy/DELocal")
+    (synopsis
+     "Identifies differentially expressed genes with respect to other local genes")
+    (description
+     "The goal of DELocal is to identify DE genes compared to their neighboring genes
+from the same chromosomal location.  It has been shown that genes of related
+functions are generally very far from each other in the chromosome.  DELocal
+utilzes this information to identify DE genes comparing with their neighbouring
+genes.")
     (license license:expat)))
 
 (define-public r-delayedtensor

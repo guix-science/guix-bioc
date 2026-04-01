@@ -657,27 +657,28 @@ this package we provide an R implementation of VERSO STEP 1.")
 (define-public r-venndetail
   (package
     (name "r-venndetail")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "VennDetail" version))
        (sha256
-        (base32 "00c07hvqk5nmmklkaxqig5zn9j0g2fp1xbisfrjmzckcyjcdmmly"))))
+        (base32 "0bf1wh2shnpjvpfbcn3w42r8w4h1rksnsvaj39wc6xsv547lxj3n"))))
     (properties `((upstream-name . "VennDetail")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-shiny
                              r-rlang
                              r-purrr
                              r-plotly
-                             r-patchwork
                              r-magrittr
                              r-htmlwidgets
+                             r-gridextra
                              r-ggplot2
                              r-dt
                              r-dplyr))

@@ -1509,13 +1509,13 @@ risk of sample mixups when manually pipetting randomized samples.")
 (define-public r-omicsviewer
   (package
     (name "r-omicsviewer")
-    (version "1.14.0")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "omicsViewer" version))
        (sha256
-        (base32 "1xnz0325s1cbfda3j77pqw4cnjh22rdb13rw4jdkwnxmr2qmc2ic"))))
+        (base32 "0nlnq2md0bdazddkl4bb64kj3jfm5fgzs7vdk22lfgkr6brva685"))))
     (properties `((upstream-name . "omicsViewer")))
     (build-system r-build-system)
     (arguments
@@ -1694,6 +1694,44 @@ various samples /individuals /time points; grouping assays by user-defined
 conditions; identification of source of variation, similarity/dissimilarity
 between assays, variables or individuals.")
     (license license:gpl3)))
+
+(define-public r-omicsmlrepor
+  (package
+    (name "r-omicsmlrepor")
+    (version "1.4.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "OmicsMLRepoR" version))
+       (sha256
+        (base32 "14xkpms73h6spcr34bzqwnyf7fpskrjnha2maky1gbclr0agjpxb"))))
+    (properties `((upstream-name . "OmicsMLRepoR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rols
+                             r-rlang
+                             r-readr
+                             r-plyr
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr
+                             r-diagrammer
+                             r-data-tree
+                             r-biocfilecache))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shbrief/OmicsMLRepoR")
+    (synopsis
+     "Search harmonized metadata created under the OmicsMLRepo project")
+    (description
+     "This package provides functions to browse the harmonized metadata for large
+omics databases.  This package also supports data navigation if the metadata
+incorporates ontology.")
+    (license license:artistic2.0)))
 
 (define-public r-omicsgmf
   (package

@@ -17,7 +17,6 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages h)
-  #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages l)
@@ -1809,13 +1808,13 @@ association between RNA-Seq and high-dimensional data.")
 (define-public r-glmsparsenet
   (package
     (name "r-glmsparsenet")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "glmSparseNet" version))
        (sha256
-        (base32 "0qxss4zfdds590ldfdrhn8c6brd9z8pknp462jw2p0bjz8wvm8lp"))))
+        (base32 "0sg5pg0f05pzd0m3rvqbfr0bwdmql4wyd1s8nf8ri946bv05ramn"))))
     (properties `((upstream-name . "glmSparseNet")))
     (build-system r-build-system)
     (arguments
@@ -2542,7 +2541,6 @@ information about the DEE2 project can be found at the project homepage
       #:tests? #f))
     (propagated-inputs (list r-xml
                              r-rhdf5
-                             r-repo
                              r-iterators
                              r-gseabase
                              r-foreach
@@ -2707,13 +2705,13 @@ and data types.")
 (define-public r-geometadb
   (package
     (name "r-geometadb")
-    (version "1.72.0")
+    (version "1.72.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GEOmetadb" version))
        (sha256
-        (base32 "0fhmcawv1lvbmkmfzyk0q83rcmiyc3m9visp4904nllv94zb4ir1"))))
+        (base32 "04jhd0wl0gx9dy8klw5znc61qg1gjg6a2gbnr2b1sh9l0gvjz3md"))))
     (properties `((upstream-name . "GEOmetadb")))
     (build-system r-build-system)
     (arguments

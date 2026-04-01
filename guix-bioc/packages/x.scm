@@ -575,13 +575,13 @@ between different cell types using ontology.")
 (define-public r-xaitest
   (package
     (name "r-xaitest")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XAItest" version))
        (sha256
-        (base32 "0yxnlxrvlz6flds58af5wg3s77jbdgcjg6bdmwl7sb6pz8pbijfg"))))
+        (base32 "1m17jbbwmq7551lkzbkh89l5mrsiznnrhwh8qgkgr9dgwjbi2075"))))
     (properties `((upstream-name . "XAItest")))
     (build-system r-build-system)
     (arguments

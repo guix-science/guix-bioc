@@ -678,6 +678,56 @@ at least one cell characteristic that differentiates every phytoplankton in the
 community.")
     (license license:expat)))
 
+(define-public r-customprodb
+  (package
+    (name "r-customprodb")
+    (version "1.50.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "customProDB" version))
+       (sha256
+        (base32 "1dhhsjfdz29nf79l5srpjsiqpa14088ync80kp54r42qrnynmlyn"))))
+    (properties `((upstream-name . "customProDB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-variantannotation
+                             r-txdbmaker
+                             r-stringr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsqlite
+                             r-rsamtools
+                             r-rcurl
+                             r-plyr
+                             r-iranges
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomicalignments
+                             r-genomeinfodb
+                             r-dbi
+                             r-biostrings
+                             r-biomart
+                             r-annotationdbi
+                             r-ahocorasicktrie))
+    (home-page "https://bioconductor.org/packages/customProDB")
+    (synopsis
+     "Generate customized protein database from NGS data, with a focus on RNA-Seq data, for proteomics search")
+    (description
+     "Database search is the most widely used approach for peptide and protein
+identification in mass spectrometry-based proteomics studies.  Our previous
+study showed that sample-specific protein databases derived from RNA-Seq data
+can better approximate the real protein pools in the samples and thus improve
+protein identification.  More importantly, single nucleotide variations, short
+insertion and deletions and novel junctions identified from RNA-Seq data make
+protein database more complete and sample-specific.  Here, we report an R
+package @code{customProDB} that enables the easy generation of customized
+databases from RNA-Seq data for proteomics search.  This work bridges genomics
+and proteomics studies and facilitates cross-omics data integration.")
+    (license license:artistic2.0)))
+
 (define-public r-customcmpdb
   (package
     (name "r-customcmpdb")
@@ -8401,13 +8451,13 @@ reference data).")
 (define-public r-cdi
   (package
     (name "r-cdi")
-    (version "1.8.2")
+    (version "1.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CDI" version))
        (sha256
-        (base32 "0h2qckfq26xq53hcsrb9a1wqf487kfpmvvb5v3l8988rb10lprax"))))
+        (base32 "0kywm5swl9qi6hg6w23zdx7sgj4x5fjxwqrrb76y0dv2w9yhzsnq"))))
     (properties `((upstream-name . "CDI")))
     (build-system r-build-system)
     (arguments

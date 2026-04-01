@@ -336,13 +336,13 @@ loaded in and used in the analyses.")
 (define-public r-ewce
   (package
     (name "r-ewce")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EWCE" version))
        (sha256
-        (base32 "0i476appzbnv6gy8jhpwnfaq6dqhfpny56m7w2l7a2j6qgyifmva"))))
+        (base32 "0r2m3aq2s2rcyp2vvnip1r50v7qmaz0j0fr8pi2awy0ghi8s08vy"))))
     (properties `((upstream-name . "EWCE")))
     (build-system r-build-system)
     (arguments
@@ -1599,6 +1599,42 @@ differential peak calling, @code{epigraHMM} provides window-specific posterior
 probabilities associated with every possible combinatorial pattern of read
 enrichment across conditions.")
     (license license:expat)))
+
+(define-public r-epigenomix
+  (package
+    (name "r-epigenomix")
+    (version "1.50.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "epigenomix" version))
+       (sha256
+        (base32 "1lxs7fjchx5cmj4jqzalc8kpfbj5p2cn84mdwglbf6krjs8dwyg8"))))
+    (properties `((upstream-name . "epigenomix")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-s4vectors
+                             r-rsamtools
+                             r-mcmcpack
+                             r-iranges
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-biocgenerics
+                             r-biobase
+                             r-beadarray))
+    (home-page "https://bioconductor.org/packages/epigenomix")
+    (synopsis
+     "Epigenetic and gene transcription data normalization and integration with mixture models")
+    (description
+     "This package provides a package for the integrative analysis of RNA-seq or
+microarray based gene transcription and histone modification data obtained by
+@code{ChIP-seq}.  The package provides methods for data preprocessing and
+matching as well as methods for fitting bayesian mixture models in order to
+detect genes with differences in both data types.")
+    (license license:lgpl3)))
 
 (define-public r-epidecoder
   (package

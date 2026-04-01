@@ -939,13 +939,13 @@ power in differential expression analysis from RNA-seq data.")
 (define-public r-prone
   (package
     (name "r-prone")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PRONE" version))
        (sha256
-        (base32 "18l7f0mbs3gr1kasx81b6yayiqh06w7n1wcb4s68yw8q0cj4giv3"))))
+        (base32 "0vi8kz58bs2m9518hmkcsgscg5m595s2yran27240rh8g5w119h4"))))
     (properties `((upstream-name . "PRONE")))
     (build-system r-build-system)
     (arguments
@@ -2555,13 +2555,13 @@ object without ever needing to unwind to a rectangular data.frame.")
 (define-public r-plyinteractions
   (package
     (name "r-plyinteractions")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plyinteractions" version))
        (sha256
-        (base32 "1k5vvja82dyyfl8fidybxmm81q69y636dfl9pcb7mljp8b97b9k7"))))
+        (base32 "00yg3awg8n5b9lkj700fa3c4jnpzfzi6p84hcv1y001vchrdmw6f"))))
     (properties `((upstream-name . "plyinteractions")))
     (build-system r-build-system)
     (arguments
@@ -2927,13 +2927,13 @@ data.")
 (define-public r-pirat
   (package
     (name "r-pirat")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Pirat" version))
        (sha256
-        (base32 "0r058blz4l6sq24r1aydpcqkn5jnz92d78gkqf3wzc5x1zpq8h15"))))
+        (base32 "0cqsis5zwx09hclbchf5kfbkx9880f2d3m15vn2bapvq2mp0dx8l"))))
     (properties `((upstream-name . "Pirat")))
     (build-system r-build-system)
     (arguments
@@ -2948,7 +2948,7 @@ data.")
                              r-ggplot2
                              r-basilisk))
     (native-inputs (list r-knitr))
-    (home-page "http://www.prostar-proteomics.org/")
+    (home-page "https://github.com/edyp-lab/Pirat")
     (synopsis "Precursor or Peptide Imputation under Random Truncation")
     (description
      "Pirat enables the imputation of missing values (either MNARs or MCARs) in
@@ -3082,6 +3082,57 @@ arguments, avoiding recomputing the same step twice and compiling evaluations on
 the fly to avoid storing potentially large intermediate data.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-pigengene
+  (package
+    (name "r-pigengene")
+    (version "1.36.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Pigengene" version))
+       (sha256
+        (base32 "0p0x0nhmplxgy5w2ghv5m4ljd1gwbbskf3y3jn9m7mfdiwn9fxmn"))))
+    (properties `((upstream-name . "Pigengene")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wgcna
+                             r-rgraphviz
+                             r-reactomepa
+                             r-preprocesscore
+                             r-pheatmap
+                             r-partykit
+                             r-openxlsx
+                             r-matrixstats
+                             r-mass
+                             r-impute
+                             r-graph
+                             r-go-db
+                             r-ggplot2
+                             r-gdata
+                             r-dplyr
+                             r-dose
+                             r-dbi
+                             r-clusterprofiler
+                             r-c50
+                             r-bnlearn
+                             r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/Pigengene")
+    (synopsis "Infers biological signatures from gene expression data")
+    (description
+     "Pigengene package provides an efficient way to infer biological signatures from
+gene expression profiles.  The signatures are independent from the underlying
+platform, e.g., the input can be microarray or RNA Seq data.  It can even infer
+the signatures using data from one platform, and evaluate them on the other.
+Pigengene identifies the modules (clusters) of highly coexpressed genes using
+coexpression network analysis, summarizes the biological information of each
+module in an eigengene, learns a Bayesian network that models the probabilistic
+dependencies between modules, and builds a decision tree based on the expression
+of eigengenes.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-pig-db0
   (package
     (name "r-pig-db0")
@@ -3205,13 +3256,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "2.2.3")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "17a4ic7ih1ngqipkq45j9zpz1l17fkrwd7jswmkyky0rgas6ily3"))))
+        (base32 "1xp1i6w53lirn0zrzx5g0bzqp9anday7sh5v7agasrhky2wznk6n"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments

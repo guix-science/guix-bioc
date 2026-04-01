@@ -4215,6 +4215,37 @@ and (iii) confidence assessment during the computational inference of mutational
 signatures.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-repviz
+  (package
+    (name "r-repviz")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "RepViz" version))
+       (sha256
+        (base32 "1754192217hnlz9wl1lq8c9a46by4yk1sqj5nz5a0y43113hbnhw"))))
+    (properties `((upstream-name . "RepViz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s4vectors r-rsamtools r-iranges r-genomicranges
+                             r-biomart))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/RepViz")
+    (synopsis "Replicate oriented Visualization of a genomic region")
+    (description
+     "@code{RepViz} enables the view of a genomic region in a simple and efficient
+way. @code{RepViz} allows simultaneous viewing of both intra- and intergroup
+variation in sequencing counts of the studied conditions, as well as their
+comparison to the output features (e.g. identified peaks) from user selected
+data analysis methods.The @code{RepViz} tool is primarily designed for chromatin
+data such as @code{ChIP-seq} and ATAC-seq, but can also be used with other
+sequencing data such as RNA-seq, or combinations of different types of genomic
+data.")
+    (license license:gpl3)))
+
 (define-public r-remp
   (package
     (name "r-remp")
@@ -4712,13 +4743,13 @@ methods, following igraph syntax rules.")
 (define-public r-recoup
   (package
     (name "r-recoup")
-    (version "1.38.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "recoup" version))
        (sha256
-        (base32 "0dl1vagixfqlggdnq8ijj0bi3xrm80rv8d48d317i5l325zqk7c6"))))
+        (base32 "1waf34l34y4vh6i7ihdwgcvnnbhzscnakckwdmq099y9c114vqh5"))))
     (properties `((upstream-name . "recoup")))
     (build-system r-build-system)
     (arguments
@@ -5061,13 +5092,13 @@ using websockets.")
 (define-public r-rcx
   (package
     (name "r-rcx")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RCX" version))
        (sha256
-        (base32 "0axrhqbj0q4zfny7lmr5497h16f40jc5bi6w59na8h57nwsmrzq7"))))
+        (base32 "1dqr5rcfmwbirjzgwf5hj1c8c41m4cqlzwnyh489r5ww4aplwj9b"))))
     (properties `((upstream-name . "RCX")))
     (build-system r-build-system)
     (arguments

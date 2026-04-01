@@ -1576,6 +1576,52 @@ information, partial information decomposition, and part mutual information.")
 LEGENDScreen or BD Human Cell Surface Marker Screening Panel (BD Lyoplates).")
     (license license:gpl3)))
 
+(define-public r-inetgrate
+  (package
+    (name "r-inetgrate")
+    (version "1.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "iNETgrate" version))
+       (sha256
+        (base32 "01j2lja1q6b4vsc9ybr0lkkcgx1k6bl6pz5c15c7fssilbjiz6j8"))))
+    (properties `((upstream-name . "iNETgrate")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wgcna
+                             r-tidyselect
+                             r-tidyr
+                             r-survival
+                             r-summarizedexperiment
+                             r-rfast
+                             r-pigengene
+                             r-minfi
+                             r-matrixstats
+                             r-igraph
+                             r-homo-sapiens
+                             r-gplots
+                             r-glmnet
+                             r-genomicranges
+                             r-caret
+                             r-biocstyle))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/iNETgrate")
+    (synopsis
+     "Integrates DNA methylation data with gene expression in a single gene network")
+    (description
+     "The @code{iNETgrate} package provides functions to build a correlation network
+in which nodes are genes.  DNA methylation and gene expression data are
+integrated to define the connections between genes.  This network is used to
+identify modules (clusters) of genes.  The biological information in each of the
+resulting modules is represented by an eigengene.  These biological signatures
+can be used as features e.g., for classification of patients into risk
+categories.  The resulting biological signatures are very robust and give a
+holistic view of the underlying molecular changes.")
+    (license license:gpl3)))
+
 (define-public r-indeed
   (package
     (name "r-indeed")
@@ -2694,13 +2740,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.0.15")
+    (version "1.0.23")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "0553f2dcjsp6ijkb4dahnqxmchkfyl2l7nnw4agmaag0mjddib0y"))))
+        (base32 "0air5lnmbn1sbdkpc7fqjs485ihj30h7l5f41jvi9pjcissqd27w"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments
@@ -2723,9 +2769,18 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
     (synopsis "User-friendly R Wrapper to IgBLAST")
     (description
      "The igblastr package provides functions to conveniently install and use a local
-@code{IgBLAST} installation from within R. @code{IgBLAST} is described at
-<https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
-<https://www.ncbi.nlm.nih.gov/igblast/>.")
+@code{IgBLAST} installation from within R. The package also includes a set of
+built-in @code{IgBLAST-compatible} germline databases from OGRDB, the AIRR
+Community’s Open Germline Receptor Database, for various organisms.  It provides
+functions to create additional @code{IgBLAST-compatible} germline databases
+using reference sequences retrieved from IMGT/V-QUEST or local FASTA files
+supplied by the user.  When possible, the FWR/CDR boundaries on the V alleles
+(a.k.a \"internal data\") are computed and stored in the germline database, so can
+be used as a replacement for the internal data shipped with @code{IgBLAST}.
+@code{IgBLAST} is described at <https://pubmed.ncbi.nlm.nih.gov/23671333/>.
+@code{IgBLAST} web interface: <https://www.ncbi.nlm.nih.gov/igblast/>.  OGRDB:
+<https://ogrdb.airr-community.org/>.  IMGT/V-QUEST download site:
+<https://www.imgt.org/download/V-QUEST/>.")
     (license license:artistic2.0)))
 
 (define-public r-ifaa
