@@ -9,6 +9,7 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages m)
+  #:use-module (guix-cran packages e)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages c)
@@ -18,7 +19,6 @@
   #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages w)
-  #:use-module (guix-cran packages e)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages g)
@@ -437,6 +437,48 @@ statistical model with easier to control statistical guarantees.  As a result,
 while reducing biases arising from marker correlations and safeguarding against
 false discoveries induced by patient heterogeneity.")
     (license license:lgpl3)))
+
+(define-public r-cytofqc
+  (package
+    (name "r-cytofqc")
+    (version "1.10.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "cytofQC" version))
+       (sha256
+        (base32 "17d98n31ijl4s0gcqp3mpajbas0d1nw683v3akd20inwg4yb4rgl"))))
+    (properties `((upstream-name . "cytofQC")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-ssc
+                             r-singlecellexperiment
+                             r-s4vectors
+                             r-rmarkdown
+                             r-randomforest
+                             r-mixtools
+                             r-matrixstats
+                             r-ggplot2
+                             r-gbm
+                             r-flowcore
+                             r-eztune
+                             r-e1071
+                             r-catalyst))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jillbo1000/cytofQC")
+    (synopsis
+     "Labels normalized cells for CyTOF data and assigns probabilities for each label")
+    (description
+     "@code{cytofQC} is a package for initial cleaning of @code{CyTOF} data.  It uses
+a semi-supervised approach for labeling cells with their most likely data type
+(bead, doublet, debris, dead) and the probability that they belong to each label
+type.  This package does not remove data from the dataset, but provides labels
+and information to aid the data user in cleaning their data.  Our algorithm is
+able to distinguish between doublets and large cells.")
+    (license license:artistic2.0)))
 
 (define-public r-cytofpower
   (package

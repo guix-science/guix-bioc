@@ -2614,13 +2614,13 @@ workflows.")
 (define-public r-plotgrouper
   (package
     (name "r-plotgrouper")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plotGrouper" version))
        (sha256
-        (base32 "1s7n1rwl736hx1awjh39dgb4z3rllkbm3xxmrs74v4ibxphlccv0"))))
+        (base32 "0i9ybgw17qfzmq3zq3c9b02gx5vy42d1p1998p81lpkzwynq6gyz"))))
     (properties `((upstream-name . "plotGrouper")))
     (build-system r-build-system)
     (arguments

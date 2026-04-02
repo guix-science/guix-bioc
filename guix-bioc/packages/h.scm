@@ -10,8 +10,9 @@
   #:use-module (guix-cran packages a)
   #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages p)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages web)
+  #:use-module (guix-cran packages z)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages compression)
   #:use-module (guix-cran packages h)
   #:use-module (guix-cran packages g)
@@ -2953,6 +2954,67 @@ method using the zero inflation instead of gene variance, and computationally
 faster than other existing methods since it only relies on PCA+Kmeans rather
 than graph-clustering or consensus clustering.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
+
+(define-public r-hipathia
+  (package
+    (name "r-hipathia")
+    (version "3.10.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "hipathia" version))
+       (sha256
+        (base32 "06y2raw3zz3hp5dg2ppa89rqnrvxfsbfji082f1h907laljgcx3d"))))
+    (properties `((upstream-name . "hipathia")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:modules '((guix build r-build-system)
+                  ((guix build minify-build-system)
+                   #:select (minify))
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-zen4r
+                             r-visnetwork
+                             r-tibble
+                             r-summarizedexperiment
+                             r-servr
+                             r-s4vectors
+                             r-reshape2
+                             r-preprocesscore
+                             r-multiassayexperiment
+                             r-metbrewer
+                             r-matrixstats
+                             r-limma
+                             r-igraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-delayedarray
+                             r-coin))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://bioconductor.org/packages/hipathia")
+    (synopsis "HiPathia: High-throughput Pathway Analysis")
+    (description
+     "Hipathia is a method for the computation of signal transduction along signaling
+pathways from transcriptomic data.  The method is based on an iterative
+algorithm which is able to compute the signal intensity passing through the
+nodes of a network by taking into account the level of expression of each gene
+and the intensity of the signal arriving to it.  It also provides a new approach
+to functional analysis allowing to compute the signal arriving to the functions
+annotated to each pathway.")
+    (license license:gpl2)))
 
 (define-public r-hilda
   (package
