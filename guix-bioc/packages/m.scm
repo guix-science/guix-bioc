@@ -6124,13 +6124,13 @@ manipulating them.")
 (define-public r-microbiotaprocess
   (package
     (name "r-microbiotaprocess")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MicrobiotaProcess" version))
        (sha256
-        (base32 "0lf3z2pcvvy905qanm2a7ryr2kb74rnghmn2ghq0669hqgdihh0x"))))
+        (base32 "1r8r1gd5xznvar8j0vvm127761rg94gzlfd5q28jal8q6v81zpsj"))))
     (properties `((upstream-name . "MicrobiotaProcess")))
     (build-system r-build-system)
     (arguments
@@ -11307,6 +11307,48 @@ The original data can be found at: https://github.com/macs3-project/MACS/.")
      "Graphically displays correlation in microarray data that is due to insufficient
 normalization.")
     (license license:gpl2+)))
+
+(define-public r-macarron
+  (package
+    (name "r-macarron")
+    (version "1.14.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Macarron" version))
+       (sha256
+        (base32 "03q562sq39glhs3a4ghvpzz78fvrawab26cpxyb8bn3qw951lbfj"))))
+    (properties `((upstream-name . "Macarron")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wgcna
+                             r-summarizedexperiment
+                             r-psych
+                             r-plyr
+                             r-maaslin2
+                             r-logging
+                             r-ff
+                             r-dynamictreecut
+                             r-delayedarray
+                             r-data-table
+                             r-biocparallel))
+    (native-inputs (list r-knitr))
+    (home-page "http://huttenhower.sph.harvard.edu/macarron")
+    (synopsis
+     "Prioritization of potentially bioactive metabolic features from epidemiological and environmental metabolomics datasets")
+    (description
+     "Macarron is a workflow for the prioritization of potentially bioactive
+metabolites from metabolomics experiments.  Prioritization integrates strengths
+of evidences of bioactivity such as covariation with a known metabolite,
+abundance relative to a known metabolite and association with an environmental
+or phenotypic indicator of bioactivity.  Broadly, the workflow consists of
+stratified clustering of metabolic spectral features which co-vary in abundance
+in a condition, transfer of functional annotations, estimation of relative
+abundance and differential abundance analysis to identify associations between
+features and phenotype/condition.")
+    (license license:expat)))
 
 (define-public r-maaslin3
   (package

@@ -4044,13 +4044,13 @@ identification of a family and secondary structures in the dot-bracket format.")
 (define-public r-rexposome
   (package
     (name "r-rexposome")
-    (version "1.32.0")
+    (version "1.32.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rexposome" version))
        (sha256
-        (base32 "00x020bjh7f4pma304i65c6l9wpbqgqkvsfb9yaanaj9sph33q8l"))))
+        (base32 "1cqvicil2xypb1rsyra8vgkj2qwykbhql8kcyli7pircpg4120mj"))))
     (properties `((upstream-name . "rexposome")))
     (build-system r-build-system)
     (arguments
@@ -4061,7 +4061,6 @@ identification of a family and secondary structures in the dot-bracket format.")
                              r-scales
                              r-s4vectors
                              r-reshape2
-                             r-pryr
                              r-mice
                              r-lsr
                              r-lme4
