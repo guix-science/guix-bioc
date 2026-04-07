@@ -2391,6 +2391,55 @@ interface between the FAERS database and R. Furthermore, faers pacakge offers a
 standardized approach for performing pharmacovigilance analysis.")
     (license license:expat)))
 
+(define-public r-factr
+  (package
+    (name "r-factr")
+    (version "1.12.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "factR" version))
+       (sha256
+        (base32 "12rzvs09qrxkly5d8knr6ff2b037l9c21s0y5iw0whw7yaxv4bf0"))))
+    (properties `((upstream-name . "factR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-xml
+                             r-wiggleplotr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rlang
+                             r-rcurl
+                             r-purrr
+                             r-pbapply
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-drawproteins
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-biostrings
+                             r-biocparallel
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://fursham-h.github.io/factR/")
+    (synopsis "Functional Annotation of Custom Transcriptomes")
+    (description
+     "@code{factR} contain tools to process and interact with custom-assembled
+transcriptomes (GTF).  At its core, @code{factR} constructs CDS information on
+custom transcripts and subsequently predicts its functional output.  In
+addition, @code{factR} has tools capable of plotting transcripts, correcting
+chromosome and gene information and shortlisting new transcripts.")
+    (license (license:fsdg-compatible "file://LICENSE"))))
+
 (define-public r-factdesign
   (package
     (name "r-factdesign")
