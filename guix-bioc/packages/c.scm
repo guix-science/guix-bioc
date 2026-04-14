@@ -1460,8 +1460,7 @@ of @code{ChIP-seq} dataset.")
                              r-kerntools
                              r-henna
                              r-ggplot2
-                             r-dplyr
-                             r-bayesbio))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/andrei-stoica26/CSOA")
     (synopsis
