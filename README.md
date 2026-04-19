@@ -2,7 +2,7 @@
 
 This channel complements GNU Guix’ collection of R packages and contains
 all Bioconductor packages not available in Guix yet. The import is [fully
-automated](https://github.com/guix-science/guix-cran-scripts) and thus
+automated](https://codeberg.org/guix-science/guix-cran-scripts) and thus
 no quality control exists. Packages may or may not build, they may or
 may not work. Pull requests are not accepted.
 
@@ -13,7 +13,7 @@ You can use this channel by adding the following snippet to your
 (cons
   (channel
     (name 'guix-bioc)
-    (url "https://github.com/guix-science/guix-bioc.git"))
+    (url "https://codeberg.org/guix-science/guix-bioc.git"))
   %default-channels)
 ```
 
