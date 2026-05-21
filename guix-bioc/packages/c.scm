@@ -6483,30 +6483,6 @@ analysis of also very large data sets.")
 studies.")
     (license license:gpl3)))
 
-(define-public r-chipxpressdata
-  (package
-    (name "r-chipxpressdata")
-    (version "1.48.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "ChIPXpressData" version
-                              'experiment))
-       (sha256
-        (base32 "05hg53338mvlh6bz27zqpig0445xmdrw5m7c7nw464skc0s7kdpk"))))
-    (properties `((upstream-name . "ChIPXpressData")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-bigmemory))
-    (home-page "https://bioconductor.org/packages/ChIPXpressData")
-    (synopsis "ChIPXpress Pre-built Databases")
-    (description
-     "This package contains pre-built mouse (GPL1261) and human (GPL570) database of
-gene expression profiles to be used for @code{ChIPXpress} ranking.")
-    (license (license:fsdg-compatible "GPL (>=2)"))))
-
 (define-public r-chipxpress
   (package
     (name "r-chipxpress")
@@ -6524,7 +6500,6 @@ gene expression profiles to be used for @code{ChIPXpress} ranking.")
       #:tests? #f))
     (propagated-inputs (list r-geoquery
                              r-frma
-                             r-chipxpressdata
                              r-biobase
                              r-bigmemory
                              r-biganalytics
