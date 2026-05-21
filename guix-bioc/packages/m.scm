@@ -28,7 +28,6 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (guix-cran packages b)
   #:use-module (gnu packages package-management)
-  #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages q)
   #:use-module (gnu packages web)
@@ -4600,7 +4599,6 @@ premise of mapping reads to all genotypes at the same time.")
                              r-summarizedexperiment
                              r-s4vectors
                              r-reshape2
-                             r-nmi
                              r-matrixstats
                              r-mass
                              r-limma
@@ -10938,7 +10936,8 @@ MAGAR accounts for the local correlation structure of @code{CpGs}.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicscores
@@ -10967,7 +10966,8 @@ hg38.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicscores
@@ -11178,7 +11178,8 @@ version GRCh38.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicscores

@@ -3711,7 +3711,8 @@ Illustrate in a vignette how to access those resources.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicscores
@@ -7689,7 +7690,8 @@ inform clinical decision making.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-rsqlite
                              r-oligoclasses

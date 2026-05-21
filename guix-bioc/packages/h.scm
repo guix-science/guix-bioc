@@ -292,7 +292,8 @@ crlmm package.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (home-page "https://bioconductor.org/packages/humanomni5quadv1bCrlmm")
     (synopsis "Metadata for fast genotyping with the 'crlmm' package")
     (description
@@ -315,7 +316,8 @@ package.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (home-page "https://bioconductor.org/packages/humanomni25quadv1bCrlmm")
     (synopsis "Metadata for fast genotyping with the 'crlmm' package")
     (description

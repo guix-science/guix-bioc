@@ -4465,7 +4465,8 @@ repository.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicranges
@@ -4499,7 +4500,8 @@ or in BSgenome.Hsapiens.UCSC.hg38.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicranges
@@ -4533,7 +4535,8 @@ BSgenome.Hsapiens.UCSC.hg38.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-s4vectors
                              r-iranges
                              r-genomicranges

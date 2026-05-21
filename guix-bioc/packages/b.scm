@@ -749,7 +749,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr3")
@@ -774,7 +775,8 @@ Aug.  2011) and stored in Biostrings objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Sscrofa.UCSC.susScr11")
@@ -877,7 +879,8 @@ Feb.  2017) and stored in Biostrings objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn7")
@@ -902,7 +905,8 @@ rn7) and stored in Biostrings objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn6")
@@ -958,7 +962,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn5")
@@ -1014,7 +1019,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn4")
@@ -1039,7 +1045,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro6")
@@ -1065,7 +1072,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro5")
@@ -1124,7 +1132,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro3")
@@ -1183,7 +1192,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro2")
@@ -1209,7 +1219,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ppaniscus.UCSC.panPan2")
@@ -1234,7 +1245,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ppaniscus.UCSC.panPan1")
@@ -1314,7 +1326,8 @@ the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm8")
     (synopsis "Full genome sequences for Mus musculus (UCSC version mm8)")
@@ -1338,7 +1351,8 @@ the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmusculus.UCSC.mm39")
@@ -1393,7 +1407,8 @@ mask of intra-contig ambiguities (AMB mask).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac8")
@@ -1451,7 +1466,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac3")
@@ -1512,7 +1528,8 @@ Repeats Finder results.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac2")
@@ -1538,7 +1555,8 @@ Repeats Finder results.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mmulatta.UCSC.rheMac10")
@@ -1564,7 +1582,8 @@ Repeats Finder results.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Mfuro.UCSC.musFur1")
     (synopsis
@@ -1589,7 +1608,8 @@ Repeats Finder results.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mfascicularis.NCBI.6.0")
@@ -1616,7 +1636,8 @@ and stored in Biostrings objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mfascicularis.NCBI.5.0")
@@ -1642,7 +1663,8 @@ by NCBI (Macaca_fascicularis_5.0, 2013-06-12) and stored in Biostrings objects."
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Mdomestica.UCSC.monDom5")
@@ -1668,7 +1690,8 @@ by NCBI (Macaca_fascicularis_5.0, 2013-06-12) and stored in Biostrings objects."
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hs1")
     (synopsis "Full genomic sequences for UCSC genome hs1 (Homo sapiens)")
@@ -1694,7 +1717,8 @@ sequences are stored in DNAString objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.minor")
@@ -1728,7 +1752,8 @@ reference genome.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg38.dbSNP151.major")
@@ -1788,7 +1813,8 @@ the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg18")
     (synopsis "Full genome sequences for Homo sapiens (UCSC version hg18)")
@@ -1843,7 +1869,8 @@ the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page "https://bioconductor.org/packages/BSgenome.Hsapiens.UCSC.hg17")
     (synopsis "Full genome sequences for Homo sapiens (UCSC version hg17)")
@@ -1867,7 +1894,8 @@ the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Hsapiens.NCBI.T2T.CHM13v2.0")
@@ -2427,7 +2455,8 @@ ASM221672v1 assembly accession GCA_002216725.1).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac4")
@@ -2453,7 +2482,8 @@ ASM221672v1 assembly accession GCA_002216725.1).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac3")
@@ -2512,7 +2542,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam3")
@@ -2571,7 +2602,8 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam2")
@@ -2703,7 +2735,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau9")
@@ -2759,7 +2792,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau6")
@@ -2815,7 +2849,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau4")
@@ -2871,7 +2906,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Btaurus.UCSC.bosTau3")
