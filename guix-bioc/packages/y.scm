@@ -131,14 +131,14 @@ data from public repositories.")
 (define-public r-yeastrnaseq
   (package
     (name "r-yeastrnaseq")
-    (version "0.48.0")
+    (version "0.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastRNASeq" version
                               'experiment))
        (sha256
-        (base32 "09vyr5yld130l53nw6wd0xl8kwvxflrgnm7p4vrqg36d8mafbaq0"))))
+        (base32 "02338y1g0c3id3f86amcz1lawl37q822iv5gwllx6cy27vp77v25"))))
     (properties `((upstream-name . "yeastRNASeq")))
     (build-system r-build-system)
     (arguments
@@ -154,14 +154,14 @@ experiment.")
 (define-public r-yeastnagalakshmi
   (package
     (name "r-yeastnagalakshmi")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastNagalakshmi" version
                               'experiment))
        (sha256
-        (base32 "16afzgcpspks8ccipkbhdzr4s0mx6x47qiyl5vdn5isp9c6snk6h"))))
+        (base32 "17qvb857zj91c3p06rknk1xmlq9wb72if2ls1ah9q32658m5p96s"))))
     (properties `((upstream-name . "yeastNagalakshmi")))
     (build-system r-build-system)
     (arguments
@@ -177,14 +177,14 @@ bwa, and converted to BAM format with samtools.")
 (define-public r-yeastgsdata
   (package
     (name "r-yeastgsdata")
-    (version "0.48.0")
+    (version "0.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastGSData" version
                               'experiment))
        (sha256
-        (base32 "1wmlvmdfjyqhk2rx8iy9x6wmnff6n95y5ygk86ygjkdhzrmnaxcv"))))
+        (base32 "12d8hnyffp071yk0r1bm70xd97vcr89lhrn2d3r8gva1ni3110s9"))))
     (properties `((upstream-name . "yeastGSData")))
     (build-system r-build-system)
     (arguments
@@ -200,14 +200,14 @@ sets.")
 (define-public r-yeastexpdata
   (package
     (name "r-yeastexpdata")
-    (version "0.56.0")
+    (version "0.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastExpData" version
                               'experiment))
        (sha256
-        (base32 "079pg02prdwc6sc58mdb4qf3bp9jcqnijv35n8hfp7rd6xba0gyx"))))
+        (base32 "16v7zc0160r411hdwm0pr41nh82qm447yn7vrqmxr2ic8885v732"))))
     (properties `((upstream-name . "yeastExpData")))
     (build-system r-build-system)
     (arguments
@@ -224,14 +224,14 @@ yeast.")
 (define-public r-yeastcc
   (package
     (name "r-yeastcc")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "yeastCC" version
                               'experiment))
        (sha256
-        (base32 "010d64x7md355qcix54s9ybn1w72rblla5nnr656zaagvnaf5yq7"))))
+        (base32 "0xhf8hpn68dz48kc1k2h96rv5gc9cplm01hw6dk1631nqv3ay3gb"))))
     (properties `((upstream-name . "yeastCC")))
     (build-system r-build-system)
     (arguments

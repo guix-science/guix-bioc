@@ -44,13 +44,13 @@
 (define-public r-extrachips
   (package
     (name "r-extrachips")
-    (version "1.14.2")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "extraChIPs" version))
        (sha256
-        (base32 "0c8nm10wkl5xvgz5a4r8229vjixzcv12r5mja4vp5zfdsvzgf8fc"))))
+        (base32 "1m4fzj5bmd5dh44nz0as6a4a5pkrijp3p542y5dq5pyafisl1a5v"))))
     (properties `((upstream-name . "extraChIPs")))
     (build-system r-build-system)
     (arguments
@@ -99,13 +99,13 @@ also implemented.")
 (define-public r-expressionatlas
   (package
     (name "r-expressionatlas")
-    (version "2.2.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ExpressionAtlas" version))
        (sha256
-        (base32 "0zksi7r2r98kid5w785spshnw8pgw8za3snag9k5qmycryhwvwfr"))))
+        (base32 "1rdamy45gp5prr89fny0240wmds221qkwl6f0gk1mxfn8skkxv8v"))))
     (properties `((upstream-name . "ExpressionAtlas")))
     (build-system r-build-system)
     (arguments
@@ -132,16 +132,47 @@ Sequencing data is contained in a @code{SummarizedExperiment} object, while
 microarray data is contained in an @code{ExpressionSet} or MAList object.")
     (license license:gpl3+)))
 
+(define-public r-exporiskr
+  (package
+    (name "r-exporiskr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "ExpoRiskR" version))
+       (sha256
+        (base32 "0qhq85icr24wzv68vsphb42884dql1srajlqmhz0aiaygk03bjib"))))
+    (properties `((upstream-name . "ExpoRiskR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment r-s4vectors r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ppchaudhary/ExpoRiskR")
+    (synopsis "Exposure-Aware Multi-Omics Risk Modeling")
+    (description
+     "@code{ExpoRiskR} provides tools for exposure-aware multi-omics risk modeling in
+translational and environmental health studies.  The package aligns sample
+identifiers across exposure and multi-omics blocks, performs lightweight
+preprocessing, and fits exposure-adjusted association models to build
+interpretable microbe–metabolite networks.  It also computes simple exposure
+perturbation summaries and generates publication-ready visualizations.
+Workflows support both matrix-based inputs and @code{SummarizedExperiment}
+objects.")
+    (license license:expat)))
+
 (define-public r-exploremodelmatrix
   (package
     (name "r-exploremodelmatrix")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ExploreModelMatrix" version))
        (sha256
-        (base32 "0mbgsq3kb5wz9dz75hq4bka69in08kcyii8hqpga09948ffgm03l"))))
+        (base32 "1zmn53s67ss9yljizgzy69jlidpfc0lk0myjnk0rkgjd8njizga8"))))
     (properties `((upstream-name . "ExploreModelMatrix")))
     (build-system r-build-system)
     (arguments
@@ -177,13 +208,13 @@ visualizations can also be generated.")
 (define-public r-experimentsubset
   (package
     (name "r-experimentsubset")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ExperimentSubset" version))
        (sha256
-        (base32 "1yw4ci223s5cc0kwz6frfp3wngws48bghxwx6r761n03wsxs4g2q"))))
+        (base32 "1qk59dg5iz09rnz94kim6n1vnxk93xd3q375ab2vhbzzprm39blp"))))
     (properties `((upstream-name . "ExperimentSubset")))
     (build-system r-build-system)
     (arguments
@@ -212,13 +243,13 @@ each new subset.")
 (define-public r-eximir
   (package
     (name "r-eximir")
-    (version "2.52.0")
+    (version "2.54.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ExiMiR" version))
        (sha256
-        (base32 "12075cp6py3ns59gyj2snrp6yr7v0zxwnvmnzfprynixhiiqzw2z"))))
+        (base32 "1ggi6vpkazprxxd4f4m5awh35accghs83p020zq64dhx8jwi3pdk"))))
     (properties `((upstream-name . "ExiMiR")))
     (build-system r-build-system)
     (arguments
@@ -238,13 +269,13 @@ appropriate GAL files, and normalizing them using a spike-in probe-based method.
 (define-public r-excluster
   (package
     (name "r-excluster")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ExCluster" version))
        (sha256
-        (base32 "1103xdpcv59nsb2wk5qg9dmw6x6nfp18b9d3c3dsmb5bbl4hyy57"))))
+        (base32 "1jhxipj54h5p4ay9xgnq0csdchjiksbj38qxjsnsinlrlgsqb88m"))))
     (properties `((upstream-name . "ExCluster")))
     (build-system r-build-system)
     (arguments
@@ -274,14 +305,14 @@ lab.")
 (define-public r-excluderanges
   (package
     (name "r-excluderanges")
-    (version "0.99.10")
+    (version "0.99.11")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "excluderanges" version
                               'annotation))
        (sha256
-        (base32 "0j9njpnbh731ffimr1sbvix3wsivnh9nwxg6sbrpwp8gl0pnl7r0"))))
+        (base32 "1czr9hr84hzwa7fyzm51425nphy0b9h5yfvgkij5v8qgq565w02a"))))
     (properties `((upstream-name . "excluderanges")))
     (build-system r-build-system)
     (arguments
@@ -302,14 +333,14 @@ genome assemblies.")
 (define-public r-ewcedata
   (package
     (name "r-ewcedata")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ewceData" version
                               'experiment))
        (sha256
-        (base32 "01zifm6d9vpcpsd3axyvmxxncm5pssdln69fgvj3fidrzdh0bfg6"))))
+        (base32 "0h2bqpcxd1am4kh1fy6zc94ji075xhvalsyl45ba9f120r6cids9"))))
     (properties `((upstream-name . "ewceData")))
     (build-system r-build-system)
     (arguments
@@ -336,13 +367,13 @@ loaded in and used in the analyses.")
 (define-public r-ewce
   (package
     (name "r-ewce")
-    (version "1.18.1")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EWCE" version))
        (sha256
-        (base32 "0r2m3aq2s2rcyp2vvnip1r50v7qmaz0j0fr8pi2awy0ghi8s08vy"))))
+        (base32 "1xh6rr7xsv009lyf8nsx18nslm9hpz392jy1jxc68i80ncrjlfrp"))))
     (properties `((upstream-name . "EWCE")))
     (build-system r-build-system)
     (arguments
@@ -378,24 +409,26 @@ analyses.")
 (define-public r-eventpointer
   (package
     (name "r-eventpointer")
-    (version "3.18.0")
+    (version "3.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EventPointer" version))
        (sha256
-        (base32 "0zf4dc8pa5b93il4qpnbc6g9c7ir0rqhxa8w1vhghdwqswjb74ig"))))
+        (base32 "1ijazk8gc7367cmh3jiw7wjzflyv003a3yff478wh9p234c5x4gp"))))
     (properties `((upstream-name . "EventPointer")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tximport
+                             r-txdbmaker
                              r-summarizedexperiment
                              r-stringr
                              r-speedglm
                              r-sgseq
                              r-s4vectors
+                             r-rsamtools
                              r-rhdf5
                              r-rbgl
                              r-qvalue
@@ -413,7 +446,7 @@ analyses.")
                              r-graph
                              r-glmnet
                              r-genomicranges
-                             r-genomicfeatures
+                             r-genomicalignments
                              r-genomeinfodb
                              r-foreach
                              r-fgsea
@@ -421,6 +454,7 @@ analyses.")
                              r-cobs
                              r-bsgenome
                              r-biostrings
+                             r-aroma-light
                              r-affxparser
                              r-abind))
     (native-inputs (list r-knitr))
@@ -432,25 +466,27 @@ analyses.")
 involve either simple (case-control experiment) or complex experimental designs
 such as time course experiments and studies including paired-samples.  The
 algorithm can be used to analyze data from either junction arrays (Affymetrix
-Arrays) or sequencing data (RNA-Seq).  The software returns a data.frame with
-the detected alternative splicing events: gene name, type of event (cassette,
-alternative 3',...,etc), genomic position, statistical significance and
-increment of the percent spliced in (Delta PSI) for all the events.  The
-algorithm can generate a series of files to visualize the detected alternative
-splicing events in IGV. This eases the interpretation of results and the design
-of primers for standard PCR validation.")
+Arrays) or sequencing data (RNA-Seq).  In the latter, @code{EventPointer} can
+work with annotated splicing events or can build a splicing graph from the
+RNA-Seq reads and then identify new and specific alternative splicing events.
+The software returns a data.frame with the detected alternative splicing events:
+gene name, type of event (cassette, alternative 3',...,etc), genomic position,
+statistical significance and increment of the percent spliced in (Delta PSI) for
+all the events.  The algorithm can generate a series of files to visualize the
+detected alternative splicing events in IGV. This eases the interpretation of
+results and the design of primers for standard PCR validation.")
     (license license:artistic2.0)))
 
 (define-public r-evaluomer
   (package
     (name "r-evaluomer")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "evaluomeR" version))
        (sha256
-        (base32 "1disy9mbq8090bsl429lz0b30vb7k2ss3qyrcig8i3ldsyr9gw25"))))
+        (base32 "0x4fzy7m64cryy8yw33dqdhfnsls6cm0ajqn6ss638pdwg37a1lv"))))
     (properties `((upstream-name . "evaluomeR")))
     (build-system r-build-system)
     (arguments
@@ -523,13 +559,13 @@ available in R using the @code{AnnotationHub} framework.")
 (define-public r-eudysbiome
   (package
     (name "r-eudysbiome")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "eudysbiome" version))
        (sha256
-        (base32 "1zxh2gpbhl2sbpv0yrhay3rxkcv5mcgmdmc99ixmj9lfrw1zl4nv"))))
+        (base32 "1sh5pd1fpcn8a10s6mcxszlks3sxdly7djnr2vvhmrh2x0v4vswj"))))
     (properties `((upstream-name . "eudysbiome")))
     (build-system r-build-system)
     (arguments
@@ -552,14 +588,14 @@ microbiome of the reference condition.")
 (define-public r-etec16s
   (package
     (name "r-etec16s")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "etec16s" version
                               'experiment))
        (sha256
-        (base32 "01m24s9ij834byznvz4gxwqmj0azl54v2yvmjc7f177jqmai4hai"))))
+        (base32 "1ykcj1b78c533dy6l50yi3xh621ss9slbb7cbw58zf8li2nwwjy3"))))
     (properties `((upstream-name . "etec16s")))
     (build-system r-build-system)
     (arguments
@@ -578,14 +614,14 @@ subsequent treatment with ciprofloxacin.")
 (define-public r-estrogen
   (package
     (name "r-estrogen")
-    (version "1.56.0")
+    (version "1.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "estrogen" version
                               'experiment))
        (sha256
-        (base32 "16l5a4f8f0b5m05c1psgwd1974gb1s6wrql30crnyj7qb0v51v05"))))
+        (base32 "06r2nd0x85pdxvdzjqlrrwjdjgmsw2mwc62djxylg2l8ikf9lh30"))))
     (properties `((upstream-name . "estrogen")))
     (build-system r-build-system)
     (arguments
@@ -603,13 +639,13 @@ repeats per level).")
 (define-public r-esetvis
   (package
     (name "r-esetvis")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "esetVis" version))
        (sha256
-        (base32 "1crl2f2wxb98k1xjmbcbl143wpy6nv2blmyl78iix154pjcb7rkv"))))
+        (base32 "1id79l835wx3nvxzimgh7v64s5bdr88993l6xg5ic4zygmfg62q8"))))
     (properties `((upstream-name . "esetVis")))
     (build-system r-build-system)
     (arguments
@@ -634,13 +670,13 @@ interactive via the ggvis or rbokeh packages are available.")
 (define-public r-escher
   (package
     (name "r-escher")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "escheR" version))
        (sha256
-        (base32 "0blmmcn2vys0pkkyfhbwy1lpywbcb9m4yp2xz4njgq3iml5bb98x"))))
+        (base32 "0w131xk38rs7xgi4rm09f6gryv1756i81ml10w34vqk45dg9fx5k"))))
     (properties `((upstream-name . "escheR")))
     (build-system r-build-system)
     (arguments
@@ -669,13 +705,13 @@ integrated into genomics toolboxes and workflows.")
 (define-public r-esatac
   (package
     (name "r-esatac")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "esATAC" version))
        (sha256
-        (base32 "0gvw67vdw2bcjn7g4077397vsf3lgfdayfxym5miz3gd0bdd8gln"))))
+        (base32 "1fn8bry7wf7p36syrk0m47glq19h4jwsj0mcjml5vrb11swbp6g3"))))
     (properties `((upstream-name . "esATAC")))
     (build-system r-build-system)
     (arguments
@@ -733,13 +769,13 @@ any intermediate stages with @code{esATAC} functions easily and flexibly.")
 (define-public r-erssa
   (package
     (name "r-erssa")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ERSSA" version))
        (sha256
-        (base32 "1bj2djhvawy5kg059syg3sbwdjl092kf5vaxjh1zg204nn760fx0"))))
+        (base32 "197jj64agdv24lmlbdspa27nyjrf0nfq7rvgz6sprir0hvlbjyb4"))))
     (properties `((upstream-name . "ERSSA")))
     (build-system r-build-system)
     (arguments
@@ -767,13 +803,13 @@ acheived with their RNA-seq dataset.")
 (define-public r-erccdashboard
   (package
     (name "r-erccdashboard")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "erccdashboard" version))
        (sha256
-        (base32 "0af77ir60aqlg5589hkkcr5hapl9nymgxc1m3j2cb5hg23nsw3j4"))))
+        (base32 "0h98nlj5bwxw53l1m3cjzbxh3m1h6lxnn55mdw755h5hq0jgj9fq"))))
     (properties `((upstream-name . "erccdashboard")))
     (build-system r-build-system)
     (arguments
@@ -806,13 +842,13 @@ External RNA Controls Consortium (ERCC) spike-in ratio mixtures.")
 (define-public r-epivizrstandalone
   (package
     (name "r-epivizrstandalone")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epivizrStandalone" version))
        (sha256
-        (base32 "0l253z1fvxll449p5nvp0qy43xkzmk6mggyacw3fbkfndlakpv5a"))))
+        (base32 "04mjacqfvzg3shnbh01nca96s110r6466xi4p9c1vzdjprdfaxam"))))
     (properties `((upstream-name . "epivizrStandalone")))
     (build-system r-build-system)
     (arguments
@@ -839,13 +875,13 @@ packages.")
 (define-public r-epivizrserver
   (package
     (name "r-epivizrserver")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epivizrServer" version))
        (sha256
-        (base32 "19lvghdnq6p2lr280ml0wvmh6q1071x2l1pacf2p354va0idkxkm"))))
+        (base32 "103r2hr078prs1s3q7wyx3fs29pmii7mxfg6hgadn2lzvrznc30i"))))
     (properties `((upstream-name . "epivizrServer")))
     (build-system r-build-system)
     (arguments
@@ -863,13 +899,13 @@ apps.  Other epivizr package use this infrastructure.")
 (define-public r-epivizrdata
   (package
     (name "r-epivizrdata")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epivizrData" version))
        (sha256
-        (base32 "19nkckx5a54zl3r3ck7nfnqzsjw0r6dxindd0gfx8jm9b9y9yxs3"))))
+        (base32 "1g7dg66g4y819sp93i4bsmrvm2mr5bli94dqzfa5rqfr0hr1kp3d"))))
     (properties `((upstream-name . "epivizrData")))
     (build-system r-build-system)
     (arguments
@@ -895,13 +931,13 @@ apps.  Other epivizr package use this infrastructure.")
 (define-public r-epivizrchart
   (package
     (name "r-epivizrchart")
-    (version "1.32.0")
+    (version "1.34.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epivizrChart" version))
        (sha256
-        (base32 "17sc1wd55vjakb62341w8xgpvy2dz16zwy5ryyzdkvlwgp002f9x"))))
+        (base32 "1c7zdzg841qycwp9rykab40mv0ffhl8hyk0vbnw8nhzl92rfp2bv"))))
     (properties `((upstream-name . "epivizrChart")))
     (build-system r-build-system)
     (arguments
@@ -922,13 +958,13 @@ default viewer.")
 (define-public r-epivizr
   (package
     (name "r-epivizr")
-    (version "2.40.0")
+    (version "2.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epivizr" version))
        (sha256
-        (base32 "1yhn33p12497p2zzf6sar93gb9par2d4hsiq63kpjky6c8g3xw95"))))
+        (base32 "15ma8lhgjyz7b5v7qhwx2d8yxdp8vbkzjxfj7ba2jpfaff78a59k"))))
     (properties `((upstream-name . "epivizr")))
     (build-system r-build-system)
     (arguments
@@ -1034,13 +1070,13 @@ as @code{EpiTxDb} object.  Generated for Homo sapiens/hg38.")
 (define-public r-epitxdb
   (package
     (name "r-epitxdb")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiTxDb" version))
        (sha256
-        (base32 "185m3wvqji8qw3bc05cmpzki1df5i8kr7hw15dnpnpich9i0mi3r"))))
+        (base32 "0pfsx3n7iyn2cpc3wgdpliwk6h2zri214n0kwvg7vsz80j1n5xg9"))))
     (properties `((upstream-name . "EpiTxDb")))
     (build-system r-build-system)
     (arguments
@@ -1079,13 +1115,13 @@ with.")
 (define-public r-epistasisga
   (package
     (name "r-epistasisga")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epistasisGA" version))
        (sha256
-        (base32 "09svmywzzip89jdz6wc7c4sqlilyvkwr4sqc41dr6d615z88z755"))))
+        (base32 "1ly5rpg9hagrrik5mll5nykdh8mfwp24y88h86raljgm1f06zqch"))))
     (properties `((upstream-name . "epistasisGA")))
     (build-system r-build-system)
     (arguments
@@ -1116,13 +1152,13 @@ graphical visualization of the results.")
 (define-public r-epistack
   (package
     (name "r-epistack")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epistack" version))
        (sha256
-        (base32 "1vdqpdnif38nga5xpnj4d8d1jz0w4rlxnpzbl4d0xm7075zgckhh"))))
+        (base32 "017vf8mca3ql8w9fygahr4l6li7z4ihhwfn7r6nn1xhk5ljqfsx5"))))
     (properties `((upstream-name . "epistack")))
     (build-system r-build-system)
     (arguments
@@ -1149,16 +1185,116 @@ of interest, such as peaks or transcription start sites, provided as a `GRanges`
 such as peak height or gene expression value.")
     (license license:expat)))
 
+(define-public r-episeeker
+  (package
+    (name "r-episeeker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "epiSeeker" version))
+       (sha256
+        (base32 "0ng2v7sz4ajssc392wbc29q7xnzms5y6xi0gfdflrqx3cwvj1v2m"))))
+    (properties `((upstream-name . "epiSeeker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yulab-utils
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-scales
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsqlite
+                             r-rlang
+                             r-rcolorbrewer
+                             r-plotrix
+                             r-magrittr
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-enrichplot
+                             r-dplyr
+                             r-bsseq
+                             r-boot
+                             r-biostrings
+                             r-biocgenerics
+                             r-aplot
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YuLab-SMU/epiSeeker")
+    (synopsis
+     "epiSeeker: an R package for Annotation, Comparison and Visualization of multi-omics epigenetic data")
+    (description
+     "This package implements functions to analyze multi-omics epigenetic data.  Data
+of fragment type and base type are supported by @code{epiSeeker}.  It provides
+functions to retrieve the nearest genes around the peak, annotate genomic region
+of the peak, statistical methods to estimate the significance of overlap among
+peak data sets, and motif analysis.  It incorporates the GEO database for users
+to compare their own dataset with those deposited in the database.  The
+comparison can be used to infer cooperative regulation and thus can be used to
+generate hypotheses.  Several visualization functions are implemented to
+summarize the coverage of the peak experiment, average profile and heatmap of
+peaks binding to TSS regions, genomic annotation, distance to TSS, overlap of
+peaks or genes, and the single-base resolution epigenetic data by considering
+the strand, motif, and additional information.")
+    (license license:artistic2.0)))
+
+(define-public r-epiromics
+  (package
+    (name "r-epiromics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "epiRomics" version))
+       (sha256
+        (base32 "08rxyq7iq6hn7lnv5pwrb353kikm1jk46rf17c4gjrz57b54rfbl"))))
+    (properties `((upstream-name . "epiRomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-s4vectors
+                             r-rtracklayer
+                             r-iranges
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomeinfodb
+                             r-digest
+                             r-data-table
+                             r-chipseeker
+                             r-biocgenerics
+                             r-annotatr
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://huising-lab.github.io/epiRomics/")
+    (synopsis "Epigenomic Analysis Package Built for R (epiRomics)")
+    (description
+     "Integrates various levels of epigenomic information, including @code{ChIP-seq},
+histone modification, ATAC-seq, and RNA-seq data.  Regulatory network analysis
+uses combinatory approaches to infer regions of significance, such as enhancers.
+ Downstream analysis identifies co-occurrence of epigenomic data at regions of
+interest.  Visualization functions display multi-track genomic views with signal
+overlays.  Please contact <ammawla@@ucdavis.edu> for suggestions, feedback, or
+bug reporting.")
+    (license license:artistic2.0)))
+
 (define-public r-epiregulon-extra
   (package
     (name "r-epiregulon-extra")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epiregulon.extra" version))
        (sha256
-        (base32 "0id51n3fpcw3zbzzvyyj30ggw5ab04g8cbw5kh22411a66b1hf9m"))))
+        (base32 "08y7lzlpwhkvvrwgvyqfn84hxwlv8al37v7zag2whl5bcfyfkdgx"))))
     (properties `((upstream-name . "epiregulon.extra")))
     (build-system r-build-system)
     (arguments
@@ -1196,13 +1332,13 @@ between chromatin accessibility and gene expressions.")
 (define-public r-epiregulon
   (package
     (name "r-epiregulon")
-    (version "2.0.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epiregulon" version))
        (sha256
-        (base32 "06ikvamkg4ya1ga2w72y4i7gd8vshpl4mkssfs3cq758aq63rxls"))))
+        (base32 "1dlw5kqvb7hk6ljlm6c81l8afw5ypss1fixr56a2dbgxhk3izsal"))))
     (properties `((upstream-name . "epiregulon")))
     (build-system r-build-system)
     (arguments
@@ -1250,14 +1386,14 @@ between chromatin accessibility and gene expressions.")
 (define-public r-epipwr-data
   (package
     (name "r-epipwr-data")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpipwR.data" version
                               'experiment))
        (sha256
-        (base32 "14ha82qk26rks8idl0229zz4kmnps5raaf5rfai7a866zccsi79d"))))
+        (base32 "1bhcsxmcaq205sz0jllmjx4m804fa2b9l9vwgyin80q8gdk21g9k"))))
     (properties `((upstream-name . "EpipwR.data")))
     (build-system r-build-system)
     (arguments
@@ -1281,13 +1417,13 @@ conjunction with @code{EpipwR}.")
 (define-public r-epipwr
   (package
     (name "r-epipwr")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpipwR" version))
        (sha256
-        (base32 "11rwbvskmx75cwbmq7c5s10vjwhgj2ibwy8g0zqvwlmsa2dynd4w"))))
+        (base32 "0i62piwa3wmp1ad1h1lw91biphpdrxrv521kml4bky316672nl35"))))
     (properties `((upstream-name . "EpipwR")))
     (build-system r-build-system)
     (arguments
@@ -1314,13 +1450,13 @@ discovery rate or a family-wise type I error rate.")
 (define-public r-epinem
   (package
     (name "r-epinem")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epiNEM" version))
        (sha256
-        (base32 "0xp69ch3c6r5jn0q8qmwjfmzqxvrwipsk14slxgi6ykxiz6jaqwh"))))
+        (base32 "09lp917z866h4j9f9x3ma5hf87r939zsk85400njvn0lvan3pgg0"))))
     (properties `((upstream-name . "epiNEM")))
     (build-system r-build-system)
     (arguments
@@ -1352,14 +1488,14 @@ knock-out screens.")
 (define-public r-epimutacionsdata
   (package
     (name "r-epimutacionsdata")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epimutacionsData" version
                               'experiment))
        (sha256
-        (base32 "1jh6r2r6nlwkhny8wj6wzq15yl9xwl6i4sp33jzlg9mbl7v37y0i"))))
+        (base32 "194nvvn15z3j96g95gzrfb50y5fgmkfhxgpjjgxd4ly2cqy3f9vh"))))
     (properties `((upstream-name . "epimutacionsData")))
     (build-system r-build-system)
     (arguments
@@ -1379,13 +1515,13 @@ epimutations in 450k methylation arrays.")
 (define-public r-epimutacions
   (package
     (name "r-epimutacions")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epimutacions" version))
        (sha256
-        (base32 "1p23md7vyg4lj5x2vdjgq1cfbp0zaxdg6rlmwkwjlbg0ir9mvla2"))))
+        (base32 "1rffclrbnk6qkrj0bpy3508dqbwds5c4s3anjvpwbbsfy7nhz10s"))))
     (properties `((upstream-name . "epimutacions")))
     (build-system r-build-system)
     (arguments
@@ -1446,14 +1582,14 @@ and visualize the identified epimutations.")
 (define-public r-epimix-data
   (package
     (name "r-epimix-data")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiMix.data" version
                               'experiment))
        (sha256
-        (base32 "1zmadz02vxw5ipzb03xamn1ccnfdh1fn1ibii5vgyr4dj3gp6qx2"))))
+        (base32 "1l1q7wl93368wmjs8a4y88lcx9zk4yyjl6x07p9r2pqdlvnbs9v7"))))
     (properties `((upstream-name . "EpiMix.data")))
     (build-system r-build-system)
     (arguments
@@ -1482,13 +1618,13 @@ Sample_@code{EpiMixResults_Regular} - Sample_@code{EpiMixResults_Enhancer} -
 (define-public r-epimix
   (package
     (name "r-epimix")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiMix" version))
        (sha256
-        (base32 "1swwxf3hq3wcn05q1yxy5djby7jn35plylwnli27rrfqqrvi05h5"))))
+        (base32 "1w12rrz2fzyiv6wqc8d687djcmkdgnbi0lzrqw4g68n2pmn2ndnv"))))
     (properties `((upstream-name . "EpiMix")))
     (build-system r-build-system)
     (arguments
@@ -1552,13 +1688,13 @@ protein-coding genes, distal enhancers, and genes encoding @code{microRNAs} and
 (define-public r-epigrahmm
   (package
     (name "r-epigrahmm")
-    (version "1.18.0")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epigraHMM" version))
        (sha256
-        (base32 "0cicl35l5zcfrxyrg90bd6r1scrizxbfj6vnpizacj6iyf6aj3sg"))))
+        (base32 "0hnlmnlmx7jk98z3nsxv5syzwyi0jfnzxrmbnmn5am950zw4r16r"))))
     (properties `((upstream-name . "epigraHMM")))
     (build-system r-build-system)
     (arguments
@@ -1585,8 +1721,7 @@ protein-coding genes, distal enhancers, and genes encoding @code{microRNAs} and
                              r-ggplot2
                              r-genomicranges
                              r-data-table
-                             r-csaw
-                             r-bamsignals))
+                             r-csaw))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/epigraHMM")
     (synopsis "Epigenomic R-based analysis with hidden Markov models")
@@ -1603,13 +1738,13 @@ enrichment across conditions.")
 (define-public r-epigenomix
   (package
     (name "r-epigenomix")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epigenomix" version))
        (sha256
-        (base32 "1lxs7fjchx5cmj4jqzalc8kpfbj5p2cn84mdwglbf6krjs8dwyg8"))))
+        (base32 "1jysahrp7jjmxmmzbm20fvwzyv9ns36h0y1pqmm70y9b5z0chf17"))))
     (properties `((upstream-name . "epigenomix")))
     (build-system r-build-system)
     (arguments
@@ -1639,13 +1774,13 @@ detect genes with differences in both data types.")
 (define-public r-epidecoder
   (package
     (name "r-epidecoder")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epidecodeR" version))
        (sha256
-        (base32 "1h8za7ijzjmik225zx14yg607adlmvlal7psni9a7n9bpx8jp2pw"))))
+        (base32 "0g08zlrr1ay06rgk7xrmlmyh0ly5zjwijg06x0n1xiy75bi3w9k8"))))
     (properties `((upstream-name . "epidecodeR")))
     (build-system r-build-system)
     (arguments
@@ -1709,13 +1844,13 @@ described in Peters et al. (2024).")
 (define-public r-epicompare
   (package
     (name "r-epicompare")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EpiCompare" version))
        (sha256
-        (base32 "1ca9vzlwpyiqv3y3f9j6ch0wv2545wiza54dp2iyn8cfhph8s67q"))))
+        (base32 "1aid25df2srmd6h5laxr7rg7hzx1vp4fb05gw62la7xgh4yfak2k"))))
     (properties `((upstream-name . "EpiCompare")))
     (build-system r-build-system)
     (arguments
@@ -1756,13 +1891,13 @@ enrichment around TSS.")
 (define-public r-epialleler
   (package
     (name "r-epialleler")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epialleleR" version))
        (sha256
-        (base32 "1d6kkdr9lr01l0agi0gh6674r7rvs5k80kpp36i279v7mz2irs6z"))))
+        (base32 "1rlxlhsz9wngpjmmd563r8982a4dk0q4pyff4rsv89s90d8g346f"))))
     (properties `((upstream-name . "epialleleR")))
     (build-system r-build-system)
     (arguments
@@ -1776,7 +1911,8 @@ enrichment around TSS.")
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BBCG/epialleleR")
-    (synopsis "Fast, Epiallele-Aware Methylation Caller and Reporter")
+    (synopsis
+     "Fast, Accurate, Epiallele-Aware Methylation Caller and Reporter")
     (description
      "Epialleles are specific DNA methylation patterns that are mitotically and/or
 meiotically inherited.  This package calls and reports cytosine methylation as
@@ -1790,14 +1926,14 @@ methylation.")
 (define-public r-eopreddata
   (package
     (name "r-eopreddata")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "eoPredData" version
                               'experiment))
        (sha256
-        (base32 "11g5jqvqb7zkgygbi09yg0ql0prq968ww19dbk07rzn12iysah8a"))))
+        (base32 "1gqnim7nvi29j174i03g9qx952slk3py01cx88976xk1ljjh66qs"))))
     (properties `((upstream-name . "eoPredData")))
     (build-system r-build-system)
     (arguments
@@ -1888,13 +2024,13 @@ the model object, and 2.  a testing data set used to demonstrate the function.")
 (define-public r-enrichviewnet
   (package
     (name "r-enrichviewnet")
-    (version "1.8.1")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "enrichViewNet" version))
        (sha256
-        (base32 "1imdc3ls2d05sslyw3adxwswyycdq5zhx206mn64qiny8rydafzc"))))
+        (base32 "114icwjkrgh4g3q8pznx7hx2f4cm969z7061frbwhhyh6lgm4ffy"))))
     (properties `((upstream-name . "enrichViewNet")))
     (build-system r-build-system)
     (arguments
@@ -1926,13 +2062,13 @@ into a network with edges connecting overlapping genes.")
 (define-public r-enrichmentbrowser
   (package
     (name "r-enrichmentbrowser")
-    (version "2.40.0")
+    (version "2.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EnrichmentBrowser" version))
        (sha256
-        (base32 "0qvp3j5fxxy97v29qj8ywgq0s2x1s7n222rmhq2lyb8vxyc7i0rd"))))
+        (base32 "07j49sv47gqsvr2c31knq8n7wl5sb46kdcada8bxsl36g9wym82s"))))
     (properties `((upstream-name . "EnrichmentBrowser")))
     (build-system r-build-system)
     (arguments
@@ -1972,13 +2108,13 @@ facilitates the visualization and exploration of such sets and pathways.")
 (define-public r-enrichdo
   (package
     (name "r-enrichdo")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EnrichDO" version))
        (sha256
-        (base32 "1h36v3m4all9n05s9mwcidlz27rxawibdl1kanyf2s89a3h0jj9d"))))
+        (base32 "1wfmdvx9l4npl112myk7g87h1xlr7q8q7aimc8kyp7jx3p39h453"))))
     (properties `((upstream-name . "EnrichDO")))
     (build-system r-build-system)
     (arguments
@@ -2012,13 +2148,13 @@ associations between genes and diseases from biological big data.")
 (define-public r-enmcb
   (package
     (name "r-enmcb")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EnMCB" version))
        (sha256
-        (base32 "1fnz58vc1j7zacwj12f045sachfbdy6apkd8b036gnqrdkf49c88"))))
+        (base32 "0dykas83jls9a9i43synhz978qrf8rmja9n2rz06yqdjfklzyj3z"))))
     (properties `((upstream-name . "EnMCB")))
     (build-system r-build-system)
     (arguments
@@ -2049,13 +2185,13 @@ and disease progression.")
 (define-public r-enhancerhomologsearch
   (package
     (name "r-enhancerhomologsearch")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "enhancerHomologSearch" version))
        (sha256
-        (base32 "08v24val3dy84fhq1vxxf36w3ya1x0l1sl2yyby4zjhdav7i6nnf"))))
+        (base32 "12dg1ykwd5xip11n8v0103cmdp6hnjvbf0j7qkm80d77x14b0nl5"))))
     (properties `((upstream-name . "enhancerHomologSearch")))
     (build-system r-build-system)
     (arguments
@@ -2115,17 +2251,56 @@ give access to helper functions to query the ENCODE rest api, download ENCODE
 datasets and save the database in SQLite format.")
     (license license:artistic2.0)))
 
+(define-public r-emtscoredata
+  (package
+    (name "r-emtscoredata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "EMTscoreData" version
+                              'experiment))
+       (sha256
+        (base32 "0s3p42aprcwqy4n85m5d7jbvvks9zbgqgqg1834h05ixf7c74y7c"))))
+    (properties `((upstream-name . "EMTscoreData")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-seurat
+                             r-ggplot2
+                             r-experimenthub
+                             r-annotationhub))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/wenmm/EMTscoreData")
+    (synopsis
+     "Single-cell RNA-seq datasets of EMT responses from Cook et al. (2020)")
+    (description
+     "This package provides 12 single-cell RNA-seq datasets profiling
+epithelial–mesenchymal transition (EMT) in human cancer cell lines (MCF7,
+OVCA420, DU145, and A549) under TGF-beta stimulation, kinase inhibition, and
+time-course conditions, as reported by Cook DP and Vanderhyden BC (2020).  The
+datasets are distributed via @code{ExperimentHub} as @code{SingleCellExperiment}
+objects.")
+    (license license:gpl3)))
+
 (define-public r-emtdata
   (package
     (name "r-emtdata")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "emtdata" version
                               'experiment))
        (sha256
-        (base32 "1ivl8igsm7pjlapnl2zb04i81fasg4fsbhzch5m29d7xhrg8hw06"))))
+        (base32 "0wmai9agkhzr247s45npgd3vyi2kjhqbm8m48algzky84ag93prf"))))
     (properties `((upstream-name . "emtdata")))
     (build-system r-build-system)
     (arguments
@@ -2154,13 +2329,13 @@ at WEHI.")
 (define-public r-empiricalbrownsmethod
   (package
     (name "r-empiricalbrownsmethod")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EmpiricalBrownsMethod" version))
        (sha256
-        (base32 "0ff4sqgg3j8m74li69p7b9rkckwfgkr2igy5k3iz485qq2g8iryg"))))
+        (base32 "092ffy5nk4glgs68zi2g1n2wmh85y7c4bq75i7dax2k6vpwlgkw1"))))
     (properties `((upstream-name . "EmpiricalBrownsMethod")))
     (build-system r-build-system)
     (arguments
@@ -2181,13 +2356,13 @@ correlated data sets found in high-throughput biological experiments.")
 (define-public r-emdomics
   (package
     (name "r-emdomics")
-    (version "2.40.0")
+    (version "2.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EMDomics" version))
        (sha256
-        (base32 "16zfssk8f2id1vaklgvrk986jr0zzqzxacm439x29lnn2fkh4fkr"))))
+        (base32 "065s18vk0p54sawnfvl3vbbfnfnynq8nxg4nkwyl499dimdfr37n"))))
     (properties `((upstream-name . "EMDomics")))
     (build-system r-build-system)
     (arguments
@@ -2225,13 +2400,13 @@ tests.")
 (define-public r-elvis
   (package
     (name "r-elvis")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ELViS" version))
        (sha256
-        (base32 "0fj5x8iz4qp29rffh14cz71dn0kzw2rhvdxgr6l92ixa29l2bsnz"))))
+        (base32 "1x937w62hnlvigrvajlhvhz0l69z7247m0ymxc8k49lr3kl5i7pi"))))
     (properties `((upstream-name . "ELViS")))
     (build-system r-build-system)
     (arguments
@@ -2274,14 +2449,14 @@ multiple types of data with integrative clustering of samples.")
 (define-public r-elmer-data
   (package
     (name "r-elmer-data")
-    (version "2.34.0")
+    (version "2.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ELMER.data" version
                               'experiment))
        (sha256
-        (base32 "0gv9gpih4l2p36i017kw63ypxfrnacwjr8wa8n0byngjcvifc5i6"))))
+        (base32 "12dj1yirwa0g7v28343kvq7d3dr8gdvxdrqbgr5bdnbljmlpaik6"))))
     (properties `((upstream-name . "ELMER.data")))
     (build-system r-build-system)
     (arguments
@@ -2305,13 +2480,13 @@ Human_genes__GRCh37_p13__tss - Human_genes__GRCh38_p12__tss.")
 (define-public r-elmer
   (package
     (name "r-elmer")
-    (version "2.34.2")
+    (version "2.35.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ELMER" version))
        (sha256
-        (base32 "1937lf4jm0xmlrl8ps6lkxj4k6bc77din8jfs8l6m91pfg95k0yg"))))
+        (base32 "015s21mwyqkmz3vxcknrbav5916ykvb8rnfzjb01brzfqgha04j1"))))
     (properties `((upstream-name . "ELMER")))
     (build-system r-build-system)
     (arguments
@@ -2369,13 +2544,13 @@ network in primary tissue.")
 (define-public r-eisar
   (package
     (name "r-eisar")
-    (version "1.22.1")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "eisaR" version))
        (sha256
-        (base32 "08k26r123wic670jf3j35inwra7i38ffp74pfasbzn0z4216wp6l"))))
+        (base32 "0w7x2jxbab8k0wprklj8m1a41wl6n71wlafa76n3laarsrcizsn8"))))
     (properties `((upstream-name . "eisaR")))
     (build-system r-build-system)
     (arguments
@@ -2402,13 +2577,13 @@ expression.  For details see Gaidatzis et al., Nat Biotechnol 2015.  doi:
 (define-public r-eir
   (package
     (name "r-eir")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "eiR" version))
        (sha256
-        (base32 "1zqd25hnn2nfhc0vb2v5ygwppiv8gndd2282pd0xapv5blqj30jv"))))
+        (base32 "0s9zc2jzh0gzbahznldgxwd0wa5rxvvmaw6q76da1ybwhnpsvrc7"))))
     (properties `((upstream-name . "eiR")))
     (build-system r-build-system)
     (arguments
@@ -2435,14 +2610,14 @@ approach.")
 (define-public r-egseadata
   (package
     (name "r-egseadata")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EGSEAdata" version
                               'experiment))
        (sha256
-        (base32 "1pvkalvcdl2v3kjrzrsypjqf619rqn4yivccfj3dr5ksn5zlix9p"))))
+        (base32 "1k3rsisblriw3sv9k1276hkanb4n36g7w1zal628jx5mmdas05pi"))))
     (properties `((upstream-name . "EGSEAdata")))
     (build-system r-build-system)
     (arguments
@@ -2461,13 +2636,13 @@ Human and Mouse versions of the M@code{SidDB} (Subramanian, et al. (2005) PNAS,
 (define-public r-egsea
   (package
     (name "r-egsea")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EGSEA" version))
        (sha256
-        (base32 "1kmhld8fnd6cwxd0k7i9mzh8hq22s2n6n4gqg8nwpvgvw2i2h2v3"))))
+        (base32 "0zcz29m4j82dhqjfiarb86y0n0zs9y0ff0j7p13jkbc0d98kvz8n"))))
     (properties `((upstream-name . "EGSEA")))
     (build-system r-build-system)
     (arguments
@@ -2511,13 +2686,13 @@ significance scores for each gene set.")
 (define-public r-egad
   (package
     (name "r-egad")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EGAD" version))
        (sha256
-        (base32 "13xw27sjc4v0gc9ln7qfa8swwd3jqr0032nknfh1yr3zk8sz4sy8"))))
+        (base32 "0mkhhxvn9m95iimdknb20v7y2hz2cwjgfkd1a6r8my36xw81d684"))))
     (properties `((upstream-name . "EGAD")))
     (build-system r-build-system)
     (arguments
@@ -2545,13 +2720,13 @@ functional properties of networks based on guilt by association methods.")
 (define-public r-eds
   (package
     (name "r-eds")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "eds" version))
        (sha256
-        (base32 "0vz9260ahfzp61sw9wm4wpff27lcwmcbk82f2hm3l92qk29dkd0z"))))
+        (base32 "1ydh2jd5j2lp5f3c0myq3w9cqa90y2z0gibjmz4jr9rakfqrf9mm"))))
     (properties `((upstream-name . "eds")))
     (build-system r-build-system)
     (arguments
@@ -2572,13 +2747,13 @@ dependency graph for other Bioconductor packages.")
 (define-public r-edirquery
   (package
     (name "r-edirquery")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EDIRquery" version))
        (sha256
-        (base32 "1lj0h2hzfmil3zvsn1dr7k70pc4jlzvnn5k0f8pf6n9g1am2rrbn"))))
+        (base32 "01a7ny4w4h6vy1v05dr280wrcxpyhqdpg8viw1fh0xzkh68vjvxf"))))
     (properties `((upstream-name . "EDIRquery")))
     (build-system r-build-system)
     (arguments
@@ -2603,13 +2778,13 @@ downloaded database files as a parameter.")
 (define-public r-edge
   (package
     (name "r-edge")
-    (version "2.42.0")
+    (version "2.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "edge" version))
        (sha256
-        (base32 "06axdnsa9gi2zxv4a4kraq5nk0hi9p98fsx68nkscsni6v55gdrr"))))
+        (base32 "160sb5fr4x57jqkxdlqqfwaf03n9m2rhqgx742y0b1a2wqpmyn5d"))))
     (properties `((upstream-name . "edge")))
     (build-system r-build-system)
     (arguments
@@ -2633,13 +2808,13 @@ analysis.")
 (define-public r-ecolitk
   (package
     (name "r-ecolitk")
-    (version "1.82.0")
+    (version "1.84.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ecolitk" version))
        (sha256
-        (base32 "1zwbrsa3i2arza278475kafd9197lwh3m8yn7rc4w8pgl6qdbjj5"))))
+        (base32 "0qhssqpxdk36paliwnbsn0gbgwqpshc5b8i0lyx1pfw6ip61mjiv"))))
     (properties `((upstream-name . "ecolitk")))
     (build-system r-build-system)
     (arguments
@@ -2706,14 +2881,14 @@ The file name was E\\_coli\\_probe\\_tab.")
 (define-public r-ecolileucine
   (package
     (name "r-ecolileucine")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ecoliLeucine" version
                               'experiment))
        (sha256
-        (base32 "1qi6ia5ncx9qyiwvbs1lgj8p5wwjbfhvzfdnvh5rl954wzm38b18"))))
+        (base32 "01k14a07b9y01q94sb6aqqsybmp0d2zk641k1sh88wqla09r445s"))))
     (properties `((upstream-name . "ecoliLeucine")))
     (build-system r-build-system)
     (arguments
@@ -2902,13 +3077,13 @@ using data from public repositories.")
 (define-public r-ebsea
   (package
     (name "r-ebsea")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EBSEA" version))
        (sha256
-        (base32 "1qcflilq5abcymhdpzypdqs5y6r0wa4wbv4g17m4z22f0vag6qy9"))))
+        (base32 "0w77zkwmn6x3ridihz1ldnv7drmaawr1n3iyqfw5y9vgbz9hzgy3"))))
     (properties `((upstream-name . "EBSEA")))
     (build-system r-build-system)
     (arguments
@@ -2926,13 +3101,13 @@ obtained from RNA-seq sequencing data.")
 (define-public r-ebcoexpress
   (package
     (name "r-ebcoexpress")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EBcoexpress" version))
        (sha256
-        (base32 "08smy75js91pfwl8vb6s97g8j7i7g5j8ycidfxcgdnf1i5nylkmh"))))
+        (base32 "1c6zw3kh8pdf3gb6d4bsgyhhd97fyzlgwj9gyi4vi3l2ql91zyj8"))))
     (properties `((upstream-name . "EBcoexpress")))
     (build-system r-build-system)
     (arguments
@@ -2949,14 +3124,14 @@ Gene-Pair Level.")
 (define-public r-eatonetalchipseq
   (package
     (name "r-eatonetalchipseq")
-    (version "0.48.0")
+    (version "0.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EatonEtAlChIPseq" version
                               'experiment))
        (sha256
-        (base32 "0f6mmjzbyp46dbxmmy11z5z4s0irl4dwkqvj4rky9chb3nfrccrs"))))
+        (base32 "1lmv3lksp9xf9n2n86rhvz44zf6xjd5nn2nrmipv26kg1i3vv3zz"))))
     (properties `((upstream-name . "EatonEtAlChIPseq")))
     (build-system r-build-system)
     (arguments
@@ -2974,13 +3149,13 @@ replication origins\" (PMID 20351051).")
 (define-public r-easyrnaseq
   (package
     (name "r-easyrnaseq")
-    (version "2.46.0")
+    (version "2.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "easyRNASeq" version))
        (sha256
-        (base32 "1vbfwgnpbqwcmqvfg4gawk8jazq709gw84wydxywwg9hl3pnxbhf"))))
+        (base32 "06kd5w50qfd73aiypkyfdrrchm1czvkwyg2gsv96v29im7ssw1ci"))))
     (properties `((upstream-name . "easyRNASeq")))
     (build-system r-build-system)
     (arguments
@@ -3017,13 +3192,13 @@ package.")
 (define-public r-easyreporting
   (package
     (name "r-easyreporting")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "easyreporting" version))
        (sha256
-        (base32 "0a0fl73njp9izd64fn825jjcwic6fb69g03d2dl8c91mkw7m9raf"))))
+        (base32 "12bsgd29pnw8vc0nr7mpw1fp9amb47sa3xsxqd1i8b6lrjb6nlsk"))))
     (properties `((upstream-name . "easyreporting")))
     (build-system r-build-system)
     (arguments
@@ -3043,13 +3218,13 @@ implemented in functions as \"recursive\" style programming.")
 (define-public r-easylift
   (package
     (name "r-easylift")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "easylift" version))
        (sha256
-        (base32 "04fqsf7q6fj1mpz90dj1xd2ndkdvlps72l8yqinhkjpb8wig4kx0"))))
+        (base32 "10grgphkfb6l8gbh06vkx3gdkqgh6sni4bq7jnk2ijwhl42cz0f9"))))
     (properties `((upstream-name . "easylift")))
     (build-system r-build-system)
     (arguments
@@ -3075,13 +3250,13 @@ liftover process.")
 (define-public r-easycelltype
   (package
     (name "r-easycelltype")
-    (version "1.12.0")
+    (version "1.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "EasyCellType" version))
        (sha256
-        (base32 "0c4x827v95dz9h3b632f3si3nz5fjqawzzhfkh9ralfhqfzpm9kq"))))
+        (base32 "0czpdjpwqx11y2rgffx42pb60ss2ykmwrmbv0n87aksis4jr97ac"))))
     (properties `((upstream-name . "EasyCellType")))
     (build-system r-build-system)
     (arguments
@@ -3114,14 +3289,14 @@ dot plot summarizing the top 5 significant annotations for each cluster.")
 (define-public r-easierdata
   (package
     (name "r-easierdata")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "easierData" version
                               'experiment))
        (sha256
-        (base32 "0rbymp4dk0vj779s3zbmxz7sgxd60424ngkbgvsh957w0fg034by"))))
+        (base32 "09r2lh2kjqgl7a98vw0z80yswqhgalsy16zj2y4jg7p0gp066hyy"))))
     (properties `((upstream-name . "easierData")))
     (build-system r-build-system)
     (arguments
@@ -3152,13 +3327,13 @@ package under the CC-BY license.")
 (define-public r-easier
   (package
     (name "r-easier")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "easier" version))
        (sha256
-        (base32 "0z1znn8c5xkiqvfglqdmip3jh2h0idw8khrnr2hjid1fjxw2y8vf"))))
+        (base32 "174z32c7481xb4mmk2rjgl7d1bjajsxr9rwyag6yacil72v5v23y"))))
     (properties `((upstream-name . "easier")))
     (build-system r-build-system)
     (arguments

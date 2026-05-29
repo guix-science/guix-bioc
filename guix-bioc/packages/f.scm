@@ -9,6 +9,9 @@
   #:use-module (guix-cran packages f)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages n)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (guix-cran packages e)
+  #:use-module (gnu packages compression)
   #:use-module (guix-cran packages r)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages xml)
@@ -47,13 +50,13 @@
 (define-public r-fusesom
   (package
     (name "r-fusesom")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FuseSOM" version))
        (sha256
-        (base32 "1wavm6njapw7p5jvalghg981wgbgfrqfqhx6aqyvv2r5q14rkkwp"))))
+        (base32 "1wjmsxr38k5a7xp1dqsr2sayh76ry2f3zkb2dch4mjv62xl1hxsr"))))
     (properties `((upstream-name . "FuseSOM")))
     (build-system r-build-system)
     (arguments
@@ -93,14 +96,14 @@ imaging cytometry assays.")
 (define-public r-furrowseg
   (package
     (name "r-furrowseg")
-    (version "1.38.0")
+    (version "1.39.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "furrowSeg" version
                               'experiment))
        (sha256
-        (base32 "024n2z4k4kjcaxbdymkfk48nnmf2y3fg2k77s1p5a88r4xzxxxxg"))))
+        (base32 "09m229l4qsfzjf754240qbld9gz2iizm1n5a321l7h0vdyhmhf3j"))))
     (properties `((upstream-name . "furrowSeg")))
     (build-system r-build-system)
     (arguments
@@ -119,13 +122,13 @@ furrowing.")
 (define-public r-funtoonorm
   (package
     (name "r-funtoonorm")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "funtooNorm" version))
        (sha256
-        (base32 "1ka05p1cmv2cmlawir25c12hwb51bnnd8s327qqb3xyigkb32nb8"))))
+        (base32 "0p5nv40lnjziqr7pfqgqwim7nnz8ddiaq176flkrh3lmrl8svba4"))))
     (properties `((upstream-name . "funtooNorm")))
     (build-system r-build-system)
     (arguments
@@ -150,13 +153,13 @@ cell type.")
 (define-public r-funomics
   (package
     (name "r-funomics")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "funOmics" version))
        (sha256
-        (base32 "1sqalmryyvgd68prhjvp9xmnx5v8sjirxpr86vv070ag75j4hs91"))))
+        (base32 "1zkk1llacn98szmwgfc7zxhzvginskvnnbchy82dhin7k3cz9w2c"))))
     (properties `((upstream-name . "funOmics")))
     (build-system r-build-system)
     (arguments
@@ -186,13 +189,13 @@ molecules!")
 (define-public r-frmatools
   (package
     (name "r-frmatools")
-    (version "1.62.0")
+    (version "1.64.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "frmaTools" version))
        (sha256
-        (base32 "0w3igjhqd2whmcvvwdjsgws1q4gb74d9gn7sgkb0zjc41rrh416c"))))
+        (base32 "1f0agbnc8y60pifzfrrj34px3hn8zssmk76wr3m8gf6pqjx2sqcc"))))
     (properties `((upstream-name . "frmaTools")))
     (build-system r-build-system)
     (arguments
@@ -208,14 +211,14 @@ molecules!")
 (define-public r-frmaexampledata
   (package
     (name "r-frmaexampledata")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "frmaExampleData" version
                               'experiment))
        (sha256
-        (base32 "14sp10wjkrb2pa0q0jmv1bzsa1qnc303gsriiqa8j0vv7jwmhza9"))))
+        (base32 "0xrzwirifl1kdjfbvw3zhj2yqln66w0j7cr3lx2i6kg6v8fb73px"))))
     (properties `((upstream-name . "frmaExampleData")))
     (build-system r-build-system)
     (arguments
@@ -230,13 +233,13 @@ molecules!")
 (define-public r-frma
   (package
     (name "r-frma")
-    (version "1.62.0")
+    (version "1.64.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "frma" version))
        (sha256
-        (base32 "0kiwvcivw27m394ls3qx7cl7lazbpa4kg4lg3hlg12jqzpb3z6dx"))))
+        (base32 "0jz8sdhjycz5hv1v37sr1qhlgc4j1jjjkbxm1hz9djchk1669sh7"))))
     (properties `((upstream-name . "frma")))
     (build-system r-build-system)
     (arguments
@@ -259,13 +262,13 @@ molecules!")
 (define-public r-frgepistasis
   (package
     (name "r-frgepistasis")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FRGEpistasis" version))
        (sha256
-        (base32 "18zjy8v0bjh0i9chmy390g70v33ni6flj1vfdanh3vrfbfk2m341"))))
+        (base32 "1p5j7adiynddk5qrr9hz8v38yib96vqp1mrl43vqr9f4zqhwfvzp"))))
     (properties `((upstream-name . "FRGEpistasis")))
     (build-system r-build-system)
     (arguments
@@ -283,13 +286,13 @@ Regression Model.")
 (define-public r-frenchfish
   (package
     (name "r-frenchfish")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "frenchFISH" version))
        (sha256
-        (base32 "1fxd9p742j9svl0j86357iiy0h9slka69dgll58vmlrs4xzyq3p0"))))
+        (base32 "1xjaf6p8c1cmm0vc0skqrszzhh0ld70q4gp5sdqqx4adw9w6ybbl"))))
     (properties `((upstream-name . "frenchFISH")))
     (build-system r-build-system)
     (arguments
@@ -310,13 +313,13 @@ Process model for automated spot counting.")
 (define-public r-fraser
   (package
     (name "r-fraser")
-    (version "2.6.1")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FRASER" version))
        (sha256
-        (base32 "1z98r7rrik8qy5g0fsiib0krr46kgqxlakczn2jq4ps93iy7v1g6"))))
+        (base32 "04slfc2khdabvcvivlcgl36wxcsvzf48mmfngpkg4rd94djaqhpx"))))
     (properties `((upstream-name . "FRASER")))
     (build-system r-build-system)
     (arguments
@@ -378,17 +381,152 @@ diagnostics in the field of rare diseases where RNA-seq is performed to identify
 aberrant splicing defects.")
     (license (license:fsdg-compatible "file://LICENSE"))))
 
+(define-public r-fraq
+  (package
+    (name "r-fraq")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fraq" version))
+       (sha256
+        (base32 "1m3946bjqh2f0fiv5a69nbiz9z14ninyf0rhrng0l8pbrbxalbwk"))))
+    (properties `((upstream-name . "fraq")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list zlib))
+    (propagated-inputs (list r-stringfish
+                             r-shortread
+                             r-rcppparallel
+                             r-rcpp
+                             r-edlibr
+                             r-biostrings))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/traversc/fraq")
+    (synopsis
+     "High-Throughput and Extensible Toolkit for Processing FASTQ Data")
+    (description
+     "High-throughput extensible toolkit for processing FASTQ data.  The goal of this
+package is to empower users to quickly build out small programmatic kernels to
+define any FASTQ processing task they may need.  Builds on Intel TBB’s flow
+graph to orchestrate concurrent I/O and data processing; throughput can be as
+fast as compression and disk speed allows.  The package also ships with a suite
+of predefined kernels for common FASTQ tasks.")
+    (license license:gpl3)))
+
+(define-public r-fragmentomics
+  (package
+    (name "r-fragmentomics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fRagmentomics" version))
+       (sha256
+        (base32 "1am9jz9858iaf24id16wzpanr8xc8v27c7xqy7yhci68aid8z5kb"))))
+    (properties `((upstream-name . "fRagmentomics")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-variantannotation
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-s4vectors
+                             r-rsamtools
+                             r-rlang
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-iranges
+                             r-ggseqlogo
+                             r-ggplot2
+                             r-ggh4x
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-data-table
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ElsaB-Lab/fRagmentomics")
+    (synopsis "Extract Fragmentomics Features and Mutational Status")
+    (description
+     "This package provides a user-friendly R package that enables the
+characterization of each @code{cfDNA} fragment overlapping one or multiple
+mutations of interest, starting from a sequencing file containing aligned reads
+(BAM file). @code{fRagmentomics} supports multiple mutation input formats (e.g.,
+VCF, TSV, or string \"chr:pos:ref:alt\" representation), accommodates one-based
+and zero-based genomic conventions, handles mutation representation ambiguities,
+and accepts any reference file and species in FASTA format.  For each
+@code{cfDNA} fragment, @code{fRagmentomics} outputs its size, its 3 and 5
+sequences, and its mutational status.  Optionally, when users set
+apply_bcftools_norm = TRUE, @code{fRagmentomics} invokes the external
+command-line tool bcftools norm to left-align and normalize variants.  If
+bcftools is not found on the system PATH while this option is enabled, the
+function errors.  The package does not install external software; see the
+INSTALL file for per-OS instructions.")
+    (license license:gpl3+)))
+
+(define-public r-foursynergy
+  (package
+    (name "r-foursynergy")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fourSynergy" version))
+       (sha256
+        (base32 "0pdl10gh02pq5xzh6s2vrc0ii4hna8awhdxa6v6b129arbk5s1wi"))))
+    (properties `((upstream-name . "fourSynergy")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-yaml
+                             r-txdb-mmusculus-ucsc-mm10-knowngene
+                             r-txdb-hsapiens-ucsc-hg19-knowngene
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-reshape2
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-magrittr
+                             r-karyoploter
+                             r-jsonlite
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-dplyr
+                             r-deseq2
+                             r-bamsignals))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sophiewind/fourSynergy")
+    (synopsis "Ensemble algorithm for 4C-seq data")
+    (description
+     "@code{fourSynergy} is an ensemble algorithm leveraging synergies among the
+existing 4C-seq algorithms r3C-seq, @code{peakC}, r.4cker and @code{fourSig}.
+It uses a weighted voting approach to perform improved interaction calling.
+@code{fourSynergy} supports also differential interaction calling.")
+    (license license:lgpl3)))
+
 (define-public r-fourdndata
   (package
     (name "r-fourdndata")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fourDNData" version
                               'experiment))
        (sha256
-        (base32 "0zmbmycxdblwah9d8wh6nwdhpikhz0d9pcaqhjlhczffykc9idsd"))))
+        (base32 "17ndjas86yyscyb3rfv0jkwnynffsjfb0vybvbvn88v9lcsx7n4w"))))
     (properties `((upstream-name . "fourDNData")))
     (build-system r-build-system)
     (arguments
@@ -409,13 +547,13 @@ multi-resolution `.mcool` format.")
 (define-public r-fobitools
   (package
     (name "r-fobitools")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fobitools" version))
        (sha256
-        (base32 "0bczh98lppj4kr0rbd1jsxc3syg3113f38h89y258b21m1ivp7my"))))
+        (base32 "0alvddpkkiln8nvaga762ak72n0hdw8mib6j18w0ynhr9c89g68j"))))
     (properties `((upstream-name . "fobitools")))
     (build-system r-build-system)
     (arguments
@@ -450,13 +588,13 @@ nutritional data.")
 (define-public r-fmrs
   (package
     (name "r-fmrs")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fmrs" version))
        (sha256
-        (base32 "1ai903fi74kl10d6bamaaf75zclyvff589chad2z9xymf4ixybsc"))))
+        (base32 "1zb9xvscmyriz45azgjzsd9wkdcgx3nqwi1maq0vnnkp1dncvfc9"))))
     (properties `((upstream-name . "fmrs")))
     (build-system r-build-system)
     (arguments
@@ -507,13 +645,13 @@ provides Ridge Regression and Elastic Net.")
 (define-public r-flowvs
   (package
     (name "r-flowvs")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowVS" version))
        (sha256
-        (base32 "0j7q9i3qy15xwncj7mhzmvivl45h7pykpk8ps3zlc5hmwv3ri9qm"))))
+        (base32 "1vjlbk375lr4kmazd4p3jl1dv97cbsnqm7jiz5jw6rim5b5kvz7i"))))
     (properties `((upstream-name . "flowVS")))
     (build-system r-build-system)
     (arguments
@@ -532,13 +670,13 @@ microarrays data as well.")
 (define-public r-flowtrans
   (package
     (name "r-flowtrans")
-    (version "1.62.0")
+    (version "1.64.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowTrans" version))
        (sha256
-        (base32 "16h776hi33axcqr9v7lcvzmrzh273gyg8gc1ybyi8j12ry5wlbrs"))))
+        (base32 "0z98q2gp2znh9ch0mbp1k9y710kx7fg7bzf4cfmvhv6xd0l6b4v2"))))
     (properties `((upstream-name . "flowTrans")))
     (build-system r-build-system)
     (arguments
@@ -555,13 +693,13 @@ transformations.")
 (define-public r-flowtime
   (package
     (name "r-flowtime")
-    (version "1.34.0")
+    (version "1.36.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowTime" version))
        (sha256
-        (base32 "15djxvxcffncxywwviwwgw2g09j1w4y5a293b6cs3paqlp6w05ba"))))
+        (base32 "03rlbxz9r7d097ncaysa00n46wlql15ri1rsprw56w56n0jhacww"))))
     (properties `((upstream-name . "flowTime")))
     (build-system r-build-system)
     (arguments
@@ -600,13 +738,13 @@ thousands of individual cells in each sample.")
 (define-public r-flowspecs
   (package
     (name "r-flowspecs")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowSpecs" version))
        (sha256
-        (base32 "01an7rpmhwlvxh5y4silc4508yqp404g4fxsm2d9gjp3xpgwj2qn"))))
+        (base32 "0q4v51gmpl3nf4r5zglvqq7ww4gavghxv4d7r9j76vgs187zba3i"))))
     (properties `((upstream-name . "flowSpecs")))
     (build-system r-build-system)
     (arguments
@@ -636,14 +774,14 @@ give the user a nice pair of spectacles through which to view their data.")
 (define-public r-flowsorted-dlpfc-450k
   (package
     (name "r-flowsorted-dlpfc-450k")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FlowSorted.DLPFC.450k" version
                               'experiment))
        (sha256
-        (base32 "13g4cfi10ca0yhsbj89a5mhi6ayzlss8i7pzap9mh8fksxk4yq7p"))))
+        (base32 "1k3q0zabyh09qgg9z9ff57lkd013g880hf31ank6i5m6ajgxpqqa"))))
     (properties `((upstream-name . "FlowSorted.DLPFC.450k")))
     (build-system r-build-system)
     (arguments
@@ -660,14 +798,14 @@ give the user a nice pair of spectacles through which to view their data.")
 (define-public r-flowsorted-cordbloodnorway-450k
   (package
     (name "r-flowsorted-cordbloodnorway-450k")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FlowSorted.CordBloodNorway.450k" version
                               'experiment))
        (sha256
-        (base32 "0zfz15h1yar07r75h3la24mb3lm4l89hs1r1x8sf2gkbji1absa7"))))
+        (base32 "0b3b9y314m5z8cvj6wi0i9737kv9d19sn2wlf9471f3s1yja2m78"))))
     (properties `((upstream-name . "FlowSorted.CordBloodNorway.450k")))
     (build-system r-build-system)
     (arguments
@@ -685,14 +823,14 @@ type composition estimation.")
 (define-public r-flowsorted-cordbloodcombined-450k
   (package
     (name "r-flowsorted-cordbloodcombined-450k")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FlowSorted.CordBloodCombined.450k" version
                               'experiment))
        (sha256
-        (base32 "0w3aqnldq7xwv15fhm4dn4xysbw37ipxr6nmmdf0pvjg19dkfl7n"))))
+        (base32 "1ws3vafm2s9hciggaks28mm5nd14nhwzczq4qxs91grx3cdi4rvz"))))
     (properties `((upstream-name . "FlowSorted.CordBloodCombined.450k")))
     (build-system r-build-system)
     (arguments
@@ -722,14 +860,14 @@ al., and Lin et al.")
 (define-public r-flowsorted-cordblood-450k
   (package
     (name "r-flowsorted-cordblood-450k")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FlowSorted.CordBlood.450k" version
                               'experiment))
        (sha256
-        (base32 "0wqdyxd1kqs3z3yg0hbg8hq8dq76z32ldwf6468rmx8vd0qy7jzp"))))
+        (base32 "0k7p8giybvdrjj48f41visd0qj7v8ck430ynd1x2kw0ra4a326wy"))))
     (properties `((upstream-name . "FlowSorted.CordBlood.450k")))
     (build-system r-build-system)
     (arguments
@@ -745,13 +883,13 @@ al., and Lin et al.")
 (define-public r-flowplots
   (package
     (name "r-flowplots")
-    (version "1.58.0")
+    (version "1.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowPlots" version))
        (sha256
-        (base32 "1hihd7jsfnhil3zisb1yhnc5p8qwxw681d2vj1zpg28lklvx702p"))))
+        (base32 "0k02mrlbp1zxr3b45phx6vazjhl3icb51ig2bcq22jqp7gr9dni6"))))
     (properties `((upstream-name . "flowPlots")))
     (build-system r-build-system)
     (arguments
@@ -770,14 +908,14 @@ data.")
 (define-public r-flowploidydata
   (package
     (name "r-flowploidydata")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowPloidyData" version
                               'experiment))
        (sha256
-        (base32 "1sk6shfsb7pd61pa63ynrp2cj5ka66z0vmdy22f22clglg2jq8xl"))))
+        (base32 "1zf4p5njdabpshqfihhswams710xs2pw3l7fmghcpk5nn1shs4w7"))))
     (properties `((upstream-name . "flowPloidyData")))
     (build-system r-build-system)
     (arguments
@@ -794,13 +932,13 @@ vignettes for the @code{flowPloidy} package.")
 (define-public r-flowploidy
   (package
     (name "r-flowploidy")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowPloidy" version))
        (sha256
-        (base32 "0z8rrrw8c9pxp14dcdlb2g515krimv9hbmaivifrpswxhpwq6qln"))))
+        (base32 "0bzr3bbh374q0r45lxva5nl49zsn625fgmvqfrizdmc1p2a21wbr"))))
     (properties `((upstream-name . "flowPloidy")))
     (build-system r-build-system)
     (arguments
@@ -826,13 +964,13 @@ standards.")
 (define-public r-flowpeaks
   (package
     (name "r-flowpeaks")
-    (version "1.56.0")
+    (version "1.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowPeaks" version))
        (sha256
-        (base32 "1znvp3in8l6rcmmfbir2b94wgbmdf9bwisp21c5cfkxq5yckwdvx"))))
+        (base32 "1myi24a9dkxxhvapzr726aszhky279q8v4nmayp2z4h5b38alhza"))))
     (properties `((upstream-name . "flowPeaks")))
     (build-system r-build-system)
     (arguments
@@ -850,13 +988,13 @@ generated by K-means.")
 (define-public r-flowmerge
   (package
     (name "r-flowmerge")
-    (version "2.58.0")
+    (version "2.60.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowMerge" version))
        (sha256
-        (base32 "0j0m6r06gpxbjlr1x3cjx1iyp78b61kmdxs0d9fby7mjjj67k8jc"))))
+        (base32 "07xy4y7mksv48lv024d9nrz1ksfynkcyyf2hkvjjn7p1g7mxrssr"))))
     (properties `((upstream-name . "flowMerge")))
     (build-system r-build-system)
     (arguments
@@ -882,13 +1020,13 @@ copy of @code{flowClust} 2.0 installed.")
 (define-public r-flowmatch
   (package
     (name "r-flowmatch")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowMatch" version))
        (sha256
-        (base32 "0p8v6bxbc3mnwjf8lf6d5zqlddlcacwsayla2wbb0535dfvkfmjp"))))
+        (base32 "0ni1zxcvan7vnq9gvqk71l4f7khm5lkb5vaxwg3rvf2j4c8acc43"))))
     (properties `((upstream-name . "flowMatch")))
     (build-system r-build-system)
     (arguments
@@ -905,13 +1043,13 @@ collection of FC samples.")
 (define-public r-flowgraph
   (package
     (name "r-flowgraph")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowGraph" version))
        (sha256
-        (base32 "0dy2jygbm3dzcsh33abah8cnz9srxw2234qfyl0jrzpwnfs0c8vd"))))
+        (base32 "0v4ki5rh2xrvxrkpx8xz3k3lqw33hqqkhgzj5bx5cixxlpf4p3hs"))))
     (properties `((upstream-name . "flowGraph")))
     (build-system r-build-system)
     (arguments
@@ -947,13 +1085,13 @@ and plots @code{SpecEnr} abundance scores given cell population cell counts.")
 (define-public r-flowgate
   (package
     (name "r-flowgate")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowGate" version))
        (sha256
-        (base32 "0ddavbhgw62w2alj972n0q4l61ilz1iqnrc1mwdwaps0208b5l5d"))))
+        (base32 "0xd511igjmj1bb4g8kw4557cy1kj377gklwkm6dlhfkigi7m398y"))))
     (properties `((upstream-name . "flowGate")))
     (build-system r-build-system)
     (arguments
@@ -985,13 +1123,13 @@ necessarily having a lot of R experience.")
 (define-public r-flowfp
   (package
     (name "r-flowfp")
-    (version "1.68.0")
+    (version "1.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowFP" version))
        (sha256
-        (base32 "1ngn0b3k28fksl6xx65634i138j87mn0s6myiw40blc2c485i9xz"))))
+        (base32 "1fmlv11iy9146jm70h0wdbwqk09ssv40m13nwbm31i65y606v4j5"))))
     (properties `((upstream-name . "flowFP")))
     (build-system r-build-system)
     (arguments
@@ -1008,13 +1146,13 @@ application of machine learning and datamining tools for flow cytometry.")
 (define-public r-flowdensity
   (package
     (name "r-flowdensity")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowDensity" version))
        (sha256
-        (base32 "0rxjwx9pynpz0ylf8znd4h61qazl91p1s2435dsl654ik7wpqw8c"))))
+        (base32 "11a5dsfl582m0nbv7cm15nrjydrznaj9s2rviv708l6760za2qrg"))))
     (properties `((upstream-name . "flowDensity")))
     (build-system r-build-system)
     (arguments
@@ -1033,13 +1171,13 @@ manual gating strategy based on the density of the data.")
 (define-public r-flowcybar
   (package
     (name "r-flowcybar")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowCyBar" version))
        (sha256
-        (base32 "1ckzmjnjhjdw32mli8pyqgkmq6kk64vdm99qy165q32p39gfp3wl"))))
+        (base32 "123mbi5lir6015s0abz94031qbg71ax73p147wjaz2yqylbk0wcx"))))
     (properties `((upstream-name . "flowCyBar")))
     (build-system r-build-system)
     (arguments
@@ -1056,13 +1194,13 @@ information to follow population/community dynamics.")
 (define-public r-flowcut
   (package
     (name "r-flowcut")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowCut" version))
        (sha256
-        (base32 "1zism6y5gcqklncblf9ksbsnv2ic06djr4aq9h01ixjmmh1f4w72"))))
+        (base32 "0lygs134xnlwlx6b5jz0w6xr8jl558n2bnvkjwgp84mzc9r8k71s"))))
     (properties `((upstream-name . "flowCut")))
     (build-system r-build-system)
     (arguments
@@ -1083,13 +1221,13 @@ statistical differences from other segments.")
 (define-public r-flowclean
   (package
     (name "r-flowclean")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowClean" version))
        (sha256
-        (base32 "1njbcr86x13pbp43aiacjpqxbfkiqdzdzddqrd8d9fkmsknfbbfh"))))
+        (base32 "147vy90xlrzczrwclpw5xjrsk9ss7859dk7rrd7728b27fj8637q"))))
     (properties `((upstream-name . "flowClean")))
     (build-system r-build-system)
     (arguments
@@ -1106,13 +1244,13 @@ compositional data analysis.")
 (define-public r-flowchic
   (package
     (name "r-flowchic")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowCHIC" version))
        (sha256
-        (base32 "0qxy6s6l6m0whw33sf105bh683f56fmhdnf6wnq7ig00llm8c902"))))
+        (base32 "089z4hqy7q951wc3yb5idzygjq7viicbmiv5imqq4y41mynx33ci"))))
     (properties `((upstream-name . "flowCHIC")))
     (build-system r-build-system)
     (arguments
@@ -1129,13 +1267,13 @@ microbial communities based on histogram images.")
 (define-public r-flowcatchr
   (package
     (name "r-flowcatchr")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowcatchR" version))
        (sha256
-        (base32 "17nww1smm4vvfqfgjsdabcvix4hd836601y5cq0wial6y3ixhhmy"))))
+        (base32 "032xrxm6k4vkhrr4vikfm6q18agx09r0gqxh9d5ivmlm1m9gmnrw"))))
     (properties `((upstream-name . "flowcatchR")))
     (build-system r-build-system)
     (arguments
@@ -1170,13 +1308,13 @@ environment.")
 (define-public r-flowbin
   (package
     (name "r-flowbin")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowBin" version))
        (sha256
-        (base32 "1r9hddrwq9s5i83j2scppg7cqbn9fr0ymyrh7wwbs22h83qwbcsj"))))
+        (base32 "1qq68gaq9vcb2lgipwjxlajkzmsc60hmsxxhk5vz4adj0mlycy18"))))
     (properties `((upstream-name . "flowBin")))
     (build-system r-build-system)
     (arguments
@@ -1200,13 +1338,13 @@ each bin in terms of the tube-specific markers.")
 (define-public r-flowbeads
   (package
     (name "r-flowbeads")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowBeads" version))
        (sha256
-        (base32 "1gnxbz9lpiigaa5yk83k8vz15jd2ci86ya973m92ijdij3pkrc7h"))))
+        (base32 "1c6rzl56vppm4bx94l1zjnbdcxy85mzp3krqcpm36cr84zyd1aln"))))
     (properties `((upstream-name . "flowBeads")))
     (build-system r-build-system)
     (arguments
@@ -1224,14 +1362,14 @@ the purpose of normalisation.")
 (define-public r-fletcher2013b
   (package
     (name "r-fletcher2013b")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Fletcher2013b" version
                               'experiment))
        (sha256
-        (base32 "0z5rn4j5q2sq9d14yblcxmlc8bii477r4xyisza49p3mk78dqql4"))))
+        (base32 "0nkbp5lg694acc766b76wi6ircn4h3dvdz3wl2xr12vj12y9qi29"))))
     (properties `((upstream-name . "Fletcher2013b")))
     (build-system r-build-system)
     (arguments
@@ -1249,14 +1387,14 @@ Fletcher2013a using RTN.")
 (define-public r-fletcher2013a
   (package
     (name "r-fletcher2013a")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Fletcher2013a" version
                               'experiment))
        (sha256
-        (base32 "00crh51ff2bwzh0x8xysd7lanmhiycf69qc187bghpyil2pg2lad"))))
+        (base32 "0j24vwd6msid58smcirn0zy6izdyaxr3gxywx3lysxb6wbbzkgfq"))))
     (properties `((upstream-name . "Fletcher2013a")))
     (build-system r-build-system)
     (arguments
@@ -1277,13 +1415,13 @@ study can be found.")
 (define-public r-flagme
   (package
     (name "r-flagme")
-    (version "1.66.0")
+    (version "1.68.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flagme" version))
        (sha256
-        (base32 "0zyjvwd4xgdy0brfb8xyq1h4il8gx65s2smk7395qh87fqbkd05k"))))
+        (base32 "0wp0vlf7pzqhl4b7di22a2ldphzppmkgqa14wphm853qklapp47x"))))
     (properties `((upstream-name . "flagme")))
     (build-system r-build-system)
     (arguments
@@ -1334,14 +1472,14 @@ genome (hg19).")
 (define-public r-fission
   (package
     (name "r-fission")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fission" version
                               'experiment))
        (sha256
-        (base32 "1jr6sdh3ri6brxlxgfp05hwxq40m3s172bvbpygvdx7paiw76i4y"))))
+        (base32 "1y2lnmw7w7nbx00085nyjq0q6ys1jzhqz91yi3rvf4c4177cpz31"))))
     (properties `((upstream-name . "fission")))
     (build-system r-build-system)
     (arguments
@@ -1367,13 +1505,13 @@ stress\".  Nat Commun 2014 May 23;5:3947.  PMID: 24853205.  GEO: GSE56761.")
 (define-public r-fishalyser
   (package
     (name "r-fishalyser")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FISHalyseR" version))
        (sha256
-        (base32 "016agx3dci46srbb82lnyk42cxxia0in06hk9f9s6gai0rd7rqxn"))))
+        (base32 "10cjr811axmarr9mf8ka9rffj677n1jdmp88xbgk8zrqyskzs7qq"))))
     (properties `((upstream-name . "FISHalyseR")))
     (build-system r-build-system)
     (arguments
@@ -1393,14 +1531,14 @@ probe enabling spatial co-localisation analysis.")
 (define-public r-fis
   (package
     (name "r-fis")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FIs" version
                               'experiment))
        (sha256
-        (base32 "0qkpj9kl0xb6yhs7fgln6khywdfcdkq63lk79kpw1lnz8id1nxkc"))))
+        (base32 "0mx7pk6jnhfsh239ybqsygzv48si4jplx5l2qgafz9dsl1ssvp0a"))))
     (properties `((upstream-name . "FIs")))
     (build-system r-build-system)
     (arguments
@@ -1416,13 +1554,13 @@ partners in Human.  Data are derived from Reactome and @code{BioGRID} databases.
 (define-public r-finfomds
   (package
     (name "r-finfomds")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FinfoMDS" version))
        (sha256
-        (base32 "0gr2vm0d0qkk6y8rdvyicf468d317ffdyzq7fdxcn5iv0dgci9wq"))))
+        (base32 "0740vdkr95g0dwj6qmbp9m7gixbd7pslwrygz0bpn8ahkb8r0i3i"))))
     (properties `((upstream-name . "FinfoMDS")))
     (build-system r-build-system)
     (arguments
@@ -1442,13 +1580,13 @@ dispersion between groups with shared or differing labels).")
 (define-public r-findit2
   (package
     (name "r-findit2")
-    (version "1.16.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FindIT2" version))
        (sha256
-        (base32 "0ld9xvy1r8a27alf4w368x9yvmwx8fy43yv0izp39y1x1jpvkqj8"))))
+        (base32 "0c98cfjnv2870m8yvgf3l60z0d4dqs2nwc9vqpw2bsqmkr7ncm7x"))))
     (properties `((upstream-name . "FindIT2")))
     (build-system r-build-system)
     (arguments
@@ -1495,13 +1633,13 @@ calculate jaccard similarity for your TF.")
 (define-public r-findips
   (package
     (name "r-findips")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "findIPs" version))
        (sha256
-        (base32 "1fw8zjnn9ayijqjjmjx7w7jpwrsfcnlinznqvjd4qsi0bz8zir3b"))))
+        (base32 "0pw7sdgfdqldv7cxw2q501yy7grs3hpav1659cy207r1nj8iqrp7"))))
     (properties `((upstream-name . "findIPs")))
     (build-system r-build-system)
     (arguments
@@ -1525,13 +1663,13 @@ important features and adjust the weights to ranking properties.")
 (define-public r-filterffpe
   (package
     (name "r-filterffpe")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FilterFFPE" version))
        (sha256
-        (base32 "11b46qwg6sq7q7vnq18pcnfpnjavs97azmg0034a214gg7f9kila"))))
+        (base32 "0hrdw2d222h2wb3z0qpvklm5q4wcxg74111nxn05qbpb4rd7g8xa"))))
     (properties `((upstream-name . "FilterFFPE")))
     (build-system r-build-system)
     (arguments
@@ -1556,14 +1694,14 @@ indexed BAM file of a FFPE sample.")
 (define-public r-fieldeffectcrc
   (package
     (name "r-fieldeffectcrc")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FieldEffectCrc" version
                               'experiment))
        (sha256
-        (base32 "03r075qdnp3951scr9jhr1v8yr548p250d4qwz2a8cj4792i79rg"))))
+        (base32 "0jysxris3azg4ifb391vakv77m1885qg1wy30y5r4pzg7r7w5bf4"))))
     (properties `((upstream-name . "FieldEffectCrc")))
     (build-system r-build-system)
     (arguments
@@ -1596,14 +1734,14 @@ PMC7386360, PMID: 32764205).")
 (define-public r-fibroeset
   (package
     (name "r-fibroeset")
-    (version "1.52.0")
+    (version "1.54.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fibroEset" version
                               'experiment))
        (sha256
-        (base32 "1qa9j5lwcllqlqrqa8jr4yg431qh7gi5nbsfwsc2gdy5qjg7an7q"))))
+        (base32 "110j0wljmq5vyrar4ga56ygcgkjsxaf889bf62cllmag2w0jrxbr"))))
     (properties `((upstream-name . "fibroEset")))
     (build-system r-build-system)
     (arguments
@@ -1620,13 +1758,13 @@ data.")
 (define-public r-fgnet
   (package
     (name "r-fgnet")
-    (version "3.44.0")
+    (version "3.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FGNet" version))
        (sha256
-        (base32 "1g9r62pp4qcrmfc3g222p5rw8afap6m54k05j6bbasr8sx69m18g"))))
+        (base32 "0qmbnv49s7g9dbi3yym4081vvisgldva1x2c92dsii4vyiw17n6k"))))
     (properties `((upstream-name . "FGNet")))
     (build-system r-build-system)
     (arguments
@@ -1655,13 +1793,13 @@ enrichment analysis through DAVID, @code{GeneTerm} Linker, gage (GSEA) and
 (define-public r-fgga
   (package
     (name "r-fgga")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fgga" version))
        (sha256
-        (base32 "1hz72m434axgiikh8bfk5jb16aq920y8wqimphpd27v8iq452fv1"))))
+        (base32 "1k7q0i1bnwjrd6y46nfg6mc4y5ijj7zka4mmdm7mr4y4qll8yr04"))))
     (properties `((upstream-name . "fgga")))
     (build-system r-build-system)
     (arguments
@@ -1689,14 +1827,14 @@ graphical models.")
 (define-public r-ffpeexampledata
   (package
     (name "r-ffpeexampledata")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ffpeExampleData" version
                               'experiment))
        (sha256
-        (base32 "05xsvnvk0xvhmpbf107ab2vs8q1057rmjz0n1grshf6lx7zabmlf"))))
+        (base32 "0f219qpyqmg9sggjcqk4hq1qhssdb9my2q0l6s7w372l1gnwmq7c"))))
     (properties `((upstream-name . "ffpeExampleData")))
     (build-system r-build-system)
     (arguments
@@ -1714,13 +1852,13 @@ series in technical duplicate.")
 (define-public r-ffpe
   (package
     (name "r-ffpe")
-    (version "1.54.0")
+    (version "1.56.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ffpe" version))
        (sha256
-        (base32 "18k4i9hy7c1hrpm8cqi1npx4dq9fand6lrdk92mbr7lcgl3w25lh"))))
+        (base32 "1dcpwngr96w90c15407vh4dbjlsiwydmg20gdw1xr4gals0vz63m"))))
     (properties `((upstream-name . "ffpe")))
     (build-system r-build-system)
     (arguments
@@ -1745,13 +1883,13 @@ Concordance at the Top plots (CAT-plots).")
 (define-public r-fenr
   (package
     (name "r-fenr")
-    (version "1.8.2")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fenr" version))
        (sha256
-        (base32 "0yiw7pg76ymnzhmbmp8hnlh667izljs3khryaxky6xqbwk0h8r0k"))))
+        (base32 "0982ibfn3j8g4ccra40yd0knwigvj7jaq2zpx3ivd0ra5phr49vw"))))
     (properties `((upstream-name . "fenr")))
     (build-system r-build-system)
     (arguments
@@ -1788,13 +1926,13 @@ repetitive, time-consuming preparatory steps typical of other packages.")
 (define-public r-fella
   (package
     (name "r-fella")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FELLA" version))
        (sha256
-        (base32 "09ahamrbzai0pw7pkd9dxcray8ziqp4x7vl7makkpig1x9vsq10n"))))
+        (base32 "1axxh51ra3nalhpm59v5v5i5v1dqnq7xqcxx9wqaip3afi0ip0xw"))))
     (properties `((upstream-name . "FELLA")))
     (build-system r-build-system)
     (arguments
@@ -1814,13 +1952,13 @@ can be visualised and exported.")
 (define-public r-fedup
   (package
     (name "r-fedup")
-    (version "1.18.0")
+    (version "1.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fedup" version))
        (sha256
-        (base32 "0lv648vh8kp14b1alnp5p5x3kykj5sb19rp3vs7nf0fqr1yid3xn"))))
+        (base32 "0hic5nlcsdbkbkizy5ywbjj548xrkp6rvv3s1nlrlpw44qxyyn6l"))))
     (properties `((upstream-name . "fedup")))
     (build-system r-build-system)
     (arguments
@@ -1851,13 +1989,13 @@ interpretability of the results.")
 (define-public r-featseekr
   (package
     (name "r-featseekr")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FeatSeekR" version))
        (sha256
-        (base32 "0akq90c0hb5gbl35lnql3crr00k3dmigs65phs9c1i22wa2qqlqr"))))
+        (base32 "1f6pxpw3g144ss120mgddcgml3l7yy10s6m731siycl80895jc11"))))
     (properties `((upstream-name . "FeatSeekR")))
     (build-system r-build-system)
     (arguments
@@ -1878,13 +2016,13 @@ a high replicate reproducibility and a high degree of uniqueness.")
 (define-public r-feast
   (package
     (name "r-feast")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FEAST" version))
        (sha256
-        (base32 "0yraanabz295kj3xlcllfscb7lvjk8z95grym1y3zlvgjfv3q65i"))))
+        (base32 "1qspndax1mn5c8k5hkrsaxjp5jrw7xwz9d2gbc05rnaii7fkszjx"))))
     (properties `((upstream-name . "FEAST")))
     (build-system r-build-system)
     (arguments
@@ -1919,13 +2057,13 @@ an optimized feature set.")
 (define-public r-fdrame
   (package
     (name "r-fdrame")
-    (version "1.82.0")
+    (version "1.84.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fdrame" version))
        (sha256
-        (base32 "1526yh6rbimf0lnpmbi2dhamfrcfahfb85q23h3i6x0pcrp3nw2f"))))
+        (base32 "07li65q6cp6k0drfjk6cw3v6fnz90n7ccmkflbdbmm7m8fsvcpa2"))))
     (properties `((upstream-name . "fdrame")))
     (build-system r-build-system)
     (arguments
@@ -2065,13 +2203,13 @@ methods described in (Reiner, Yekutieli and Benjamini 2002).  The second, is
 (define-public r-fci
   (package
     (name "r-fci")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fCI" version))
        (sha256
-        (base32 "1icdmwbl27c7i2hrkhqj201fnbzj5g6ybhmv2dd5lfhpx3gww6lr"))))
+        (base32 "1h1xb3s9qlp3qlf8wwdgyvda1kizszwn4cg80d8xysabifij6wgw"))))
     (properties `((upstream-name . "fCI")))
     (build-system r-build-system)
     (arguments
@@ -2098,13 +2236,13 @@ compared to existing methods.")
 (define-public r-fccac
   (package
     (name "r-fccac")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fCCAC" version))
        (sha256
-        (base32 "00mcnlfawsvya1rclivkkig5nfwlb47kc44b2xvfk2njkild8fbd"))))
+        (base32 "0fswwzx2dgcndh0kwk5lrmvgrg7dycirdz0ym3zmc478jnzzw471"))))
     (properties `((upstream-name . "fCCAC")))
     (build-system r-build-system)
     (arguments
@@ -2135,13 +2273,13 @@ sophisticated approach that complements Pearson correlation of genomic coverage.
 (define-public r-fastreer
   (package
     (name "r-fastreer")
-    (version "2.0.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fastreeR" version))
        (sha256
-        (base32 "02pw9gsakadzb7p1k1fk6ynqyqlflxilw7mvgjn94z11lzjvxfx4"))))
+        (base32 "0qzww7c6bzmnwkxwr5b1xndnl84s1017ayh471mlcc9vmsk324b0"))))
     (properties `((upstream-name . "fastreeR")))
     (build-system r-build-system)
     (arguments
@@ -2165,16 +2303,44 @@ Java-11 and called via @code{rJava}.  Parallel implementation that operates
 directly on the VCF or FASTA file for fast execution.")
     (license license:gpl3)))
 
+(define-public r-fastranges
+  (package
+    (name "r-fastranges")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "fastRanges" version))
+       (sha256
+        (base32 "1gpd60scafa856wjgwjmi3iw26yz2psnbsj2ajgcxiq84x7gpy4y"))))
+    (properties `((upstream-name . "fastRanges")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list))
+    (propagated-inputs (list r-s4vectors r-rcpp r-iranges r-genomicranges
+                             r-genomeinfodb))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cparsania/fastRanges")
+    (synopsis "Deterministic Multithreaded Genomic Interval Operations")
+    (description
+     "High-performance interval overlap and join operations for IRanges and
+@code{GenomicRanges}'.  The package provides deterministic multithreaded overlap
+computation, reusable subject indexes for repeated queries, and join helpers
+that keep range metadata in a consistent output grammar.")
+    (license license:artistic2.0)))
+
 (define-public r-fastqcleaner
   (package
     (name "r-fastqcleaner")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FastqCleaner" version))
        (sha256
-        (base32 "1fdd89x18k00in855f11h6fj4m5kwkipanbf8zmrrnwkawm62cc1"))))
+        (base32 "0fvwrxmycvm4pbna9kfzhgv8s482548ycrnv07d0ccpgwax80k3j"))))
     (properties `((upstream-name . "FastqCleaner")))
     (build-system r-build-system)
     (arguments
@@ -2220,13 +2386,13 @@ provided for both the input and output files.")
 (define-public r-fastliquidassociation
   (package
     (name "r-fastliquidassociation")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fastLiquidAssociation" version))
        (sha256
-        (base32 "0qvacr9486r6sdw3f6rxrs7rhhk0aigsxjqqib771vi69q480bf4"))))
+        (base32 "0gqzwf1pvh0h2ri0fzc5mrz4f31n3k0sgk7jipsaipw0fw1j3hip"))))
     (properties `((upstream-name . "fastLiquidAssociation")))
     (build-system r-build-system)
     (arguments
@@ -2250,14 +2416,14 @@ code for use in subsequent significance analyses.")
 (define-public r-fantom3and4cage
   (package
     (name "r-fantom3and4cage")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FANTOM3and4CAGE" version
                               'experiment))
        (sha256
-        (base32 "0drb9ifq4vcnxjp0a5cyqzdy206zk6yy7vq569s86bgb0m254knx"))))
+        (base32 "0fpx5lvlb8xyyq8pzpsky0klpwcw7x89pq5a82g8aczizlmjpka9"))))
     (properties `((upstream-name . "FANTOM3and4CAGE")))
     (build-system r-build-system)
     (arguments
@@ -2273,13 +2439,13 @@ produced by RIKEN Omics Science Center.")
 (define-public r-famat
   (package
     (name "r-famat")
-    (version "1.20.3")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "famat" version))
        (sha256
-        (base32 "0kbvqiq2vl497lgjf995h85ix68zl2izis5c594s7d8cqsvd15h3"))))
+        (base32 "084crk24y5ng80qgw5b2gqlc4lyqbx3c01byb338r7jwgnw39fzj"))))
     (properties `((upstream-name . "famat")))
     (build-system r-build-system)
     (arguments
@@ -2326,13 +2492,13 @@ Process.")
 (define-public r-famagg
   (package
     (name "r-famagg")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "FamAgg" version))
        (sha256
-        (base32 "0i6h2clwylxnxc4dwqggpq7y3cncp9qp4n7l8ypkl20kaq3s676a"))))
+        (base32 "1s56d9fpmvw74fq9p2zxmxkxp5j1bvhyw6rm4cbvn9x70g47dbpp"))))
     (properties `((upstream-name . "FamAgg")))
     (build-system r-build-system)
     (arguments
@@ -2356,13 +2522,13 @@ pedigrees.")
 (define-public r-faers
   (package
     (name "r-faers")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "faers" version))
        (sha256
-        (base32 "1w6b5h3ww33nydfwa2hbmxag9am7wd39gmsm5155bl83qrdyxxfa"))))
+        (base32 "1g7xw7rn6xj480bsddr0fwqgn8pp16s1l0j2mjdhyiwcnz3ip5i0"))))
     (properties `((upstream-name . "faers")))
     (build-system r-build-system)
     (arguments
@@ -2394,13 +2560,13 @@ standardized approach for performing pharmacovigilance analysis.")
 (define-public r-factr
   (package
     (name "r-factr")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "factR" version))
        (sha256
-        (base32 "12rzvs09qrxkly5d8knr6ff2b037l9c21s0y5iw0whw7yaxv4bf0"))))
+        (base32 "0lm0q4h0yqdmw8515y36rxp46m24i65d3xvni15mhf91fgm4nkq8"))))
     (properties `((upstream-name . "factR")))
     (build-system r-build-system)
     (arguments
@@ -2443,13 +2609,13 @@ chromosome and gene information and shortlisting new transcripts.")
 (define-public r-factdesign
   (package
     (name "r-factdesign")
-    (version "1.86.0")
+    (version "1.88.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "factDesign" version))
        (sha256
-        (base32 "174r4prhhp2fbl9kaxp28p36srj65pp72lxqwicsr25vwkp4vfvs"))))
+        (base32 "1p6s9flc09hwvhsiba4dyqsv9nqcdlwy4cwzh6w6zyww3mg2jix6"))))
     (properties `((upstream-name . "factDesign")))
     (build-system r-build-system)
     (arguments
@@ -2468,14 +2634,14 @@ of biological interest and perform single outlier detection.")
 (define-public r-fabiadata
   (package
     (name "r-fabiadata")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fabiaData" version
                               'experiment))
        (sha256
-        (base32 "0xijk9ri8vwwsfh8kn6rqz44vbdynscg8xny6924ba9acmdmjf5f"))))
+        (base32 "1ckq825as7biwf91p73n85lqy3n2illrxj4nb24a7gcrdyy7j9l1"))))
     (properties `((upstream-name . "fabiaData")))
     (build-system r-build-system)
     (arguments
@@ -2496,13 +2662,13 @@ Engl J Med, 2002).")
 (define-public r-fabia
   (package
     (name "r-fabia")
-    (version "2.56.0")
+    (version "2.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fabia" version))
        (sha256
-        (base32 "1419icrgj7hxi713f4l2l6sqfxh9g1c49g4ls879bvfssxndsxds"))))
+        (base32 "0fwxkjc18fg2j7j7vq6zd4kwwsl3mr1q8jjrppnl8cb4vdbybnlx"))))
     (properties `((upstream-name . "fabia")))
     (build-system r-build-system)
     (arguments

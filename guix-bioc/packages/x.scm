@@ -230,14 +230,14 @@ from public repositories.")
 (define-public r-xhybcasneuf
   (package
     (name "r-xhybcasneuf")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XhybCasneuf" version
                               'experiment))
        (sha256
-        (base32 "0yb52pcafndjlw6i3lxvip4ddx6na1x6lnpf46fmwg95b9ak656f"))))
+        (base32 "1b8k4ba3gy6wxvp9ya0lvhls63xcb39bx3gp9zxgv3drc0sp1s3v"))))
     (properties `((upstream-name . "XhybCasneuf")))
     (build-system r-build-system)
     (arguments
@@ -254,13 +254,13 @@ from public repositories.")
 (define-public r-xeva
   (package
     (name "r-xeva")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Xeva" version))
        (sha256
-        (base32 "14icm4q5kk95af721c27kgcza30ws28sinj5l76v2z60if9052k0"))))
+        (base32 "08bfhwyvhywqzvdr75yn7453mw59lyrsv7vwp50bvpr3fwmdi5aa"))))
     (properties `((upstream-name . "Xeva")))
     (build-system r-build-system)
     (arguments
@@ -363,13 +363,13 @@ Xenopus_laevis.cdf file.")
 (define-public r-xenlite
   (package
     (name "r-xenlite")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xenLite" version))
        (sha256
-        (base32 "0fhl2lz68crvpb104r25pdwcvg567qxhsqkm941qxxv8inr08nmi"))))
+        (base32 "1m87rfiypn5vqdpqrlhghsa0iqj2p4jyih2ckjmag49fr83n25s7"))))
     (properties `((upstream-name . "xenLite")))
     (build-system r-build-system)
     (arguments
@@ -400,13 +400,13 @@ sample data.  Address serialization and use of cloud storage.")
 (define-public r-xeniumio
   (package
     (name "r-xeniumio")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XeniumIO" version))
        (sha256
-        (base32 "1m5dy80g2jwws8w9y1zk3x4mlxk2zcplyy6lm27k09na83a5iq9j"))))
+        (base32 "1z1al3xrkzggxbckzi6083zqcax5sbd7j9kcnvpd23pv9iqhhqag"))))
     (properties `((upstream-name . "XeniumIO")))
     (build-system r-build-system)
     (arguments
@@ -434,13 +434,13 @@ files.  The package mainly represents data as @code{SpatialExperiment} objects."
 (define-public r-xde
   (package
     (name "r-xde")
-    (version "2.56.0")
+    (version "2.58.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XDE" version))
        (sha256
-        (base32 "144ab9pav8bm3fwk8ywlsra1c0n7i33f2461a0zj54ygv1b9hf5m"))))
+        (base32 "0h0hfbfysd1dkyd8rlry4r2fw2wzbl5dyyga3mbjq7kw534arg7b"))))
     (properties `((upstream-name . "XDE")))
     (build-system r-build-system)
     (arguments
@@ -464,14 +464,14 @@ files.  The package mainly represents data as @code{SpatialExperiment} objects."
 (define-public r-xcoredata
   (package
     (name "r-xcoredata")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcoredata" version
                               'experiment))
        (sha256
-        (base32 "10d2ssw7li4qgyhlk46z70p1bca18ysjvrikhj927cy8016wk8lc"))))
+        (base32 "1fx6z5j8355sz713gpz0gj0zhlswrl1s55a3736pp0kd93npk960"))))
     (properties `((upstream-name . "xcoredata")))
     (build-system r-build-system)
     (arguments
@@ -491,13 +491,13 @@ files.  The package mainly represents data as @code{SpatialExperiment} objects."
 (define-public r-xcore
   (package
     (name "r-xcore")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xcore" version))
        (sha256
-        (base32 "0ks6ki009604pnmb49yiyi7lqdx8wgmpxr4jqs60ik28pb5sgwv6"))))
+        (base32 "0yk94cf4ppyigk8gg07bzshc4qbg2dfqc5vdgzcsia4l269ysb8z"))))
     (properties `((upstream-name . "xcore")))
     (build-system r-build-system)
     (arguments
@@ -531,20 +531,19 @@ the observed expression changes.")
 (define-public r-xcell2
   (package
     (name "r-xcell2")
-    (version "1.2.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "xCell2" version))
        (sha256
-        (base32 "1bag4f2jshh3x24lz97sa3m1d4f9k833vm23mwkyywwd63gnc9yj"))))
+        (base32 "1c33z1b1l0qj4x05a6gzj2rnhd5rc0dvv0zyxm2qpnqxbc50d0jx"))))
     (properties `((upstream-name . "xCell2")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-tidyselect
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-summarizedexperiment
                              r-singscore
                              r-singlecellexperiment
@@ -575,13 +574,13 @@ between different cell types using ontology.")
 (define-public r-xaitest
   (package
     (name "r-xaitest")
-    (version "1.2.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "XAItest" version))
        (sha256
-        (base32 "1m17jbbwmq7551lkzbkh89l5mrsiznnrhwh8qgkgr9dgwjbi2075"))))
+        (base32 "0hkx6xplh1qd63vwdpflppbgmirf0x9zkm3sb43vfvg2mc2cd7ix"))))
     (properties `((upstream-name . "XAItest")))
     (build-system r-build-system)
     (arguments

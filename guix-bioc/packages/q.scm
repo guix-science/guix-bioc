@@ -38,13 +38,13 @@
 (define-public r-qusage
   (package
     (name "r-qusage")
-    (version "2.44.0")
+    (version "2.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qusage" version))
        (sha256
-        (base32 "17i0fr1y1n1ygml2x1i1rabhzcci741ld91qrdvn2q34z1jvnqb0"))))
+        (base32 "0k0yh7gkcxi1aq4jvjm7j8yx54lf2dvrgwmmkfl3v0xhi2ihyif5"))))
     (properties `((upstream-name . "qusage")))
     (build-system r-build-system)
     (arguments
@@ -75,17 +75,50 @@ contact Chris Bolen (cbolen1@@gmail.com) or Steven Kleinstein
 (steven.kleinstein@@yale.edu).")
     (license license:gpl2+)))
 
+(define-public r-queeems
+  (package
+    (name "r-queeems")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "queeems" version))
+       (sha256
+        (base32 "03i0djy6ajas0yabn7xm739bns35m73kjaa3pfl9a5y9jd32j51x"))))
+    (properties `((upstream-name . "queeems")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-matrix r-gtools r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thsadiq/queeems")
+    (synopsis
+     "Quantify the Extent of Evolutionary Evidence in Molecular Sequences")
+    (description
+     "Biological inferences obtained from molecular data are only as good as the
+extent of evolutionary signatures retained in the genetic data.  Techniques
+available to quantify these signatures are largely targeted towards phylogeny
+reconstruction and they often rely on adhoc hypothesis tests of significance.  I
+present a Bayesian function that assesses whether a set of genetic sequences are
+saturated.  That is, it is useful for determining whether the evolutionary
+information in the sequences has eroded with time.  Site specific Bayes factors
+are generated with respect to codon bases to allow for straightforward
+applications in extensive computational biology inquiries, including natural
+selection analyses.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
 (define-public r-qubicdata
   (package
     (name "r-qubicdata")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QUBICdata" version
                               'experiment))
        (sha256
-        (base32 "0vaxpd1kp7zvzxhbj3kjzg0rxd62bix6qwp0mwd8np07skcx6kzc"))))
+        (base32 "1g6dg3xvlhyvxir0jd0md11mv7h84pb6djz100p2kk2bq08pjcmi"))))
     (properties `((upstream-name . "QUBICdata")))
     (build-system r-build-system)
     (arguments
@@ -103,23 +136,23 @@ Many Microbe Microarrays Database and STRING v10.")
 (define-public r-qubic
   (package
     (name "r-qubic")
-    (version "1.38.0")
+    (version "1.40.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QUBIC" version))
        (sha256
-        (base32 "1x3kps3n6qqkdm5q3c0mhy10d2f9a059afqc84n6vqcdvh9zbhsj"))))
+        (base32 "0x3py7q51lsiw78q8fpx01h0x3pqwagv696p1nmyh9rcn33pb4il"))))
     (properties `((upstream-name . "QUBIC")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-biclust))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/zy26/QUBIC")
+    (home-page "https://github.com/zy26/QUBIC")
     (synopsis
-     "An R package for qualitative biclustering in support of gene co-expression analyses")
+     "An R Package for Qualitative Biclustering in Support of Gene Co-Expression Analyses")
     (description
      "The core function of this R package is to provide the implementation of the
 well-cited and well-reviewed QUBIC algorithm, aiming to deliver an effective and
@@ -139,13 +172,13 @@ and advanced network visualization (e.g. Cytoscape).")
 (define-public r-quaternaryprod
   (package
     (name "r-quaternaryprod")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QuaternaryProd" version))
        (sha256
-        (base32 "1qsjs49byidzd67izzcakf4dvxzgsw7i79ly237ppr8h75nbzc6w"))))
+        (base32 "0y1cd2945f73flkhkcl2ivznqwpwram02zr2xnpg3361k1cn5h69"))))
     (properties `((upstream-name . "QuaternaryProd")))
     (build-system r-build-system)
     (arguments
@@ -177,13 +210,13 @@ reasoning using STRINGdb.")
 (define-public r-quantiseqr
   (package
     (name "r-quantiseqr")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "quantiseqr" version))
        (sha256
-        (base32 "0s6x3pg7mx89y6bnzzak8qw82yxkw74zpj5lgqimkmvh9f0gf35c"))))
+        (base32 "04ykh0bf8ipq3abkg6z0mzx0smy2vbdpp1nndy1k6vzzzqdmpn0f"))))
     (properties `((upstream-name . "quantiseqr")))
     (build-system r-build-system)
     (arguments
@@ -213,13 +246,13 @@ validated using simulated, flow cytometry, and immunohistochemistry data.")
 (define-public r-qtlizer
   (package
     (name "r-qtlizer")
-    (version "1.24.1")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Qtlizer" version))
        (sha256
-        (base32 "04p54j7xhgszcx2qyr882v7vmchnccn3ifkn70l00sn71mzxhhhm"))))
+        (base32 "0kizxdwdwzxhjxdkdwdxfff8h2zf6z7hjgkc1631vqgn1nv82ln5"))))
     (properties `((upstream-name . "Qtlizer")))
     (build-system r-build-system)
     (arguments
@@ -239,13 +272,13 @@ quantitative trait loci (QTLs).")
 (define-public r-qtlexperiment
   (package
     (name "r-qtlexperiment")
-    (version "2.2.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QTLExperiment" version))
        (sha256
-        (base32 "1dx94w8kjdn2vs8kyvdwik7hjgi5rv2ixmgjjck9ri5lh7488nhi"))))
+        (base32 "141hcfwlp1ii1djhznr14aglc7b673ga52dq07vzllivfhqx7bq8"))))
     (properties `((upstream-name . "QTLExperiment")))
     (build-system r-build-system)
     (arguments
@@ -276,13 +309,13 @@ and has checks in place to ensure that transformations apply correctly.")
 (define-public r-qsvar
   (package
     (name "r-qsvar")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qsvaR" version))
        (sha256
-        (base32 "12mrzjpydy767skp2664z5iw7zyi28rjlwp8d4s5php0fm5aw9gb"))))
+        (base32 "05rdqy9ci7gp9is0y2r9q4zy540p16rdxvpwywr2lm9r81s3x2zp"))))
     (properties `((upstream-name . "qsvaR")))
     (build-system r-build-system)
     (arguments
@@ -305,13 +338,13 @@ degradation.")
 (define-public r-qsutils
   (package
     (name "r-qsutils")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QSutils" version))
        (sha256
-        (base32 "04f0jslf8cg93yz14nhf9rqpnaslbyg6vnlspjs2rf6lpdjqjx34"))))
+        (base32 "1z0bx4ig7ys43vp1svqq4d8rfic6g4xs6dj8jk010si17yfa37n3"))))
     (properties `((upstream-name . "QSutils")))
     (build-system r-build-system)
     (arguments
@@ -336,13 +369,13 @@ useful for generating random viral quasispecies data.")
 (define-public r-qsmooth
   (package
     (name "r-qsmooth")
-    (version "1.26.0")
+    (version "1.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qsmooth" version))
        (sha256
-        (base32 "0fgb1jj8wha5q9zdwh09q4xlr9m1pga0c38gq8zx4mg38ik6siwv"))))
+        (base32 "043bw62h918agszz6csfkggl2q3nl439fpp9pca4rrf6jlz95lk6"))))
     (properties `((upstream-name . "qsmooth")))
     (build-system r-build-system)
     (arguments
@@ -361,13 +394,13 @@ process: quantile normalization and quantile normalization between groups.")
 (define-public r-qsea
   (package
     (name "r-qsea")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qsea" version))
        (sha256
-        (base32 "1a7454b73idzpz406wqcqkspl8vvs60gz4fq6apvqhb9xmgsyzq4"))))
+        (base32 "193hkmx8k91jm4jlfcrvg5xxylppgkyyhwf92c1pd790vmdmlwky"))))
     (properties `((upstream-name . "qsea")))
     (build-system r-build-system)
     (arguments
@@ -403,13 +436,13 @@ between groups of samples.")
 (define-public r-qrscore
   (package
     (name "r-qrscore")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QRscore" version))
        (sha256
-        (base32 "1wh503rrfghah7xk3dj7rxxajg8s0xfyj6xczz4a007bc93hv976"))))
+        (base32 "17micdynzav9q873hiyrql223f397xc17axf6yf687w9ffwmq62m"))))
     (properties `((upstream-name . "QRscore")))
     (build-system r-build-system)
     (arguments
@@ -438,40 +471,16 @@ asymptotic normality (Erdmann-Pham et al., 2022+ [@code{arXiv:2008.06664v2}];
 Erdmann-Pham, 2023+ [@code{arXiv:2209.14235v2}]).")
     (license license:gpl3+)))
 
-(define-public r-qplexdata
-  (package
-    (name "r-qplexdata")
-    (version "1.27.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "qPLEXdata" version
-                              'experiment))
-       (sha256
-        (base32 "15fq5yzpipp2g7fx6nh766ykq84rr82yi6cccq7kqi9c1aywgwbf"))))
-    (properties `((upstream-name . "qPLEXdata")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-qplexanalyzer r-msnbase r-knitr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/qPLEXdata")
-    (synopsis "Data accompanying qPLEXanalyzer package")
-    (description
-     "@code{qPLEX-RIME} and Full proteome TMT mass spectrometry datasets.")
-    (license license:gpl2)))
-
 (define-public r-qplexanalyzer
   (package
     (name "r-qplexanalyzer")
-    (version "1.28.2")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qPLEXanalyzer" version))
        (sha256
-        (base32 "0nx1wx1hn0yyhcxbzp4hwjsfpkybsr98251300a54kg000w7d1p8"))))
+        (base32 "0kcm9m59ckrjz92nzdijzb1c5vkca35kzj3yfch6japj8d60iby4"))))
     (properties `((upstream-name . "qPLEXanalyzer")))
     (build-system r-build-system)
     (arguments
@@ -508,13 +517,13 @@ Erdmann-Pham, 2023+ [@code{arXiv:2209.14235v2}]).")
 (define-public r-qpgraph
   (package
     (name "r-qpgraph")
-    (version "2.44.0")
+    (version "2.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qpgraph" version))
        (sha256
-        (base32 "0qb4jczksj174wzfvzdhyj1bv4ijmhi25zdhshf54sp62jg02n10"))))
+        (base32 "0pd6wihnfz6klhzrmndf1kknidz6aiqcjbh8d8wm9aqq1j8955h1"))))
     (properties `((upstream-name . "qpgraph")))
     (build-system r-build-system)
     (arguments
@@ -545,13 +554,13 @@ genotyping assays.")
 (define-public r-qpcrnorm
   (package
     (name "r-qpcrnorm")
-    (version "1.68.0")
+    (version "1.70.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qpcrNorm" version))
        (sha256
-        (base32 "1zs7zfjv8nck70wfb62ypcwpx0m3i7m9gcanswphjf7rhhdnwlr1"))))
+        (base32 "0pb5n1zhr2bg4q3l3w7zgi5gbdpbnnhmzigng2z93wmanbd7d9l5"))))
     (properties `((upstream-name . "qpcrNorm")))
     (build-system r-build-system)
     (arguments
@@ -570,13 +579,13 @@ generate diagnostic plots are also available.")
 (define-public r-qmtools
   (package
     (name "r-qmtools")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qmtools" version))
        (sha256
-        (base32 "06kpza9mrmkhpwsr7d8mwr1pflmq4hirgbgywqqjp0pp7r0ykq2g"))))
+        (base32 "0kashzbjnchdjh2qbajlz5f6zkl1c92rp7npa67m1cfbh3jgrfkx"))))
     (properties `((upstream-name . "qmtools")))
     (build-system r-build-system)
     (arguments
@@ -609,14 +618,14 @@ functions in this package could also be used in other types of omics data.")
 (define-public r-qdnaseq-mm10
   (package
     (name "r-qdnaseq-mm10")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QDNAseq.mm10" version
                               'experiment))
        (sha256
-        (base32 "06krdc5fl0r0cwdgcp5nl6r3nkz5i82nhq7y04qf0njch5a4aslj"))))
+        (base32 "1518axzm9d5pqwa7nyqpidxbj1ml1z3a1fyxzb5y8ywiy81gcmy5"))))
     (properties `((upstream-name . "QDNAseq.mm10")))
     (build-system r-build-system)
     (arguments
@@ -632,14 +641,14 @@ functions in this package could also be used in other types of omics data.")
 (define-public r-qdnaseq-hg19
   (package
     (name "r-qdnaseq-hg19")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QDNAseq.hg19" version
                               'experiment))
        (sha256
-        (base32 "1qgxxw9bp30acafcdfphslfc2aba8hs5msld9q3c8nzxcaagh10s"))))
+        (base32 "0ms8f3f4h3ligrwngnn89j9s1gljhcnwqalrpqghpczabdfgcgn8"))))
     (properties `((upstream-name . "QDNAseq.hg19")))
     (build-system r-build-system)
     (arguments
@@ -655,13 +664,13 @@ functions in this package could also be used in other types of omics data.")
 (define-public r-qcmetrics
   (package
     (name "r-qcmetrics")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "qcmetrics" version))
        (sha256
-        (base32 "1si14qxh8ki0ihjfvyjr4kxi1iqcbb48g0q50i7hnq6aydfc18qw"))))
+        (base32 "0clvb0dp6cny3dgp3dqc82xm9i8d8f3b7m3wyc060jfvgard0np4"))))
     (properties `((upstream-name . "qcmetrics")))
     (build-system r-build-system)
     (arguments

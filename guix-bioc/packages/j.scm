@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages java)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -32,17 +33,55 @@
   #:use-module (guix-bioc packages b)
   #:use-module (guix-bioc packages a))
 
+(define-public r-jvecfor
+  (package
+    (name "r-jvecfor")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "jvecfor" version))
+       (sha256
+        (base32 "1gf27yccs1yjrnwnwkyz5piiid3p2zdcx3bp06m9d88dcpk564f6"))))
+    (properties `((upstream-name . "jvecfor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (inputs (list openjdk))
+    (propagated-inputs (list r-processx
+                             r-matrix
+                             r-data-table
+                             r-bluster
+                             r-biocparallel
+                             r-biocneighbors))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gkanogiannis/jvecfor")
+    (synopsis "Fast K-Nearest Neighbor Search for Single-Cell Analysis")
+    (description
+     "Drop-in replacement for @code{BiocNeighbors::findKNN} using the jvecfor Java
+library, which builds on the jvector library to leverage the Java Vector API for
+portable SIMD acceleration across AVX2, AVX-512, and ARM NEON hardware.
+jvecfor/jvector implements HNSW-@code{DiskANN} approximate search and VP-tree
+exact search.  The package achieves approximately 2x speedup over Annoy-based
+search at n >= 50K cells while returning output structurally identical to
+@code{BiocNeighbors}, making it suitable for seamless integration into existing
+Bioconductor single-cell workflows.  Convenience wrappers delegate shared
+nearest-neighbor (SNN) and k-nearest-neighbor (KNN) graph construction to the
+bluster package.")
+    (license license:gpl3)))
+
 (define-public r-johnsonkinasedata
   (package
     (name "r-johnsonkinasedata")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JohnsonKinaseData" version
                               'experiment))
        (sha256
-        (base32 "0j3xddfyhf5pcm6hqvmx0czm9k18mfkaczhh5q34hr2hlgykhkll"))))
+        (base32 "04bp80fy5d82rh59bmw7kf5izizaqb1c2ww7ggjc3il0jpmf6lcf"))))
     (properties `((upstream-name . "JohnsonKinaseData")))
     (build-system r-build-system)
     (arguments
@@ -77,13 +116,13 @@ rank\").")
 (define-public r-jazzpanda
   (package
     (name "r-jazzpanda")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "jazzPanda" version))
        (sha256
-        (base32 "0bkzi2x4xlaqwn1wjrkmf4vbnqbcqkyvs9mwkxrh5rwg8dq1znw3"))))
+        (base32 "1i57zlqwaw5rf7p339xbvf8fr44mlwygvvf94mxvpx8qcxq4dbwx"))))
     (properties `((upstream-name . "jazzPanda")))
     (build-system r-build-system)
     (arguments
@@ -234,14 +273,14 @@ TFBSTools (>= 1.15.6).")
 (define-public r-jaspar2014
   (package
     (name "r-jaspar2014")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "JASPAR2014" version
                               'experiment))
        (sha256
-        (base32 "0bm4wgh3m9lwzfgrxyd1yjk4rz3m4xjz213qpa430p712as2kjz4"))))
+        (base32 "11zqcpc176247rybb51nx9sbqvd7nci2n4pb7s3nr3wfb1zz36ng"))))
     (properties `((upstream-name . "JASPAR2014")))
     (build-system r-build-system)
     (arguments

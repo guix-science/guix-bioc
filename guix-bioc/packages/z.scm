@@ -35,13 +35,13 @@
 (define-public r-zygositypredictor
   (package
     (name "r-zygositypredictor")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ZygosityPredictor" version))
        (sha256
-        (base32 "00nckxl38ajbzxlm011x3zx2q3ka844q6f4fxhyvd8587dl1qlxd"))))
+        (base32 "1ysvc97lc1f76fxdk3ni2qkbp4janr1r3sqz0a5lpysmi5pjkpjd"))))
     (properties `((upstream-name . "ZygosityPredictor")))
     (build-system r-build-system)
     (arguments
@@ -85,13 +85,13 @@ scale deletions, which cause losses of whole genes or parts of them.")
 (define-public r-zitools
   (package
     (name "r-zitools")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zitools" version))
        (sha256
-        (base32 "01mgf9m4080ws92zbdgxg28qlh9ly83nqa78x20kwhci3x95xy88"))))
+        (base32 "1i8ncpdczlzmhhin5ir8qzq47hyk0a3hxmydlmxck6xzhhd8mcgb"))))
     (properties `((upstream-name . "zitools")))
     (build-system r-build-system)
     (arguments
@@ -130,13 +130,13 @@ challenging.")
 (define-public r-zenith
   (package
     (name "r-zenith")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "zenith" version))
        (sha256
-        (base32 "02dm4gi996qb3v09915zg0b4ibakjv5gmv2p39i1x185y2rbjmr9"))))
+        (base32 "0px7zd58ayfl1dhvyx157nh45y37bkxix892x29c643jmx7g46ss"))))
     (properties `((upstream-name . "zenith")))
     (build-system r-build-system)
     (arguments

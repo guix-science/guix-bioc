@@ -39,13 +39,13 @@
 (define-public r-usort
   (package
     (name "r-usort")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "uSORT" version))
        (sha256
-        (base32 "05hnsslcviqzia3vr3q1a23mk7jdly56gn7agdlrscn99wd4w34y"))))
+        (base32 "02rh8kwjh5cr43d4n28pq6m1lx1813sgv5gsr7g1xjc7m8mzlkhl"))))
     (properties `((upstream-name . "uSORT")))
     (build-system r-build-system)
     (arguments
@@ -76,13 +76,13 @@ ordering, and post-analysis interpretation and visualization.")
 (define-public r-updhmm
   (package
     (name "r-updhmm")
-    (version "1.6.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UPDhmm" version))
        (sha256
-        (base32 "1rn1jijmpx7j165q210l76hyq3aj7ir02zh64cn85a04razs2qrx"))))
+        (base32 "0qhg8cnb90vkkyjxnm6hamw197x41pa62xlg4bbfkxgv4pvi0wj0"))))
     (properties `((upstream-name . "UPDhmm")))
     (build-system r-build-system)
     (arguments
@@ -95,8 +95,7 @@ ordering, and post-analysis interpretation and visualization.")
                              r-hmm
                              r-genomicranges
                              r-genomeinfodb
-                             r-biocparallel
-                             r-biobase))
+                             r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/martasevilla/UPDhmm")
     (synopsis "Detecting Uniparental Disomy through NGS trio data")
@@ -112,13 +111,13 @@ isodisomy, father heterodisomy and mother heterodisomy).")
 (define-public r-updateobject
   (package
     (name "r-updateobject")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "updateObject" version))
        (sha256
-        (base32 "1rwlai7zj7gr43nppf6qnkzjdpyhd3wxnba4r1n0pkgjgpy6qwzv"))))
+        (base32 "1x1mb5yp8ncd9fyg2djnncrak5q9gzggy6zzr77xh2024v396daa"))))
     (properties `((upstream-name . "updateObject")))
     (build-system r-build-system)
     (arguments
@@ -139,13 +138,13 @@ package.  This is still work-in-progress.")
 (define-public r-uniquorn
   (package
     (name "r-uniquorn")
-    (version "2.30.0")
+    (version "2.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Uniquorn" version))
        (sha256
-        (base32 "1l068kjphna85z98xwqh4i4qxrvprl4wc8rp9lcgh692vhbsxjgb"))))
+        (base32 "06z8f3zpr5yivbdrylp565dp2rw5qf5a4jjqf6vffh334q37hh9l"))))
     (properties `((upstream-name . "Uniquorn")))
     (build-system r-build-system)
     (arguments
@@ -177,14 +176,14 @@ vcf file).")
 (define-public r-uniprotkeywords
   (package
     (name "r-uniprotkeywords")
-    (version "0.99.7")
+    (version "0.99.8")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UniProtKeywords" version
                               'annotation))
        (sha256
-        (base32 "10id2lk2mbccay7p44pk58zhkiqc58x237qr76plivgpcc8xhjzq"))))
+        (base32 "1mhbhar70acwgjmlfkfrqc2hskqvbgsaf9xlzv8ph66x6gvbyqb7"))))
     (properties `((upstream-name . "UniProtKeywords")))
     (build-system r-build-system)
     (arguments
@@ -203,13 +202,13 @@ gene-keyword relations.")
 (define-public r-uniprot-ws
   (package
     (name "r-uniprot-ws")
-    (version "2.50.1")
+    (version "2.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UniProt.ws" version))
        (sha256
-        (base32 "09w5l4phxdcy255mwqlr1dl51957wby25qwn05pbzm0vgs9gab5q"))))
+        (base32 "0b052fm90s3dsdqnafrr7nsk0dyblwlhmk8rnn2wzgq5kgcn1md8"))))
     (properties `((upstream-name . "UniProt.ws")))
     (build-system r-build-system)
     (arguments
@@ -238,13 +237,13 @@ allows mapping of identifiers accross different databases.")
 (define-public r-undo
   (package
     (name "r-undo")
-    (version "1.52.0")
+    (version "1.54.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UNDO" version))
        (sha256
-        (base32 "1rkrfcl8l4p5pi3qqn0lzyr4l6a75qnp0sdj4hrz5rz72fsqn02y"))))
+        (base32 "1w1pplriih0xjlxxbprab0vy2xq2vif3iawid0np7k8qdvlzv7nn"))))
     (properties `((upstream-name . "UNDO")))
     (build-system r-build-system)
     (arguments
@@ -262,13 +261,13 @@ data without any prior knowledge.")
 (define-public r-uncoverapplib
   (package
     (name "r-uncoverapplib")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "uncoverappLib" version))
        (sha256
-        (base32 "107rzv1q58mxhks8ggw4krghc2071fjf745zqcrysfmz6nr7byrx"))))
+        (base32 "14iayyqmasx7a05v605bx8pi1hil1y9vwlvklf3naf53sgwsl9gy"))))
     (properties `((upstream-name . "uncoverappLib")))
     (build-system r-build-system)
     (arguments
@@ -314,13 +313,13 @@ statisticl summary of coverage given target file or genes name.")
 (define-public r-umi4cats
   (package
     (name "r-umi4cats")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UMI4Cats" version))
        (sha256
-        (base32 "162f89h9jid1bqsym1mqaw7xfnax57na18ng5f815wf2r2x03a3i"))))
+        (base32 "0yasvmdlz9s1bj9imkid52dnjx02zmsnv540h84nsnbm1xb915ff"))))
     (properties `((upstream-name . "UMI4Cats")))
     (build-system r-build-system)
     (arguments
@@ -370,56 +369,6 @@ provided by the sequencing facility.  It provides two statistical methods for
 detecting differential contacts and includes a visualization function to plot
 integrated information from a UMI-4C assay.")
     (license license:artistic2.0)))
-
-(define-public r-ularcirc
-  (package
-    (name "r-ularcirc")
-    (version "1.28.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "Ularcirc" version))
-       (sha256
-        (base32 "1k8x7g5fgssj01i8b60fyhsh09hmxj06k0ghxrk70jijp8y49906"))))
-    (properties `((upstream-name . "Ularcirc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (propagated-inputs (list r-yaml
-                             r-shinyjs
-                             r-shinyfiles
-                             r-shinydashboard
-                             r-shiny
-                             r-s4vectors
-                             r-r-utils
-                             r-plotgardener
-                             r-organism-dplyr
-                             r-moments
-                             r-gsubfn
-                             r-ggrepel
-                             r-ggplot2
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-genomicalignments
-                             r-genomeinfodbdata
-                             r-genomeinfodb
-                             r-dt
-                             r-data-table
-                             r-bsgenome
-                             r-biostrings
-                             r-biocgenerics
-                             r-annotationhub
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://bioconductor.org/packages/Ularcirc")
-    (synopsis
-     "Shiny app for canonical and back splicing analysis (i.e. circular and mRNA analysis)")
-    (description
-     "Ularcirc reads in STAR aligned splice junction files and provides visualisation
-and analysis tools for splicing analysis.  Users can assess backsplice junctions
-and forward canonical junctions.")
-    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-ucscrepeatmasker
   (package

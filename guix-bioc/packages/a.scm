@@ -9,9 +9,10 @@
   #:use-module (guix-cran packages p)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages c)
+  #:use-module (gnu packages bioinformatics)
+  #:use-module (guix-cran packages s)
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages r)
-  #:use-module (guix-cran packages s)
   #:use-module (gnu packages duckdb)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -42,14 +43,14 @@
 (define-public r-awaggregatordata
   (package
     (name "r-awaggregatordata")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AWAggregatorData" version
                               'experiment))
        (sha256
-        (base32 "11sf6i4xhnmijvsvxrm07rddpagn6sd9ykpsz9yxa4f4q4z6wd3p"))))
+        (base32 "0qgf94adxxf04w2sngfz15jg9mgc69pmb5b8ldcisrxn3fjcarg6"))))
     (properties `((upstream-name . "AWAggregatorData")))
     (build-system r-build-system)
     (arguments
@@ -75,13 +76,13 @@ train the random forest models.")
 (define-public r-awaggregator
   (package
     (name "r-awaggregator")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AWAggregator" version))
        (sha256
-        (base32 "06czqk7n4gcxw27qzsia6vnibm2mbd1g1315kxgxnivxh9sjsn0k"))))
+        (base32 "1bhpxabz7mwvfycpsby4y15s970znbwyb9181qmiiiy3lq84c97l"))))
     (properties `((upstream-name . "AWAggregator")))
     (build-system r-build-system)
     (arguments
@@ -114,13 +115,13 @@ conditions if desired.")
 (define-public r-autonomics
   (package
     (name "r-autonomics")
-    (version "1.18.0")
+    (version "1.20.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "autonomics" version))
        (sha256
-        (base32 "02ygvvvkypwdi5rq9xjym4l4wzxn4v6h73nl426cx20q6x7wm33s"))))
+        (base32 "0vyavd5ms963gwby70ayzzvhg0k9slx21jhapq13px7mdkjn381k"))))
     (properties `((upstream-name . "autonomics")))
     (build-system r-build-system)
     (arguments
@@ -274,13 +275,13 @@ assembled using data from public repositories.")
 (define-public r-atacseqtfea
   (package
     (name "r-atacseqtfea")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ATACseqTFEA" version))
        (sha256
-        (base32 "1zlwbx1pvq5wfxvm94mgdwvy8k53n74bjgzbpp6p34zy5v1cga5r"))))
+        (base32 "174rwb9bkf4g239b99nqcslp3kx9lpkp79bwahf5ws0cmcgpsa4n"))))
     (properties `((upstream-name . "ATACseqTFEA")))
     (build-system r-build-system)
     (arguments
@@ -318,16 +319,97 @@ footprints (cutting sites or insertion sites).  ATA@code{CseqTFEA} provides an
 easy, rigorous way to broadly assess TF activity changes between two conditions.")
     (license license:gpl3)))
 
+(define-public r-atacinfercnv
+  (package
+    (name "r-atacinfercnv")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "atacInferCnv" version))
+       (sha256
+        (base32 "1p5zdapjisvw3gwh3ij9x2fdm7l214838yg046d2fk4xixpqzir6"))))
+    (properties `((upstream-name . "atacInferCnv")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-stringr
+                             r-singlecellexperiment
+                             r-signac
+                             r-seurat
+                             r-s4vectors
+                             r-rcppeigen
+                             r-rcpp
+                             r-infercnv
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kokonech/atacInferCNV")
+    (synopsis
+     "Call CNV from single cell ATAC-seq data based on InferCNV adaptation")
+    (description
+     "The package prepares input @code{scATAC-seq} data and adapts for copy number
+variance profiling with @code{InferCNV} package usage.  It has also various
+paramters to control the analysis (e.g. external normal reference usage,
+meta-cells, bin size, etc) and custom plot visualizations.")
+    (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
+
+(define-public r-asuri
+  (package
+    (name "r-asuri")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "asuri" version))
+       (sha256
+        (base32 "1kwgssjfshwmdhrgmmz1m88s8p96y7mgy6adlqpg1zgjdm3sd8y1"))))
+    (properties `((upstream-name . "asuri")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-survival
+                             r-survcomp
+                             r-summarizedexperiment
+                             r-spsutil
+                             r-siggenes
+                             r-scales
+                             r-rocr
+                             r-rdpack
+                             r-lubridate
+                             r-glmnet
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jdelasrivas-lab/asuri")
+    (synopsis
+     "Analysis of SUrvival and RIsk prediction in patients based on gene signatures")
+    (description
+     "The ASURI (Analysis of SUrvival and patients RIsk prediction based on gene
+signatures) package discovers marker genes that are related to risk prediction
+capabilities and to a clinical variable of interest.  It uses two main steps,
+including subsampling glmnet and unicox.  The package implements robust
+functions to discover survival markers related to a clinical phenotype and to
+predict a risk score, allowing to study the patient's risk based on the gene
+signatures.  Several plots are provided to visualise the relevance of the genes,
+the risk score, and patient stratification, as well as a robust version of the
+Kaplan-Meier curves.")
+    (license (license:fsdg-compatible "LGPL-3 + file LICENSE"))))
+
 (define-public r-asurat
   (package
     (name "r-asurat")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ASURAT" version))
        (sha256
-        (base32 "18bb6hx01v1jz4jy0lzr0g0xa269j9jvz8li3wfbfdrnnp0l3cj6"))))
+        (base32 "04izga9vf72flvkxnrdz7pwcd120zsi007hdxl8b5vpk3xdgjcrs"))))
     (properties `((upstream-name . "ASURAT")))
     (build-system r-build-system)
     (arguments
@@ -357,13 +439,13 @@ tables into original multivariate tables, termed sign-by-sample matrices (SSMs).
 (define-public r-assign
   (package
     (name "r-assign")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ASSIGN" version))
        (sha256
-        (base32 "1k38y9nwayrbd0icfqqw2qcpk76g7ycybfnjqfyic6vcgn7yhfr9"))))
+        (base32 "1vwcxba2nh0661v2r2g9ckx9j5nblyv2w0hwdd0n5jp8drrzzxiw"))))
     (properties `((upstream-name . "ASSIGN")))
     (build-system r-build-system)
     (arguments
@@ -407,14 +489,14 @@ signature.")
 (define-public r-assessorfdata
   (package
     (name "r-assessorfdata")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AssessORFData" version
                               'experiment))
        (sha256
-        (base32 "12889bfg3fgvhch1sr6b3z11cbp08qi5qnsjlckdn98hi4m1fwgp"))))
+        (base32 "0l4zn6b3ikjiqwsl8zcrdpmjmgxkdnzwlcbdpm27s88hhcdj9b8k"))))
     (properties `((upstream-name . "AssessORFData")))
     (build-system r-build-system)
     (arguments
@@ -433,14 +515,14 @@ corresponding to those objects.")
 (define-public r-asicsdata
   (package
     (name "r-asicsdata")
-    (version "1.30.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ASICSdata" version
                               'experiment))
        (sha256
-        (base32 "1mr7cxqi68mdnc65d3fq1m02hbyp2shr2j2c60rkcf09saqh7v5h"))))
+        (base32 "01qmpw12cc8l8zy4jkb7l2rkhqpy1h831mrlx9l2qrgvr4vmq6by"))))
     (properties `((upstream-name . "ASICSdata")))
     (build-system r-build-system)
     (arguments
@@ -458,14 +540,14 @@ corresponding to those objects.")
 (define-public r-ashkenazimsonchr21
   (package
     (name "r-ashkenazimsonchr21")
-    (version "1.40.0")
+    (version "1.42.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AshkenazimSonChr21" version
                               'experiment))
        (sha256
-        (base32 "1s6l9b1xhp0i6fcafwqwg3873v9ajld6s7jr33kr4jwpfca43cl3"))))
+        (base32 "1rmdqw889qpdhr8mp7336qs8g9gf902vxizarjgm7gvrmcx19cig"))))
     (properties `((upstream-name . "AshkenazimSonChr21")))
     (build-system r-build-system)
     (arguments
@@ -485,13 +567,13 @@ provided.")
 (define-public r-artms
   (package
     (name "r-artms")
-    (version "1.28.0")
+    (version "1.29.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "artMS" version))
        (sha256
-        (base32 "0sdxcaklcfqjad5kz5lskv04x2p8wxspav7avaznx6wz2xsx68wh"))))
+        (base32 "05h00kiia12q6pg38s3iksr5izx7vq3aww5r3z3lfbbscnzlj8ph"))))
     (properties `((upstream-name . "artMS")))
     (build-system r-build-system)
     (arguments
@@ -540,14 +622,14 @@ including, SAINTq, SAINTexpress, Phosfate, and PHOTON. Check
 (define-public r-aracne-networks
   (package
     (name "r-aracne-networks")
-    (version "1.36.0")
+    (version "1.38.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "aracne.networks" version
                               'experiment))
        (sha256
-        (base32 "1ddqimz9fwx3rff72pj7hbr51vsq9h685mc86xhsvfxzv19hnz9c"))))
+        (base32 "1pg36lxzvmd3ksayac5brz2fjfmjf84b6gfw6qxmaifnqqhqg5kn"))))
     (properties `((upstream-name . "aracne.networks")))
     (build-system r-build-system)
     (arguments
@@ -588,13 +670,13 @@ also contains a function to export them into plain-text format.")
 (define-public r-appreci8r
   (package
     (name "r-appreci8r")
-    (version "1.28.0")
+    (version "1.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "appreci8R" version))
        (sha256
-        (base32 "0wkscw6hqqzpis0mf1ixlsaf2z52imriyl5mdb5kmnxgrbv172x9"))))
+        (base32 "1wqm2h7a0hznsb1g0x5q5hfnx0gb0s25b32im5yrax8047yyg2da"))))
     (properties `((upstream-name . "appreci8R")))
     (build-system r-build-system)
     (arguments
@@ -641,13 +723,13 @@ combined, evaluated and filtered.")
 (define-public r-apl
   (package
     (name "r-apl")
-    (version "1.14.0")
+    (version "1.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "APL" version))
        (sha256
-        (base32 "0xdj7hwaw3mxqwyv8hd8j37ri4f49ldmv3n4d23n0wm62rrf8igs"))))
+        (base32 "1f6psfs4nkv59aip44sqr8aydn3icbl0c2ms85zzjxikcvlzv0q5"))))
     (properties `((upstream-name . "APL")))
     (build-system r-build-system)
     (arguments
@@ -681,16 +763,55 @@ allows to rank the genes by their specificity for a selected cell cluster of
 interest.")
     (license license:gpl3+)))
 
+(define-public r-apalyzer
+  (package
+    (name "r-apalyzer")
+    (version "1.26.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "APAlyzer" version))
+       (sha256
+        (base32 "0zi0qrf9w5c2vm0km15jzhs5sc6pwy33b78wgn02g69k1xqpanbf"))))
+    (properties `((upstream-name . "APAlyzer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-variantannotation
+                             r-txdbmaker
+                             r-tidyr
+                             r-summarizedexperiment
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsubread
+                             r-rsamtools
+                             r-rlang
+                             r-repmis
+                             r-ggrepel
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomicalignments
+                             r-dplyr
+                             r-deseq2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RJWANGbioinfo/APAlyzer/")
+    (synopsis "toolkit for APA analysis using RNA-seq data")
+    (description
+     "Perform 3'UTR APA, Intronic APA and gene expression analysis using RNA-seq data.")
+    (license (license:fsdg-compatible "LGPL-3 + file LICENSE"))))
+
 (define-public r-anvilworkflow
   (package
     (name "r-anvilworkflow")
-    (version "1.10.2")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILWorkflow" version))
        (sha256
-        (base32 "0s2k709jmi2wvayqf0rlrm5scw8hjryhp414crkfbn3am3f7j8cd"))))
+        (base32 "016a232g773lqawlppy8jp75fl5n7m32zkdbhkwc3la0dqm4z6z9"))))
     (properties `((upstream-name . "AnVILWorkflow")))
     (build-system r-build-system)
     (arguments
@@ -703,7 +824,6 @@ interest.")
                              r-plyr
                              r-jsonlite
                              r-httr
-                             r-gcptools
                              r-dplyr
                              r-anvilgcp
                              r-anvilbase
@@ -723,13 +843,13 @@ flexible/scalble computing resources - through the conventional R functions.")
 (define-public r-anvilpublish
   (package
     (name "r-anvilpublish")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILPublish" version))
        (sha256
-        (base32 "1x60vfhs9w60kc3ibgc7f6hzzfzzgq40g186zvwwa7fbkm44yhiw"))))
+        (base32 "0jrp20834alf1q8kksfw0j2xl6wr4wz8swyd974qr84rqva7cgkg"))))
     (properties `((upstream-name . "AnVILPublish")))
     (build-system r-build-system)
     (arguments
@@ -759,13 +879,13 @@ notebooks ready for evaluation in @code{AnVIL}.")
 (define-public r-anvilbilling
   (package
     (name "r-anvilbilling")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILBilling" version))
        (sha256
-        (base32 "0w8j6wgpi614mqs850x20c1pwi4za11gyyjnlsms22b5dv0vnsqp"))))
+        (base32 "1wgzyhyj2fqixjsvrmfdjgivhnwpsy7ixpp27zczdj4rg5fm8d1c"))))
     (properties `((upstream-name . "AnVILBilling")))
     (build-system r-build-system)
     (arguments
@@ -796,13 +916,13 @@ users estimate costs for specific task sets.")
 (define-public r-anvilaz
   (package
     (name "r-anvilaz")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILAz" version))
        (sha256
-        (base32 "0hzmqbqrak5b0y3872mcddd3568dmxi9456qv8svsjqp2bg4941v"))))
+        (base32 "19abpqvgrwaqw06gvahbracca6x8xq360170vj65mqarbyi2x292"))))
     (properties `((upstream-name . "AnVILAz")))
     (build-system r-build-system)
     (arguments
@@ -833,14 +953,14 @@ resources.")
 (define-public r-antiprofilesdata
   (package
     (name "r-antiprofilesdata")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "antiProfilesData" version
                               'experiment))
        (sha256
-        (base32 "0nmxm2gkdr3il85vw589si6aiq8fkw6aqyc59rw2jn8chl2vqqik"))))
+        (base32 "117hnl246lpdsfahh3b0cvk1aijcp8r1ac92b93a55wzhcmijs76"))))
     (properties `((upstream-name . "antiProfilesData")))
     (build-system r-build-system)
     (arguments
@@ -881,16 +1001,55 @@ doi:10.1186/1471-2105-13-272.  Measurements are z-scores obtained from the
 @code{AnnotationDbi} to produce regular annotation packages.")
     (license license:artistic2.0)))
 
+(define-public r-annolinker
+  (package
+    (name "r-annolinker")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "annoLinker" version))
+       (sha256
+        (base32 "1mjc839zihplr0pl634mbcwbmmkwc0wpjj7is2cyma79kdqx3yyn"))))
+    (properties `((upstream-name . "annoLinker")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-visnetwork
+                             r-trackviewer
+                             r-seqinfo
+                             r-s4vectors
+                             r-progressr
+                             r-iranges
+                             r-interactionset
+                             r-igraph
+                             r-genomicranges
+                             r-genomeinfodb
+                             r-future-apply
+                             r-biocgenerics
+                             r-annotationdbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jianhong/annoLinker")
+    (synopsis "Annotating genomic regions through chromatin interaction links")
+    (description
+     "Fast annotation of genomic peaks using DNA interaction data by constructing
+interaction networks with igraph, where peaks overlapping any node in a
+connected subgraph are annotated with all genes in that subgraph.  The
+annotation evidence could be visualized as either a network graph or a genomic
+track integrated with gene annotation information.")
+    (license license:gpl3)))
+
 (define-public r-anansi
   (package
     (name "r-anansi")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "anansi" version))
        (sha256
-        (base32 "0vhj83nv9lnzppijvinm9xargcgsbhpy8475krxp79byb1qpqb52"))))
+        (base32 "1cjzdpnsq5646kks23s70jj04965ap0iicmakvmpxfyvfgjs5bpp"))))
     (properties `((upstream-name . "anansi")))
     (build-system r-build-system)
     (arguments
@@ -927,14 +1086,14 @@ package also provides a framework to assess differential association.")
 (define-public r-ampaffyexample
   (package
     (name "r-ampaffyexample")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AmpAffyExample" version
                               'experiment))
        (sha256
-        (base32 "0r6p4hmdy1rqi1ijikygwmr3imcs12djw5y3a2rcpis8ziwwjiyv"))))
+        (base32 "19x0caiibsmglnah9npah7kr79k7agx87jj19d9w50jk84j6hkbq"))))
     (properties `((upstream-name . "AmpAffyExample")))
     (build-system r-build-system)
     (arguments
@@ -1002,13 +1161,13 @@ quantification tools MISO, VAST-TOOLS, SUPPA and @code{rMATS}.")
 (define-public r-alphamissenser
   (package
     (name "r-alphamissenser")
-    (version "1.6.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AlphaMissenseR" version))
        (sha256
-        (base32 "1jd4s2zqzh16yh3h0bpjwv23qvzy72zx3s74g4gh6nb2hnzpg4j1"))))
+        (base32 "0a1k72qgixidvfh4zm0ibr68k30vgk8486is74dq94j52gcg63bb"))))
     (properties `((upstream-name . "AlphaMissenseR")))
     (build-system r-build-system)
     (arguments
@@ -1101,14 +1260,14 @@ how to access those resources.")
 (define-public r-allmll
   (package
     (name "r-allmll")
-    (version "1.50.0")
+    (version "1.52.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ALLMLL" version
                               'experiment))
        (sha256
-        (base32 "012ch9yl5j6s7dy086f9643d6gvaqvqpmblvwv2cqrncqvhz980v"))))
+        (base32 "0xrxw9w3nrrc0y8c106wlmjmaavxpnhyl6z9na9h4nhw8ipmzxxj"))))
     (properties `((upstream-name . "ALLMLL")))
     (build-system r-build-system)
     (arguments
@@ -1131,13 +1290,13 @@ profiling Blood 102: 2951-2959.")
 (define-public r-alabaster-vcf
   (package
     (name "r-alabaster-vcf")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.vcf" version))
        (sha256
-        (base32 "1r92dy7qgnz4jqmqv6dinj1g7bs5axylr9yyg41d5h9mcax6vnpn"))))
+        (base32 "06wxy14vva30ydxs4v3sahf019sb9z4s8qda6v6xhyls6956rlc5"))))
     (properties `((upstream-name . "alabaster.vcf")))
     (build-system r-build-system)
     (arguments
@@ -1163,13 +1322,13 @@ context-specific properties.")
 (define-public r-alabaster-string
   (package
     (name "r-alabaster-string")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.string" version))
        (sha256
-        (base32 "01m93r7v9b00jc8spmfash7c85niw5bhd60bj2hmvmww0wdmrsqb"))))
+        (base32 "14pjlbdaff9bxgqy28xq86wvc1qdl2q5z92d96vvszh2wxdsqcc5"))))
     (properties `((upstream-name . "alabaster.string")))
     (build-system r-build-system)
     (arguments
@@ -1189,13 +1348,13 @@ applications can enrich this metadata with context-specific properties.")
 (define-public r-alabaster-spatial
   (package
     (name "r-alabaster-spatial")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.spatial" version))
        (sha256
-        (base32 "022zqn8kvnxm2zlra2w9i43g8lvbiqhjwajkyzkj3pd98i59j41v"))))
+        (base32 "0pqjwjq3kypnlg5mqghwych3vc0k18m5izw2lx3xp7p7ajbw55a3"))))
     (properties `((upstream-name . "alabaster.spatial")))
     (build-system r-build-system)
     (arguments
@@ -1217,13 +1376,13 @@ metadata with context-specific properties.")
 (define-public r-alabaster-sfe
   (package
     (name "r-alabaster-sfe")
-    (version "1.2.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.sfe" version))
        (sha256
-        (base32 "1306n9l8xr29pgh77yqsdi5ns3vm80d6i22pyzlxjb0c6j16h9xa"))))
+        (base32 "16b16jwr61lvm3zm4xnhg79lm4mw96pahcb9bb7yipz848hw5wy6"))))
     (properties `((upstream-name . "alabaster.sfe")))
     (build-system r-build-system)
     (arguments
@@ -1256,13 +1415,13 @@ for language agnostic on disk serialization of @code{SpatialFeatureExperiment}."
 (define-public r-alabaster-mae
   (package
     (name "r-alabaster-mae")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.mae" version))
        (sha256
-        (base32 "1fqq06gx8zxx4ika3yh880xy5y40d71yai7468azlhg24chj6342"))))
+        (base32 "1q5mhlk20139s6y1bvx1rf25xmblxgy7xhysbf96a00gpjj5an9k"))))
     (properties `((upstream-name . "alabaster.mae")))
     (build-system r-build-system)
     (arguments
@@ -1288,13 +1447,13 @@ context-specific properties.")
 (define-public r-alabaster-files
   (package
     (name "r-alabaster-files")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.files" version))
        (sha256
-        (base32 "0648rlmllm46ffh807wq670p2v3pfs3y2pwmh0dpb8svqx02pmc5"))))
+        (base32 "0gi98p1m907809skjcclcdqrxv7vd5rzqhyaaynpcimdmj8qp5g1"))))
     (properties `((upstream-name . "alabaster.files")))
     (build-system r-build-system)
     (arguments
@@ -1315,13 +1474,13 @@ between each file and its corresponding index.")
 (define-public r-alabaster-bumpy
   (package
     (name "r-alabaster-bumpy")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster.bumpy" version))
        (sha256
-        (base32 "1yrall9sh84gv550rd0w9qyvr6w06dw5zhdq5a9qrjkc81vzmn4p"))))
+        (base32 "1fpzbfapgdi7brnr9sy0a9cr5h3f0frrssqgbrqzsjd66vh9rbpw"))))
     (properties `((upstream-name . "alabaster.bumpy")))
     (build-system r-build-system)
     (arguments
@@ -1348,13 +1507,13 @@ context-specific properties.")
 (define-public r-alabaster
   (package
     (name "r-alabaster")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "alabaster" version))
        (sha256
-        (base32 "1vn835gjadgjh3fw3h2qw9i7fdyaxgsyba3l6kfgqa9vq6l81x28"))))
+        (base32 "19ssqalr8m92d2aphzdjk29hsqr5y2vkq9xgravf2bkak9b46d7h"))))
     (properties `((upstream-name . "alabaster")))
     (build-system r-build-system)
     (arguments
@@ -1509,13 +1668,13 @@ by our Snakemake workflow
 (define-public r-ahmassbank
   (package
     (name "r-ahmassbank")
-    (version "1.10.0")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AHMassBank" version))
        (sha256
-        (base32 "1kx70njam0b05ind94r55dm99a5b2x01akipvz7q9bhqrcl0qbq7"))))
+        (base32 "1wj7z4db15xsasabh91p4d1yh5ag8jsg9qlz9l6jcvph8wixz78k"))))
     (properties `((upstream-name . "AHMassBank")))
     (build-system r-build-system)
     (arguments
@@ -1689,14 +1848,14 @@ from public repositories.")
 (define-public r-affymoe4302expr
   (package
     (name "r-affymoe4302expr")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affymoe4302Expr" version
                               'experiment))
        (sha256
-        (base32 "0qz6ln4vxsyv4hg01wdagr6gfdkf1s7amlszdk0adlr7h3c6aqzq"))))
+        (base32 "1a5j5074ag0xgxkzxnrq8bkymp3hl7d9aqcjr2h21j3f1pc2ww7x"))))
     (properties `((upstream-name . "Affymoe4302Expr")))
     (build-system r-build-system)
     (arguments
@@ -1715,14 +1874,14 @@ and manually verified based on the sample description in GEO.")
 (define-public r-affymetrixdatatestfiles
   (package
     (name "r-affymetrixdatatestfiles")
-    (version "0.48.0")
+    (version "0.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AffymetrixDataTestFiles" version
                               'experiment))
        (sha256
-        (base32 "04bjwipqjdmmzx5xc950cvzs14sag9a9pcmy6ibywxx2g69sl1xs"))))
+        (base32 "0imzangyn78lxpqhidm793q2znd2s7560zsdz7a3qdam5a8pvvj2"))))
     (properties `((upstream-name . "AffymetrixDataTestFiles")))
     (build-system r-build-system)
     (arguments
@@ -1740,14 +1899,14 @@ and other official sources.")
 (define-public r-affyhgu133plus2expr
   (package
     (name "r-affyhgu133plus2expr")
-    (version "1.44.0")
+    (version "1.46.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affyhgu133Plus2Expr" version
                               'experiment))
        (sha256
-        (base32 "0skq48qffh87lrj69fzbvafjijwalp5f5i7y2pna6hszdj42xgm7"))))
+        (base32 "1xcxq0z5cvzlx8g2yhy7f33wc589ss1w1cpqvgdl578qcfjv7155"))))
     (properties `((upstream-name . "Affyhgu133Plus2Expr")))
     (build-system r-build-system)
     (arguments
@@ -1762,42 +1921,17 @@ preprocessed and normalized consistently.  The biological context of each sample
 was recorded and manually verified based on the sample description in GEO.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
-(define-public r-affyhgu133aexpr
-  (package
-    (name "r-affyhgu133aexpr")
-    (version "1.48.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (bioconductor-uri "Affyhgu133aExpr" version
-                              'experiment))
-       (sha256
-        (base32 "1k1m3b86m46vrwb5cas9s38czc8ldgjq5wsjsml3pd5j8l3n2b3z"))))
-    (properties `((upstream-name . "Affyhgu133aExpr")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:tests? #f))
-    (home-page "https://bioconductor.org/packages/Affyhgu133aExpr")
-    (synopsis "Affymetrix Human hgu133a Array (GPL96) Expression Data Package")
-    (description
-     "This package contains pre-built human (GPL96) database of gene expression
-profiles.  The gene expression data was downloaded from NCBI GEO, preprocessed
-and normalized consistently.  The biological context of each sample was recorded
-and manually verified based on the sample description in GEO.")
-    (license (license:fsdg-compatible "GPL (>=2)"))))
-
 (define-public r-affyhgu133a2expr
   (package
     (name "r-affyhgu133a2expr")
-    (version "1.46.0")
+    (version "1.48.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Affyhgu133A2Expr" version
                               'experiment))
        (sha256
-        (base32 "0yl5h630mlcpylfr2gp7i97l2y2gwbz0w0z6sprd3qd2a7bga9sw"))))
+        (base32 "1z3rmc32cxfix1na8n7j50xp0s0k7x7npyd2z9ddcbwagqgjv1j3"))))
     (properties `((upstream-name . "Affyhgu133A2Expr")))
     (build-system r-build-system)
     (arguments
@@ -1816,14 +1950,14 @@ was recorded and manually verified based on the sample description in GEO.")
 (define-public r-affycompdata
   (package
     (name "r-affycompdata")
-    (version "1.48.0")
+    (version "1.50.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "affycompData" version
                               'experiment))
        (sha256
-        (base32 "0sfzh3pcgxyqnjj5xn4qibq75nbz6yd9cnxyx3rgx02ksnc89f92"))))
+        (base32 "0f27mcaarc2brl3hwn107s7iwd02jglx80iwfpwv5pyi5kxnq611"))))
     (properties `((upstream-name . "affycompData")))
     (build-system r-build-system)
     (arguments
@@ -1835,16 +1969,50 @@ was recorded and manually verified based on the sample description in GEO.")
     (description "Data needed by the affycomp package.")
     (license license:gpl2+)))
 
+(define-public r-aerith
+  (package
+    (name "r-aerith")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Aerith" version))
+       (sha256
+        (base32 "1qq3lcj9dgmwlqf554xkxcv1v736j9jhsia29j4v6377v1psmp9q"))))
+    (properties `((upstream-name . "Aerith")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-rcpp
+                             r-mzr
+                             r-msnbase
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xyz1396/Aerith")
+    (synopsis
+     "visualization and annotation of isotopic enrichment patterns of peptides and metabolites with stable isotope labeling from proteomics and metabolomics")
+    (description
+     "Visualisation of peptide isotopic peaks and SIP peptide spectra match (PSM).
+Filtration of high quality PSM. Accurate isotopic abundance calculation of
+peptide and metabolites.  Visualisation of SIP proteomics results.")
+    (license license:gpl3)))
+
 (define-public r-adverscarial
   (package
     (name "r-adverscarial")
-    (version "1.8.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "adverSCarial" version))
        (sha256
-        (base32 "0fpgsfmmr4skkry0r95492pm1wlvw7y8q82snzahbc3nbws0y27x"))))
+        (base32 "0n2s3sb6lkws58hcrvkrg3nsd4s21937m7zh5mkix4gbxbpj256f"))))
     (properties `((upstream-name . "adverSCarial")))
     (build-system r-build-system)
     (arguments
@@ -1897,13 +2065,13 @@ using data from public repositories.")
 (define-public r-adapt
   (package
     (name "r-adapt")
-    (version "1.4.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ADAPT" version))
        (sha256
-        (base32 "1v0lypbv1bhxphd071rn3b8kyvfn088nx78fg3kadlgc0y5xvli5"))))
+        (base32 "1wm6yz8w8vxhhg166gsbz5cbkz6dyic4mna3p79dbssap9ipsgzm"))))
     (properties `((upstream-name . "ADAPT")))
     (build-system r-build-system)
     (arguments

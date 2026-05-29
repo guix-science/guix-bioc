@@ -9,6 +9,8 @@
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages g)
+  #:use-module (guix-cran packages n)
+  #:use-module (guix-cran packages w)
   #:use-module (guix-cran packages e)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -39,13 +41,13 @@
 (define-public r-wpm
   (package
     (name "r-wpm")
-    (version "1.20.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "wpm" version))
        (sha256
-        (base32 "04z1kgay2ix9hn434v9k9nja7jlvrz9ysrlajmzb1ipp51vw02q6"))))
+        (base32 "0w10r40p27vy7fd8bmlmxsagdbyp7r1z0yigr0ksb6zf4brpdbii"))))
     (properties `((upstream-name . "wpm")))
     (build-system r-build-system)
     (arguments
@@ -156,14 +158,14 @@ wheat.cdf file.")
 (define-public r-wgsmapp
   (package
     (name "r-wgsmapp")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WGSmapp" version
                               'experiment))
        (sha256
-        (base32 "1dgb8xwpww87x2xwsi98jbx145sdpxkfl5aqmdyj73l6l7qa57rj"))))
+        (base32 "05gis3pjaa2xsg78fk3ac2x08cxyawl0zfajd4fj35mq1c9bx5ps"))))
     (properties `((upstream-name . "WGSmapp")))
     (build-system r-build-system)
     (arguments
@@ -187,14 +189,14 @@ illustration purposes.")
 (define-public r-wes-1kg-wugsc
   (package
     (name "r-wes-1kg-wugsc")
-    (version "1.42.0")
+    (version "1.44.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WES.1KG.WUGSC" version
                               'experiment))
        (sha256
-        (base32 "019x7kjdl1rbm9f6plg2hyy0hd1a6xjk0gywsxba0hs7z8j5zhs2"))))
+        (base32 "1i9mb6rdip9i5d763gamhvsb1crgc02yqsz7f3w02s02s7kx0vs5"))))
     (properties `((upstream-name . "WES.1KG.WUGSC")))
     (build-system r-build-system)
     (arguments
@@ -212,13 +214,13 @@ Center are included.")
 (define-public r-weitrix
   (package
     (name "r-weitrix")
-    (version "1.22.0")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "weitrix" version))
        (sha256
-        (base32 "00q7f6b1ib1kjnrmr3ps8cx2h5fc751zbl1kc7gh2wzg7gry9g5h"))))
+        (base32 "1bddgpkdwyl09glxpnmagxfvd2qb8vph60sj5w2r6grpqpqnqh15"))))
     (properties `((upstream-name . "weitrix")))
     (build-system r-build-system)
     (arguments
@@ -262,14 +264,14 @@ interpreted. @code{DelayedArray} matrices and @code{BiocParallel} are supported.
 (define-public r-weberdivechalcdata
   (package
     (name "r-weberdivechalcdata")
-    (version "1.12.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WeberDivechaLCdata" version
                               'experiment))
        (sha256
-        (base32 "0rshzaijgqzrmg37xv891gsml6whv5iv11wdcisv68cdvbg77ymx"))))
+        (base32 "05cmiy976y5rphzfjxmvwlrn966f5glida18ckxvwnd4n829fawg"))))
     (properties `((upstream-name . "WeberDivechaLCdata")))
     (build-system r-build-system)
     (arguments
@@ -296,13 +298,13 @@ Chromium @code{snRNA-seq} platforms.  Datasets are stored in
 (define-public r-weaver
   (package
     (name "r-weaver")
-    (version "1.76.0")
+    (version "1.78.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "weaver" version))
        (sha256
-        (base32 "0id7z8dxbdcsdmxc3hf91amy4y3s3iqyjsbr4vv01qdfb8y8dhsb"))))
+        (base32 "1q92pskxzarys2d2p3s0wawf96gvkgk69ac75i2pi3vw1wjqrwix"))))
     (properties `((upstream-name . "weaver")))
     (build-system r-build-system)
     (arguments
@@ -316,16 +318,59 @@ Chromium @code{snRNA-seq} platforms.  Datasets are stored in
 package.  In particular a facility for caching code chunk results is included.")
     (license license:gpl2)))
 
+(define-public r-wavfeatext
+  (package
+    (name "r-wavfeatext")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "wavFeatExt" version))
+       (sha256
+        (base32 "0f3ghjs0gsbwhb597r7zd7myxh771ry7w3mkni14g1p4bj14nbr8"))))
+    (properties `((upstream-name . "wavFeatExt")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-wavethresh
+                             r-randomforest
+                             r-proc
+                             r-pls
+                             r-neuralnet
+                             r-matrixstats
+                             r-mass
+                             r-ica
+                             r-glmnet
+                             r-e1071
+                             r-dnacopy
+                             r-class
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maharaniau/wavFeatExt")
+    (synopsis
+     "Wavelet-based Feature Extraction for Copy-number Alteration Data")
+    (description
+     "This package provides tools for simulating copy-number alteration (CNA)
+profiles, applying a non-decimated Haar wavelet transform to genomic signals,
+and extracting wavelet-derived features for use in supervised learning.
+Multiple machine learning methods including lasso and elastic-net
+regularisation, random forest, partial least squares, neural networks and
+k-nearest neighbours are implemented to train predictive models from genomic
+feature vectors.  The workflow enables end-to-end analysis from CNA simulation
+to feature extraction and classification.")
+    (license license:gpl3)))
+
 (define-public r-waddr
   (package
     (name "r-waddr")
-    (version "1.24.0")
+    (version "1.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "waddR" version))
        (sha256
-        (base32 "1x4kznzym44lsgn4hjfhqdqi04h8613qj7msvi3rwgnqi7qx0wg8"))))
+        (base32 "1hir642q069vwns4hlr92dqc8c1l2gqkzw4l865is3hkpk0k7q25"))))
     (properties `((upstream-name . "waddR")))
     (build-system r-build-system)
     (arguments
