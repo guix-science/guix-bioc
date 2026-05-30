@@ -1921,6 +1921,31 @@ preprocessed and normalized consistently.  The biological context of each sample
 was recorded and manually verified based on the sample description in GEO.")
     (license (license:fsdg-compatible "GPL (>=2)"))))
 
+(define-public r-affyhgu133aexpr
+  (package
+    (name "r-affyhgu133aexpr")
+    (version "1.50.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "Affyhgu133aExpr" version
+                              'experiment))
+       (sha256
+        (base32 "1jf71h4f6xrmqf7y18bf3dib36yq319nmlyyqm9i0lb6s0qpbvs3"))))
+    (properties `((upstream-name . "Affyhgu133aExpr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (home-page "https://bioconductor.org/packages/Affyhgu133aExpr")
+    (synopsis "Affymetrix Human hgu133a Array (GPL96) Expression Data Package")
+    (description
+     "This package contains pre-built human (GPL96) database of gene expression
+profiles.  The gene expression data was downloaded from NCBI GEO, preprocessed
+and normalized consistently.  The biological context of each sample was recorded
+and manually verified based on the sample description in GEO.")
+    (license (license:fsdg-compatible "GPL (>=2)"))))
+
 (define-public r-affyhgu133a2expr
   (package
     (name "r-affyhgu133a2expr")
