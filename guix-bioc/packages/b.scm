@@ -4535,13 +4535,13 @@ illustrations.")
 (define-public r-biocbuildreporter
   (package
     (name "r-biocbuildreporter")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BiocBuildReporter" version))
        (sha256
-        (base32 "0zxrg8qizpr8vic7snazwvbfnhdcpxxvsampk1ryvs69iymi6zgn"))))
+        (base32 "1kmy3lh4lp6raav8yzq7fk96bqgprslzi816vcj657glgiiir6aa"))))
     (properties `((upstream-name . "BiocBuildReporter")))
     (build-system r-build-system)
     (arguments
