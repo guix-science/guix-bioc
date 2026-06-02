@@ -477,13 +477,13 @@ are also used to gererate the @code{ptrSet} in the @code{ptairMS} data :
 (define-public r-psichomics
   (package
     (name "r-psichomics")
-    (version "1.38.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "psichomics" version))
        (sha256
-        (base32 "1fxrhxb9nidg3dq2qm45sa0dnsqg2pcwp74a5ybpm61kj7bfihqn"))))
+        (base32 "1phvwnb0mzikhj1mj76p1ymlrdv80ahqb8kg7cana6v6m6c1lg4d"))))
     (properties `((upstream-name . "psichomics")))
     (build-system r-build-system)
     (arguments

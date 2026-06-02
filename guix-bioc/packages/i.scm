@@ -2850,13 +2850,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.2.3")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "1881h491wqzah89xmdgg2qp9d6apkzwiy7sqj7vljr98hk6xpdsc"))))
+        (base32 "1svsq87f17aiwcy3jv758hdzlghdxd8mxcf8faaq2if1mhnkbpgc"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments
@@ -2885,11 +2885,12 @@ built-in @code{IgBLAST-compatible} germline databases from OGRDB, the AIRR
 Community’s Open Germline Receptor Database, for various organisms.  It provides
 functions to create additional @code{IgBLAST-compatible} germline databases
 using reference sequences retrieved from IMGT/V-QUEST or local FASTA files
-supplied by the user.  When possible, the FWR/CDR boundaries on the V alleles
-(a.k.a \"internal data\") are computed and stored in the germline database, so can
-be used as a replacement for the internal data shipped with @code{IgBLAST}.
-@code{IgBLAST} is described at <https://pubmed.ncbi.nlm.nih.gov/23671333/>.
-@code{IgBLAST} web interface: <https://www.ncbi.nlm.nih.gov/igblast/>.  OGRDB:
+supplied by the user.  When possible, annotations for the V and J alleles in a
+new germline database are automatically computed and added to the database, so
+they can be used as replacements for the internal and auxiliary data shipped
+with @code{IgBLAST}. @code{IgBLAST} is described at
+<https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
+<https://www.ncbi.nlm.nih.gov/igblast/>.  OGRDB:
 <https://ogrdb.airr-community.org/>.  IMGT/V-QUEST download site:
 <https://www.imgt.org/download/V-QUEST/>.")
     (license license:artistic2.0)))
