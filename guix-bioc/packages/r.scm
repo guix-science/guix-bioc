@@ -3256,13 +3256,13 @@ Rhesus.cdf file.")
 (define-public r-rhdf5client
   (package
     (name "r-rhdf5client")
-    (version "1.34.0")
+    (version "1.34.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rhdf5client" version))
        (sha256
-        (base32 "1vmw9zcsrw5kj02k3syvwxk4xvkaawqjhjk7z3h2fap8mg7h08z0"))))
+        (base32 "1147i9164kvh01fkginqjmrshbq7bd66mjih1iv6nvgwc81w2n02"))))
     (properties `((upstream-name . "rhdf5client")))
     (build-system r-build-system)
     (arguments
