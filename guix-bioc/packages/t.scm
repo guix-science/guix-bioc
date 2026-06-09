@@ -19,7 +19,6 @@
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages a)
   #:use-module (gnu packages bioinformatics)
-  #:use-module (guix-cran packages p)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
   #:use-module (guix-bioc packages x)
@@ -5200,7 +5199,6 @@ already available in ape Paradis and Schliep (2019)
     (propagated-inputs (list r-tidyr
                              r-reshape2
                              r-rcolorbrewer
-                             r-primme
                              r-matrix
                              r-magrittr
                              r-hiccompare

@@ -3490,8 +3490,7 @@ and retrieve specific data from Spectra objects.")
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-primme
-                             r-matrix
+    (propagated-inputs (list r-matrix
                              r-magrittr
                              r-hiccompare
                              r-genomicranges
