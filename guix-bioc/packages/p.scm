@@ -1194,6 +1194,70 @@ defined by PCA, @code{CoGAPS}, NMF, correlation, and clustering.")
      "Regularization and score distributions for position count matrices.")
     (license license:expat)))
 
+(define-public r-profileplyr
+  (package
+    (name "r-profileplyr")
+    (version "1.28.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "profileplyr" version))
+       (sha256
+        (base32 "1qvd02br16xjbs0vd0c18a4rxfvjzij6fh0ibdf2iyigh6fn00q4"))))
+    (properties `((upstream-name . "profileplyr")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-txdbmaker
+                             r-txdb-mmusculus-ucsc-mm9-knowngene
+                             r-txdb-mmusculus-ucsc-mm10-knowngene
+                             r-txdb-hsapiens-ucsc-hg38-knowngene
+                             r-txdb-hsapiens-ucsc-hg19-knowngene
+                             r-tiff
+                             r-tidyr
+                             r-summarizedexperiment
+                             r-s4vectors
+                             r-rtracklayer
+                             r-rsamtools
+                             r-rlang
+                             r-rjson
+                             r-rgreat
+                             r-r-utils
+                             r-plyranges
+                             r-pheatmap
+                             r-org-mm-eg-db
+                             r-org-hs-eg-db
+                             r-magrittr
+                             r-iranges
+                             r-ggplot2
+                             r-genomicranges
+                             r-genomicfeatures
+                             r-genomicalignments
+                             r-genomeinfodb
+                             r-enrichedheatmap
+                             r-dplyr
+                             r-complexheatmap
+                             r-circlize
+                             r-chipseeker
+                             r-biostrings
+                             r-biocparallel
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/profileplyr")
+    (synopsis
+     "Visualization and annotation of read signal over genomic ranges with profileplyr")
+    (description
+     "Quick and straightforward visualization of read signal over genomic intervals is
+key for generating hypotheses from sequencing data sets (e.g. @code{ChIP-seq},
+ATAC-seq, bisulfite/methyl-seq).  Many tools both inside and outside of R and
+Bioconductor are available to explore these types of data, and they typically
+start with a @code{bigWig} or BAM file and end with some representation of the
+signal (e.g. heatmap).  profileplyr leverages many Bioconductor tools to allow
+for both flexibility and additional functionality in workflows that end with
+visualization of the read signal.")
+    (license license:gpl3+)))
+
 (define-public r-prodata
   (package
     (name "r-prodata")
