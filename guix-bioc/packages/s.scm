@@ -2495,28 +2495,28 @@ variable gene detection tools.")
 (define-public r-sponge
   (package
     (name "r-sponge")
-    (version "1.34.0")
+    (version "1.34.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SPONGE" version))
        (sha256
-        (base32 "0q5pngbdj2n3bz706qzs7smcs23a4avx6fp6p6zsxygwbmv1679k"))))
+        (base32 "03iiwv7kf7kj94fbnshvlqd6ldsj0b49g2vvpl0c1ggrbmkcc1xp"))))
     (properties `((upstream-name . "SPONGE")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-tnet
-                             r-tidyverse
                              r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-randomforest
                              r-ppcor
                              r-metbrewer
                              r-mass
-                             r-logging
+                             r-logger
                              r-iterators
                              r-igraph
                              r-grbase

@@ -3991,13 +3991,13 @@ shell command cat) and accept multiple files as input.")
 (define-public r-rfarm
   (package
     (name "r-rfarm")
-    (version "1.23.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rfaRm" version))
        (sha256
-        (base32 "1v4zv4spfvnj4wsq5bkcv4mf0xl4g98n87b3xrl4w2lyr6s2sg19"))))
+        (base32 "1jam21z522ara21xr8yhwsxg0w7mi9w3qmys65mnly1ry25s79hi"))))
     (properties `((upstream-name . "rfaRm")))
     (build-system r-build-system)
     (arguments
@@ -4009,7 +4009,6 @@ shell command cat) and accept multiple files as input.")
                              r-rvest
                              r-rsvg
                              r-magick
-                             r-jsonlite
                              r-iranges
                              r-httr
                              r-data-table
@@ -4592,13 +4591,13 @@ analysis; and (4) regulators scoring and ranking.")
 (define-public r-rega
   (package
     (name "r-rega")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Rega" version))
        (sha256
-        (base32 "184cxjfm0hiik4d3l4fylch0m7gg0wyv7gj9hdkasf8vj57fqy2s"))))
+        (base32 "0zfc86qjhlhhv5g6f8xwdf50yyg1p7p66fprgmhrpb0ggp7f53fg"))))
     (properties `((upstream-name . "Rega")))
     (build-system r-build-system)
     (arguments

@@ -2850,13 +2850,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "1abqhcd810cm2cdh5sr5xpy8iy8r8x5cw2l6c0bi5icp2b9q3nx8"))))
+        (base32 "1rw2ir22msp99jsln0gq7946nd0br5hpmhziyhyc5a43c1vps5x4"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments
@@ -2887,8 +2887,8 @@ functions to create additional @code{IgBLAST-compatible} germline databases
 using reference sequences retrieved from IMGT/V-QUEST or local FASTA files
 supplied by the user.  When possible, annotations for the V and J alleles in a
 new germline database are automatically computed and added to the database, so
-they can be used as replacements for the internal and auxiliary data shipped
-with @code{IgBLAST}. @code{IgBLAST} is described at
+they can be used as replacements for the internal and auxiliary data provided by
+@code{IgBLAST}. @code{IgBLAST} is described at
 <https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
 <https://www.ncbi.nlm.nih.gov/igblast/>.  OGRDB:
 <https://ogrdb.airr-community.org/>.  IMGT/V-QUEST download site:
