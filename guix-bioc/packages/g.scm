@@ -21,6 +21,7 @@
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages s)
   #:use-module (guix-cran packages b)
+  #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages k)
   #:use-module (guix-cran packages t)
   #:use-module (guix-cran packages l)
@@ -961,13 +962,13 @@ interaction model.")
 (define-public r-graphexperiment
   (package
     (name "r-graphexperiment")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GraphExperiment" version))
        (sha256
-        (base32 "15qramccsmdmlnhv82355w78xv2s1laxsaiax5n4kikr4ffizya4"))))
+        (base32 "0ayyfzq27a7w67w8qi9limpphpdg44503pf1kw43gh4apn4dcr5s"))))
     (properties `((upstream-name . "GraphExperiment")))
     (build-system r-build-system)
     (arguments
@@ -2349,13 +2350,13 @@ external data to the tree.")
 (define-public r-ggspavis
   (package
     (name "r-ggspavis")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ggspavis" version))
        (sha256
-        (base32 "15xpazarfakj786mmhxbj8l7y94684bgg0w1jkx3kbq3by044v1j"))))
+        (base32 "1r8l74hvn7g0d2q9820qrbamad091llay4snics8mgvhqs59z94k"))))
     (properties `((upstream-name . "ggspavis")))
     (build-system r-build-system)
     (arguments
@@ -2828,13 +2829,13 @@ information about the DEE2 project can be found at the project homepage
 (define-public r-gep2pep
   (package
     (name "r-gep2pep")
-    (version "1.31.0")
+    (version "1.32.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gep2pep" version))
        (sha256
-        (base32 "0swwny4y78j342i0bfy2dz2iqqb00q9598vcpfvq242wzqw5zjvg"))))
+        (base32 "1nvyf3zcslfxbgm7cjdxn88lckh4awi2hxpqw7jlnds0kzpqcw80"))))
     (properties `((upstream-name . "gep2pep")))
     (build-system r-build-system)
     (arguments
@@ -2842,6 +2843,7 @@ information about the DEE2 project can be found at the project homepage
       #:tests? #f))
     (propagated-inputs (list r-xml
                              r-rhdf5
+                             r-repo
                              r-iterators
                              r-gseabase
                              r-foreach
@@ -3616,13 +3618,13 @@ basic infrastructure for and is enhanced by the package girafe'.")
 (define-public r-genomautomorphism
   (package
     (name "r-genomautomorphism")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GenomAutomorphism" version))
        (sha256
-        (base32 "0vdhv1vckljga59qxw9akcq61z3aqka40yq5pm0907qkfliizg21"))))
+        (base32 "127kciph03lwj5gsis1ch614ikaqb7xb1v477mn0cvl82a19nxqh"))))
     (properties `((upstream-name . "GenomAutomorphism")))
     (build-system r-build-system)
     (arguments
@@ -5048,13 +5050,13 @@ estimation.")
 (define-public r-gbscleanr
   (package
     (name "r-gbscleanr")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GBScleanR" version))
        (sha256
-        (base32 "0asyn26lki6pyfisvlhjs6d2lqds6pdgvqirdwlvsfxkh1x8r1iy"))))
+        (base32 "1lbjim44kdh843g4mgy3bzmvwi2r4k414q9kkgsq6fq2k5ly5b03"))))
     (properties `((upstream-name . "GBScleanR")))
     (build-system r-build-system)
     (arguments
@@ -5089,13 +5091,13 @@ lines (8-way RILs) which can be refered to as MAGIC population.")
 (define-public r-gatom
   (package
     (name "r-gatom")
-    (version "1.10.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gatom" version))
        (sha256
-        (base32 "0lvyd3bjwzvs0alzxs2zzmsd432f45a2x38c28n7qlx4ckgd0g2h"))))
+        (base32 "1c9w586rci3l5mhlzhkb8afgpb5hc3b2hxagqf1fbkivqiq6hj48"))))
     (properties `((upstream-name . "gatom")))
     (build-system r-build-system)
     (arguments

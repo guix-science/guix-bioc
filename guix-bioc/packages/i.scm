@@ -378,13 +378,13 @@ However, writing results to csv works as before.")
 (define-public r-isobayes
   (package
     (name "r-isobayes")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "IsoBayes" version))
        (sha256
-        (base32 "1pzrdq524wjdbbhlrrqinnhmylrvdm6l1fygmbgrv8w0gyq7acbm"))))
+        (base32 "1gzgdnp2m4pp4nq9qqhhq7ynw28iv5krz1vlj3g09vsxn20gnx2y"))))
     (properties `((upstream-name . "IsoBayes")))
     (build-system r-build-system)
     (arguments
@@ -2016,14 +2016,14 @@ detected.")
 (define-public r-imcdatasets
   (package
     (name "r-imcdatasets")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "imcdatasets" version
                               'experiment))
        (sha256
-        (base32 "19ix38415hl7f6y61bn299cbc2b1dlp5kipg2h7ks5n019syl0rn"))))
+        (base32 "0krkhbb1sp31y4iakrx0v1fc5l6h6jbqkvqsma61vnqymkcvwlv6"))))
     (properties `((upstream-name . "imcdatasets")))
     (build-system r-build-system)
     (arguments
@@ -2850,13 +2850,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.2.9")
+    (version "1.2.21")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "1rw2ir22msp99jsln0gq7946nd0br5hpmhziyhyc5a43c1vps5x4"))))
+        (base32 "1jqqzc0w3bq7069f9pnz0xr7nh14sr5kf9j56d7cy4yvvs58xwah"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments
@@ -2881,14 +2881,14 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
     (description
      "The igblastr package provides functions to conveniently install and use a local
 @code{IgBLAST} installation from within R. The package also includes a set of
-built-in @code{IgBLAST-compatible} germline databases from OGRDB, the AIRR
+preinstalled @code{IgBLAST-compatible} germline databases from OGRDB, the AIRR
 Community’s Open Germline Receptor Database, for various organisms.  It provides
-functions to create additional @code{IgBLAST-compatible} germline databases
-using reference sequences retrieved from IMGT/V-QUEST or local FASTA files
-supplied by the user.  When possible, annotations for the V and J alleles in a
-new germline database are automatically computed and added to the database, so
-they can be used as replacements for the internal and auxiliary data provided by
-@code{IgBLAST}. @code{IgBLAST} is described at
+functions to install additional @code{IgBLAST-compatible} germline databases
+using reference sequences retrieved from IMGT/V-QUEST or OGRDB, or from local
+FASTA files supplied by the user.  When possible, annotations for the V and J
+alleles in a new germline database are automatically generated and added to the
+database, so they can be used as replacements for the internal and auxiliary
+data provided by @code{IgBLAST}. @code{IgBLAST} is described at
 <https://pubmed.ncbi.nlm.nih.gov/23671333/>. @code{IgBLAST} web interface:
 <https://www.ncbi.nlm.nih.gov/igblast/>.  OGRDB:
 <https://ogrdb.airr-community.org/>.  IMGT/V-QUEST download site:
@@ -2898,13 +2898,13 @@ they can be used as replacements for the internal and auxiliary data provided by
 (define-public r-ifaa
   (package
     (name "r-ifaa")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "IFAA" version))
        (sha256
-        (base32 "0r7ywvzw1vglaw485j1szz5wh2z6ff33rgzcsncpi9i2m0mfqhd2"))))
+        (base32 "0sangkwc5slszgk2ng344jv0ch4sy1rxcxvf9jwaxq1sv67aq0q9"))))
     (properties `((upstream-name . "IFAA")))
     (build-system r-build-system)
     (arguments

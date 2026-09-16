@@ -1108,13 +1108,13 @@ from public repositories.")
 (define-public r-hubpub
   (package
     (name "r-hubpub")
-    (version "1.20.0")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HubPub" version))
        (sha256
-        (base32 "1kw41m4s35bxz9c0zsh76zy22by46pyqfbm04bb160abc2amn5wq"))))
+        (base32 "0fkhlhf46qcvviwna80wgb6chj1v7nga7932lklmpshndlf6758x"))))
     (properties `((upstream-name . "HubPub")))
     (build-system r-build-system)
     (arguments
@@ -1141,13 +1141,13 @@ as well as publish data to the Bioconductor S3 bucket.")
 (define-public r-hubmapr
   (package
     (name "r-hubmapr")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HuBMAPR" version))
        (sha256
-        (base32 "0kvc79f23i91p2cv4wq618zbqvrp1s2x1dqkk912d59l96nrdf0n"))))
+        (base32 "0hfxpmnkhspfv0cm0mmdzpzkndpijzdzjmmnbl8nj3pw0r1cwn55"))))
     (properties `((upstream-name . "HuBMAPR")))
     (build-system r-build-system)
     (arguments
@@ -3204,35 +3204,27 @@ Hilbert curve.")
 (define-public r-hiiragi2013
   (package
     (name "r-hiiragi2013")
-    (version "1.47.0")
+    (version "1.48.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Hiiragi2013" version
                               'experiment))
        (sha256
-        (base32 "1p2d6vpss2s61n82p6wy7nq86zjhfw0nw9wi8ws3hhq6nxs1h7pp"))))
+        (base32 "0ariib3wsc6d7a0wkgp9j303id5a31zy4h38dwgb82hvvfp29q5z"))))
     (properties `((upstream-name . "Hiiragi2013")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xtable
-                             r-rcolorbrewer
-                             r-mouse4302-db
+    (propagated-inputs (list r-rcolorbrewer
                              r-mass
                              r-latticeextra
                              r-lattice
-                             r-keggrest
-                             r-gtools
                              r-gplots
-                             r-geneplotter
                              r-genefilter
                              r-cluster
-                             r-clue
-                             r-boot
-                             r-biobase
-                             r-affy))
+                             r-biobase))
     (home-page "https://bioconductor.org/packages/Hiiragi2013")
     (synopsis
      "Cell-to-cell expression variability followed by signal reinforcement progressively segregates early mouse lineages")
@@ -3389,13 +3381,13 @@ the counts method.")
 (define-public r-hicpotts
   (package
     (name "r-hicpotts")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCPotts" version))
        (sha256
-        (base32 "0s4xz68piwq30zpaknh9cjh6gp4n8agihlpykr1vc3h9frxnqdxm"))))
+        (base32 "0hhcsdkcd9136bl9mlsh7b9b33h1ry88d2m6f1syyl24xrh7d1z1"))))
     (properties `((upstream-name . "HiCPotts")))
     (build-system r-build-system)
     (arguments
@@ -3846,13 +3838,13 @@ method for detecting differences between Hi-C datasets.")
 (define-public r-hicbricks
   (package
     (name "r-hicbricks")
-    (version "1.29.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HiCBricks" version))
        (sha256
-        (base32 "1a10kz94plnrwc9xr9i8nbicb8y90m6xb83r373z85bx9mrijjh3"))))
+        (base32 "15jnj35mvdazly303l9lih86d7an9kazmyxa9j9c4grycp5y4xin"))))
     (properties `((upstream-name . "HiCBricks")))
     (build-system r-build-system)
     (arguments
@@ -4038,13 +4030,13 @@ bulk brain tissues.")
 (define-public r-hibag
   (package
     (name "r-hibag")
-    (version "1.48.0")
+    (version "1.48.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "HIBAG" version))
        (sha256
-        (base32 "0rjdfh30dg3bhr99asbischlrfky1hck22i0cn523g2gsf1vpq5g"))))
+        (base32 "1fnj3if14z2k365j154pa75ilw5x7fz4m4gxzqxbnvydv8b0mjp7"))))
     (properties `((upstream-name . "HIBAG")))
     (build-system r-build-system)
     (arguments

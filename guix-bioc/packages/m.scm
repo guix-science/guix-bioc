@@ -15,7 +15,6 @@
   #:use-module (gnu packages web)
   #:use-module (guix-cran packages f)
   #:use-module (guix-cran packages h)
-  #:use-module (guix-cran packages l)
   #:use-module (guix-cran packages r)
   #:use-module (guix-cran packages c)
   #:use-module (gnu packages python)
@@ -32,6 +31,7 @@
   #:use-module (gnu packages package-management)
   #:use-module (guix-cran packages d)
   #:use-module (guix-cran packages q)
+  #:use-module (guix-cran packages l)
   #:use-module (gnu packages java)
   #:use-module (guix-cran packages w)
   #:use-module (guix-bioc packages z)
@@ -1995,19 +1995,19 @@ functionality across the MSstats family of packages.")
 (define-public r-msstatsconvert
   (package
     (name "r-msstatsconvert")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MSstatsConvert" version))
        (sha256
-        (base32 "14g0nvrnyyvjyxq441l2l7g88drsn1n7qjlfyvzljcdr44sqkw69"))))
+        (base32 "0sdxry9l2syq8j4c9m1lqbjmhl649r0a072nl67zlm3nbx4yhg3a"))))
     (properties `((upstream-name . "MSstatsConvert")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-stringi r-rcpp r-log4r r-data-table r-checkmate))
+    (propagated-inputs (list r-stringi r-rcpp r-data-table r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/MSstatsConvert")
     (synopsis
@@ -2647,13 +2647,13 @@ infrastructure for MS data handling.")
 (define-public r-msbackendmgf
   (package
     (name "r-msbackendmgf")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MsBackendMgf" version))
        (sha256
-        (base32 "0dz4m597rjz2xi47ifgkmqyyxx93xginxc7azr0lk84sjqrwyfav"))))
+        (base32 "1kz8qnc80x51s1q697f6xsjm0nllwqz0z7lc24xl680z0aljgs41"))))
     (properties `((upstream-name . "MsBackendMgf")))
     (build-system r-build-system)
     (arguments
@@ -3327,13 +3327,13 @@ assembled using data from public repositories.")
 (define-public r-motiftestr
   (package
     (name "r-motiftestr")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "motifTestR" version))
        (sha256
-        (base32 "1y40m4pldm1q3iwa24j8h9yvknj0d826w186mkf809xmscy2xk02"))))
+        (base32 "0mcxcr45d08lq0rdxbisc9niwqhqcrdc5b2aky955di86asdh3nl"))))
     (properties `((upstream-name . "motifTestR")))
     (build-system r-build-system)
     (arguments
@@ -3747,13 +3747,13 @@ different resistances to chemotherapeutic treatments.")
 (define-public r-moonlight2r
   (package
     (name "r-moonlight2r")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Moonlight2R" version))
        (sha256
-        (base32 "1c8lin5gf4k7kyqs7gcp1hbx890wd01xihjgc33qzmlhnm0d293y"))))
+        (base32 "0w996b523823w8838r7a4drckpny43p7sar08ix46d65sxzi5cr9"))))
     (properties `((upstream-name . "Moonlight2R")))
     (build-system r-build-system)
     (arguments
@@ -4327,13 +4327,13 @@ and illustrate running and analysing MOFA models.")
 (define-public r-mofa2
   (package
     (name "r-mofa2")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MOFA2" version))
        (sha256
-        (base32 "17di1lvbqh2qzp8yfjh97ibaa6qxh023ag9n2yghm5w9r16ip30j"))))
+        (base32 "02qx8ysdahiizz18wwx1ip95kala8gmm0kjwdcgh4bvlfi7yraqm"))))
     (properties `((upstream-name . "MOFA2")))
     (build-system r-build-system)
     (arguments
@@ -5268,13 +5268,13 @@ expriments.")
 (define-public r-mirsponger
   (package
     (name "r-mirsponger")
-    (version "2.16.0")
+    (version "2.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRspongeR" version))
        (sha256
-        (base32 "0jizs0z41y4hi54c50bmb80pph4yh2dfpx461bdrmv4x8knpph2l"))))
+        (base32 "0xcn7ysh59608rrysdxar0sagqj17qkyv529r4khzc3i2md4mc9i"))))
     (properties `((upstream-name . "miRspongeR")))
     (build-system r-build-system)
     (arguments
@@ -5293,7 +5293,7 @@ expriments.")
                              r-doparallel
                              r-corpcor
                              r-clusterprofiler))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "<https://github.com/zhangjunpeng411/miRspongeR>")
     (synopsis "Identification and analysis of miRNA sponge regulation")
     (description
@@ -5315,13 +5315,13 @@ construct sample-sample correlation network.")
 (define-public r-mirsm
   (package
     (name "r-mirsm")
-    (version "2.8.0")
+    (version "2.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "miRSM" version))
        (sha256
-        (base32 "0hxq4468njncj8w7s51gzyizy1d3j33hmf6hjh06sna8xv3q7cjg"))))
+        (base32 "1qdchc7fnlfz8k6jlklgj2ksd8k4l25yxx3gl49b0z8xa794lc55"))))
     (properties `((upstream-name . "miRSM")))
     (build-system r-build-system)
     (arguments
@@ -5354,7 +5354,7 @@ construct sample-sample correlation network.")
                              r-clusterprofiler
                              r-biobase
                              r-bicare))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/zhangjunpeng411/miRSM")
     (synopsis "Inferring miRNA sponge modules in heterogeneous data")
     (description
@@ -8832,13 +8832,13 @@ achieve robustness.")
 (define-public r-metabosignal
   (package
     (name "r-metabosignal")
-    (version "1.42.0")
+    (version "1.42.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboSignal" version))
        (sha256
-        (base32 "0sswnk0prx5r02njxp403syfrdwwx03y9ljljnkri3cqdb0fdi7z"))))
+        (base32 "1mixxgb9xy2894bms06n8283akh625j1rqhxy0lxaix1wl67alpf"))))
     (properties `((upstream-name . "MetaboSignal")))
     (build-system r-build-system)
     (arguments
@@ -9006,13 +9006,13 @@ and the graphite Bioconductor R package.")
 (define-public r-metabodynamics
   (package
     (name "r-metabodynamics")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MetaboDynamics" version))
        (sha256
-        (base32 "1rzs53arwcd9li3jdd8rjrpnl23mhimmf2jfy3q6cnhyb6da6zlf"))))
+        (base32 "1b28rvj8cl55wg1k6lgkkvcbgzhwawjbijgk4l2a96x8lzsr90b8"))))
     (properties `((upstream-name . "MetaboDynamics")))
     (build-system r-build-system)
     (arguments
@@ -9475,19 +9475,19 @@ amenable to both base R and tidyverse workflows.")
 (define-public r-melsi
   (package
     (name "r-melsi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MeLSI" version))
        (sha256
-        (base32 "09nmljg69s80851vl3frzdc6xp36rnkhga1r6nf90i0ildky848b"))))
+        (base32 "02k9qbbss9lrzrradxnlh8wz44wqs3g70pigs0314hgy3q1zqmnb"))))
     (properties `((upstream-name . "MeLSI")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-vegan r-phyloseq r-ggplot2))
+    (propagated-inputs (list r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/NathanBresette/MeLSI")
     (synopsis
@@ -10302,13 +10302,13 @@ described with a PFM matrix, for example gotten from Jaspar.")
 (define-public r-matrixqcvis
   (package
     (name "r-matrixqcvis")
-    (version "1.20.0")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MatrixQCvis" version))
        (sha256
-        (base32 "0nny883i6s5ahh2nj8pz9f8x7f6lgia98fs7573zhz43k1rkb5dy"))))
+        (base32 "1fk6yjfsgrgc13x930vprk7pi9fjvhk9vcwb1rw1psdp21gi6axs"))))
     (properties `((upstream-name . "MatrixQCvis")))
     (build-system r-build-system)
     (arguments

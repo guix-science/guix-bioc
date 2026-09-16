@@ -622,13 +622,13 @@ filtering, annotation and FDR estimation.")
 (define-public r-svp
   (package
     (name "r-svp")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SVP" version))
        (sha256
-        (base32 "0ij8k8zn19amsqqmgk9kqv0kh0n7v7iwwvrnhnsl0ynrcbn98dha"))))
+        (base32 "0p90sf9y8n30416w5pr2hsi3il37iwxlz2h64cz6lv81is8b6b5y"))))
     (properties `((upstream-name . "SVP")))
     (build-system r-build-system)
     (arguments
@@ -1472,14 +1472,14 @@ the variance.")
 (define-public r-stexampledata
   (package
     (name "r-stexampledata")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "STexampleData" version
                               'experiment))
        (sha256
-        (base32 "0l3bjpz7wrvy084yh9fji6icmydz0g371hqz6ip5kdwazvxg03g1"))))
+        (base32 "13raknf211qzcwgi7rdbda8plfjl753rk5ihd4iiccg9rszp44vk"))))
     (properties `((upstream-name . "STexampleData")))
     (build-system r-build-system)
     (arguments
@@ -3198,7 +3198,6 @@ experiments.")
     (propagated-inputs (list r-vgam
                              r-rcpparmadillo
                              r-rcpp
-                             r-pulsar
                              r-phyloseq
                              r-matrix
                              r-mass
@@ -3478,13 +3477,13 @@ and retrieve specific data from Spectra objects.")
 (define-public r-spectraltad
   (package
     (name "r-spectraltad")
-    (version "1.28.0")
+    (version "1.28.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SpectralTAD" version))
        (sha256
-        (base32 "1nxl509zd4fxmx5sq5w324wdll61nchi62ivv2wcq2lz7h7hfl25"))))
+        (base32 "03gp9g0wc7rvfisgdryjh5ff9a0849nmx5hprmz0yz6jfk5j8phl"))))
     (properties `((upstream-name . "SpectralTAD")))
     (build-system r-build-system)
     (arguments
@@ -5170,13 +5169,13 @@ centroid are provided.")
 (define-public r-smoothclust
   (package
     (name "r-smoothclust")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "smoothclust" version))
        (sha256
-        (base32 "1y6dzcaq6f9223m055y4j369j3hmy7v7wvywr4wh0pxgn8dkadp9"))))
+        (base32 "0p7rsnzffiqrhpanf2c7wysksmrqclkgwvflppkjx5m8804gcmg4"))))
     (properties `((upstream-name . "smoothclust")))
     (build-system r-build-system)
     (arguments
@@ -6075,13 +6074,13 @@ manuscript.")
 (define-public r-singist
   (package
     (name "r-singist")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "singIST" version))
        (sha256
-        (base32 "01rhwk2ia860jia8iblhz0js00irbnkv5yq2r6xgxbicmrpngykc"))))
+        (base32 "14x0g2ywqlbpc283nlmsiw6548kp4cwzxszxdam4fphd7z1q528y"))))
     (properties `((upstream-name . "singIST")))
     (build-system r-build-system)
     (arguments
@@ -7177,13 +7176,13 @@ data from public repositories.")
 (define-public r-sharedobject
   (package
     (name "r-sharedobject")
-    (version "1.25.0")
+    (version "1.26.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SharedObject" version))
        (sha256
-        (base32 "15qfja9fx0lpwh65c330q3706d1phvg68i1nw5kdrwfkcp8dj05g"))))
+        (base32 "0kk53g9kw1hzhnmhfvlialk1pnk91wp04w7lkflki29jxz8y31jf"))))
     (properties `((upstream-name . "SharedObject")))
     (build-system r-build-system)
     (arguments
@@ -7469,13 +7468,13 @@ experiment.")
 (define-public r-seqvartools
   (package
     (name "r-seqvartools")
-    (version "1.50.0")
+    (version "1.50.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SeqVarTools" version))
        (sha256
-        (base32 "0cncyg8h2668m76cz6jbswjnxan7ydz5221grla8xfx19npl5ykc"))))
+        (base32 "15bkwkzxs5ynny0m09cgsv4lcing1634xcydycsga3qxns55w410"))))
     (properties `((upstream-name . "SeqVarTools")))
     (build-system r-build-system)
     (arguments
@@ -7502,19 +7501,20 @@ experiment.")
 (define-public r-seqtometry
   (package
     (name "r-seqtometry")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Seqtometry" version))
        (sha256
-        (base32 "03qsjy9wrqcvyw66xz1n4mv7ri2kzk6lg6wsxsdzics63nkkqlsx"))))
+        (base32 "09sv3h3n5a59ixmgni0q1q33lx3hkk4x225sa29yb9d3l3lzcfjp"))))
     (properties `((upstream-name . "Seqtometry")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-zeallot
+                             r-sparsematrixstats
                              r-rspectra
                              r-rcpphnsw
                              r-rcpparmadillo
@@ -7523,6 +7523,7 @@ experiment.")
                              r-matrixgenerics
                              r-matrix
                              r-future-apply
+                             r-delayedmatrixstats
                              r-data-table
                              r-checkmate
                              r-biocsingular))
@@ -10014,13 +10015,13 @@ predict risk scores of patients.")
 (define-public r-scecoda
   (package
     (name "r-scecoda")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scECODA" version))
        (sha256
-        (base32 "1lglmsinwpmwb48547bphd0fpl2c6qcjvnm36a1vib2w5qydx5id"))))
+        (base32 "0vcqyxzzybcs7a5gbrb785vbagqdcyqwad84x2nhdnrqj4q7rr5w"))))
     (properties `((upstream-name . "scECODA")))
     (build-system r-build-system)
     (arguments
@@ -10110,13 +10111,13 @@ Seurat objects as well as data frames.")
 (define-public r-scdiagnostics
   (package
     (name "r-scdiagnostics")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "scDiagnostics" version))
        (sha256
-        (base32 "1y9fpsc36rskk8f9lacr14zfm3sppliqaw8sv7sg244nqq2zy16n"))))
+        (base32 "1mq0hlhsshkj7by70b6jl5427ziqi26gf0pgriabk9hcxpvr9695"))))
     (properties `((upstream-name . "scDiagnostics")))
     (build-system r-build-system)
     (arguments

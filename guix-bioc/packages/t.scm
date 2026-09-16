@@ -15,9 +15,9 @@
   #:use-module (guix-cran packages l)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (guix-cran packages m)
   #:use-module (guix-cran packages n)
   #:use-module (guix-cran packages a)
+  #:use-module (guix-cran packages m)
   #:use-module (gnu packages bioinformatics)
   #:use-module (guix-bioc packages z)
   #:use-module (guix-bioc packages y)
@@ -2047,13 +2047,13 @@ automates creation of a transomics network as shown in the figure in Yugi.2014
 (define-public r-transmogr
   (package
     (name "r-transmogr")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "transmogR" version))
        (sha256
-        (base32 "1pc0k73k1ls9v7iqlb0khmvcylds2cs0y1s46pjaw1hk3aq37r8l"))))
+        (base32 "0fbgzdb3kz5cwp1l7wp8fays9nyiq5i1ympr2r236vf6m4yzlv25"))))
     (properties `((upstream-name . "transmogR")))
     (build-system r-build-system)
     (arguments
@@ -2390,13 +2390,13 @@ of dose-response curves across temperatures.")
 (define-public r-tpp
   (package
     (name "r-tpp")
-    (version "3.40.0")
+    (version "3.40.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TPP" version))
        (sha256
-        (base32 "000qdjmjddq7671zical6acimhzxcgdlr9xbxfs8yxmi5jvdlkv6"))))
+        (base32 "1dpcw6494ljh2g7r9wyp94z73kwq1ac0nsydryzss9i27n48sv6a"))))
     (properties `((upstream-name . "TPP")))
     (build-system r-build-system)
     (arguments
@@ -2416,7 +2416,6 @@ of dose-response curves across temperatures.")
                              r-plyr
                              r-openxlsx
                              r-nls2
-                             r-mefa
                              r-mass
                              r-magrittr
                              r-limma
@@ -2428,7 +2427,6 @@ of dose-response curves across temperatures.")
                              r-dplyr
                              r-doparallel
                              r-data-table
-                             r-biobroom
                              r-biobase))
     (native-inputs (list r-knitr))
     (home-page "https://bioconductor.org/packages/TPP")
@@ -2485,13 +2483,13 @@ data.")
 (define-public r-toppgene
   (package
     (name "r-toppgene")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "toppgene" version))
        (sha256
-        (base32 "15jxj6hr5rv47brgkqgnqa598px0r35m1qivbf2v4j2m9kx90iqq"))))
+        (base32 "12cm282k25hdyab2y90n0qvz6wai3rpw9655a6bjb39iibfy9zm3"))))
     (properties `((upstream-name . "toppgene")))
     (build-system r-build-system)
     (arguments
@@ -5184,13 +5182,13 @@ already available in ape Paradis and Schliep (2019)
 (define-public r-tadcompare
   (package
     (name "r-tadcompare")
-    (version "1.22.0")
+    (version "1.22.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "TADCompare" version))
        (sha256
-        (base32 "05lrx7qhkybnw9x8i35xsnrbgb3riwiqqb9n7n60jr2sadlm1cwm"))))
+        (base32 "0g8z2cb5lqbc1cyrgd2zla5rwr1ci0yzqzxzph7w9w6fdl69ald1"))))
     (properties `((upstream-name . "TADCompare")))
     (build-system r-build-system)
     (arguments

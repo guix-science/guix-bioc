@@ -1327,13 +1327,13 @@ input parameters is the number of cores to be used.")
 (define-public r-rols
   (package
     (name "r-rols")
-    (version "3.7.1")
+    (version "3.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rols" version))
        (sha256
-        (base32 "0gy9ymyknls8kqljbhj334a4hxwkh0mkvrwp47zi99c258adnwr6"))))
+        (base32 "1h3fdyyia0fz4srp4sdv2fbwcld56b8k3bjyimbsphj2cn99yalc"))))
     (properties `((upstream-name . "rols")))
     (build-system r-build-system)
     (arguments
@@ -2685,13 +2685,13 @@ analysis in the R environment.  It provides a standards-based interface to the
 (define-public r-rigvf
   (package
     (name "r-rigvf")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rigvf" version))
        (sha256
-        (base32 "15g9kg50xzjdicmh594xyiv63gxddlnshxp7pi7fnb0c4wjbb4ar"))))
+        (base32 "1d7jyxpvlfmhl7n0z2c6akrv3al16lsyapbknbc6yr7zdccv3lqp"))))
     (properties `((upstream-name . "rigvf")))
     (build-system r-build-system)
     (arguments
@@ -3845,13 +3845,13 @@ software for mass spectrometry and proteomics.")
 (define-public r-rflomics
   (package
     (name "r-rflomics")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RFLOMICS" version))
        (sha256
-        (base32 "106hfhb9bcszvd7r96fnqimjif87rk1h8n9v3xj9n0nc6rhb0hhh"))))
+        (base32 "0q49c26c6mhv4k73slkm266z7q0b5dlj2q1pvvnk5ix8nq95zahx"))))
     (properties `((upstream-name . "RFLOMICS")))
     (build-system r-build-system)
     (arguments
@@ -4323,13 +4323,13 @@ our understanding of gene regulatory networks.")
 (define-public r-regsplice
   (package
     (name "r-regsplice")
-    (version "1.38.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "regsplice" version))
        (sha256
-        (base32 "1cdzr7lnj42zkfxb3kchzhc8hfy016385bfh3mxhmq65v5bhy9lq"))))
+        (base32 "1ghz265jlqmfm6pazyxqmqy6zjkmrclgw5fy4172y140s589vswz"))))
     (properties `((upstream-name . "regsplice")))
     (build-system r-build-system)
     (arguments
@@ -4739,13 +4739,13 @@ distributions.")
 (define-public r-reder
   (package
     (name "r-reder")
-    (version "3.8.0")
+    (version "3.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RedeR" version))
        (sha256
-        (base32 "1z8xqnng3lwzw2gmpfn2cbxamnhn11z3axq6abnjjq48jczgbkqk"))))
+        (base32 "0w3s8zb87c9s11f9pwm2cg7fqsj1siyqnsm0haz2jrizhy2bj20y"))))
     (properties `((upstream-name . "RedeR")))
     (build-system r-build-system)
     (arguments

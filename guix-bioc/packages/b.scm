@@ -3927,13 +3927,13 @@ Invest. (2018) 128(1):427-445.  doi:10.1172/JCI93801.")
 (define-public r-blma
   (package
     (name "r-blma")
-    (version "1.36.0")
+    (version "1.36.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BLMA" version))
        (sha256
-        (base32 "162yvadzi81v3lbri304mhfpmcy44kvvq4ffmcwxj3fl4ndcs4c9"))))
+        (base32 "1vvcbl63z2myk30zmypy33a3qr9lmxf32mwv1z623fbd8fszw9gf"))))
     (properties `((upstream-name . "BLMA")))
     (build-system r-build-system)
     (arguments
@@ -4013,13 +4013,13 @@ differential expression testing.")
 (define-public r-blase
   (package
     (name "r-blase")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "blase" version))
        (sha256
-        (base32 "0h4q93ag5anx17vicll3l89ahnim3hz6r34rqs36d40xfdkybbpr"))))
+        (base32 "07ssi3c0h913vlixb88zr6wznr7lwzj02dn02z9456ircqvpjjns"))))
     (properties `((upstream-name . "blase")))
     (build-system r-build-system)
     (arguments
@@ -5387,13 +5387,13 @@ method is based on the binomial deviance model (Townes et al, 2019).")
 (define-public r-batchqc
   (package
     (name "r-batchqc")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BatchQC" version))
        (sha256
-        (base32 "0z86c2pqxsc1aj1pgk9bsaf7k6c1x6h6na10ghnhp9bgizg4a4c4"))))
+        (base32 "0vacv1wsghgsxaxhvc7w0dxfrl5ykqh34qrkgy7gzkhb7rh2qxix"))))
     (properties `((upstream-name . "BatchQC")))
     (build-system r-build-system)
     (arguments
@@ -5453,13 +5453,13 @@ and SVA.")
 (define-public r-batchef
   (package
     (name "r-batchef")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BatChef" version))
        (sha256
-        (base32 "0n792nj9hs9vh9n25ckfav4birlgbn994wfki5gxckcd4k0bmf0a"))))
+        (base32 "0qmg53dls168nfhlzvak5nx35wif0s5l4l9na1xpkd3iqpjif8fm"))))
     (properties `((upstream-name . "BatChef")))
     (build-system r-build-system)
     (arguments
@@ -5545,13 +5545,13 @@ for more thorough descriptions of algorithms.")
 (define-public r-basicstan
   (package
     (name "r-basicstan")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BASiCStan" version))
        (sha256
-        (base32 "1224zcj5imy7r24w0qbmyb13yc4hf907d980nbp38yrv6ynw3in0"))))
+        (base32 "0lrfzxjhvq0dhind9783q69r7kabrjj6nvv5kn2c8d986dz6n0p0"))))
     (properties `((upstream-name . "BASiCStan")))
     (build-system r-build-system)
     (arguments

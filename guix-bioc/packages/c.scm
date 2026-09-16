@@ -976,21 +976,27 @@ expression analysis in patients with colorectal cancer.")
 (define-public r-curatedbreastdata
   (package
     (name "r-curatedbreastdata")
-    (version "2.40.0")
+    (version "2.40.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "curatedBreastData" version
                               'experiment))
        (sha256
-        (base32 "08p5yhwyb0gx1xw9azyhj0dnzk7vhxznpds02bcarzzi1cxz8k06"))))
+        (base32 "1pckvpz5lqrcspyhnqgdvcp2dxa48lhjf9pa6ymx2y0yg5f4yz36"))))
     (properties `((upstream-name . "curatedBreastData")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-xml r-impute r-ggplot2 r-biocstyle r-biobase))
-    (home-page "https://bioconductor.org/packages/curatedBreastData")
+    (propagated-inputs (list r-xml
+                             r-impute
+                             r-ggplot2
+                             r-biocstyle
+                             r-biocfilecache
+                             r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://waldronlab.io/curatedBreastData/")
     (synopsis
      "Curated breast cancer gene expression data with survival and treatment information")
     (description
@@ -1610,13 +1616,13 @@ RNA-seq counts.")
 (define-public r-crumblr
   (package
     (name "r-crumblr")
-    (version "1.4.0")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "crumblr" version))
        (sha256
-        (base32 "1l0cm7h15p6n8bhdh3zn93lsvv5pc8cgyh989ayqi4jhsp446jp2"))))
+        (base32 "0y3x18c6mf6d64f8dffkrb30d35nnkzxnbbshrmrfbsmz6z9c2m5"))))
     (properties `((upstream-name . "crumblr")))
     (build-system r-build-system)
     (arguments
@@ -1631,7 +1637,8 @@ RNA-seq counts.")
                              r-mass
                              r-ggtree
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-dirmult))
     (native-inputs (list r-knitr))
     (home-page "https://DiseaseNeurogenomics.github.io/crumblr")
     (synopsis "Count ratio uncertainty modeling base linear regression")
@@ -2740,13 +2747,13 @@ data is represented as a RData files and is available in @code{ExperimentHub}.")
 (define-public r-cosia
   (package
     (name "r-cosia")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CoSIA" version))
        (sha256
-        (base32 "1jgx62zla9jn1246hjvdgxx7k1605p7kgyv3wm24p4abxglxwy5y"))))
+        (base32 "1574vbv2xn9a1a1qbxvabidhk0zhsgihvdbypznvzbpj18bap9fr"))))
     (properties `((upstream-name . "CoSIA")))
     (build-system r-build-system)
     (arguments
@@ -3696,13 +3703,13 @@ of skewed populations, are detected by integrating the Secondary Stain Index
 (define-public r-compcoder
   (package
     (name "r-compcoder")
-    (version "1.48.0")
+    (version "1.48.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "compcodeR" version))
        (sha256
-        (base32 "01rv05xa0f8gf7c8544wh1413gif2s6qiyhijgpqbdbciwywd44q"))))
+        (base32 "1qarskc6ma303g70gqi96b3zms16pmm9v224xrlxzfik615qvv30"))))
     (properties `((upstream-name . "compcodeR")))
     (build-system r-build-system)
     (arguments
@@ -3710,13 +3717,13 @@ of skewed populations, are detected by integrating the Secondary Stain Index
       #:tests? #f))
     (propagated-inputs (list r-vioplot
                              r-stringr
+                             r-statip
                              r-sm
                              r-shinydashboard
                              r-shiny
                              r-rocr
                              r-rmarkdown
                              r-phylolm
-                             r-modeest
                              r-matrixstats
                              r-mass
                              r-markdown
@@ -4397,13 +4404,13 @@ copy number polymorphic genomic regions.")
 (define-public r-cnvranger
   (package
     (name "r-cnvranger")
-    (version "1.28.0")
+    (version "1.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CNVRanger" version))
        (sha256
-        (base32 "01n84dkswci8i59fvhasbqg56h7p4dfpn0zyvawqimn19ln1qrbr"))))
+        (base32 "0p819zv09qciqnw42ifm2rrsfg1sk1asw69n9yxfhqkyg1hma84s"))))
     (properties `((upstream-name . "CNVRanger")))
     (build-system r-build-system)
     (arguments
@@ -4985,13 +4992,13 @@ combined or stepwise in a user-friendly environment.")
 (define-public r-clustsignal
   (package
     (name "r-clustsignal")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "clustSIGNAL" version))
        (sha256
-        (base32 "0lri4miqypcif53nbzpb66wb7v5nc37nswaqdvhlszjyiwc7mf4l"))))
+        (base32 "1h9z1kb2y89r7nbig1j1n00ihpp6n3qbs8clvzj4m5xbbc0z3851"))))
     (properties `((upstream-name . "clustSIGNAL")))
     (build-system r-build-system)
     (arguments
@@ -9285,13 +9292,13 @@ reconstruction from genome scale data.")
 (define-public r-catscradle
   (package
     (name "r-catscradle")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "CatsCradle" version))
        (sha256
-        (base32 "0vhwcmdlsp1kji13sv18plrc6s7ql42njagc2qb5crmrh8rx295n"))))
+        (base32 "1slc2nfv168nbzyc55r6vhabnsxjbr9sw655w1nssrx3i7x3v5kx"))))
     (properties `((upstream-name . "CatsCradle")))
     (build-system r-build-system)
     (arguments
@@ -9454,13 +9461,13 @@ adjusted and multiple solutions can be obtained and aggregated.")
 (define-public r-carnation
   (package
     (name "r-carnation")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "carnation" version))
        (sha256
-        (base32 "0h5j77k35rpb6lmlkxw4n4zg100mfzkd1g29610s1fydspcyx3l5"))))
+        (base32 "1zjw41wx1y8670b0l2w52p2vzlf69f672ygm6lya58dci3f288p2"))))
     (properties `((upstream-name . "carnation")))
     (build-system r-build-system)
     (arguments

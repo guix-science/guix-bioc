@@ -1115,24 +1115,20 @@ variable and perform variable selection.")
 (define-public r-lineagespot
   (package
     (name "r-lineagespot")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lineagespot" version))
        (sha256
-        (base32 "0v5xkvvadfpbwqk2gan5lsi7gbp0z0sz502aviz6xif7z6s46sgj"))))
+        (base32 "0x4vppgn5kpm76gdv7rgx4nx6d3vfpapf5njipg58s32hvhpaxzw"))))
     (properties `((upstream-name . "lineagespot")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
-    (propagated-inputs (list r-variantannotation
-                             r-summarizedexperiment
-                             r-stringr
-                             r-matrixgenerics
-                             r-httr
-                             r-data-table))
+    (propagated-inputs (list r-variantannotation r-summarizedexperiment
+                             r-stringr r-matrixgenerics r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/BiodataAnalysisGroup/lineagespot")
     (synopsis
@@ -1414,13 +1410,13 @@ the level of single probes.")
 (define-public r-lemur
   (package
     (name "r-lemur")
-    (version "1.9.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "lemur" version))
        (sha256
-        (base32 "0xg2bas7lfsnxjgrn81kzjggd6fi996dm7rfwvghn9schjyz6hck"))))
+        (base32 "00iqg6k311hni8c401zgqy720wyac7wj2hfahjlsc86zp24kf22k"))))
     (properties `((upstream-name . "lemur")))
     (build-system r-build-system)
     (arguments
@@ -1439,12 +1435,11 @@ the level of single probes.")
                              r-limma
                              r-irlba
                              r-hdf5array
-                             r-harmony
                              r-glmgampoi
                              r-delayedmatrixstats
                              r-biocneighbors
                              r-biocgenerics))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/const-ae/lemur")
     (synopsis "Latent Embedding Multivariate Regression")
     (description

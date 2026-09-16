@@ -264,14 +264,14 @@ interpreted. @code{DelayedArray} matrices and @code{BiocParallel} are supported.
 (define-public r-weberdivechalcdata
   (package
     (name "r-weberdivechalcdata")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "WeberDivechaLCdata" version
                               'experiment))
        (sha256
-        (base32 "05cmiy976y5rphzfjxmvwlrn966f5glida18ckxvwnd4n829fawg"))))
+        (base32 "1qdjb9z2znsgf05rd5bxxr3klr70r6875x2b8axwm0hrfky7map8"))))
     (properties `((upstream-name . "WeberDivechaLCdata")))
     (build-system r-build-system)
     (arguments

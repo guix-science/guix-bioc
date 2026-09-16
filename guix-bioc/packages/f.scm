@@ -384,13 +384,13 @@ aberrant splicing defects.")
 (define-public r-fraq
   (package
     (name "r-fraq")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fraq" version))
        (sha256
-        (base32 "1m3946bjqh2f0fiv5a69nbiz9z14ninyf0rhrng0l8pbrbxalbwk"))))
+        (base32 "0w1zv4znxbp15pmqx8lsfzy338765a4348n5dkl3a3s7wilgnxnj"))))
     (properties `((upstream-name . "fraq")))
     (build-system r-build-system)
     (arguments
@@ -1085,13 +1085,13 @@ and plots @code{SpecEnr} abundance scores given cell population cell counts.")
 (define-public r-flowgate
   (package
     (name "r-flowgate")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "flowGate" version))
        (sha256
-        (base32 "0xd511igjmj1bb4g8kw4557cy1kj377gklwkm6dlhfkigi7m398y"))))
+        (base32 "1lq1qripvykp27m9llyy2jlpci37aj5c3hfhd7i3sflfgdyf929i"))))
     (properties `((upstream-name . "flowGate")))
     (build-system r-build-system)
     (arguments
@@ -1883,13 +1883,13 @@ Concordance at the Top plots (CAT-plots).")
 (define-public r-fenr
   (package
     (name "r-fenr")
-    (version "1.10.0")
+    (version "1.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "fenr" version))
        (sha256
-        (base32 "0982ibfn3j8g4ccra40yd0knwigvj7jaq2zpx3ivd0ra5phr49vw"))))
+        (base32 "1i4lwhlkm91cy33hwaaimw748fmix76n26m2idzjc7larz28mpj0"))))
     (properties `((upstream-name . "fenr")))
     (build-system r-build-system)
     (arguments
@@ -1900,7 +1900,6 @@ Concordance at the Top plots (CAT-plots).")
                              r-tibble
                              r-stringr
                              r-shiny
-                             r-rvest
                              r-rlang
                              r-readr
                              r-purrr

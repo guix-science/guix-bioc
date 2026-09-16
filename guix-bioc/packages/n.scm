@@ -865,13 +865,13 @@ the following species: human, mouse, rat, zebrafish, fruit fly, worm, and yeast.
 (define-public r-nnsvg
   (package
     (name "r-nnsvg")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "nnSVG" version))
        (sha256
-        (base32 "14742r5gdk8lgclqwgwda6cmq1sp3b0i8w9ps525ysd492qp21g0"))))
+        (base32 "0n8z4ifz0z288vsnm1d7gi5k94v5ss2hy1cbvffdn9xw5d8ghw59"))))
     (properties `((upstream-name . "nnSVG")))
     (build-system r-build-system)
     (arguments
@@ -1073,13 +1073,13 @@ subsampled data on chr6 (hg19).")
 (define-public r-newwave
   (package
     (name "r-newwave")
-    (version "1.21.0")
+    (version "1.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NewWave" version))
        (sha256
-        (base32 "1qik748isbf7dq5wyrwjmqigdp9hnaw8f1sjm9vba6zd5wwzls1g"))))
+        (base32 "1kl80hig88ib5h9xshk74fv98qfccfj311mnwkparvva300cn46s"))))
     (properties `((upstream-name . "NewWave")))
     (build-system r-build-system)
     (arguments
@@ -1165,13 +1165,13 @@ noisy, sparse @code{scRNAseq} data.")
 (define-public r-netsam
   (package
     (name "r-netsam")
-    (version "1.52.0")
+    (version "1.52.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "NetSAM" version))
        (sha256
-        (base32 "0vyqqc0bdwd2q1hdkrrjaqka1rrzgbhq3qhxcwq65h4wjb2nlfh3"))))
+        (base32 "1fa96kjmq0dvb3b46i5k8n9qrgmyf0n8fpg2jgr9x1v1pvisp3x4"))))
     (properties `((upstream-name . "NetSAM")))
     (build-system r-build-system)
     (arguments
@@ -1586,13 +1586,13 @@ are offered as RCX object and as igraph representation.")
 (define-public r-ncrnatools
   (package
     (name "r-ncrnatools")
-    (version "1.22.1")
+    (version "1.22.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ncRNAtools" version))
        (sha256
-        (base32 "0fm9agf7nf2g578hcq6wwnw7icscnax77820mn3cc0gaybvwf346"))))
+        (base32 "104pkng341sa5p95s6df02slgiqx6m1x0k7899vnfj83g9bk12pg"))))
     (properties `((upstream-name . "ncRNAtools")))
     (build-system r-build-system)
     (arguments

@@ -44,13 +44,13 @@
 (define-public r-extrachips
   (package
     (name "r-extrachips")
-    (version "1.16.1")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "extraChIPs" version))
        (sha256
-        (base32 "1m4fzj5bmd5dh44nz0as6a4a5pkrijp3p542y5dq5pyafisl1a5v"))))
+        (base32 "0zmnqhraa58y5vap1jp92bjxjdihfib7xd2x260dx4p7mcd4yr8r"))))
     (properties `((upstream-name . "extraChIPs")))
     (build-system r-build-system)
     (arguments
@@ -1515,13 +1515,13 @@ epimutations in 450k methylation arrays.")
 (define-public r-epimutacions
   (package
     (name "r-epimutacions")
-    (version "1.16.0")
+    (version "1.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "epimutacions" version))
        (sha256
-        (base32 "1rffclrbnk6qkrj0bpy3508dqbwds5c4s3anjvpwbbsfy7nhz10s"))))
+        (base32 "1k9a36sd4h1yxfc0rfm5ysxrh6lv1pl915wm0blcgcs7x7s5y80i"))))
     (properties `((upstream-name . "epimutacions")))
     (build-system r-build-system)
     (arguments

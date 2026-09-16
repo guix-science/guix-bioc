@@ -3155,26 +3155,26 @@ placental DNA methylation array (450k/850k) data.")
 (define-public r-plaid
   (package
     (name "r-plaid")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "plaid" version))
        (sha256
-        (base32 "0vxxi1dww1c3vzfn1y6s2izvlqy671gjw5nmvf55brifrs5mg35m"))))
+        (base32 "1q8ilvyn3gxl661y2ipgavds7qg1hc1rlcgqnkq0z1v37as5mzpg"))))
     (properties `((upstream-name . "plaid")))
     (build-system r-build-system)
     (arguments
      (list
       #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
-                             r-rfast
                              r-qlcmatrix
                              r-matrixstats
                              r-matrixgenerics
                              r-matrix
                              r-gsva
                              r-fgsea
+                             r-collapse
                              r-biocset))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bigomics/plaid")
@@ -3227,13 +3227,13 @@ data.")
 (define-public r-pirat
   (package
     (name "r-pirat")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "Pirat" version))
        (sha256
-        (base32 "06800vcfgnhh0wj31nzyxnl3gi6djmfalsx5k424afapjxayw1xr"))))
+        (base32 "1svfgjvrjaqamh1r6rf6zfjid1dli7hc7lk5206pkksxq4wnz3lh"))))
     (properties `((upstream-name . "Pirat")))
     (build-system r-build-system)
     (arguments
@@ -3526,14 +3526,14 @@ characteristics.")
 (define-public r-phyloprofiledata
   (package
     (name "r-phyloprofiledata")
-    (version "1.26.0")
+    (version "1.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfileData" version
                               'experiment))
        (sha256
-        (base32 "1zsqlpjbw5f7aic8bidk4xvxfs7y290xw72h1dfy9p7c05clj20b"))))
+        (base32 "1aai5n4psld4l1bg984m1q7xw44s3ycccpihq1jd20iq3mi96xn0"))))
     (properties `((upstream-name . "PhyloProfileData")))
     (build-system r-build-system)
     (arguments
@@ -3556,13 +3556,13 @@ profiles with @code{PhyloProfile} package.")
 (define-public r-phyloprofile
   (package
     (name "r-phyloprofile")
-    (version "2.4.1")
+    (version "2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "PhyloProfile" version))
        (sha256
-        (base32 "10bjv6zjal5wszqrmr0xcg5c38dvr7ilwngaf5mlf9gsf3j97m83"))))
+        (base32 "0ymzvphqs63jchwh291swd54dqdlqkb6jmp4fyyxwk2njr8ygflz"))))
     (properties `((upstream-name . "PhyloProfile")))
     (build-system r-build-system)
     (arguments
@@ -3580,7 +3580,6 @@ profiles with @code{PhyloProfile} package.")
                              r-shinycssloaders
                              r-shiny
                              r-scattermore
-                             r-rfast
                              r-rcurl
                              r-rcolorbrewer
                              r-plotly
@@ -3595,6 +3594,7 @@ profiles with @code{PhyloProfile} package.")
                              r-data-table
                              r-colourpicker
                              r-bsplus
+                             r-bit64
                              r-biostrings
                              r-biodist
                              r-biocstyle

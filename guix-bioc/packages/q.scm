@@ -471,6 +471,30 @@ asymptotic normality (Erdmann-Pham et al., 2022+ [@code{arXiv:2008.06664v2}];
 Erdmann-Pham, 2023+ [@code{arXiv:2209.14235v2}]).")
     (license license:gpl3+)))
 
+(define-public r-qplexdata
+  (package
+    (name "r-qplexdata")
+    (version "1.30.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (bioconductor-uri "qPLEXdata" version
+                              'experiment))
+       (sha256
+        (base32 "190jaz16fd8h2njpyb151i83y6ygv8pa5nhiprh84bx6q25kgs3z"))))
+    (properties `((upstream-name . "qPLEXdata")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:tests? #f))
+    (propagated-inputs (list r-qplexanalyzer r-msnbase r-knitr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://bioconductor.org/packages/qPLEXdata")
+    (synopsis "Data accompanying qPLEXanalyzer package")
+    (description
+     "@code{qPLEX-RIME} and Full proteome TMT mass spectrometry datasets.")
+    (license license:gpl2)))
+
 (define-public r-qplexanalyzer
   (package
     (name "r-qplexanalyzer")

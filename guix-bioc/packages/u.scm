@@ -202,13 +202,13 @@ gene-keyword relations.")
 (define-public r-uniprot-ws
   (package
     (name "r-uniprot-ws")
-    (version "2.52.0")
+    (version "2.52.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UniProt.ws" version))
        (sha256
-        (base32 "0b052fm90s3dsdqnafrr7nsk0dyblwlhmk8rnn2wzgq5kgcn1md8"))))
+        (base32 "06b1mmpa9x0x00mwchy3vff5qqzz3lbbq0h9z2004hnbk78r8xy7"))))
     (properties `((upstream-name . "UniProt.ws")))
     (build-system r-build-system)
     (arguments
