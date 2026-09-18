@@ -1453,13 +1453,13 @@ corresponding functional profiles'.")
 (define-public r-gopro
   (package
     (name "r-gopro")
-    (version "1.38.0")
+    (version "1.38.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "GOpro" version))
        (sha256
-        (base32 "1ydncjh2gaccz4a1rfmbqx3j4w0w9dkn98nl88bwklffyfj6mbyw"))))
+        (base32 "14l8c8cpahkgc5hbf7ww3v39hrsabrp0r1i1sqp3aysxif0sj82v"))))
     (properties `((upstream-name . "GOpro")))
     (build-system r-build-system)
     (arguments
@@ -5109,7 +5109,6 @@ lines (8-way RILs) which can be refered to as MAGIC population.")
                              r-scales
                              r-plyr
                              r-network
-                             r-mwcsr
                              r-intergraph
                              r-igraph
                              r-htmlwidgets

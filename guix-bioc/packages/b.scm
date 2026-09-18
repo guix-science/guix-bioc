@@ -5387,13 +5387,13 @@ method is based on the binomial deviance model (Townes et al, 2019).")
 (define-public r-batchqc
   (package
     (name "r-batchqc")
-    (version "2.8.1")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BatchQC" version))
        (sha256
-        (base32 "0vacv1wsghgsxaxhvc7w0dxfrl5ykqh34qrkgy7gzkhb7rh2qxix"))))
+        (base32 "10sjb76wp988il6ah4dpkl7c9p5wa0qvqzkrrczihac72x6ifvdv"))))
     (properties `((upstream-name . "BatchQC")))
     (build-system r-build-system)
     (arguments
@@ -5432,10 +5432,10 @@ method is based on the binomial deviance model (Townes et al, 2019).")
     (home-page "https://github.com/wejlab/BatchQC")
     (synopsis "Batch Effects Quality Control Software")
     (description
-     "Sequencing and microarray samples often are collected or processed in multiple
-batches or at different times.  This often produces technical biases that can
-lead to incorrect results in the downstream analysis. @code{BatchQC} is a
-software tool that streamlines batch preprocessing and evaluation by providing
+     "Samples (-omics, imaging, single cell, etc) often are collected or processed in
+multiple batches or at different times.  This often produces technical biases
+that can lead to incorrect results in the downstream analysis. @code{BatchQC} is
+a software tool that streamlines batch preprocessing and evaluation by providing
 interactive diagnostics, visualizations, and statistical analyses to explore the
 extent to which batch variation impacts the data. @code{BatchQC} diagnostics
 help determine whether batch adjustment needs to be done, and how correction
