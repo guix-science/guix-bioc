@@ -431,13 +431,13 @@ datasets were used as gold standard in comparing gene set analysis methods.")
 (define-public r-kebabs
   (package
     (name "r-kebabs")
-    (version "1.46.0")
+    (version "1.46.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "kebabs" version))
        (sha256
-        (base32 "1q49zslg112vrrvljg75jyykazakb58c81s8jk1agw1fv6hs7avb"))))
+        (base32 "0345d14wdiq6v06r3gszjv777f2hcf4aq7i6cvawj98x0p6wii1d"))))
     (properties `((upstream-name . "kebabs")))
     (build-system r-build-system)
     (arguments

@@ -6303,13 +6303,13 @@ Shabalin et al. (2018) <doi:10.1093/bioinformatics/bty069>.")
 (define-public r-ramr
   (package
     (name "r-ramr")
-    (version "1.20.0")
+    (version "1.20.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ramr" version))
        (sha256
-        (base32 "09w3mhxh98bb1qvb7z8ycdrj3wbpvabi3i03fa0v5px5hbf5xw84"))))
+        (base32 "1a04gh4k2k50m6g9hzmmy25wvap86q2v8qralzik56a31zbrjbg5"))))
     (properties `((upstream-name . "ramr")))
     (build-system r-build-system)
     (arguments
