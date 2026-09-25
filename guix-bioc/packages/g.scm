@@ -5109,6 +5109,7 @@ lines (8-way RILs) which can be refered to as MAGIC population.")
                              r-scales
                              r-plyr
                              r-network
+                             r-mwcsr
                              r-intergraph
                              r-igraph
                              r-htmlwidgets

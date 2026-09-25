@@ -805,13 +805,13 @@ interest.")
 (define-public r-anvilworkflow
   (package
     (name "r-anvilworkflow")
-    (version "1.11.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "AnVILWorkflow" version))
        (sha256
-        (base32 "016a232g773lqawlppy8jp75fl5n7m32zkdbhkwc3la0dqm4z6z9"))))
+        (base32 "0f8yqfs2rg2mkk4lvwc2q1ry8swf5f1zb0wzwrgx4ah60j6darf8"))))
     (properties `((upstream-name . "AnVILWorkflow")))
     (build-system r-build-system)
     (arguments
@@ -824,6 +824,7 @@ interest.")
                              r-plyr
                              r-jsonlite
                              r-httr
+                             r-gcptools
                              r-dplyr
                              r-anvilgcp
                              r-anvilbase

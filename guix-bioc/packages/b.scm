@@ -3342,13 +3342,13 @@ database.")
 (define-public r-breastsubtyper
   (package
     (name "r-breastsubtyper")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "BreastSubtypeR" version))
        (sha256
-        (base32 "04bwim2myl00c3ncf1hd0mlx7mjp1382r2k3bnh29g7fcdlgjmb8"))))
+        (base32 "0n5qndkngz08kf85lyihxvkfq6h3dnmhrizm6181dflswir3c0vq"))))
     (properties `((upstream-name . "BreastSubtypeR")))
     (build-system r-build-system)
     (arguments
