@@ -91,13 +91,13 @@ a subset of experimental cell-lines.  Intended for use with package KEGGlincs.")
 (define-public r-knowyourcg
   (package
     (name "r-knowyourcg")
-    (version "1.8.0")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "knowYourCG" version))
        (sha256
-        (base32 "0jbqayl3sgs7irc4qhd3iwm556dkl3pr1xw7n972734h2353jss5"))))
+        (base32 "0nkgrq6yaniyr3qkiv8ad95hgmvvjz97pg0g7lgdh7b101y85797"))))
     (properties `((upstream-name . "knowYourCG")))
     (build-system r-build-system)
     (arguments
@@ -138,7 +138,9 @@ methylation, and trait-epigenome associations. @code{KnowYourCG} addresses the
 challenges of data sparsity in various methylation datasets, including low-pass
 Nanopore sequencing, single-cell DNA methylomes, 5-hydroxymethylation profiles,
 spatial DNA methylation maps, and array-based datasets for epigenome-wide
-association studies and epigenetic clocks (<doi:10.1126/sciadv.adw3027>).")
+association studies and epigenetic clocks (<doi:10.1126/sciadv.adw3027>).
+@code{KnowYourCG} v2, a command-line implementation in C, is available at
+<https://github.com/zhou-lab/kycg>.")
     (license license:agpl3)))
 
 (define-public r-knowseq

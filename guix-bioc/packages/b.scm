@@ -2457,8 +2457,7 @@ ASM221672v1 assembly accession GCA_002216725.1).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:substitutable? #f))
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac4")
@@ -2484,8 +2483,7 @@ ASM221672v1 assembly accession GCA_002216725.1).")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:substitutable? #f))
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cjacchus.UCSC.calJac3")
@@ -2544,8 +2542,7 @@ default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f
-      #:substitutable? #f))
+      #:tests? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Cfamiliaris.UCSC.canFam3")

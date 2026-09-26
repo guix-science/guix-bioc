@@ -1722,13 +1722,13 @@ stored as GRanges objects.")
 (define-public r-dmgsea
   (package
     (name "r-dmgsea")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "dmGsea" version))
        (sha256
-        (base32 "12j6c60awk5kvi2g1kcj2n77jpjlhi7pcmi4chl5fwsv1a2xmlxa"))))
+        (base32 "0f26apv95gijd948fikalx39sfpg6m6zmbrgq681l1n67dm8y4kh"))))
     (properties `((upstream-name . "dmGsea")))
     (build-system r-build-system)
     (arguments
@@ -1933,13 +1933,13 @@ multivariate features.")
 (define-public r-distinct
   (package
     (name "r-distinct")
-    (version "1.24.1")
+    (version "1.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "distinct" version))
        (sha256
-        (base32 "1wi3s74qps4wkqq352viwi74p0gl8xnssq1irj5n7x8821ab64zc"))))
+        (base32 "1zq3rmxbv7dz3f30gsgbyi26si80dkzhbqw8w5cvj5crvml9rcdr"))))
     (properties `((upstream-name . "distinct")))
     (build-system r-build-system)
     (arguments
