@@ -36,13 +36,13 @@
 (define-public r-jvecfor
   (package
     (name "r-jvecfor")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "jvecfor" version))
        (sha256
-        (base32 "1gf27yccs1yjrnwnwkyz5piiid3p2zdcx3bp06m9d88dcpk564f6"))))
+        (base32 "15dz4kvfq4lbbszabz3mp42wyv8bgac6xill79hx0q2imi2sk3zk"))))
     (properties `((upstream-name . "jvecfor")))
     (build-system r-build-system)
     (arguments

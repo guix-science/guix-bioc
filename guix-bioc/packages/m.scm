@@ -7451,13 +7451,13 @@ ability to determine the identities of significant ions detected by LC-MS.")
 (define-public r-methylsig
   (package
     (name "r-methylsig")
-    (version "1.24.0")
+    (version "1.24.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "methylSig" version))
        (sha256
-        (base32 "0gbwyqwm88lv0wg1i2p609d2mljjmw0s1mjbhj2r4indd50g3wvz"))))
+        (base32 "00nlxn7kl2r1pgrn6a29ircrw5n40am7afb6dd9x2sxmppzwpim8"))))
     (properties `((upstream-name . "methylSig")))
     (build-system r-build-system)
     (arguments

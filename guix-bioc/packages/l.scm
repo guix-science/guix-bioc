@@ -365,13 +365,13 @@ package).")
 (define-public r-lrde
   (package
     (name "r-lrde")
-    (version "0.99.6")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LRDE" version))
        (sha256
-        (base32 "1cs3kqp74ji3pa2gml2ba892v6ks8kyg5q0k7nbby9jj5pgpljw2"))))
+        (base32 "0d19k7l0jh30bp6wpjrvcdi0lmykvr3vw0bxh35wqzyix1rx9wfa"))))
     (properties `((upstream-name . "LRDE")))
     (build-system r-build-system)
     (arguments
@@ -1231,13 +1231,13 @@ handle unbalanced design.")
 (define-public r-limpa
   (package
     (name "r-limpa")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "limpa" version))
        (sha256
-        (base32 "1z47xbrcq41ch4xih2cldhx6clslzh7afr1gi0b8x6sd9v7f8sq2"))))
+        (base32 "0rb4n6y5xsrskjsd8xi7bm8hxgszvrcjnvvbwn0hmvvynlgkii2g"))))
     (properties `((upstream-name . "limpa")))
     (build-system r-build-system)
     (arguments
