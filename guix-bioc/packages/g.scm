@@ -4387,13 +4387,13 @@ tools for the developer.")
 (define-public r-gemma-r
   (package
     (name "r-gemma-r")
-    (version "3.8.0")
+    (version "3.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "gemma.R" version))
        (sha256
-        (base32 "1hhgxkncbllb5wx1qwbxpfx529cxgzlla3w8ymrdkamyn8bs7f0l"))))
+        (base32 "0a7l7a4547czsl67dvflcxk6nivqsk95180gkbh4w1qs1mlksx5s"))))
     (properties `((upstream-name . "gemma.R")))
     (build-system r-build-system)
     (arguments
@@ -4407,6 +4407,7 @@ tools for the developer.")
                              r-rlang
                              r-rappdirs
                              r-r-utils
+                             r-pheatmap
                              r-memoise
                              r-magrittr
                              r-lubridate

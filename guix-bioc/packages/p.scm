@@ -3099,13 +3099,13 @@ Plasmodium_Anopheles.cdf file.")
 (define-public r-planttfhunter
   (package
     (name "r-planttfhunter")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "planttfhunter" version))
        (sha256
-        (base32 "0fcs3sh8crn482misgs3zy25h2jfy6kqclbkh5bkkcb87jfpyjgi"))))
+        (base32 "008xzvqgiwzajlh5kyn2fpaac6mpq4jnn7czv5y243xsafpl7wqr"))))
     (properties `((upstream-name . "planttfhunter")))
     (build-system r-build-system)
     (arguments
