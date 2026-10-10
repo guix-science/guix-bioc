@@ -2672,13 +2672,13 @@ for complex diseases.")
 (define-public r-despace
   (package
     (name "r-despace")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "DESpace" version))
        (sha256
-        (base32 "1xah4hs40339k07gw3kdnbr4615nin5443ax20q68d7ycn66cgjl"))))
+        (base32 "1n0r56bw8c0bvv7f46rzhcvlx5danwynrhg2dvp01iiqv61jpbq6"))))
     (properties `((upstream-name . "DESpace")))
     (build-system r-build-system)
     (arguments
@@ -2720,7 +2720,9 @@ spatial clusters.  For multi-sample, multi-condition datasets, we again fit a NB
 model via @code{edgeR}, incorporating spatial clusters, conditions and their
 interactions as covariates.  DSP genes-representing differences in spatial gene
 expression patterns across experimental conditions-are identified by testing the
-interaction between spatial clusters and conditions.")
+interaction between spatial clusters and conditions.  See Cai et al. (2024)
+<doi:10.1093/bioinformatics/btae027> and Cai et al. (2026)
+<doi:10.1093/bioinformatics/btag450>.")
     (license license:gpl3)))
 
 (define-public r-desousa2013

@@ -672,13 +672,13 @@ as disease vs wildtype across development or anatomical region.")
 (define-public r-multistateqtl
   (package
     (name "r-multistateqtl")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "multistateQTL" version))
        (sha256
-        (base32 "1yq0cn7q0857z45h2mzgb3nq2vq4bmj2mfcpcj1an9lscq2xidvb"))))
+        (base32 "1wn3q61rp7w7k4qwy9zr64vws0n51s1r8ni58w1wblblrvql7pn7"))))
     (properties `((upstream-name . "multistateQTL")))
     (build-system r-build-system)
     (arguments
