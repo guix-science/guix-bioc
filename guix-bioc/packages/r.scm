@@ -1327,13 +1327,13 @@ input parameters is the number of cores to be used.")
 (define-public r-rols
   (package
     (name "r-rols")
-    (version "3.8.2")
+    (version "3.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rols" version))
        (sha256
-        (base32 "1h3fdyyia0fz4srp4sdv2fbwcld56b8k3bjyimbsphj2cn99yalc"))))
+        (base32 "0asw85f55d9yjylc6dxg0zh5zmgnx2j6dbcr5y0mig74jrp7nx3j"))))
     (properties `((upstream-name . "rols")))
     (build-system r-build-system)
     (arguments
@@ -1341,7 +1341,7 @@ input parameters is the number of cores to be used.")
       #:tests? #f))
     (propagated-inputs (list r-jsonlite r-httr2 r-biobase))
     (native-inputs (list r-knitr))
-    (home-page "http://lgatto.github.io/rols/")
+    (home-page "https://shbrief.github.io/rols/")
     (synopsis "An R interface to the Ontology Lookup Service")
     (description
      "The rols package is an interface to the Ontology Lookup Service (OLS) to access

@@ -1701,13 +1701,13 @@ between assays, variables or individuals.")
 (define-public r-omicsmlrepor
   (package
     (name "r-omicsmlrepor")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "OmicsMLRepoR" version))
        (sha256
-        (base32 "1hnw93qnwqh4ngaw0jcy3lysddjz3j0ql25lsxl523jlbllsjh28"))))
+        (base32 "0zdw3m7gb67s9nhbp5a6bh220zrm593by301fy8ks7vym0n1iyjs"))))
     (properties `((upstream-name . "OmicsMLRepoR")))
     (build-system r-build-system)
     (arguments
