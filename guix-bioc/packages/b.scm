@@ -5118,13 +5118,13 @@ to identify enriched antibody responses.")
 (define-public r-bedbaser
   (package
     (name "r-bedbaser")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "bedbaser" version))
        (sha256
-        (base32 "016wqp0nhhpis68xc4hkihx2yprr2x4pw2api0mprfkqqjzpcc2j"))))
+        (base32 "0lznwcnkrz9063fvfilgms08l4zfvwmymrfrsvzm2pf5kw80l52b"))))
     (properties `((upstream-name . "bedbaser")))
     (build-system r-build-system)
     (arguments

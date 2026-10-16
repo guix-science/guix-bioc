@@ -2685,13 +2685,13 @@ analysis in the R environment.  It provides a standards-based interface to the
 (define-public r-rigvf
   (package
     (name "r-rigvf")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "rigvf" version))
        (sha256
-        (base32 "1d7jyxpvlfmhl7n0z2c6akrv3al16lsyapbknbc6yr7zdccv3lqp"))))
+        (base32 "0kmp6fz3f1bw91r1xhywd9xyyxibzcvq8yi7k46dn6khgspqysl2"))))
     (properties `((upstream-name . "rigvf")))
     (build-system r-build-system)
     (arguments

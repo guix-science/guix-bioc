@@ -10336,13 +10336,13 @@ include a graph regularization or ‘smoothing’ approach for managing this iss
 (define-public r-pairedgsea
   (package
     (name "r-pairedgsea")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "pairedGSEA" version))
        (sha256
-        (base32 "14h80wfxclq45j5hw2vrm3ygc854rjxj1hgj0izq089jqp9f36c0"))))
+        (base32 "16wnlxnap1chac188c975xqhlvd796gnka9k3g8q3ly73zap6kr1"))))
     (properties `((upstream-name . "pairedGSEA")))
     (build-system r-build-system)
     (arguments

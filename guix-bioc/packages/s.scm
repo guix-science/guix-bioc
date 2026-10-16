@@ -107,13 +107,13 @@ easily substitute any of these features and/or custom with alternatives.")
 (define-public r-systempipeshiny
   (package
     (name "r-systempipeshiny")
-    (version "1.22.0")
+    (version "1.22.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "systemPipeShiny" version))
        (sha256
-        (base32 "0r7bik27zpwriygyz0a1vy48jdzbzlbbpdjln7fl9d3gmrcvdnqc"))))
+        (base32 "1cipp8n6w0zhwf3saq384bz5wvxf7w52ildz9s5lni95vzazrzi0"))))
     (properties `((upstream-name . "systemPipeShiny")))
     (build-system r-build-system)
     (arguments
@@ -1638,13 +1638,13 @@ surrounded with.")
 (define-public r-statescoper
   (package
     (name "r-statescoper")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "StatescopeR" version))
        (sha256
-        (base32 "0jpysnqdyb80irn64yfjmqdmpwsj7hmnn1a9pvmqvxh2x6knpzqr"))))
+        (base32 "15v268dqligk2vhjv05kb8jmgqq2yc6jawnnir0p9qxn45iahgf3"))))
     (properties `((upstream-name . "StatescopeR")))
     (build-system r-build-system)
     (arguments
@@ -1652,7 +1652,7 @@ surrounded with.")
       #:tests? #f))
     (propagated-inputs (list r-summarizedexperiment
                              r-singlecellexperiment
-                             r-scran
+                             r-scrapper
                              r-s4vectors
                              r-reticulate
                              r-matrixstats
@@ -8696,13 +8696,13 @@ management system to regulate database accessibility for different users.")
 (define-public r-screenr
   (package
     (name "r-screenr")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ScreenR" version))
        (sha256
-        (base32 "04abx92vgf91200nq9kknxfjxiw29lardv5v7gdwmsfl8d7cjh0j"))))
+        (base32 "1h54mc4f9y2iasbanmwcag734i6y45b9l9spkzh1ad32k3yfqq1i"))))
     (properties `((upstream-name . "ScreenR")))
     (build-system r-build-system)
     (arguments
@@ -10622,13 +10622,13 @@ analysis within R.")
 (define-public r-scarray-sat
   (package
     (name "r-scarray-sat")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "SCArray.sat" version))
        (sha256
-        (base32 "15prrz69cic2dcxvkannhcxl5azm3p4ava6vgqb3wdb0936g4fl5"))))
+        (base32 "11zkjx3y9nchnbvwj58bzfx9z4wp0akl8nk8yc3k1hdm0zr1pfc4"))))
     (properties `((upstream-name . "SCArray.sat")))
     (build-system r-build-system)
     (arguments
