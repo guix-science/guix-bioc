@@ -3214,13 +3214,13 @@ data.")
 (define-public r-spicyr
   (package
     (name "r-spicyr")
-    (version "1.24.0")
+    (version "1.24.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "spicyR" version))
        (sha256
-        (base32 "1f7yf9dvmn0sq93lfkkaimvl4yf9sc52g0ifim1sp1m3c129bc9y"))))
+        (base32 "0gdk5ac6ymgdw64xi7qad362w7hcdz7an6n696rm9ngfhrs722s1"))))
     (properties `((upstream-name . "spicyR")))
     (build-system r-build-system)
     (arguments
