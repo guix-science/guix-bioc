@@ -2091,13 +2091,13 @@ using data from public repositories.")
 (define-public r-adapt
   (package
     (name "r-adapt")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "ADAPT" version))
        (sha256
-        (base32 "1wm6yz8w8vxhhg166gsbz5cbkz6dyic4mna3p79dbssap9ipsgzm"))))
+        (base32 "0fmkr254bf9hpj8b6l6mc35imi850p865iggibsxc8x4n3nl3pnq"))))
     (properties `((upstream-name . "ADAPT")))
     (build-system r-build-system)
     (arguments
