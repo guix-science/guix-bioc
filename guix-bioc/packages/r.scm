@@ -4546,13 +4546,13 @@ to identify relevant signal in the data.")
 (define-public r-regenrich
   (package
     (name "r-regenrich")
-    (version "1.22.1")
+    (version "1.22.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RegEnrich" version))
        (sha256
-        (base32 "0xj1vc3x6qr1bchbp3bmqyfas15b1k9k6rs04vkj0bf9sva6n71z"))))
+        (base32 "1r87k53f4lvkgxg06nyb4ah65gls4a6dw9gqbqhc4k3l6nd7mvfz"))))
     (properties `((upstream-name . "RegEnrich")))
     (build-system r-build-system)
     (arguments

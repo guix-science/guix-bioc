@@ -2850,13 +2850,13 @@ Copy Number Alterations from samples with both gene expression and CNA data.")
 (define-public r-igblastr
   (package
     (name "r-igblastr")
-    (version "1.2.23")
+    (version "1.2.24")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "igblastr" version))
        (sha256
-        (base32 "0avia46k00i4x3flyijh3x5pnrspxc8spkvxbshndx4ih5r21pvh"))))
+        (base32 "1a86nzjrfvpagrhb11l2gagbxybbk2mq1pqrzg2w7kk1jkwr9h4v"))))
     (properties `((upstream-name . "igblastr")))
     (build-system r-build-system)
     (arguments
