@@ -907,7 +907,8 @@ rn7) and stored in Biostrings objects.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn6")
@@ -963,7 +964,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn5")
@@ -1019,7 +1021,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Rnorvegicus.UCSC.rn4")
@@ -1044,7 +1047,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro6")
@@ -1070,7 +1074,8 @@ Finder (TRF mask).  Only the AGAPS and AMB masks are \"active\" by default.")
     (build-system r-build-system)
     (arguments
      (list
-      #:tests? #f))
+      #:tests? #f
+      #:substitutable? #f))
     (propagated-inputs (list r-bsgenome))
     (home-page
      "https://bioconductor.org/packages/BSgenome.Ptroglodytes.UCSC.panTro5")
