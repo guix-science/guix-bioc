@@ -1112,13 +1112,13 @@ package DOQTL.")
 (define-public r-mudata
   (package
     (name "r-mudata")
-    (version "1.16.0")
+    (version "1.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "MuData" version))
        (sha256
-        (base32 "0lcf0pn4cx70fqd0fmp9ixcv7jlpnkhajrmg3010cqwjfhf75jdr"))))
+        (base32 "1qs1jc851wls3c8h1pnmgimkaxyq6z7q8ihj3z0d9ad3qrl2s926"))))
     (properties `((upstream-name . "MuData")))
     (build-system r-build-system)
     (arguments

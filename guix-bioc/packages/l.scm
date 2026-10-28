@@ -1145,13 +1145,13 @@ SARS-@code{CoV-2} lineages.")
 (define-public r-limrots
   (package
     (name "r-limrots")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "LimROTS" version))
        (sha256
-        (base32 "12km9qbpyq42x60wqsdhnd384rvivyhzzlrj0m2ifx4w6v0h0ydd"))))
+        (base32 "0kb5vc7nzl2irgcgn764r030n434imvaqhw8g5pbd1scl81nmpnl"))))
     (properties `((upstream-name . "LimROTS")))
     (build-system r-build-system)
     (arguments
