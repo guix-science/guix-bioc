@@ -5636,13 +5636,13 @@ mapped to specific peaks, is generated using the given rules.")
 (define-public r-sitadela
   (package
     (name "r-sitadela")
-    (version "1.20.0")
+    (version "1.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "sitadela" version))
        (sha256
-        (base32 "16bgnhbwcmrhm7rcw5zawnyli26d2j797r78fda698mqn59dgggh"))))
+        (base32 "12hplq8vgra6kj5jhbx00qw52mb8x957fw93qf2jm5i4msnhl635"))))
     (properties `((upstream-name . "sitadela")))
     (build-system r-build-system)
     (arguments
