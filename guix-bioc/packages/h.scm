@@ -2647,13 +2647,13 @@ that each element belongs to each cluster (fuzzy clustering).")
 (define-public r-hoodscanr
   (package
     (name "r-hoodscanr")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "hoodscanR" version))
        (sha256
-        (base32 "0pwxk9nmqlk6i4bv7s145gbxknwqxcxip02ifkj5cds2dbxcxq5m"))))
+        (base32 "0j8yrvx1mg8qs8fp7y8kxk69gp2jwcnz38i3354xji1c0grdz707"))))
     (properties `((upstream-name . "hoodscanR")))
     (build-system r-build-system)
     (arguments
