@@ -5549,13 +5549,13 @@ Windows machines.")
 (define-public r-rbowtiecuda
   (package
     (name "r-rbowtiecuda")
-    (version "1.4.4")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "RbowtieCuda" version))
        (sha256
-        (base32 "0p6g3jf08a1qrj2lj0a3clghba0v61rjkdigqxvcwrv64lj7ql82"))))
+        (base32 "16jy4g397l2bp42wqf5d12kzra0psd13g2iiacdan3qnvghv7n2p"))))
     (properties `((upstream-name . "RbowtieCuda")))
     (build-system r-build-system)
     (arguments
