@@ -76,13 +76,13 @@ ordering, and post-analysis interpretation and visualization.")
 (define-public r-updhmm
   (package
     (name "r-updhmm")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "UPDhmm" version))
        (sha256
-        (base32 "0qhg8cnb90vkkyjxnm6hamw197x41pa62xlg4bbfkxgv4pvi0wj0"))))
+        (base32 "0gs7zsx03m37c0dwz67g47jhj0wdqfq94vqwcq93whwdff56kpid"))))
     (properties `((upstream-name . "UPDhmm")))
     (build-system r-build-system)
     (arguments
@@ -105,7 +105,8 @@ both copies of a chromosome or part of it from one parent, rather than one copy
 from each parent.  This package contains a HMM for detecting UPDs through HTS
 (High Throughput Sequencing) data from trio assays.  By analyzing the genotypes
 in the trio, the model infers a hidden state (normal, father isodisomy, mother
-isodisomy, father heterodisomy and mother heterodisomy).")
+isodisomy, father heterodisomy and mother heterodisomy).  For details see
+Sevilla-Porras et al. (2026) <doi:10.1093/bioinformatics/btag062>.")
     (license license:expat)))
 
 (define-public r-updateobject

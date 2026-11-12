@@ -903,14 +903,14 @@ in patients with ovarian cancer.")
 (define-public r-curatedmetagenomicdata
   (package
     (name "r-curatedmetagenomicdata")
-    (version "3.20.0")
+    (version "3.20.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "curatedMetagenomicData" version
                               'experiment))
        (sha256
-        (base32 "1pg4l32v8p56i4s3nvpskz7fkz6qf1yha8d8ffk482sv2jx1sxf1"))))
+        (base32 "16lk59k1zmp20a81v5k4cp5kba4gk7hics14vcrj8zwdahxl909l"))))
     (properties `((upstream-name . "curatedMetagenomicData")))
     (build-system r-build-system)
     (arguments

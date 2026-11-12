@@ -436,13 +436,13 @@ between groups of samples.")
 (define-public r-qrscore
   (package
     (name "r-qrscore")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "QRscore" version))
        (sha256
-        (base32 "17micdynzav9q873hiyrql223f397xc17axf6yf687w9ffwmq62m"))))
+        (base32 "0kv5g5d36pypnb4y49xnlj4q28daxgf26v7j93626g3qyah01xz4"))))
     (properties `((upstream-name . "QRscore")))
     (build-system r-build-system)
     (arguments
@@ -455,7 +455,7 @@ between groups of samples.")
                              r-biocparallel
                              r-assertthat
                              r-arrangements))
-    (native-inputs (list r-biocstyle))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/songlab-cal/QRscore")
     (synopsis "Quantile Rank Score")
     (description

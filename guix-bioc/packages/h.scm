@@ -386,14 +386,14 @@ package.")
 (define-public r-humanhippocampus2024
   (package
     (name "r-humanhippocampus2024")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (bioconductor-uri "humanHippocampus2024" version
                               'experiment))
        (sha256
-        (base32 "0k5y9bzr91whw0pqlgszsdlg9ijp249rbpsv6ni4fzx82knn9sqk"))))
+        (base32 "0b3fd65cr7jjakq5l952vgbipy6hb3vmjmqcpr00xr9ii6m5dr02"))))
     (properties `((upstream-name . "humanHippocampus2024")))
     (build-system r-build-system)
     (arguments
@@ -415,7 +415,7 @@ datasets are generated from adjacent tissue sections of the anterior human
 hippocampus across ten adult neurotypical donors.  The datasets are based on
 [spatial_hpc](https://github.com/@code{LieberInstitute/spatial_hpc}) project by
 Lieber Institute for Brain Development (LIBD) researchers and collaborators.")
-    (license license:artistic2.0)))
+    (license (license:fsdg-compatible "file://LICENSE"))))
 
 (define-public r-humancytosnp12v2p1hcrlmm
   (package

@@ -3198,6 +3198,7 @@ experiments.")
     (propagated-inputs (list r-vgam
                              r-rcpparmadillo
                              r-rcpp
+                             r-pulsar
                              r-phyloseq
                              r-matrix
                              r-mass
